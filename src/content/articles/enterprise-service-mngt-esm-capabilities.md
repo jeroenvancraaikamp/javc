@@ -3,7 +3,7 @@ title: "Enterprise Service Mngt (ESM) Capabilities?"
 date: 2025-05-29
 categories: ["IT4ESM"]
 excerpt: "Agentic AI itself does not employ a hard-coded process flow; instead, it reasons and determines its next steps/actions based on real-time triggers, responses, data, and events. This makes Agentic AI for the Enterprise less predictable but more flexible and capable"
-image: "https://javc.nl/wp-content/uploads/2024/12/NewOrder.png"
+image: "/wp-content/uploads/2024/12/NewOrder.png"
 readingTime: 5
 ---
 

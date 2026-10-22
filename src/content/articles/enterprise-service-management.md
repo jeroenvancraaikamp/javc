@@ -3,7 +3,7 @@ title: "Enterprise Service Management"
 date: 2024-12-14
 categories: ["IT4ESM"]
 excerpt: "Enterprise Service Management (ESM) is the practice of applying service management principles—traditionally used in IT Service Management (ITSM)—to other areas of an organization, such as HR, finance, facilities, legal, or customer service. Essentially, it extends ITSM's structured approach to managing"
-image: "https://javc.nl/wp-content/uploads/2024/12/2024-12-20_19-19-42.png"
+image: "/wp-content/uploads/2024/12/2024-12-20_19-19-42.png"
 readingTime: 4
 ---
 
@@ -45,7 +45,7 @@ Vendors such as ServiceNow extended their ITSM Platforms with capabilities that 
 
 ##   
 
-![](https://javc.nl/wp-content/uploads/2024/12/2024-12-20_19-25-37.png)
+![](/wp-content/uploads/2024/12/2024-12-20_19-25-37.png)
 
 ### WHAT TO USE FOR WHAT?
 
@@ -61,4 +61,4 @@ A landscape that includes majority of the logo's on the left, is not uncommon. A
 
 Things that can be done on enterprise level, should be done on enterprise level. If a company already has Best of Suite in house, it often is wise to extend that suite than to interface with a new Best of Breed. Architects with a wholistic enterprise view, must be involved in the selection of IT tools.
 
-![](https://javc.nl/wp-content/uploads/2024/12/ESM_VENDORS-1.png)
+![](/wp-content/uploads/2024/12/ESM_VENDORS-1.png)

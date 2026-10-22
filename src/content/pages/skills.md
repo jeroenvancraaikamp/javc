@@ -4,7 +4,7 @@ menu: "Skills/Expertise"
 order: 1
 ---
 
-![](https://javc.nl/wp-content/uploads/2022/10/shutterstock_1133982488.png)
+![](/wp-content/uploads/2022/10/shutterstock_1133982488.png)
 
 ## About me
 

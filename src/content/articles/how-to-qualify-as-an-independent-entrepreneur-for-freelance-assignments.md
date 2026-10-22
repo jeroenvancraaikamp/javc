@@ -3,7 +3,7 @@ title: "How to Qualify as an Independent Entrepreneur for Freelance Assignments 
 date: 2024-08-18
 categories: ["Information"]
 excerpt: "The Dutch government plans to replace the current DBA Law from 2016 with the new DBVAR Law. The new law will take effect on January 1st. 2025, and, unlike the old DBA Law, will be enforced by the Dutch government"
-image: "https://javc.nl/wp-content/uploads/2024/08/law.jpg"
+image: "/wp-content/uploads/2024/08/law.jpg"
 readingTime: 7
 ---
 

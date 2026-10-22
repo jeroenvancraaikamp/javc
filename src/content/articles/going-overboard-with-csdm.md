@@ -3,7 +3,7 @@ title: "Going overboard with CSDM 5?"
 date: 2025-06-07
 categories: ["ServiceNow","TBM/CSDM/CMDB"]
 excerpt: "ServiceNow published a PowerPoint presentation with 132 slides with examples on how one could model the IT landscape accormodeoding to CSDM 5. Although I generally love CSDM, some appear to go overboard when modelling their IT landscape in ServiceNow. Let's"
-image: "https://javc.nl/wp-content/uploads/2025/06/ServiceNow_in_CSDM_5.png"
+image: "/wp-content/uploads/2025/06/ServiceNow_in_CSDM_5.png"
 readingTime: 11
 ---
 
@@ -123,4 +123,4 @@ I have setup (governance for) a dozen of ServiceNow Platforms over the last deca
 
 If you use my recommendation, you will likely reduce the number of managed items with 40-60% (and reduce the administrative overhead of registering/review and documentation of the ServiceNow Platform), compared to the example provided by ServiceNow. And yes, you will not be able to register the lifecycle of the individual apps in ServiceNow. But is that bad, if there is only one ServiceNow platform, with one platform owner, with instances that are shared by multiple stakeholders?
 
-![](https://javc.nl/wp-content/uploads/2025/06/How_to_model_servicenow_in_csdm_5-scaled.png)
+![](/wp-content/uploads/2025/06/How_to_model_servicenow_in_csdm_5-scaled.png)

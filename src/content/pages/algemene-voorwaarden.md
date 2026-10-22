@@ -2,7 +2,7 @@
 title: "Algemene Voorwaarden"
 ---
 
-![](https://javc.nl/wp-content/uploads/2015/07/law_post_9-compressor.jpg)
+![](/wp-content/uploads/2015/07/law_post_9-compressor.jpg)
 
 **ALGEMENE VOORWAARDEN**
 

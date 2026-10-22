@@ -3,7 +3,7 @@ title: "From IT Service Management to Enterprise Service Management"
 date: 2024-12-24
 categories: ["IT4ESM"]
 excerpt: "The landscape of IT management is undergoing a seismic shift. Traditional IT service management (ITSM) tools, once the backbone of IT operations, are no longer sufficient to meet the growing demands of modern organizations. Technologies such as Enterprise Architecture (EA)"
-image: "https://javc.nl/wp-content/uploads/2024/12/DALL·E-2024-12-24-14.24.43-A-powerful-digital-illustration-depicting-a-seismic-shift-in-the-IT-landscape.-The-image-showcases-a-dramatic-transformation-from-traditional-rigid-I.webp"
+image: "/wp-content/uploads/2024/12/DALL·E-2024-12-24-14.24.43-A-powerful-digital-illustration-depicting-a-seismic-shift-in-the-IT-landscape.-The-image-showcases-a-dramatic-transformation-from-traditional-rigid-I.webp"
 readingTime: 4
 ---
 

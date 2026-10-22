@@ -3,7 +3,7 @@ title: "Keep IT as simple as possible: IT4ESM"
 date: 2026-04-06
 categories: ["IT4ESM","ServiceNow","Uncategorized"]
 excerpt: "A couple of months ago i surveyed 700+ IT tools. Every tool has its pros and cons, and everybody chooses their own solution. Enterprise Service Management is often the most expensive and worst-managed Architecture Domain in the company, but this"
-image: "https://javc.nl/wp-content/uploads/2026/04/IT4ESM-Tools.png"
+image: "/wp-content/uploads/2026/04/IT4ESM-Tools.png"
 readingTime: 8
 ---
 

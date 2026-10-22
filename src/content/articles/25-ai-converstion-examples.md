@@ -3,7 +3,7 @@ title: "25 AI Support Agent Conversation Examples"
 date: 2025-06-01
 categories: ["AI4IT"]
 excerpt: "AI Support Agent Conversation Playbook – Multilingual IT Support via Microsoft Teams Overview This playbook provides 25 conversation examples for a multilingual AI agent that supports users via Microsoft Teams across the following IT domains: Each scenario includes a typical"
-image: "https://javc.nl/wp-content/uploads/2025/06/ChatGPT-Image-Jun-1-2025-09_33_26-PM.png"
+image: "/wp-content/uploads/2025/06/ChatGPT-Image-Jun-1-2025-09_33_26-PM.png"
 readingTime: 12
 ---
 

@@ -3,7 +3,7 @@ title: "You want a better CSDM, for less money, and you want it now?"
 date: 2025-09-13
 categories: ["TBM/CSDM/CMDB"]
 excerpt: "That is possible by making the contents of the CSDM almost Zero-touch. You can import a product-agnostic Service Portfolio which does not have to be updated whenever you change a product. If you link IT service delivery process to asset"
-image: "https://javc.nl/wp-content/uploads/2025/09/TBM5-Zero-Touch.png"
+image: "/wp-content/uploads/2025/09/TBM5-Zero-Touch.png"
 readingTime: 1
 ---
 

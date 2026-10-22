@@ -3,7 +3,7 @@ title: "Out of the Box, or Not?"
 date: 2026-03-14
 categories: ["IT4ESM","ServiceNow"]
 excerpt: "Enterprise platforms such as IT service management platforms, workflow platforms, and digital service platforms often accumulate complexity over time. This complexity usually arises from custom processes, bespoke integrations, uncontrolled customization, and duplicated functionality. To control this complexity, organizations adopt different"
-image: "https://javc.nl/wp-content/uploads/2026/03/ChatGPT-Image-Mar-14-2026-01_58_48-PM.png"
+image: "/wp-content/uploads/2026/03/ChatGPT-Image-Mar-14-2026-01_58_48-PM.png"
 readingTime: 8
 ---
 

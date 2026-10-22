@@ -3,7 +3,7 @@ title: "The Ultimate List of 1.000+ IT Management Tools, 2026"
 date: 2026-09-22
 categories: ["Blog Article","IT4IT","Publication"]
 excerpt: "This is an overview of 1136 IT management tools, grouped into 26 categories across 7 domains — Strategy & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI — aligned to The Open Group's"
-image: "https://javc.nl/wp-content/uploads/2026/09/1000_IT_Management_Tools_Sept_2026.png"
+image: "/wp-content/uploads/2026/09/1000_IT_Management_Tools_Sept_2026.png"
 readingTime: 45
 ---
 

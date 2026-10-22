@@ -3,7 +3,7 @@ title: "CSDM5 explained in 10 minutes..."
 date: 2025-09-06
 categories: ["TBM/CSDM/CMDB"]
 excerpt: "There are hundreds of interpretations of the ServiceNow Common Service Data Model (CSDM). In this article, you will find the how CSDM5 is construed and implemented in ServiceNow. Different lenses, different focus. ServiceNow considers all of the portfolios to be"
-image: "https://javc.nl/wp-content/uploads/2025/09/DPM_in_CSDM5.png"
+image: "/wp-content/uploads/2025/09/DPM_in_CSDM5.png"
 readingTime: 9
 ---
 
@@ -85,7 +85,7 @@ In CSDM5, the following artifacts were defined:
 
 **What to use where?**
 
-**![](https://javc.nl/wp-content/uploads/2025/09/CSDM5_core_objects.png)**
+**![](/wp-content/uploads/2025/09/CSDM5_core_objects.png)**
 
 ITSM processes such as Incident, Change, and Problem management refer to the following:
 

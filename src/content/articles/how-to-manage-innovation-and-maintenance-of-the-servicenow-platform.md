@@ -3,7 +3,7 @@ title: "How to Manage Innovation and Maintenance of the ServiceNow Platform"
 date: 2024-11-03
 categories: ["ServiceNow"]
 excerpt: "I often get asked how to best manage the ServiceNow Platform. I typically advise the following basic concept and then customize my advice to make it fit for purpose and audience:"
-image: "https://javc.nl/wp-content/uploads/2024/11/SN-Agile-Mngt.webp"
+image: "/wp-content/uploads/2024/11/SN-Agile-Mngt.webp"
 readingTime: 6
 ---
 
@@ -102,4 +102,4 @@ I often get asked how to best manage the ServiceNow Platform. I typically advise
 
 ## In a Picture the above looks like:
 
-![](https://javc.nl/wp-content/uploads/2024/11/SN-Operating-Model-1.png)
+![](/wp-content/uploads/2024/11/SN-Operating-Model-1.png)

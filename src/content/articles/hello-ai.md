@@ -3,7 +3,7 @@ title: "AI Part 2: Claude, GitHub, Python, Cloudflare, Supabase & ChatBot"
 date: 2026-10-12
 categories: ["Uncategorized"]
 excerpt: "For the AI Masterclass that I recently attended, we were asked to produce a practical use case. Building on AI Part 1, i decided to create a zero-touch Champagne Webiste that is completely generated using AI, and that makes use"
-image: "https://javc.nl/wp-content/uploads/2026/10/Champagne360.png"
+image: "/wp-content/uploads/2026/10/Champagne360.png"
 readingTime: 9
 ---
 

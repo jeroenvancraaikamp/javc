@@ -3,7 +3,7 @@ title: "ServiceNow AI, Update April 2025"
 date: 2025-04-18
 categories: ["AI4IT"]
 excerpt: "This article outlines key developments and expectations in the rapidly evolving world of AI—particularly as it is being embedded and operationalized within the ServiceNow platform. By now, most professionals have interacted with some form of Generative AI—be it Co-Pilot, ChatGPT,"
-image: "https://javc.nl/wp-content/uploads/2025/04/ServiceNow_AI_Update_April_2025.png"
+image: "/wp-content/uploads/2025/04/ServiceNow_AI_Update_April_2025.png"
 readingTime: 4
 ---
 

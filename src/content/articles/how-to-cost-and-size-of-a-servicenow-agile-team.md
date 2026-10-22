@@ -3,7 +3,7 @@ title: "Proposal for ServiceNow Platform Technical Agile ITSM Implementation"
 date: 2025-01-13
 categories: ["ServiceNow"]
 excerpt: "There are several ways to approach sourcing for a ServiceNow project in the Netherlands. You can opt to manage it internally, bring in temporary expertise, or partner with one of the Big Five consultancies—be it through local, nearshore, or offshore"
-image: "https://javc.nl/wp-content/uploads/2025/01/teampicture3.webp"
+image: "/wp-content/uploads/2025/01/teampicture3.webp"
 readingTime: 4
 ---
 

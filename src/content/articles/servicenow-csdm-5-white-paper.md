@@ -3,7 +3,7 @@ title: "ServiceNow published CSDM 5"
 date: 2025-05-11
 categories: ["IT4IT","TBM/CSDM/CMDB"]
 excerpt: "On May 8, 2025, ServiceNow released its long-anticipated Common Service Data Model (CSDM) 5 white paper . This 63-page document marks a significant evolution of the data model that underpins many ServiceNow implementations across IT organizations globally. CSDM 5 introduces"
-image: "https://javc.nl/wp-content/uploads/2025/05/CSDM5_final.png"
+image: "/wp-content/uploads/2025/05/CSDM5_final.png"
 readingTime: 5
 ---
 
@@ -92,4 +92,4 @@ Currently, most companies already make use of Request Management within the **Se
 -   TBM Council [Technology Business Management (TBM) Taxonomy 4.0](https://higherlogicdownload.s3.amazonaws.com/TBMCOUNCIL/c15d372f-9951-46c8-9c3f-213c696401b6/UploadedImages/TBM_Taxonomy_V4_0.pdf) (PDF)
   
 
-![](https://javc.nl/wp-content/uploads/2025/05/CSDM_5_final_may_2025-scaled.png)
+![](/wp-content/uploads/2025/05/CSDM_5_final_may_2025-scaled.png)

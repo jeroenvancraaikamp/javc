@@ -4,7 +4,7 @@ menu: "Customers/Employers"
 order: 3
 ---
 
-![](https://javc.nl/wp-content/uploads/2015/07/law_post_3.jpg)
+![](/wp-content/uploads/2015/07/law_post_3.jpg)
 
 Companies I work(ed) for:
 

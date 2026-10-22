@@ -3,13 +3,13 @@ title: "Why reinvent the wheel? Use TBM 5.0 Content in the CSDM 5.0 Data Model"
 date: 2025-08-22
 categories: ["ServiceNow","TBM/CSDM/CMDB","Uncategorized"]
 excerpt: "ServiceNow defined a Common Service Data model (CSDM5) without content. The TBM Council defined both a data model (TBM5) and its content. This article describes how to populate the content of TBM5 into CSDM5. TBM5 defined/described (relations between) artifacts for"
-image: "https://javc.nl/wp-content/uploads/2025/08/inventing_the_wheel.png"
+image: "/wp-content/uploads/2025/08/inventing_the_wheel.png"
 readingTime: 9
 ---
 
 ServiceNow defined a Common Service Data model (CSDM5) without content. The TBM Council defined both a data model (TBM5) and its content. This article describes how to populate the content of TBM5 into CSDM5.
 
-![](https://javc.nl/wp-content/uploads/2025/08/TBM5-600x281.png)
+![](/wp-content/uploads/2025/08/TBM5-600x281.png)
 
 TBM5 defined/described (relations between) artifacts for "Technology Consumers" (who?), "Technology Solutions" (what?), "Technology Resource Towers" (how?), and "Technology Cost Pools" (how much?). You can [**download a free copy of the TBM 5.0.**](https://www.tbmcouncil.org/learn-tbm/resource-center/the-tbm-taxonomy-5/)
 
@@ -40,7 +40,7 @@ The picture below contains the (relation between the) CSDM5 artefacts and how th
 -   The Product-specific Solution Offerings are CSDM5 Business Applications (one Application may Provide zero or more Capabilities) or are Technical Products that at offered as a Service (e.g. "Azure Cloud")
 -   The Product-specific CSDM5 Service Instances are linked to both the CSDM5 Services and to the CSDM5 Offerings, the instances are deployment/environment-specific.
 
-![](https://javc.nl/wp-content/uploads/2025/09/TBM5_in_CSDM_V2.png)
+![](/wp-content/uploads/2025/09/TBM5_in_CSDM_V2.png)
 
 ### TBM5 Solutions
 
@@ -54,7 +54,7 @@ In TBM5, solutions can either be a product or a service. The TBM5 Solutions are 
 
 The 141 solutions in TBM5 are too fine-grained to be used as Services or Offerings in ServiceNow. Instead, these solutions are modelled as (Business or Technical) Capabilities. The capabilities van be related to business/technical baselines (e.g., Applications, Products, Services, or Offerings).
 
-![](https://javc.nl/wp-content/uploads/2025/08/TBM5_Solutions.png)
+![](/wp-content/uploads/2025/08/TBM5_Solutions.png)
 
 ### Business Capabilities
 

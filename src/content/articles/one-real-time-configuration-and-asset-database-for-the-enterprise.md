@@ -3,7 +3,7 @@ title: "One Real-time Configuration and Asset Database for the Enterprise?"
 date: 2025-01-03
 categories: ["IT4CSM","IT4ESM"]
 excerpt: "The Future of Configuration and Asset Databases (CADB) in an AI-Driven IT Landscape: A Vision for 2027"
-image: "https://javc.nl/wp-content/uploads/2022/10/shutterstock_1756612595.jpg"
+image: "/wp-content/uploads/2022/10/shutterstock_1756612595.jpg"
 readingTime: 4
 ---
 

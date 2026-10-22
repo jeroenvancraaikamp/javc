@@ -3,7 +3,7 @@ title: "Can we talk about the elephant in the room?"
 date: 2024-12-26
 categories: ["IT4ESM"]
 excerpt: "As you may have noticed, things are rapidly changing in IT. The biggest change is the automation of tasks that used to be done manually. New frameworks such as DevSecOps and new Technologies such as AI are emerging, It probably"
-image: "https://javc.nl/wp-content/uploads/2024/12/TheElephantInTheRoom.webp"
+image: "/wp-content/uploads/2024/12/TheElephantInTheRoom.webp"
 readingTime: 14
 ---
 
@@ -53,7 +53,7 @@ If ServiceNow wants to survive in world that rapidly gets automated, it probably
 
 It looks like that is exactly what ServiceNow is doing. ServiceNow is being integrated with multiple AI vendors and wil support a "Bring Your Own Model", rather than becoming an AI vendor themselves. By 2027 (2-3 years from now), ServiceNow predicts the AI Agents on the platform to be fully autonomous. It's a bold transformation strategy, but most likely the only sustainable strategy on the long run, when the current traditional SAAS revenue streams will have dried up.
 
-![](https://javc.nl/wp-content/uploads/2025/01/AI.webp)
+![](/wp-content/uploads/2025/01/AI.webp)
 
 ## What about the People and the Processes?
 

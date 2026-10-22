@@ -3,7 +3,7 @@ title: "AI, ServiceNow and the Battle for the Front End"
 date: 2026-02-28
 categories: ["IT4ESM"]
 excerpt: "The debate about AI in the ServiceNow ecosystem is no longer limited to ticket automation. A structural shift is emerging: from fragmented application portals to a single, agent-driven enterprise service layer. That shift is not purely technical. Many vendors, departments,"
-image: "https://javc.nl/wp-content/uploads/2026/02/ServiceNow_AI_frontend.png"
+image: "/wp-content/uploads/2026/02/ServiceNow_AI_frontend.png"
 readingTime: 5
 ---
 

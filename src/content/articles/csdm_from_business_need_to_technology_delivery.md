@@ -3,7 +3,7 @@ title: "From Business Need to Technology Delivery"
 date: 2026-05-31
 categories: ["TBM/CSDM/CMDB"]
 excerpt: "The Common Service Data Model of ServiceNow (CSDM5) is increasingly gaining the attention of C-Level managers, especially since a good CMDB with accurate/complete content is considered a critical success factor for implementing DORA, SOx, SOC2 and Agentic AI. People in"
-image: "https://javc.nl/wp-content/uploads/2026/05/CMDB-DPM-Infographic.png"
+image: "/wp-content/uploads/2026/05/CMDB-DPM-Infographic.png"
 readingTime: 4
 ---
 
@@ -32,7 +32,7 @@ A **Service Instance** represents each deployment of a Business Application. Sep
 
 Any capability provided “as a service” is represented by a **Service Offering**. Examples include Application Services, Middleware Services, Infrastructure Services, Workplace Services, and Corporate Services. Service Offerings may be environment-specific, region-specific, or location-specific. Each Service Offering defines its associated commitments, subscriptions, support contacts, ownership, and service expectations.
 
-![](https://javc.nl/wp-content/uploads/2026/06/ZERO-TOUCH-CMDB-Class-Model.png)
+![](/wp-content/uploads/2026/06/ZERO-TOUCH-CMDB-Class-Model.png)
 
 **Offered Services** consumed exclusively by IT are classified as **Technology Management Services.** Services consumed by business users, customers, or external parties are classified as **Business Services**.
 
@@ -45,4 +45,4 @@ The thousands of **SDLC Application Components** typically inherit foundational 
   
 In this model, Resources, Middleware and Nodes may not be created/updated in the CMDB by humans. They only contain the technical reality and the relations, names, and attribute values that are discovered. Typically references to Foundational data cannot be technically discovered. This is why the CMDB CI’s -in this CSDM interpretation- are always directly or indirectly to be related to an Application and/or Offering that contains reference attributes such as “Business Owner” , “IT Owner” , “Support Group” , “Change Group” , “CAB Group”, “Location”, “Organization”, etc. Organization could be historical “Company => Business Unit => Department” structure or Modern Agile “Tribe/ART => Cluster/Chapter ==> DevSecOps Team/Squad” structure.
 
-![](https://javc.nl/wp-content/uploads/2026/06/CSDM5-incl-Relation-Labels.png)
+![](/wp-content/uploads/2026/06/CSDM5-incl-Relation-Labels.png)

@@ -3,7 +3,7 @@ title: "What are AI Agent Cards in A2A?"
 date: 2025-05-17
 categories: ["AI4IT"]
 excerpt: "An AI Agent Card is a structured, discoverable configuration file—essentially a digital resumé in YAML+ format—that describes an AI Agent according to the Agent-to-Agent (A2A) Protocol . It typically includes metadata such as the agent’s name, provider, capabilities, skills, API"
-image: "https://javc.nl/wp-content/uploads/2025/05/AI-Agent-Card.png"
+image: "/wp-content/uploads/2025/05/AI-Agent-Card.png"
 readingTime: 4
 ---
 

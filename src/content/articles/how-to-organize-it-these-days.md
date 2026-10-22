@@ -3,7 +3,7 @@ title: "Structuring IT the Smart Way: Six Top-level Services for Enterprises"
 date: 2025-08-27
 categories: ["IT4IT","Uncategorized"]
 excerpt: ""
-image: "https://javc.nl/wp-content/uploads/2025/08/TBM-Governance-1.png"
+image: "/wp-content/uploads/2025/08/TBM-Governance-1.png"
 readingTime: 9
 ---
 

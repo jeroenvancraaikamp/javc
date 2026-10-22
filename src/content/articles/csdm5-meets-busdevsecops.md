@@ -3,7 +3,7 @@ title: "CSDM5 meets BusDevSecOps"
 date: 2026-03-22
 categories: ["TBM/CSDM/CMDB"]
 excerpt: "ServiceNow's Common Service Data Model is currently a hot topic in the world of IT Management. I know a few people who have actually tried to read the CSDM whitepaper; there is even a CSDM training/certification available. The broad, high-level,"
-image: "https://javc.nl/wp-content/uploads/2026/03/CSDM5_in_essence-scaled.png"
+image: "/wp-content/uploads/2026/03/CSDM5_in_essence-scaled.png"
 readingTime: 9
 ---
 

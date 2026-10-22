@@ -3,7 +3,7 @@ title: "Business Capabilities for the Enterprise Support Domain"
 date: 2024-12-25
 categories: ["IT4ESM"]
 excerpt: "At the end of the year, some look back and—more importantly—some look forward. I did both. When looking backward, I noticed many people complaining about getting value for money from their IT4IT investments. After two decades, Gartner stopped publishing the"
-image: "https://javc.nl/wp-content/uploads/2024/12/NewOrder.png"
+image: "/wp-content/uploads/2024/12/NewOrder.png"
 readingTime: 7
 ---
 

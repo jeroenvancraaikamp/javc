@@ -3,7 +3,7 @@ title: "How to implement a Joiner, Mover and Leaver Process?"
 date: 2024-12-23
 categories: ["IT4ESM"]
 excerpt: "Here’s an integrated overview of how your enterprise will handle the Joiner, Mover, and Leaver (JML) processes , utilising Workday, Azure AD, Saviynt, Intune, JAMF, Ariba, ADP, and ServiceNow while addressing all requested elements."
-image: "https://javc.nl/wp-content/uploads/2024/12/JML.webp"
+image: "/wp-content/uploads/2024/12/JML.webp"
 readingTime: 5
 ---
 

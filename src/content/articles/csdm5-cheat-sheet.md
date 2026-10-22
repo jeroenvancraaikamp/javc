@@ -3,7 +3,7 @@ title: "CSDM5 Cheat Sheet"
 date: 2026-02-01
 categories: ["TBM/CSDM/CMDB"]
 excerpt: "CSDM5 is a Data Model that always leads to interesting discussions because each persona views it from their own perspective. This cheat sheet should help with what goes where if one sticks to the CSDM5 definitions/intentions of the various artefacts."
-image: "https://javc.nl/wp-content/uploads/2025/01/teampicture3.webp"
+image: "/wp-content/uploads/2025/01/teampicture3.webp"
 readingTime: 7
 ---
 
@@ -20,7 +20,7 @@ The following definitions/principles apply throughout this cheat-sheet::
 -   A "Depends on::depended on by" relation is a many-to-many relation between a parent item and child items.  
     A parent item may depend on many child items, and a child may depend on many parent items.
 
-![](https://javc.nl/wp-content/uploads/2026/02/CSDM5_including_rlation_labels.png)
+![](/wp-content/uploads/2026/02/CSDM5_including_rlation_labels.png)
 
 ### Business Application (APM baseline)
 

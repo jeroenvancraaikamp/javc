@@ -3,7 +3,7 @@ title: "TBM 4.0 Content in ServiceNow CSDM 4.0 Data Model"
 date: 2023-01-10
 categories: ["TBM/CSDM/CMDB"]
 excerpt: "As you may know, ServiceNow has a Common Service Data Model (CSDM) that is usable throughout the ServiceNow Platform. Each (use of each) object is outlined in the CSDM 4.0 Whitepaper. In the ServiceNow documentation, examples are given so that"
-image: "https://javc.nl/wp-content/uploads/2023/01/2023-01-09_19-07-07.png"
+image: "/wp-content/uploads/2023/01/2023-01-09_19-07-07.png"
 readingTime: 6
 ---
 
@@ -35,4 +35,4 @@ It is recommended to leave the TBM Types, Categories, and Solutions unchanged, t
 
 TBM Counsel also provided representative examples of Service Offerings that hang off the defined TBM solutions (CSDM Services).  It is recommended to use these examples as a starting point and update the offerings if/when/where needed.
 
-![](https://javc.nl/wp-content/uploads/2023/01/Universal-Data-Model.png)
+![](/wp-content/uploads/2023/01/Universal-Data-Model.png)

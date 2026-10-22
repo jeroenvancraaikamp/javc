@@ -3,7 +3,7 @@ title: "Meet our Digital Portfolio Manager: ChatGPT 5 Pro!!"
 date: 2025-09-11
 categories: ["TBM/CSDM/CMDB"]
 excerpt: "Recently, I asked ChatGPT 5 Pro to define the artefacts and their relations that need to be registered in ServiceNow. In this article, you will find what went surprisingly well and what failed miserably. The detailed results (which considered compliance"
-image: "https://javc.nl/wp-content/uploads/2025/09/chatgpt_bot_acting_as_csdm_config_manager.png"
+image: "/wp-content/uploads/2025/09/chatgpt_bot_acting_as_csdm_config_manager.png"
 readingTime: 21
 ---
 
@@ -13,17 +13,17 @@ Recently, I asked ChatGPT 5 Pro to define the artefacts and their relations that
 
 Before diving into what ChatGPT proposed, let's first look at two slides from the official -unedited- ServiceNow CSDM5 documentation:
 
-![](https://javc.nl/wp-content/uploads/2025/09/CSDM5-Artefact-Definitions.png)
+![](/wp-content/uploads/2025/09/CSDM5-Artefact-Definitions.png)
 
 The CSDM5 documentation stipulates that people should use the following Tables and Relations:
 
-![](https://javc.nl/wp-content/uploads/2025/09/CSDM5-Artefacts-and-Relations.png)
+![](/wp-content/uploads/2025/09/CSDM5-Artefacts-and-Relations.png)
 
 ### Initial observations:
 
 Based on the prompt that i provided, ChatGPT 5 Pro generated definitions and content for the following artefacts and relations:
 
-![](https://javc.nl/wp-content/uploads/2025/09/ChatGPT-CSDM5-Tables-and-Relations.png)
+![](/wp-content/uploads/2025/09/ChatGPT-CSDM5-Tables-and-Relations.png)
 
 As you can see, the definitions that ChatGPT produced are similar -but not the quite same- to what is written in the official slides.
 

@@ -3,7 +3,7 @@ title: "AI will reduce Total Cost of Ownership of IT between 25% and 40% by 2030
 date: 2025-03-19
 categories: ["AI4IT"]
 excerpt: ""
-image: "https://javc.nl/wp-content/uploads/2025/03/DALL·E-2025-03-22-18.58.43-A-group-of-business-managers-in-a-modern-conference-room-gathered-around-a-large-screen-displaying-a-financial-graph.-The-graph-prominently-shows-a-4.webp"
+image: "/wp-content/uploads/2025/03/DALL·E-2025-03-22-18.58.43-A-group-of-business-managers-in-a-modern-conference-room-gathered-around-a-large-screen-displaying-a-financial-graph.-The-graph-prominently-shows-a-4.webp"
 readingTime: 4
 ---
 
@@ -30,7 +30,7 @@ Many people are currently producing business cases for AI in IT. In this article
 
 ### According to the [World Economic Forum](https://www.weforum.org/publications/matching-talent-to-the-jobs-of-tomorrow-a-guidebook-for-public-employment-services/), AI is will reduce the Total Cost of Ownership of IT, between 25% and 40% if a company currenty spends 100 Euro per year on IT, that will become 75 Euro by 2030 due to AI. Approx. 50% of IT Staff need to transition to another role.
 
-![](https://javc.nl/wp-content/uploads/2025/03/AI-Cost-2025-2030.png)
+![](/wp-content/uploads/2025/03/AI-Cost-2025-2030.png)
 
 -   Internal/External Labor costs will reduce by 53% (from 40 to 19)
 -   AI Operations/Maintenace cost will increase by 50% (from 10 to 15)

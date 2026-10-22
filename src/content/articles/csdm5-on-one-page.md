@@ -3,7 +3,7 @@ title: "CSDM5 On One Page"
 date: 2025-12-09
 categories: ["Uncategorized"]
 excerpt: "Not everybody has time to read a long white paper or go through endless PowerPoint slides. This article provides a knowledge article that describes the key artefacts and explains how to classify and govern them in compliance with CSDM5. A"
-image: "https://javc.nl/wp-content/uploads/2025/12/Simplified-CSDM5-Concept.png"
+image: "/wp-content/uploads/2025/12/Simplified-CSDM5-Concept.png"
 readingTime: 4
 ---
 

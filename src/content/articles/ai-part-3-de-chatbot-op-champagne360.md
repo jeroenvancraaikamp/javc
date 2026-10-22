@@ -3,7 +3,7 @@ title: "AI Part 3: De Chatbot op Champagne360"
 date: 2026-10-13
 categories: ["Uncategorized"]
 excerpt: "Nadat ik eerst -voor mijn AI-opleiding- een hele lading informatie op de website Champagne360.nl had verzameld (zie part 1 en part 2) , heb ik er onlangs een meertalige AI-chatbot aan toegevoegd. Ook nu was ik weer aangenaam verbaasd over"
-image: "https://javc.nl/wp-content/uploads/2026/10/ChaBot.jpg"
+image: "/wp-content/uploads/2026/10/ChaBot.jpg"
 readingTime: 4
 ---
 

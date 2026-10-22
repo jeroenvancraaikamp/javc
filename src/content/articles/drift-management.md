@@ -3,7 +3,7 @@ title: "Drift Management: Why It Matters, Who Needs It, and How to Get It Right"
 date: 2025-12-05
 categories: ["IT4IT"]
 excerpt: "IT environments rarely break because of one big dramatic event. More often, they erode slowly: a configuration flag quietly flipped, a firewall rule added “just for testing,” a VM resized without documentation, a registry key tweaked by an engineer in"
-image: "https://javc.nl/wp-content/uploads/2025/12/drift.png"
+image: "/wp-content/uploads/2025/12/drift.png"
 readingTime: 3
 ---
 

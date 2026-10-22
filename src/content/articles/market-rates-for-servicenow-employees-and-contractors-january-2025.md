@@ -3,7 +3,7 @@ title: "ServiceNow Labor & Contractor Rates, Benchmark January 2025"
 date: 2025-01-13
 categories: ["Publication"]
 excerpt: "In another article ChatGPT generated a proposal on how to implement, maintain and innovate a ServiceNow Platform. In this article you can find the average rates that were used by ChatGPT for that article per role, differentiating on seniority/experience and"
-image: "https://javc.nl/wp-content/uploads/2025/01/teampicture4.webp"
+image: "/wp-content/uploads/2025/01/teampicture4.webp"
 readingTime: 8
 ---
 
@@ -36,7 +36,7 @@ When asked i recommend the following:
 -   The **ServiceNow Developers** that are used during the project should be external (unless if the project is fully done in-house). The ServiceNow Developers can be (partly) insourced after the project, so that enhancements and upgrades can be done in-house without being dependent on the partner. Whether to sourcing the developers locally, near-shore or off-shore depends on a lot of factors. That said, most companies will outsource innovation and technical maintenance of the ServiceNow Platform to the Partner (300-1000 euro per day per person, subject to seniority/location). A lot of partners provide a local point of contact with support from developers and service desk in india.
 -   When a lot of integrations or configurations are done, it makes sense to have those tested by specialised **Test Engineers**. Since they are verifying the acceptance criteria, they are best recruited/hired by the company (ie. internal staff (350-700 euro per day), or contractors (650-950 euro per day).
 
-![](https://javc.nl/wp-content/uploads/2025/01/dayrates4.png)
+![](/wp-content/uploads/2025/01/dayrates4.png)
 
 ## Conversion table
 
@@ -79,4 +79,4 @@ The table below:
 4.  Shows the Dutch Tax rates for a certain gross salary.  
     e.g. an internal employee who has a gross annual salary of 91K Euro, has to pay 36% income tax.
 
-![](https://javc.nl/wp-content/uploads/2025/01/dayrates2.png)
+![](/wp-content/uploads/2025/01/dayrates2.png)

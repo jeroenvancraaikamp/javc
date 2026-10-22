@@ -3,7 +3,7 @@ title: "ITOM, Certificate Management"
 date: 2026-01-13
 categories: ["TBM/CSDM/CMDB"]
 excerpt: "As part of the ServiceNow ITOM Discovery product, ServiceNow provides a comprehensive Certificate Management capability. This functionality is designed to give organizations visibility, control, and automation across the full certificate lifecycle, while keeping the CMDB accurate and up to date."
-image: "https://javc.nl/wp-content/uploads/2026/01/ITOM-certificate-management.png"
+image: "/wp-content/uploads/2026/01/ITOM-certificate-management.png"
 readingTime: 2
 ---
 

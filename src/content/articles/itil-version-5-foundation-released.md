@@ -3,7 +3,7 @@ title: "ITIL Version 5 (Foundation) Released!!"
 date: 2026-03-01
 categories: ["IT4IT","ITIL"]
 excerpt: "In February 2026, Peoplecert (formerly known as Axelos). published the long-awaited ITIL Version 5 Foundation. After reading the ITIL Version 5 Glossary and Quick Reference Guide , I became curious about what Version 5 has to offer in today's world"
-image: "https://javc.nl/wp-content/uploads/2026/03/ITIL_VERSION_5_RELEASED.png"
+image: "/wp-content/uploads/2026/03/ITIL_VERSION_5_RELEASED.png"
 readingTime: 8
 ---
 
@@ -47,7 +47,7 @@ The ambition to cover all 8 stages in a single framework is admirable, but it ma
 **ITIL Version 5 defines 34 practices** and relates them to the 8 lifecycle stages that they support or enable. **They are exactly the same practices as in ITIL 4.**  
 In the release notes, Peoplecert explicitly refers to this as "consistency", I rather consider this lack of innovation and insight.  
 
-![](https://javc.nl/wp-content/uploads/2026/03/ITIL_Version_5_processes.png)
+![](/wp-content/uploads/2026/03/ITIL_Version_5_processes.png)
 
 As you can see in the table. the practices each support/enable multiple life-cycle stages and each life-cycle stage is enabled/supported by at least 10 ITIL Version 5 practices. Each practice is defined in a high-level one-pager in the foundation documentation. Don't expect extensive flows or extensive role/raci descriptions in he Foundation docs.
 
@@ -73,7 +73,7 @@ Considering all of the above, most enterprises will likely want to integrate the
 
 For practice promotion, adoption, continual improvement, and governance I recommend to use the ITIL Version 5 guidance.
 
-![](https://javc.nl/wp-content/uploads/2026/03/Screenshot-2026-04-06-at-20.42.10.png)
+![](/wp-content/uploads/2026/03/Screenshot-2026-04-06-at-20.42.10.png)
 
 ### On April 6th 2026, I took the ITIL Version 5 exam.
 

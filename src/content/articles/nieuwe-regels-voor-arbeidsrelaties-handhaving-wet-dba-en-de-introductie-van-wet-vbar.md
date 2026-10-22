@@ -3,7 +3,7 @@ title: "Nieuwe Regels voor Arbeidsrelaties: Handhaving Wet DBA en de Introductie
 date: 2024-11-05
 categories: ["Information"]
 excerpt: "Met de regulering van arbeidsrelaties wil de overheid meer duidelijkheid en zekerheid bieden over de juridische positie van opdrachtgevers en opdrachtnemers. Door de handhaving van de Wet DBA en de introductie van de Wet VBAR wil zij schijnzelfstandigheid tegengaan en"
-image: "https://javc.nl/wp-content/uploads/2024/08/law.jpg"
+image: "/wp-content/uploads/2024/08/law.jpg"
 readingTime: 6
 ---
 

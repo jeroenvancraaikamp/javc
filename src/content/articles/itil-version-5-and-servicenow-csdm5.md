@@ -3,7 +3,7 @@ title: "ITIL Version 5,  CSDM5, DevSecOps and IT4IT 3.0 Overlap"
 date: 2026-04-04
 categories: ["ITIL","ServiceNow"]
 excerpt: "ITIL Version 5 was published in February 2026, and now people ask me how that aligns with DevOps, SecOps IT4IT 3.0 and CSDM5. The honest answer is: There appears to be no real alignment between the Frameworks. From a satellite,"
-image: "https://javc.nl/wp-content/uploads/2026/04/ITIL5-CSDM5-IT4IT30.png"
+image: "/wp-content/uploads/2026/04/ITIL5-CSDM5-IT4IT30.png"
 readingTime: 5
 ---
 
@@ -40,4 +40,4 @@ For companies that want to use ServiceNow, the following is recommended:
 
 Rather than interpreting and implementing variants of ITIL5 processes, it is recommended to use the process guides that come with the selected ServiceNow products, and are upgraded/innovated alongside the platform. If you decide to discontinue a ServiceNow product, you will likely buy another product that also comes with its own COTS commodity practices.  
 
-![](https://javc.nl/wp-content/uploads/2026/04/ITIL5-CSDM5-1.png)
+![](/wp-content/uploads/2026/04/ITIL5-CSDM5-1.png)

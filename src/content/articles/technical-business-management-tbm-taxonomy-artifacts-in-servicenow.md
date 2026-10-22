@@ -3,7 +3,7 @@ title: "Technical Business Management (TBM) Taxonomy artifacts in ServiceNow"
 date: 2022-12-24
 categories: ["TBM/CSDM/CMDB"]
 excerpt: "Like many others, I have used the Technical Business Management (TBM) Taxonomy of the TBM Open Forum in the ServiceNow implementations I was involved in. Rather than reinventing the wheel, I also used the definitions and the names of the"
-image: "https://javc.nl/wp-content/uploads/2022/12/TBM40.png"
+image: "/wp-content/uploads/2022/12/TBM40.png"
 readingTime: 1
 ---
 
@@ -13,7 +13,7 @@ ServiceNow is drafting a new "NOW Data Model," which will replace the current CS
 
 Those who already want to use TBM data to implement Digital Portfolio Management in ServiceNow may wish to map TBM 4.0 content to CSDM 4.0. The picture below was my initial proposal for mapping TBM 4.0 to CSDM 4.0+:
 
-![](https://javc.nl/wp-content/uploads/2022/12/TBMMap.png)
+![](/wp-content/uploads/2022/12/TBMMap.png)
 
 Once the TBM council and ServiceNow have endorsed the proposed mapping, it will be made available via the appropriate channels.
 
