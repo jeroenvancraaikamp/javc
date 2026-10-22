@@ -3,6 +3,8 @@ title: Customers/Employers
 menu: Customers/Employers
 order: 3
 wide: false
+layout: columns
+banner: ''
 ---
 
 ![](/wp-content/uploads/2015/07/law_post_3.jpg)
@@ -32,7 +34,7 @@ wide: false
 -   Ericsson China (Telecom Vendor)
 -   Misc Telco's in EMEA (Telecom)
 
-### ServiceNow Partners with/for whom I work(ed):
+##  ServiceNow Partners with/for whom I work(ed):
 
 -   KPMG (NL)
 -   Accenture (FI, NL)
