@@ -21,6 +21,7 @@ const pages = defineCollection({
     title: z.string(),
     order: z.number().default(99),
     menu: z.string().optional(),
+    wide: z.boolean().default(false),
   }),
 });
 

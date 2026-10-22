@@ -2,6 +2,7 @@
 title: "IT4IT Atlas"
 menu: "IT4IT Atlas"
 order: 4
+wide: true
 ---
 
 <p><a class="btn" href="https://it4it-tools-directory.jvancraaikamp.chatgpt.site/" target="_blank" rel="noopener">Open the IT4IT Atlas in a new tab</a></p>

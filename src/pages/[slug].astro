@@ -32,7 +32,7 @@ const share = [
 ---
 {kind === 'page' ? (
   <Base title={d.title} pageTitle={d.title} crumbs={[{ label: d.title }]}>
-    <div class="wrap page-body prose"><Content /></div>
+    <div class:list={["wrap page-body prose", { wide: d.wide }]}><Content /></div>
   </Base>
 ) : (
   <Base title={d.title} description={d.excerpt} pageTitle={d.title} crumbs={[{ label: 'Articles/Publications', href: '/articles/' }, { label: d.title }]}>
