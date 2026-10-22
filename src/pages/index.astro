@@ -1,8 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import PostCard from '../components/PostCard.astro';
-import { getArticles, SITE } from '../lib';
-const latest = (await getArticles()).slice(0, 3);
+import { SITE } from '../lib';
 const blocks = [
   { h: 'What I do', p: 'Together with stakeholders and agile team members, I plan, procure, innovate, integrate, implement and manage IT products/platforms for large enterprises.', cta: 'Skills/Expertise', href: '/skills/' },
   { h: 'So far', p: 'Over the last decades, I managed IT4IT and CSM projects/teams, as internal employee or external consultant in various technical, commercial and managerial roles.', cta: 'Projects/Assignments', href: '/experience/' },
@@ -38,10 +36,5 @@ const blocks = [
         <a class="btn btn-dark" href="/contact-me/">Contact me</a>
       </div>
     </div>
-  </section>
-  <section class="wrap latest">
-    <h2 class="section-title">Latest articles</h2>
-    <div class="cards cards-3">{latest.map((a) => <PostCard article={a} />)}</div>
-    <p class="center"><a class="btn" href="/articles/">All articles</a></p>
   </section>
 </Base>
