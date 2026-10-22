@@ -11,6 +11,12 @@ Source of the new javc.nl website: a static, WordPress-style blog built with [As
 
 See `src/content/articles/what-an-article-can-hold.md` for every supported content type.
 
+## Editing in the browser
+
+The site has a Sveltia CMS admin at `/admin/` (settings in `public/admin/config.yml`).
+Sign in with a GitHub fine-grained access token that has *Contents: read and write* on this repository.
+Every save is a commit to `main`, which Cloudflare deploys automatically.
+
 ## Importing from WordPress
 
 Export from WordPress (Tools → Export → All content) and run:

@@ -1,0 +1,78 @@
+# Sveltia CMS settings: https://sveltiacms.app/
+backend:
+  name: github
+  repo: jeroenvancraaikamp/javc
+  branch: main
+  commit_messages:
+    create: 'Nieuw {{collection}}: {{slug}}'
+    update: 'Bijgewerkt {{collection}}: {{slug}}'
+    delete: 'Verwijderd {{collection}}: {{slug}}'
+    uploadMedia: 'Afbeelding toegevoegd: {{path}}'
+    deleteMedia: 'Afbeelding verwijderd: {{path}}'
+
+site_url: https://javc.nl
+display_url: https://javc.nl
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: articles
+    label: Artikelen
+    label_singular: Artikel
+    folder: src/content/articles
+    extension: md
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    preview_path: '/{{slug}}/'
+    sortable_fields: [date, title]
+    view_groups:
+      - label: Jaar
+        field: date
+        pattern: '\d{4}'
+    fields:
+      - { name: title, label: Titel, widget: string }
+      - { name: date, label: Datum, widget: datetime, time_format: false, date_format: 'YYYY-MM-DD', format: 'YYYY-MM-DD' }
+      - name: categories
+        label: Categorieën
+        widget: select
+        multiple: true
+        default: [Uncategorized]
+        options:
+          - "AI4IT"
+          - "Announcement"
+          - "Anouncement"
+          - "Blog Article"
+          - "IT4CSM"
+          - "IT4ESM"
+          - "IT4IT"
+          - "ITIL"
+          - "Information"
+          - "Publication"
+          - "ServiceNow"
+          - "ServiceNow Scripts"
+          - "TBM/CSDM/CMDB"
+          - "Uncategorized"
+      - { name: excerpt, label: Samenvatting, widget: text, hint: 'Korte tekst op de artikeloverzichten.' }
+      - { name: image, label: Uitgelichte afbeelding, widget: image, required: false }
+      - { name: readingTime, label: Leestijd (minuten), widget: number, value_type: int, required: false }
+      - { name: popular, label: Tonen bij Popular, widget: boolean, default: false, required: false }
+      - { name: draft, label: Concept (niet publiceren), widget: boolean, default: false, required: false }
+      - { name: body, label: Tekst, widget: markdown, modes: [rich_text, raw] }
+
+  - name: pages
+    label: Pagina's
+    label_singular: Pagina
+    folder: src/content/pages
+    extension: md
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    preview_path: '/{{slug}}/'
+    fields:
+      - { name: title, label: Titel, widget: string }
+      - { name: menu, label: Naam in het menu, widget: string, required: false, hint: 'Leeg laten als de pagina niet in het menu hoort.' }
+      - { name: order, label: Volgorde in het menu, widget: number, value_type: int, default: 99, required: false }
+      - { name: wide, label: Volle breedte, widget: boolean, default: false, required: false }
+      - { name: body, label: Tekst, widget: markdown, modes: [rich_text, raw] }
