@@ -1,10 +1,13 @@
 ---
-title: "Projects/Assignments"
-menu: "Projects/Assignments"
+title: Projects/Assignments
+menu: Projects/Assignments
 order: 2
+wide: false
+layout: default
+banner: ''
 ---
 
--   ![](/wp-content/uploads/2022/10/shutterstock_1756612595.jpg)
+![](/wp-content/uploads/2022/10/shutterstock_1756612595.jpg)
 
 Projects/Assignments:
 
@@ -77,4 +80,4 @@ Projects/Assignments:
 -   Project Manager, Operator & Credit Card Calling Services
 -   Software Engineer Ericsson Public Telephony Exchange
 
-**MORE DETAILS CAN BE FOUND ON [MY LINKEDIN PROFILE](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj8rtCpvPb6AhU4_7sIHTimBKwQFnoECAkQAQ&url=https%3A%2F%2Fnl.linkedin.com%2Fin%2Fjeroenvancraaikamp&usg=AOvVaw3_ZDpR5u9OUD93fTYea_cN)**
+**MORE DETAILS CAN BE FOUND ON** [**MY LINKEDIN PROFILE**](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj8rtCpvPb6AhU4_7sIHTimBKwQFnoECAkQAQ&url=https%3A%2F%2Fnl.linkedin.com%2Fin%2Fjeroenvancraaikamp&usg=AOvVaw3_ZDpR5u9OUD93fTYea_cN)
