@@ -6,7 +6,7 @@ export const SITE = {
   name: 'JAVC Management & Consultancy',
   short: 'JAVC',
   author: 'Jeroen van Craaikamp',
-  linkedin: 'https://www.linkedin.com/',
+  linkedin: 'https://www.linkedin.com/in/jeroenvancraaikamp/',
   perPage: 6,
 };
 
