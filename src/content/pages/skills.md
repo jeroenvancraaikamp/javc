@@ -7,7 +7,7 @@ layout: columns
 banner: /wp-content/uploads/2022/10/shutterstock_1133982488.png
 ---
 
-### About me
+##  About me
 
 I was born in 1966 and lived in the Amsterdam Area for the first two decades of my life. Thereafter, I lived/worked in countries such as China, France, and Ireland. Since 2001, my wife and our two cats have lived with me in Amstelveen, in the Netherlands.
 
