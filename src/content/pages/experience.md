@@ -3,21 +3,19 @@ title: Projects/Assignments
 menu: Projects/Assignments
 order: 2
 wide: false
-layout: default
-banner: ''
 ---
 
 ![](/wp-content/uploads/2022/10/shutterstock_1756612595.jpg)
 
-Projects/Assignments:
+## Projects/Assignments:
 
-**2025-t.b.d., Stater Amersfoort (Mortgage Services)**
+**2025-2027, Stater Amersfoort (Mortgage Services)**
 
 -   ServiceNow Expert for the implementation of CMDB/CSDM, ITOM, and ITAM.
 
 **2024-2025, Brenntag Amsterdam (Global Chemical Company)**
 
--   Implementation lead for Configuration Management, Digital Portfolio Mngt, Application Portfolio Mngt and IT Operations Mngt
+-   Implementation lead for Configuration Management, Digital Portfolio Mngt, Application Portfolio Mngt, and IT Operations Mngt
 
 **2023-2024, Action (European Retailer)**
 
@@ -25,13 +23,13 @@ Projects/Assignments:
 
 **2023-H1, Booking.com (online travel agency)**
 
--   Programme Manager ServiceNow (IT Asset Management and IT Operations Management)
+-   Program Manager ServiceNow (IT Asset Management and IT Operations Management)
 
-**2021-2022, Inter IKEA Group (IKEA’s Holding Company),**
+**2021-2022, Inter IKEA Group (IKEA’s Holding Company)**
 
 -   Platform Manager ServiceNow
 
-**2019-2021, Digital Realty / Interxion (Global Data Centre Provider)**
+**2019-2021, Digital Realty / Interxion (Global Data Center Provider)**
 
 -   Product Owner ServiceNow
 -   Information Manager ICT & OPS Service Management
@@ -47,13 +45,13 @@ Projects/Assignments:
 -   Product Owner ServiceNow Agile/Backlog Mngt (Retail Banking, IT)
 -   Product Owner ServiceNow for Private Cloud (IT Infra Services)
 -   Manager of Expert Team IT4IT (Retail Banking, IT)
--   Programme manager implementation of HP’s uCMDB (Proc. Auth.)
+-   Program Manager, implementation of HP’s uCMDB (Proc. Auth.)
 -   Enterprise Process Owner for ITIL Configuration Mngt (Proc. Auth.)
 -   Mngt Consultant ITIL Configuration Mngt (Retail Banking, IT)
 
 **2001-2007, Altran/CapGemini (Consultancy agency)**
 
--   Programme Manager IT-Transformation at ING (Retail Banking, IT)
+-   Program Manager IT-Transformation at ING (Retail Banking, IT)
 -   Project Manager replacement True64/Alpha at T-Mobile-NL
 -   Project Manager implementation of TIBCO at T-Mobile-NL
 
@@ -61,13 +59,13 @@ Projects/Assignments:
 
 -   Manager Customer Services EMEA
 -   Service Marketing Manager EMEA
--   Programme Manager Voice over IP for misc. customers in EMEA
--   Programme Manager, Cable Network Roll-out in France & Ireland
+-   Program Manager Voice over IP for misc. customers in EMEA
+-   Program Manager, Cable Network Roll-out in France & Ireland
 
 **1997-1998, Intercai/StrICT (Consultancy agency)**
 
--   Programme Manager Telephony Blueprint at Belastingdienst
--   Programme Manager Outsourcing Telephony at KLM
+-   Program Manager Telephony Blueprint at Belastingdienst
+-   Program Manager Outsourcing Telephony at KLM
 
 **1996-1997, Ericsson China Company Ltd**
 
@@ -78,6 +76,6 @@ Projects/Assignments:
 -   Business Consultant for KPN’s Corporate Account Group
 -   Manager Operations, Voice Response & Operator Services
 -   Project Manager, Operator & Credit Card Calling Services
--   Software Engineer Ericsson Public Telephony Exchange
+-   Software Engineer, Ericsson Public Telephony Exchange
 
 **MORE DETAILS CAN BE FOUND ON** [**MY LINKEDIN PROFILE**](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwj8rtCpvPb6AhU4_7sIHTimBKwQFnoECAkQAQ&url=https%3A%2F%2Fnl.linkedin.com%2Fin%2Fjeroenvancraaikamp&usg=AOvVaw3_ZDpR5u9OUD93fTYea_cN)
