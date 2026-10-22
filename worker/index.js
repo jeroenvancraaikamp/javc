@@ -7,6 +7,7 @@
 // Cloudflare Workers AI (free up to a daily limit, no key needed).
 import Anthropic from '@anthropic-ai/sdk';
 import KNOWLEDGE from './knowledge.json';
+import WP_IDS from './wp-ids.json';
 
 const CLAUDE_MODEL = 'claude-opus-5-5';
 const WORKERS_AI_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
@@ -198,9 +199,35 @@ async function contact(request, env) {
   return json({ ok: true });
 }
 
+// --- redirects: www → javc.nl, and old WordPress addresses → their new place ------
+const WP_ADMIN = 'https://javcmanagement.nl/wp-admin/';
+const CATEGORY_RENAMES = { csdm: 'tbm-csdm-cmdb' };
+
+function redirectFor(url) {
+  if (url.hostname === 'www.javc.nl') return `https://javc.nl${url.pathname}${url.search}`;
+  const p = url.pathname;
+  // ?p=123 and ?page_id=123 (old WordPress short links)
+  const id = url.searchParams.get('p') || url.searchParams.get('page_id');
+  if (p === '/' && id && WP_IDS[id]) return WP_IDS[id];
+  if (/^\/(wp-admin|wp-login\.php)/.test(p)) return WP_ADMIN;
+  if (/^\/(feed|comments\/feed)\/?$/.test(p)) return '/articles/';
+  let m;
+  if ((m = p.match(/^\/category\/([^/]+)\/(?:page\/(\d+)\/)?$/))) {
+    const cat = CATEGORY_RENAMES[m[1]];
+    if (cat || m[2]) return `/category/${cat || m[1]}/${m[2] && m[2] !== '1' ? m[2] + '/' : ''}`;
+  }
+  if ((m = p.match(/^\/articles\/page\/(\d+)\/?$/))) return m[1] === '1' ? '/articles/' : `/articles/${m[1]}/`;
+  if ((m = p.match(/^\/(20\d\d)\/(\d\d)\/?$/))) return `/archive/${m[1]}/${m[2]}/`;
+  if (/^\/(tag|author|portfolio-items|portfolio_category|slide)\//.test(p)) return '/articles/';
+  if (/^\/[^/]+\/feed\/?$/.test(p)) return p.replace(/feed\/?$/, '');
+  return null;
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const to = redirectFor(url);
+    if (to) return Response.redirect(new URL(to, url).toString(), 301);
     if (url.pathname === '/api/chat') return chat(request, env);
     if (url.pathname === '/api/contact') return contact(request, env);
     return env.ASSETS.fetch(request);
