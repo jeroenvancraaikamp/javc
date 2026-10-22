@@ -2,7 +2,8 @@
 import { getArticles, getCategories, getArchives, monthName, formatDate, pad } from '../lib';
 const articles = await getArticles();
 const recent = articles.slice(0, 3);
-const popular = articles.filter((a) => a.data.popular).slice(0, 3);
+const flagged = articles.filter((a) => a.data.popular);
+const popular = [...flagged, ...recent.filter((a) => !flagged.includes(a))].slice(0, 3);
 const categories = await getCategories();
 const archives = await getArchives();
 ---
@@ -21,7 +22,7 @@ const archives = await getArchives();
       <button role="tab" aria-selected="false" data-tab="comments">Comments</button>
     </div>
     <ul class="tab-panel" data-panel="popular">
-      {(popular.length ? popular : recent).map((a) => (
+      {popular.map((a) => (
         <li><a href={`/${a.id}/`}>{a.data.title}</a><small>{formatDate(a.data.date)}</small></li>
       ))}
     </ul>
