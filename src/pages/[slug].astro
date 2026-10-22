@@ -38,6 +38,7 @@ const share = [
   <Base title={d.title} description={d.excerpt} pageTitle={d.title} crumbs={[{ label: 'Articles/Publications', href: '/articles/' }, { label: d.title }]}>
     <div class="wrap layout">
       <article class="primary single">
+        <h1 class="post-title">{d.title}</h1>
         <img class="featured" src={d.image ?? `/images/${entry.id}.svg`} alt="" width="1200" height="675" />
         <div class="meta">
           By {SITE.author} · {formatDate(d.date)} · {d.categories.map((c: string, i: number) => <>{i > 0 && ', '}<a href={`/category/${slugify(c)}/`}>{c}</a></>)}

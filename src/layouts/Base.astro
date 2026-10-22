@@ -59,17 +59,6 @@ const articlesActive = ['/articles/', '/category/', '/archive/', '/search/'].som
         </nav>
       </div>
     </header>
-    {pageTitle && (
-      <div class="titlebar">
-        <div class="wrap">
-          <h1>{pageTitle}</h1>
-          <ol class="crumbs">
-            <li><a href="/">Home</a></li>
-            {crumbs.map((c) => <li>{c.href ? <a href={c.href}>{c.label}</a> : c.label}</li>)}
-          </ol>
-        </div>
-      </div>
-    )}
     <main id="content">
       <slot />
     </main>

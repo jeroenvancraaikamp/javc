@@ -9,6 +9,7 @@ const { title, crumbs, page, base, intro } = Astro.props;
 <Base title={title} pageTitle={title} crumbs={crumbs}>
   <div class="wrap layout">
     <div class="primary">
+      {title !== 'Articles/Publications' && <h1 class="list-title">{title}</h1>}
       {intro && <p class="intro">{intro}</p>}
       <div class="cards">{page.data.map((a: any) => <PostCard article={a} />)}</div>
       <Pagination page={page} base={base} />

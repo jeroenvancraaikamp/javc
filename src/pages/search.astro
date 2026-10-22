@@ -5,6 +5,7 @@ import Sidebar from '../components/Sidebar.astro';
 <Base title="Search" pageTitle="Search results" crumbs={[{ label: 'Search' }]}>
   <div class="wrap layout">
     <div class="primary">
+      <h1 class="list-title">Search results</h1>
       <form class="searchform big" action="/search/">
         <input name="q" type="search" placeholder="Search articles..." id="q" />
         <button type="submit">Search</button>
