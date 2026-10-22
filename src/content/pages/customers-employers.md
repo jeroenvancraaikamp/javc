@@ -1,12 +1,13 @@
 ---
-title: "Customers/Employers"
-menu: "Customers/Employers"
+title: Customers/Employers
+menu: Customers/Employers
 order: 3
+wide: false
 ---
 
 ![](/wp-content/uploads/2015/07/law_post_3.jpg)
 
-Companies I work(ed) for:
+### Companies I work(ed) for:
 
 -   Stater (Mortgage Service Provider)
 -   Brenntag (Global Chemical Distributor)
@@ -22,7 +23,7 @@ Companies I work(ed) for:
 -   Intercai/StrICT (ICT Consultancy)
 -   KPN (Telecom Provider)
 
-Customers of the above companies:
+### Customers of the above companies:
 
 -   KLM (Airline)
 -   Belastingdienst (Public Service)
@@ -31,7 +32,7 @@ Customers of the above companies:
 -   Ericsson China (Telecom Vendor)
 -   Misc Telco's in EMEA (Telecom)
 
-ServiceNow Partners with/for whom I work(ed):
+### ServiceNow Partners with/for whom I work(ed):
 
 -   KPMG (NL)
 -   Accenture (FI, NL)
@@ -45,10 +46,9 @@ ServiceNow Partners with/for whom I work(ed):
 -   Wipro (NL)
 -   Cognizant (NL)
 -   Pink Elephant (NL, UK, SA))  
-    
 -   Infosys (NL, UK, IN)
 
-Other Parties with/for whom I work(ed):
+### Other Parties with/for whom I work(ed):
 
 -   The Next Moove (NL)
 -   Tergos/Vibe Group (NL)
