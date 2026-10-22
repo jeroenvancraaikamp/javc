@@ -59,7 +59,7 @@ I love sharing the ServiceNow expertise I have built while working as a Consulta
 
 I can **implementation, maintenance, and innovation of the ServiceNow Platform, including its supported Practices and** **Integrations.** As part of the engagement, temporary project roles can be transitioned into target roles within the operating model.
 
-## ##Product Knowledge
+## Product Knowledge ##
 
 **ServiceNow Platform Modules**
 
@@ -98,7 +98,7 @@ I can **implementation, maintenance, and innovation of the ServiceNow Platform, 
 -   IBM Tivoli Suite (TADDM)
 -   Oracle HCM, Workday (HR)
 
-M**arket Standards**
+**Market Standards**
 
 -   TBM 5
 -   CSDM 5
