@@ -59,7 +59,7 @@ I love to share the ServiceNow expertise I have built whilst working as a Consul
 
 I can participate in a startup and, thereafter, **manage the implementation, maintenance, and innovation of the ServiceNow Platform, including its supported Practices and** **Integrations.** As part of the engagement, temporary project roles can be transitioned into target roles within the operating model.
 
-## ##Product Knowledge
+## Product Knowledge
 
 **ServiceNow Platform Modules**
 
