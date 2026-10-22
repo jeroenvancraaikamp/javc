@@ -1,5 +1,6 @@
 ---
 title: "Privacy Policy"
+banner: /wp-content/uploads/2015/07/law_post_9-compressor.jpg
 ---
 
 # Privacybeleid *JAVC Management & Consultancy*
