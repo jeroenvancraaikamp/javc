@@ -11,27 +11,37 @@ const blocks = [
 ---
 <Base title={SITE.name}>
   <section class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Independent IT Management &amp; Consultancy</p>
-      <h1>After years as an internal employee, you can now hire my skills and experience.</h1>
-      <a class="btn" href="/contact-me/">Contact me</a>
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/media/hero-poster.jpg" aria-hidden="true">
+      <source src="/media/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-shade"></div>
+    <div class="wrap hero-text">
+      <h1>Welcome at JAVC Management &amp; Consultancy</h1>
+      <p class="hero-sub">The website of Jeroen A. van Craaikamp in Amstelveen, Netherlands.</p>
+      <p class="hero-body"><span>After building up skills and 20+ years of experience as an internal employee, companies, can now hire me as self-employed project/program manager, platform/product owner or architect in the Service Management workspace, utilizing IT4IT platforms such as ServiceNow.</span></p>
     </div>
   </section>
-  <section class="wrap blocks">
-    {blocks.map((b) => (
-      <div class="block">
-        <h2>{b.h}</h2>
-        <p>{b.p}</p>
-        <a class="btn btn-outline" href={b.href}>{b.cta}</a>
+  <section class="home-main">
+    <div class="wrap">
+      <p class="home-intro">The "<a href="/articles/">Articles/Publications</a>" page features a few dozen blogs about the various things that keep me busy.</p>
+      <div class="blocks">
+        {blocks.map((b) => (
+          <div class="block">
+            <h2>{b.h}</h2>
+            <p>{b.p}</p>
+            <a class="btn btn-dark" href={b.href}>{b.cta}</a>
+          </div>
+        ))}
       </div>
-    ))}
+      <div class="questions">
+        <h2>Any questions?</h2>
+        <a class="btn btn-dark" href="/contact-me/">Contact me</a>
+      </div>
+    </div>
   </section>
   <section class="wrap latest">
     <h2 class="section-title">Latest articles</h2>
     <div class="cards cards-3">{latest.map((a) => <PostCard article={a} />)}</div>
     <p class="center"><a class="btn" href="/articles/">All articles</a></p>
-  </section>
-  <section class="cta-band">
-    <div class="wrap"><h2>Any questions?</h2><a class="btn btn-light" href="/contact-me/">Contact me</a></div>
   </section>
 </Base>
