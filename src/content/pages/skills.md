@@ -57,9 +57,9 @@ I believe I'm best in a role that requires a mix of managerial, process, and tec
 
 I love sharing the ServiceNow expertise I have built while working as a Consultant. For a couple of years, I have [**articles**](/articles/) CSDM, TBM, AI, and ServiceNow CMDB.
 
-I can participate in a startup and, thereafter, **manage the implementation, maintenance, and innovation of the ServiceNow Platform, including its supported Practices and** **Integrations.** As part of the engagement, temporary project roles can be transitioned into target roles within the operating model.
+I can **implementation, maintenance, and innovation of the ServiceNow Platform, including its supported Practices and** **Integrations.** As part of the engagement, temporary project roles can be transitioned into target roles within the operating model.
 
-## Product Knowledge
+## ##Product Knowledge
 
 **ServiceNow Platform Modules**
 
