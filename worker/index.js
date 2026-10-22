@@ -1,0 +1,163 @@
+// Cloudflare Worker: serves the static site (dist/) and the chatbot endpoint /api/chat.
+// The chatbot looks up the most relevant passages from the articles, pages and documents
+// (worker/knowledge.json, built by scripts/build-knowledge.mjs) and lets a language model
+// answer from those passages.
+//
+// Model: Claude when the secret ANTHROPIC_API_KEY is set on the Worker, otherwise
+// Cloudflare Workers AI (free up to a daily limit, no key needed).
+import Anthropic from '@anthropic-ai/sdk';
+import KNOWLEDGE from './knowledge.json';
+
+const CLAUDE_MODEL = 'claude-opus-5-5';
+const WORKERS_AI_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
+const TOP_K = 8;
+const MAX_HISTORY = 10;
+const MAX_MESSAGE = 2000;
+
+// --- search (BM25 over the chunks) ---------------------------------------
+const STOP = new Set(('a an and are as at be by can de den der die do does een en for from had has have het hoe how i ' +
+  'ik in is it its je jij kan me met mijn my naar niet of om on op or over that the their there this to van voor ' +
+  'wat was we what when where which who why will with would you your zijn').split(' '));
+
+function tokens(text) {
+  return (text.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g, '').match(/[a-z0-9]+/g) || [])
+    .filter((t) => t.length > 1 && !STOP.has(t));
+}
+
+const docs = KNOWLEDGE.map((c) => {
+  const tf = new Map();
+  const toks = tokens(`${c.title} ${c.title} ${c.text}`);
+  for (const t of toks) tf.set(t, (tf.get(t) || 0) + 1);
+  return { tf, len: toks.length };
+});
+const avgLen = docs.reduce((s, d) => s + d.len, 0) / docs.length;
+const df = new Map();
+for (const d of docs) for (const t of d.tf.keys()) df.set(t, (df.get(t) || 0) + 1);
+
+function search(query, k = TOP_K) {
+  const q = [...new Set(tokens(query))];
+  const N = docs.length;
+  const scored = [];
+  docs.forEach((d, i) => {
+    let s = 0;
+    for (const t of q) {
+      const f = d.tf.get(t);
+      if (!f) continue;
+      const idf = Math.log(1 + (N - df.get(t) + 0.5) / (df.get(t) + 0.5));
+      s += idf * (f * 2.2) / (f + 1.2 * (0.25 + 0.75 * d.len / avgLen));
+    }
+    if (s > 0) scored.push([s, i]);
+  });
+  scored.sort((a, b) => b[0] - a[0]);
+  // At most 4 passages per source, so one long document doesn't crowd out the rest.
+  const perSource = new Map();
+  const out = [];
+  for (const [, i] of scored) {
+    const c = KNOWLEDGE[i];
+    const n = perSource.get(c.title) || 0;
+    if (n >= 4) continue;
+    perSource.set(c.title, n + 1);
+    out.push(c);
+    if (out.length === k) break;
+  }
+  return out;
+}
+
+// --- prompt ---------------------------------------------------------------
+const SYSTEM = `You are the assistant on javc.nl, the website of Jeroen van Craaikamp (JAVC Management & Consultancy), a freelance ServiceNow implementation manager and consultant in Amstelveen, the Netherlands. Visitors ask about Jeroen, his experience and services, and the topics he writes about (ServiceNow, CMDB, CSDM, IT4IT, ITIL, TBM, ESM).
+
+How to answer:
+- Answer in the language the visitor writes in (usually Dutch or English).
+- Base your answer on the passages provided with each question. If they don't cover the question, say you don't know based on the site, and don't make things up. General background knowledge is fine for explaining a concept, but never invent facts about Jeroen.
+- Keep answers short and conversational (a few sentences or a short list). Your answer may be read aloud, so avoid tables.
+- When an answer comes from an article or page, mention its title and link it in Markdown with the path given, e.g. [Title](/path/).
+- Refer to Jeroen in the third person. For hiring, quotes or contact, point to the contact page [Contact me](/contact-me/) or Info@JAVC.nl.`;
+
+function context(chunks) {
+  return chunks.map((c, i) =>
+    `<passage index="${i + 1}" source="${c.title}"${c.url ? ` path="${c.url}"` : ''}${c.date ? ` date="${c.date}"` : ''}>\n${c.text}\n</passage>`
+  ).join('\n\n');
+}
+
+// --- models -----------------------------------------------------------------
+async function askClaude(env, history, question, passages) {
+  const client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
+  const res = await client.beta.messages.create({
+    model: CLAUDE_MODEL,
+    max_tokens: 4000,
+    betas: ['server-side-fallback-2026-07-01'],
+    fallbacks: 'default',
+    output_config: { effort: 'low' },
+    system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
+    messages: [
+      ...history,
+      { role: 'user', content: `<passages>\n${passages}\n</passages>\n\nVisitor's question: ${question}` },
+    ],
+  });
+  if (res.stop_reason === 'refusal') return "Sorry, I can't help with that question.";
+  return res.content.filter((b) => b.type === 'text').map((b) => b.text).join('').trim();
+}
+
+async function askWorkersAI(env, history, question, passages) {
+  const res = await env.AI.run(WORKERS_AI_MODEL, {
+    max_tokens: 800,
+    messages: [
+      { role: 'system', content: SYSTEM },
+      ...history,
+      { role: 'user', content: `Passages from the website:\n\n${passages}\n\nVisitor's question: ${question}` },
+    ],
+  });
+  return (res.response || '').trim();
+}
+
+// --- handler ----------------------------------------------------------------
+function json(data, status = 200) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' },
+  });
+}
+
+async function chat(request, env) {
+  if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
+  const origin = request.headers.get('origin');
+  if (origin && new URL(origin).host !== new URL(request.url).host) return json({ error: 'Forbidden' }, 403);
+
+  let body;
+  try { body = await request.json(); } catch { return json({ error: 'Bad request' }, 400); }
+  const msgs = (Array.isArray(body?.messages) ? body.messages : [])
+    .filter((m) => (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string' && m.content.trim())
+    .map((m) => ({ role: m.role, content: m.content.slice(0, MAX_MESSAGE) }))
+    .slice(-MAX_HISTORY);
+  while (msgs.length && msgs[0].role !== 'user') msgs.shift();
+  const last = msgs.pop();
+  if (!last || last.role !== 'user') return json({ error: 'No question' }, 400);
+
+  // Search with the question plus the previous question, so follow-ups ("and what about X?") still find context.
+  const prevUser = [...msgs].reverse().find((m) => m.role === 'user');
+  const found = search(`${last.content} ${prevUser ? prevUser.content : ''}`);
+  const passages = context(found);
+
+  try {
+    const answer = env.ANTHROPIC_API_KEY
+      ? await askClaude(env, msgs, last.content, passages)
+      : await askWorkersAI(env, msgs, last.content, passages);
+    const seen = new Set();
+    const sources = found
+      .filter((c) => c.url && !seen.has(c.url) && seen.add(c.url))
+      .slice(0, 3)
+      .map((c) => ({ title: c.title, url: c.url }));
+    return json({ answer: answer || 'Sorry, I have no answer to that.', sources });
+  } catch (err) {
+    console.error('chat error', err);
+    return json({ error: 'The assistant is not available right now. Please try again later.' }, 503);
+  }
+}
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    if (url.pathname === '/api/chat') return chat(request, env);
+    return env.ASSETS.fetch(request);
+  },
+};

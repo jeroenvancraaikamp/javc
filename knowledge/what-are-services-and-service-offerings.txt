@@ -1,0 +1,243 @@
+What are services and service
+offerings?
+
+Asset number: 0003948
+July 2024
+
+What are services and service offerings?
+Questions addressed:
+Page 2:
+• What is a service and a service
+offering?
+• How is a service different from
+a project?
+
+•
+
+A service is a means of delivering value to customers by facilitating outcomes that customers want to achieve without
+owning the costs and risks
+
+•
+
+A service offering consists of one or more service commitments that uniquely define the level of service in terms of
+availability, scope, pricing, and packaging options. Customers can choose to receive different levels of performance and
+features for a given service through service offerings (typically made available as distinct items in the service catalog)
+
+•
+
+A service can have multiple service offerings (each made available as separate catalog items) with different service level
+agreements (SLAs)
+
+Page 3:
+• What are the different types of
+services? Examples?
+
+Examples of a service and service offerings
+
+• How do different services
+relate to each other?
+
+Example #1:
+
+Page 4:
+• What best practices should I
+consider?
+
+Service
+
+Project
+Business service
+Financial accounting
+
+• How should we categorize
+services?
+
+How is a service different from a project?
+
+•
+
+This is a point-in-time effort to build
+new functionality or deliver a
+business change, such as
+deploying a new application
+
+•
+
+Success is measured in terms of
+project delivery (schedule, budget,
+scope)
+
+•
+
+A project is managed by a project
+manager who moves to a new
+project once the current project is
+complete
+
+contains
+
+Offering #1
+General ledger
+
+Offering #2
+Payables
+
+Example #2:
+Technical service
+Hosting
+contains
+
+Offering #1
+Hosting (standard)
+
+Offering #2
+Hosting (advanced)
+
+•
+
+This is the ongoing management and
+enhancement of existing
+functionality or a business activity,
+like server management
+
+•
+
+Success is measured in terms of
+ongoing service performance
+(quality, cost, demand, and business
+impact)
+
+•
+
+A service is managed by a service
+manager who owns the entire
+service lifecycle from launch to
+retirement
+
+© 2024 ServiceNow, Inc. All Rights Reserved.
+
+2
+
+What are services and service offerings? (Cont’d)
+What are the different service types available in ServiceNow?
+ServiceNow® ships with three fundamental service types (below). You can define new types to align with the service architecture in your organization. For example, if you have
+shared services, such as an analytics service, you can have a separate service type defined in ServiceNow.
+1. A business service is a service type that is published to business users. It typically supports one or more business capabilities. A business capability is a high-level capability (or a
+set of specific tasks) that an organization requires to execute its business model or fulfill its mission
+2. An application service is a service type that is a logical representation of a deployed application stack. Note: An application service differs from an application, and there is
+no one-to-one relationship between them. (See the example in the figure below)
+3. A technical service is a service type that is published to service owners. It typically underpins a business or application service
+Can you give examples of different service types and their relationships?
+
+How should we categorize services into different types?
+
+Here’s one example:
+
+Use these questions to effectively categorize a service:
+Business
+
+Business capability
+Managing finance
+
+Services
+Infrastructure
+Supported by
+
+Business service
+Financial accounting
+
+Provided by
+
+Business application
+General ledger
+
+Consumes
+
+Shared services
+Analytics
+
+Contains
+
+Offering
+General ledger
+Depends on
+Consumes
+
+Application service
+SAP finance
+
+•
+
+What are the outcomes enabled through this service?
+
+•
+
+Can this service stand alone, or does it need to be used in conjunction with
+another one?
+
+•
+
+Who owns this service?
+
+•
+
+Who will pay for this service?
+
+•
+
+Who are the key users of this service?
+
+Consumes
+
+Depends on
+
+Technical service
+Hosting
+
+Contains
+
+Offering
+Linux
+
+Manages
+
+Tech infrastructure
+Application server
+Consumes
+
+© 2024 ServiceNow, Inc. All Rights Reserved.
+
+3
+
+What are services and service offerings? (Cont’d)
+What service management best practices should we consider?
+
+Best practice
+
+Resources to help you implement
+
+1. Create a standard set of definitions for service reporting and service
+modeling.
+
+Refer to the ServiceNow Common Services Data Model.
+
+2. Understand the request management process within the Now Platform®.
+
+Refer to our process guide on service catalog and request
+management.
+
+3. Manage all services and service offerings within the service portfolio.
+
+Learn about the ServiceNow Service Portfolio module and its
+benefits.
+
+4. Define user roles and limit access to service types based on those roles.
+
+Learn about how to enable subscribe by user for your service
+offerings.
+
+© 2024 ServiceNow, Inc. All Rights Reserved.
+
+4
+
+

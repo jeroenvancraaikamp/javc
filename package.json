@@ -5,17 +5,20 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/build-knowledge.mjs && astro build",
     "preview": "astro preview",
-    "import": "node scripts/import-wxr.mjs"
+    "import": "node scripts/import-wxr.mjs",
+    "knowledge": "node scripts/build-knowledge.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.1.0",
     "astro": "^5.18.2",
     "marked": "^14.1.4"
   },
   "devDependencies": {
     "fast-xml-parser": "^4.5.7",
     "turndown": "^7.2.4",
-    "turndown-plugin-gfm": "^1.0.2"
+    "turndown-plugin-gfm": "^1.0.2",
+    "wrangler": "^4.152.0"
   }
 }

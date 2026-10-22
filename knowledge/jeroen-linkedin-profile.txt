@@ -1,0 +1,346 @@
+Contact
+Randwijcklaan 1
+1181 BL AMSTELVEEN
+The Netherlands
++31-6-43583097 (Mobile)
+JeroenVanCraaikamp@JAvC.nl
+
+www.linkedin.com/in/
+jeroenvancraaikamp (LinkedIn)
+www.javc.nl (Company)
+
+Top Skills
+Security Operations
+Vulnerability Management
+Encryption
+
+Languages
+English
+
+Jeroen van Craaikamp
+ServiceNow Implementation Manager
+Amstelveen, North Holland, Netherlands
+
+Summary
+As a freelance program/project manager, and platform/product
+owner, I manage/coordinate the procurement, implementation,
+integration, innovation, and maintenance of IT Service Management
+(ITSM), IT Operations Management (ITOM), IT Asset Management
+(ITAM), Strategic Portfolio Management (SPM), Customer Service
+Management (CSM) and Field Service Management (FSM)
+capabilities on the ServiceNow Platform. My customers/employers
+usually are large enterprises or partners of service management
+platform vendors.
+
+German
+Dutch
+French (social)
+
+Experience
+Stater
+ServiceNow Implementation Manager
+
+September 2025 - Present (1 year 2 months)
+Amersfoort, Utrecht, Netherlands
+• Design and implement a robust Configuration Management Database
+(CMDB) for enhanced data integrity and visibility.
+• Develop ServiceNow Encryption solutions to secure sensitive information,
+ensuring compliance with industry standards.
+• Advise clients on integrating Security Operations (SecOps) and Vulnerability
+Response (VR) functionalities, improving overall security posture.
+
+JAVC Management & Consultancy
+ServiceNow Implementation Manager
+
+December 2022 - Present (3 years 11 months)
+Amstelveen, North Holland, Netherlands
+JAVC Management & Consultancy is my proprietorship (eenmanszaak) that
+provides management and consultancy services to organizations that (want
+to) use ServiceNow as its Enterprise Service Management Platform for IT-,
+Employee-, or Customer Workflows. ServiceNow Partners and ServiceNow
+Customers may contract me (as a self-employed employee, ZZP'er) to design,
+procure, integrate, implement, and innovate (a portion of) the ServiceNow
+Platform, incl. its supported practices.
+Page 1 of 8
+
+Since December 2022, I have been contracted for assignments for/at
+companies such as Booking.com, and Action (see experiences). I provide
+consults on the wider ServiceNow ecosystem to research agencies in Europe.
+I co-authored the whitepaper "TBM Integration with ServiceNow® CSDM" of
+the TBM Council.
+
+Brenntag
+Configuration Management Manager (ServiceNow)
+July 2024 - September 2025 (1 year 3 months)
+Amsterdam, North Holland, Netherlands
+
+For Brenntag, I managed the implementation and innovation of Configuration
+Management, which includes Digital Portfolio Management (DPM), and IT
+Operation Management (ITOM) practices.
+Brenntag is a global leader in the chemical distribution industry, serving around
+185,000 customers in various industries, including pharmaceuticals, food,
+personal care, agriculture, paints, and coatings. Brenntag employs 17,500
+people at about 600 locations in 72 countries.
+The manually maintained digital portfolio artefacts are owned/governed using
+standard enterprise-wide processes. Where possible, the CMDB/Asset data
+gathering/update and mapping is automated in near real-time by integrating
+ServiceNow with Brenntag's IT4IT and federating data, e.g., from authoritative
+sources. Brenntag adopted the Common Service Data Model (CSDM5).
+
+Action
+IT Project Manager ESM (ServiceNow)
+
+June 2023 - June 2024 (1 year 1 month)
+Zwaagdijk-Oost, North Holland, Netherlands
+As IT Project Manager for Action, I integrated the ServiceNow Platform
+implementation that Deloitte carried out. The Enterprise Service Management
+(ESM) Platform supports multiple practices (e.g. SPM, CSM, ITSM, and HR)
+and is used by/for the 2500 Action stores, and the Action Distribution Centers
+in Europe. The ESM platform is integrated with and obtains master data from
+other enterprise Action platforms (e.g. SuccessFactors, SAP, MuleSoft, Azure,
+Planon, SailPoint). It is e-bonded with the ITSM solutions of the external
+managed service providers that support Action.
+
+Booking.com
+Page 2 of 8
+
+Program Manager Asset Management (ServiceNow)
+January 2023 - July 2023 (7 months)
+Amsterdam, North Holland, Netherlands
+
+As program manager for the ACE (Asset & Change Excellence) Program, I
+assisted in defining Bookings' IT Asset Management (ITAM) and IT Operations
+Management (ITOM) Policies and Guidelines. Principal stakeholder for
+implementing Software Asset Management and Hardware Asset Management
+platform capabilities of ServiceNow (incl. CMDB Discovery and the Common
+Service Data Model (CSDM).
+
+IKEA
+Platform Manager ServiceNow
+
+December 2021 - June 2022 (7 months)
+Delft
+Legacy ServiceNow solutions of Inter IKEA Group were consolidated into
+a new Enterprise Service Management (ESM) platform. The new platform
+caters for modern automated IT- and Employee-workflows and is used by
+fulfillers/agents of Inter IKEA Group, who support the IKEA core businesses
+Supply, Range and Franchise. The ESM platform was integrated with other
+platforms that are used within IKEA, enabling the digital journey that IKEA
+is on. Besides keeping the lights on for the current ServiceNow solutions, I
+lead the implementation, innovation and maintenance of the ESM Platform, its
+interfaces and the practices that it supports. I worked with an ESM Platform
+DevOps team (that was resourced by internal and external staff) and liaised
+with IKEA's process leads, architects and leadership. I maintained the ESM
+platform roadmap, demand pipeline and product backlog, that are closely
+aligned with the stakeholders' needs, architectural guidelines/principles and
+the vendors' Best Practices and its release planning.
+
+Digital Realty
+Product Owner Service Management
+
+June 2019 - December 2021 (2 years 7 months)
+Hoofddorp, Netherlands
+In 2019, I joined Interxion Europe (based in the Netherlands), which was
+acquired by Digital Realty (DLR) in Q2/2020. DLR is a rapidly growing global
+carrier- and cloud-neutral data center operator. DLR operates 300+ data
+centers in 27 countries on six continents, connecting 4.000+ companies,
+including most leading cloud/internet/telecom/media service providers.
+I was the Platform Owner Service Management, reporting to DLR's CIO
+for EMEA & APAC. The Service Management Platform (that makes use of
+Page 3 of 8
+
+ServiceNow, Ultimo, and misc. other technical solutions) enabled Customer
+Service Mngt (CSM), Field Service Mngt (FSM), IT Service Mngt (ITSM), IT
+Business Mngt (ITBM), IT Operations Mngt (ITOM) and IT Asset Mngt (ITAM)
+practices. The Platform is used by IT Applications & Infrastructure, DLR's Data
+Center/Field Operations, and by DLR's external customers.
+In 2019 we implemented standard Service Management Practices in the 11
+countries that Interxion served. In upcoming years, the Service Management
+Platform will be extended globally within DLR, replacing the local/regional
+Service Management practices used by ICT & OPS today. As one of DLR's
+Enterprise IT Architects, I define the (integrations of the) Target Enterprise ITArchitecture, which will form the basis for the global digital transformation.
+I converted business opportunities/needs to solutions, maintained product
+strategy & roadmap, ensured the Platform was maintained, and managed
+consolidation/merger of the keys used for Enterprise Service Management,
+including its integrations with the other Enterprise Platforms.
+
+CRH
+Product Owner, ServiceNow
+
+January 2017 - May 2019 (2 years 5 months)
+The Randstad, Netherlands
+Rolled out ServiceNow to 102 CRH Operating Companies in Europe &
+Rest of World (30K Employees in 32 countries). Innovated and maintained
+ServiceNow@CRH Platform. Owned CRH's ServiceNow product vision/
+roadmap and CRH's Enterprise Service Management practices/integrations
+(aka ITSM, ITOM and ITBM). Outsourced technical maintenance of
+ServiceNow to partners. Managed ServiceNow cost center budget and product
+pricing/invoicing. Member of Europe IT, Infra & Operations Mngt Team.
+
+ING
+2 years 2 months
+
+Chief Product Owner (CPO) Enterprise ServiceNow Platform
+January 2016 - December 2016 (1 year)
+The Randstad, Netherlands
+
+ING has chosen ServiceNow as strategic Service Management platform. A
+number of initiatives were conducted in parallel, which made ServiceNow
+ING's platform for Steering, Planning, Operation and Contracting activities.
+The platform was linked with a dozen IT4IT tools (inside/outside ING) and
+supported/integrated multiple practices (e.g. Agile Backlog Mngt, IT Service
+Page 4 of 8
+
+Mngt, Enterprise Support Mngt, etc) used by multiple User Communities inside
+ING As Chief Product Owner, I aligned and prioritised the miscellaneous
+ServiceNow related initiatives, maintained the platform roadmap, liaised with
+the various stakeholders and managed ServiceNow licenses/contracts incl.
+cross-charging thereof.
+
+Product Owner ServiceNow
+
+September 2015 - January 2016 (5 months)
+The Randstad, Netherlands
+Between mid August 2015 and mid December 2015, ING implemented
+ServiceNow for 2.500 users of Domestic Banking in the Netherlands. As
+Product Owner I coordinated the configuration and maintenance of the
+ServiceNow Platform and its interfaces, in particular the Agile Backlog Mngt
+capabilities thereof that enabled a new Standardized Agile Way of Working.
+In 9 weeks time, the platform was turned up, the backlog/master data was
+cleansed/loaded and 2.500 users (1 domain, 30 tribes and 300 squads that
+initially used JIRA) were trained to use ServiceNow.
+
+Stream Lead ServiceNow for ING's Private Cloud
+November 2014 - January 2016 (1 year 3 months)
+The Randstad, Netherlands
+
+Coordination of the introduction of ServiceNow for ING's Private Cloud and its
+Tenants, starting with the Cloud Community in the Netherlands. ServiceNow,
+an Enterprise IT4IT Platform, will be configured to support Automated
+Provisioning, Automated CMDB Update, Automated Deployment, Automated
+Compliance Verification and Employee Self Service. As part of the launch,
+a new/simplified Process Framework and capabilities for Enterprise Backlog
+Mngt and Enterprise Portfolio Management will be introduced. The Platform
+will enable Agile Continuous Delivery and Continuous Integration practices
+for DevOps organisations. The implementation will be done together with a
+consortium of vendors.
+
+ING Nederland
+6 years 10 months
+
+Manager DevOps Configuration Mngt & Monitoring
+February 2013 - October 2014 (1 year 9 months)
+The Randstad, Netherlands
+
+Manager of the team of DevOps Configuration Mngt & Monitoring [CoMMon]
+Experts of ING Domestic Banking in the Netherlands. Tasks include resource/
+budget management, planning, participation in project boards and progress
+reporting.
+Page 5 of 8
+
+The team [20 FTE] supports150 DevOps IT-Teams by defining/implementing/
+improving CoMMon IT4IT Processes & Technology for Continuous Delivery
+practices. The team measures adherence to agreed CoMMon standards
+& conventions and coordinates quality improvements across the CIO-NL
+domain.
+Configuration management covers discovery, registration and verification of
+[quality of] IT artefacts produced/deployed/maintained by IT Development
+& Operations. Monitoring covers automated interpretation/visualisation of
+current/historic capacity, -performance and -availability of [components of]
+ING's IT Business Solutions.
+
+ITIL/Tooling Management Consultant
+July 2012 - February 2013 (8 months)
+The Randstad, Netherlands
+
+Consultant to Domestic Banking''s CIO on topics such as ITIL3/CMMi
+processes and related tooling. Coordinator of Data Quality Improvement
+using Automated Discovery/Federation and reconciliation mechanisms
+supported by enforcement of Universal Naming Conventions. Principal for
+the implementation of Automation of O&M Tasks (Automated Provisioning,
+Automated Testing, Automated Incident/Event Management, Application Chain
+Monitoring, etc) which allows reduction of cost whilst improving business
+service levels and improving process velocity.
+
+Project Manager, IT Service Management (CMS) Tooling
+December 2011 - July 2012 (8 months)
+The Randstad, Netherlands
+
+Project Manager for the technical implementation of HP Service Manager
+and HP uCMDB incl. 30+ interfaces to ING's Asset Mngt System, misc. Event
+Mngt. Systems, Definitive Media Libraries, Automated Discovery (Scanning)
+Tools, Source Code Readers and the Service Management Systems of ING’s
+Third Party Vendors.
+
+Enterprise Process Owner, IT Service Management
+January 2008 - December 2011 (4 years)
+
+Working on ITIL proces improvements and implementation of IT-SM (HP
+based uCMDB/CMS) tooling for ING Operations & IT Banking.
+
+Altran CIS (Netherlands)
+Programma Manager
+Page 6 of 8
+
+2007 - January 2008 (1 year)
+ICT contractor. IT Programme Manager and Consultant. Contracting in
+Financial, Insurance, Telecom and Utility Sector. Assignment as Program
+Manager IT Transformation at ING Netherlands and Belgium.
+
+HetBedrijf
+Program Manager
+
+January 2001 - July 2007 (6 years 7 months)
+Program & Interim Manager in the ICT Industry, Consulting to T-Mobile, KPN
+and ING
+
+Tellabs
+Program/Services Manager EMEA
+
+August 1998 - December 2000 (2 years 5 months)
+Manager of Customer Services for Europe Middle East and Africa, Lived in
+Dublin and Paris for three years.
+
+KLM
+Project Manager Outsourcing
+
+May 1997 - July 1998 (1 year 3 months)
+Manage the project of outsourcing of all of KLM's Telecom Infrastructure in the
+Netherlands to KPN
+
+Ericsson China
+Director Customer Services
+
+January 1996 - April 1997 (1 year 4 months)
+Responsible for Support Services for North China Region
+
+KPN
+6 years
+
+Project Manager
+
+August 1991 - March 1996 (4 years 8 months)
+Manage misc Voice Response and Call Centre projects within KPN (e.g.
+introduction of Credt Card Calling, Public Transportation Call Centre, Collect
+Calls, Conference Calling, Belastingdienst telefoon, etc )
+
+Manager Operations
+1990 - 1996 (6 years)
+
+Page 7 of 8
+
+Owner of the Voice Response and Call Centre Platforms owned/managed by
+KPN in the Netherlands [6.000 lines). Govern innovation and operation of the
+platform incl. management of budget thereof.
+
+Education
+Hogeschool van Amsterdam
+BSc, Engineering · (1984 - 1987)
+
+Comtecno
+Bachelor of Science (BSc), Information Analysis and Syst.
+Design · (1987 - 1988)
+
+Page 8 of 8
+
+

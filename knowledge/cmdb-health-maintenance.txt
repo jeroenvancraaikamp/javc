@@ -1,0 +1,435 @@
+Maintain a healthy CMDB
+
+Asset Number: 0003935
+January 2025
+
+Table of Contents
+What’s in this Success Insight .................................................................................................................... 3
+1.
+
+Why is it important to maintain a healthy CMDB? ......................................................................... 3
+
+2.
+
+What are the steps to successfully deploying a healthy CMDB?................................................. 4
+
+3.
+
+How can I monitor and proactively manage CMDB health? ...................................................... 7
+
+Concluding takeaway ............................................................................................................................ 10
+Terms and definitions ............................................................................................................................... 10
+Additional resources ................................................................................................................................ 11
+
+2
+© 2024 ServiceNow, Inc. All rights reserved. ServiceNow, the ServiceNow logo, Now, Now Platform, and other ServiceNow marks are trademarks and/or registered
+trademarks of ServiceNow, Inc. in the United States and/or other countries. Other company and product names may be trademarks of the respective
+companies with which they are associated.
+
+What’s in this Success Insight
+The health of your Configuration Management Database (CMDB)—having accurate, current,
+complete data—is critical to delivering value with ServiceNow®. This Success Insight will help you
+maintain a healthy CMDB by showing you how to deploy a healthy CMDB, monitor its health,
+and take steps to improve its health when needed.
+This Success Insight answers these key questions:
+1. Why is it important to maintain a healthy CMDB?
+2. What are the steps to successfully deploying a healthy CMDB?
+3. How should I monitor and proactively manage CMDB health?
+
+1. Why is it important to maintain a healthy CMDB?
+Your CMDB is a key component in your success with the Now Platform® and a vaulable decision
+support tool for IT Service Management and many other enterprise process (as shown in the
+graphic below).
+IT Operations Management
+Prioritize response based
+on business impact
+
+IT Asset Management
+Gain visibility of software
+across your operational
+estate
+
+Application Portfolio
+Management
+Streamline buildout of
+Application portfolio
+
+Risk
+Align technology risks to
+the business
+Security
+Prioritize response based on
+business impact
+Cloud
+Gain visibility of cloud resources
+and align spend to business
+initiatives
+
+IT Service Management
+Increase efficiency and
+reduce risk when planning
+changes
+
+CMDB
+
+DevOps
+Ensure governance and
+traceability of of CI/CD process
+
+Customer Service
+Management
+Prioritize response based on
+customer impact
+Telco Management
+Increase efficiency and
+uptime for Telco equipment
+
+For example, ServiceNow customers have found that a healthy CMDB and ServiceNow IT Service
+Management can result in:
+•
+•
+•
+
+38% faster incident resolution
+82% fewer failed changes
+604% more incidents resolved with problem management
+
+Overall, ServiceNow customers have found that a well-configured CMDB can save you as much
+as 40% in IT costs and is critical to avoiding unplanned outages. But to get the most value from
+your CMDB, you need to keep it healthy and populated with current and accurate information.
+Data quality in the CMDB should be an essential goal of any organization. If internal CMDB
+customers (e.g., system admins, IT support staff) lose trust in CMDB data quality, they’ll go rogue
+and start using their own data sources, hurting the value of ServiceNow at the organization.
+3
+© 2024 ServiceNow, Inc. All rights reserved. ServiceNow, the ServiceNow logo, Now, Now Platform, and other ServiceNow marks are trademarks and/or registered
+trademarks of ServiceNow, Inc. in the United States and/or other countries. Other company and product names may be trademarks of the respective
+companies with which they are associated.
+
+Common examples of inaccurate data in the CMDB include duplicate, stale, and incomplete
+configuration items (CIs).
+
+2. What are the steps to successfully deploying a healthy
+CMDB?
+A healthy CMDB doesn’t just happen. Every successful CMDB deployment needs a detailed
+configuration management plan for implementing, designing, and sustaining a configuration
+management capability. Below are the five key steps to a successful CMDB deployment.
+
+1. Set your direction.
+Defining a great configuration management capability—and ultimately deployment a healthy
+CMDB—starts with clear goals, actionable objectives, and measurable business outcomes. Refer
+to Stage 1 of the Plan your successful CMDB deployment Success Playbook for more detailed
+guidance and examples.
+•
+
+Write well-defined goals and objectives. Ask yourself these questions:
+
+4
+© 2024 ServiceNow, Inc. All rights reserved. ServiceNow, the ServiceNow logo, Now, Now Platform, and other ServiceNow marks are trademarks and/or registered
+trademarks of ServiceNow, Inc. in the United States and/or other countries. Other company and product names may be trademarks of the respective
+companies with which they are associated.
+
+•
+
+What
+
+What do you want to accomplish?
+
+How
+
+What is your approach, and what are your constraints and
+assumptions?
+
+Why
+
+What business outcomes will your CMDB support?
+
+Measure
+
+How do you know that you’re on track?
+
+Identify strategic company and IT initiatives. Align your CMDB so it supports your business and
+IT strategy. Start by identifying your company’s key initiatives (digital transformation, for
+example) and key IT department initiatives (such as aligning IT with the business).
+Practitioner insight
+Use the same language that your company already uses when describing strategic business
+initiatives. Your stakeholders will understand more quickly and you’ll get faster buy-in.
+
+•
+
+Define a set of supporting use cases. These use cases will guide the data you include in your
+CMDB. Use cases should directly tie to your strategic company and IT initiatives. Here are
+some examples:
+How does this tie back to the
+CMDB?
+Create an accurate, up-todate view of which
+infrastructure components
+support each of your critical
+business services.
+
+Strategic Initiative
+
+Use case
+
+Align IT with the business
+
+An IT component breaks. How
+do we know if this affects one
+of our mission-critical business
+services?
+
+Expand customer base
+
+We want to add new
+interactive services to our
+existing customer website.
+How do we make sure our
+website will continue to scale?
+
+Track website infrastructure
+and applications to provide
+input for performance
+optimization and enterprise
+architecture evolution.
+
+Improve information security
+
+We need to ensure PCI DSS
+compliance. Which parts of
+our infrastructure do we need
+to protect and audit?
+
+Add CI attributes to indicate
+which IT components store or
+have access to customer
+credit card information.
+
+Cloud-first strategy
+
+We’re going to migrate our
+inventory control system to the
+cloud. How do we plan this
+migration?
+
+Identify all of the inventory
+control system components
+that need to be migrated by
+creating a service map.
+
+2. Build a team and governance model.
+Successful deployment and maintenance of a healthy CMDB require resources to own and
+manage it.
+•
+
+Build your configuration management team – Team members should be freed up to focus on
+their configuration management responsibilities rather than being bogged down in daily
+“keep the lights on” support. Clearly define, document, and communicate each team
+5
+
+© 2024 ServiceNow, Inc. All rights reserved. ServiceNow, the ServiceNow logo, Now, Now Platform, and other ServiceNow marks are trademarks and/or registered
+trademarks of ServiceNow, Inc. in the United States and/or other countries. Other company and product names may be trademarks of the respective
+companies with which they are associated.
+
+•
+
+•
+
+member’s role and responsibilities. This gives the right people ownership, accountability, and
+authority.
+Set up a configuration control board (CCB) – The CCB is a steering committee that oversees
+your configuration management program and has strategic decision-making responsibility
+and accountability for the business. For example, the CCB decides when to add a new CI
+class. Voting members of your CCB should be leadership team members who are directly
+accountable for the strategic initiatives of the IT department and close enough to the dayto-day infrastructure support team efforts to understand the use cases.
+Get early buy-in from executives – Buy-in creates credibility and trust, giving your team the
+support it needs to drive change and it’s critical to securing funding for team personnel and
+activities. You’ll be more likely to get executive support If you can articulate how your CMDB
+will support the strategic goals and objectives of your executives.
+
+3. Design your configuration data model.
+Your CMDB is populated with CIs. To decide what data you’re going to keep in your CMDB,
+define which CI classes you need. Before you start, familiarize yourself with the capabilities and
+design options for the CMDB.
+•
+
+•
+
+Start simply and grow gradually – Don’t try to build a comprehensive CMBD right away. Start
+simply and then make incremental improvements as your configuration management
+capabilties mature. Decide which CI classes and attributes you need to support the data
+needs of the goal, objectives, and use cases you created.
+Take advantage of out-of-the-box CI classes – Out-of-the-box (OOTB) CI classes included
+with the ServiceNow CMDB support a wide range of common use cases, and you can use
+OOTB ServiceNow Discovery capabilities to populate these CIs in your CMBD. You can also
+extend OOTB classes, creating new additional attributes using the CI Class Manager’s
+wizard-style interface.
+
+Practitioner insight
+Be careful to use CIs correctly. By definition, a CI is something that can change, so there’s no
+point in creating CIs for things that never change.
+
+4. Operationalize configuration management.
+Now that you have your configuration data model, it’s time to populate your CMDB. Use
+automation to populate your CMDB as much as possible to keep your CMDB data accurate.
+While you can manually add data to your CMDB, it’s very hard to ensure accuracy and
+manually keep your CMBD up to date as your IT environment changes. So, limit manual data
+additions to the critical few that can’t be populated automatically.
+•
+
+•
+
+Automatically populate your CMDB with ServiceNow Discovery – Discovery will find all of the
+network infrastructure, servers, applications, and other components in your IT environment
+and create corresponding CIs. This includes discovering public cloud infrastructure, such as
+Amazon AWS and Microsoft Azure.
+Discover your business services – In addition to populating your CMBD with CIs, you need to
+know the relationships between CIs and what CIs support what business services. Use
+ServiceNow Service Mapping to create business service maps that map all of the CIs that
+6
+
+© 2024 ServiceNow, Inc. All rights reserved. ServiceNow, the ServiceNow logo, Now, Now Platform, and other ServiceNow marks are trademarks and/or registered
+trademarks of ServiceNow, Inc. in the United States and/or other countries. Other company and product names may be trademarks of the respective
+companies with which they are associated.
+
+•
+
+support each service and how they’re related. Start by identifying your most critical business
+services and map these first.
+Populate and maintain non-discoverable information – You’ll have a small percentage of
+CMDB data that is not discoverable (possibly service decriptions, business capabilities, or
+business goals). You’ll need to populate and maintain these CIs and attributes manually.
+Identify corresponding business process owners and make them responsible for updating the
+information.
+
+5. Create ongoing strategic alignment.
+Effective two-way communication with business stakeholders is critical to maintaining CMDB
+data quality because CMDB use cases need to stay aligned with changes in the business
+strategy and new business initiatives.
+•
+•
+
+Give your configuration control board the wheel to drive stakeholder alignment – The CCB
+will help you prioritize and evolve your configuration management roadmap.
+Tailor your configuration management plan to align with major projects – Assign a
+configuration management team resource to each strategic project so they’ll understand
+how it impacts configuration management. This will help them proactively manage requests
+new CI classes or attributes.
+
+3. How can I monitor and proactively manage CMDB
+health?
+Maintaining a healthy CMDB doesn’t stop with successful deployment. Follow these steps to
+monitor and proactively manage the health of your CMBD.
+1. Monitor system health in the CSDM and the CMDB Data Foundations Dashboard.
+The CSDM and CMDB Data Foundations Dashboards is a ServiceNow Store app that contains
+dashboards that provide insights into key health indicators of your CMDB and Common Service
+Data Model (CSDM). The app provides recommendations to make certain that your CMDB and
+CSDM are properly configured for optimal usage and to mitigate any potential risks. To get
+started with the app, follow these steps:
+•
+
+•
+•
+
+Familiarize yourself with the CSDM and CMDB Data Foundations Dashboard App – Watch the
+video introduction, read the overview on Now Community, and review the product
+documentation.
+Request the CSDM and CMDB Data Foundations Dashboards app – Go to the Store website
+to request the application.
+Review the CMDB Data Foundations Dashboard – The dashboard, as shown in the example
+below, evaluates various configurations and customizations in the CMDB and checks that
+
+7
+© 2024 ServiceNow, Inc. All rights reserved. ServiceNow, the ServiceNow logo, Now, Now Platform, and other ServiceNow marks are trademarks and/or registered
+trademarks of ServiceNow, Inc. in the United States and/or other countries. Other company and product names may be trademarks of the respective
+companies with which they are associated.
+
+important data is valid and properly configured. It also identifies and provides visibility into
+potential risks in the implementation.
+
+•
+
+Remediate issues using remediation playbooks – Click the Remediation playbook URL link for
+an issue identified on your dashboard to access a knowledge article on HI (HI credentials
+required) with next steps and guidance for remediating the issue. (The full list of remediation
+playbooks are located in the HI Knowledge base—login required.)
+
+2. Conduct a deep dive with CMDB Health dashboards.
+CMDB Health dashboards aggregate key performance metrics and offer actionable insights
+that allow you to monitor and improve the performance and health of your CMDB. Review How
+
+8
+© 2024 ServiceNow, Inc. All rights reserved. ServiceNow, the ServiceNow logo, Now, Now Platform, and other ServiceNow marks are trademarks and/or registered
+trademarks of ServiceNow, Inc. in the United States and/or other countries. Other company and product names may be trademarks of the respective
+companies with which they are associated.
+
+do I use the CMDB health dashboard? for more information on the benefits of using CMDB
+health dashboard, the metrics the dashboard tracks, and best practices for setting it up.
+3. Manage and control change.
+Effective change management is critical for a healthy CMDB. Uncontrolled change creates risks,
+breaks configuration management processes, and creates an unreliable CMDB. To effectively
+manage changes to your CMDB:
+•
+•
+•
+
+•
+•
+
+Use ServiceNow Change Management to handle change requests – And use the Proposed
+Change function for updates of non-discoverable, manually-entered data.
+Make sure that changes are reviewed and approved before they’re made
+Use the Identification and Reconciliation Engine (IRE) to import new data in your CMDB –IRE
+processes help maintain data integrity in the CMDB, preventing duplicate CIs by uniquely
+identifying CIs and CI attributes by allowing only authoritative data sources to write to CMDB.
+Configure permissions so that only authorized users can make changes to your CMDB
+Communicate changes to stakeholders
+
+9
+© 2024 ServiceNow, Inc. All rights reserved. ServiceNow, the ServiceNow logo, Now, Now Platform, and other ServiceNow marks are trademarks and/or registered
+trademarks of ServiceNow, Inc. in the United States and/or other countries. Other company and product names may be trademarks of the respective
+companies with which they are associated.
+
+Concluding takeaway
+The CMDB is a key component in your success with the Now Platform. It acts as a single, reliable
+source for configuration information across all your ServiceNow applications. To get the most
+from your CMDB, you need to keep it healthy and populated with current and accurate data.
+
+Terms and definitions
+Business services – A business service is a set of interconnected applications and hosts that are
+configured to offer a service to the organization.
+Configuration item (CI) – A CI is the fundamental building block of a CMDB. A CI represents an
+item under configuration management, such as a router, a server, an application, or even a
+logical construct such as a portfolio. Each CI in the CMDB must have at least one unique
+identifier that does not change for the life of that CI.
+Configuration management database (CMDB) – The configuration management database
+(CMDB) is a purpose-built data warehouse describing the components managed to deliver your
+products and services. These are called configuration items.
+Configuration management – Configuration management is the process for maintaining the
+consistency of a product’s performance, functional, and physical attributes with its
+requirements, design, and operational information throughout the life of the product.
+Common Service Data Model (CSDM) – The Common Service Data Model (CSDM) is a standard
+and consistent set of terms and definitions that span and can be used with all ServiceNow
+products on the Now Platform. These terms and definitions form the basis for the CSDM
+framework.
+
+10
+© 2024 ServiceNow, Inc. All rights reserved. ServiceNow, the ServiceNow logo, Now, Now Platform, and other ServiceNow marks are trademarks and/or registered
+trademarks of ServiceNow, Inc. in the United States and/or other countries. Other company and product names may be trademarks of the respective
+companies with which they are associated.
+
+Additional resources
+•
+•
+•
+•
+
+Announcing Foundational Excellence for Your CMDB (Now Community)
+Common Service Data Model (CSDM)
+Configuration Management and CMBD for dummies (ServiceNow Special Edition)
+Configuration Management Database (CMDB) product documentation
+
+11
+© 2024 ServiceNow, Inc. All rights reserved. ServiceNow, the ServiceNow logo, Now, Now Platform, and other ServiceNow marks are trademarks and/or registered
+trademarks of ServiceNow, Inc. in the United States and/or other countries. Other company and product names may be trademarks of the respective
+companies with which they are associated.
+
+

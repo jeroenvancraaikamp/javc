@@ -1,0 +1,273 @@
+---
+// Floating chat assistant: type or speak a question, the answer comes from /api/chat
+// (see worker/index.js). Voice uses the browser's own speech recognition and speech synthesis.
+---
+<div class="chat" id="chat" data-open="false">
+  <button class="chat-launch" type="button" aria-controls="chat-panel" aria-expanded="false" aria-label="Open chat">
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm3 6.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" transform="translate(0 1)"/></svg>
+  </button>
+  <section class="chat-panel" id="chat-panel" role="dialog" aria-label="Chat assistant" hidden>
+    <header class="chat-head">
+      <div>
+        <strong>JAVC assistant</strong>
+        <span class="chat-sub" data-t="sub">Ask me about Jeroen's work and articles</span>
+      </div>
+      <div class="chat-head-btns">
+        <button type="button" class="chat-icon chat-speak" aria-pressed="false" data-t-title="speak" title="Read answers aloud">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3Zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4ZM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6Z"/></svg>
+        </button>
+        <button type="button" class="chat-icon chat-reset" data-t-title="reset" title="New conversation">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7Z"/></svg>
+        </button>
+        <button type="button" class="chat-icon chat-close" aria-label="Close chat" title="Close">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7l-1.4-1.4L9.2 12 2.9 5.7l1.4-1.4 6.3 6.3 6.3-6.3z"/></svg>
+        </button>
+      </div>
+    </header>
+    <div class="chat-log" aria-live="polite"></div>
+    <form class="chat-form">
+      <button type="button" class="chat-mic" data-t-title="mic" title="Speak your question" hidden>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V5a3 3 0 1 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2Z"/></svg>
+      </button>
+      <textarea rows="1" maxlength="2000" data-t-ph="ph" placeholder="Type your question…" aria-label="Your question"></textarea>
+      <button type="submit" class="chat-send" aria-label="Send">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M2 21 23 12 2 3v7l15 2-15 2z"/></svg>
+      </button>
+    </form>
+  </section>
+</div>
+
+<script>
+  type Msg = { role: 'user' | 'assistant'; content: string; sources?: { title: string; url: string }[] };
+
+  const nl = (navigator.language || '').toLowerCase().startsWith('nl');
+  const T = nl ? {
+    sub: 'Vraag me naar het werk en de artikelen van Jeroen', speak: 'Antwoorden voorlezen', reset: 'Nieuw gesprek',
+    mic: 'Stel je vraag met je stem', ph: 'Typ je vraag…', listening: 'Ik luister…', thinking: 'Even denken…',
+    hello: 'Hallo! Ik ken alle artikelen op deze site en het cv van Jeroen. Waar kan ik je mee helpen?',
+    error: 'Er ging iets mis. Probeer het later nog eens.', sources: 'Bronnen',
+  } : {
+    sub: "Ask me about Jeroen's work and articles", speak: 'Read answers aloud', reset: 'New conversation',
+    mic: 'Speak your question', ph: 'Type your question…', listening: 'Listening…', thinking: 'Thinking…',
+    hello: "Hi! I know all the articles on this site and Jeroen's CV. How can I help you?",
+    error: 'Something went wrong. Please try again later.', sources: 'Sources',
+  };
+
+  const root = document.getElementById('chat')!;
+  const launch = root.querySelector('.chat-launch') as HTMLButtonElement;
+  const panel = root.querySelector('.chat-panel') as HTMLElement;
+  const log = root.querySelector('.chat-log') as HTMLElement;
+  const form = root.querySelector('.chat-form') as HTMLFormElement;
+  const input = root.querySelector('textarea') as HTMLTextAreaElement;
+  const mic = root.querySelector('.chat-mic') as HTMLButtonElement;
+  const speakBtn = root.querySelector('.chat-speak') as HTMLButtonElement;
+
+  root.querySelectorAll<HTMLElement>('[data-t]').forEach((el) => (el.textContent = T[el.dataset.t as keyof typeof T]));
+  root.querySelectorAll<HTMLElement>('[data-t-title]').forEach((el) => {
+    el.title = T[el.dataset.tTitle as keyof typeof T];
+    el.setAttribute('aria-label', el.title);
+  });
+  input.placeholder = T.ph;
+
+  const store = {
+    get(k: string) { try { return sessionStorage.getItem(k); } catch { return null; } },
+    set(k: string, v: string) { try { sessionStorage.setItem(k, v); } catch {} },
+  };
+  let messages: Msg[] = [];
+  try { messages = JSON.parse(store.get('javc-chat') || '[]'); } catch {}
+  let speakOn = store.get('javc-chat-speak') === '1';
+  let busy = false;
+
+  // --- rendering --------------------------------------------------------------
+  const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]!));
+  function inline(s: string) {
+    return esc(s)
+      .replace(/\[([^\]]+)\]\(((?:\/|https:\/\/)[^\s)]*)\)/g, '<a href="$2">$1</a>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  }
+  function md(text: string) {
+    let html = '', list = '';
+    for (const line of text.split('\n')) {
+      const li = line.match(/^\s*(?:[-*•]|(\d+)[.)])\s+(.*)$/);
+      if (li) {
+        const tag = li[1] ? 'ol' : 'ul';
+        if (list !== tag) { if (list) html += `</${list}>`; html += `<${tag}>`; list = tag; }
+        html += `<li>${inline(li[2])}</li>`;
+        continue;
+      }
+      if (list) { html += `</${list}>`; list = ''; }
+      const h = line.replace(/^#+\s*/, '');
+      if (h.trim()) html += `<p>${inline(h)}</p>`;
+    }
+    if (list) html += `</${list}>`;
+    return html;
+  }
+  function bubble(m: Msg) {
+    const el = document.createElement('div');
+    el.className = `chat-msg ${m.role}`;
+    el.innerHTML = m.role === 'user' ? `<p>${esc(m.content)}</p>` : md(m.content);
+    if (m.sources?.length) {
+      el.insertAdjacentHTML('beforeend', `<div class="chat-sources">${T.sources}: ${m.sources
+        .map((s) => `<a href="${esc(s.url)}">${esc(s.title)}</a>`).join(' · ')}</div>`);
+    }
+    log.append(el);
+    log.scrollTop = log.scrollHeight;
+    return el;
+  }
+  function render() {
+    log.innerHTML = '';
+    bubble({ role: 'assistant', content: T.hello });
+    messages.forEach(bubble);
+  }
+
+  // --- open / close -------------------------------------------------------------
+  function setOpen(open: boolean) {
+    root.dataset.open = String(open);
+    panel.hidden = !open;
+    launch.setAttribute('aria-expanded', String(open));
+    store.set('javc-chat-open', open ? '1' : '0');
+    if (open) { render(); setTimeout(() => input.focus(), 50); }
+    else speechSynthesis?.cancel();
+  }
+  launch.addEventListener('click', () => setOpen(panel.hidden));
+  root.querySelector('.chat-close')!.addEventListener('click', () => setOpen(false));
+  root.querySelector('.chat-reset')!.addEventListener('click', () => {
+    messages = []; store.set('javc-chat', '[]'); speechSynthesis?.cancel(); render();
+  });
+  if (store.get('javc-chat-open') === '1') setOpen(true);
+
+  // --- speech output -----------------------------------------------------------
+  const canSpeak = 'speechSynthesis' in window;
+  if (!canSpeak) speakBtn.hidden = true;
+  function updateSpeakBtn() { speakBtn.setAttribute('aria-pressed', String(speakOn)); }
+  updateSpeakBtn();
+  speakBtn.addEventListener('click', () => {
+    speakOn = !speakOn; store.set('javc-chat-speak', speakOn ? '1' : '0'); updateSpeakBtn();
+    if (!speakOn) speechSynthesis.cancel();
+  });
+  function looksDutch(s: string) {
+    const w = s.toLowerCase().match(/\b(de|het|een|en|is|van|niet|ik|je|zijn|voor|met|op|dat|deze|wat)\b/g) || [];
+    const e = s.toLowerCase().match(/\b(the|a|and|is|of|not|i|you|are|for|with|on|that|this|what)\b/g) || [];
+    return w.length > e.length;
+  }
+  function speak(text: string) {
+    if (!canSpeak) return;
+    speechSynthesis.cancel();
+    const plain = text.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*#`_]/g, '').replace(/^\s*[-•]\s+/gm, '');
+    const u = new SpeechSynthesisUtterance(plain);
+    u.lang = looksDutch(plain) ? 'nl-NL' : 'en-GB';
+    const voice = speechSynthesis.getVoices().find((v) => v.lang.replace('_', '-').startsWith(u.lang.slice(0, 2)));
+    if (voice) u.voice = voice;
+    speechSynthesis.speak(u);
+  }
+
+  // --- sending -------------------------------------------------------------------
+  async function send(text: string, viaVoice = false) {
+    text = text.trim();
+    if (!text || busy) return;
+    busy = true;
+    messages.push({ role: 'user', content: text });
+    bubble(messages[messages.length - 1]);
+    input.value = ''; autosize();
+    const wait = bubble({ role: 'assistant', content: T.thinking });
+    wait.classList.add('pending');
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ messages: messages.map(({ role, content }) => ({ role, content })) }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.answer) throw new Error(data.error || T.error);
+      const m: Msg = { role: 'assistant', content: data.answer, sources: data.sources };
+      messages.push(m);
+      store.set('javc-chat', JSON.stringify(messages.slice(-20)));
+      wait.remove(); bubble(m);
+      if (speakOn || viaVoice) speak(m.content);
+    } catch (e) {
+      messages.pop();
+      wait.classList.remove('pending');
+      wait.innerHTML = `<p>${esc((e as Error).message || T.error)}</p>`;
+    } finally {
+      busy = false;
+    }
+  }
+  form.addEventListener('submit', (e) => { e.preventDefault(); send(input.value); });
+  function autosize() { input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 120) + 'px'; }
+  input.addEventListener('input', autosize);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(input.value); }
+  });
+
+  // --- speech input ----------------------------------------------------------------
+  const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+  if (SR) {
+    mic.hidden = false;
+    let rec: any = null;
+    mic.addEventListener('click', () => {
+      if (rec) { rec.stop(); return; }
+      speechSynthesis?.cancel();
+      rec = new SR();
+      rec.lang = navigator.language || 'nl-NL';
+      rec.interimResults = true;
+      rec.continuous = false;
+      let finalText = '';
+      mic.classList.add('on');
+      input.placeholder = T.listening;
+      rec.onresult = (ev: any) => {
+        let interim = '';
+        for (let i = ev.resultIndex; i < ev.results.length; i++) {
+          if (ev.results[i].isFinal) finalText += ev.results[i][0].transcript;
+          else interim += ev.results[i][0].transcript;
+        }
+        input.value = finalText + interim; autosize();
+      };
+      rec.onend = () => {
+        mic.classList.remove('on'); input.placeholder = T.ph; rec = null;
+        if (finalText.trim()) send(finalText, true);
+      };
+      rec.onerror = () => { mic.classList.remove('on'); input.placeholder = T.ph; };
+      rec.start();
+    });
+  }
+</script>
+
+<style is:global>
+  .chat { --chat-w: 380px; }
+  .chat-launch { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; border: 0; background: var(--accent); color: #fff; display: grid; place-items: center; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,.2); transition: background .2s, transform .2s; }
+  .chat-launch:hover { background: var(--accent-2); transform: translateY(-2px); }
+  .chat[data-open="true"] .chat-launch { display: none; }
+  .chat-panel { position: fixed; right: 20px; bottom: 20px; z-index: 61; width: var(--chat-w); height: min(600px, calc(100vh - 40px)); background: #fff; border-radius: 10px; box-shadow: 0 12px 40px rgba(0,0,0,.25); display: flex; flex-direction: column; overflow: hidden; font-size: 15px; }
+  .chat-panel[hidden] { display: none; }
+  .chat-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 12px 12px 12px 16px; background: var(--accent); color: #fff; }
+  .chat-head strong { display: block; font-size: 16px; }
+  .chat-sub { font-size: 12.5px; opacity: .9; }
+  .chat-head-btns { display: flex; gap: 2px; flex-shrink: 0; }
+  .chat-icon { background: transparent; border: 0; color: #fff; width: 32px; height: 32px; border-radius: 6px; display: grid; place-items: center; cursor: pointer; opacity: .85; }
+  .chat-icon:hover { background: rgba(255,255,255,.15); opacity: 1; }
+  .chat-speak[aria-pressed="true"] { background: rgba(255,255,255,.25); opacity: 1; }
+  .chat-log { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; background: #f6f8f8; }
+  .chat-msg { max-width: 88%; padding: 9px 13px; border-radius: 12px; line-height: 1.5; word-wrap: break-word; }
+  .chat-msg p { margin: 0 0 6px; } .chat-msg p:last-child { margin-bottom: 0; }
+  .chat-msg ul, .chat-msg ol { margin: 4px 0 6px; padding-left: 20px; }
+  .chat-msg.assistant { align-self: flex-start; background: #fff; border: 1px solid #e3e8e8; border-bottom-left-radius: 4px; }
+  .chat-msg.user { align-self: flex-end; background: var(--accent); color: #fff; border-bottom-right-radius: 4px; }
+  .chat-msg a { color: var(--accent-2); text-decoration: underline; }
+  .chat-msg.pending { color: #777; font-style: italic; }
+  .chat-sources { margin-top: 8px; padding-top: 6px; border-top: 1px solid #eef1f1; font-size: 12.5px; color: #666; }
+  .chat-form { display: flex; align-items: flex-end; gap: 6px; padding: 10px; border-top: 1px solid #e3e8e8; background: #fff; }
+  .chat-form textarea { flex: 1; resize: none; border: 1px solid #d5dcdc; border-radius: 8px; padding: 9px 11px; font: inherit; line-height: 1.4; max-height: 120px; }
+  .chat-form textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+  .chat-mic, .chat-send { flex-shrink: 0; width: 40px; height: 40px; border-radius: 8px; border: 0; display: grid; place-items: center; cursor: pointer; }
+  .chat-mic { background: #eef2f2; color: var(--btn-dark); }
+  .chat-mic[hidden] { display: none; }
+  .chat-mic.on { background: #c0392b; color: #fff; animation: chat-pulse 1.2s infinite; }
+  .chat-send { background: var(--accent); color: #fff; }
+  .chat-send:hover { background: var(--accent-2); }
+  @keyframes chat-pulse { 50% { box-shadow: 0 0 0 6px rgba(192,57,43,.25); } }
+  @media (max-width: 600px) {
+    .chat-panel { right: 0; bottom: 0; width: 100%; height: 100%; height: 100dvh; border-radius: 0; }
+    .chat-launch { right: 16px; bottom: 16px; }
+    .chat-form textarea { font-size: 16px; }
+  }
+</style>

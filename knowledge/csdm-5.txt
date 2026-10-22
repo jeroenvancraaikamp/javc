@@ -1,0 +1,2575 @@
+CSDM 5
+White Paper
+Common Service Data Model
+This White Paper provides ServiceNow best practice guidance on service-related
+definitions and service modeling within the ServiceNow AI Platform.
+
+Scott Lemm, Rob Koeten
+Scott.Lemm@servicenow.com, robert.koeten@servicenow.com
+
+0
+
+CSDM 5 WHITE PAPER
+
+CSDM Introduction_____________________________________________________________ 3
+What is the vision for CSDM 5? ________________________________________________________ 4
+What is new in CSDM 5? _____________________________________________________________ 6
+
+CSDM Key Principles ___________________________________________________________ 7
+CSDM End-to-End Service Life Cycle _______________________________________________ 8
+CSDM Conceptual Model (historical view) _________________________________________ 10
+CSDM Domains_______________________________________________________________ 14
+Foundation Domain ________________________________________________________________ 14
+
+Value Stream ____________________________________________________________________________ 14
+Business Process _________________________________________________________________________ 16
+Contract ________________________________________________________________________________ 16
+Product (Models) _________________________________________________________________________ 16
+Product Feature __________________________________________________________________________ 18
+Software Bill of Materials (SBOM)____________________________________________________________ 18
+CMDB Group ____________________________________________________________________________ 18
+CSDM Life Cycle __________________________________________________________________________ 19
+Life Cycle Processes _______________________________________________________________________ 20
+Common Data ___________________________________________________________________________ 27
+Location Management ____________________________________________________________________ 28
+Teams__________________________________________________________________________________ 29
+Knowledge Management __________________________________________________________________ 29
+
+Ideation & Strategy Domain _________________________________________________________ 29
+
+Product Idea ____________________________________________________________________________ 30
+Planning Item____________________________________________________________________________ 30
+Strategic Priority _________________________________________________________________________ 30
+Goal ___________________________________________________________________________________ 30
+Target __________________________________________________________________________________ 30
+Foundational Entities that contribute to Ideation & Strategy ______________________________________ 30
+
+Design & Planning Domain __________________________________________________________ 31
+
+Business capabilities ______________________________________________________________________ 31
+Business applications______________________________________________________________________ 32
+Information Object _______________________________________________________________________ 33
+Foundational Entities that contribute to Design & Planning _______________________________________ 33
+
+Build & Integration Domain _________________________________________________________ 34
+
+DevOps Change Data Model ________________________________________________________________ 34
+SDLC Component _________________________________________________________________________ 34
+AI System Digital Asset ____________________________________________________________________ 35
+Foundational Entities that contribute to Build & Integrate ________________________________________ 35
+
+Service Delivery Domain ____________________________________________________________ 36
+
+Service Instance __________________________________________________________________________ 37
+Application Services_______________________________________________________________________ 38
+Service Delivery Network __________________________________________________________________ 40
+API ____________________________________________________________________________________ 41
+Application ______________________________________________________________________________ 41
+
+1
+
+CSDM 5 WHITE PAPER
+
+AI Function ______________________________________________________________________________ 41
+AI Application ___________________________________________________________________________ 41
+Operational Technology (OT) _______________________________________________________________ 42
+Infrastructure configuration items (Hosts and Networking) _______________________________________ 42
+Technology Management Services ___________________________________________________________ 42
+Technology Management Service offering _____________________________________________________ 42
+Dynamic CI Group ________________________________________________________________________ 43
+Foundational Entities that contribute to Service Delivery _________________________________________ 44
+
+Service Consumption _______________________________________________________________ 44
+
+Business Service__________________________________________________________________________ 45
+Business Service Offering __________________________________________________________________ 45
+Request Catalog __________________________________________________________________________ 45
+Foundational Entities that contribute to Service Consumption _____________________________________ 46
+
+Manage Portfolio __________________________________________________________________ 46
+
+Portfolio ________________________________________________________________________________ 46
+Service Portfolio _________________________________________________________________________ 46
+
+CSDM 5 Tables and Relationships ________________________________________________ 47
+CSDM 5 Table Names and Labels _____________________________________________________ 47
+Relationships in CSDM ______________________________________________________________ 48
+
+Why follow the CSDM? ________________________________________________________ 49
+ServiceNow Product Portfolio across CSDM 5 ___________________________________________ 50
+
+How to adopt the CSDM standard _______________________________________________ 51
+Foundation Stage __________________________________________________________________ 51
+Crawl Stage_______________________________________________________________________ 53
+Walk Stage _______________________________________________________________________ 54
+Run Stage ________________________________________________________________________ 55
+Fly Stage _________________________________________________________________________ 56
+
+Migrating into CSDM __________________________________________________________ 58
+Frequently Asked Questions ____________________________________________________ 61
+Additional material ___________________________________________________________ 61
+Conclusion __________________________________________________________________ 62
+
+2
+
+CSDM 5 WHITE PAPER
+
+CSDM Introduction
+This document describes the Common Service Data Model (CSDM) 5 reference architecture effort, as an
+incremental and expanded version from the CSDM 4 model. It is imperative to understand this data and
+delivery model as it will continue to evolve while we collectively expand ServiceNow products and
+capabilities to increase the value we provide.
+At its core, the Common Service Data Model represents a standard and shared set of service-related
+definitions across our products and platform that will enable and support true service level management
+while providing prescriptive guidance on service modeling. These service-related definitions span the
+ServiceNow® product portfolio and the ServiceNow AI Platform®.
+The data model is a framework across our products and platform that will enable and support multiple
+configuration and management strategies. Included are current practices related to the proper modeling
+of data using out-of-box (OOB) tables, references and relationships. Many ServiceNow products have a
+dependency on data within this data model.
+Common Service
+A standard and shared set of servicerelated definitions across our products
+and platform that enables and supports
+true service reporting and management.
+
+Data Model
+The data structure that supports ServiceNow
+and partner products on the platform that
+enables lifecycle management in support of
+multiple configuration strategies.
+
+The scope of CSDM will continuously be extended to include prescriptive guidance in the use of the data
+model that will be future proof.
+Note: CSDM is NOT a product/SKU from ServiceNow. The guidance within CSDM is for the
+standardization and modeling of the CMDB that is used by multiple ServiceNow products.
+The CSDM is NOT…
+•
+A process or implementation guide for ServiceNow products
+•
+A set of reports
+•
+Code to install
+•
+An automatic fix for past implementations
+
+Do I need to purchase a module/product to use the CSDM? ServiceNow provides all objects and core
+tables documented in CSDM as part of the shipping out-of-box (OOB) data model including free store
+apps, regardless of licensing. This is one of the principles for CSDM, but you may need to install plugins
+to add some data model elements.
+How did we get here? CSDM started as a grassroots collaboration between the ITBM (now SPM), ITOM,
+and ITSM product teams to make sure the products worked together out-of-box, and to provide
+guidance to customers on what the common data model across the respective products areas looks like.
+The challenge identified by the product leaders in the spring of 2017 was a lack of common definitions
+for Services and a unified data model that naturally integrates the products we sell. Despite a single
+platform, several ServiceNow business units maintained siloed data models that restricted better
+together opportunities.
+
+3
+
+CSDM 5 WHITE PAPER
+
+As a “highly configurable” platform, and in the absence of prescriptive guidance for our clients, both
+customers and partners invented their own frameworks and data models. Such customizations
+prevented product teams from delivering sophisticated cross-portfolio product use cases, every
+customer had a be-spoke data model.
+The 2017 collaboration between ServiceNow product leaders resulted in CSDM 1 in 2018, which filled
+the need for prescriptive guidance from ServiceNow focused on providing both definitions and data
+model use guidance that would be supported OOTB (out of the box) across business units. The unified
+data model efforts reduced the complexity of defining services within the CMDB from 127 disparate
+classifications down to 3 commonly defined service types. CSDM was immediately championed by
+expert services teams, partners, and customers as “THE” best practice data modeling guidance, and was
+quickly identified by customers are a key differentiator for the ServiceNow AI Platform. The Common
+Service Data Model continues to grow as a key differentiator for what’s now referred to as “CSDM
+compliant” products.
+Over time, CSDM guidance evolved to encapsulate greater visibility into digital systems and both the
+services that provide them as well as the services that depend upon them. CSDM has also grown to be
+used outside of ServiceNow customers, creating a following greater than ServiceNow customer
+ecosystem.
+
+What is the vision for CSDM 5?
+As ServiceNow and our customers focus on business digital transformation for the enterprise, so too
+should our data model guidance. The vision of CSDM 5 and later is to mature beyond our historical
+technology workflow focus. To provide a model that enables the delivery of sophisticated generative AI
+and business transformation for the enterprise. A unified model that supports all ServiceNow business
+units and their Better Together use cases. To establish an Enterprise & Operational Service Model (ESM)
+that encapsulates the Common Service DATA Model and a Common Service DELIVERY Model. To build
+the Digital Value Network.
+To better understand the types or categories of services that are within scope for CSDM 5 we need to
+look at Digital Business Transformation and the relevant operational processes across a broad set of
+industry segments:
+•
+•
+•
+•
+
+Service Life cycle: End-to-end service model including design, configuration, operational
+status, change management, compliance, expansion, etc.
+Service Operations & Delivery: Service dependency map, operational impact analysis &
+impact including risk, service interruption, scale, throughput, etc.
+Service Support Operations: pro-active and reactive issue management, workflows and
+support
+Service Consumption and Value outcomes: Usage metrics, adoption, business KPIs
+
+Recognizing different provider & consumer business models, we can apply them similarly/equally to the
+CSDM based Digital Business Transformation: B2E (Business to Enterprise/Employee), B2C, B2B, B2B2C,
+B2G, G2C, etc. Given these business models we can then identify the following horizontal and industry
+vertical segments & services that are considered in scope for CSDM 5:
+
+4
+
+CSDM 5 WHITE PAPER
+
+•
+•
+•
+
+Internal & external Technology Service Providers, incl. Technology, Telecom,
+media/content
+Enterprise Service operations: HR services, Legal Services, Finance, Supply Chain, Risk &
+Business Continuity
+Industry verticals: Healthcare, Financial Services, Manufacturing, Retail, Government &
+Public Services, Logistics & Transportation, public & private utility providers
+
+Figure 1. CSDM for the Digital Value Network.
+
+Modeling the various service and business models together brings us to the generalized Business Value
+Network as shown in Figure 1. Grounded in value streams and customer value outcomes, services are
+provided and/or distributed over a Service Delivery Network (internal/external, public/private,
+wired/wireless) to mobile, home, and office/business-based users (employees and consumers) with
+their connected devices. With CSDM 5, service management expands from technology services to
+industrial, operational, and utility services connected to end-user, IoT, industrial, medical, production,
+transportation, etc. types of connected devices and products.
+
+5
+
+CSDM 5 WHITE PAPER
+
+Many stakeholders contributed to the development of CSDM 5 guidance, including product architecture
+and engineering. Such involvement further cements how intrinsic the common data model and practices
+are across our growing product inventory and the markets served. Customers may still use their own
+data models as before CSDM existed, but future functionality and more advanced use cases that work
+across the many domains will expect to have CSDM-aligned data to work out-of-the box.
+In Summary, the CSDM 5 vision is epic as it lays the foundation of Digital Business Transformation and
+the Digital Value Network for all providers and consumers.
+
+What is new in CSDM 5?
+CSDM 5 is an evolution of the model. With CSDM 5 we introduce expanded product modeling, new
+CMDB classes, data models previously locked behind licensing, a new domain, and some table label
+updates. These updates are provided through a combination of family and store releases. The intent of
+this CSDM 5 white paper is to advance the data model in support of digital transformation and the
+digital value network:
+•
+•
+•
+
+•
+•
+•
+•
+•
+•
+•
+
+Ideation & Strategy Domain – new domain
+Software Bill of Material (SBOM) – new capability
+System Component Model – new product model
+o Software Component Model – new product model
+o Service Offering Model – new product model
+o Product Feature – new capability
+Value Stream – new capability with the expanded Business Process model
+Teams – manage multiple contact groups for a CI
+Life Cycle Stage & Stage Status – new Stage & Statuses with definitions
+DevOps Change data model – available from the app store
+Service Instances – CI classes (model only)
+AI Data Model – CI classes (model only)
+Table Label Changes – Technology Management Service, Technology Management Service
+Offering, Service Instance
+
+6
+
+CSDM 5 WHITE PAPER
+
+CSDM Key Principles
+CSDM was created based on key principles that have evolved over time. These principles were
+established to guide decisions we make regarding what problems we tackle, entity names and
+definitions, how the model is implemented, and how CSDM is managed for the benefit of products that
+run on the ServiceNow AI Platform.
+Our principles are:
+1. Simplified Concepts: Concepts are represented in a simple, distinct manner to eliminate
+duplicates and confusion over data sources
+2. Designed for Reporting & Analytics: A prime objective of CSDM is to support consistent analysis
+3. Prescriptive Relationships: The prescribed relationships and references should be leveraged as
+the main approach to link CSDM tables
+4. Shared Data Model Collaboration: CSDM identifies a data model that is to be shared across
+products in support of simplified concepts and collaboration. Collaborating with other product
+teams will achieve the best shared design
+5. Definitions: Agreed upon CSDM definitions should be used wherever the table, reference, or
+attribute is used
+6. CSDM OOB Tables: Shared CSDM tables will be provided out of box on Z-boot or free app store
+plugin by default
+7. Consistent Data Integrations: Leverage prescribed technologies when integrating external data
+source to ensure data integrity
+8. CSDM Adoption: Customer impacts per release will be limited by providing automation and
+guidance to accelerate CSDM adoption and transformations from previous versions if needed
+9. Data Governance & Process: The presence of data in the model provides little value without
+governance and effective process to manage the veracity of the data
+10. Product Use Documentation: Documented guidance on use and/or value of CSDM will be
+provided by each product team that references CSDM objects
+
+7
+
+CSDM 5 WHITE PAPER
+
+CSDM End-to-End Service Life Cycle
+The core model for CSDM 5 is represented in a portfolio-centric, end-to-end CSDM Service Life
+Cycle view. This view provides for greater understanding in the life cycle flow of data as it relates to
+CSDM domains. The historical view of CSDM is thus updated to represent these core domains as stages
+in the CSDM life cycle.
+Figure 2 shows the new Ideation and Strategy domain as the initial stage of the CSDM Life Cycle. As in
+previous CSDM versions, the Foundational domain is the layer that supports all other CSDM domains.
+
+Figure 2 CSDM 5 End-to-End Service Life Cycle.
+
+Imagine this… You have a new idea or concept for the business. It may be a new
+product or an enhancement to an existing capability. Either way, that idea and its goals
+are captured and assessed as part of Ideation & Strategy. The idea might be shelved
+(the story ends, but is fully documented), or the business decides that your new idea
+aligns to its strategy and agrees to invest. Your idea now enters the Design & Planning
+stage where the details of the idea are enhanced for future development. Development
+happens in the Build & Integration stage where the idea becomes a deployable
+solution. After passing various gates, the idea is released for others to use as part of
+Service Delivery. Once delivered, your idea may be used by the masses while its value to
+the business is measured as part of Service Consumption. All along the path to
+consumption, your idea provides feedback to past stages to ensure delivery of the goals
+that were documented in Ideation & Strategy.
+Ideation & Strategy
+The Ideation & Strategy domain is a new CSDM domain. It represents the ideas, concepts, and
+considerations for both the creation of new/additional services as well as improvements and
+enhancements to existing (CSDM) services. These capabilities are part of Strategic Portfolio
+Management (SPM).
+Design & Planning
+The Design and Planning domain represents the tables currently used by Enterprise Architecture (EA,
+formerly Application Portfolio Management, APM).
+Build & Integration
+The Build & Integration domain represents the tables that provide visibility in the build and integration
+effort of digital products including, but not limited to, the DevOps process.
+Service Delivery
+The Service Delivery domain represents the overall end-to-end Service Delivery System that includes the
+infrastructure, technologies, integration patterns (infrastructure, systems, data, processes, dependency
+
+8
+
+CSDM 5 WHITE PAPER
+
+models), service delivery networks, and operational models. Together, these items deliver the CSDMcompliant services to internal and external users and/or organizations.
+Service Consumption
+The Service Consumption domain identifies both internal and/or external business services that may be
+impacted by items in the Services Delivery domain. The service consumption tables are currently used
+by Service Portfolio Management and Customer Service Management (CSM).
+
+Figure 3. Domain entities across the seven CSDM domains.
+
+It is important to understand that the domain-specific and foundational data entity categories support
+the end-to-end Life Cycle model within and across the domains. As shown in Figure 3, the Business
+Model as established in the Ideation & Strategy domain and represented by the Business Planning
+entities that drive the Enterprise (and/or Digital System) Architecture. The Enterprise Architecture,
+through design, planning, and product modeling, drives the Solution Architecture that gets built,
+integrated, and delivered. The Solution Architecture determines the various Service Delivery
+deployment and operational models as represented by the product CIs, Assets, and Install Base Items
+(IBI) as part of the Service (Dependency) map, ultimately in support of the Service Consumption domain
+for both internal and external service consumption.
+
+9
+
+CSDM 5 WHITE PAPER
+
+CSDM Conceptual Model (historical view)
+The Common Service Data Model 5 Conceptual Model (shown in in Figure 4) now includes seven
+domains whereby the Foundational domain supports all of the other domains.
+
+Figure 4. CSDM 5 conceptual model.
+
+Detailed descriptions, conceptual-to-physical mapping, and mock-up examples of data model
+implementation guidance are provided later in this document.
+While the intent is to provide prescriptive guidance, the model was designed with extensibility in mind
+so that customers could extend it as needed (for example, add “clinical” as a service classification type
+of a Service).
+The various domains are how we describe and group the objects in the data model, largely based on
+common function. The functions help support how ServiceNow AI Platform products work and work
+together. Additionally, we introduce the concept of Manage Portfolios that encompasses portions of all
+five domains. This representation also accounts for how different roles and persona architypes may
+consume, view, and populate the model.
+What is a Service?
+"A service in CSDM or CSDM Service, is a business (or utility) service that provides a
+specific outcome or business value to its consumer, end-user or business. A CSDM Service
+has a standards conforming Service Definition, Service Delivery model, Service Delivery
+Network model and Service Consumption model, such that standardized digital
+workflows can be applied for build, integration, validation, change-management,
+operations, delivery, incident handling, remediation, service impact analysis, service
+
+10
+
+CSDM 5 WHITE PAPER
+
+outcome metrics & KPIs, service quality, knowledge management as well as customer &
+user support regardless of the specific CSDM service category."
+Services typically have three aspects: the interaction, the offering, and the service system. While the
+ServiceNow AI Platform ships with three OOB base-system service types, you can extend these service
+type classifications to align with the service types in your organization. The three OOB service types are
+application, business, and technical.
+• A Business service is a service type that is published to business users, and it typically underpins
+one or more business capabilities as it provides specific value and outcomes.
+o Business Service are the most abstract and will represent the highest value level in a
+CMDB (see CSDM Service). A Business Service is how the customer sees the service
+being delivered not what IT calls it.
+o A Business Service type is related to a Business Service CI, and it’s associated with a
+service owner and has one or more Business Service Offerings.
+o Single Level; not a hierarchy
+o Is an Operational CI (cmdb_ci_service_business), used for impact analysis in Incident,
+Problem, Change (IPC). Also used for Approvals for Change.
+• A Technology Management Service, previously documented as a Technical Service, is a service
+type that is published to service consumers, and that provides the administrative and
+operational functions to manage the technologies that are typically layered under one or more
+Business and/or Application Services.
+o A Technology Management Service type is related to a Technology Management Service
+CI, and it’s associated with a service owner and has one or more Technology
+Management Service Offerings.
+o Users can view and manage the technologies that are provided to the business, and as
+such should be Provider focused.
+o Event Management enables monitoring of service performance and identifies health
+issues for related infrastructure CIs and application services.
+o Technology Management Services can be managed as part of the Service Portfolio in the
+Service Consumption domain (that is, a Service Portfolio hierarchy can be referenced
+from a Technology Management Service).
+o Single Level; not a hierarchy
+o Is an Operational CI (cmdb_ci_service_technical), used for impact analysis in Incident,
+Problem, Change (IPC).
+• A Service Instance, previously documented as an Application Service, is a service type focused
+on the instantiation of a Service. We have added several new Service Instance siblings to the
+preexisting Application Service table. An Application Service remains a logical or designated
+instance of a Business Application or Application Function based on the deployed and
+operational system + application/software stack.
+o An instance may be designated by environment such as Development, Test, Production,
+Prod1, Prod2 etc.
+o An instance may be designated by region, line of business (LoB) or otherwise. Instances
+can be regional or cross-region as well.
+o Is an Operational CI (cmdb_ci_service_auto), used for impact analysis in Incident,
+Problem, Change (IPC).
+o Application Service (Instances) can be created through Manual Mapping, Service
+Mapping with Entry Point, Tags or Dynamic Query.
+
+11
+
+CSDM 5 WHITE PAPER
+
+o
+
+Data (incl. genAI), Connection, Network, Facility and Operation Process Service Instances
+are siblings of Application Services, with specific functional focus and typically
+segregated management & operational control and organizations. See also Service
+Instance section.
+
+What is the system model for CSDM Services?
+One of the other key objectives for CSDM 5 is to drive alignment and digital transformation of the
+Business Strategy as expressed as Value Streams, Enterprise Architecture, Solution Architecture, Service
+Model and Sales & Support models (as shown in Figure 3). While Business Application thus far
+represented the core of the Business Model, going forward a more expanded and explicit Digital System
+Model is needed to model the overall digital transformation for processes, services and technologies
+across an expanded scope of industries and services.
+
+Figure 5. CSDM Digital System Model.
+
+Where Figure 3 shows the domain entity types across the different CSDM 5 domains, Figure 5 shows the
+CSDM layered Digital System Model and its primary domain entities. The model is broken into four
+layers for separation of concerns, operational control and entity life-cycle progression in each of the
+layers. Accordingly, the layered model also shows both design and operational entities (left-to-right), to
+reflect the CSDM Life Cycle:
+(Business) Process Layer
+The Business Process layer encapsulates the people and system action automation
+entities (internal and external to ServiceNow) that realize the desired value outcome.
+Service (Logical) Layer
+The Service Logical Layer is the heart of the CSDM service model whereby underlying
+system functions can be designated or represent the various Service Instance
+classifications and their operational purpose (Dev, Test, Production, Regional, etc.). The
+Service Layer also represents the service dependency map (underlying functions and
+infrastructure, both internal and external) that then can be mapped to specific Service
+Offerings.
+
+12
+
+CSDM 5 WHITE PAPER
+
+Functional Layer
+The technical & functional capabilities that are delivered as part of a service instance.
+Typically associated with applications, software, Software-Defined functions, Data
+processing & persistence and process automation.
+Infrastructure Layer
+The Infrastructure Layer represents both physical and virtual infrastructure entities to
+host, run, contain and/or provide the functional capabilities, as well as the facility
+infrastructure in which they operate.
+What reporting comes with CSDM? Short answer – none. At this time, CSDM is a framework focused on
+identifying where to place data that ServiceNow AI Platform products depend on. In the future, more
+visualization, reporting, and analytics will be made available through the product teams that use the
+ServiceNow Data Model.
+Leverage the CMDB query builder to structure complex queries across multiple elements and
+relationships. The query builder supports traversing Application Services automatically and using CMDB
+Query Builder queries for reporting and PA analysis.
+The CMDB query builder enables you to easily build complex infrastructure and service queries that span
+multiple CMDB classes, non-CMDB tables, and that involve many CIs that are connected by different
+relationships.
+
+13
+
+CSDM 5 WHITE PAPER
+
+CSDM Domains
+
+Figure 6. CSDM 5 End-to-End Service Life Cycle.
+
+CSDM domains are groupings of the data model that support activity within the ServiceNow AI Platform.
+As shown in Figure 6, CSDM has seven domains: Foundation, Ideation & Strategy, Design & Planning,
+Build & Integration, Service Delivery, Service Consumption, and Manage Portfolios. Each domain is
+supported and enhanced by one or more products on the ServiceNow AI Platform. The combined access
+to quality data across domains, strengthens your day-to-day efforts to achieve value on the ServiceNow
+AI Platform while enabling Business Digital Transformation and its realization in the Digital Value
+Network.
+
+Foundation Domain
+
+The Foundation domain represents tables that contain base data referenced from or to objects in the
+other CSDM domains. The tables identified in the Foundation Domain are not used in CMDB
+relationships. Instead, they are critical referential data. In some scenarios, Foundation data is required
+prior to the implementation of ServiceNow products and/or buildout of the CMDB. The Business Process
+table is a CMDB table, while the remaining tables exist outside of the CMDB. Common personas in this
+domain are Process Owner, Data Steward, Product Owner, and Contract Manager.
+Value Stream
+ServiceNow AI Platform workflows deliver value throughout the organization. Value is a unit of measure
+that represents a desired outcome while a Value Stream is how work really happens across the
+organization, including all the activities to deliver value (a product or service) to a customer.
+The following core objects in the ServiceNow AI Platform represent a value stream:
+• Value Stream (cmn_value_stream), represents the Value Stream
+• Value Stream Category (cmn_value_stream_categories) represents the categorization of the
+Value Stream. These categories might be foundational to all businesses and organizations or
+might be specific to an industry. The base system includes foundational categories as listed
+below.
+
+14
+
+CSDM 5 WHITE PAPER
+
+•
+•
+
+Value Stream Stage (cmn_value_stream_stage), a distinct grouping of activities within a value
+stream represented as flow relationships
+Value Stream to Capability (cmn_value_stream_capability) and Value Stream Process
+(cmn_value_stream_process) are mapping tables to create references to Business Capabilities
+and Business Process respectively.
+
+Figure 7. Value Stream and Value Stream Stage mapping to Business Capability and Process.
+
+The 16 value stream categories provided as part of the Value Stream data model are as follows:
+• Customer Engagement - Acquiring customers, determining their needs, selling, ensuring they are
+pleased (Business)
+• Order Fulfillment – Receiving orders, fulfilling orders, collecting payments (Business)
+• Customer Service - Providing customers with services such as help using the product, planning, and
+consulting (Business)
+• Manufacturing - Production of goods, maintenance of inventory, interaction with suppliers (Product
+and Business)
+• Procurement Service – Assistance in supplier selection, contracting, and management (Business)
+• Product & Design Engineering – Designing products and the facilities for manufacturing them
+(Business)
+• Research – Exploration of potentially valuable science and technology (Business)
+• Marketing – Determining customer needs, products to build, features needed, advertising (Business)
+• Market Information Capture - Information about sales, competitive intelligence (Business)
+• Product Maintenance - Repairing products and preventative maintenance on customer sites
+(Business)
+• Legal – Solving legal problems, writing contracts (Business)
+• Digital Product Development – Developing and modifying systems and software (Product)
+• Technology Enablement - Building the corporate network, databases, and facilities for distributed
+computing (Business)
+• Human Resources – From recruitment to termination (Business)
+• Leased & Capital Asset Management – Management of buildings and capital resources (Business)
+• Financial Management - Accounting, banking, cash management (Business)
+With the help of Enterprise Modeling and Visualization from the Enterprise Architecture solution team
+(formerly known as APM), you can visually design and commit your Value Stream data model within the
+ServiceNow AI Platform.
+Note: Each value stream stage may be related to one or more Business Processes and Business
+Capabilities through m2m tables: Value Stream to Process and Value Stream to Capability.
+
+15
+
+CSDM 5 WHITE PAPER
+
+With the help of Lenses from the Strategic Portfolio Management (SPM) team, you can relate Value
+Streams to the strategic management of your business.
+Business Process
+A Business Process is a method of related steps that stakeholders take to achieve a business goal. The
+Business Process is a manually maintained CI that can identify criticality, both declared and determined,
+as well as impact to confidentiality, integrity, and availability. The review frequency of the Business
+Process can be set to Monthly, Quarterly, Semi Annual / Half Yearly, Annually, and none. Additionally,
+the next review date can be specified.
+Business Processes are recorded in the cmdb_ci_business_process table. Business Processes may be
+identified in a parent/child relationship using the parent attribute as a reference to a parent Business
+Process.
+With the help of Enterprise Modeling and Visualization from the Enterprise Architecture solution team
+(formerly known as APM), you can visually design and commit your Business Process data model within
+the ServiceNow AI Platform.
+Contract
+A contract is a binding agreement between two parties. In the ServiceNow AI Platform, contracts
+contain detailed information such as contract number, start and end dates, active status, terms and
+conditions statements, documents, renewal information, and financial terms.
+Contracts are recorded in the ast_contract table. A Contract is NOT a configuration item. Contracts use
+Contract Model types from the Product Model module. Service contracts may support hardware CIs in
+support of SLA and Vendor Management. Additionally, Service contracts may be used by Customer
+Service Management (CSM).
+Product (Models)
+What is a Product? Everything is a product! Depending on your perspective …
+• Products are goods or services that your company sells and supports in exchange for something
+of value
+• Products are the services you develop and release for your own organization to consume
+• Products are what you purchase that may need to be tracked for potential risk to the
+organization
+• Products are core to your organization
+
+16
+
+CSDM 5 WHITE PAPER
+
+Figure 8. Ten base Product Models class model.
+
+In the ServiceNow AI Platform, products are recorded as Product Models (cmdb_model). Product
+Models enable you to identify a product owner, the status of a product within your organization,
+compatibility with other products, reference to product catalog, and reference to a list of objects that
+represent the details of various stages of a product’s life cycle. Additionally, you can identify the end-oflife details of your products as established by third-party providers and/or internal product owners. With
+product models, you can document bills of materials (BOMs) with other products as components to
+represent the set of products that your organization develops, sells, and/or consumes.
+Historically, the ServiceNow AI Platform has managed technical product models. In recent years, Product
+Models have grown to include enterprise good models as part of the licensable Enterprise Asset
+Management (EAM) solution. EAM product models support various industries including retail,
+transportation, medical, industrial, wearable, construction, tactical equipment, and more. CSDM focuses
+on the core product models with visibility into the enterprise good models from EAM.
+Product models are extended into ten base types:
+• Application Model (version-agnostic)
+• System Component Model (version-specific)
+o Software Component Model
+o Service Offering Model
+o Firmware Model
+o AI System Product model
+• Service Model
+• Software Model – for Software Asset Management (SAM), entitlement specific use only
+(version-specific)
+
+17
+
+CSDM 5 WHITE PAPER
+
+•
+•
+•
+•
+•
+•
+
+Content Product Model
+Contract Model
+Facility Model
+Hardware Model
+Consumable Model
+Enterprise Good Model
+
+The System Component Model and its children are important additions to CSDM 5. The tables replace
+previous guidance in referencing versions of software (in source, build/binary and packaged/deployable
+forms) and other versioned products such as services. The System Component Model structure provides
+visibility into the development, release, deployment, and consumption of versioned products as well as
+components of aggregate products (and services). Current ServiceNow AI Platform solutions that use the
+Software Component Model include EA, Digital Product Release, SAM and ITAM/OTAM & Software
+Security Vulnerability Response with SBOM. With SAM Foundations, the Software Component Model
+can be populated with normalized discovered values.
+Product Models are recorded in the cmdb_model table via its extended tables known as product model
+classes.
+NOTE: product model classes are not the same as CMDB Classes
+The product model tables are not CIs. CIs reference product models using the “Model ID” attribute
+available on all CMDB tables. For example, a Service Offering CI may reference a Service Offering Model,
+while a Windows Server may reference a Hardware Model.
+Product Feature
+A product feature represents what a Product (model) does. Its use is to support the release of products.
+Through product enhancements, the product feature connects to stories, code, testing, etc. the product
+feature object is a core element of Digital Product Release (DPR).
+Software Bill of Materials (SBOM)
+SBOM is a new addition to the CSDM 5 data model. The SBOM represents a detailed inventory of all
+components that make up a piece of software. In the ServiceNow AI Platform, the SBOM is a core
+element for Security Operations and the tracking of possible vulnerabilities within your operations. The
+concept of an SBOM or BOM (bill of materials) is important to ServiceNow as we expand its use from
+Service Delivery into the stages of Design & Planning and Build & Integration.
+The BOM data model is available on the ServiceNow Store as SBOM Core sn_sbom_core.
+
+CMDB Group
+CMDB Group is a collection of CIs based on one or more of the following items:
+• Saved Query Builder queries
+• Encoded queries
+
+18
+
+CSDM 5 WHITE PAPER
+
+• Manual entries
+A CMDB Group is not a CI. The purpose of the CMDB Group is to enable useful groupings of CIs that can
+be used throughout the ServiceNow AI Platform.
+In the CSDM, a Dynamic CI Group (part of the model) includes criteria that specify which CMDB Groups
+to include. Dynamic CI Groups are discussed on page 43.
+CMDB Groups are recorded in the cmdb_group table. A CMDB Group can contain one or more saved
+queries from Query Builder, encoded queries, or manually added CIs. For some customers, a CMDB
+Group can replace the spreadsheet grouping of CIs where automated solutions are either not available
+or not yet implemented.
+CSDM Life Cycle
+Life Cycles are standard fields and values for tracking life cycle stages and stage statuses for Products,
+Assets, Contracts, CIs, Locations, and more. Consistent use of these standard values help to effectively
+track objects through their life cycle process transitions.
+The CSDM Life Cycle Stage and Life Cycle Stage Status attributes are an end-to-end process method of
+managing status on CIs, assets, and other ServiceNow AI Platform objects. The combination of Life Cycle
+Stage and Life Cycle Stage Status uniquely specify an object’s status.
+This chart illustrates how the CSDM domains use of life cycle stage status values.
+
+Figure 9. Aggregate CSDM Life Cycle model
+
+With the introduction of Product Instance 2.0 (PI2.0) in the Xanadu family release, optional activation of
+PI 2.0 will eliminate synchronization efforts between legacy configuration item statuses (intall_status,
+operational_status, hardware_status) with Life Cycle Stage and Life Cycle Stage Status. Because this
+
+19
+
+CSDM 5 WHITE PAPER
+
+synchronization process was problematic and failed to deliver consistently positive user experiences, the
+legacy synchronization was eliminated. In its place, ServiceNow implemented synchronization of Life
+Cycle Stage and Life Cycle Stage Status between CI, asset, and install base item (IBI) from CSM.
+NOTE: Once enabled, PI2.0 will DISABLE any previous synchronization efforts between legacy CI
+statuses and Life Cycle Stage & Stage Status on.
+
+NOTE: Disabling PI2.0 synchronization after activation is not a simple exercise and may result in loss of
+data. Test PI2.0 in non-prod environments before activation in production environments.
+Historically, no less than eight attributes existed across various record types within the ServiceNow AI
+Platform as State or Status choice lists. These data elements did not work together and were not
+effectively aligned to the objects they were meant to support. After careful consideration, these legacy
+attributes were deemed ineffective for long-term success. In the Paris release, new Life Cycle Stage and
+Life Cycle Stage Status attributes were born as two new attributes on every CI.
+The Life Cycle Stage represents the stage or phase of an overall life cycle process. A Life Cycle Stage
+Status represents the status or step within a Life Cycle Stage. Together, these data elements provide an
+overall place within a life cycle process.
+•
+•
+
+A life cycle stage is one of the broad phases that an object moves through, from inception or
+procurement to operation and then to end of life.
+life cycle stage status is the particular status of an object within its current life cycle stage.
+
+For example, a hardware CI in the Operational stage might change stage status over time from In Use to
+In Maintenance to End of Support. A different hardware CI might go from In Use to End of Support
+without ever having been in In Maintenance status.
+NOTE: Life Cycle Stages and Stage Statuses are not editable. They are provided by ServiceNow in a
+manner that allows for data integrity, accountability, and consistency across the different entities.
+Unlike legacy state/status values, the new Life Cycle capability will display only those choice values that
+align to the object you are managing. For example, tangible Assets and CIs will not display any choices
+that do not align to tangible objects.
+NOTE: There is no rush to use/migrate the new Life Cycle functionality. A mapping capability from/to
+the legacy state/status attributes is available to populate the Life Cycle fields from legacy values but
+no ongoing synchronization will occur after the Xanadu family release. It is recommended to evaluate
+your dependencies on the legacy state/status attributes prior to enabling and migrating into the new
+CSDM Life Cycle capability. These dependencies may include but are not limited to reporting, scripts,
+business rules, and third-party integrations. Some product features such as CMDB Data Manager do
+require the mapping to be enabled, v. Verify requirements with the features and / products you
+intend to use.
+Life Cycle Processes
+There are five life- cycle processes that use the new Life Cycle fields:
+• Product Life Cycle Process
+
+20
+
+CSDM 5 WHITE PAPER
+
+•
+•
+•
+•
+
+Tangible / Physical Life Cycle Process
+Intangible / Logical Life Cycle Process
+Document Life Cycle Process
+Location Life Cycle Process
+
+Product Life Cycle Process
+The product life cycle process focuses on the Life Cycle Stages and Life Cycle Stage Statuses that would
+be needed to manage the overall life cycle of a product. For more information on products, see
+“Products (Models)” documented above in this white paper.
+Products have a process where the Life Cycle Stages are Ideation, Design, Build, Operational and End of
+Life. These Life Cycle Stages are further classified into Life Cycle Stage Statuses. The Life Cycle Stage and
+Life Cycle Stage Status settings for the product life cycle process are visible only on Product (Models)
+tables.
+
+Figure 10. CSDM Life Cycle for Product Model and Service Model.
+
+Product Life Cycle Definitions
+• Ideation: This phase involves evaluating new product models to determine feasibility and
+potential adoption.
+o Under Evaluation – The product is being assessed for business value, functionality, and
+technical viability.
+o Pilot – A small-scale deployment of the product for testing in a controlled environment
+before broader adoption.
+• Design: Once a product is approved for development or configuration, this phase involves
+defining its structure and features.
+o Chartered – The product model has been formally approved for development or
+procurement.
+o Design – The product is being architected, including defining specifications, features,
+and configurations.
+o Build – The product is being developed, tested, and prepared for operational
+deployment.
+• Operational: The product is actively available and used within the organization.
+o Available – The product is fully developed and ready for procurement or deployment.
+o Pending Retirement – The product is still operational but is scheduled to be phased out.
+o End of Support – The product is no longer receiving updates, maintenance, or vendor
+support.
+• End of Life: The product is no longer in active use and is being retired.
+
+21
+
+CSDM 5 WHITE PAPER
+
+o
+o
+
+Retired – The product is no longer available for new purchases or deployments but may
+still exist in limited use.
+Obsolete – The product is completely phased out and is no longer supported or used.
+
+Tangible / Physical Entity Life Cycle Process
+The tangible / physical life cycle process focuses on the Life Cycle Stages and Life Cycle Stage Statuses
+that would be needed to manage the overall life cycle of tangible / physical assets and CIs as they relate
+to their product. For more information on products, see “Products (Models)” documented earlier in this
+document.
+
+Figure 11. CSDM Life Cycle model for Tangible, Physical products.
+
+Tangible / physical entities have a process that identifies the Life Cycle Stages as Ideation (on Product
+Model), Purchase, Inventory, Deploy, Operational, Defective, Missing, End of Operation, and End of Life.
+These Life Cycle Stages are further classified into Life Cycle Stage Status values. The Life Cycle Stage and
+Life Cycle Stage Status values for the tangible / physical life cycle process are visible only on tangible /
+physical-related tables in Asset and CMDB.
+Tangible / Physical Life Cycle Definitions
+• Ideation: This phase involves assessing new tangible / physical models for potential use within
+the organization. It includes:
+o Under Evaluation – The hardware model is being reviewed for compatibility,
+functionality, and business fit before approval.
+o Pilot – A limited deployment of the hardware model for real-world testing before
+broader adoption.
+• Purchase: Once a tangible / physical model is approved, the organization proceeds with
+procurement. This phase includes:
+
+22
+
+CSDM 5 WHITE PAPER
+
+On Order – The asset has been ordered from a vendor but has not yet been received.
+Pre-Allocated – The asset is already assigned to a specific purpose or user before its
+arrival.
+Inventory: The asset is received and stored in inventory before deployment. It can have
+different statuses:
+o Available – The asset is in stock and ready for deployment.
+o Reserved – The asset is set aside for a specific request but not yet deployed.
+o Pre-Allocated – The asset is assigned to a request but not yet physically allocated.
+o Pending Repair (CI) – The asset is in stock but requires repairs before being usable such
+as on-site visit from manufacturer or RMA swap.
+o Legal Hold (CI) – The asset cannot be deployed due to legal restrictions or compliance
+reasons.
+o Quarantine (CI) – The asset is isolated due to potential security risks, failures, or noncompliance.
+Deploy: Assets are prepared and moved into operational use. This includes:
+o In Stock – The asset is stored but designated for deployment
+o Reserved – The asset is assigned to a user or department but has not been physically
+moved.
+o Pending Transfer – The asset is scheduled for relocation to another facility or user.
+o In Transit – The asset is currently being moved between locations.
+o Test – The asset has been identified as part of a deployment activity, has been built, and
+is ready for testing prior to operational usage
+Operational: The asset is actively in use or undergoing maintenance.
+o In Use – The asset is deployed and functioning in a live environment. Default status
+when a CI is discovered.
+o In Maintenance – The asset is being serviced or undergoing repairs while still considered
+operational.
+o End of Support – The asset has reached the end of vendor or internal support but is still
+in use.
+o Pending Retirement – The asset is still operational but marked for decommissioning.
+End of Operation: Intermediate stage between Operational and its next stage, whereby
+Operations of the product have ended, but the product instance is transitioning to a new life
+cycle stage and status.
+o In Transit - the non-operational, transitionary status to support repurpose and/or true
+end-of-life
+o Pending Evaluation - is the non-operational intermediate state whereby a product is
+evaluated to determine its next stage and status
+o Pending Return - becomes the common non-operational state prior to the asset
+returning and/or the provider receiving the returned asset in either a "RMA", "Vendor
+Credit", "Buy-Out" or "Lease Return" end of life stages.
+o Pending Resale - intermediate status prior to selling the asset to a 3rd party entity
+o Pending Certificate - the intermediate statutes prior to the receiving a certificate of
+disposal
+o Pending Disposal - the intermediate statutes prior to the asset being “Disposed”
+o Pending Donation - the intermediate statutes prior to the asset being donated
+o On-Hold – reflects a halted operational use. The reason for the hold may be
+synonymous with "Suspended" (e.g. Service, Subscription, etc.), "Blocked" (e.g. credit
+card, account, etc.), "Paused" (e.g. subscription, lease, etc.)
+o
+o
+
+•
+
+•
+
+•
+
+•
+
+23
+
+CSDM 5 WHITE PAPER
+
+•
+•
+•
+
+Defective: Tangible / physcal devices that have failed and require replacement or repair.
+o In Stock – The defective asset is stored and awaiting disposition.
+o In Transit – The defective asset is being shipped for return, repair, or disposal.
+Missing: Assets that are unaccounted for or stolen.
+o Lost – The asset is missing and cannot be located.
+o Stolen – The asset has been confirmed as stolen.
+End of Life: Assets that are being decommissioned or disposed of.
+o Pending Disposal – The asset is marked for disposal but has not yet been removed.
+o In Transit – The asset is being shipped to a disposal or return location.
+o Pending Certificate – Awaiting official documentation for decommissioning or disposal.
+o Disposed – The asset has been discarded following proper procedures.
+o Donated – The asset has been given to a non-profit, employee, or another entity.
+o RMA – The asset is returned to the vendor for replacement or repair under warranty.
+o Sold – The asset has been sold as part of asset liquidation.
+o Vendor Credit – The asset was returned to the vendor for credit instead of
+replacement.
+o Buy-out – The asset was leased and has been purchased instead of returned.
+o Lease Return – The leased asset has been returned to the vendor at the end of its lease
+period.
+
+Intangible / Logical Entity Life Cycle Process
+The intangible / logical life cycle process focuses on the Life Cycle Stages and Life Cycle Stage Statuses
+that would be needed to manage the overall life cycle of intangible / logical assets and CIs as they relate
+to their product. For more information on products, see “Products (Models)” documented earlier in this
+white paper.
+
+Figure 12. CSDM Life Cycle model for Intangible, Logical Products & Services.
+
+Intangible / logical assets have processes that identify the Life Cycle Stages as Ideation (on Product
+Models), Purchase, Design, Inventory, Deploy, Operational, End of Operation, and End of Life. These Life
+24
+
+CSDM 5 WHITE PAPER
+
+Cycle Stages are further classified into their Life Cycle Stage Status values. The Life Cycle Stage and Life
+Cycle Stage Status values for the logical life cycle process are visible only on logical-related tables in
+Asset and CMDB.
+Intangible / Logical Life Cycle Definitions
+• Ideation: This phase involves evaluating and testing new software or service products before
+they are approved for use.
+o Under Evaluation – The software is being assessed for business fit, licensing
+implications, and technical feasibility.
+o Pilot – A limited deployment of the software to test its functionality and usability before
+full-scale implementation.
+• Purchase: Once the software is approved, the organization procures the necessary licenses or
+subscriptions.
+o On Order – Licenses or software subscriptions have been purchased but are not yet
+available for use.
+o Pre-Allocated – Licenses are assigned to users or departments before they are officially
+deployed.
+• Inventory: The software licenses are now available for assignment and deployment.
+o Available – The software licenses are ready for allocation but have not yet been
+assigned to a specific system or user.
+• Design: For software development or major configurations, this phase defines the logical and
+architectural structure.
+o Chartered – A project is initiated to design or configure software solutions.
+o Design – The logical architecture and system requirements are being defined.
+o Build – The software is being developed, customized, or configured for deployment.
+• Deploy: Software and services are prepared for operational use and tested before full
+implementation.
+o Test – The software is installed in a test environment for validation before production
+deployment.
+• Operational: The software is actively in use within the organization.
+o In Use – The software is deployed and functioning within production systems. Default
+status when a CI is discovered.
+o End of Support – The software vendor or internal IT team no longer provides updates or
+technical support, but the software may still be in use.
+o Pending Retirement – The software is scheduled for decommissioning but remains
+operational until a replacement is implemented.
+• End of Operation: Intermediate stage between Operational and its next stage, whereby
+Operations of the product have ended, but the product instance may transition to a new life
+cycle stage and status.
+o On Hold – reflects a halted operational use. The reason for the hold may be synonymous
+with "Suspended" (e.g. Service, Subscription, etc.), "Blocked" (e.g. credit card, account,
+etc.), "Paused" (e.g. subscription, lease, etc.)
+• End of Life: The software is no longer in active use and is being decommissioned.
+o Retired – The software is no longer used, and its licenses may have been revoked or
+reassigned.
+o Obsolete – The software is no longer relevant, either due to security risks,
+incompatibility, or technological advancements.
+
+25
+
+CSDM 5 WHITE PAPER
+
+Document Life Cycle Process
+The document life cycle process focuses on the Life Cycle Stages and Life Cycle Stage Statuses that
+would be needed to manage the overall life cycle of document assets (Contracts) and CIs (Business
+Process) as they relate to their product. For more information on Products, see “Products (Models)”
+documented earlier in this white paper.
+
+Figure 13. CSDM Life Cycle model for Contracts, Document and Architecture artifacts.
+
+Documents have a process that identify Life Cycle Stages as Ideation, Operational, and End of Life. The
+Life Cycle Stages are further classified into their Life Cycle Stage Status choices. The Life Cycle Stage and
+Life Cycle Stage Status choices for the document life cycle process are visible only on document related
+tables in Contracts and CMDB.
+Document Life Cycle Definitions
+• Ideation: this stage is focused on the initial draft efforts for these materials
+o Draft – a document / contract that has its initial creation and editing activity
+o Under Evaluation – after creation, a review of the materials before activating the
+materials as operational in use or published
+• Operational: the active use of the materials
+o In Use – the active operational status before first renewal
+o Published – after approval for release, the formal act of making the materials visibal for
+consumption
+o Renewal in Process – identification of the effort to renew an existing contract that is set
+to expire
+o Renewed – a contract that has been renewed
+o Pending Retirement – a document that has a pending expiration/end date such as
+contracts that have a expiration date
+• End of Life: the materials are no longer active
+o Expired – a date limited material such as contracts that are past their expiration date
+o Retired – materials that are no longer needed by the organization
+
+26
+
+CSDM 5 WHITE PAPER
+
+Location Life Cycle Process
+The location life cycle process focuses on the Life Cycle Stages and Life Cycle Stage Statuses that would
+be needed to manage the overall life cycle of tangible locations within common data. For more
+information on Common Data, please see “Common Data” documented later in this white paper.
+
+Figure 14. CSDM Life Cycle model for Location and related Facility entities.
+
+Locations have a process that identifies the Life Cycle Stages as Design Operational, and End of Life.
+These Life Cycle Stages are further stratified into their Life Cycle Stage Status choices. The Life Cycle
+Stage and Life Cycle Stage Status choices for the location life cycle process are visible only on the
+common data locations table.
+Location Life Cycle Definitions
+• Ideation: This stage involves the initial planning and setup of a location within the organization.
+o Chartered – The location is approved for development, but no physical presence has
+been established yet.
+o Build – The location is under construction, setup, or being prepared for operational use.
+• Operational: The location is active and in use for business operations.
+o Available – The location is fully built and ready for use but currently unoccupied or not
+assigned for a specific function.
+o In Use – The location is actively occupied and being used for its intended purpose.
+o Pending Retirement – The location is still operational but scheduled for
+decommissioning or repurposing.
+• End of Life: The location is no longer in active use and is being decommissioned.
+o Sold – The location has been sold to another entity.
+o Lease Return – A leased location has been returned to the owner or landlord after the
+lease period ends.
+o Obsolete – The location is no longer viable for use due to physical deterioration,
+business strategy changes, or other constraints.
+Common Data
+Common Data is shared data that is prevalent throughout the ServiceNow AI Platform. Examples of
+Common Data include the organizational structure (Company, Business Unit, Department), locations,
+groups, and users. Multiple ServiceNow products depend on Common Data to provide business value.
+Planning of Common Data is core to the effective implementation of ServiceNow capabilities. Careful
+
+27
+
+CSDM 5 WHITE PAPER
+
+planning and answering the following questions and others will assist in developing an effective
+foundation of critical data.:
+• Do I have a trusted source for the data?
+• Are there multiple sources?
+• How often does the data change?
+• Do I have the depth of data that my CIs will require?
+• Who will maintain the data?
+Common Data is recorded in the following tables:
+• Building: cmn_building
+• Business Unit: business_unit
+• Company: core_company
+• Department: cmn_department
+• Group: sys_user_group
+• Location: cmn_location
+• User: sys_user
+Common Data elements are NOT CIs.
+Location Management
+Many customers struggle with managing locations when the source of truth come from multiple
+federated integrations. Often, this data is riddled with “dirty data” and is difficult to maintain. To help
+make the management of location data simpler, we added attributes to the location table
+(cmn_location) in the Rome release
+New Location Attributes:
+• Source ID – where did this location record originate from? Included is a choice for manually
+entered data
+• Location Type – where does this location record fit into the hierarchy (treepicker) of locations?
+These choices provide the ability to create a hierarchy of location data allowing you to scale the
+choices to fit your organizational needs.
+o Region
+o Country
+o State/Province
+o City
+o Site
+o Building/Structure
+o Floor
+o Room
+•
+•
+
+•
+
+Managed by Group – who governs this location record? This attribute aligns to the same
+management schema used by Products, Asset, and CMDB.
+Validation: Duplicate vs Primary – Flag duplicate location records to assist with manually filtering
+out locations you don’t want displayed for users. NOTE: if location is created through
+integrations, deleting a location will only result in the integration recreating the location. For
+each Location record flagged as a “Duplicate”, a Primary location entry must be identified.
+Life Cycle Stage and Life Cycle Stage Status – the Design, Operational, and End of Life view for
+locations (see Location Life Cycle Process documented above in this white paper)
+
+28
+
+CSDM 5 WHITE PAPER
+
+Teams
+Teams is a related list for CIs in the CMDB. It associates a user group to a CI based on group type,
+providing flexibility in tracking the different types of groups assigned to a CI without adding multiple
+attributes to a CI form. In the base system, the Teams related list contains group types that match the
+fields:
+• Change Group
+• Managed by Group
+• Support Group
+When you set a group assignment on a CI form of one of those classes, that group assignment is
+automatically synchronized with the Teams related list. If you set an assignment group for an application
+service, a relationship record is created to represent the new group assignment for the CI. The Teams
+related list on such CI forms, always shows the current settings for the various group assignments for
+the CI.
+Knowledge Management
+Knowledge Management enables the sharing of information in knowledge bases. These knowledge
+bases contain articles that provide users with information such as self-help, troubleshooting, and task
+resolution. AI Agents use knowledge articles to learn.
+
+Ideation & Strategy Domain
+
+What is Ideation & Strategy? The Ideation Domain is a net new addition to the CSDM domains. It
+represents the ideas, concepts and considerations for both the creation of new/additional services as
+well as improvements and enhancements around existing (CSDM) services. Additionally, it represents
+the strategic efforts of the organization to provide value to its customers. Common personas in this
+domain are Product Owner.
+
+29
+
+CSDM 5 WHITE PAPER
+
+Product Idea
+A Product Idea can represent a complete product, feature, enhancement, change proposal or suggestion
+that can be curated and/or promoted into demand, project, epic, or story. Product ideas are recorded in
+the sn_align_core_product_idea table.
+Planning Item
+A Planning Item is any type of work that can be aligned to goals, planned, and executed on. They can be
+demands, projects, epics, or a custom work item defined by the organization with their own
+lifecycles. Planning Items may be organized into different out-of-the-box portfolio structures defined
+within the CSDM to make investment decisions on new and in-flight work to achieve strategic plans and
+goals. Planning items are recorded in the sn_align_core_planning_item table.
+Strategic Plan
+Strategic plan is where organizations can set a Mission, Vision, and Value statement. The following
+describes each:
+• Mission describes what the organization does and why they do it
+• Vision describes where the organization aims to be in the future
+• Value describes the organizations’ principles that guide their actions
+Strategic plans are recorded in the sn_gf_plan table.
+Strategic Priority
+Strategic Priority represents the key focus area that drives long-term goals and success. They represent
+the organizational strategic priorities that are cross-functional and likely span multiple business
+units. Strategic Priorities are recorded in the sn_gf_strategy table.
+Goal
+A goal is a broad outcome that the organization desires to achieve and are often specific to business
+units or are in service of strategic priorities. They are qualitative statements that can be associated with
+portfolios to help make better investment decisions ensuring alignment to desired business
+outcomes. Goals are recorded in the sn_gf_goal table.
+Target
+Targets are quantifiable measures for goals. They represent measurable milestones towards the goal
+that can be broken down over time to track and monitor progress towards achieving them. Planning
+Items are aligned to Goals and Targets. Targets are recorded in the sn_gf_goal_target table.
+Foundational Entities that contribute to Ideation & Strategy
+Product Models are the core element of Ideation as ideas and planning items are related to new or
+existing products, including goods and services.
+Value Streams and Value Stream Stages are core elements of Strategy as organizations relate
+organizational goals and strategic planning to the value sought.
+Business Process support the understanding of activities necessary to achieve organizational goals and
+strategic targets.
+
+30
+
+CSDM 5 WHITE PAPER
+
+Design & Planning Domain
+
+What is Design & Planning? Design & Planning is a CSDM Domain that represents those tables currently
+used by Enterprise Architecture EA (formerly known as Application Portfolio Management APM). These
+tables are used for design and planning thus records in them are NOT the direct targets of ITSM
+processes, namely Incident, Problem, and Change management. These tables represent the logical
+design of the enterprise applications to be deployed and used by the business. Though Enterprise
+Architecture is not required to use these CMDB tables, EA provides enhanced capability to rationalize
+and manage your Business Applications, Technologies, Information and Business object portfolios. The
+Business Capability and Business Application tables have been available OOB in the CMDB since the
+Kingston release. Information Object is a CMDB table available OOB in the New York release of
+ServiceNow. Common personas in this domain are Enterprise Architect and Application Owner.
+Business capabilities
+A business capability can be described as a high-level capability that an organization requires to execute
+its business model or fulfill its mission. A business capability describes what the organization does, not
+how work is performed. It is typically described in the context of performing specific tasks to achieve
+one or more business outcomes. Business capabilities are often represented as verbs (For example
+managing financials or providing IT support services). It is recommended that you establish a CI
+relationship between the business capability and the business applications for visualization and
+reporting purposes. Subsequently, you should establish a similar relationship between business
+applications and the application services to ascertain the technologies which pose risks to the business
+capabilities. This is necessary since enterprise architects routinely assess technologies, information, and
+services based on their relationships to business capabilities and business applications. An accurate
+service model that includes the relationships to business capabilities can serve as the foundation for
+strategy-aligned architectural decisions.
+Business capabilities are recorded in the cmdb_ci_business_capability table. Business capabilities are
+represented in a hierarchical model that includes a parent business capability that may be
+underpinned by one or more lower-level capabilities. These lower-level capabilities are referred to as
+“leaf nodes” in the business capability hierarchy and are typically represented by numeric values such as
+1.0 for the parent and 2.0-6.0 for the leaf nodes. If a business capability hierarchy appears to require
+more than six levels, it is likely a candidate to be decoupled into multiple business capabilities with the
+lower levels representing processes and tasks, not capabilities.
+
+31
+
+CSDM 5 WHITE PAPER
+
+It is recommended that you use the business capability form to create, modify, and extend business
+capabilities. If you add a new capability, update an existing capability, delete a capability at a leaf node
+level, the levels of all the capabilities for the leaf nodes in that hierarchy must be updated accordingly. A
+preferred method for updating capabilities from the business capability form is to click the Update
+Capability Level and HierarchyID related link to update the levels in the hierarchy so that the capability
+map reflects the change. Additionally, the APM product provides a capability map with edit mode, a
+more robust management of the business capability hierarchy for non-technical business users. The
+following conditions should be considered when working with business capabilities.
+Business capability update guidance
+• When adding a capability, the hierarchy level is automatically assigned based on parent
+capability level
+• If a parent capability is updated in the hierarchy, the levels of all its child capabilities are
+recalculated
+• The total number of levels cannot exceed more than six in the hierarchy
+• Only leaf node level capabilities or capabilities that have no child can be deleted
+• Do not create circular relationships. In creating a parent capability, a child capability cannot be
+its parent
+Business applications
+A business application represents all software and infrastructure (For example catalog of titles)
+configured to provide business functionality. Business applications are the logical representation of all
+instances, used to increase productivity and to provide functionality to perform business functions
+accurately (For example payables, receivables, general ledger). Business applications are typically the
+software used by business users but also may represent the “products” that the business uses for
+generating revenue or performing missions. They can span multiple environments and / or deployed per
+geography (For example dev, test, prod, or Americas, APJ, EMEA). You can use the business application
+form shown above to add the applications that your organization uses based on the business capabilities
+that they serve. You can record the details of a business application manually via the form or import the
+list of applications from a spreadsheet or a third-party tool. To import data, define a data source and
+transform map and run or schedule an import. While the use of business applications is not required, it
+is a recommended data object to help plan transformations such as M&A, divestitures, cloud migrations,
+or cost reduction.
+Since business applications are a manually managed CMDB CI class, you will need to manually create
+relationships between the business application and other CIs such as the deployed instances of the
+business application: the application services class. If needed, two or more applications can be
+integrated or connected to each other to establish a relationship between them, representing the
+design level. Using ServiceNow EA, you can add any business application needed to assess and track for
+costs, usage, business value, functional fitment, and risks.
+In the New York release of ServiceNow, the “architecture type” attribute on the business application
+contains the choices “platform app” and “platform host”. These architecture types help represent
+platforms as one type of business application and related business applications which depend on the
+platforms separately.
+
+32
+
+CSDM 5 WHITE PAPER
+
+NOTE: Business Application has a reference to Business Process. As of CSDM 5, the singular reference to
+Business Process is considered legacy and not recommended for use. Other options exist that allow for a
+one-to-many relationship versus the one-to-one reference on a Business Application.
+Information Object
+Information object is part of the information portfolio and referenced by the business application
+primarily in support of scoping the type of data used for governance and compliance purposes. The
+information object is a configuration item that displays the type of information at the conceptual /
+logical tier, where attributes such as data sensitivity and confidentiality are managed. The purpose of
+the information object is to describe the type of data that is used within and often stored in its
+database. Information Objects are also used to capture how data may be exposed or consumed by
+integrations or APIs that the application implements. Information objects are mapped to
+cmdb_ci_information_object table within the CMDB.
+The types of data a business application may possess such as PII, PCI, etc. will help to scope the audits
+where the concerns for how this data is stored, exposed, transported and where it’s stored are required
+to be reviewed periodically for compliance purposes.
+Foundational Entities that contribute to Design & Planning
+Product Models are the core referential object on Business Application through the model_id attribute.
+Relating a Business Application to its peer product model helps provide design and planning details to
+product owners.
+Value Streams and Value Stream Stages are core elements of Design & Planning as organizations relate
+Business Capabilities to the value sought.
+Business Applications are related to Business Processes and Business Process Activities to provide
+understanding of the technology that enables processes.
+Core Data are critical referential data to support ownership and reporting of CIs.
+
+33
+
+CSDM 5 WHITE PAPER
+
+Build & Integration Domain
+
+What is Build & Integration? Build & Integration is a CSDM Domain that represents those tables used to
+give visibility in the build effort of digital products including, but not limited to, the DevOps process.
+These tables are used to reference development details thus records in them are NOT the direct targets
+of ITSM processes, namely Incident, Problem, and Change management. These tables represent the
+logical development details of the enterprise applications to be deployed and useused by the business.
+Though ServiceNow DevOps is not required to use this CMDB table, DevOps provides enhanced
+capability to visualize and manage your application development pipeline. The SDLC Component is
+available through the CMDB Schema store app version 1.33. A common persona in this domain is Teams.
+For CSDM 5 a greater emphasis is placed on Integration, recognizing the fact that most Digital Product &
+Services (for internal enterprise usage as well as supporting or within the products for-sale external to
+the organization) rely on integration with other internal or 3rd party services to provide the necessary
+business capabilities.
+DevOps Change Data Model
+ServiceNow DevOps is built on a powerful data model that connects your DevOps toolchain to the work
+and data already in the ServiceNow AI Platform. One of several valuable outcomes is the ability to
+accelerate changes while ensuring effective and transparent risk management. The underlying data
+model that supports the ServiceNow DevOps Change Velocity capability is now available out of box
+through the ServiceNow App Store.
+SDLC Component
+SDLC Component is part of the new build domain and will be referenced by DevOps. The SDLC
+Component is a configuration item that represents a unique development effort of code. The purpose of
+the SDLC Component is to represent the parts of a larger Business Application / Digital Product broken
+down into its individually developed components. That said, a SDLC Component is a software part or
+element of a larger whole for an application or technology.
+
+34
+
+CSDM 5 WHITE PAPER
+
+Types of SDLC Component:
+• Application – examples include micro services and APIs
+• Infrastructure – examples include database configurations and security configurations
+A deployed instance of a SDLC Component of type “Application” would be an Application Service. A
+deployed instance of a SDLC Component of type “Infrastructure” would be any infrastructure CI for
+which the SDLC component represents that snapshot of its configuration details.
+AI System Digital Asset
+The AI System Digital Asset represents the Software/Application components for AI and gen AI services.
+For the purposes of build, integration and AI governance, the AI System Digital Asset (ServiceNow, 3rd
+party or customer bespoke) represents the deployable software source, binaries and components that
+feed into the build & integration pipelines.
+In addition to the AI System Digital Asset, the data model also incorporates the AI Model (LLM, ML, SLM
+or otherwise), the AI Dataset (source, training, validation) and AI Prompt Digital Assets.
+Upon deployment the AI entities then can be associated or mapped to AI agents, AI Skills, AI Tools and
+AI based search. The Service Delivery Domain section describes the genAI services as Data Service
+Instances.
+Foundational Entities that contribute to Build & Integrate
+Product Models are the core referential object to identify details of development and release efforts to
+product owners. Within Build & Integrate, the following product model classes are important:
+• System Component Model
+• Service Offering Model
+• Software Component Model
+• AI System Component Model
+• AI Content Product Model
+Product Feature identifies what a product does and is related through enhancements to stories,
+planning, and other development activities.
+Core Data are critical referential data to support ownership and reporting of CIs.
+
+35
+
+CSDM 5 WHITE PAPER
+
+Service Delivery Domain
+
+What is Service Delivery? The Service Delivery domain (formerly Manage Technical Services) is a CSDM
+Domain that represents those tables historically used by IT Operations Management such as Service
+Mapping and ServiceNow Discovery. Additionally, they represent the technology management services
+portfolio of services provided for the business to consume. The Service Delivery tables are “operational”
+thus ARE selected for ITSM: Incident, Problem, and Change, as well as referenceable from CSM through
+the Install Base Item (IBI). Service offerings may be requested through the Request Catalog. The service
+delivery tables represent the provider view of deployed service instances, and the delivery mechanisms
+needed to realize said services that the business will consume. Service Instance Owners may own the
+infrastructure tied to their services or to the delivery of services where no infrastructure exists. One
+example of delivery is Managed Service Providers.
+Though Service Mapping and ServiceNow Discovery are not required to use the referenced service
+delivery tables, such capability greatly reduces the manual effort to manage/maintain configuration
+items and their relationships. The Application Service table has been available OOB in the CMDB since
+London. Configuration Items in the service delivery space represent those discoverable items such as
+installed applications, middleware, hosts, and networking. Common personas in this domain are Service
+Instance Owner, Service Delivery Owner, and Service Provider.
+The Service Delivery domain represents the overall end-to-end Service Delivery System that
+encapsulates the infrastructure, the technologies, the integration patterns (infrastructure, systems,
+data, processes, dependency models), the service delivery networks and the operational models to
+deliver the CSDM compliant services to internal and external users and/or organizations.
+Key additions and enhancements for CSDM 5 are:
+•
+Identification and expansion of Service Instances beyond Application Services
+• Data and AI Service Instance
+
+36
+
+CSDM 5 WHITE PAPER
+
+Operational Process Service Instance
+Facility Service Instance
+Connection Service Instance
+Network Service Instance
+Expanded use of service classes beyond digital products to include utility, manufacturing, retail,
+and transportation type services
+Identification of APIs as critical elements of the service delivery system
+Identification of Operational Technology as critical elements of the service delivery system in
+support the expanded services
+Generative-AI capabilities as a first-class entity for integration, delivery as well as dependency
+fulfillment.
+•
+•
+•
+•
+
+•
+•
+•
+•
+
+What is Service Classification attribute? Service Classification is an attribute on the cmdb_ci_service
+table within the CMDB. All tables extended from cmdb_ci_service will inherit the Service Classification
+attribute. Long before cmdb_ci_service_business, cmdb_ci_service_technical, and
+cmdb_ci_service_auto existed, there was just one Service table within Service Portfolio Management:
+cmdb_ci_service. To help identify types of Services, the attribute Service Classification was a choice list
+with values used to denote types of services. When Application Services were created as an extension of
+cmdb_ci_service, there was a gap between organizations using the legacy table and those adopting the
+new Application Service with Service Mapping capability. The legacy Service Classification attribute was
+reused to preserve data integrity between organizations using old vs new capabilities. That reuse of
+Service Classification was extended in several use cases:
+• Identify when a Service Offering is use for Business Services or Technology Management
+Services
+• Identify if a Dynamic CI Group is treated as a query-based Application Service or a technical
+grouping of discoverable CIs
+For most use cases, the Service Classification is populated automatically based on the Class of the CI
+being created. For now, the Service Classification attribute on cmdb_ci_service and all extensions
+remains a necessary legacy object.
+Service Instance
+Since the inception of CSDM, we have defined and documented the use of Application Services as
+instances of a service. Until CSDM 5, the application service was the ONLY service instance provided by
+ServiceNow. As customer and ServiceNow requirements have expanded over time, we need to
+introduce additional types of service instances beyond the existing application services.
+To accomplish the introduction of service instances, ServiceNow relabeled cmdb_ci_service_auto to
+Service Instance. The tables originally extended from cmdb_ci_service_auto remain as Application
+Services based on their method of population (service mapping, tag based, etc.). New service instances
+extended from cmdb_ci_service_auto have been introduced to accommodate expanded use of services.
+
+37
+
+CSDM 5 WHITE PAPER
+
+Note: As of the release of CSDM 5, there is NO USER INTERFACE for the creation and management of
+Service Instances. The pre-existing Application Service Wizard will remain the default method of
+creating and managing Application Services.
+• There is no expectation for use of Service Instances unless local requirements necessitate said
+use
+• New service instance extensions (siblings of Application Service extensions) are provided as a
+data model ONLY requiring manual creation and maintenance
+• New service instances are not part of Event Impact Analysis
+Application Services
+Application service is a service and service instance type that is a logical representation of a deployed
+system or application stack. Application services can be internal, like an organization email system or
+customer-facing, like an organization website. For example, creating financial reports through a webbased application requires a computer, web server, application server, databases, middleware, and
+network infrastructure. These applications and hosts are all configured to offer the service of financial
+reporting. In development environments, application services represent instances of a business
+application or system in different types of development environments, like development, test, or
+production. Using application services lets you view maps and change history for services. If Event
+38
+
+CSDM 5 WHITE PAPER
+
+Management is deployed, you can monitor application service performance and identify health issues
+for application services.
+Application services roll up to cmdb_ci_service_auto as a Service Instance for common reporting and
+they underpin a business or technology management service. Beginning with the Paris release,
+customers have a method to register application service first and then pick the population method
+later. The registration process gives admins the ability to define uniqueness as well as define required
+field to create the initial record. Furthermore, Application Service also has a unique ID associated with it
+and can be leveraged for tagging external systems. Finally, there is also a new way to create application
+service using Dynamic Group that is introduced in Paris.
+To assist with the creation of Application Services a “New Application Service” wizard is used to create
+an Application Service (along with new APIs). This wizard allows you to provide basic details, choosing a
+data population method, and Previewing the Application Service prior to committing. NOTE: previous
+methods for creating an Application Service remain. Application Service creation flow begins using the
+cmdb_ci_service_auto table and then switching to the child table once you have picked your method for
+population.
+•
+•
+•
+•
+•
+
+Top-Down Discovery (Service Mapping): cmdb_ci_service_discovered
+Manual: cmdb_ci_service_discovered
+Tags: cmdb_ci_service_tags
+Calculated: cmdb_ci_service_calculated
+Dynamic CI Group (Query Based): cmdb_ci_query_based_service
+
+The offering of application services should be exposed via the related business or technical service
+offering. Application Service was introduced in London and will continue to serve as a key relationship
+entity for ITSM, ITOM, ITBM, and CSM in the upcoming releases. Its relationships include business
+applications, business services, technical services, applications, and infrastructure CIs.
+Data Service Instance
+A Data Service Instance represents a specific deployed, provisioned and/or configured instance of a set
+of data services that are provided by a single or set of data service providers and the related
+infrastructure, including but not limited to database servers & services, data storage services & devices,
+AI/ML services (including data pipelines, models, training sets, etc.) and derivative Data Products.
+Connection Service Instance
+A Connection Service Instance is a Configuration Item that represents a logical or physical network
+connection (e.g. VLAN, LAN, WLAN, etc.) that is either discovered, configured and/or provisioned. While
+network connections could be modeled as CMDB relationships, those would not provide the same
+dependency and impact analysis properties & behavior that are based on CI instances.
+A (provisioned) Connection Service Instance typically is based on connectivity between Network
+Functions, which in turn are based on one or more Network Infrastructure Cis. The collection or graph of
+Connection Services Instances form the Service Delivery Network.
+Network Service Instance
+The Network Service Instance represents a specific deployed, provisioned and/or configured instance of
+a set of network services that in turn are based on Network Functions.
+
+39
+
+CSDM 5 WHITE PAPER
+
+Together with Connection Service Instances, the Network Service Instances form in essence the Service
+Delivery Network, whereby the Service Delivery Network is part of the Service (Dependency) Map.
+Operational Process Service Instance
+An Operational Process Service Instance is extended from Service Instance and represents a logical
+instance of an operational process that is based on a series or sequence of interdependent (network)
+connected and disconnected devices and equipment that implement or realize the end-to-end
+operational process (manufacturing, industrial processing, utility operational processes, warehouse
+operations, etc.). The Operational Process may be autonomic but typically involve operational, frontline employees.
+Facility Service Instance
+A Facility Service Instance is extended from Service Instance and represents a logical instance of a
+service that is associated with the operations of a Facility (office building, residential building,
+manufacturing plant, operations control center, parking garage, etc.). This may include heating &
+cooling services, lighting, power distribution, hot & cold-water distribution, building access services,
+security monitoring, elevator services, etc.
+Service Delivery Network
+
+The Service Delivery Network is not an envty but represents a set of interconnected services. At its core
+the Service Delivery Network (see also Figure 1) enables the Service Consumers (end-users, connected
+
+40
+
+CSDM 5 WHITE PAPER
+
+devices, etc.) to access the service where the Service Provider has “distributed to" or “made available”
+the speciﬁc Service Instance.
+In a Technology Workﬂows scenario, we idenvfy the Service Delivery Network that make up the
+elements of an Applicavon Service.
+Addivonal scenarios may be created beyond or dependent upon Technology Workﬂows, where the
+mapping of interconnected services may be focused on providing / provisioning power, managing supply
+chain etc. Below we focus on the objects found in a Technology Workﬂow related Service Delivery
+Network.
+API
+The API data model is made available within the CMDB to assist in managing your API data. As part of
+API Insights, you can centralize your management of APIs including but not limited to viewing API
+details, comparing APIs, identify & resolve data gaps, and manage service relationships.
+The primary table for APIs is the cmdb_ci_api class with many additional elements that make up the full
+API data model.
+Application
+An application is any deployed program or module that is designed to provide specific functionality on
+specific compute infrastructure. An application defines behavior and has specific functionality associated
+with it. Applications are typically discoverable instances and tend to provide a specific set of
+functionalities for one or more services. In the context of ServiceNow, applications are limited to single
+host to ensure they maintain a unique identification during discovery processes. Additionally, there is
+not a one-to-one relationship between application and application service. In other words, a single
+installed application such as a database instance, may support multiple Application Services depending
+on the configuration and use of those applications.
+The application table is not intended to be an inventory or portfolio of your applications. Those
+inventory/portfolio objects belong in the Business Application table discussed earlier in the Design
+domain. Instead, the application table and extended tables are meant to be those uniquely discoverable
+instances of code running on a host. Applications are considered to part of the infrastructure
+configuration items.
+AI Function
+AI SaaS applications deployed on public cloud platforms that offer scalable, on-demand services for
+machine learning, data processing, and AI-driven tasks. This provides flexible solutions without the need
+for on-premises infrastructure management. AI Functions are mapped to the cmdb_ci_function_ai table
+in the CMDB.
+AI Application
+AI software applications that can run on various platforms such as Linux, Windows, Docker containers,
+or Kubernetes (K8) clusters. These platforms support diverse AI workloads, including machine learning
+models, data analytics, and intelligent services or AI-enabled applications. AI Applications are mapped to
+the cmdb_ci_appl_ai_application table in the CMDB. This is an extension from cmdb_ci_appl.
+
+41
+
+CSDM 5 WHITE PAPER
+
+Operational Technology (OT)
+Refers to the systems and devices used to automate, monitor, and control physical processes, often in
+industrial environments, such as manufacturing, energy, or transportation. It's the technology that
+interacts directly with the physical world, managing things like machinery, processes, and infrastructure.
+Installation of OT classes in the CMDB are added through the CMDB Class Model App in the ServiceNow
+Store.
+Infrastructure configuration items (Hosts and Networking)
+Infrastructure configuration items (CI) are physical and logical components representing infrastructure
+that is currently or soon will be under configuration management. CIs may be a single module such as a
+server, router, or more complex items such as a complete structure (For example web server, database,
+infrastructure). The underlying infrastructure components or CIs are known and well understood in most
+organizations. The complexity often surfaces as the data structures are layered on top of those physical
+CIs, which is why ServiceNow recommends engaging a business relationship manager or enterprise
+architect to define the various business capabilities and business applications.
+Technology Management Services
+NOTE: Technology Management Services were previously labeled Technical Services in CSDM 4 and
+before the Yokohama family release.
+Technology Management Services represent the service type of technical service that is published to
+service owners and typically underpins one or more business or application services. Using technology
+management services lets you view and manage the technology you provide to the business. A
+technology management service may have an operational view made up of one or more technology
+management service offerings.
+Technology Management Services are mapped to the cmdb_ci_service_technical table starting with the
+Paris release of ServiceNow. Previous releases recommended mapping technical services to
+cmdb_ci_service with a service classification of “Technical Service” while Event Management enabled
+technical services are mapped to cmdb_ci_query_based_service. The cmdb_ci_query_based_service
+has been relabeled to Dynamic CI Group in the Paris release of ServiceNow.
+A Service Portfolio hierarchy may be referenced from Technology Management Services starting with
+the Rome release of ServiceNow. Previous releases did not permit Technology Management Service
+references to Service Portfolio nodes. The addition of Service Portfolio reference allows for a more
+complete hierarchy and management of both Technical and Business Services within Service Portfolio
+Management and related workspaces.
+Technology Management Service offering
+NOTE: Technology Management Service Offerings were previously labeled Technical Service Offerings
+in CSDM 4 and before the Yokohama release.
+Technology Management Service Offering is a service offering type of “technical service” defined as a
+stratification of the technology management service into options including localization/geography,
+42
+
+CSDM 5 WHITE PAPER
+
+environment, pricing, availability, capability, support group (for incident), technical approval group (for
+change), and packaging options (commitments).
+Different levels of performance and features for a given technology management service can be made
+available via the technology management service offering. A service commitment defines service
+delivery obligations agreed to between consumer and provider. There is also a concept of a service
+offering subscription that records which users have access to an offering.
+Technology Management Service Offerings consist of one or more service commitments that uniquely
+define the level of service in terms of availability, criticality, scope, and pricing, and other factors. For
+example, an organization may offer two levels of support for an application service: a “Prod” offering of
+high availability and criticality for the production instances with commitments of 5-minute response
+guarantee 24/7: a “NonProd” offering of limited availability and criticality with commitments of 60minute response guarantee between 8-5 on weekdays.
+The Technology Management Service Offerings are mapped to service_offering with a service
+classification of “Technical Management Service.” Technology management service offering is derived
+from service and refined depending on how the parent serves a specific technical need. ServiceNow
+recommends that every operational technology management service have at least one offering.
+Beginning with New York, service offerings may be requested through the Request Catalog.
+We recommend that each CI associated through the Dynamic CI group be related to only one
+Technology Management Service and Technology Management Service Offering. Having multiple
+Offerings with different SLA, OLA, Support Groups, and commitments will conflict with one another
+when using new features such as Data Synchronization introduced in Rome.
+Dynamic CI Group
+The Dynamic CI Group is a dynamic grouping of configuration items (CIs), based on results of CMDB
+Groups queries. For example, you can create a dynamic CI group based on the location of all web servers
+in Detroit or all Oracle databases in Boston. Dynamic CI Group uses CMDB Group (see Foundation
+Domain for details) to identify CIs of common criteria. Note: A Dynamic CI Group contains CIs. However,
+a Dynamic CI Group cannot contain other groups.
+The use cases for Dynamic CI Group include but are not limited to the following:
+• As a Query Based Application Service – You don’t have Service Mapping yet, but you know these
+12 servers and 3 database instances are part of MyAppServiceProd. Eliminate the old
+spreadsheets and use a Dynamic CI Group as an Application Service.
+• As a Managed Group of Infrastructure – The web servers in Detroit are managed by the
+DetroitRockCity Technical Service Offering. No need to manually create relationships from
+Technical Service Offerings to Infrastructure CIs. Use a Dynamic CI Group. A single relationship
+from your Technical Service Offering CI (DetroitRockCity) to your Dynamic CI Group (web servers
+in Detroit) will result in the desired visibility.
+• Patch Management – It’s time to patch our 200 Linux servers again. In the Change we select our
+Dynamic CI Group for or Linux Servers and then have a business rule auto populate our 200
+servers into Affected CI. You may choose to have multiple Dynamic CI Groups to break up the
+200 Linux Servers into the 50 Americas servers, the 100 European servers, and 50 Asia Pacific
+servers. All 3 Dynamic CI Groups may be related to the same Technology Management Service.
+43
+
+CSDM 5 WHITE PAPER
+
+NOTE: a CI should not be related, through a Dynamic CI Group, to multiple Technology Management
+Service CIs. A CI may exist in multiple Dynamic CI Groups so long as only one of those Dynamic CI Groups
+is related to a Technology Management Service. The Managed By, Support Group, and Change Group
+are copied onto its Dynamic CI Groups which are then copied on to the related CIs. If a CI is related to
+multiple Technology Management Offerings, this data copy will overwrite CI data.
+Dynamic CI Group is mapped to cmdb_ci_query_based_service table with a service classification of
+either “Application Service” or “Technical Service” depending on its use. Setting the service classification
+results in specific use cases for the Dynamic CI Group.
+• Application Service classification – will make the Dynamic CI Group act like a query-based
+Application Service with related CMDB Group identifying the CIs that support the Application
+Service
+• Technical Service classification – will make the Dynamic CI Group act like a grouping of CIs to be
+managed by Technology Management Offerings
+Foundational Entities that contribute to Service Delivery
+Product Models are the core referential object on CIs through the model_id attribute. Relating a CI to its
+product model helps provide service delivery details to product owners.
+CMDB Group is a reference object on Dynamic CI Groups to provide one or more queries of CIs. These
+queries are used to identify CIs that make up a desired CMDB grouping.
+SBOM are software bill of materials that identify the layered components of software using Product
+Models. These SBOMs are critical in understanding the details of installed software. SBOM is a critical
+object for vulnerability management.
+Core Data are critical referential data to support ownership and reporting of CIs.
+
+Service Consumption
+
+Service Consumption? Service consumption is a CSDM Domain that represents those tables currently
+used by Service Portfolio Management (SPM) and Customer Service Management (CSM). Additionally,
+they represent the business portfolio of services that may sell/consume elements of the manage
+44
+
+CSDM 5 WHITE PAPER
+
+technical services domain. The service consumption tables are “operational” thus ARE selectable for
+ITSM: Incident, Problem, and Change. Beginning with New York, service offerings may be requested
+through the Request Catalog.
+Though Service Portfolio Management and Customer Service Management are not required to use the
+referenced CMDB tables, such capability greatly improves the ability to manage workflows and report
+on service-related data. Service offering has been made OOB in New York while Business Service
+Portfolio is a new table OOB in the New York release of ServiceNow. Common personas in this domain
+are Business Relationship Manager and Customer Service Manager.
+Business Service
+Business service is a service type that is published to business users and typically underpins one or more
+business capabilities. Business services are often orderable by business users. Business users can select
+the desired offering and service commitments levels via a request catalog. A business service is made up
+of one or more business service offerings. The view of business services is mapped to
+cmdb_ci_service_business with a service classification of “Business Service”.
+Business Service Offering
+Business Service Offerings are the starting point for configuring Service Portfolio Management (SPM).
+Service Offerings (SO) consist of one or more service commitments that uniquely define the level of
+service in terms of availability, scope, pricing, and other factors. For example, an organization may offer
+two levels of desktop support in your organization: a “standard” offering of upgrades and virus
+protection and an “executive” offering with the standard commitments plus some type of response
+guarantee such as 30 minutes between 8-5 on weekdays.
+A Business Service Offering is defined as a stratification of the service into capability, availability, pricing,
+and packaging options. Different levels of performance and features for a given service can be made
+available via the service offering. A service commitment defines service delivery obligations agreed to
+between consumer and provider. The service offering is the specific record in ServiceNow that identifies
+the business area being serviced and the entity where the service is delivered. There is also a concept of
+a service offering subscription that records which users have access to an offering. Some business
+services and offerings depend on application service. Service offering is derived from service and refined
+depending on how the parent serves a specific business need. ServiceNow recommends that every
+operational business or technical service have at least one offering.
+If offerings have different commitments (and they usually will), those differences should be represented
+by different SLA definitions. If an organization has no offerings, their SLAs will almost always be at a
+process level only (P1 incident, minor change, etc.) with no reference to the service offering being
+affected. Services and offerings that you provide can be represented in the service catalog (by catalog
+Items) and made active for consumers to see.
+Request Catalog
+A request catalog provides a consumable view of available business & technical products, services,
+service commitment options, and offerings. Catalogs help manage what services a user may have access
+to, and they are the initiation point for access to available services. For example, HR service catalog,
+technical catalog. Request Catalogs use catalog items to document consumable offerings.
+Beginning with New York, service offerings may be requested through the Request Catalog.
+
+45
+
+CSDM 5 WHITE PAPER
+
+Catalog item
+A catalog item is a requestable item within the service catalog. Catalog items are the consumable
+representations of service offerings. A given service is often made up of multiple catalog items. (For
+example: employee onboarding). Catalog items are published on the service portal and are available to
+users who are subscribed to services linked with them or have access because of specific catalog
+category/item user criteria.
+Foundational Entities that contribute to Service Consumption
+Product Models are the core referential object on CIs through the model_id attribute. Relating a CI to its
+product model helps provide service delivery details to product owners. Within Service Consumption,
+the following product model classes are important:
+• Service Model
+• Service Offering Model
+Value Streams and Value Stream Stages are core elements of Service Consumption as organizations
+relate Services to the value sought. The metrics provided in Service Consumption are critical feedback to
+measure desired value and goals.
+Core Data are critical referential data to support ownership and reporting of CIs.
+
+Manage Portfolio
+What is Manage Portfolio? The Manage Portfolio domain is a CSDM Domain that represents portions of
+all five previous domains: foundation, design, build, manage technical services, and sell/consume. For
+many organizations, the service owner responsibility includes more than the business services found in
+sell/consume. For these service owners there is a need to include oversight in the business applications
+and their deployed instances known as application services. It is by having this visibility and oversight
+that these service owners encompass the true breadth of their responsibility.
+For example, the Service Owner for HR may have financial responsibility for the business application that
+provides HR services. Additionally, the HR service owner may be directly responsible for overseeing the
+effective deployment of the HR application instances known as application services. Though the HR
+service owner may not be responsible for troubleshooting and repairing these application services,
+that’s the responsibility of the related technical services & offerings, they are responsible for the impact
+the application has on the business.
+Portfolio
+At the highest level, a portfolio is a collection of services, products, projects, or applications. Portfolio(s)
+are used to manage like items together for a business. These may be grouped by objective, capabilities,
+organization, or geography, etc. (For example, ERP or financial management). ServiceNow supports a
+wide range of portfolio types such as service, project, and applications. In this white paper, the focus will
+be limited to the service portfolio.
+Service Portfolio
+Service portfolio is a hierarchical classification of business and/or technical services (products and
+services) that define strategic business value and facilitates the management of their life cycle.
+
+46
+
+CSDM 5 WHITE PAPER
+
+CSDM 5 Tables and Relationships
+CSDM 5 Table Names and Labels
+How do the CSDM 5 Domain Entities map to the CMDB and non-CMDB tables? In this section, we will
+look at how CSDM 5 objects map to the actual tables and CI classes. The mappings in Figure 15 are
+straightforward, but please be advised that this mapping will continue to evolve as we strengthen the
+CSDM.
+CSDM entity – Table Label
+
+Table name
+
+Product Idea
+sn_align_core_product_idea
+Planning Item
+sn_align_core_planning_item
+Business Capability
+cmdb_ci_business_capability
+Business Application
+cmdb_ci_business_app
+Business Process
+cmdb_ci_business_process
+Product Model
+cmdb_model
+Information Object
+cmdb_ci_information_object
+DevOps
+SDLC Component
+cmdb_ci_sdlc_component
+Technology Management Service cmdb_ci_service_technical
+
+Comment
+
+Not a CMDB CI
+
+Service Classification =
+Technical Service
+Service Classification =
+Technical Service
+
+Technology Management Service service_offering
+Offering
+Service Instance
+cmdb_ci_service_auto
+Application Service
+Manual & Service Mapping: cmdb_ci_service_discovered Service Classification =
+Tag Based: cmdb_ci_service_by_tags
+Application Service
+Calculated: cmdb_ci_service_calculated
+Query Based: cmdb_ci_query_based_service
+Connection Service Instance
+cmdb_ci_connection_service_instance
+Service Classification =
+Technical Service
+Data Service Instance
+cmdb_ci_data_service_instance
+Service Classification =
+Technical Service
+Also used for AI System based
+services
+Facility Service Instance
+cmdb_ci_facility_service_instance
+Service Classification =
+Technical Service
+Network Service Instance
+cmdb_ci_network_service_instance
+Service Classification =
+Technical Service
+Network Function
+Cmdb_ci_network_function_instance
+Service Classification =
+Technical Service
+Operational Process Service
+cmdb_ci_operational_process_service_instance
+Service Classification =
+Instance
+Technical Service
+Dynamic CI Group
+cmdb_ci_query_based_service
+Service Classification =
+Technical Service
+API
+cmdb_ci_api
+Application
+cmdb_ci_appl
+Network Function Application Cmdb_ci_network_function_application
+Infrastructure CIs
+cmdb_ci_*
+Various extensions
+Service Portfolio
+service_portfolio
+Not a CMDB CI
+Business Service
+cmdb_ci_service_business
+Service Classification = Business
+Service
+Business Service Offering
+service_offering
+Service Classification = Business
+Service
+Request Catalog
+sc_catalog
+Not a CMDB CI
+Figure 15. CSDM 5 Domain Entity table label and name summary.
+
+47
+
+CSDM 5 WHITE PAPER
+
+Relationships in CSDM
+What relationships do I use between the CSDM CIs? Configuration management is not effective
+without the use of relationships between CIs. Not all objects in the CSDM 5 domain model are CMDB
+tables. Additionally, not all the objects have relationships. The following identifies the relationships that
+are used.
+
+Figure 16. CSDM 5 Configuration Item relationships.
+
+Several ServiceNow products, such as EA (formerly APM), have a critical dependency on the
+relationships listed in Figure 16. If these relationships are not used (ex. Business Application “consumes”
+Application Service) then functionality such as the Technology Portfolio Management risk assessment
+will not function. Additionally, the relationships commonly created as part of ITOM Service Mapping &
+ServiceNow Discovery are considered the standard for infrastructure CIs. When mapping these elements
+manually, without ServiceNow Discovery, it is best to consider WWDD (what would discovery do?).
+Impact analysis processes in Change and Incident for example, use the CMDB relationships to determine
+the services impacted following the reverse direction of the relationship. For the most part the
+relationship type in these processes isn’t critical but should be followed for any potential impact.
+
+48
+
+CSDM 5 WHITE PAPER
+
+Why follow the CSDM?
+The acceptance of CSDM as useful guidance has grown significantly over time. Many customers are
+vocal about their adoption and adherence to the model. Primary value points include but are not limited
+to the following:
+•
+
+•
+•
+
+•
+
+Common Language – Customers with different roles, tools, and backgrounds
+appreciate the single page of CSDM, showing how the data model covers different
+needs in a simple diagram, once understood.
+Technical Debt – Customers with bespoke, custom data models value not needing to
+maintain custom data models and functionality that supports them.
+Greater out-of-box use – Customers understand that ServiceNow is adopting CSDM,
+therefore products will naturally be architected and structured to create and use the
+data in the way CSDM describes.
+Future-proof – as ServiceNow and partners add new functionality in existing products
+or new products, CSDM will be the data model that will be used and expanded to
+accommodate our platforms growth.
+
+ServiceNow products are standardizing their use of Service Management data on the ServiceNow AI
+Platform. That standard is the CSDM model, which identifies the placement of data to be managed
+within the ServiceNow AI Platform. Current and future products from ServiceNow that use the CMDB
+and related tables, may require data to be found in the CSDM framework as documented within this
+white paper. Without this data in prescribed tables, you may not receive the full value of the
+ServiceNow AI Platform.
+
+49
+
+ServiceNow Product Portfolio across CSDM 5
+To get an understanding how ServiceNow products map to CSDM 5 and its respective domains, Figure 17 shows the core products in the
+ServiceNow portfolio that contribute to the end-to-end CSDM Service Life Cycle management (Note that not all products and/or licensed
+options are shown). The contributing products are shown relative to their primary CSDM domain: Data Foundations + Platform, SPM,
+EA+TRM/TPM, DPR/DevOps-Change, ITAM/OTAM/HAM/EAM, SAM, ITOM, AI Governance, VR, ITSM, CSM/FSM/SOM and Impact.
+
+AI Governance
+SPM
+
+TPM/TRM
+EA
+
+DPR
+DevOps
+Change
+
+Impact
+
+ITSM
+
+ITOM visibility,
+events, impact
+
+FSM
+SAM
+
+VR
+
+CSM
+DPM
+
+ITAM/OTAM/HAM/EAM
+
+SOM
+
+Data Foundations (CMDB)
+Figure 17. CSDM 5 across the ServiceNow portfolio.
+
+Other ServiceNow products that follow and/or adopt the CSDM model include (but are not limited to): HRSD, WSD, LSD, S2P/SCM, CSM/SOM,
+FSM, SPO+SLO, FSC:AP/AR, GRC, EAM/HAM/Cloud-insights, Financial Services, PSDS, Telco, OT-Management and ICW, Manufacturing Ops,
+Retail-Ops.
+Obviously not all ServiceNow products are required at once to adopt CSDM 5 or upgrade from earlier models. The next sections describe a
+recommended crawl, walk, run, fly approach.
+
+50
+
+CSDM 5 WHITE PAPER
+
+How to adopt the CSDM standard
+How do I get started with the CSDM? ServiceNow does not recommend trying to implement all
+elements of the CSDM data model at once. Based on decades of experience it is not only acceptable but
+highly recommended to approach the CSDM in a staged manner, we have provided an approach we call
+foundation, crawl, walk, run, fly.
+
+Foundation Stage
+The primary use of data is for reporting and common context for the
+other domains. More often than we like to admit, we consider this
+common context and needs for reporting, workflows and AI agents
+too late in our projects. It is critical that we have the right data at the
+right time to facilitate the business decisions we seek to make to be
+on the same page. Many of the reporting, workflow and AI agent asks
+of data within a CMDB are dependent upon referential data as
+opposed to the configuration items themselves. Early planning around referential data is critical to long
+term success.
+•
+
+Organizational Structure – OOB tables Company, Business Unit, and Department are provided
+for identification of internal business structure as well as external customers, manufacturers,
+and vendors. Organizational structures can change often. Having an early plan to consume and
+manage this data will save heartache in the future.
+o Company – The legal entities of either internal or external companies are populated in
+the Company table. A hierarchy is permitted using the available parent attribute.
+Consider what legal entities you will require within your reporting when the CMDB is
+populated
+§ Internal, your company, entries should focus on a hierarchy of legal entities as
+opposed to a hierarchy of business units within a legal entity.
+§ External entries can be identified by the available true/false flags. The Customer
+flag identifies your customers external to your company. The Manufacturer flag
+identifies those companies that create products you consume. Note: your
+internal company may also be a Manufacturer. The Vendor flag identifies those
+companies that provide products that you procure. Note: your internal company
+may also be a Vendor.
+
+51
+
+CSDM 5 WHITE PAPER
+
+Business Unit – The hierarchy of your business is populated in the Business Unit table
+with a reference to the Company they are part of. Business units are parts of your
+organization that oversee certain operations, such as Finance, HR, IT, and so on. A
+hierarchy within Business unit is common. For large multinational companies you may
+have Business Units that identify independent regional operations and then the specific
+operations within said region.
+o Department – A further stratification of your Business Units are populated in the
+Department table. Departments provide another way to categorize users, groups,
+assets, and CIs.
+Location – OOB table provided to identify a geographical position. A hierarchy of location data
+can be created using the parent attribute. Such a hierarchy could include entries that match
+your required level of reporting. For example, you could populate the location table as follows:
+o
+
+•
+
+Region
+
+•
+
+•
+•
+
+•
+
+•
+
+Country
+
+State/Providence
+
+City
+
+Site
+
+Building / Structure
+
+If your reporting requirements identify greater location detail then you could extend the
+hierarchy into floors, rooms, datacenters and etc. With hierarchy capabilities, trusted source
+data, and your requirements in hand, you can create proper locations to support your future
+reporting needs.
+Groups – OOB table meant to identify a set of users who share a common purpose.
+Groups may perform tasks such as approving change requests, resolving incidents, receiving
+email notifications, or performing work order tasks. Groups are also used referential data in the
+CMDB such as to identify management of a CI (Managed by group) and support for a CI (Support
+group). Any business rules, assignment rules, system roles, or attributes that refer to the group
+apply to all group members automatically.
+Users – OOB table meant to identify the individuals that have access to the ServiceNow
+instance. These users can then be organized within groups, associated to Company, Business
+Unit, and Departments.
+CMDB Group – OOB table meant to identify a collection of CIs using queries and/or manually
+populated CIs. CMDB groups become a critical element of Dynamic CI Groups and the strategic
+management of CIs. Early consideration of how you wish to report on and monitor CIs will help
+in the creation of CMDB Groups in support of your requirements.
+Product Models – OOB tables meant to identify the unique types of products developed or
+consumed by your organization. Assets and CIs may be grouped by product models. Such
+grouping may be desired for project planning, costing, and rationalization. Discovery can
+populate hardware model type products once operational, but other product types require
+planning from Product Owners.
+Contracts – OOB table meant to identify a binding agreement between two parties. When
+populating services provided by vendors into the CMDB, it is valuable to consider the use of
+Contracts when measuring against contractual service level agreements (SLA).
+
+What is the value of the Foundation Stage? the foundation stage focuses on OOB referential tables:
+company, business unit, department, locations, groups, users, CMDB group, product models, and
+contracts. Starting with these objects provide the following value:
+•
+
+Foundation for many ServiceNow products and the ServiceNow AI Platform
+
+52
+
+CSDM 5 WHITE PAPER
+
+•
+•
+
+Early alignment to reporting requirements will expedite data model value realization
+Reduce or eliminate costly rework to align data to reporting requirements
+
+The basis of any good structure or data model begins with foundational data that is referenced
+throughout the model. Identifying, validating, and governing this data is best discussed sooner than
+later.
+
+Crawl Stage
+With a goal of quick wins within service management we
+recommend a focus on Applications. As you learned above,
+ServiceNow has four entities for application related data:
+• A Business Application represents your inventory /
+portfolio of applications and their meta data
+o Is NOT an Operational CI and should NOT be used
+in Incident, Problem or Change.
+o Is NOT version specific
+• SDLC Component – some organizations breakdown their Business Applications into individually
+developed pieces and parts such as APIs, microservices, user interfaces, etc. In that sense, SDLC
+Component represents the software part or element of a larger whole for applications and
+infrastructure. For those organizations that wish to identify these elements, the SDLC
+Component captures those individually developed components of a Business Application. Not all
+organizations are ready for this level of detail which is why SDLC Component is optional in the
+Crawl Stage. For those organizations that don’t break down their Business Applications into
+components, then implementation of SDLC Component may be done in the Fly Stage.
+
+•
+
+•
+
+Related material within the DevOps data model may serve as representative of developmental
+details. If you require identifying the stratification of a Business Application, then the SDLC is
+recommended.
+o Optional implementation. SDLC Component is not required in the crawl stage
+o Is NOT an operational CI and should not be used in incident, problem and change
+An Application Service: represents the service instance of the related SDLC Components or
+business application. You may have several application services representing each unique
+deployment including environment (dev/qa/prod) and location/geography (emea/na/apac).
+o This CI will often be the object chosen when an incident caller identifies an issue with an
+enterprise application
+An Application is any deployed program, module or group of programs, that is designed to
+provide specific functionality on a compute infrastructure (virtual or physical; see also Figure 5).
+Though the application may be the final cause of an incident, without event management, it
+may not be the initial offender.
+o This table is NOT your inventory of applications
+o It is a technical CI created and maintained by discovery
+o Discoverable installation of or running process for software code communicating over
+specific port(s).
+o Manual population of the Application table is not recommended.
+
+53
+
+CSDM 5 WHITE PAPER
+
+What is the value of the Crawl Stage? The crawl stage focuses on four base-system CMDB tables:
+business application, application service, application (discoverable), and server/host (discoverable).
+Working with these objects provides the following value:
+•
+•
+•
+•
+•
+
+•
+
+Minimum CMDB requirements to provide ITSM: incident, problem, change
+Foundation for future EA use (formerly APM). When you license/use EA, your business
+application data will already be in the right place which will improve your implementation
+velocity of EA.
+Foundation for future DevOps use. When you license/use DevOps, your SDLC Component data
+will already be populated and ready to reference to your apps
+Foundation for future Service Mapping use. When you license/use ServiceMapping, you will
+have your application service data populated and ready to fill in your entry points for mapping.
+Foundation for Technology Portfolio Management risk details use a capability of EA.
+Technologies that underlie the business applications deployed in your business enterprise have
+a shelf life that must be actively managed and diligently monitored to track their versions and
+lifecycle. When using ServiceNow EA, Service Mapping, and SAM Pro, customers can identify
+these pending risks to using outdated software.
+Future products and enhancements to existing products will depend on data being populated in
+these specified tables.
+
+Walk Stage
+Deployed applications and infrastructure need someone to
+manage/support them. Many of the “services” populated in customer
+instances today are technical in nature. The next natural buildout of
+the CSDM focuses on the management of technology services. As you
+learned above, ServiceNow has 3 tables that identify the provider of
+technology:
+•
+•
+
+•
+
+Technology Management Service – OOB table in the CMDB meant to identify the provider of
+the technology that your business consumes.
+Technology Management Service Offering – Technology management service offerings may be
+broken into options including localization/geography, environment (prod/non-prod), pricing,
+availability, support group (for incident), technical approval group (for change), and packaging
+options (commitments). The technology management service is derived from service and
+refined depending on how the parent serves a specific technical need. ServiceNow recommends
+that every operational technology management service have at least one offering. Beginning
+with New York, service offerings may be requested through the Request Catalog. NOTE: not all
+Technology Management Service Offerings have to be related to applications or infrastructure
+CIs. Some Offerings may be provided by Managed Service Providers.
+Dynamic CI Group – OOB table meant to identify a dynamic grouping of configuration items
+(CIs), based on some common criteria. One of the many use cases of the Dynamic CI Group is a
+collection of Configuration Items managed by a particular Technical Service Offering.
+
+54
+
+CSDM 5 WHITE PAPER
+
+What is the value of the Walk stage? the walk stage focuses on 3 additional OOB CMDB tables:
+Technology Management Service, Technology Management Service Offering (Service Offering with a
+service classification of Technical Service) and Dynamic CI Group. Focusing on these objects in the walk
+stage provide the following value:
+•
+
+•
+
+•
+•
+•
+•
+
+Management of configuration items. Many infrastructure CIs are discoverable. Managing the
+manual meta data on these objects such as support group and technical approval group can be
+taxing. By identifying the technology management service offering that manage these CIs, you
+can configure ServiceNow to populate/synchronize this data onto these related child objects
+thus eliminating the manual effort of maintaining said data on thousands of CIs.
+Establish a view of those CIs that the technical teams support within your organization. Allows
+for additional stratification of their support structure along the lines of OLAs and commitments.
+Formalize the structure that already exists today through your use of varying support groups for
+application and technology owners.
+Foundation for future service portfolio management (SPM) use. When you license/use SPM,
+your service data will already be in the right place which will improve your implementation
+velocity of technical SPM.
+Technology Management Service Offerings may be ordered through the request catalogue.
+Automation may be configured as need to enhance the request workflow and update/create
+related CIs.
+Foundation for ITOM products such as ServiceMapping and Discovery.
+More automated methods of grouping CIs for identification and management by Technolog
+Management Service Offerings.
+
+Run Stage
+A critical element of ITSM is understanding the impact technology can
+have on the business. The business may consume the technology
+provided. Additionally, CSM has a similar dependency where the
+business sells the technology provided. Such dependencies require a
+relationship from the technology provided to the business that
+sells/consumes it. The next buildout of the CSDM focuses on
+sell/consume. As you learned above, ServiceNow has 3 tables that identify the sellers/consumers of
+technology:
+•
+•
+•
+
+Business Service Portfolio (not a CMDB table) - Business service portfolio is a hierarchical
+categorization of business services (products and services) that define strategic business value.
+Business Service – OOB table in the CMDB meant to identify strategic business value that may
+use technology infrastructure. Such a dependency results in the business service
+selling/consuming said technology infrastructure.
+Business Service Offering – Business service offerings are the starting point for configuring
+Service Portfolio Management. Business service offerings consist of one or more service
+commitments that uniquely define the level of service in terms of availability, scope, pricing, and
+other factors. The business service offering is derived from service and refined depending on
+how the parent serves a specific business need. ServiceNow recommends that every business
+service have at least one offering.
+
+55
+
+CSDM 5 WHITE PAPER
+
+What is the value of Run? the run stage focuses on 3 additional OOB tables: Business Service Portfolio
+(not a CMDB table), Business Service (Service with a service classification of Business Service) and
+Business Service Offering (Service Offering with a service classification of Business Service). Focusing on
+these objects in the run stage provide the following value:
+•
+•
+
+•
+
+Impact assessment for ITSM: incident, problem, and change. Within an incident or change you
+can identify the impacted business services and offerings assuming relationships exist between
+the selected CI and the impacted services.
+Lays the foundation for Service Portfolio Management capabilities with service owner
+workspace. The service owner workspace delivers a workspace where service owners can
+monitor service portfolios and effectively gain an overall understanding of service-related
+information. Such information includes service trends, improvement initiatives, service
+performance, outage monitoring, and more.
+Lays the foundation for ITSM+ capabilities. Populate the related subscribe by table on a service
+offering to identify more than what business is impacted. Identify “who” is impacted. Business
+Service Offerings can identify subscribers by user, company, location, department, and group.
+
+Fly Stage
+The complete CSDM 5 is made available in the fly stage. Mother always
+said, “don’t bite off more than you can chew.” The CSDM is no different.
+Reaching the fly stage means you have accomplished all or most of the
+foundation, crawl, walk, run recommended approach to the CMDB
+framework. The last stage of the CSDM build-out finishes the remaining
+elements of CSDM 5. As you learned above, ServiceNow has 3 tables that
+identify the remainder of the CSDM 5 effort:
+•
+•
+•
+
+Request Catalog (not a CMDB table) - Beginning with New York, service offerings may be
+requested through the Request Catalog.
+Business Capability – Business capability is a high-level capability that an organization requires
+to execute its business model or fulfill its mission. These capabilities can be used to rationalize
+and prioritize spend on business applications and business services.
+Information Object - Information object is part of the new information portfolio and referenced
+by the business application. The information object table may be used to identify the types of
+data a business application may possess such as PII, PCI, HIPAA, etc.
+
+What is the value of Fly? the fly stage focuses on 2 additional OOB tables: Business Capability and
+Information Object. Additionally, request catalog capabilities with Service Offerings are valuable.
+Focusing on these objects in the fly stage provide the following value:
+•
+
+•
+
+Lays the foundation for Enterprise Architecture (EA) capabilities (formerly known as Application
+Portfolio Management APM). Perform rationalization of your business applications with EA. Are
+you spending too much or too little on your business capabilities? Should you be increasing
+spend on emerging business capabilities?
+Lays the foundation for EA with SPM capabilities. Perform rationalization of your business
+services and related offerings. Like business applications, are you spending too much or too little
+on services? Are they the right services compared to emerging capabilities?
+
+56
+
+CSDM 5 WHITE PAPER
+
+•
+•
+•
+
+Lays the foundation for ITSM+ capabilities. From the request catalog you can now relate a
+service offering to a catalog item in New York. Enhance the request workflow to auto populate
+the subscribe by user table.
+Manage business services in your environment as a service owner with a combination of CIs
+from each of the CSDM domains.
+Identify the types of data that may be contained/used within your business applications. A
+common requirement for compliance, the new information object table will assist in identifying
+the details of your information portfolio.
+NOTE: The information object table may be required sooner in your data model
+implementation. Your business requirements should determine the right stage for
+implementation of the information object table
+
+57
+
+CSDM 5 WHITE PAPER
+
+Migrating into CSDM
+How do I migrate into the CSDM? Many of the CSDM tables have been available in the base system for
+several years. Many ServiceNow customers may be using necessary customizations or nonconforming
+tables within the CMDB. But continued use of customizations and nonconforming uses, however, results
+in reduced value from the ServiceNow products that increasingly depend on data found in the CMDB
+framework outlined by the CSDM. So, how do we migrate into the CSDM? ... very carefully …
+
+Migrating into the CSDM
+
+Since the Business Application table was added to the base system, we have spent a lot of time helping
+customers migrate their data from one table/class to another. That time and experience is what we are
+using to provide you guidance in migrating into the CSDM. There are 5 steps to such a migration from
+table to table as seen above. These steps are:
+•
+
+Step 1: Back up your data – ServiceNow takes data loss very seriously. Though you won’t need
+this data immediately, it is always a best practice to back up your data prior to embarking on a
+data migration effort. Export your table data with all attributes to excel and place in a safe spot.
+
+•
+
+Step 2: Attribute mapping – Identify what tables your data will migrate to and if the destination
+table has your required attributes available OOB. This is an opportunity to rationalize your
+custom attributes. Do you really need those customizations that were only used once 5 years
+ago or have only been populated on less than 10% of your CIs?
+In most cases, less is more. Use this opportunity to eliminate low use / no use attributes or
+those attributes with more effective methods of fulfilling their use case. Categorize your custom
+attributes as follows
+o Best Practice – no related OOB attribute but is recommended by ServiceNow or a
+Partner.
+o Keep – no related OOB attribute but a unique use case requires the attribute be
+retained.
+o Refactor – there is an OOB attribute or capability that can be migrated to
+o Do Not Need (DNN) – this customization is no longer needed
+
+•
+
+Step 3: The most important step!!! – In all honesty, it is relatively simple to move a CI from one
+class to another. But such effort may neglect an extremely important element of your
+environment – dependency on your non-conforming table. You may not be aware of potentially
+hundreds of reports, business rules, scripts, table references and more that look for data
+specifically in your non-conforming table. Moving the CIs to a new table does not automatically
+58
+
+CSDM 5 WHITE PAPER
+
+move the reports, business rules, etc. Thus, we need to identify table dependencies.
+We accomplish this effort using a fix script developed by Austin Buono of ServiceNow Customer
+Outcomes. The script has a place to enter the name of the table you desire dependency details
+on. The result is a list of specific dependencies.
+ServiceNow makes this fix script freely available through our ServiceNow Community here.
+Please take the time to subscribe to our community forum for updates to the CSDM.
+After running the dependency script and evaluating the data, you will have a level of effort
+understanding for your dependency migration efforts. Use this time to validate the referenced
+reports – are they still needed? Validate the rules & scripts – are they still needed? Identify what
+should stay and make a plan for migrating these to the new table(s) as needed.
+Note: this script does not move your data or dependencies. This script identifies where you
+have dependencies that you will need to refactor in step 5.
+•
+
+Step 4: Refactor attributes – Now is the time to get the data model solidified and ready for data
+migration.
+Using the attribute mapping effort of Step 2, create the necessary best practice and keep
+attributes on the necessary CMDB tables as you or a partner have documented. This is also the
+time to perform the documented refactor efforts as needed.
+
+•
+
+Step 5: Data Migration – With the attributes refactored and dependencies ready to migrate we
+can begin our data migration:
+o Validate the data backup in step 1 is still useful. Perform another data backup if
+necessary.
+o Migrate your CIs –modify the class to the new class name. This will move the CI and all
+its related objects, incidents, changes, and so on to the new table. Perform a handful at
+first and increase as needed/comfortable.
+o Custom attributes or OOB attributes not in the same table hierarchy will result in data
+loss. This is why we made a backup.
+o Remediate your table dependencies:
+§ Modify reports to use new table
+§ Migrate business rules & scripts if needed
+§ Update table references as needed
+o Reload data into new attributes using your data backup.
+o Validate all data and dependencies.
+
+ServiceNow does not expect you to perform such table migrations alone. ServiceNow’s Customer
+Outcomes organization and partners are available to assist in this effort.
+Note: there is always risk when migrating data. Make sure you backup your data and provide
+contingency plans in case issues arise.
+What tools are available to help with CSDM migration? The following tools are made available to assist
+in your CSDM journey:
+59
+
+CSDM 5 WHITE PAPER
+
+•
+•
+
+Data Migration Script – as identified above in step 3 of How do I migrate to CSDM, we have
+made a fixscript available on our community forum to identify table dependencies.
+CMDB and CSDM Data Foundations Dashboard - as of August 2020, the CMDB and CSDM Data
+Foundations Dashboard is available at no cost in the App Store. This app installs two modules:
+one for CMDB and one for CSDM. Each dashboard provides key indicators that evaluate
+configurations and customizations within the CMDB. The indicators provide visible results of
+evaluation, Green / Red, with weighted Priority to help with planning. Each indicator has a URL
+link to a remediation playbook to provide background and offer plays for remediation. The
+CSDM dashboard focuses on key data elements to support of the stages in CSDM adoption.
+
+60
+
+CSDM 5 WHITE PAPER
+
+Frequently Asked Questions
+What are some use cases (examples) of the CSDM? The updated CSDM 5 conceptual model helps
+identify a more prescriptive view of what the CSDM is which reduces the need for explicit examples
+within this white paper.
+ServiceNow intends to provide CSDM 5 Reference Blueprint documentation to assist in the
+implementation of CSDM within your organization. Separation of CSDM White Paper from CSDM
+Reference Blueprints will make management of this document easier while providing increased velocity
+for sharing real-world use cases as examples.
+
+Additional material
+
+• Data Foundations YouTube playlist, bookmark for the latest CSDM and CMDB videos
+• CSDM community forum
+Impact Offerings:
+• Common Service Data Model (CSDM) Assessment– Total
+• Common Service Data Model (CSDM) Assessment - Foundation Data - Advanced
+Expert Services:
+• CSDM Amplified Hands on assessment of customers gaps to CSDM
+• CSDM Align Overview and interactive session, includes creating 2 example CSDM data
+models
+Store apps and components:
+• CMDB and CSDM health dashboards available here. A short video overview here.
+Training, reference and workshop material:
+• CSDM Fundamentals – V3, V4 update CSDM 5 coming soon
+• Now Create: CSDM Workshop material and CSDM examples
+Documentation:
+• CSDM Migration guidance and script to analyze impacts on our community site
+• CSDM Product Views – explains what CSDM data is used, and managed in each product
+• Creating an Application Service using the wizard, or API. this video explains each type of
+Application Service population method.
+• Data Foundations Knowledge Article – Provides links to additional CSDM, CMDB and Service
+Graph resources
+Other helpful material:
+• Industry: Digital Product white paper – The standard definition used by product-centric IT
+organizations
+• Mapping the TBM Council framework to CSDM white paper
+• Industry: IT4IT V3 – Product-centric revision IT management reference architecture
+• Future direction: Operating model of the future and more recently architecting the Digital
+Product portfolios, centered on a Digital Product concept
+
+61
+
+CSDM 5 WHITE PAPER
+
+Conclusion
+Your foundation for Business Digital Transformation
+The Common Services Data Model 5 (CSDM) should be used as a reference for mapping your business
+and services into ServiceNow. Additionally, we will be using CSDM to drive standardization and further
+strengthen the value proposition of using ServiceNow products and services.
+ServiceNow brings enormous value for enterprise customers that want real business digital
+transformation. CSDM, combined with the ServiceNow AI Platform, creates a standard blueprint for
+automated and digital value networks. With streamlined activities and value streams fully integrated on
+the ServiceNow AI Platform, you can realize full-value chain alignment, improved quality, transparency,
+better insights, automation, and lower costs. Ultimately, the combination of CSDM and ServiceNow
+serves as the foundation for digital transformation.
+
+© 2025 ServiceNow, Inc. ServiceNow, the ServiceNow logo, Now, ServiceNow AI Platform, and other ServiceNow marks are trademarks and/or registered trademarks of ServiceNow, Inc. in
+the United States and/or other countries. Other company and product names may be trademarks of the respective companies with which they are associated.
+
+servicenow.com
+
+62
+
+
