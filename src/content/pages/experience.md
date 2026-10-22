@@ -3,9 +3,8 @@ title: Projects/Assignments
 menu: Projects/Assignments
 order: 2
 wide: false
+banner: /wp-content/uploads/2022/10/shutterstock_1756612595.jpg
 ---
-
-![](/wp-content/uploads/2022/10/shutterstock_1756612595.jpg)
 
 ## Projects/Assignments:
 

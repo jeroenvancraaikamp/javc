@@ -45,7 +45,10 @@ const share = [
         <div class="columns">{sections.map((html: string) => <section class="prose" set:html={html} />)}</div>
       </div>
     ) : (
-      <div class:list={["wrap page-body prose", { wide: d.wide }]}><Content /></div>
+      <div class:list={["wrap page-body", { wide: d.wide, 'page-columns': d.banner }]}>
+        {d.banner && <img class="banner" src={d.banner} alt="" />}
+        <div class="prose"><Content /></div>
+      </div>
     )}
   </Base>
 ) : (

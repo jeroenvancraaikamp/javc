@@ -135,7 +135,9 @@ summary { cursor: pointer; font-weight: 600; color: var(--heading); }
 .page-columns { max-width: 1200px; }
 .banner { width: 100%; margin-bottom: 40px; }
 .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 60px; }
-.columns section > h2:first-child { margin-top: 0; font-weight: 400; font-size: 28px; }
+.columns section > h2:first-child { margin-top: 0; }
+.page-columns .prose h2 { font-weight: 400; font-size: 28px; }
+.page-columns .prose > h2:first-child { margin-top: 0; }
 .columns section { margin-bottom: 30px; min-width: 0; }
 .page-body.wide { max-width: none; padding: 20px 16px 30px; }
 .page-body.wide p { margin: 0 0 16px; }
