@@ -12,5 +12,10 @@
     "run_worker_first": ["/api/*"]
   },
   "ai": { "binding": "AI" },
+  // Contact form (secret SMTP2GO_API_KEY is set in the Cloudflare dashboard, not here)
+  "vars": {
+    "CONTACT_TO": "Info@JAVC.nl",
+    "CONTACT_FROM": "JAVC website <info@javc.nl>"
+  },
   "observability": { "enabled": true }
 }

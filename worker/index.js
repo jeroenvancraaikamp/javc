@@ -118,10 +118,17 @@ function json(data, status = 200) {
   });
 }
 
-async function chat(request, env) {
+// Only accept POSTs sent from the site itself.
+function guard(request) {
   if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
   const origin = request.headers.get('origin');
   if (origin && new URL(origin).host !== new URL(request.url).host) return json({ error: 'Forbidden' }, 403);
+  return null;
+}
+
+async function chat(request, env) {
+  const denied = guard(request);
+  if (denied) return denied;
 
   let body;
   try { body = await request.json(); } catch { return json({ error: 'Bad request' }, 400); }
@@ -154,10 +161,48 @@ async function chat(request, env) {
   }
 }
 
+// --- contact form: sends the message by email through SMTP2GO ------------------
+// Needs the Worker secret SMTP2GO_API_KEY. CONTACT_TO / CONTACT_FROM are set in wrangler.jsonc;
+// the sender address must be a verified sender (or domain) in SMTP2GO.
+async function contact(request, env) {
+  const denied = guard(request);
+  if (denied) return denied;
+  let f;
+  try { f = await request.json(); } catch { return json({ error: 'Bad request' }, 400); }
+  const field = (k, max) => (typeof f?.[k] === 'string' ? f[k].trim().slice(0, max) : '');
+  const name = field('name', 200), email = field('email', 200), phone = field('phone', 50), message = field('message', 5000);
+
+  // Honeypot: a hidden field people never fill in; bots do. Pretend it worked.
+  if (field('website', 200)) return json({ ok: true });
+  if (!name || !message || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)) {
+    return json({ error: 'Please fill in your name, a valid email address and a message.' }, 400);
+  }
+  if (!env.SMTP2GO_API_KEY) return json({ error: 'The form is not available right now. Please email Info@JAVC.nl.' }, 503);
+
+  const res = await fetch('https://api.smtp2go.com/v3/email/send', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', 'X-Smtp2go-Api-Key': env.SMTP2GO_API_KEY },
+    body: JSON.stringify({
+      sender: env.CONTACT_FROM,
+      to: [env.CONTACT_TO],
+      subject: `Contactformulier javc.nl: ${name.replace(/[\r\n]+/g, ' ')}`,
+      text_body: `Naam: ${name}\nE-mail: ${email}\nTelefoon: ${phone || '-'}\n\n${message}\n\n(Verstuurd via het contactformulier op ${new URL(request.url).host})`,
+      custom_headers: [{ header: 'Reply-To', value: email.replace(/[\r\n]/g, '') }],
+    }),
+  }).catch((err) => { console.error('smtp2go fetch', err); return null; });
+  const data = res ? await res.json().catch(() => ({})) : {};
+  if (!res?.ok || !data?.data?.succeeded) {
+    console.error('smtp2go error', res?.status, JSON.stringify(data));
+    return json({ error: 'Sending failed. Please try again later or email Info@JAVC.nl.' }, 502);
+  }
+  return json({ ok: true });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === '/api/chat') return chat(request, env);
+    if (url.pathname === '/api/contact') return contact(request, env);
     return env.ASSETS.fetch(request);
   },
 };
