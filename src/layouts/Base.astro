@@ -10,7 +10,7 @@ interface Props {
   crumbs?: { label: string; href?: string }[];
 }
 const { title, description = 'IT management and consultancy by Jeroen van Craaikamp.', pageTitle, crumbs = [] } = Astro.props;
-const menu = (await getCollection('pages')).sort((a, b) => a.data.order - b.data.order);
+const menu = (await getCollection('pages')).filter((p) => p.data.menu).sort((a, b) => a.data.order - b.data.order);
 const path = Astro.url.pathname;
 const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
 const articlesActive = ['/articles/', '/category/', '/archive/', '/search/'].some((p) => path.startsWith(p));

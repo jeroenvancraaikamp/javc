@@ -11,6 +11,16 @@ Source of the new javc.nl website: a static, WordPress-style blog built with [As
 
 See `src/content/articles/what-an-article-can-hold.md` for every supported content type.
 
+## Importing from WordPress
+
+Export from WordPress (Tools → Export → All content) and run:
+
+```sh
+npm run import -- path/to/export.xml
+```
+
+This replaces the sample articles with your published posts and writes your pages to `src/content/pages/`.
+
 ## Running locally
 
 ```sh

@@ -6,9 +6,15 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "import": "node scripts/import-wxr.mjs"
   },
   "dependencies": {
     "astro": "^5.18.2"
+  },
+  "devDependencies": {
+    "fast-xml-parser": "^4.5.7",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2"
   }
 }
