@@ -1,11 +1,15 @@
 ---
-title: "What an Article Can Hold: a Feature Tour"
+title: 'What an Article Can Hold: a Feature Tour'
 date: 2026-10-20
-categories: [Announcement, Information]
-excerpt: "A demo article showing every type of content this new site supports: images, galleries, video, PDFs, tables, code, quotes and downloads"
+categories:
+  - IT4IT
+excerpt: 'A demo article showing every type of content this new site supports: images, galleries, video, PDFs, tables, code, quotes and downloads'
+image: ''
 readingTime: 4
 popular: true
+draft: true
 ---
+
 This article is a **demo** for the prototype. It shows every kind of content one article can hold. Each article is a single Markdown file: you write plain text, and add richer blocks where you need them.
 
 ## Text and formatting
