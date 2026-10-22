@@ -2,6 +2,7 @@
 import { render, getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Sidebar from '../components/Sidebar.astro';
+import { marked } from 'marked';
 import { getArticles, slugify, formatDate, SITE } from '../lib';
 
 export async function getStaticPaths() {
@@ -18,6 +19,11 @@ export async function getStaticPaths() {
 const { entry, kind, newer, older, all } = Astro.props as any;
 const { Content } = await render(entry);
 const d = entry.data;
+// Column layout: every '## ' section becomes a block in a two-column grid.
+const sections = kind === 'page' && d.layout === 'columns'
+  ? (entry.body ?? '').split(/^(?=## )/m).map((part: string) => marked.parse(part) as string)
+  : [];
+const intro = sections.length && !(entry.body ?? '').trimStart().startsWith('## ') ? sections.shift() : '';
 const url = new URL(Astro.url.pathname, Astro.site).href;
 const related = kind === 'article'
   ? all.filter((a: any) => a.id !== entry.id && a.data.categories.some((c: string) => d.categories.includes(c))).slice(0, 3)
@@ -32,14 +38,22 @@ const share = [
 ---
 {kind === 'page' ? (
   <Base title={d.title} pageTitle={d.title} crumbs={[{ label: d.title }]}>
-    <div class:list={["wrap page-body prose", { wide: d.wide }]}><Content /></div>
+    {d.layout === 'columns' ? (
+      <div class="wrap page-body page-columns">
+        {d.banner && <img class="banner" src={d.banner} alt="" />}
+        {intro && <div class="prose" set:html={intro} />}
+        <div class="columns">{sections.map((html: string) => <section class="prose" set:html={html} />)}</div>
+      </div>
+    ) : (
+      <div class:list={["wrap page-body prose", { wide: d.wide }]}><Content /></div>
+    )}
   </Base>
 ) : (
   <Base title={d.title} description={d.excerpt} pageTitle={d.title} crumbs={[{ label: 'Articles/Publications', href: '/articles/' }, { label: d.title }]}>
     <div class="wrap layout">
       <article class="primary single">
         <h1 class="post-title">{d.title}</h1>
-        <img class="featured" src={d.image ?? `/images/${entry.id}.svg`} alt="" width="1200" height="675" />
+        <img class="featured" src={d.image || `/images/${entry.id}.svg`} alt="" width="1200" height="675" />
         <div class="meta">
           By {SITE.author} · {formatDate(d.date)} · {d.categories.map((c: string, i: number) => <>{i > 0 && ', '}<a href={`/category/${slugify(c)}/`}>{c}</a></>)}
           {d.readingTime && <> · {d.readingTime} min read</>} · Comments Off
@@ -58,7 +72,7 @@ const share = [
             <h3>Related Posts</h3>
             <div class="related-grid">
               {related.map((r: any) => (
-                <a href={`/${r.id}/`}><img src={r.data.image ?? `/images/${r.id}.svg`} alt="" loading="lazy" /><span>{r.data.title}</span><small>{formatDate(r.data.date)}</small></a>
+                <a href={`/${r.id}/`}><img src={r.data.image || `/images/${r.id}.svg`} alt="" loading="lazy" /><span>{r.data.title}</span><small>{formatDate(r.data.date)}</small></a>
               ))}
             </div>
           </section>

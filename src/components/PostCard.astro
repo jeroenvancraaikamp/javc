@@ -7,7 +7,7 @@ const href = `/${article.id}/`;
 ---
 <article class="card">
   <a href={href} class="card-img">
-    <img src={image ?? `/images/${article.id}.svg`} alt="" loading="lazy" width="800" height="450" />
+    <img src={image || `/images/${article.id}.svg`} alt="" loading="lazy" width="800" height="450" />
   </a>
   <div class="card-body">
     <div class="card-cats">{categories.map((c, i) => <>{i > 0 && ', '}<a href={`/category/${slugify(c)}/`}>{c}</a></>)}</div>

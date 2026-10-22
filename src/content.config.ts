@@ -22,6 +22,8 @@ const pages = defineCollection({
     order: z.number().default(99),
     menu: z.string().optional(),
     wide: z.boolean().default(false),
+    layout: z.enum(['default', 'columns']).default('default'),
+    banner: z.string().optional(),
   }),
 });
 

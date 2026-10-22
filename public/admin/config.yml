@@ -75,4 +75,6 @@ collections:
       - { name: menu, label: Naam in het menu, widget: string, required: false, hint: 'Leeg laten als de pagina niet in het menu hoort.' }
       - { name: order, label: Volgorde in het menu, widget: number, value_type: int, default: 99, required: false }
       - { name: wide, label: Volle breedte, widget: boolean, default: false, required: false }
+      - { name: layout, label: Opmaak, widget: select, options: [{ label: Standaard, value: default }, { label: 'Twee kolommen (elke ##-kop een blok)', value: columns }], default: default, required: false }
+      - { name: banner, label: Banner bovenaan, widget: image, required: false }
       - { name: body, label: Tekst, widget: markdown, modes: [rich_text, raw] }

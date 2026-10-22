@@ -2,9 +2,9 @@
 title: "Skills/Expertise"
 menu: "Skills/Expertise"
 order: 1
+layout: columns
+banner: "/wp-content/uploads/2022/10/shutterstock_1133982488.png"
 ---
-
-![](/wp-content/uploads/2022/10/shutterstock_1133982488.png)
 
 ## About me
 
@@ -14,8 +14,7 @@ I have Extraverted, Intuitive, Thinking, and Prospecting (**[ENTP)](https://www.
 
 As a hobby, I dive, play with domotics, and maintain hobby websites. I also love the beach, sailing, culinary food, and sabering champagne.
 
-Education & Certifications
-
+## Education & Certifications
 -   HAVO (Zaanlands Lyceum))
 -   HBO (Instituut voor Hoger Technisch en Nautisch Onderwijs)
 -   Post-HBO Informatie Analyse & Systeembeheer (Comtecno)
@@ -27,8 +26,7 @@ Education & Certifications
 -   Certified ServiceNow Advanced Administrator
 -   Certified ServiceNow Implementer (Bootcamp)
 
-Previous Roles
-
+## Previous Roles
 The first twelve years of my career, I worked in the Telecoms industry as:
 
 -   System Specialist
@@ -51,16 +49,14 @@ Since 2001, I worked in IT, in the following roles:
 
 **I have implemented ServiceNow platforms/practices since 2014. In the above roles, I have built up technical, managerial, analytical, commercial, financial, and communication skills.** I am trained and certified in implementing service management processes, managing waterfall projects/programs, and managing agile DevSecOps backlogs. I no longer code myself, but if/where needed, **I still like to work hands-on with the platform and/or structure data in/for it**. In above roles i enjoyed participating in drafting of strategies, operating/sourcing models, architectures and roadmaps.
 
-Role preference
-
+## Role preference
 I believe I'm best in a role that requires a mixture of managerial skills, process skills, and technical/architectural skills. **I prefer to work in a role such as Project/Program Manager, or Interim Platform/Product Owner,** collaborating with management, stakeholders, vendors, and internal/external expert teams.
 
 I love to share the ServiceNow expertise I have built whilst working as a Consultant. For a couple of years, I have been publishing [**articles**](/articles/) on this website, including those on CSDM, TBM, AI, and ServiceNow CMDB.
 
 I can participate in a startup and, thereafter, **manage the implementation, maintenance, and innovation of the ServiceNow Platform, including its supported Practices and** **Integrations.** As part of the engagement, temporary project roles can be transitioned into target roles within the operating model.
 
-Product Knowledge
-
+## Product Knowledge
 **ServiceNow Platform Modules**
 
 -   IT Service Management (ITSM)
@@ -100,8 +96,7 @@ Product Knowledge
 -   IBM Tivoli Suite (TADDM)
 -   Oracle HCM, Workday (HR)
 
-Market Standards
-
+## Market Standards
 -   TBM 5
 -   CSDM 5
 -   ITIL 3, 4, and 5
