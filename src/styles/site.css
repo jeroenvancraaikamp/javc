@@ -34,9 +34,9 @@ h1, h2, h3, h4 { font-family: var(--head-font); color: var(--heading); line-heig
 .masthead .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 86px; gap: 24px; }
 .logo { display: flex; flex-direction: column; line-height: 1; }
 .logo-mark { font: 700 32px var(--head-font); color: var(--accent); letter-spacing: 2px; }
-.logo-sub { white-space: nowrap; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-top: 5px; }
+.logo-sub { white-space: nowrap; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-top: 5px; }
 nav ul { list-style: none; display: flex; flex-wrap: wrap; margin: 0; padding: 0; }
-nav a { display: block; padding: 32px 11px; font: 600 12.5px var(--head-font); text-transform: uppercase; letter-spacing: .4px; color: var(--heading); border-top: 3px solid transparent; }
+nav a { display: block; padding: 32px 9px; font: 600 12px var(--head-font); text-transform: uppercase; letter-spacing: .4px; color: var(--heading); border-top: 3px solid transparent; }
 nav a:hover, nav a.active { color: var(--accent); border-top-color: var(--accent); }
 .menu-toggle { display: none; background: none; border: 1px solid var(--line); padding: 8px 12px; font: 600 14px var(--head-font); color: var(--heading); cursor: pointer; border-radius: var(--radius); }
 
@@ -172,7 +172,7 @@ summary { cursor: pointer; font-weight: 600; color: var(--heading); }
 .to-top.show { opacity: .85; pointer-events: auto; }
 
 /* responsive */
-@media (max-width: 1240px) {
+@media (max-width: 1300px) {
   .menu-toggle { display: block; }
   nav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 8px 20px rgba(0,0,0,.06); }
   .nav-open nav { display: block; }
