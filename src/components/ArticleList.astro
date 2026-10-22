@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import Sidebar from './Sidebar.astro';
+import PostCard from './PostCard.astro';
+import Pagination from './Pagination.astro';
+interface Props { title: string; crumbs: { label: string; href?: string }[]; page: any; base: string; intro?: string }
+const { title, crumbs, page, base, intro } = Astro.props;
+---
+<Base title={title} pageTitle={title} crumbs={crumbs}>
+  <div class="wrap layout">
+    <div class="primary">
+      {intro && <p class="intro">{intro}</p>}
+      <div class="cards">{page.data.map((a: any) => <PostCard article={a} />)}</div>
+      <Pagination page={page} base={base} />
+    </div>
+    <Sidebar />
+  </div>
+</Base>

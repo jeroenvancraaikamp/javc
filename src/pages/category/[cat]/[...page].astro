@@ -1,0 +1,14 @@
+---
+import ArticleList from '../../../components/ArticleList.astro';
+import { getArticles, getCategories, SITE } from '../../../lib';
+export async function getStaticPaths({ paginate }: any) {
+  const articles = await getArticles();
+  return (await getCategories()).flatMap((c) =>
+    paginate(articles.filter((a) => a.data.categories.includes(c.name)), {
+      pageSize: SITE.perPage, params: { cat: c.slug }, props: { name: c.name },
+    }),
+  );
+}
+const { page, name } = Astro.props;
+---
+<ArticleList title={`Category: ${name}`} crumbs={[{ label: 'Articles/Publications', href: '/articles/' }, { label: name }]} page={page} base={`/category/${Astro.params.cat}/`} />

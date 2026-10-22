@@ -1,0 +1,57 @@
+---
+import { getArticles, getCategories, getArchives, monthName, formatDate, pad } from '../lib';
+const articles = await getArticles();
+const recent = articles.slice(0, 3);
+const popular = articles.filter((a) => a.data.popular).slice(0, 3);
+const categories = await getCategories();
+const archives = await getArchives();
+---
+<aside class="sidebar">
+  <section class="widget">
+    <form action="/search/" method="get" role="search" class="searchform">
+      <label for="s" class="sr">Search for:</label>
+      <input id="s" name="q" type="search" placeholder="Search..." />
+      <button type="submit" aria-label="Search">🔍</button>
+    </form>
+  </section>
+  <section class="widget tabs">
+    <div class="tab-buttons" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="popular">Popular</button>
+      <button role="tab" aria-selected="false" data-tab="recent">Recent</button>
+      <button role="tab" aria-selected="false" data-tab="comments">Comments</button>
+    </div>
+    <ul class="tab-panel" data-panel="popular">
+      {(popular.length ? popular : recent).map((a) => (
+        <li><a href={`/${a.id}/`}>{a.data.title}</a><small>{formatDate(a.data.date)}</small></li>
+      ))}
+    </ul>
+    <ul class="tab-panel" data-panel="recent" hidden>
+      {recent.map((a) => <li><a href={`/${a.id}/`}>{a.data.title}</a><small>{formatDate(a.data.date)}</small></li>)}
+    </ul>
+    <div class="tab-panel" data-panel="comments" hidden><p>No comments have been published yet.</p></div>
+  </section>
+  <section class="widget">
+    <h4>Categories</h4>
+    <ul class="list">
+      {categories.map((c) => <li><a href={`/category/${c.slug}/`}>{c.name}</a> <span>({c.count})</span></li>)}
+    </ul>
+  </section>
+  <section class="widget">
+    <h4>Archives</h4>
+    <ul class="list">
+      {archives.map((m) => (
+        <li><a href={`/archive/${m.year}/${pad(m.month)}/`}>{monthName(m.month)} {m.year}</a> <span>({m.count})</span></li>
+      ))}
+    </ul>
+  </section>
+</aside>
+<script>
+  document.querySelectorAll('.tabs').forEach((w) => {
+    w.querySelectorAll<HTMLButtonElement>('[data-tab]').forEach((b) =>
+      b.addEventListener('click', () => {
+        w.querySelectorAll('[data-tab]').forEach((x) => x.setAttribute('aria-selected', String(x === b)));
+        w.querySelectorAll<HTMLElement>('[data-panel]').forEach((p) => (p.hidden = p.dataset.panel !== b.dataset.tab));
+      }),
+    );
+  });
+</script>

@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import { getArticles, SITE } from '../lib';
+const latest = (await getArticles()).slice(0, 3);
+const blocks = [
+  { h: 'What I do', p: 'Together with stakeholders and agile team members, I plan, procure, innovate, integrate, implement and manage IT products/platforms for large enterprises.', cta: 'Skills/Expertise', href: '/skills/' },
+  { h: 'So far', p: 'Over the last decades, I managed IT4IT and CSM projects/teams, as internal employee or external consultant in various technical, commercial and managerial roles.', cta: 'Projects/Assignments', href: '/experience/' },
+  { h: 'For who', p: 'I worked for companies such as KPN, Belastingdienst, KLM, Ericsson China, Tellabs, ING Bank, CRH, Digital Realty, IKEA, Booking, Action, Brenntag, and Stater.', cta: 'Customers/Employers', href: '/customers-employers/' },
+];
+---
+<Base title={SITE.name}>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Independent IT Management &amp; Consultancy</p>
+      <h1>After years as an internal employee, you can now hire my skills and experience.</h1>
+      <a class="btn" href="/contact-me/">Contact me</a>
+    </div>
+  </section>
+  <section class="wrap blocks">
+    {blocks.map((b) => (
+      <div class="block">
+        <h2>{b.h}</h2>
+        <p>{b.p}</p>
+        <a class="btn btn-outline" href={b.href}>{b.cta}</a>
+      </div>
+    ))}
+  </section>
+  <section class="wrap latest">
+    <h2 class="section-title">Latest articles</h2>
+    <div class="cards cards-3">{latest.map((a) => <PostCard article={a} />)}</div>
+    <p class="center"><a class="btn" href="/articles/">All articles</a></p>
+  </section>
+  <section class="cta-band">
+    <div class="wrap"><h2>Any questions?</h2><a class="btn btn-light" href="/contact-me/">Contact me</a></div>
+  </section>
+</Base>

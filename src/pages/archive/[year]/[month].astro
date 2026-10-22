@@ -1,0 +1,17 @@
+---
+import ArticleList from '../../../components/ArticleList.astro';
+import { getArticles, getArchives, monthName, pad } from '../../../lib';
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return (await getArchives()).map((m) => ({
+    params: { year: String(m.year), month: pad(m.month) },
+    props: {
+      label: `${monthName(m.month)} ${m.year}`,
+      data: articles.filter((a) => a.data.date.getFullYear() === m.year && a.data.date.getMonth() + 1 === m.month),
+    },
+  }));
+}
+const { label, data } = Astro.props;
+const page = { data, currentPage: 1, lastPage: 1, url: {} };
+---
+<ArticleList title={`Archive: ${label}`} crumbs={[{ label: 'Articles/Publications', href: '/articles/' }, { label }]} page={page} base="" />

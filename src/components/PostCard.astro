@@ -1,0 +1,21 @@
+---
+import { slugify, formatDate, SITE, type Article } from '../lib';
+interface Props { article: Article }
+const { article } = Astro.props;
+const { title, date, categories, excerpt, image } = article.data;
+const href = `/${article.id}/`;
+---
+<article class="card">
+  <a href={href} class="card-img">
+    <img src={image ?? `/images/${article.id}.svg`} alt="" loading="lazy" width="800" height="450" />
+  </a>
+  <div class="card-body">
+    <div class="card-cats">{categories.map((c, i) => <>{i > 0 && ', '}<a href={`/category/${slugify(c)}/`}>{c}</a></>)}</div>
+    <h2><a href={href}>{title}</a></h2>
+    <p>{excerpt} [...]</p>
+    <div class="card-meta">
+      <span>By {SITE.author} · {formatDate(date)}</span>
+      <a href={href} class="more">Read More</a>
+    </div>
+  </div>
+</article>

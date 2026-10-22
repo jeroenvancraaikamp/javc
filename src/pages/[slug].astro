@@ -1,0 +1,69 @@
+---
+import { render, getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { getArticles, slugify, formatDate, SITE } from '../lib';
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  const pages = await getCollection('pages');
+  return [
+    ...articles.map((entry, i) => ({
+      params: { slug: entry.id },
+      props: { entry, kind: 'article', newer: articles[i - 1], older: articles[i + 1], all: articles },
+    })),
+    ...pages.map((entry) => ({ params: { slug: entry.id }, props: { entry, kind: 'page' } })),
+  ];
+}
+const { entry, kind, newer, older, all } = Astro.props as any;
+const { Content } = await render(entry);
+const d = entry.data;
+const url = new URL(Astro.url.pathname, Astro.site).href;
+const related = kind === 'article'
+  ? all.filter((a: any) => a.id !== entry.id && a.data.categories.some((c: string) => d.categories.includes(c))).slice(0, 3)
+  : [];
+const share = [
+  ['LinkedIn', `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`],
+  ['X', `https://x.com/intent/post?url=${encodeURIComponent(url)}&text=${encodeURIComponent(d.title)}`],
+  ['Facebook', `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`],
+  ['WhatsApp', `https://wa.me/?text=${encodeURIComponent(d.title + ' ' + url)}`],
+  ['Email', `mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent(url)}`],
+];
+---
+{kind === 'page' ? (
+  <Base title={d.title} pageTitle={d.title} crumbs={[{ label: d.title }]}>
+    <div class="wrap page-body prose"><Content /></div>
+  </Base>
+) : (
+  <Base title={d.title} description={d.excerpt} pageTitle={d.title} crumbs={[{ label: 'Articles/Publications', href: '/articles/' }, { label: d.title }]}>
+    <div class="wrap layout">
+      <article class="primary single">
+        <img class="featured" src={d.image ?? `/images/${entry.id}.svg`} alt="" width="1200" height="675" />
+        <div class="meta">
+          By {SITE.author} · {formatDate(d.date)} · {d.categories.map((c: string, i: number) => <>{i > 0 && ', '}<a href={`/category/${slugify(c)}/`}>{c}</a></>)}
+          {d.readingTime && <> · {d.readingTime} min read</>} · Comments Off
+        </div>
+        <div class="prose"><Content /></div>
+        <div class="share">
+          <h3>Share This Story</h3>
+          <div>{share.map(([n, h]) => <a href={h} target="_blank" rel="noopener">{n}</a>)}</div>
+        </div>
+        <nav class="prevnext">
+          {older ? <a href={`/${older.id}/`}><small>‹ Previous</small>{older.data.title}</a> : <span />}
+          {newer ? <a href={`/${newer.id}/`} class="next"><small>Next ›</small>{newer.data.title}</a> : <span />}
+        </nav>
+        {related.length > 0 && (
+          <section class="related">
+            <h3>Related Posts</h3>
+            <div class="related-grid">
+              {related.map((r: any) => (
+                <a href={`/${r.id}/`}><img src={r.data.image ?? `/images/${r.id}.svg`} alt="" loading="lazy" /><span>{r.data.title}</span><small>{formatDate(r.data.date)}</small></a>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+      <Sidebar />
+    </div>
+  </Base>
+)}

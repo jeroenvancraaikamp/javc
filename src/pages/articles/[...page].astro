@@ -1,0 +1,9 @@
+---
+import ArticleList from '../../components/ArticleList.astro';
+import { getArticles, SITE } from '../../lib';
+export async function getStaticPaths({ paginate }: any) {
+  return paginate(await getArticles(), { pageSize: SITE.perPage });
+}
+const { page } = Astro.props;
+---
+<ArticleList title="Articles/Publications" crumbs={[{ label: 'Articles/Publications' }]} page={page} base="/articles/" />
