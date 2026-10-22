@@ -4,12 +4,10 @@ menu: Customers/Employers
 order: 3
 wide: false
 layout: columns
-banner: ''
+banner: /wp-content/uploads/2015/07/law_post_3.jpg
 ---
 
-![](/wp-content/uploads/2015/07/law_post_3.jpg)
-
-### Companies I work(ed) for:
+## Companies I work(ed) for:
 
 -   Stater (Mortgage Service Provider)
 -   Brenntag (Global Chemical Distributor)
@@ -25,7 +23,7 @@ banner: ''
 -   Intercai/StrICT (ICT Consultancy)
 -   KPN (Telecom Provider)
 
-### Customers of the above companies:
+## Customers of the above companies:
 
 -   KLM (Airline)
 -   Belastingdienst (Public Service)
@@ -50,7 +48,7 @@ banner: ''
 -   Pink Elephant (NL, UK, SA))  
 -   Infosys (NL, UK, IN)
 
-### Other Parties with/for whom I work(ed):
+## Other Parties with/for whom I work(ed):
 
 -   The Next Moove (NL)
 -   Tergos/Vibe Group (NL)
