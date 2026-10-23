@@ -2,7 +2,7 @@
 title: ServiceNow Labor & Contractor Rates, Benchmark January 2025
 date: 2025-01-13
 categories:
-  - Information
+  - Uncategorized
 excerpt: In another article ChatGPT generated a proposal on how to implement, maintain and innovate a ServiceNow Platform. In this article you can find the average rates that were used by ChatGPT for that article per role, differentiating on seniority/experience and
 image: /wp-content/uploads/2025/01/teampicture4.webp
 readingTime: 8
