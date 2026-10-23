@@ -4,15 +4,6 @@
       "name": "AI4IT"
     },
     {
-      "name": "Announcement"
-    },
-    {
-      "name": "Anouncement"
-    },
-    {
-      "name": "Blog Article"
-    },
-    {
       "name": "IT4CSM"
     },
     {
@@ -25,19 +16,10 @@
       "name": "ITIL"
     },
     {
-      "name": "Information"
-    },
-    {
-      "name": "Publication"
-    },
-    {
       "name": "ServiceNow"
     },
     {
-      "name": "ServiceNow Scripts"
-    },
-    {
-      "name": "TBM/CSDM/CMDB"
+      "name": "CSDM/CMDB/TBM"
     },
     {
       "name": "Uncategorized"
