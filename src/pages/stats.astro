@@ -8,14 +8,14 @@ import Base from '../layouts/Base.astro';
   <script>
     (async () => {
       const out = document.getElementById('stats-out')!;
-      const login = '<section><p>Deze pagina is alleen zichtbaar als je bent ingelogd in de CMS.</p><p><a href="/cms/">Inloggen in de CMS</a>, en open daarna deze pagina opnieuw.</p></section>';
+      const login = '<section><p>This page is only visible when you are signed in to the CMS.</p><p><a href="/cms/">Sign in to the CMS</a>, then open this page again.</p></section>';
       let token = '';
       try { token = JSON.parse(localStorage.getItem('sveltia-cms.user') || '{}').token || ''; } catch {}
       if (!token) { out.innerHTML = login; return; }
       const res = await fetch('/api/stats' + location.search, { headers: { authorization: 'Bearer ' + token } }).catch(() => null);
       if (res && res.ok) out.innerHTML = await res.text();
       else if (res && res.status === 401) out.innerHTML = login;
-      else out.innerHTML = '<section><p>De statistieken zijn nu niet beschikbaar. Probeer het later opnieuw.</p></section>';
+      else out.innerHTML = '<section><p>The statistics are not available right now. Please try again later.</p></section>';
     })();
   </script>
 </Base>

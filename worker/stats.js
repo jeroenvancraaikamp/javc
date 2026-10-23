@@ -116,8 +116,8 @@ async function revisions() {
 }
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const nf = new Intl.NumberFormat('nl-NL');
-const when = (ts) => new Date(ts).toLocaleString('nl-NL', { timeZone: 'Europe/Amsterdam', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+const nf = new Intl.NumberFormat('en-GB');
+const when = (ts) => new Date(ts).toLocaleString('en-GB', { timeZone: 'Europe/Amsterdam', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
 
 function bars(rows, days, keys) {
   const byDay = new Map(rows.map((r) => [r.day, r]));
@@ -133,7 +133,7 @@ function bars(rows, days, keys) {
 }
 
 function table(rows, cols) {
-  if (!rows.length) return '<p class="muted">Nog geen gegevens.</p>';
+  if (!rows.length) return '<p class="muted">No data yet.</p>';
   return `<table><tr>${cols.map((c) => `<th${c.num ? ' class="n"' : ''}>${c.label}</th>`).join('')}</tr>${rows.map((r) =>
     `<tr>${cols.map((c) => `<td${c.num ? ' class="n"' : ''}>${c.html ? c.html(r) : esc(r[c.key])}</td>`).join('')}</tr>`).join('')}</table>`;
 }
@@ -154,7 +154,7 @@ export async function statsData(request, env) {
   const from = new Date(Date.now() - (days - 1) * 864e5).toISOString().slice(0, 10);
   const d = await db(env).catch((err) => { console.error('stats db', err); return null; });
 
-  let site = '<p class="muted">De database is nog niet beschikbaar.</p>', bot = site;
+  let site = '<p class="muted">The database is not available yet.</p>', bot = site;
   if (d) {
     await d.prepare('DELETE FROM hits WHERE ts < ?').bind(Date.now() - KEEP_DAYS * 864e5).run();
     const q = (sql) => d.prepare(sql).bind(from);
@@ -162,7 +162,7 @@ export async function statsData(request, env) {
       q('SELECT COUNT(*) views, (SELECT SUM(n) FROM (SELECT COUNT(DISTINCT visitor) n FROM hits WHERE day >= ?1 GROUP BY day)) visitors FROM hits WHERE day >= ?1'),
       q('SELECT day, COUNT(*) views, COUNT(DISTINCT visitor) visitors FROM hits WHERE day >= ? GROUP BY day'),
       q('SELECT path, COUNT(*) views, COUNT(DISTINCT visitor) visitors FROM hits WHERE day >= ? GROUP BY path ORDER BY views DESC LIMIT 25'),
-      q("SELECT CASE ref WHEN '' THEN '(direct / onbekend)' ELSE ref END ref, COUNT(*) views FROM hits WHERE day >= ? GROUP BY 1 ORDER BY views DESC LIMIT 15"),
+      q("SELECT CASE ref WHEN '' THEN '(direct / unknown)' ELSE ref END ref, COUNT(*) views FROM hits WHERE day >= ? GROUP BY 1 ORDER BY views DESC LIMIT 15"),
       q("SELECT CASE country WHEN '' THEN '?' ELSE country END country, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY 1 ORDER BY visitors DESC LIMIT 15"),
       q('SELECT device, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY device ORDER BY visitors DESC'),
       q('SELECT COUNT(*) questions, SUM(1 - ok) errors, ROUND(AVG(ms) / 1000.0, 1) secs FROM chats WHERE day >= ?'),
@@ -173,46 +173,46 @@ export async function statsData(request, env) {
     ])).map((r) => r.results);
 
     const t = tot[0] || {};
-    site = `<div class="tiles">${tile('Paginaweergaven', nf.format(t.views || 0))}${tile('Bezoekers (per dag geteld)', nf.format(t.visitors || 0))}
-      ${tile('Pagina’s per bezoeker', t.visitors ? (t.views / t.visitors).toFixed(1) : '0')}</div>
-      ${days > 1 ? `<h3>Per dag <small><i class="k b0"></i>weergaven <i class="k b1"></i>bezoekers</small></h3>${bars(daily, days, ['views', 'visitors'])}` : ''}
-      <div class="grid"><div><h3>Meest bekeken pagina’s</h3>${table(pages, [
-        { label: 'Pagina', html: (r) => `<a href="${esc(r.path)}">${esc(r.path)}</a>` },
-        { label: 'Weergaven', key: 'views', num: true }, { label: 'Bezoekers', key: 'visitors', num: true }])}</div>
-      <div><h3>Herkomst</h3>${table(refs, [{ label: 'Website', key: 'ref' }, { label: 'Weergaven', key: 'views', num: true }])}
-      <h3>Landen</h3>${table(countries, [{ label: 'Land', key: 'country' }, { label: 'Bezoekers', key: 'visitors', num: true }])}
-      <h3>Apparaten</h3>${table(devices, [{ label: 'Apparaat', key: 'device' }, { label: 'Bezoekers', key: 'visitors', num: true }])}</div></div>`;
+    site = `<div class="tiles">${tile('Page views', nf.format(t.views || 0))}${tile('Visitors (counted per day)', nf.format(t.visitors || 0))}
+      ${tile('Pages per visitor', t.visitors ? (t.views / t.visitors).toFixed(1) : '0')}</div>
+      ${days > 1 ? `<h3>Per day <small><i class="k b0"></i>views <i class="k b1"></i>visitors</small></h3>${bars(daily, days, ['views', 'visitors'])}` : ''}
+      <div class="grid"><div><h3>Most viewed pages</h3>${table(pages, [
+        { label: 'Page', html: (r) => `<a href="${esc(r.path)}">${esc(r.path)}</a>` },
+        { label: 'Views', key: 'views', num: true }, { label: 'Visitors', key: 'visitors', num: true }])}</div>
+      <div><h3>Referrers</h3>${table(refs, [{ label: 'Website', key: 'ref' }, { label: 'Views', key: 'views', num: true }])}
+      <h3>Countries</h3>${table(countries, [{ label: 'Country', key: 'country' }, { label: 'Visitors', key: 'visitors', num: true }])}
+      <h3>Devices</h3>${table(devices, [{ label: 'Device', key: 'device' }, { label: 'Visitors', key: 'visitors', num: true }])}</div></div>`;
 
     const c = ctot[0] || {};
     const cited = new Map();
     for (const r of csources) for (const u of r.sources.split(' ')) cited.set(u, (cited.get(u) || 0) + 1);
     const top = [...cited].sort((a, b) => b[1] - a[1]).slice(0, 15).map(([url, n]) => ({ url, n }));
-    bot = `<div class="tiles">${tile('Vragen', nf.format(c.questions || 0))}${tile('Mislukt', nf.format(c.errors || 0))}
-      ${tile('Gem. antwoordtijd', `${c.secs || 0} s`)}${tile('Model', esc(cmodels.map((m) => `${m.model} (${m.n})`).join(', ') || '-'))}</div>
-      ${days > 1 ? `<h3>Vragen per dag</h3>${bars(cdaily, days, ['questions'])}` : ''}
-      <div class="grid"><div><h3>Laatste vragen</h3>${table(recent, [
-        { label: 'Tijd', html: (r) => esc(when(r.ts)) },
-        { label: 'Vraag', html: (r) => `${esc(r.question)}${r.ok ? '' : ' <span class="err">mislukt</span>'}` },
-        { label: 'Land', key: 'country' }])}</div>
-      <div><h3>Meest gebruikte bronnen</h3>${table(top, [
-        { label: 'Bron', html: (r) => `<a href="${esc(r.url)}">${esc(r.url)}</a>` }, { label: 'Keer', key: 'n', num: true }])}</div></div>`;
+    bot = `<div class="tiles">${tile('Questions', nf.format(c.questions || 0))}${tile('Failed', nf.format(c.errors || 0))}
+      ${tile('Avg. response time', `${c.secs || 0} s`)}${tile('Model', esc(cmodels.map((m) => `${m.model} (${m.n})`).join(', ') || '-'))}</div>
+      ${days > 1 ? `<h3>Questions per day</h3>${bars(cdaily, days, ['questions'])}` : ''}
+      <div class="grid"><div><h3>Latest questions</h3>${table(recent, [
+        { label: 'Time', html: (r) => esc(when(r.ts)) },
+        { label: 'Question', html: (r) => `${esc(r.question)}${r.ok ? '' : ' <span class="err">failed</span>'}` },
+        { label: 'Country', key: 'country' }])}</div>
+      <div><h3>Most used sources</h3>${table(top, [
+        { label: 'Source', html: (r) => `<a href="${esc(r.url)}">${esc(r.url)}</a>` }, { label: 'Times', key: 'n', num: true }])}</div></div>`;
   }
 
   const commits = await revisions().catch(() => null);
   const revs = commits ? table(commits.map((x) => ({
-    ...x, sha: x.sha.slice(0, 7), cms: /^(Bijgewerkt|Nieuw|Verwijderd|Create|Update|Delete) /.test(x.msg),
+    ...x, sha: x.sha.slice(0, 7), cms: /^(Bijgewerkt|Nieuw|Verwijderd|Afbeelding|Create|Update|Delete|Upload) /.test(x.msg),
   })), [
-    { label: 'Tijd', html: (r) => esc(when(r.ts)) },
-    { label: 'Wijziging', html: (r) => `${r.cms ? '<span class="tag">CMS</span> ' : ''}${esc(r.msg)}` },
+    { label: 'Time', html: (r) => esc(when(r.ts)) },
+    { label: 'Change', html: (r) => `${r.cms ? '<span class="tag">CMS</span> ' : ''}${esc(r.msg)}` },
     { label: '', html: (r) => `<a href="${esc(r.url)}" target="_blank" rel="noopener">${r.sha}</a>` },
-  ]) : '<p class="muted">GitHub is nu niet bereikbaar.</p>';
+  ]) : '<p class="muted">GitHub cannot be reached right now.</p>';
 
-  const tabs = [1, 7, 30, 90, 365].map((n) => `<a href="?days=${n}"${n === days ? ' class="on"' : ''}>${n === 1 ? 'Vandaag' : `${n} dagen`}</a>`).join('');
+  const tabs = [1, 7, 30, 90, 365].map((n) => `<a href="?days=${n}"${n === days ? ' class="on"' : ''}>${n === 1 ? 'Today' : `${n} days`}</a>`).join('');
   const html = `<div class="ranges">${tabs}</div>
-<section><h2>1. Websitestatistieken</h2>${site}</section>
-<section><h2>2. Chatbotstatistieken</h2>${bot}</section>
-<section><h2>3. Sitewijzigingen</h2>${revs}</section>
-<p class="muted">Je eigen bezoeken worden niet meegeteld in deze browser. Bezoekers worden zonder cookies geteld.</p>`;
+<section><h2>1. Website statistics</h2>${site}</section>
+<section><h2>2. Chatbot statistics</h2>${bot}</section>
+<section><h2>3. Site revisions</h2>${revs}</section>
+<p class="muted">Your own visits are not counted in this browser. Visitors are counted without cookies.</p>`;
   return new Response(html, {
     headers: {
       'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex',

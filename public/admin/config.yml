@@ -4,11 +4,11 @@ backend:
   repo: jeroenvancraaikamp/javc
   branch: main
   commit_messages:
-    create: 'Nieuw {{collection}}: {{slug}}'
-    update: 'Bijgewerkt {{collection}}: {{slug}}'
-    delete: 'Verwijderd {{collection}}: {{slug}}'
-    uploadMedia: 'Afbeelding toegevoegd: {{path}}'
-    deleteMedia: 'Afbeelding verwijderd: {{path}}'
+    create: 'Create {{collection}}: {{slug}}'
+    update: 'Update {{collection}}: {{slug}}'
+    delete: 'Delete {{collection}}: {{slug}}'
+    uploadMedia: 'Upload image: {{path}}'
+    deleteMedia: 'Delete image: {{path}}'
 
 site_url: https://javc.nl
 display_url: https://javc.nl
@@ -20,30 +20,30 @@ public_folder: /
 
 collections:
   - name: home
-    label: Startpagina
+    label: Homepage
     files:
       - name: home
-        label: Startpagina
+        label: Homepage
         file: src/data/home.json
         format: json
         preview_path: '/'
         fields:
-          - { name: title, label: Titel (grote kop), widget: string }
-          - { name: subtitle, label: Ondertitel, widget: string }
-          - { name: text, label: Tekst over de video, widget: text }
-          - { name: intro, label: Regel onder de video, widget: string, hint: 'Een link maak je zo: [tekst](/adres/)' }
+          - { name: title, label: Title (large heading), widget: string }
+          - { name: subtitle, label: Subtitle, widget: string }
+          - { name: text, label: Text over the video, widget: text }
+          - { name: intro, label: Line below the video, widget: string, hint: 'Make a link like this: [text](/address/)' }
           - name: blocks
-            label: Blokken
+            label: Blocks
             widget: list
             fields:
-              - { name: heading, label: Kop, widget: string }
-              - { name: text, label: Tekst, widget: text }
-              - { name: button, label: Tekst op de knop, widget: string }
-              - { name: link, label: Link van de knop, widget: string, hint: 'Bijvoorbeeld /skills/' }
+              - { name: heading, label: Heading, widget: string }
+              - { name: text, label: Text, widget: text }
+              - { name: button, label: Button text, widget: string }
+              - { name: link, label: Button link, widget: string, hint: 'For example /skills/' }
 
   - name: articles
-    label: Artikelen
-    label_singular: Artikel
+    label: Articles
+    label_singular: Article
     folder: src/content/articles
     extension: md
     format: frontmatter
@@ -52,14 +52,14 @@ collections:
     preview_path: '/{{slug}}/'
     sortable_fields: [date, title]
     view_groups:
-      - label: Jaar
+      - label: Year
         field: date
         pattern: '\d{4}'
     fields:
-      - { name: title, label: Titel, widget: string }
-      - { name: date, label: Datum, widget: datetime, time_format: false, date_format: 'YYYY-MM-DD', format: 'YYYY-MM-DD' }
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Date, widget: datetime, time_format: false, date_format: 'YYYY-MM-DD', format: 'YYYY-MM-DD' }
       - name: categories
-        label: Categorieën
+        label: Categories
         widget: select
         multiple: true
         default: [Uncategorized]
@@ -78,16 +78,16 @@ collections:
           - "ServiceNow Scripts"
           - "TBM/CSDM/CMDB"
           - "Uncategorized"
-      - { name: excerpt, label: Samenvatting, widget: text, hint: 'Korte tekst op de artikeloverzichten.' }
-      - { name: image, label: Uitgelichte afbeelding, widget: image, required: false }
-      - { name: readingTime, label: Leestijd (minuten), widget: number, value_type: int, required: false }
-      - { name: popular, label: Tonen bij Popular, widget: boolean, default: false, required: false }
-      - { name: draft, label: Concept (niet publiceren), widget: boolean, default: false, required: false }
-      - { name: body, label: Tekst, widget: markdown, modes: [rich_text, raw] }
+      - { name: excerpt, label: Excerpt, widget: text, hint: 'Short text shown in the article lists.' }
+      - { name: image, label: Featured image, widget: image, required: false }
+      - { name: readingTime, label: Reading time (minutes), widget: number, value_type: int, required: false }
+      - { name: popular, label: Show under Popular, widget: boolean, default: false, required: false }
+      - { name: draft, label: Draft (do not publish), widget: boolean, default: false, required: false }
+      - { name: body, label: Text, widget: markdown, modes: [rich_text, raw] }
 
   - name: pages
-    label: Pagina's
-    label_singular: Pagina
+    label: Pages
+    label_singular: Page
     folder: src/content/pages
     extension: md
     format: frontmatter
@@ -95,10 +95,10 @@ collections:
     slug: '{{slug}}'
     preview_path: '/{{slug}}/'
     fields:
-      - { name: title, label: Titel, widget: string }
-      - { name: menu, label: Naam in het menu, widget: string, required: false, hint: 'Leeg laten als de pagina niet in het menu hoort.' }
-      - { name: order, label: Volgorde in het menu, widget: number, value_type: int, default: 99, required: false }
-      - { name: wide, label: Volle breedte, widget: boolean, default: false, required: false }
-      - { name: layout, label: Opmaak, widget: select, options: [{ label: Standaard, value: default }, { label: 'Twee kolommen (elke ##-kop een blok)', value: columns }], default: default, required: false }
-      - { name: banner, label: Banner bovenaan, widget: image, required: false }
-      - { name: body, label: Tekst, widget: markdown, modes: [rich_text, raw] }
+      - { name: title, label: Title, widget: string }
+      - { name: menu, label: Menu name, widget: string, required: false, hint: 'Leave empty if the page should not be in the menu.' }
+      - { name: order, label: Menu order, widget: number, value_type: int, default: 99, required: false }
+      - { name: wide, label: Full width, widget: boolean, default: false, required: false }
+      - { name: layout, label: Layout, widget: select, options: [{ label: Standard, value: default }, { label: 'Two columns (each ## heading is a block)', value: columns }], default: default, required: false }
+      - { name: banner, label: Banner at the top, widget: image, required: false }
+      - { name: body, label: Text, widget: markdown, modes: [rich_text, raw] }
