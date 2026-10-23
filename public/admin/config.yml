@@ -50,7 +50,12 @@ collections:
     create: true
     slug: '{{slug}}'
     preview_path: '/{{slug}}/'
-    sortable_fields: [date, title]
+    # List view: what each line shows (the CMS has no separate columns), sorting and filters.
+    summary: "{{draft | ternary('DRAFT · ', '')}}{{title}}  ·  {{date | date('D MMM YYYY')}}  ·  {{categories}}  ·  updated {{commit_date | date('D MMM YYYY')}}"
+    sortable_fields: [date, title, commit_date]
+    view_filters:
+      - { label: Drafts, field: draft, pattern: true }
+      - { label: Popular, field: popular, pattern: true }
     view_groups:
       - label: Year
         field: date
@@ -94,6 +99,8 @@ collections:
     create: true
     slug: '{{slug}}'
     preview_path: '/{{slug}}/'
+    summary: "{{title}}  ·  menu: {{menu | default('(not in menu)')}}  ·  updated {{commit_date | date('D MMM YYYY')}}"
+    sortable_fields: [title, order, commit_date]
     fields:
       - { name: title, label: Title, widget: string }
       - { name: menu, label: Menu name, widget: string, required: false, hint: 'Leave empty if the page should not be in the menu.' }
