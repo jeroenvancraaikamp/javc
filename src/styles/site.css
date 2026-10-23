@@ -222,3 +222,10 @@ summary { cursor: pointer; font-weight: 600; color: var(--heading); }
   .hero-body { font-size: 15px; line-height: 2.1; }
   .post-title { font-size: 24px; }
 }
+/* Publishing indicator in the top bar (signed-in CMS user only) */
+.publish-status { align-self: center; font: 600 12px/1 var(--head-font); padding: 6px 10px; border-radius: 999px; background: #fff3cd; color: #7a5b00; }
+.publish-status[hidden] { display: none; }
+.publish-status[data-state="busy"]::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; vertical-align: -1px; animation: pub-spin .8s linear infinite; }
+.publish-status[data-state="done"] { background: #e6f2ef; color: var(--accent-2); }
+.publish-status[data-state="error"] { background: #fbeaea; color: #a33; }
+@keyframes pub-spin { to { transform: rotate(360deg); } }
