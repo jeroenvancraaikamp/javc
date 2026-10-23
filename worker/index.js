@@ -14,6 +14,7 @@ const WORKERS_AI_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
 const TOP_K = 8;
 const MAX_HISTORY = 10;
 const MAX_MESSAGE = 2000;
+const MAX_ANSWER_TOKENS = 1200;
 
 // --- search (BM25 over the chunks) ---------------------------------------
 const STOP = new Set(('a an and are as at be by can de den der die do does een en for from had has have het hoe how i ' +
@@ -85,7 +86,7 @@ async function askClaude(env, history, question, passages) {
   const client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
   const res = await client.beta.messages.create({
     model: CLAUDE_MODEL,
-    max_tokens: 4000,
+    max_tokens: MAX_ANSWER_TOKENS,
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default',
     output_config: { effort: 'low' },
@@ -119,16 +120,24 @@ function json(data, status = 200) {
   });
 }
 
-// Only accept POSTs sent from the site itself.
-function guard(request) {
+// Only accept POSTs sent from the site itself (browsers always send an Origin header on a POST),
+// and apply a per-visitor rate limit when the rate-limit binding is configured (see wrangler.jsonc).
+async function guard(request, env, limiter) {
   if (request.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
   const origin = request.headers.get('origin');
-  if (origin && new URL(origin).host !== new URL(request.url).host) return json({ error: 'Forbidden' }, 403);
+  let ok = false;
+  try { ok = !!origin && new URL(origin).host === new URL(request.url).host; } catch { /* invalid origin */ }
+  if (!ok) return json({ error: 'Forbidden' }, 403);
+  if (limiter) {
+    const ip = request.headers.get('cf-connecting-ip') || 'unknown';
+    const { success } = await limiter.limit({ key: ip });
+    if (!success) return json({ error: 'Too many requests. Please wait a minute and try again.' }, 429);
+  }
   return null;
 }
 
 async function chat(request, env) {
-  const denied = guard(request);
+  const denied = await guard(request, env, env.CHAT_LIMITER);
   if (denied) return denied;
 
   let body;
@@ -166,7 +175,7 @@ async function chat(request, env) {
 // Needs the Worker secret SMTP2GO_API_KEY. CONTACT_TO / CONTACT_FROM are set in wrangler.jsonc;
 // the sender address must be a verified sender (or domain) in SMTP2GO.
 async function contact(request, env) {
-  const denied = guard(request);
+  const denied = await guard(request, env, env.CONTACT_LIMITER);
   if (denied) return denied;
   let f;
   try { f = await request.json(); } catch { return json({ error: 'Bad request' }, 400); }
