@@ -13,7 +13,7 @@ const { slug } = Astro.props as { slug: string };
       <label>Name *<input name="name" maxlength="100" required /></label>
       <label>Email * <small class="muted">(not published)</small><input name="email" type="email" maxlength="200" required /></label>
     </div>
-    <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off" /></label>
+    <label class="hp" aria-hidden="true">Leave this field empty<input name="hp_note" tabindex="-1" autocomplete="off" data-1p-ignore data-lpignore="true" data-bwignore /></label>
     <button class="btn" type="submit">Post comment</button>
     <p class="notice" role="status" hidden></p>
   </form>

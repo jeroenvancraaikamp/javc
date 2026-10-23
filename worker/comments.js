@@ -52,7 +52,7 @@ export async function comments(request, env, guard, { humanCheck, tooFast }) {
   const f = await request.json().catch(() => null);
   const field = (k, max) => (typeof f?.[k] === 'string' ? f[k].trim().slice(0, max) : '');
   const slug = field('slug', 200), name = field('name', 100), email = field('email', 200), body = field('body', 3000);
-  if (field('website', 200) || tooFast(f)) return json({ ok: true }); // honeypot / too fast: bots, pretend it worked
+  if (field('hp_note', 200) || tooFast(f)) return json({ ok: true }); // honeypot / too fast: bots, pretend it worked
   if (!(await humanCheck(f, request, env))) return json({ error: 'The spam check failed. Please reload the page and try again.' }, 403);
   if ((body.match(/https?:\/\/|www\./gi) || []).length > 2) return json({ error: 'Please include at most two links in your comment.' }, 400);
   if (!/^[a-z0-9-]+$/.test(slug) || !name || !body || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)) {

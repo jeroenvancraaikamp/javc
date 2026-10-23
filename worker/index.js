@@ -191,8 +191,8 @@ async function contact(request, env) {
   const field = (k, max) => (typeof f?.[k] === 'string' ? f[k].trim().slice(0, max) : '');
   const name = field('name', 200), email = field('email', 200), phone = field('phone', 50), message = field('message', 5000);
 
-  // Honeypot: a hidden field people never fill in; bots do. Pretend it worked. Same for impossibly fast submits.
-  if (field('website', 200) || tooFast(f)) return json({ ok: true });
+  // Honeypot: a hidden field people never fill in; bots do (password managers are told to skip it). Pretend it worked. Same for impossibly fast submits.
+  if (field('hp_note', 200) || tooFast(f)) return json({ ok: true });
   if (!(await humanCheck(f, request, env))) return json({ error: 'The spam check failed. Please reload the page and try again.' }, 403);
   if (!name || !message || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)) {
     return json({ error: 'Please fill in your name, a valid email address and a message.' }, 400);
