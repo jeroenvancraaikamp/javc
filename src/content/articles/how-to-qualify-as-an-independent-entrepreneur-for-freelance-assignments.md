@@ -1,10 +1,13 @@
 ---
-title: "How to Qualify as an Independent Entrepreneur for Freelance Assignments in the Netherlands?"
+title: How to Qualify as an Independent Entrepreneur for Freelance Assignments in the Netherlands?
 date: 2024-08-18
-categories: ["Information"]
-excerpt: "The Dutch government plans to replace the current DBA Law from 2016 with the new DBVAR Law. The new law will take effect on January 1st. 2025, and, unlike the old DBA Law, will be enforced by the Dutch government"
-image: "/wp-content/uploads/2024/08/law.jpg"
+categories:
+  - Uncategorized
+excerpt: The Dutch government plans to replace the current DBA Law from 2016 with the new DBVAR Law. The new law will take effect on January 1st. 2025, and, unlike the old DBA Law, will be enforced by the Dutch government
+image: /wp-content/uploads/2024/08/law.jpg
 readingTime: 7
+popular: false
+draft: false
 ---
 
 The Dutch government plans to replace the current DBA Law from 2016 with the new DBVAR Law. The new law will take effect on January 1st. 2025, and, unlike the old DBA Law, will be enforced by the Dutch government as well. The primary goal is to combat false self-employment, protect vulnerable freelancers, and ensure that taxes and social contributions are collected from individuals who are, in fact, employed by clients. However, many freelancers do not wish to be classified as employees. Many companies do not want to have staff on their payroll that they have not hired as an employee. This article outlines what parties need to do to continue executing freelance assignments as independent entrepreneurs.
