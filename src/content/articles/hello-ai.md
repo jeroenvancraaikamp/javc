@@ -1,10 +1,13 @@
 ---
-title: "AI Part 2: Claude, GitHub, Python, Cloudflare, Supabase & ChatBot"
+title: 'AI Part 2: Claude, GitHub, Python, Cloudflare, Supabase & ChatBot'
 date: 2026-10-12
-categories: ["Uncategorized"]
-excerpt: "For the AI Masterclass that I recently attended, we were asked to produce a practical use case. Building on AI Part 1, i decided to create a zero-touch Champagne Webiste that is completely generated using AI, and that makes use"
-image: "/wp-content/uploads/2026/10/Champagne360.png"
+categories:
+  - Blog Article
+excerpt: For the AI Masterclass that I recently attended, we were asked to produce a practical use case. Building on AI Part 1, i decided to create a zero-touch Champagne Webiste that is completely generated using AI, and that makes use
+image: /wp-content/uploads/2026/10/Champagne360.png
 readingTime: 9
+popular: false
+draft: false
 ---
 
 For the AI Masterclass that I recently attended, we were asked to produce a practical use case. Building on AI Part 1, i decided to create a zero-touch Champagne Webiste that is completely generated using AI, and that makes use of todays capabilities. The result is now live on [**Champagne360.nl**](https://Champagne360.nl),
