@@ -1,6 +1,6 @@
 // Statistics: page views and chatbot questions are logged in a Cloudflare D1 database (binding DB),
 // and /stats shows them together with the latest site revisions from GitHub.
-// /stats is protected with a password: the Worker secret STATS_PASSWORD (any user name works).
+// /stats is only shown to the owner of the repository, signed in to the CMS (see cmsUser).
 //
 // Page views are counted without cookies: a visitor is a hash of IP address + browser + day,
 // so the same person is counted once per day and no IP address is stored.
@@ -66,14 +66,22 @@ export async function logChat(env, request, { question, model, sources, ms, ok }
 
 // --- /stats -------------------------------------------------------------------
 
-async function authorized(request, env) {
-  const m = (request.headers.get('authorization') || '').match(/^Basic\s+(.+)$/i);
-  if (!m) return false;
-  let pass = '';
-  try { pass = atob(m[1]).split(':').slice(1).join(':'); } catch { return false; }
-  const a = new TextEncoder().encode(await sha(pass));
-  const b = new TextEncoder().encode(await sha(env.STATS_PASSWORD));
-  return crypto.subtle.timingSafeEqual(a, b);
+// Signed in to the CMS? The page sends the GitHub token the CMS keeps in this browser
+// (localStorage "sveltia-cms.user"); it must belong to the owner of the repository.
+// A successful check is remembered for 10 minutes (by a hash of the token, never the token itself).
+async function cmsUser(request) {
+  const token = (request.headers.get('authorization') || '').match(/^Bearer\s+(\S+)$/i)?.[1];
+  if (!token) return false;
+  const key = new Request(`https://stats-auth.javc.nl/${await sha(`auth|${token}`)}`);
+  if (await caches.default.match(key)) return true;
+  const res = await fetch('https://api.github.com/user', {
+    headers: { authorization: `Bearer ${token}`, 'user-agent': 'javc.nl stats', accept: 'application/vnd.github+json' },
+  });
+  if (!res.ok) return false;
+  const { login } = await res.json();
+  if (String(login).toLowerCase() !== REPO.split('/')[0].toLowerCase()) return false;
+  await caches.default.put(key, new Response('ok', { headers: { 'cache-control': 'max-age=600' } }));
+  return true;
 }
 
 // Latest commits: GitHub's API first (often rate-limited from Cloudflare's shared addresses),
@@ -132,15 +140,14 @@ function table(rows, cols) {
 
 const tile = (label, value) => `<div class="tile"><div class="v">${value}</div><div class="l">${label}</div></div>`;
 
-export async function statsPage(request, env) {
-  if (!env.STATS_PASSWORD) return new Response('Stats are not set up yet: add the Worker secret STATS_PASSWORD.', { status: 503 });
-  if (!(await authorized(request, env))) {
-    // Slow down password guessing with the contact-form rate limit (3 tries per minute).
+// GET /api/stats: the statistics as an HTML fragment, only for the signed-in CMS user.
+export async function statsData(request, env) {
+  if (!(await cmsUser(request))) {
     if (request.headers.get('authorization') && env.CONTACT_LIMITER) {
       const { success } = await env.CONTACT_LIMITER.limit({ key: `stats:${request.headers.get('cf-connecting-ip')}` });
-      if (!success) return new Response('Too many attempts, wait a minute.', { status: 429 });
+      if (!success) return new Response('Too many attempts', { status: 429 });
     }
-    return new Response('Login required', { status: 401, headers: { 'www-authenticate': 'Basic realm="javc stats", charset="UTF-8"' } });
+    return new Response('Not signed in', { status: 401 });
   }
 
   const days = [1, 7, 30, 90, 365].includes(+new URL(request.url).searchParams.get('days')) ? +new URL(request.url).searchParams.get('days') : 30;
@@ -201,6 +208,21 @@ export async function statsPage(request, env) {
   ]) : '<p class="muted">GitHub is nu niet bereikbaar.</p>';
 
   const tabs = [1, 7, 30, 90, 365].map((n) => `<a href="?days=${n}"${n === days ? ' class="on"' : ''}>${n === 1 ? 'Vandaag' : `${n} dagen`}</a>`).join('');
+  const html = `<nav>${tabs}</nav>
+<section><h2>1. Websitestatistieken</h2>${site}</section>
+<section><h2>2. Chatbotstatistieken</h2>${bot}</section>
+<section><h2>3. Sitewijzigingen</h2>${revs}</section>
+<p class="muted">Je eigen bezoeken worden niet meegeteld in deze browser. Bezoekers worden zonder cookies geteld.</p>`;
+  return new Response(html, {
+    headers: {
+      'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex',
+      'set-cookie': 'javc_me=1; Path=/; Max-Age=31536000; Secure; SameSite=Lax; HttpOnly',
+    },
+  });
+}
+
+// GET /stats: an empty page that loads the statistics with the CMS login of this browser.
+export function statsPage() {
   const html = `<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex"><title>Stats – javc.nl</title><style>
 :root{--bg:#f6f7f9;--card:#fff;--fg:#1d2327;--mut:#6b7280;--line:#e5e7eb;--a:#2271b1;--b0:#2271b1;--b1:#9ec5e8}
@@ -218,15 +240,20 @@ th,td{text-align:left;padding:5px 6px;border-bottom:1px solid var(--line);vertic
 .bar span{flex:1;min-height:1px;border-radius:2px 2px 0 0}.b0{background:var(--b0)}.b1{background:var(--b1)}
 .axis{display:flex;justify-content:space-between;color:var(--mut);font-size:12px}.muted{color:var(--mut)}
 .err{color:#d63638;font-size:12px}.tag{font-size:11px;padding:1px 6px;border-radius:4px;background:var(--line)}
-</style></head><body><main><h1>Stats javc.nl</h1><nav>${tabs}</nav>
-<section><h2>1. Websitestatistieken</h2>${site}</section>
-<section><h2>2. Chatbotstatistieken</h2>${bot}</section>
-<section><h2>3. Sitewijzigingen</h2>${revs}</section>
-<p class="muted">Je eigen bezoeken worden niet meegeteld in deze browser. Bezoekers worden zonder cookies geteld.</p></main></body></html>`;
-  return new Response(html, {
-    headers: {
-      'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex',
-      'set-cookie': 'javc_me=1; Path=/; Max-Age=31536000; Secure; SameSite=Lax; HttpOnly',
-    },
-  });
+</style></head>
+<body><main><h1>Stats javc.nl</h1><div id="out"><p class="muted">Laden…</p></div></main>
+<script>
+(async () => {
+  const out = document.getElementById('out');
+  const login = '<section><p>Deze pagina is alleen zichtbaar als je bent ingelogd in de CMS.</p><p><a href="/admin/">Inloggen in de CMS</a>, en open daarna deze pagina opnieuw.</p></section>';
+  let token = '';
+  try { token = JSON.parse(localStorage.getItem('sveltia-cms.user') || '{}').token || ''; } catch {}
+  if (!token) { out.innerHTML = login; return; }
+  const res = await fetch('/api/stats' + location.search, { headers: { authorization: 'Bearer ' + token } }).catch(() => null);
+  if (res && res.ok) out.innerHTML = await res.text();
+  else if (res && res.status === 401) out.innerHTML = login;
+  else out.innerHTML = '<section><p>De statistieken zijn nu niet beschikbaar. Probeer het later opnieuw.</p></section>';
+})();
+</script></body></html>`;
+  return new Response(html, { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex' } });
 }

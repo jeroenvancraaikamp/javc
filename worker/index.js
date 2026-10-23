@@ -8,7 +8,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import KNOWLEDGE from './knowledge.json';
 import WP_IDS from './wp-ids.json';
-import { logHit, logChat, statsPage } from './stats.js';
+import { logHit, logChat, statsPage, statsData } from './stats.js';
 
 const CLAUDE_MODEL = 'claude-opus-5-5';
 const WORKERS_AI_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
@@ -246,7 +246,8 @@ export default {
     if (to) return Response.redirect(new URL(to, url).toString(), 301);
     if (url.pathname === '/api/chat') return chat(request, env, ctx);
     if (url.pathname === '/api/hit') return logHit(request, env).catch((err) => { console.error('hit', err); return new Response(null, { status: 204 }); });
-    if (url.pathname === '/stats' || url.pathname === '/stats/') return statsPage(request, env);
+    if (url.pathname === '/api/stats') return statsData(request, env);
+    if (url.pathname === '/stats' || url.pathname === '/stats/') return statsPage();
     if (url.pathname === '/api/contact') return contact(request, env);
     return env.ASSETS.fetch(request);
   },
