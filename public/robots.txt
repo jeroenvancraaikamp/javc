@@ -28,7 +28,6 @@ User-agent: Omgilibot
 User-agent: Timpibot
 User-agent: YouBot
 User-agent: AI2Bot
-User-agent: PetalBot
 Disallow: /
 
 Sitemap: https://javc.nl/sitemap-index.xml
