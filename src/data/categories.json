@@ -1,19 +1,16 @@
 {
   "categories": [
     {
-      "name": "AI4IT"
+      "name": "ServiceNow"
     },
     {
       "name": "CSDM/CMDB/TBM"
     },
     {
-      "name": "ServiceNow"
+      "name": "AI4IT"
     },
     {
       "name": "IT4ESM"
-    },
-    {
-      "name": "IT4CSM"
     },
     {
       "name": "IT4IT"
