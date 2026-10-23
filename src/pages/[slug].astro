@@ -10,14 +10,14 @@ export async function getStaticPaths() {
   const articles = await getArticles();
   const pages = await getCollection('pages');
   return [
-    ...articles.map((entry, i) => ({
+    ...articles.map((entry) => ({
       params: { slug: entry.id },
-      props: { entry, kind: 'article', newer: articles[i - 1], older: articles[i + 1], all: articles },
+      props: { entry, kind: 'article', all: articles },
     })),
     ...pages.map((entry) => ({ params: { slug: entry.id }, props: { entry, kind: 'page' } })),
   ];
 }
-const { entry, kind, newer, older, all } = Astro.props as any;
+const { entry, kind, all } = Astro.props as any;
 const { Content } = await render(entry);
 const d = entry.data;
 // Column layout: every '## ' section becomes a block in a two-column grid.
@@ -25,17 +25,9 @@ const sections = kind === 'page' && d.layout === 'columns'
   ? (entry.body ?? '').split(/^(?=## )/m).map((part: string) => marked.parse(part) as string)
   : [];
 const intro = sections.length && !(entry.body ?? '').trimStart().startsWith('## ') ? sections.shift() : '';
-const url = new URL(Astro.url.pathname, Astro.site).href;
 const related = kind === 'article'
   ? all.filter((a: any) => a.id !== entry.id && a.data.categories.some((c: string) => d.categories.includes(c))).slice(0, 3)
   : [];
-const share = [
-  ['LinkedIn', `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`],
-  ['X', `https://x.com/intent/post?url=${encodeURIComponent(url)}&text=${encodeURIComponent(d.title)}`],
-  ['Facebook', `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`],
-  ['WhatsApp', `https://wa.me/?text=${encodeURIComponent(d.title + ' ' + url)}`],
-  ['Email', `mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent(url)}`],
-];
 ---
 {kind === 'page' ? (
   <Base title={d.title} edit={`pages/entries/${entry.id}`} pageTitle={d.title} crumbs={[{ label: d.title }]}>
@@ -63,14 +55,6 @@ const share = [
           {d.readingTime && <> · {d.readingTime} min read</>} · <a href="#comments" data-comment-count>Comments</a>
         </div>
         <div class="prose"><Content /></div>
-        <div class="share">
-          <h3>Share This Story</h3>
-          <div>{share.map(([n, h]) => <a href={h} target="_blank" rel="noopener">{n}</a>)}</div>
-        </div>
-        <nav class="prevnext">
-          {older ? <a href={`/${older.id}/`}><small>‹ Previous</small>{older.data.title}</a> : <span />}
-          {newer ? <a href={`/${newer.id}/`} class="next"><small>Next ›</small>{newer.data.title}</a> : <span />}
-        </nav>
         {related.length > 0 && (
           <section class="related">
             <h3>Related Posts</h3>
