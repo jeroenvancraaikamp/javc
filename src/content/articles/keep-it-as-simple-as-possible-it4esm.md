@@ -1,10 +1,14 @@
 ---
-title: "Keep IT as simple as possible: IT4ESM"
+title: 'Keep IT as simple as possible: IT4ESM'
 date: 2026-04-06
-categories: ["IT4ESM","ServiceNow","Uncategorized"]
-excerpt: "A couple of months ago i surveyed 700+ IT tools. Every tool has its pros and cons, and everybody chooses their own solution. Enterprise Service Management is often the most expensive and worst-managed Architecture Domain in the company, but this"
-image: "/wp-content/uploads/2026/04/IT4ESM-Tools.png"
+categories:
+  - IT4ESM
+  - ServiceNow
+excerpt: A couple of months ago i surveyed 700+ IT tools. Every tool has its pros and cons, and everybody chooses their own solution. Enterprise Service Management is often the most expensive and worst-managed Architecture Domain in the company, but this
+image: /wp-content/uploads/2026/04/IT4ESM-Tools.png
 readingTime: 8
+popular: false
+draft: false
 ---
 
 A couple of months ago i surveyed [**700+ IT tools.**](/700-it-management-tools/) Every tool has its pros and cons, and everybody chooses their own solution. Enterprise Service Management is often the most expensive and worst-managed Architecture Domain in the company, but this is usually not visible or transparent. The only thing that management typically sees is the cost of product/saas licenses, but that is only the tip of the iceberg. A significant portion of the (hidden) cost lies in the tools' integrations and maintenance. The higher cost lies in adopting and inefficiently using the tools. The highest cost is driven by misaligned processes, leading to siloed ways of working and a lack of transparency and control. The sad thing is, only a few appear to know how much time/resources/money is being wasted, making it almost impossible to build a tangible business case to "Do IT right..."
