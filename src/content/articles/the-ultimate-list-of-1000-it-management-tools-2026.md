@@ -12,8 +12,7 @@ popular: false
 draft: false
 ---
 
-### UPDATE: I [IT4IT/IT4ESM Atlas](https://javc.nl/it4it-atlas/) AI. It now contains 1600 Platforms
-
+### UPDATE: [IT4IT/IT4ESM Atlas](https://javc.nl/it4it-atlas/) now contains 1600 Platforms
 
 This is an overview of 1136 IT management tools, grouped into 26 categories across 7 domains — Strategy & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI — aligned to The Open Group's IT4IT reference architecture and extended to cover every vendor named in the relevant current Gartner Magic Quadrants, plus open-source platforms used at enterprise scale.
 
