@@ -1,10 +1,15 @@
 ---
-title: "ITIL Version 5,  CSDM5, DevSecOps and IT4IT 3.0 Overlap"
+title: ITIL Version 5,  CSDM5, DevSecOps and IT4IT 3.0 Overlap
 date: 2026-04-04
-categories: ["ITIL","ServiceNow"]
-excerpt: "ITIL Version 5 was published in February 2026, and now people ask me how that aligns with DevOps, SecOps IT4IT 3.0 and CSDM5. The honest answer is: There appears to be no real alignment between the Frameworks. From a satellite,"
-image: "/wp-content/uploads/2026/04/ITIL5-CSDM5-IT4IT30.png"
+categories:
+  - ITIL
+  - ServiceNow
+excerpt: 'ITIL Version 5 was published in February 2026, and now people ask me how that aligns with DevOps, SecOps IT4IT 3.0 and CSDM5. The honest answer is: There appears to be no real alignment between the Frameworks. From a satellite,'
+image: /wp-content/uploads/2026/04/ITIL5-CSDM5-IT4IT30.png
 readingTime: 5
+popular: false
+draft: false
+linkedin: https://www.linkedin.com/feed/update/urn:li:activity:7446578137825669120/
 ---
 
 ITIL Version 5 was published in February 2026, and now people ask me how that aligns with DevOps, SecOps IT4IT 3.0 and CSDM5. The honest answer is: **There appears to be no real alignment between the Frameworks.** From a satellite, it looks like the frameworks are similar, but the closer you get to real life, the bigger the differences and confusion appear to be. Things get even fuzzier when one tries to map COTS products and product-specific practices to either framework.
