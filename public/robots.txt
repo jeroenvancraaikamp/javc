@@ -2,6 +2,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /cms/
 Disallow: /stats
 
 # AI crawlers that collect content for training or AI search indexes are not.

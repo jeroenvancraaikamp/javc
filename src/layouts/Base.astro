@@ -11,8 +11,9 @@ interface Props {
   crumbs?: { label: string; href?: string }[];
   edit?: string;
   noindex?: boolean;
+  chat?: boolean;
 }
-const { title, description = 'IT management and consultancy by Jeroen van Craaikamp.', pageTitle, crumbs = [], edit, noindex = false } = Astro.props;
+const { title, description = 'IT management and consultancy by Jeroen van Craaikamp.', pageTitle, crumbs = [], edit, noindex = false, chat = true } = Astro.props;
 const menu = (await getCollection('pages')).filter((p) => p.data.menu).sort((a, b) => a.data.order - b.data.order);
 const path = Astro.url.pathname;
 const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
@@ -59,7 +60,7 @@ const articlesActive = ['/articles/', '/category/', '/archive/', '/search/'].som
         <a href="/stats" aria-label="Statistics" title="Statistics" class="social cms-stats" hidden>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10h3v10zm6.5 0V4h3v16zM17 20v-7h3v7z"/></svg>
         </a>
-        <a href="/admin/" aria-label="Sign in to the editor" title="Sign in to the editor" class="social cms-lock">
+        <a href="/cms/" aria-label="Sign in to the editor" title="Sign in to the editor" class="social cms-lock">
           <svg class="lock-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H5v12h14V10h-2V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3zm3 4a2 2 0 0 1 1 3.7V20h-2v-2.3A2 2 0 0 1 12 14z"/></svg>
           <svg class="lock-open" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M12 2a5 5 0 0 0-5 5h2a3 3 0 0 1 6 0v3H5v12h14V10h-2V7a5 5 0 0 0-5-5zm0 12a2 2 0 0 1 1 3.7V20h-2v-2.3A2 2 0 0 1 12 14z"/></svg>
         </a>
@@ -92,30 +93,33 @@ const articlesActive = ['/articles/', '/category/', '/archive/', '/search/'].som
       </div>
     </footer>
     <a href="#" class="to-top" aria-label="Go to Top">▲</a>
-    <ChatWidget />
+    {chat && <ChatWidget />}
     {edit && (
-      <a id="cms-edit" href={`/admin/#/collections/${edit}`} hidden
+      <a id="cms-edit" href={`/cms/#/collections/${edit}`} hidden
         style="position:fixed;left:16px;bottom:16px;z-index:50;padding:8px 14px;border-radius:999px;background:#111;color:#fff;font:600 14px system-ui,sans-serif;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.3)">✎ Edit</a>
     )}
     <script>
-      // Edit button: only shown in a browser where this site's CMS is signed in (Sveltia stores its login in localStorage).
-      try {
+      // Signed in to this site's CMS? (Sveltia keeps its login, with the GitHub token, in localStorage.)
+      const signedIn = () => {
+        try { return !!JSON.parse(localStorage.getItem('sveltia-cms.user') || '{}').token; } catch { return false; }
+      };
+      // Edit button, lock icon (open when signed in) and stats icon follow the CMS login,
+      // also when you sign in or out in the CMS on another tab or in the embedded editor (/cms/).
+      const showLogin = () => {
+        const on = signedIn();
         const btn = document.getElementById('cms-edit');
-        if (btn && localStorage.getItem('sveltia-cms.user')) btn.hidden = false;
-        // Lock icon in the top bar: open when signed in to the CMS.
-        if (localStorage.getItem('sveltia-cms.user')) {
-          const lock = document.querySelector('.cms-lock');
-          lock?.querySelector('.lock-closed')?.setAttribute('hidden', '');
-          lock?.querySelector('.lock-open')?.removeAttribute('hidden');
-          lock?.setAttribute('aria-label', 'Open the editor');
-          lock?.setAttribute('title', 'Open the editor');
-          document.querySelector('.cms-stats')?.removeAttribute('hidden');
-        }
-      } catch {}
+        if (btn) btn.hidden = !on;
+        const lock = document.querySelector('.cms-lock');
+        lock?.querySelector('.lock-closed')?.toggleAttribute('hidden', on);
+        lock?.querySelector('.lock-open')?.toggleAttribute('hidden', !on);
+        lock?.setAttribute('aria-label', on ? 'Open the editor' : 'Sign in to the editor');
+        lock?.setAttribute('title', on ? 'Open the editor' : 'Sign in to the editor');
+        document.querySelector('.cms-stats')?.toggleAttribute('hidden', !on);
+      };
+      showLogin();
+      addEventListener('storage', (e) => { if (e.key === null || e.key === 'sveltia-cms.user') showLogin(); });
       // Page view for the stats page (/stats); not counted when signed in to the CMS.
-      let cmsUser = false;
-      try { cmsUser = !!localStorage.getItem('sveltia-cms.user'); } catch {}
-      if (!cmsUser) {
+      if (!signedIn()) {
         fetch('/api/hit', { method: 'POST', keepalive: true, headers: { 'content-type': 'application/json' },
           body: JSON.stringify({ p: location.pathname, r: document.referrer }) }).catch(() => {});
       }

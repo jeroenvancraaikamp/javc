@@ -1,0 +1,25 @@
+---
+// The CMS (Sveltia, served from /admin/) embedded between the site's header and footer, full width.
+// /cms/#/collections/articles/entries/slug opens that entry directly.
+import Base from '../layouts/Base.astro';
+---
+<Base title="CMS" noindex chat={false}>
+  <iframe id="cms-frame" class="cms-frame" title="Content editor" src="/admin/"></iframe>
+  <script>
+    const frame = document.getElementById('cms-frame') as HTMLIFrameElement;
+    if (location.hash) frame.src = '/admin/' + location.hash;
+    // Fill the screen below the header.
+    const fit = () => { frame.style.height = `${Math.max(500, innerHeight - frame.getBoundingClientRect().top - scrollY)}px`; };
+    fit();
+    addEventListener('resize', fit);
+    // Keep the address bar in step with where you are in the editor, so a reload brings you back there.
+    frame.addEventListener('load', () => {
+      const w = frame.contentWindow;
+      w?.addEventListener('hashchange', () => history.replaceState(null, '', '/cms/' + w.location.hash));
+    });
+  </script>
+</Base>
+
+<style>
+  .cms-frame { display: block; width: 100%; border: 0; border-bottom: 1px solid var(--line); }
+</style>

@@ -8,7 +8,7 @@ import Base from '../layouts/Base.astro';
   <script>
     (async () => {
       const out = document.getElementById('stats-out')!;
-      const login = '<section><p>Deze pagina is alleen zichtbaar als je bent ingelogd in de CMS.</p><p><a href="/admin/">Inloggen in de CMS</a>, en open daarna deze pagina opnieuw.</p></section>';
+      const login = '<section><p>Deze pagina is alleen zichtbaar als je bent ingelogd in de CMS.</p><p><a href="/cms/">Inloggen in de CMS</a>, en open daarna deze pagina opnieuw.</p></section>';
       let token = '';
       try { token = JSON.parse(localStorage.getItem('sveltia-cms.user') || '{}').token || ''; } catch {}
       if (!token) { out.innerHTML = login; return; }
