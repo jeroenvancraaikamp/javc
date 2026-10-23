@@ -4,10 +4,10 @@ date: 2026-10-20
 categories:
   - IT4IT
 excerpt: 'A demo article showing every type of content this new site supports: images, galleries, video, PDFs, tables, code, quotes and downloads'
-image: ''
+image: https://picsum.photos/id/690/1920/1280.webp
 readingTime: 4
 popular: true
-draft: true
+draft: false
 ---
 
 This article is a **demo** for the prototype. It shows every kind of content one article can hold. Each article is a single Markdown file: you write plain text, and add richer blocks where you need them.
