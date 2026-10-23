@@ -40,13 +40,8 @@
 <script>
   type Msg = { role: 'user' | 'assistant'; content: string; sources?: { title: string; url: string }[] };
 
-  const nl = (navigator.language || '').toLowerCase().startsWith('nl');
-  const T = nl ? {
-    sub: 'Vraag me naar het werk en de artikelen van Jeroen', speak: 'Antwoorden voorlezen', reset: 'Nieuw gesprek',
-    mic: 'Stel je vraag met je stem', ph: 'Typ je vraag…', listening: 'Ik luister…', thinking: 'Even denken…',
-    hello: 'Hallo! Ik ken alle artikelen op deze site en het cv van Jeroen. Waar kan ik je mee helpen?',
-    error: 'Er ging iets mis. Probeer het later nog eens.', sources: 'Bronnen',
-  } : {
+  // The whole site is in English, so the assistant is too (text, voice input and read-aloud).
+  const T = {
     sub: "Ask me about Jeroen's work and articles", speak: 'Read answers aloud', reset: 'New conversation',
     mic: 'Speak your question', ph: 'Type your question…', listening: 'Listening…', thinking: 'Thinking…',
     hello: "Hi! I know all the articles on this site and Jeroen's CV. How can I help you?",
@@ -145,17 +140,12 @@
     speakOn = !speakOn; store.set('javc-chat-speak', speakOn ? '1' : '0'); updateSpeakBtn();
     if (!speakOn) speechSynthesis.cancel();
   });
-  function looksDutch(s: string) {
-    const w = s.toLowerCase().match(/\b(de|het|een|en|is|van|niet|ik|je|zijn|voor|met|op|dat|deze|wat)\b/g) || [];
-    const e = s.toLowerCase().match(/\b(the|a|and|is|of|not|i|you|are|for|with|on|that|this|what)\b/g) || [];
-    return w.length > e.length;
-  }
   function speak(text: string) {
     if (!canSpeak) return;
     speechSynthesis.cancel();
     const plain = text.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*#`_]/g, '').replace(/^\s*[-•]\s+/gm, '');
     const u = new SpeechSynthesisUtterance(plain);
-    u.lang = looksDutch(plain) ? 'nl-NL' : 'en-GB';
+    u.lang = 'en-GB';
     const voice = speechSynthesis.getVoices().find((v) => v.lang.replace('_', '-').startsWith(u.lang.slice(0, 2)));
     if (voice) u.voice = voice;
     speechSynthesis.speak(u);
@@ -208,7 +198,7 @@
       if (rec) { rec.stop(); return; }
       speechSynthesis?.cancel();
       rec = new SR();
-      rec.lang = navigator.language || 'nl-NL';
+      rec.lang = 'en-GB';
       rec.interimResults = true;
       rec.continuous = false;
       let finalText = '';
