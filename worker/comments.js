@@ -60,7 +60,8 @@ export async function comments(request, env, guard, { humanCheck, tooFast }) {
   }
   await d.prepare('INSERT INTO comments (ts, slug, name, email, body) VALUES (?, ?, ?, ?, ?)').bind(Date.now(), slug, name, email, body).run();
 
-  if (env.SMTP2GO_API_KEY) {
+  if (!env.SMTP2GO_API_KEY) console.error('comment mail: SMTP2GO_API_KEY missing');
+  else {
     const site = url.origin;
     await fetch('https://api.smtp2go.com/v3/email/send', {
       method: 'POST',
@@ -71,6 +72,9 @@ export async function comments(request, env, guard, { humanCheck, tooFast }) {
         subject: `New comment on javc.nl from ${name.replace(/[\r\n]+/g, ' ')}`,
         text_body: `${name} (${email}) commented on ${site}/${slug}/:\n\n${body}\n\nApprove or delete it at ${site}/comments/`,
       }),
+    }).then(async (res) => {
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data?.data?.succeeded) console.error('comment mail failed', res.status, JSON.stringify(data));
     }).catch((err) => console.error('comment mail', err));
   }
   return json({ ok: true });
