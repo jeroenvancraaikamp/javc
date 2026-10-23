@@ -76,18 +76,35 @@ async function authorized(request, env) {
   return crypto.subtle.timingSafeEqual(a, b);
 }
 
-async function revisions() {
-  const cache = caches.default;
-  const key = new Request(`https://api.github.com/repos/${REPO}/commits?per_page=40`);
-  let res = await cache.match(key);
+// Latest commits: GitHub's API first (often rate-limited from Cloudflare's shared addresses),
+// then the public Atom feed of the repository. Cached for 5 minutes.
+async function cached(url, accept) {
+  const key = new Request(url);
+  let res = await caches.default.match(key);
   if (!res) {
-    res = await fetch(key, { headers: { 'user-agent': 'javc.nl stats', accept: 'application/vnd.github+json' } });
-    if (!res.ok) return null;
+    res = await fetch(url, { headers: { 'user-agent': 'javc.nl stats', accept } });
+    if (!res.ok) { console.error('revisions', url, res.status); return null; }
     res = new Response(res.body, res);
     res.headers.set('cache-control', 'max-age=300');
-    await cache.put(key, res.clone());
+    await caches.default.put(key, res.clone());
   }
-  return res.json();
+  return res;
+}
+
+async function revisions() {
+  const api = await cached(`https://api.github.com/repos/${REPO}/commits?per_page=40`, 'application/vnd.github+json');
+  if (api) {
+    return (await api.json()).map((x) => ({ ts: Date.parse(x.commit.author.date), msg: x.commit.message.split('\n')[0], url: x.html_url, sha: x.sha }));
+  }
+  const feed = await cached(`https://github.com/${REPO}/commits/main.atom`, 'application/atom+xml');
+  if (!feed) return null;
+  const unxml = (t) => t.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&');
+  return [...(await feed.text()).matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(([, e]) => ({
+    ts: Date.parse(e.match(/<updated>([^<]+)/)?.[1]),
+    msg: unxml((e.match(/<title>([\s\S]*?)<\/title>/)?.[1] || '').trim()),
+    url: e.match(/<link[^>]+href="([^"]+)"/)?.[1] || '',
+    sha: e.match(/Commit\/([0-9a-f]+)/)?.[1] || '',
+  }));
 }
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -176,8 +193,7 @@ export async function statsPage(request, env) {
 
   const commits = await revisions().catch(() => null);
   const revs = commits ? table(commits.map((x) => ({
-    ts: Date.parse(x.commit.author.date), msg: x.commit.message.split('\n')[0], url: x.html_url, sha: x.sha.slice(0, 7),
-    cms: /^Bijgewerkt|^Nieuw|^Verwijderd|^Create|^Update|^Delete/.test(x.commit.message),
+    ...x, sha: x.sha.slice(0, 7), cms: /^(Bijgewerkt|Nieuw|Verwijderd|Create|Update|Delete) /.test(x.msg),
   })), [
     { label: 'Tijd', html: (r) => esc(when(r.ts)) },
     { label: 'Wijziging', html: (r) => `${r.cms ? '<span class="tag">CMS</span> ' : ''}${esc(r.msg)}` },
