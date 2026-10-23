@@ -1,10 +1,15 @@
 ---
-title: "How to Operationalize CSDM5? Transition from CMDB Burden to meaningful Business Value"
+title: How to Operationalize CSDM5? Transition from CMDB Burden to meaningful Business Value
 date: 2025-12-21
-categories: ["ServiceNow","TBM/CSDM/CMDB"]
-excerpt: "Industry figures consistently show that only about 25% of organisations realise meaningful value from their CMDB investments . In most cases, the CMDB data model is implemented from a predominantly technical perspective. As technology stacks grow more complex, the CMDB"
-image: "/wp-content/uploads/2025/12/CSDM5-Operaionalisation-in-ServiceNow-Concept.png"
+categories:
+  - ServiceNow
+  - TBM/CSDM/CMDB
+excerpt: Industry figures consistently show that only about 25% of organisations realise meaningful value from their CMDB investments . In most cases, the CMDB data model is implemented from a predominantly technical perspective. As technology stacks grow more complex, the CMDB
+image: /wp-content/uploads/2025/12/CSDM5-Operaionalisation-in-ServiceNow-Concept.png
 readingTime: 7
+popular: false
+draft: false
+linkedin: https://www.linkedin.com/feed/update/urn:li:activity:7409247312243281920/
 ---
 
 Industry figures consistently show that only about **25% of organisations realise meaningful value from their CMDB investments**. In most cases, the CMDB data model is implemented from a predominantly technical perspective. As technology stacks grow more complex, the CMDB becomes increasingly difficult for business stakeholders to understand and use. The consequences are familiar: outdated operating models remain in place, modern practices are only partially adopted, data quality declines, operational costs rise, and the promised benefits of the CMDB fail to materialise.
