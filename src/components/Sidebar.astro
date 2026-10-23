@@ -19,7 +19,6 @@ const archives = await getArchives();
     <div class="tab-buttons" role="tablist">
       <button role="tab" aria-selected="true" data-tab="popular">Popular</button>
       <button role="tab" aria-selected="false" data-tab="recent">Recent</button>
-      <button role="tab" aria-selected="false" data-tab="comments">Comments</button>
     </div>
     <ul class="tab-panel" data-panel="popular">
       {popular.map((a) => (
@@ -29,7 +28,6 @@ const archives = await getArchives();
     <ul class="tab-panel" data-panel="recent" hidden>
       {recent.map((a) => <li><a href={`/${a.id}/`}>{a.data.title}</a><small>{formatDate(a.data.date)}</small></li>)}
     </ul>
-    <ul class="tab-panel" data-panel="comments" hidden><li class="muted">No comments have been published yet.</li></ul>
   </section>
   <section class="widget">
     <h4>Categories</h4>
@@ -47,22 +45,6 @@ const archives = await getArchives();
   </section>
 </aside>
 <script>
-  // Latest approved comments for the Comments tab.
-  fetch('/api/comments?latest=1').then((r) => r.json()).then(({ comments = [] }) => {
-    if (!comments.length) return;
-    document.querySelectorAll<HTMLElement>('[data-panel="comments"]').forEach((ul) => {
-      ul.replaceChildren(...comments.map((c: { slug: string; name: string; body: string; ts: number }) => {
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = `/${c.slug}/#comments`;
-        a.textContent = `${c.name}: ${c.body.length >= 120 ? c.body + '…' : c.body}`;
-        const small = document.createElement('small');
-        small.textContent = new Date(c.ts).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-        li.append(a, small);
-        return li;
-      }));
-    });
-  }).catch(() => {});
   document.querySelectorAll('.tabs').forEach((w) => {
     w.querySelectorAll<HTMLButtonElement>('[data-tab]').forEach((b) =>
       b.addEventListener('click', () => {

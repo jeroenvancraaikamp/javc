@@ -51,7 +51,7 @@ nav a:hover, nav a.active { color: var(--accent); border-top-color: var(--accent
 .crumbs li + li::before { content: '›'; margin: 0 8px; }
 
 /* layout */
-.layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 50px; padding-top: 50px; padding-bottom: 70px; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 50px; padding-top: 50px; padding-bottom: 70px; }
 .intro { font-size: 17px; margin-top: 0; }
 .list-title { font-size: 26px; margin: 0 0 30px; }
 .post-title { font-size: clamp(26px, 3vw, 34px); margin: 0 0 22px; text-wrap: balance; }
