@@ -1,10 +1,13 @@
 ---
-title: "ServiceNow Labor & Contractor Rates, Benchmark January 2025"
+title: ServiceNow Labor & Contractor Rates, Benchmark January 2025
 date: 2025-01-13
-categories: ["Publication"]
-excerpt: "In another article ChatGPT generated a proposal on how to implement, maintain and innovate a ServiceNow Platform. In this article you can find the average rates that were used by ChatGPT for that article per role, differentiating on seniority/experience and"
-image: "/wp-content/uploads/2025/01/teampicture4.webp"
+categories:
+  - Information
+excerpt: In another article ChatGPT generated a proposal on how to implement, maintain and innovate a ServiceNow Platform. In this article you can find the average rates that were used by ChatGPT for that article per role, differentiating on seniority/experience and
+image: /wp-content/uploads/2025/01/teampicture4.webp
 readingTime: 8
+popular: false
+draft: false
 ---
 
 In [**another article**](/how-to-cost-and-size-of-a-servicenow-agile-team/) ChatGPT generated a proposal on how to implement, maintain and innovate a ServiceNow Platform. In this article you can find the average rates that were used by ChatGPT for that article per role, differentiating on seniority/experience and sourcing model.
