@@ -1,11 +1,26 @@
 {
   "title": "Welcome at JAVC Management & Consultancy",
   "subtitle": "The website of Jeroen A. van Craaikamp in Amstelveen, Netherlands.",
-  "text": "After building up skills and 20+ years of experience as an internal employee, companies, can now hire me as self-employed project/program manager, platform/product owner or architect in the Service Management workspace, utilizing IT4IT platforms such as ServiceNow.",
+  "text": "After building up skills and 20+ years of experience as an internal employee, companies, can hire me as self-employed project/program manager, platform/product owner or architect in the Service Management workspace, utilizing IT4IT platforms such as ServiceNow.",
   "intro": "The \"[Articles/Publications](/articles/)\" page features a few dozen blogs about the various things that keep me busy.",
   "blocks": [
-    { "heading": "What I do", "text": "Together with stakeholders and agile team members, I plan, procure, innovate, integrate, implement and manage IT products/platforms for large enterprises.", "button": "Skills/Expertise", "link": "/skills/" },
-    { "heading": "So far", "text": "Over the last decades, I managed IT4IT and CSM projects/teams, as internal employee or external consultant in various technical, commercial and managerial roles.", "button": "Projects/Assignments", "link": "/experience/" },
-    { "heading": "For who", "text": "I worked for companies such as KPN, Belastingdienst, KLM, Ericsson China, Tellabs, ING Bank, CRH, Digital Realty, IKEA, Booking, Action, Brenntag, and Stater.", "button": "Customers/Employers", "link": "/customers-employers/" }
+    {
+      "heading": "What I do",
+      "text": "Together with stakeholders and agile team members, I plan, procure, innovate, integrate, implement and manage IT products/platforms for large enterprises.",
+      "button": "Skills/Expertise",
+      "link": "/skills/"
+    },
+    {
+      "heading": "So far",
+      "text": "Over the last decades, I managed IT4IT and CSM projects/teams, as internal employee or external consultant in various technical, commercial and managerial roles.",
+      "button": "Projects/Assignments",
+      "link": "/experience/"
+    },
+    {
+      "heading": "For who",
+      "text": "I worked for companies such as KPN, Belastingdienst, KLM, Ericsson China, Tellabs, ING Bank, CRH, Digital Realty, IKEA, Booking, Action, Brenntag, and Stater.",
+      "button": "Customers/Employers",
+      "link": "/customers-employers/"
+    }
   ]
 }
