@@ -2,9 +2,7 @@
 title: 1400+ Out of the Box IT4ESM Tools
 date: 2026-09-26
 categories:
-  - Blog Article
   - IT4ESM
-  - Publication
 excerpt: Recently i published an article with the Ultimate List of 1000+ IT4IT Tools 2026 . Since then i have updated the categories and subcategories and added the tools to the list that are used for Data Center Management and for
 image: /wp-content/uploads/2026/09/1400_IT4ESM_Tools_October_2026.png
 readingTime: 45
