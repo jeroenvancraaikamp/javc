@@ -1,5 +1,9 @@
 ---
-title: "Algemene Voorwaarden"
+title: Terms & Conditions
+menu: ''
+order: 99
+wide: false
+layout: default
 banner: /wp-content/uploads/2015/07/law_post_9-compressor.jpg
 ---
 
