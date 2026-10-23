@@ -9,8 +9,9 @@ interface Props {
   description?: string;
   pageTitle?: string;
   crumbs?: { label: string; href?: string }[];
+  edit?: string;
 }
-const { title, description = 'IT management and consultancy by Jeroen van Craaikamp.', pageTitle, crumbs = [] } = Astro.props;
+const { title, description = 'IT management and consultancy by Jeroen van Craaikamp.', pageTitle, crumbs = [], edit } = Astro.props;
 const menu = (await getCollection('pages')).filter((p) => p.data.menu).sort((a, b) => a.data.order - b.data.order);
 const path = Astro.url.pathname;
 const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
@@ -83,6 +84,17 @@ const articlesActive = ['/articles/', '/category/', '/archive/', '/search/'].som
     </footer>
     <a href="#" class="to-top" aria-label="Go to Top">▲</a>
     <ChatWidget />
+    {edit && (
+      <a id="cms-edit" href={`/admin/#/collections/${edit}`} hidden
+        style="position:fixed;left:16px;bottom:16px;z-index:50;padding:8px 14px;border-radius:999px;background:#111;color:#fff;font:600 14px system-ui,sans-serif;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.3)">✎ Edit</a>
+    )}
+    <script>
+      // Edit button: only shown in a browser where this site's CMS is signed in (Sveltia stores its login in localStorage).
+      try {
+        const btn = document.getElementById('cms-edit');
+        if (btn && localStorage.getItem('sveltia-cms.user')) btn.hidden = false;
+      } catch {}
+    </script>
     <script>
       const t = document.querySelector('.menu-toggle');
       t?.addEventListener('click', () => {

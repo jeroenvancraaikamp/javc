@@ -37,7 +37,7 @@ const share = [
 ];
 ---
 {kind === 'page' ? (
-  <Base title={d.title} pageTitle={d.title} crumbs={[{ label: d.title }]}>
+  <Base title={d.title} edit={`pages/entries/${entry.id}`} pageTitle={d.title} crumbs={[{ label: d.title }]}>
     {d.layout === 'columns' ? (
       <div class="wrap page-body page-columns">
         {d.banner && <img class="banner" src={d.banner} alt="" />}
@@ -52,7 +52,7 @@ const share = [
     )}
   </Base>
 ) : (
-  <Base title={d.title} description={d.excerpt} pageTitle={d.title} crumbs={[{ label: 'Articles/Publications', href: '/articles/' }, { label: d.title }]}>
+  <Base title={d.title} edit={`articles/entries/${entry.id}`} description={d.excerpt} pageTitle={d.title} crumbs={[{ label: 'Articles/Publications', href: '/articles/' }, { label: d.title }]}>
     <div class="wrap layout">
       <article class="primary single">
         <h1 class="post-title">{d.title}</h1>
