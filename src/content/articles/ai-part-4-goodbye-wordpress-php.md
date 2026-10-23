@@ -2,7 +2,7 @@
 title: 'AI Part 4: Goodbye Wordpress & PHP'
 date: 2026-10-23
 categories:
-  - Uncategorized
+  - Blog Article
 excerpt: Deze week bleek dat de machines waarop PHP draait, gemakkelijk misbruikt konden worden. Voor recente versies van PHP zijn patches/fixes ter beschikking gesteld. Voor oudere versies van PHP zijn -tot op de dag van vandaag- nog geen fixes beschikbaar. Velen kwamen er achter dat hun WordPress toepassing en zelfs onderliggende Linux en/of Database Mngt System ook niet bij waren. WAT TE DOEN?
 image: /Pulling PHP from WordPress.png
 readingTime: 4
