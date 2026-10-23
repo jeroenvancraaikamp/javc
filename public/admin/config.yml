@@ -17,6 +17,28 @@ media_folder: public/images/uploads
 public_folder: /images/uploads
 
 collections:
+  - name: home
+    label: Startpagina
+    files:
+      - name: home
+        label: Startpagina
+        file: src/data/home.json
+        format: json
+        preview_path: '/'
+        fields:
+          - { name: title, label: Titel (grote kop), widget: string }
+          - { name: subtitle, label: Ondertitel, widget: string }
+          - { name: text, label: Tekst over de video, widget: text }
+          - { name: intro, label: Regel onder de video, widget: string, hint: 'Een link maak je zo: [tekst](/adres/)' }
+          - name: blocks
+            label: Blokken
+            widget: list
+            fields:
+              - { name: heading, label: Kop, widget: string }
+              - { name: text, label: Tekst, widget: text }
+              - { name: button, label: Tekst op de knop, widget: string }
+              - { name: link, label: Link van de knop, widget: string, hint: 'Bijvoorbeeld /skills/' }
+
   - name: articles
     label: Artikelen
     label_singular: Artikel

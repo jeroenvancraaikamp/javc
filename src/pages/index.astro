@@ -1,11 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import { SITE } from '../lib';
-const blocks = [
-  { h: 'What I do', p: 'Together with stakeholders and agile team members, I plan, procure, innovate, integrate, implement and manage IT products/platforms for large enterprises.', cta: 'Skills/Expertise', href: '/skills/' },
-  { h: 'So far', p: 'Over the last decades, I managed IT4IT and CSM projects/teams, as internal employee or external consultant in various technical, commercial and managerial roles.', cta: 'Projects/Assignments', href: '/experience/' },
-  { h: 'For who', p: 'I worked for companies such as KPN, Belastingdienst, KLM, Ericsson China, Tellabs, ING Bank, CRH, Digital Realty, IKEA, Booking, Action, Brenntag, and Stater.', cta: 'Customers/Employers', href: '/customers-employers/' },
-];
+import { marked } from 'marked';
+// Homepage text: edit in the CMS (/admin/ → Startpagina) or in src/data/home.json
+import home from '../data/home.json';
 ---
 <Base title={SITE.name}>
   <section class="hero">
@@ -14,20 +12,20 @@ const blocks = [
     </video>
     <div class="hero-shade"></div>
     <div class="wrap hero-text">
-      <h1>Welcome at JAVC Management &amp; Consultancy</h1>
-      <p class="hero-sub">The website of Jeroen A. van Craaikamp in Amstelveen, Netherlands.</p>
-      <p class="hero-body"><span>After building up skills and 20+ years of experience as an internal employee, companies, can now hire me as self-employed project/program manager, platform/product owner or architect in the Service Management workspace, utilizing IT4IT platforms such as ServiceNow.</span></p>
+      <h1>{home.title}</h1>
+      <p class="hero-sub">{home.subtitle}</p>
+      <p class="hero-body"><span>{home.text}</span></p>
     </div>
   </section>
   <section class="home-main">
     <div class="wrap">
-      <p class="home-intro">The "<a href="/articles/">Articles/Publications</a>" page features a few dozen blogs about the various things that keep me busy.</p>
+      <p class="home-intro" set:html={marked.parseInline(home.intro)} />
       <div class="blocks">
-        {blocks.map((b) => (
+        {home.blocks.map((b) => (
           <div class="block">
-            <h2>{b.h}</h2>
-            <p>{b.p}</p>
-            <a class="btn btn-dark" href={b.href}>{b.cta}</a>
+            <h2>{b.heading}</h2>
+            <p>{b.text}</p>
+            <a class="btn btn-dark" href={b.link}>{b.button}</a>
           </div>
         ))}
       </div>
