@@ -17,7 +17,7 @@ export function protect(form: HTMLFormElement) {
       btn.before(row);
       row.append(btn, box);
     } else form.append(box);
-    const render = () => { widget = turnstile.render(box, { sitekey: siteKey, appearance: 'always' }); };
+    const render = () => { widget = turnstile.render(box, { sitekey: siteKey, appearance: 'interaction-only' }); };
     if (typeof turnstile !== 'undefined') return render();
     const s = document.createElement('script');
     s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
