@@ -8,5 +8,13 @@
   </head>
   <body>
     <script src="https://unpkg.com/@sveltia/cms@0.231.0/dist/sveltia-cms.js"></script>
+    <script>
+      // Hide Sveltia's "now available on mobile" promotion bar.
+      new MutationObserver(() => {
+        for (const el of document.querySelectorAll('div[role="none"]')) {
+          if (el.style.display !== 'none' && el.textContent.includes('available on mobile')) el.style.display = 'none';
+        }
+      }).observe(document.body, { childList: true, subtree: true });
+    </script>
   </body>
 </html>
