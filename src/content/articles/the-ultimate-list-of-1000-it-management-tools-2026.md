@@ -9,6 +9,7 @@ image: /wp-content/uploads/2026/09/1000_IT_Management_Tools_Sept_2026.png
 readingTime: 45
 popular: true
 draft: false
+linkedin: https://www.linkedin.com/feed/update/urn:li:activity:7507942730900103168/
 ---
 
 ### UPDATE: [IT4IT/IT4ESM Atlas](https://javc.nl/it4it-atlas/) now contains 1600 Platforms
