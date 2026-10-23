@@ -30,5 +30,7 @@
     "CONTACT_TO": "Info@JAVC.nl",
     "CONTACT_FROM": "JAVC website <info@javc.nl>"
   },
+  // Keep variables added in the Cloudflare dashboard when deploying (e.g. STATS_PASSWORD added as Text instead of Secret).
+  "keep_vars": true,
   "observability": { "enabled": true }
 }
