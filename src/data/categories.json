@@ -4,22 +4,22 @@
       "name": "AI4IT"
     },
     {
-      "name": "IT4CSM"
+      "name": "CSDM/CMDB/TBM"
+    },
+    {
+      "name": "ServiceNow"
     },
     {
       "name": "IT4ESM"
+    },
+    {
+      "name": "IT4CSM"
     },
     {
       "name": "IT4IT"
     },
     {
       "name": "ITIL"
-    },
-    {
-      "name": "ServiceNow"
-    },
-    {
-      "name": "CSDM/CMDB/TBM"
     },
     {
       "name": "Uncategorized"
