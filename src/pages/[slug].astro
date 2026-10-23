@@ -2,6 +2,7 @@
 import { render, getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Sidebar from '../components/Sidebar.astro';
+import Comments from '../components/Comments.astro';
 import { marked } from 'marked';
 import { getArticles, slugify, formatDate, SITE } from '../lib';
 
@@ -59,7 +60,7 @@ const share = [
         <img class="featured" src={d.image || `/images/${entry.id}.svg`} alt="" width="1200" height="675" />
         <div class="meta">
           By {SITE.author} · {formatDate(d.date)} · {d.categories.map((c: string, i: number) => <>{i > 0 && ', '}<a href={`/category/${slugify(c)}/`}>{c}</a></>)}
-          {d.readingTime && <> · {d.readingTime} min read</>} · Comments Off
+          {d.readingTime && <> · {d.readingTime} min read</>} · <a href="#comments" data-comment-count>Comments</a>
         </div>
         <div class="prose"><Content /></div>
         <div class="share">
@@ -80,6 +81,7 @@ const share = [
             </div>
           </section>
         )}
+        <Comments slug={entry.id} />
       </article>
       <Sidebar />
     </div>

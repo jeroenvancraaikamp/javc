@@ -10,20 +10,22 @@ const KEEP_DAYS = 400;
 const BOT = /bot|crawl|spider|slurp|preview|monitor|curl|wget|python|headless|lighthouse/i;
 
 let schema;
-function db(env) {
+export function db(env) {
   if (!env.DB) return null;
   schema ??= env.DB.batch([
     env.DB.prepare('CREATE TABLE IF NOT EXISTS hits (ts INTEGER, day TEXT, path TEXT, ref TEXT, country TEXT, device TEXT, visitor TEXT)'),
     env.DB.prepare('CREATE INDEX IF NOT EXISTS hits_day ON hits (day)'),
     env.DB.prepare('CREATE TABLE IF NOT EXISTS chats (ts INTEGER, day TEXT, question TEXT, model TEXT, sources TEXT, ms INTEGER, ok INTEGER, country TEXT)'),
     env.DB.prepare('CREATE INDEX IF NOT EXISTS chats_day ON chats (day)'),
+    env.DB.prepare("CREATE TABLE IF NOT EXISTS comments (id INTEGER PRIMARY KEY AUTOINCREMENT, ts INTEGER, slug TEXT, name TEXT, email TEXT, body TEXT, status TEXT DEFAULT 'pending')"),
+    env.DB.prepare('CREATE INDEX IF NOT EXISTS comments_slug ON comments (slug, status)'),
   ]).catch((err) => { schema = undefined; throw err; });
   return schema.then(() => env.DB);
 }
 
 const today = () => new Date().toISOString().slice(0, 10);
 
-async function sha(text) {
+export async function sha(text) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
   return [...new Uint8Array(buf).slice(0, 8)].map((b) => b.toString(16).padStart(2, '0')).join('');
 }
@@ -69,7 +71,7 @@ export async function logChat(env, request, { question, model, sources, ms, ok }
 // Signed in to the CMS? The page sends the GitHub token the CMS keeps in this browser
 // (localStorage "sveltia-cms.user"); it must belong to the owner of the repository.
 // A successful check is remembered for 10 minutes (by a hash of the token, never the token itself).
-async function cmsUser(request) {
+export async function cmsUser(request) {
   const token = (request.headers.get('authorization') || '').match(/^Bearer\s+(\S+)$/i)?.[1];
   if (!token) return false;
   const key = new Request(`https://stats-auth.javc.nl/${await sha(`auth|${token}`)}`);
