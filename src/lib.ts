@@ -7,6 +7,8 @@ export const SITE = {
   short: 'JAVC',
   author: 'Jeroen van Craaikamp',
   linkedin: 'https://www.linkedin.com/in/jeroenvancraaikamp/',
+  // Google Analytics measurement ID (G-...); leave empty to load no analytics
+  gaId: '',
   perPage: 6,
 };
 
