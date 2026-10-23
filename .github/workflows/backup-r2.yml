@@ -1,0 +1,51 @@
+# Weekly backup of this repository (full history) to a Cloudflare R2 bucket.
+# Needs these GitHub secrets (Settings > Secrets and variables > Actions):
+#   R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET
+# Restore: download a .bundle file and run:  git clone javc-YYYY-MM-DD.bundle javc
+name: Weekly backup to Cloudflare R2
+
+on:
+  schedule:
+    - cron: '17 3 * * 0'   # every Sunday at 03:17 UTC
+  workflow_dispatch:        # lets you start it by hand from the Actions tab
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: auto
+      AWS_REQUEST_CHECKSUM_CALCULATION: when_required
+      AWS_RESPONSE_CHECKSUM_VALIDATION: when_required
+      ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+      BUCKET: ${{ secrets.R2_BUCKET }}
+      KEEP: 12   # number of weekly backups to keep
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create backup files
+        run: |
+          D=$(date -u +%F)
+          git bundle create "javc-$D.bundle" --all
+          git archive --format=zip -o "javc-$D.zip" HEAD
+          git bundle verify "javc-$D.bundle"
+          ls -l javc-*
+
+      - name: Upload to R2
+        run: |
+          aws s3 cp javc-*.bundle "s3://$BUCKET/javc/" --endpoint-url "$ENDPOINT"
+          aws s3 cp javc-*.zip "s3://$BUCKET/javc/" --endpoint-url "$ENDPOINT"
+
+      - name: Remove old backups (keep the last ${{ env.KEEP }} weeks)
+        run: |
+          for ext in bundle zip; do
+            aws s3 ls "s3://$BUCKET/javc/" --endpoint-url "$ENDPOINT" | awk '{print $4}' | grep "\.$ext$" | sort | head -n -$KEEP | while read -r f; do
+              [ -n "$f" ] && aws s3 rm "s3://$BUCKET/javc/$f" --endpoint-url "$ENDPOINT"
+            done
+          done
