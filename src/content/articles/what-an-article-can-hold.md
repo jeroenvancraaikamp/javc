@@ -7,7 +7,7 @@ excerpt: 'A demo article showing every type of content this new site supports: i
 image: https://picsum.photos/id/690/1920/1280.webp
 readingTime: 4
 popular: true
-draft: false
+draft: true
 ---
 
 This article is a **demo** for the prototype. It shows every kind of content one article can hold. Each article is a single Markdown file: you write plain text, and add richer blocks where you need them.
