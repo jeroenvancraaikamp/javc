@@ -65,24 +65,15 @@ collections:
       - { name: date, label: Date, widget: datetime, time_format: false, date_format: 'YYYY-MM-DD', format: 'YYYY-MM-DD' }
       - name: categories
         label: Categories
-        widget: select
+        widget: relation
+        collection: categories
+        file: categories
+        search_fields: ['categories.*.name']
+        value_field: 'categories.*.name'
+        display_fields: ['categories.*.name']
         multiple: true
         default: [Uncategorized]
-        options:
-          - "AI4IT"
-          - "Announcement"
-          - "Anouncement"
-          - "Blog Article"
-          - "IT4CSM"
-          - "IT4ESM"
-          - "IT4IT"
-          - "ITIL"
-          - "Information"
-          - "Publication"
-          - "ServiceNow"
-          - "ServiceNow Scripts"
-          - "TBM/CSDM/CMDB"
-          - "Uncategorized"
+        hint: 'Manage the list under Categories in the menu on the left.'
       - { name: excerpt, label: Excerpt, widget: text, hint: 'Short text shown in the article lists.' }
       - { name: image, label: Featured image, widget: image, required: false }
       - { name: readingTime, label: Reading time (minutes), widget: number, value_type: int, required: false }
@@ -90,6 +81,22 @@ collections:
       - { name: draft, label: Draft (do not publish), widget: boolean, default: false, required: false }
       - { name: linkedin, label: LinkedIn post, widget: string, required: false, hint: 'Optional: paste the link to your LinkedIn post about this article. A "Discuss this article on LinkedIn" button then appears next to the comments.' }
       - { name: body, label: Text, widget: markdown, modes: [rich_text, raw] }
+
+  - name: categories
+    label: Categories
+    files:
+      - name: categories
+        label: Categories
+        file: src/data/categories.json
+        format: json
+        fields:
+          - name: categories
+            label: Categories
+            label_singular: Category
+            widget: list
+            hint: 'The categories you can choose for an article. Renaming or deleting one here does not change articles that already use it.'
+            fields:
+              - { name: name, label: Name, widget: string }
 
   - name: pages
     label: Pages
