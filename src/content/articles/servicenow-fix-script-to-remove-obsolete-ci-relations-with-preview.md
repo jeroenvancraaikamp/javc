@@ -1,10 +1,13 @@
 ---
-title: "Fix Script to remove obsolete/invalid CI Relations, with preview option"
+title: Fix Script to remove obsolete/invalid CI Relations, with preview option
 date: 2025-09-05
-categories: ["ServiceNow Scripts"]
-excerpt: "Relations in the ServiceNow CMDB can easily get out of control, leading to performance problems and reduced data quality. To help address this, the script below provides a safe way to clean up the cmdb_rel_ci table—for example, after mass-updating the"
-image: "/wp-content/uploads/2024/11/DevOps.jpg"
+categories:
+  - ServiceNow
+excerpt: Relations in the ServiceNow CMDB can easily get out of control, leading to performance problems and reduced data quality. To help address this, the script below provides a safe way to clean up the cmdb_rel_ci table—for example, after mass-updating the
+image: /wp-content/uploads/2024/11/DevOps.jpg
 readingTime: 10
+popular: false
+draft: false
 ---
 
 Relations in the ServiceNow CMDB can easily get out of control, leading to performance problems and reduced data quality. To help address this, the script below provides a safe way to clean up the `*cmdb_rel_ci*` table—for example, after mass-updating the *Operational State* of CIs or after mass-deleting CIs.
