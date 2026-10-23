@@ -1,13 +1,21 @@
 ---
-title: "1400+ Out of the Box IT4ESM Tools"
+title: 1400+ Out of the Box IT4ESM Tools
 date: 2026-09-26
-categories: ["Blog Article","IT4ESM","Publication"]
-excerpt: "Recently i published an article with the Ultimate List of 1000+ IT4IT Tools 2026 . Since then i have updated the categories and subcategories and added the tools to the list that are used for Data Center Management and for"
-image: "/wp-content/uploads/2026/09/1400_IT4ESM_Tools_October_2026.png"
+categories:
+  - Blog Article
+  - IT4ESM
+  - Publication
+excerpt: Recently i published an article with the Ultimate List of 1000+ IT4IT Tools 2026 . Since then i have updated the categories and subcategories and added the tools to the list that are used for Data Center Management and for
+image: /wp-content/uploads/2026/09/1400_IT4ESM_Tools_October_2026.png
 readingTime: 45
+popular: false
+draft: false
 ---
 
-Recently i published an article with the **[Ultimate List of 1000+ IT4IT Tools 2026](/the-ultimate-list-of-1000-it-management-tools-2026/).** Since then i have updated the categories and subcategories and added the tools to the list that are used for Data Center Management and for the Shared/Corporate Functions such as HR, Risk, Finance, etc. **The List now covers well known tools of/for IT and of/for the Shared Enterprise Functions (e.g. HR, Risk, Finance, etc.); the list currently contains 1,438 COMMODITY IT4ESM tools/platforms.**
+### UPDATE: [IT4IT/IT4ESM Atlas](https://javc.nl/it4it-atlas/) now contains 1600 Platforms
+
+
+Recently i published an article with the [**Ultimate List of 1000+ IT4IT Tools 2026**](/the-ultimate-list-of-1000-it-management-tools-2026/)**.** Since then i have updated the categories and subcategories and added the tools to the list that are used for Data Center Management and for the Shared/Corporate Functions such as HR, Risk, Finance, etc. **The List now covers well known tools of/for IT and of/for the Shared Enterprise Functions (e.g. HR, Risk, Finance, etc.); the list currently contains 1,438 COMMODITY IT4ESM tools/platforms.**
 
 The Categories and Subcategories that are used are a mix of TBM and IT4IT naming conventions, and are intentionally chosen.
 
@@ -23,7 +31,7 @@ Design-time (functional) dependencies are defined in the application portfolio, 
 
 ![](/wp-content/uploads/2026/09/1438_tools.png)
 
-## 1\. Strategy & Planning
+## 1. Strategy & Planning
 
 ### 1.1. Enterprise Architecture (EA)
 
@@ -297,7 +305,7 @@ Design-time (functional) dependencies are defined in the application portfolio, 
 43.  Workato by Workato
 44.  Zapier by Zapier
 
-## 3\. IT Service & Asset
+## 3. IT Service & Asset
 
 ### 3.1. IT Service Mngt (ITSM)
 
@@ -490,7 +498,7 @@ Design-time (functional) dependencies are defined in the application portfolio, 
 12.  SOTI ONE Platform by SOTI
 13.  Tanium Platform (Endpoint Management) by Tanium
 
-## 4\. IT Operations
+## 4. IT Operations
 
 ### 4.1. Observability Platforms (ITOM)
 
@@ -665,7 +673,7 @@ Design-time (functional) dependencies are defined in the application portfolio, 
 20.  Veritas NetBackup by Veritas Technologies
 21.  Zerto by Hewlett Packard Enterprise
 
-## 5\. IT Security
+## 5. IT Security
 
 ### 5.1. Vulnerability & Exposure Mngt (VEM)
 
@@ -943,7 +951,7 @@ Design-time (functional) dependencies are defined in the application portfolio, 
 39.  Transmit Security by Transmit Security
 40.  WALLIX Bastion by WALLIX
 
-## 6\. Artificial Intelligence
+## 6. Artificial Intelligence
 
 ### 6.1. AI Platforms
 
@@ -1017,7 +1025,7 @@ Design-time (functional) dependencies are defined in the application portfolio, 
 24.  SoundHound AI (Amelia/Dynamic Interaction) by SoundHound AI
 25.  Sprinklr AI+ by Sprinklr
 
-## 7\. Data Centre Operations
+## 7. Data Centre Operations
 
 ### 7.1. Data Center Infrastructure Mngt (DCIM)
 
@@ -1121,7 +1129,7 @@ Design-time (functional) dependencies are defined in the application portfolio, 
 26.  Vertiv Liebert iCOM / CW Chiller Controls by Vertiv
 27.  Vigilent Dynamic Cooling Management by Vigilent
 
-## 8\. Corporate & Shared
+## 8. Corporate & Shared
 
 ### 8.1. Workforce & HR
 
