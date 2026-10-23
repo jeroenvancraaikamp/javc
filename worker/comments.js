@@ -16,7 +16,7 @@ function json(data, status = 200) {
   });
 }
 
-export async function comments(request, env, guard) {
+export async function comments(request, env, guard, { humanCheck, tooFast }) {
   const url = new URL(request.url);
   const d = await db(env).catch((err) => { console.error('comments db', err); return null; });
   if (!d) return json({ error: 'Comments are not available right now.' }, 503);
@@ -52,7 +52,9 @@ export async function comments(request, env, guard) {
   const f = await request.json().catch(() => null);
   const field = (k, max) => (typeof f?.[k] === 'string' ? f[k].trim().slice(0, max) : '');
   const slug = field('slug', 200), name = field('name', 100), email = field('email', 200), body = field('body', 3000);
-  if (field('website', 200)) return json({ ok: true }); // honeypot: bots fill it in
+  if (field('website', 200) || tooFast(f)) return json({ ok: true }); // honeypot / too fast: bots, pretend it worked
+  if (!(await humanCheck(f, request, env))) return json({ error: 'The spam check failed. Please reload the page and try again.' }, 403);
+  if ((body.match(/https?:\/\/|www\./gi) || []).length > 2) return json({ error: 'Please include at most two links in your comment.' }, 400);
   if (!/^[a-z0-9-]+$/.test(slug) || !name || !body || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)) {
     return json({ error: 'Please fill in your name, a valid email address and a comment.' }, 400);
   }

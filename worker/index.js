@@ -10,6 +10,7 @@ import KNOWLEDGE from './knowledge.json';
 import WP_IDS from './wp-ids.json';
 import { logHit, logChat, statsData } from './stats.js';
 import { comments } from './comments.js';
+import { turnstileConfig, humanCheck, tooFast } from './turnstile.js';
 
 const CLAUDE_MODEL = 'claude-opus-5-5';
 const WORKERS_AI_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
@@ -190,8 +191,9 @@ async function contact(request, env) {
   const field = (k, max) => (typeof f?.[k] === 'string' ? f[k].trim().slice(0, max) : '');
   const name = field('name', 200), email = field('email', 200), phone = field('phone', 50), message = field('message', 5000);
 
-  // Honeypot: a hidden field people never fill in; bots do. Pretend it worked.
-  if (field('website', 200)) return json({ ok: true });
+  // Honeypot: a hidden field people never fill in; bots do. Pretend it worked. Same for impossibly fast submits.
+  if (field('website', 200) || tooFast(f)) return json({ ok: true });
+  if (!(await humanCheck(f, request, env))) return json({ error: 'The spam check failed. Please reload the page and try again.' }, 403);
   if (!name || !message || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)) {
     return json({ error: 'Please fill in your name, a valid email address and a message.' }, 400);
   }
@@ -248,7 +250,8 @@ export default {
     if (url.pathname === '/api/chat') return chat(request, env, ctx);
     if (url.pathname === '/api/hit') return logHit(request, env).catch((err) => { console.error('hit', err); return new Response(null, { status: 204 }); });
     if (url.pathname === '/api/stats') return statsData(request, env);
-    if (url.pathname === '/api/comments' || url.pathname === '/api/comments/moderate') return comments(request, env, guard);
+    if (url.pathname === '/api/turnstile') return turnstileConfig(env);
+    if (url.pathname === '/api/comments' || url.pathname === '/api/comments/moderate') return comments(request, env, guard, { humanCheck, tooFast });
     if (url.pathname === '/api/contact') return contact(request, env);
     return env.ASSETS.fetch(request);
   },

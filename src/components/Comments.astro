@@ -20,6 +20,7 @@ const { slug } = Astro.props as { slug: string };
 </section>
 
 <script>
+  import { protect } from '../scripts/botcheck';
   const box = document.getElementById('comments');
   if (box) {
     const slug = box.dataset.slug!;
@@ -53,12 +54,13 @@ const { slug } = Astro.props as { slug: string };
     const form = box.querySelector('form') as HTMLFormElement;
     const notice = form.querySelector('.notice') as HTMLElement;
     const btn = form.querySelector('button') as HTMLButtonElement;
+    const bot = protect(form);
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       btn.disabled = true;
       const data = Object.fromEntries(new FormData(form));
       const res = await fetch('/api/comments', {
-        method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ...data, slug }),
+        method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ...data, ...bot.extra(), slug }),
       }).catch(() => null);
       const out = res ? await res.json().catch(() => ({})) : {};
       notice.hidden = false;
@@ -70,6 +72,7 @@ const { slug } = Astro.props as { slug: string };
         notice.className = 'notice error';
         notice.textContent = out.error || 'Something went wrong. Please try again later.';
       }
+      bot.reset();
       btn.disabled = false;
     });
   }
