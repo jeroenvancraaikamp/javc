@@ -11,8 +11,10 @@
     <script>
       // Hide Sveltia's "now available on mobile" promotion bar.
       new MutationObserver(() => {
-        for (const el of document.querySelectorAll('div[role="none"]')) {
-          if (el.style.display !== 'none' && el.textContent.includes('available on mobile')) el.style.display = 'none';
+        // Only the bar itself: its message element, then the bar around it (never a larger container).
+        for (const msg of document.querySelectorAll('div.message')) {
+          const bar = msg.parentElement;
+          if (bar && bar.style.display !== 'none' && msg.textContent.includes('available on mobile')) bar.style.display = 'none';
         }
       }).observe(document.body, { childList: true, subtree: true });
     </script>
