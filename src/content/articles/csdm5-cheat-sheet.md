@@ -1,7 +1,7 @@
 ---
 title: "CSDM5 Cheat Sheet"
 date: 2026-02-01
-categories: ["TBM/CSDM/CMDB"]
+categories: ["CSDM/CMDB/TBM"]
 excerpt: "CSDM5 is a Data Model that always leads to interesting discussions because each persona views it from their own perspective. This cheat sheet should help with what goes where if one sticks to the CSDM5 definitions/intentions of the various artefacts."
 image: "/wp-content/uploads/2025/01/teampicture3.webp"
 readingTime: 7

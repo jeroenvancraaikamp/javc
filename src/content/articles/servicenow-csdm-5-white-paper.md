@@ -1,7 +1,7 @@
 ---
 title: "ServiceNow published CSDM 5"
 date: 2025-05-11
-categories: ["IT4IT","TBM/CSDM/CMDB"]
+categories: ["IT4IT","CSDM/CMDB/TBM"]
 excerpt: "On May 8, 2025, ServiceNow released its long-anticipated Common Service Data Model (CSDM) 5 white paper . This 63-page document marks a significant evolution of the data model that underpins many ServiceNow implementations across IT organizations globally. CSDM 5 introduces"
 image: "/wp-content/uploads/2025/05/CSDM5_final.png"
 readingTime: 5

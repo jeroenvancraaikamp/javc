@@ -1,7 +1,7 @@
 ---
 title: "TBM 4.0 Content in ServiceNow CSDM 4.0 Data Model"
 date: 2023-01-10
-categories: ["TBM/CSDM/CMDB"]
+categories: ["CSDM/CMDB/TBM"]
 excerpt: "As you may know, ServiceNow has a Common Service Data Model (CSDM) that is usable throughout the ServiceNow Platform. Each (use of each) object is outlined in the CSDM 4.0 Whitepaper. In the ServiceNow documentation, examples are given so that"
 image: "/wp-content/uploads/2023/01/2023-01-09_19-07-07.png"
 readingTime: 6

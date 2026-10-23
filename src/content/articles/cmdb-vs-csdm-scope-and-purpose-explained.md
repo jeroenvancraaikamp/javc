@@ -2,7 +2,7 @@
 title: CMDB vs CSDM — Scope and Purpose Explained
 date: 2025-12-23
 categories:
-  - TBM/CSDM/CMDB
+  - CSDM/CMDB/TBM
 excerpt: Although often used interchangeably, CMDB and CSDM serve fundamentally different purposes. Confusing the two is one of the main reasons 75% of the CMDB initiatives fail. What Is the CMDB? The Configuration Management Database (CMDB) is an operational data store
 image: /wp-content/uploads/2025/12/CSDM-vs-CMDB.png
 readingTime: 3

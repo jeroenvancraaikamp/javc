@@ -1,7 +1,7 @@
 ---
 title: "Rethinking IT Foundations: From SaaS to Services, Products, and Beyond"
 date: 2025-08-16
-categories: ["IT4ESM","IT4IT","ServiceNow","TBM/CSDM/CMDB"]
+categories: ["IT4ESM","IT4IT","ServiceNow","CSDM/CMDB/TBM"]
 excerpt: "For years, we’ve relied on concepts like SaaS, PaaS, IaaS, and DCaaS to describe how technology is delivered. These terms still exist, but they no longer fully capture today’s reality. Why? As platforms become software-defined, AI prompts are replacing software"
 image: "/wp-content/uploads/2025/08/NextGen_IT_Artefacts-scaled.png"
 readingTime: 7

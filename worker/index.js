@@ -220,7 +220,7 @@ async function contact(request, env) {
 
 // --- redirects: www → javc.nl, and old WordPress addresses → their new place ------
 const WP_ADMIN = 'https://javcmanagement.nl/wp-admin/';
-const CATEGORY_RENAMES = { csdm: 'tbm-csdm-cmdb' };
+const CATEGORY_RENAMES = { csdm: 'csdm-cmdb-tbm', 'tbm-csdm-cmdb': 'csdm-cmdb-tbm' };
 
 function redirectFor(url) {
   if (url.hostname === 'www.javc.nl') return `https://javc.nl${url.pathname}${url.search}`;

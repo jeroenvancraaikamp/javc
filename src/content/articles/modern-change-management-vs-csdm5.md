@@ -1,7 +1,7 @@
 ---
 title: "Change Management vs CSDM5"
 date: 2026-01-31
-categories: ["ServiceNow","TBM/CSDM/CMDB"]
+categories: ["ServiceNow","CSDM/CMDB/TBM"]
 excerpt: "ServiceNows' Out-of-the-Box Change Management process, as included in the Zurich release, is a variant of ITIL V3.. This article details how to configure the Change Process to work seamlessly with DevSecOps, leveraging the recommended CSDM5 relationships. Afterward, Users don't have"
 image: "/wp-content/uploads/2026/01/CSDM5-Change-Management-CMDB.png"
 readingTime: 7

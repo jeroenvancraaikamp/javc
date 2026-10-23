@@ -2,7 +2,7 @@
 title: When is the CMDB "Done"?
 date: 2026-04-25
 categories:
-  - TBM/CSDM/CMDB
+  - CSDM/CMDB/TBM
 excerpt: A CMDB traditionally is an inventory of the enterprise's IT assets, including their characteristics and dependencies. Some say a CMDB is "done" when all IT assets and their dependencies are registered and maintained. That, however, is not correct. Even in
 image: /wp-content/uploads/2026/04/CMDB_is_never_done.png
 readingTime: 7

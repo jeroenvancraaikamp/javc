@@ -1,7 +1,7 @@
 ---
 title: "Meet our Digital Portfolio Manager: ChatGPT 5 Pro!!"
 date: 2025-09-11
-categories: ["TBM/CSDM/CMDB"]
+categories: ["CSDM/CMDB/TBM"]
 excerpt: "Recently, I asked ChatGPT 5 Pro to define the artefacts and their relations that need to be registered in ServiceNow. In this article, you will find what went surprisingly well and what failed miserably. The detailed results (which considered compliance"
 image: "/wp-content/uploads/2025/09/chatgpt_bot_acting_as_csdm_config_manager.png"
 readingTime: 21

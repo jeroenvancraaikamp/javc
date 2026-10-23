@@ -1,7 +1,7 @@
 ---
 title: "How to manage IT in a rapidly changing world?"
 date: 2023-04-28
-categories: ["IT4IT","ServiceNow","TBM/CSDM/CMDB"]
+categories: ["IT4IT","ServiceNow","CSDM/CMDB/TBM"]
 excerpt: "Increasingly, IT is becoming an integral part of the business rather than merely supporting it. In some cases, IT has even changed businesses. Global online Platforms are rapidly taking over the end-user interaction from those companies that provide the sold"
 image: "/wp-content/uploads/2023/04/shutterstock_1081970570.jpg"
 readingTime: 6

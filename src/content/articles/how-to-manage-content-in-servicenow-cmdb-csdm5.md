@@ -1,7 +1,7 @@
 ---
 title: "How to manage content in ServiceNow CMDB/CSDM?"
 date: 2025-07-31
-categories: ["TBM/CSDM/CMDB"]
+categories: ["CSDM/CMDB/TBM"]
 excerpt: "Populating and maintaining an accurate Configuration Management Database (CMDB), aligned with ServiceNow’s Common Service Data Model (CSDM), is a significant challenge for most enterprises. This guide outlines how to do it right, what types of items should (and should not)"
 image: "/wp-content/uploads/2025/01/teampicture3.webp"
 readingTime: 15

@@ -1,7 +1,7 @@
 ---
 title: "Aligning APM, DPM, SCM, AI and CMDB"
 date: 2025-05-31
-categories: ["TBM/CSDM/CMDB"]
+categories: ["CSDM/CMDB/TBM"]
 excerpt: "Each IT management framework has its distinct definitions, glossaries, and fanbase. And guess what? These often don't align or match with each other. Initially people differentiated between software and hardware. With the advent of massive Outsourcing, Cloud Services, and APIs,"
 image: "/wp-content/uploads/2015/07/law_post_3.jpg"
 readingTime: 3

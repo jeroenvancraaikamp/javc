@@ -1,7 +1,7 @@
 ---
 title: "Best Practices for CSDM 5"
 date: 2025-06-01
-categories: ["TBM/CSDM/CMDB"]
+categories: ["CSDM/CMDB/TBM"]
 excerpt: "So, you have read the CSDM 5, and you have a general idea. However, there are numerous open questions and choices . This article describes the Practices that i recommend for what (not) to model in ServiceNow. Applying these recommendations"
 image: "/wp-content/uploads/2025/06/CSDM5_artifacts-scaled.png"
 readingTime: 8

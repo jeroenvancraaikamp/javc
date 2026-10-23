@@ -1,7 +1,7 @@
 ---
 title: "Technical Business Management (TBM) Taxonomy artifacts in ServiceNow"
 date: 2022-12-24
-categories: ["TBM/CSDM/CMDB"]
+categories: ["CSDM/CMDB/TBM"]
 excerpt: "Like many others, I have used the Technical Business Management (TBM) Taxonomy of the TBM Open Forum in the ServiceNow implementations I was involved in. Rather than reinventing the wheel, I also used the definitions and the names of the"
 image: "/wp-content/uploads/2022/12/TBM40.png"
 readingTime: 1

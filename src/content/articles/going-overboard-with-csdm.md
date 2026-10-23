@@ -1,7 +1,7 @@
 ---
 title: "Going overboard with CSDM 5?"
 date: 2025-06-07
-categories: ["ServiceNow","TBM/CSDM/CMDB"]
+categories: ["ServiceNow","CSDM/CMDB/TBM"]
 excerpt: "ServiceNow published a PowerPoint presentation with 132 slides with examples on how one could model the IT landscape accormodeoding to CSDM 5. Although I generally love CSDM, some appear to go overboard when modelling their IT landscape in ServiceNow. Let's"
 image: "/wp-content/uploads/2025/06/ServiceNow_in_CSDM_5.png"
 readingTime: 11

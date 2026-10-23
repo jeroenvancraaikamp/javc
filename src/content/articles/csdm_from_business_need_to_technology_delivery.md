@@ -2,7 +2,7 @@
 title: From Business Need to Technology Delivery
 date: 2026-05-31
 categories:
-  - TBM/CSDM/CMDB
+  - CSDM/CMDB/TBM
 excerpt: The Common Service Data Model of ServiceNow (CSDM5) is increasingly gaining the attention of C-Level managers, especially since a good CMDB with accurate/complete content is considered a critical success factor for implementing DORA, SOx, SOC2 and Agentic AI. People in
 image: /wp-content/uploads/2026/05/CMDB-DPM-Infographic.png
 readingTime: 4

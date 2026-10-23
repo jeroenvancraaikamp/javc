@@ -1,7 +1,7 @@
 ---
 title: "Understanding Digital Products and Digital Product Instances in the IT4IT Framework"
 date: 2024-06-16
-categories: ["IT4IT","ServiceNow","TBM/CSDM/CMDB"]
+categories: ["IT4IT","ServiceNow","CSDM/CMDB/TBM"]
 excerpt: "Introduction to Digital Products and Instances Digital Products are central to the IT4IT framework, which provides a comprehensive standard for managing the digital lifecycle of products. According to the IT4IT Standard, a Digital Product encompasses all the resources (both IT"
 image: "/wp-content/uploads/2022/10/shutterstock_1133982488.png"
 readingTime: 4
