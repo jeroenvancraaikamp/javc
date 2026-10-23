@@ -11,6 +11,11 @@
     "binding": "ASSETS",
     "run_worker_first": ["/api/*"]
   },
+  // javc.nl and www.javc.nl point to this Worker (www is redirected to javc.nl in worker/index.js)
+  "routes": [
+    { "pattern": "javc.nl", "custom_domain": true },
+    { "pattern": "www.javc.nl", "custom_domain": true }
+  ],
   "ai": { "binding": "AI" },
   // Contact form (secret SMTP2GO_API_KEY is set in the Cloudflare dashboard, not here)
   "vars": {
