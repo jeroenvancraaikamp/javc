@@ -12,6 +12,8 @@ const articles = defineCollection({
     readingTime: z.number().optional(),
     popular: z.boolean().default(false),
     draft: z.boolean().default(false),
+    // Link to the LinkedIn post about this article: shows a "Discuss on LinkedIn" button under the article.
+    linkedin: z.string().url().optional().or(z.literal('')),
   }),
 });
 
