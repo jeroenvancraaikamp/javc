@@ -229,3 +229,7 @@ summary { cursor: pointer; font-weight: 600; color: var(--heading); }
 .publish-status[data-state="done"] { background: #e6f2ef; color: var(--accent-2); }
 .publish-status[data-state="error"] { background: #fbeaea; color: #a33; }
 @keyframes pub-spin { to { transform: rotate(360deg); } }
+/* "Discuss this article on LinkedIn" under an article */
+.linkedin-discuss { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 28px 0 0; }
+.linkedin-btn { display: inline-flex; align-items: center; gap: 8px; background: #0a66c2; }
+.linkedin-btn svg { width: 16px; height: 16px; fill: currentColor; }
