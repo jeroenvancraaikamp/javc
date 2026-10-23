@@ -1,10 +1,13 @@
 ---
-title: "Nieuwe Regels voor Arbeidsrelaties: Handhaving Wet DBA en de Introductie van Wet VBAR"
+title: 'Nieuwe Regels voor Arbeidsrelaties: Handhaving Wet DBA en de Introductie van Wet VBAR'
 date: 2024-11-05
-categories: ["Information"]
-excerpt: "Met de regulering van arbeidsrelaties wil de overheid meer duidelijkheid en zekerheid bieden over de juridische positie van opdrachtgevers en opdrachtnemers. Door de handhaving van de Wet DBA en de introductie van de Wet VBAR wil zij schijnzelfstandigheid tegengaan en"
-image: "/wp-content/uploads/2024/08/law.jpg"
+categories:
+  - Uncategorized
+excerpt: Met de regulering van arbeidsrelaties wil de overheid meer duidelijkheid en zekerheid bieden over de juridische positie van opdrachtgevers en opdrachtnemers. Door de handhaving van de Wet DBA en de introductie van de Wet VBAR wil zij schijnzelfstandigheid tegengaan en
+image: /wp-content/uploads/2024/08/law.jpg
 readingTime: 6
+popular: false
+draft: false
 ---
 
 Met de regulering van arbeidsrelaties wil de overheid meer duidelijkheid en zekerheid bieden over de juridische positie van opdrachtgevers en opdrachtnemers. Door de handhaving van de Wet DBA en de introductie van de Wet VBAR wil zij schijnzelfstandigheid tegengaan en ervoor zorgen dat werkenden binnen het sociaal zekerheidsstelsel blijven. De uiteindelijke doelstelling is een transparante en eerlijke arbeidsmarkt zonder misbruik van flexibiliteit.
