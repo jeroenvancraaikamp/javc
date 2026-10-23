@@ -10,8 +10,9 @@ interface Props {
   pageTitle?: string;
   crumbs?: { label: string; href?: string }[];
   edit?: string;
+  noindex?: boolean;
 }
-const { title, description = 'IT management and consultancy by Jeroen van Craaikamp.', pageTitle, crumbs = [], edit } = Astro.props;
+const { title, description = 'IT management and consultancy by Jeroen van Craaikamp.', pageTitle, crumbs = [], edit, noindex = false } = Astro.props;
 const menu = (await getCollection('pages')).filter((p) => p.data.menu).sort((a, b) => a.data.order - b.data.order);
 const path = Astro.url.pathname;
 const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
@@ -24,6 +25,7 @@ const articlesActive = ['/articles/', '/category/', '/archive/', '/search/'].som
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title === SITE.name ? title : `${title} – ${SITE.name}`}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

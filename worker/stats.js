@@ -208,7 +208,7 @@ export async function statsData(request, env) {
   ]) : '<p class="muted">GitHub is nu niet bereikbaar.</p>';
 
   const tabs = [1, 7, 30, 90, 365].map((n) => `<a href="?days=${n}"${n === days ? ' class="on"' : ''}>${n === 1 ? 'Vandaag' : `${n} dagen`}</a>`).join('');
-  const html = `<nav>${tabs}</nav>
+  const html = `<div class="ranges">${tabs}</div>
 <section><h2>1. Websitestatistieken</h2>${site}</section>
 <section><h2>2. Chatbotstatistieken</h2>${bot}</section>
 <section><h2>3. Sitewijzigingen</h2>${revs}</section>
@@ -219,41 +219,4 @@ export async function statsData(request, env) {
       'set-cookie': 'javc_me=1; Path=/; Max-Age=31536000; Secure; SameSite=Lax; HttpOnly',
     },
   });
-}
-
-// GET /stats: an empty page that loads the statistics with the CMS login of this browser.
-export function statsPage() {
-  const html = `<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex"><title>Stats – javc.nl</title><style>
-:root{--bg:#f6f7f9;--card:#fff;--fg:#1d2327;--mut:#6b7280;--line:#e5e7eb;--a:#2271b1;--b0:#2271b1;--b1:#9ec5e8}
-@media (prefers-color-scheme:dark){:root{--bg:#15171a;--card:#1f2226;--fg:#e6e6e6;--mut:#9aa0a6;--line:#30343a;--a:#72aee6;--b0:#72aee6;--b1:#2c5a85}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:1100px;margin:0 auto;padding:16px}a{color:var(--a)}h1{font-size:24px;margin:8px 0}h2{margin:0 0 12px;font-size:20px}
-h3{font-size:15px;margin:18px 0 8px}h3 small{font-weight:400;color:var(--mut);margin-left:8px}.k{display:inline-block;width:10px;height:10px;margin:0 4px 0 10px;border-radius:2px}
-nav{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 16px}nav a{padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);text-decoration:none;color:var(--fg)}
-nav a.on{background:var(--a);border-color:var(--a);color:#fff}section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}.tile{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
-.tile .v{font-size:22px;font-weight:700}.tile .l{color:var(--mut);font-size:13px}.grid{display:grid;grid-template-columns:3fr 2fr;gap:20px}
-@media (max-width:760px){.grid{grid-template-columns:1fr}}table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{text-align:left;padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}th{color:var(--mut);font-weight:600}.n{text-align:right;white-space:nowrap}
-.bars{display:flex;align-items:flex-end;gap:2px;height:120px;border-bottom:1px solid var(--line)}.bar{flex:1;height:100%;display:flex;align-items:flex-end;gap:1px}
-.bar span{flex:1;min-height:1px;border-radius:2px 2px 0 0}.b0{background:var(--b0)}.b1{background:var(--b1)}
-.axis{display:flex;justify-content:space-between;color:var(--mut);font-size:12px}.muted{color:var(--mut)}
-.err{color:#d63638;font-size:12px}.tag{font-size:11px;padding:1px 6px;border-radius:4px;background:var(--line)}
-</style></head>
-<body><main><h1>Stats javc.nl</h1><div id="out"><p class="muted">Laden…</p></div></main>
-<script>
-(async () => {
-  const out = document.getElementById('out');
-  const login = '<section><p>Deze pagina is alleen zichtbaar als je bent ingelogd in de CMS.</p><p><a href="/admin/">Inloggen in de CMS</a>, en open daarna deze pagina opnieuw.</p></section>';
-  let token = '';
-  try { token = JSON.parse(localStorage.getItem('sveltia-cms.user') || '{}').token || ''; } catch {}
-  if (!token) { out.innerHTML = login; return; }
-  const res = await fetch('/api/stats' + location.search, { headers: { authorization: 'Bearer ' + token } }).catch(() => null);
-  if (res && res.ok) out.innerHTML = await res.text();
-  else if (res && res.status === 401) out.innerHTML = login;
-  else out.innerHTML = '<section><p>De statistieken zijn nu niet beschikbaar. Probeer het later opnieuw.</p></section>';
-})();
-</script></body></html>`;
-  return new Response(html, { headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex' } });
 }
