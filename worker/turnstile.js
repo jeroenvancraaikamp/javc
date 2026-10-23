@@ -5,7 +5,7 @@
 // GET /api/turnstile: the public site key for the forms (null when Turnstile is not set up).
 export function turnstileConfig(env) {
   return new Response(JSON.stringify({ siteKey: (env.TURNSTILE_SECRET && env.TURNSTILE_SITE_KEY) || null }), {
-    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'max-age=300' },
+    headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'max-age=60' },
   });
 }
 

@@ -10,7 +10,7 @@ export function protect(form: HTMLFormElement) {
     const box = document.createElement('div');
     box.className = 'botcheck';
     form.querySelector('button[type="submit"]')?.before(box);
-    const render = () => { widget = turnstile.render(box, { sitekey: siteKey, appearance: 'interaction-only' }); };
+    const render = () => { widget = turnstile.render(box, { sitekey: siteKey, appearance: 'always' }); };
     if (typeof turnstile !== 'undefined') return render();
     const s = document.createElement('script');
     s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
