@@ -13,8 +13,10 @@ backend:
 site_url: https://javc.nl
 display_url: https://javc.nl
 
-media_folder: public/images/uploads
-public_folder: /images/uploads
+# The whole public folder is the media library, so both the imported WordPress images
+# (/wp-content/uploads/...) and new uploads (/images/uploads/...) show up as thumbnails.
+media_folder: /public
+public_folder: /
 
 collections:
   - name: home
