@@ -9,7 +9,14 @@ export function protect(form: HTMLFormElement) {
     if (!siteKey) return;
     const box = document.createElement('div');
     box.className = 'botcheck';
-    form.querySelector('button[type="submit"]')?.before(box);
+    // Next to the submit button, on the right.
+    const btn = form.querySelector('button[type="submit"]');
+    if (btn) {
+      const row = document.createElement('div');
+      row.className = 'form-actions';
+      btn.before(row);
+      row.append(btn, box);
+    } else form.append(box);
     const render = () => { widget = turnstile.render(box, { sitekey: siteKey, appearance: 'always' }); };
     if (typeof turnstile !== 'undefined') return render();
     const s = document.createElement('script');
