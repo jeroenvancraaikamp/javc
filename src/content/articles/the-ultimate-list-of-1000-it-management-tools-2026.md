@@ -1,11 +1,19 @@
 ---
-title: "The Ultimate List of 1.000+ IT Management Tools, 2026"
+title: The Ultimate List of 1.000+ IT Management Tools, 2026
 date: 2026-09-22
-categories: ["Blog Article","IT4IT","Publication"]
-excerpt: "This is an overview of 1136 IT management tools, grouped into 26 categories across 7 domains — Strategy & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI — aligned to The Open Group's"
-image: "/wp-content/uploads/2026/09/1000_IT_Management_Tools_Sept_2026.png"
+categories:
+  - Blog Article
+  - IT4IT
+  - Publication
+excerpt: This is an overview of 1136 IT management tools, grouped into 26 categories across 7 domains — Strategy & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI — aligned to The Open Group's
+image: /wp-content/uploads/2026/09/1000_IT_Management_Tools_Sept_2026.png
 readingTime: 45
+popular: false
+draft: false
 ---
+
+### UPDATE: I [IT4IT/IT4ESM Atlas](https://javc.nl/it4it-atlas/) AI. It now contains 1600 Platforms
+
 
 This is an overview of 1136 IT management tools, grouped into 26 categories across 7 domains — Strategy & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI — aligned to The Open Group's IT4IT reference architecture and extended to cover every vendor named in the relevant current Gartner Magic Quadrants, plus open-source platforms used at enterprise scale.
 
@@ -48,7 +56,7 @@ This is an overview of 1136 IT management tools, grouped into 26 categories acro
 
 ### 6) Corporate & Shared
 
--   **6.1) Workforce (HR)**– 137 Tools — Concentrates on recruitment, workforce planning, and talent development, ensuring that organizations attract, retain, and manage the right personnel.
+-   \*\*6.1) Workforce (HR)\*\*– 137 Tools — Concentrates on recruitment, workforce planning, and talent development, ensuring that organizations attract, retain, and manage the right personnel.
 -   **6.2) Finance**
 -   **6.3) Legal**
 -   **6.4) Vendor & Procurement**
@@ -707,7 +715,7 @@ Which tool is best fit for purpose and is best fit for audience, depends on a lo
 20.  Veritas NetBackup by Veritas Technologies
 21.  Zerto by Hewlett Packard Enterprise
 
-## 5\. Security
+## 5. Security
 
 ### 5.1.Vulnerability & Exposure Management
 
