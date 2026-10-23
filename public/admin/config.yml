@@ -94,7 +94,7 @@ collections:
             label: Categories
             label_singular: Category
             widget: list
-            hint: 'The categories you can choose for an article. Renaming or deleting one here does not change articles that already use it.'
+            hint: 'The categories you can choose for an article, in the order shown on the site (drag to reorder). Renaming or deleting one here does not change articles that already use it.'
             fields:
               - { name: name, label: Name, widget: string }
 

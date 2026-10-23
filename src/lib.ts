@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import CATEGORY_LIST from './data/categories.json';
 
 export type Article = CollectionEntry<'articles'>;
 
@@ -24,8 +25,11 @@ export async function getCategories() {
   const counts = new Map<string, number>();
   for (const a of await getArticles())
     for (const c of a.data.categories) counts.set(c, (counts.get(c) ?? 0) + 1);
+  // Order as in the CMS list (src/data/categories.json); categories not in that list come last, A–Z.
+  const order = CATEGORY_LIST.categories.map((c) => c.name);
+  const rank = (n: string) => (order.includes(n) ? order.indexOf(n) : order.length);
   return [...counts.entries()]
-    .sort((a, b) => a[0].localeCompare(b[0]))
+    .sort((a, b) => rank(a[0]) - rank(b[0]) || a[0].localeCompare(b[0]))
     .map(([name, count]) => ({ name, slug: slugify(name), count }));
 }
 
