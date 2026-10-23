@@ -1,10 +1,14 @@
 ---
-title: "Why reinvent the wheel? Use TBM 5.0 Content in the CSDM 5.0 Data Model"
+title: Why reinvent the wheel? Use TBM 5.0 Content in the CSDM 5.0 Data Model
 date: 2025-08-22
-categories: ["ServiceNow","TBM/CSDM/CMDB","Uncategorized"]
-excerpt: "ServiceNow defined a Common Service Data model (CSDM5) without content. The TBM Council defined both a data model (TBM5) and its content. This article describes how to populate the content of TBM5 into CSDM5. TBM5 defined/described (relations between) artifacts for"
-image: "/wp-content/uploads/2025/08/inventing_the_wheel.png"
+categories:
+  - ServiceNow
+  - TBM/CSDM/CMDB
+excerpt: ServiceNow defined a Common Service Data model (CSDM5) without content. The TBM Council defined both a data model (TBM5) and its content. This article describes how to populate the content of TBM5 into CSDM5. TBM5 defined/described (relations between) artifacts for
+image: /wp-content/uploads/2025/08/inventing_the_wheel.png
 readingTime: 9
+popular: false
+draft: false
 ---
 
 ServiceNow defined a Common Service Data model (CSDM5) without content. The TBM Council defined both a data model (TBM5) and its content. This article describes how to populate the content of TBM5 into CSDM5.
