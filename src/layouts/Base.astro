@@ -94,6 +94,13 @@ const articlesActive = ['/articles/', '/category/', '/archive/', '/search/'].som
         const btn = document.getElementById('cms-edit');
         if (btn && localStorage.getItem('sveltia-cms.user')) btn.hidden = false;
       } catch {}
+      // Page view for the stats page (/stats); not counted when signed in to the CMS.
+      let cmsUser = false;
+      try { cmsUser = !!localStorage.getItem('sveltia-cms.user'); } catch {}
+      if (!cmsUser) {
+        fetch('/api/hit', { method: 'POST', keepalive: true, headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ p: location.pathname, r: document.referrer }) }).catch(() => {});
+      }
     </script>
     <script>
       const t = document.querySelector('.menu-toggle');

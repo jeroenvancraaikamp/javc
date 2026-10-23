@@ -9,7 +9,7 @@
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*", "/"]
+    "run_worker_first": ["/api/*", "/", "/stats", "/stats/"]
   },
   // javc.nl and www.javc.nl point to this Worker (www is redirected to javc.nl in worker/index.js)
   "routes": [
@@ -17,6 +17,9 @@
     { "pattern": "www.javc.nl", "custom_domain": true }
   ],
   "ai": { "binding": "AI" },
+  // Statistics database (page views + chatbot questions), see worker/stats.js.
+  // No database_id: wrangler creates the database "javc-stats" automatically on the first deploy.
+  "d1_databases": [{ "binding": "DB", "database_name": "javc-stats" }],
   // Rate limits per visitor IP (per Cloudflare location): chatbot 10/min, contact form 3/min
   "ratelimits": [
     { "name": "CHAT_LIMITER", "namespace_id": "1001", "simple": { "limit": 10, "period": 60 } },

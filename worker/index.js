@@ -8,6 +8,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import KNOWLEDGE from './knowledge.json';
 import WP_IDS from './wp-ids.json';
+import { logHit, logChat, statsPage } from './stats.js';
 
 const CLAUDE_MODEL = 'claude-opus-5-5';
 const WORKERS_AI_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
@@ -136,7 +137,7 @@ async function guard(request, env, limiter) {
   return null;
 }
 
-async function chat(request, env) {
+async function chat(request, env, ctx) {
   const denied = await guard(request, env, env.CHAT_LIMITER);
   if (denied) return denied;
 
@@ -154,6 +155,10 @@ async function chat(request, env) {
   const prevUser = [...msgs].reverse().find((m) => m.role === 'user');
   const found = search(`${last.content} ${prevUser ? prevUser.content : ''}`);
   const passages = context(found);
+  const started = Date.now();
+  const model = env.ANTHROPIC_API_KEY ? 'claude' : 'workers-ai';
+  const log = (ok, sources = []) => ctx.waitUntil(logChat(env, request, { question: last.content, model, sources, ms: Date.now() - started, ok })
+    .catch((err) => console.error('stats log', err)));
 
   try {
     const answer = env.ANTHROPIC_API_KEY
@@ -164,9 +169,11 @@ async function chat(request, env) {
       .filter((c) => c.url && !seen.has(c.url) && seen.add(c.url))
       .slice(0, 3)
       .map((c) => ({ title: c.title, url: c.url }));
+    log(!!answer, sources.map((s) => s.url));
     return json({ answer: answer || 'Sorry, I have no answer to that.', sources });
   } catch (err) {
     console.error('chat error', err);
+    log(false);
     return json({ error: 'The assistant is not available right now. Please try again later.' }, 503);
   }
 }
@@ -233,11 +240,13 @@ function redirectFor(url) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const to = redirectFor(url);
     if (to) return Response.redirect(new URL(to, url).toString(), 301);
-    if (url.pathname === '/api/chat') return chat(request, env);
+    if (url.pathname === '/api/chat') return chat(request, env, ctx);
+    if (url.pathname === '/api/hit') return logHit(request, env).catch((err) => { console.error('hit', err); return new Response(null, { status: 204 }); });
+    if (url.pathname === '/stats' || url.pathname === '/stats/') return statsPage(request, env);
     if (url.pathname === '/api/contact') return contact(request, env);
     return env.ASSETS.fetch(request);
   },
