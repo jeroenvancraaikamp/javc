@@ -51,14 +51,6 @@ Since 2001, I have worked in IT in the following roles:
 
 **I have implemented ServiceNow platforms/practices since 2014. In these roles, I have built technical, managerial, analytical, commercial, financial, and communication skills.** I am trained and certified in implementing service management processes, managing waterfall projects/programs, and managing agile DevSecOps backlogs. I no longer code myself, but if/where needed, **I still like to work hands-on with the platform and/or structure data in/for it**. In the roles above, I enjoyed helping draft strategies and operating/sourcing models, architectures, and roadmaps.
 
-### Role preference
-
-I believe I'm best in a role that requires a mix of managerial, process, and technical/architectural skills. **I prefer roles such as Project/Program Manager or Interim Platform/Product Owner,** collaborating with management, stakeholders, vendors, and internal/external expert teams.
-
-I love sharing the ServiceNow expertise I have built while working as a Consultant. For a couple of years, I have [**articles**](/articles/) CSDM, TBM, AI, and ServiceNow CMDB.
-
-I can **implementation, maintenance, and innovation of the ServiceNow Platform, including its supported Practices and** **Integrations.** Integrations.
-
 ##  Product Knowledge
 
 **ServiceNow Platform Modules**
@@ -107,3 +99,11 @@ I can **implementation, maintenance, and innovation of the ServiceNow Platform, 
 -   ArchiMate 3.2 / TOGAF
 -   Prince2/Agile Scrum/SAFe
 -   Misc, Compliance Frameworks
+
+### Role preference
+
+I believe I'm best in a role that requires a mix of managerial, process, and technical/architectural skills. **I prefer roles such as Project/Program Manager or Interim Platform/Product Owner,** collaborating with management, stakeholders, vendors, and internal/external expert teams.
+
+I love sharing the ServiceNow expertise I have built while working as a Consultant. For a couple of years, 
+
+I can **implement, maintain, and innovate the ServiceNow Platform, including its supported Practices and** **Integrations.**
