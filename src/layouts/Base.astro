@@ -64,13 +64,11 @@ const site = Astro.site?.origin ?? 'https://javc.nl';
       <div class="wrap">
         {alt && (
           <nav class="lang-switch" aria-label="Language / Taal">
-            <a href={lang === 'en' ? path : alt} hreflang="en" lang="en" title="English" aria-current={lang === 'en' ? 'page' : undefined}>
-              <svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="uk-t"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>
-              <span>EN</span>
+            <a href={lang === 'en' ? path : alt} hreflang="en" lang="en" title="English" aria-label="English" aria-current={lang === 'en' ? 'page' : undefined}>
+              <svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="uk-t"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>
             </a>
-            <a href={lang === 'nl' ? path : alt} hreflang="nl" lang="nl" title="Nederlands" aria-current={lang === 'nl' ? 'page' : undefined}>
-              <svg viewBox="0 0 9 6" aria-hidden="true"><path fill="#21468B" d="M0 0h9v6H0z"/><path fill="#fff" d="M0 0h9v4H0z"/><path fill="#AE1C28" d="M0 0h9v2H0z"/></svg>
-              <span>NL</span>
+            <a href={lang === 'nl' ? path : alt} hreflang="nl" lang="nl" title="Nederlands" aria-label="Nederlands" aria-current={lang === 'nl' ? 'page' : undefined}>
+              <svg viewBox="0 0 9 6" preserveAspectRatio="none" aria-hidden="true"><path fill="#21468B" d="M0 0h9v6H0z"/><path fill="#fff" d="M0 0h9v4H0z"/><path fill="#AE1C28" d="M0 0h9v2H0z"/></svg>
             </a>
           </nav>
         )}
