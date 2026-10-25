@@ -47,7 +47,7 @@ const note = !item.translated ? null : d.legal
     )}
   </Base>
 ) : (
-  <Base title={d.title} edit={edit} description={d.excerpt} pageTitle={d.title} crumbs={[{ label: T.articles, href: url(lang, '/articles/') }, { label: d.title }]}>
+  <Base title={d.title} edit={edit} description={d.excerpt} type="article" image={/\.(jpe?g|png)$/i.test(d.image ?? '') ? d.image : undefined} pageTitle={d.title} crumbs={[{ label: T.articles, href: url(lang, '/articles/') }, { label: d.title }]}>
     <div class="wrap layout">
       <article class="primary single">
         <h1 class="post-title">{d.title}</h1>
