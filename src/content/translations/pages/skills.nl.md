@@ -1,18 +1,18 @@
 ---
-title: "Skills/expertise"
-menu: "Skills/expertise"
-source: "8d7170bfc301965c"
+title: "Vaardigheden/Expertise"
+menu: "Vaardigheden/Expertise"
+source: "182bf7d5d344b174"
 ---
 
 ##  Over mij
 
-Ik ben geboren in 1966 en heb de eerste twintig jaar van mijn leven in de regio Amsterdam gewoond. Daarna heb ik gewoond en gewerkt in landen als China, Frankrijk en Ierland. Sinds 2001 woon ik met mijn vrouw en onze twee katten in Amstelveen.
+Ik ben geboren in 1966 en heb de eerste twintig jaar van mijn leven in de regio Amsterdam gewoond. Daarna heb ik gewoond en gewerkt in landen als China, Frankrijk en Ierland. Sinds 2001 woon ik samen met mijn vrouw en onze twee katten in Amstelveen.
 
-Ik heb de persoonlijkheidskenmerken Extravert, Intuïtief, Denkend en Verkennend ([**ENTP)**](https://www.16personalities.com/entp-personality). Mensen met deze kenmerken gelden als gedurfd en creatief: ze ontleden ideeën en bouwen ze met grote mentale wendbaarheid weer op. Ze streven hun doelen vastberaden na, ongeacht de weerstand die ze daarbij tegenkomen.
+Ik heb de persoonlijkheidskenmerken Extravert, Intuïtief, Denkend en Verkennend ([**ENTP)**](https://www.16personalities.com/entp-personality). Mensen met deze kenmerken gelden als gedurfd en creatief; ze ontleden ideeën en bouwen ze met grote mentale wendbaarheid opnieuw op. Ze streven hun doelen vastberaden na, ongeacht de weerstand die ze tegenkomen.
 
-In mijn vrije tijd duik ik, speel ik met domotica en onderhoud ik hobbywebsites. Ook houd ik van het strand, zeilen, culinair eten en champagne sabreren.
+Als hobby duik ik, experimenteer ik met domotica en onderhoud ik hobbywebsites. Daarnaast houd ik van het strand, zeilen, culinair eten en het sabreren van champagne.
 
-### Opleiding & certificeringen
+### Opleiding & Certificeringen
 
 -   HAVO (Zaanlands Lyceum)
 -   HBO (Instituut voor Hoger Technisch en Nautisch Onderwijs)
@@ -28,25 +28,25 @@ In mijn vrije tijd duik ik, speel ik met domotica en onderhoud ik hobbywebsites.
 
 De eerste twaalf jaar van mijn loopbaan werkte ik in de telecomsector als:
 
--   System Specialist
--   Project Manager
--   Operations Manager
--   Business Consultant
--   Program Manager
--   Service Marketing Manager
+-   Systeemspecialist
+-   Projectmanager
+-   Operationeel manager
+-   Business consultant
+-   Programmamanager
+-   Service marketing manager
 
 Sinds 2001 werk ik in de IT in de volgende rollen:
 
--   Project Manager
+-   Projectmanager
 -   ITIL Configuration Manager
 -   ITIL Enterprise Process Owner
--   PRINCE2 Project Manager
--   PRINCE2 Program Manager
--   IT4IT Department Manager
+-   PRINCE2 Projectmanager
+-   PRINCE2 Programmamanager
+-   IT4IT Afdelingsmanager
 -   AGILE Product Owner
 -   AGILE Platform Owner
 
-**Sinds 2014 implementeer ik ServiceNow-platformen en -practices. In deze rollen heb ik technische, leidinggevende, analytische, commerciële, financiële en communicatieve vaardigheden opgebouwd.** Ik ben opgeleid en gecertificeerd in het implementeren van service management-processen, het managen van waterval-projecten en -programma's en het managen van agile DevSecOps-backlogs. Zelf programmeer ik niet meer, maar waar nodig **werk ik nog steeds graag hands-on met het platform en/of structureer ik data in/voor het platform**. In bovenstaande rollen heb ik er met plezier aan bijgedragen om strategieën, operating- en sourcingmodellen, architecturen en roadmaps op te stellen.
+**Sinds 2014 implementeer ik ServiceNow-platforms en -practices. In deze rollen heb ik technische, leidinggevende, analytische, commerciële, financiële en communicatieve vaardigheden opgebouwd.** Ik ben opgeleid en gecertificeerd in het implementeren van service management-processen, het managen van watervalprojecten en -programma's en het beheren van agile DevSecOps-backlogs. Zelf programmeer ik niet meer, maar waar nodig **werk ik nog steeds graag hands-on met het platform en/of structureer ik data erin of ervoor**. In bovenstaande rollen heb ik met plezier meegeholpen aan het opstellen van strategieën, operating- en sourcingmodellen, architecturen en roadmaps.
 
 ##  Productkennis
 
@@ -61,7 +61,7 @@ Sinds 2001 werk ik in de IT in de volgende rollen:
 -   Core Platform (incl. CSDM, CMDB, Portal, enz.)  
 -   Maatwerkmodule (bijv. Joiner, Mover & Leaver)
 
-**Cloudplatformen**
+**Cloudplatforms**
 
 -   VMware/OpenStack/HyperV
 -   Amazon Web Services (AWS)
@@ -70,7 +70,7 @@ Sinds 2001 werk ik in de IT in de volgende rollen:
 -   Oracle Cloud Infrastructure (OCI)
 -   Microsoft Office365
 
-**Diverse andere platformen**
+**Diverse andere platforms**
 
 -   SAP LeanIX, BlueDolphin (EA)
 -   LDAP/AD/OKTA (SSO)
@@ -93,9 +93,10 @@ Sinds 2001 werk ik in de IT in de volgende rollen:
 -   CSDM 5
 -   ITIL 3, 4 en 5
 -   IT4IT 3.0
--   ArchiMate 3.2 / TOGAF
+-   ArchiMate 3.2
+-   TOGAF 10
 -   Prince2/Agile Scrum/SAFe
--   Diverse compliance-frameworks
+-   Diverse compliance frameworks
 
 ### Voorkeursrol
 
