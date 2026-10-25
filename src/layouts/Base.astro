@@ -12,18 +12,20 @@ interface Props {
   edit?: string;
   noindex?: boolean;
   chat?: boolean;
+  // Page exists in all languages although it is not indexed (stats).
+  translated?: boolean;
 }
 const path = Astro.url.pathname;
 // The language follows the address: /nl/... is Dutch, /cn/... Chinese, everything else English.
 const lang = langOf(path);
 const T = t(lang);
-const { title, description = T.description, pageTitle, crumbs = [], edit, noindex = false, chat = true } = Astro.props;
+const { title, description = T.description, pageTitle, crumbs = [], edit, noindex = false, chat = true, translated = false } = Astro.props;
 const menu = (await getPages(lang)).filter((p) => p.data.menu).sort((a, b) => a.data.order - b.data.order);
 const isActive = (href: string) => path === href || (href !== url(lang, '/') && path.startsWith(href));
 const articlesActive = ['/articles/', '/category/', '/archive/', '/search/'].some((p) => path.startsWith(url(lang, p)));
-// Pages for signed-in use only (stats, editor) exist in English only, so there the flags lead to the home page of each language.
+// Pages for signed-in use only exist in English only (editor), so there the flags lead to the home page of each language.
 const switchable = !noindex;
-const flagHref = (l) => switchable ? url(l, path) : url(l, '/');
+const flagHref = (l) => switchable || translated ? url(l, path) : url(l, '/');
 const site = Astro.site?.origin ?? 'https://javc.nl';
 const FLAGS = {
   en: '<svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="uk-t"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>',

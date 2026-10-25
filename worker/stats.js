@@ -47,9 +47,6 @@ function browserLang(request) {
 
 // Site language from the path: Dutch under /nl/, Chinese under /cn/, English everywhere else.
 const SITE_LANG = "CASE WHEN path = '/nl' OR path LIKE '/nl/%' THEN 'nl' WHEN path = '/cn' OR path LIKE '/cn/%' THEN 'cn' ELSE 'en' END";
-const SITE_LANGS = { en: 'English', nl: 'Dutch', cn: 'Chinese' };
-const langName = new Intl.DisplayNames(['en'], { type: 'language' });
-const blangName = (code) => { try { return code ? `${langName.of(code)} (${code})` : '(unknown)'; } catch { return code; } };
 
 // POST /api/hit {p: path, r: referrer}, sent by a small script on every page (src/layouts/Base.astro).
 export async function logHit(request, env) {
@@ -132,11 +129,60 @@ async function revisions() {
   }));
 }
 
-const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const nf = new Intl.NumberFormat('en-GB');
-const when = (ts) => new Date(ts).toLocaleString('en-GB', { timeZone: 'Europe/Amsterdam', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+// Texts of /stats in the three languages of the site (/stats/, /nl/stats/, /cn/stats/).
+const LOCALE = { en: 'en-GB', nl: 'nl-NL', cn: 'zh-CN' };
+const TEXT = {
+  en: {
+    views: 'views', visitors: 'visitors', questions: 'questions', noData: 'No data yet.', noDb: 'The database is not available yet.',
+    pageViews: 'Page views', visitorsDay: 'Visitors (counted per day)', perVisitor: 'Pages per visitor', perDay: 'Per day',
+    siteLang: 'Site language', language: 'Language', viewsH: 'Views', share: 'Share', visitorsH: 'Visitors',
+    langNames: { en: 'English', nl: 'Dutch', cn: 'Chinese' }, langPerDay: 'Views per language per day',
+    browserLang: 'Browser language', unknown: '(unknown)', noBrowserLang: 'Collected from now on; no data yet.',
+    topPages: 'Most viewed pages', page: 'Page', referrers: 'Referrers', website: 'Website', direct: '(direct / unknown)',
+    countries: 'Countries', country: 'Country', devices: 'Devices', device: 'Device',
+    deviceNames: { desktop: 'desktop', mobile: 'mobile', tablet: 'tablet' },
+    questionsH: 'Questions', failedH: 'Failed', avgTime: 'Avg. response time', model: 'Model', qPerDay: 'Questions per day',
+    latest: 'Latest questions', time: 'Time', question: 'Question', failed: 'failed', sources: 'Most used sources', source: 'Source', times: 'Times',
+    change: 'Change', noGithub: 'GitHub cannot be reached right now.', today: 'Today', days: (n) => `${n} days`,
+    site: 'Website statistics', bot: 'Chatbot statistics', revs: 'Site revisions',
+    note: 'Your own visits are not counted in this browser. Visitors are counted without cookies.',
+  },
+  nl: {
+    views: 'weergaven', visitors: 'bezoekers', questions: 'vragen', noData: 'Nog geen gegevens.', noDb: 'De database is nog niet beschikbaar.',
+    pageViews: 'Paginaweergaven', visitorsDay: 'Bezoekers (per dag geteld)', perVisitor: "Pagina's per bezoeker", perDay: 'Per dag',
+    siteLang: 'Taal van de site', language: 'Taal', viewsH: 'Weergaven', share: 'Aandeel', visitorsH: 'Bezoekers',
+    langNames: { en: 'Engels', nl: 'Nederlands', cn: 'Chinees' }, langPerDay: 'Weergaven per taal per dag',
+    browserLang: 'Taal van de browser', unknown: '(onbekend)', noBrowserLang: 'Wordt vanaf nu verzameld; nog geen gegevens.',
+    topPages: "Meest bekeken pagina's", page: 'Pagina', referrers: 'Verwijzende sites', website: 'Website', direct: '(direct / onbekend)',
+    countries: 'Landen', country: 'Land', devices: 'Apparaten', device: 'Apparaat',
+    deviceNames: { desktop: 'desktop', mobile: 'mobiel', tablet: 'tablet' },
+    questionsH: 'Vragen', failedH: 'Mislukt', avgTime: 'Gem. antwoordtijd', model: 'Model', qPerDay: 'Vragen per dag',
+    latest: 'Laatste vragen', time: 'Tijd', question: 'Vraag', failed: 'mislukt', sources: 'Meest gebruikte bronnen', source: 'Bron', times: 'Keer',
+    change: 'Wijziging', noGithub: 'GitHub is nu niet bereikbaar.', today: 'Vandaag', days: (n) => `${n} dagen`,
+    site: 'Statistieken van de website', bot: 'Statistieken van de chatbot', revs: 'Wijzigingen aan de site',
+    note: 'Je eigen bezoeken worden in deze browser niet geteld. Bezoekers worden geteld zonder cookies.',
+  },
+  cn: {
+    views: '浏览量', visitors: '访客', questions: '问题', noData: '暂无数据。', noDb: '数据库暂不可用。',
+    pageViews: '页面浏览量', visitorsDay: '访客（按天计算）', perVisitor: '每位访客浏览页数', perDay: '每天',
+    siteLang: '网站语言', language: '语言', viewsH: '浏览量', share: '占比', visitorsH: '访客',
+    langNames: { en: '英文', nl: '荷兰语', cn: '中文' }, langPerDay: '每天各语言浏览量',
+    browserLang: '浏览器语言', unknown: '（未知）', noBrowserLang: '从现在开始收集，暂无数据。',
+    topPages: '最多浏览的页面', page: '页面', referrers: '来源网站', website: '网站', direct: '（直接访问 / 未知）',
+    countries: '国家', country: '国家', devices: '设备', device: '设备',
+    deviceNames: { desktop: '桌面', mobile: '手机', tablet: '平板' },
+    questionsH: '问题', failedH: '失败', avgTime: '平均响应时间', model: '模型', qPerDay: '每天问题数',
+    latest: '最新问题', time: '时间', question: '问题', failed: '失败', sources: '最常用来源', source: '来源', times: '次数',
+    change: '更改', noGithub: '暂时无法连接 GitHub。', today: '今天', days: (n) => `${n} 天`,
+    site: '网站统计', bot: '聊天机器人统计', revs: '网站修订记录',
+    note: '在此浏览器中，您自己的访问不计入统计。访客统计不使用 Cookie。',
+  },
+};
 
-function bars(rows, days, keys) {
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const when = (ts, lang) => new Date(ts).toLocaleString(LOCALE[lang], { timeZone: 'Europe/Amsterdam', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+
+function bars(rows, days, keys, labels = keys) {
   const byDay = new Map(rows.map((r) => [r.day, r]));
   const list = [];
   for (let i = days - 1; i >= 0; i--) {
@@ -144,13 +190,13 @@ function bars(rows, days, keys) {
     list.push(byDay.get(day) || { day });
   }
   const max = Math.max(1, ...list.flatMap((r) => keys.map((k) => r[k] || 0)));
-  return `<div class="bars">${list.map((r) => `<div class="bar" title="${r.day}: ${keys.map((k) => `${r[k] || 0} ${k}`).join(', ')}">
+  return `<div class="bars">${list.map((r) => `<div class="bar" title="${r.day}: ${keys.map((k, i) => `${r[k] || 0} ${labels[i]}`).join(', ')}">
     ${keys.map((k, i) => `<span class="b${i}" style="height:${((r[k] || 0) / max) * 100}%"></span>`).join('')}</div>`).join('')}</div>
     <div class="axis"><span>${list[0].day.slice(5)}</span><span>${list[list.length - 1].day.slice(5)}</span></div>`;
 }
 
-function table(rows, cols) {
-  if (!rows.length) return '<p class="muted">No data yet.</p>';
+function table(rows, cols, T) {
+  if (!rows.length) return `<p class="muted">${T.noData}</p>`;
   return `<table><tr>${cols.map((c) => `<th${c.num ? ' class="n"' : ''}>${c.label}</th>`).join('')}</tr>${rows.map((r) =>
     `<tr>${cols.map((c) => `<td${c.num ? ' class="n"' : ''}>${c.html ? c.html(r) : esc(r[c.key])}</td>`).join('')}</tr>`).join('')}</table>`;
 }
@@ -167,11 +213,17 @@ export async function statsData(request, env) {
     return new Response('Not signed in', { status: 401 });
   }
 
+  const params = new URL(request.url).searchParams;
+  const lang = Object.hasOwn(TEXT, params.get('lang')) ? params.get('lang') : 'en';
+  const T = TEXT[lang];
+  const nf = new Intl.NumberFormat(LOCALE[lang]);
+  const langName = new Intl.DisplayNames([LOCALE[lang]], { type: 'language' });
+  const blangName = (code) => { try { return code ? `${langName.of(code)} (${code})` : T.unknown; } catch { return code; } };
   const days = [1, 7, 30, 90, 365].includes(+new URL(request.url).searchParams.get('days')) ? +new URL(request.url).searchParams.get('days') : 30;
   const from = new Date(Date.now() - (days - 1) * 864e5).toISOString().slice(0, 10);
   const d = await db(env).catch((err) => { console.error('stats db', err); return null; });
 
-  let site = '<p class="muted">The database is not available yet.</p>', bot = site;
+  let site = `<p class="muted">${T.noDb}</p>`, bot = site;
   if (d) {
     await d.prepare('DELETE FROM hits WHERE ts < ?').bind(Date.now() - KEEP_DAYS * 864e5).run();
     const q = (sql) => d.prepare(sql).bind(from);
@@ -182,7 +234,7 @@ export async function statsData(request, env) {
       q(`SELECT day, SUM(${SITE_LANG} = 'en') en, SUM(${SITE_LANG} = 'nl') nl, SUM(${SITE_LANG} = 'cn') cn FROM hits WHERE day >= ? GROUP BY day`),
       q("SELECT COALESCE(blang, '') blang, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY 1 ORDER BY visitors DESC LIMIT 15"),
       q('SELECT path, COUNT(*) views, COUNT(DISTINCT visitor) visitors FROM hits WHERE day >= ? GROUP BY path ORDER BY views DESC LIMIT 25'),
-      q("SELECT CASE ref WHEN '' THEN '(direct / unknown)' ELSE ref END ref, COUNT(*) views FROM hits WHERE day >= ? GROUP BY 1 ORDER BY views DESC LIMIT 15"),
+      q("SELECT ref, COUNT(*) views FROM hits WHERE day >= ? GROUP BY 1 ORDER BY views DESC LIMIT 15"),
       q("SELECT CASE country WHEN '' THEN '?' ELSE country END country, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY 1 ORDER BY visitors DESC LIMIT 15"),
       q('SELECT device, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY device ORDER BY visitors DESC'),
       q('SELECT COUNT(*) questions, SUM(1 - ok) errors, ROUND(AVG(ms) / 1000.0, 1) secs FROM chats WHERE day >= ?'),
@@ -193,53 +245,54 @@ export async function statsData(request, env) {
     ])).map((r) => r.results);
 
     const t = tot[0] || {};
-    site = `<div class="tiles">${tile('Page views', nf.format(t.views || 0))}${tile('Visitors (counted per day)', nf.format(t.visitors || 0))}
-      ${tile('Pages per visitor', t.visitors ? (t.views / t.visitors).toFixed(1) : '0')}</div>
-      ${days > 1 ? `<h3>Per day <small><i class="k b0"></i>views <i class="k b1"></i>visitors</small></h3>${bars(daily, days, ['views', 'visitors'])}` : ''}
-      <div class="grid"><div><h3>Site language</h3>${table(langs.map((r) => ({ ...r, share: t.views ? `${Math.round((r.views / t.views) * 100)}%` : '' })), [
-        { label: 'Language', html: (r) => `${esc(SITE_LANGS[r.lang])} <span class="muted">/${r.lang === 'en' ? '' : `${r.lang}/`}</span>` },
-        { label: 'Views', key: 'views', num: true }, { label: 'Share', key: 'share', num: true }, { label: 'Visitors', key: 'visitors', num: true }])}
-      ${days > 1 && langs.length ? `<h3>Views per language per day <small><i class="k b0"></i>English <i class="k b1"></i>Dutch <i class="k b2"></i>Chinese</small></h3>${bars(langDaily, days, ['en', 'nl', 'cn'])}` : ''}</div>
-      <div><h3>Browser language</h3>${blangs.some((r) => r.blang) ? table(blangs, [
-        { label: 'Language', html: (r) => esc(blangName(r.blang)) }, { label: 'Visitors', key: 'visitors', num: true }])
-        : '<p class="muted">Collected from now on; no data yet.</p>'}</div></div>
-      <div class="grid"><div><h3>Most viewed pages</h3>${table(pages, [
-        { label: 'Page', html: (r) => `<a href="${esc(r.path)}">${esc(r.path)}</a>` },
-        { label: 'Views', key: 'views', num: true }, { label: 'Visitors', key: 'visitors', num: true }])}</div>
-      <div><h3>Referrers</h3>${table(refs, [{ label: 'Website', key: 'ref' }, { label: 'Views', key: 'views', num: true }])}
-      <h3>Countries</h3>${table(countries, [{ label: 'Country', key: 'country' }, { label: 'Visitors', key: 'visitors', num: true }])}
-      <h3>Devices</h3>${table(devices, [{ label: 'Device', key: 'device' }, { label: 'Visitors', key: 'visitors', num: true }])}</div></div>`;
+    const L = T.langNames;
+    site = `<div class="tiles">${tile(T.pageViews, nf.format(t.views || 0))}${tile(T.visitorsDay, nf.format(t.visitors || 0))}
+      ${tile(T.perVisitor, t.visitors ? (t.views / t.visitors).toLocaleString(LOCALE[lang], { minimumFractionDigits: 1, maximumFractionDigits: 1 }) : '0')}</div>
+      ${days > 1 ? `<h3>${T.perDay} <small><i class="k b0"></i>${T.views} <i class="k b1"></i>${T.visitors}</small></h3>${bars(daily, days, ['views', 'visitors'], [T.views, T.visitors])}` : ''}
+      <div class="grid"><div><h3>${T.siteLang}</h3>${table(langs.map((r) => ({ ...r, share: t.views ? `${Math.round((r.views / t.views) * 100)}%` : '' })), [
+        { label: T.language, html: (r) => `${esc(L[r.lang])} <span class="muted">/${r.lang === 'en' ? '' : `${r.lang}/`}</span>` },
+        { label: T.viewsH, key: 'views', num: true }, { label: T.share, key: 'share', num: true }, { label: T.visitorsH, key: 'visitors', num: true }], T)}
+      ${days > 1 && langs.length ? `<h3>${T.langPerDay} <small><i class="k b0"></i>${L.en} <i class="k b1"></i>${L.nl} <i class="k b2"></i>${L.cn}</small></h3>${bars(langDaily, days, ['en', 'nl', 'cn'], [L.en, L.nl, L.cn])}` : ''}</div>
+      <div><h3>${T.browserLang}</h3>${blangs.some((r) => r.blang) ? table(blangs, [
+        { label: T.language, html: (r) => esc(blangName(r.blang)) }, { label: T.visitorsH, key: 'visitors', num: true }], T)
+        : `<p class="muted">${T.noBrowserLang}</p>`}</div></div>
+      <div class="grid"><div><h3>${T.topPages}</h3>${table(pages, [
+        { label: T.page, html: (r) => `<a href="${esc(r.path)}">${esc(r.path)}</a>` },
+        { label: T.viewsH, key: 'views', num: true }, { label: T.visitorsH, key: 'visitors', num: true }], T)}</div>
+      <div><h3>${T.referrers}</h3>${table(refs, [{ label: T.website, html: (r) => esc(r.ref || T.direct) }, { label: T.viewsH, key: 'views', num: true }], T)}
+      <h3>${T.countries}</h3>${table(countries, [{ label: T.country, key: 'country' }, { label: T.visitorsH, key: 'visitors', num: true }], T)}
+      <h3>${T.devices}</h3>${table(devices, [{ label: T.device, html: (r) => esc(T.deviceNames[r.device] || r.device) }, { label: T.visitorsH, key: 'visitors', num: true }], T)}</div></div>`;
 
     const c = ctot[0] || {};
     const cited = new Map();
     for (const r of csources) for (const u of r.sources.split(' ')) cited.set(u, (cited.get(u) || 0) + 1);
     const top = [...cited].sort((a, b) => b[1] - a[1]).slice(0, 15).map(([url, n]) => ({ url, n }));
-    bot = `<div class="tiles">${tile('Questions', nf.format(c.questions || 0))}${tile('Failed', nf.format(c.errors || 0))}
-      ${tile('Avg. response time', `${c.secs || 0} s`)}${tile('Model', esc(cmodels.map((m) => `${m.model} (${m.n})`).join(', ') || '-'))}</div>
-      ${days > 1 ? `<h3>Questions per day</h3>${bars(cdaily, days, ['questions'])}` : ''}
-      <div class="grid"><div><h3>Latest questions</h3>${table(recent, [
-        { label: 'Time', html: (r) => esc(when(r.ts)) },
-        { label: 'Question', html: (r) => `${esc(r.question)}${r.ok ? '' : ' <span class="err">failed</span>'}` },
-        { label: 'Country', key: 'country' }])}</div>
-      <div><h3>Most used sources</h3>${table(top, [
-        { label: 'Source', html: (r) => `<a href="${esc(r.url)}">${esc(r.url)}</a>` }, { label: 'Times', key: 'n', num: true }])}</div></div>`;
+    bot = `<div class="tiles">${tile(T.questionsH, nf.format(c.questions || 0))}${tile(T.failedH, nf.format(c.errors || 0))}
+      ${tile(T.avgTime, `${(c.secs || 0).toLocaleString(LOCALE[lang])} s`)}${tile(T.model, esc(cmodels.map((m) => `${m.model} (${m.n})`).join(', ') || '-'))}</div>
+      ${days > 1 ? `<h3>${T.qPerDay}</h3>${bars(cdaily, days, ['questions'], [T.questions])}` : ''}
+      <div class="grid"><div><h3>${T.latest}</h3>${table(recent, [
+        { label: T.time, html: (r) => esc(when(r.ts, lang)) },
+        { label: T.question, html: (r) => `${esc(r.question)}${r.ok ? '' : ` <span class="err">${T.failed}</span>`}` },
+        { label: T.country, key: 'country' }], T)}</div>
+      <div><h3>${T.sources}</h3>${table(top, [
+        { label: T.source, html: (r) => `<a href="${esc(r.url)}">${esc(r.url)}</a>` }, { label: T.times, key: 'n', num: true }], T)}</div></div>`;
   }
 
   const commits = await revisions().catch(() => null);
   const revs = commits ? table(commits.map((x) => ({
     ...x, sha: x.sha.slice(0, 7), cms: /^(Bijgewerkt|Nieuw|Verwijderd|Afbeelding|Create|Update|Delete|Upload) /.test(x.msg),
   })), [
-    { label: 'Time', html: (r) => esc(when(r.ts)) },
-    { label: 'Change', html: (r) => `${r.cms ? '<span class="tag">CMS</span> ' : ''}${esc(r.msg)}` },
+    { label: T.time, html: (r) => esc(when(r.ts, lang)) },
+    { label: T.change, html: (r) => `${r.cms ? '<span class="tag">CMS</span> ' : ''}${esc(r.msg)}` },
     { label: '', html: (r) => `<a href="${esc(r.url)}" target="_blank" rel="noopener">${r.sha}</a>` },
-  ]) : '<p class="muted">GitHub cannot be reached right now.</p>';
+  ], T) : `<p class="muted">${T.noGithub}</p>`;
 
-  const tabs = [1, 7, 30, 90, 365].map((n) => `<a href="?days=${n}"${n === days ? ' class="on"' : ''}>${n === 1 ? 'Today' : `${n} days`}</a>`).join('');
+  const tabs = [1, 7, 30, 90, 365].map((n) => `<a href="?days=${n}"${n === days ? ' class="on"' : ''}>${n === 1 ? T.today : T.days(n)}</a>`).join('');
   const html = `<div class="ranges">${tabs}</div>
-<section><h2>1. Website statistics</h2>${site}</section>
-<section><h2>2. Chatbot statistics</h2>${bot}</section>
-<section><h2>3. Site revisions</h2>${revs}</section>
-<p class="muted">Your own visits are not counted in this browser. Visitors are counted without cookies.</p>`;
+<section><h2>1. ${T.site}</h2>${site}</section>
+<section><h2>2. ${T.bot}</h2>${bot}</section>
+<section><h2>3. ${T.revs}</h2>${revs}</section>
+<p class="muted">${T.note}</p>`;
   return new Response(html, {
     headers: {
       'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex',
