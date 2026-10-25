@@ -19,7 +19,10 @@ export function db(env) {
     env.DB.prepare('CREATE INDEX IF NOT EXISTS chats_day ON chats (day)'),
     env.DB.prepare("CREATE TABLE IF NOT EXISTS comments (id INTEGER PRIMARY KEY AUTOINCREMENT, ts INTEGER, slug TEXT, name TEXT, email TEXT, body TEXT, status TEXT DEFAULT 'pending')"),
     env.DB.prepare('CREATE INDEX IF NOT EXISTS comments_slug ON comments (slug, status)'),
-  ]).catch((err) => { schema = undefined; throw err; });
+  ])
+    // Browser language (added later): add the column to an existing table; fails harmlessly when it is already there.
+    .then(() => env.DB.prepare('ALTER TABLE hits ADD COLUMN blang TEXT').run().catch(() => {}))
+    .catch((err) => { schema = undefined; throw err; });
   return schema.then(() => env.DB);
 }
 
@@ -35,6 +38,18 @@ function device(ua) {
   if (/Mobi|Android|iPhone/i.test(ua)) return 'mobile';
   return 'desktop';
 }
+
+// First language of the browser's Accept-Language header, e.g. "nl-NL,nl;q=0.9,en;q=0.8" -> "nl".
+function browserLang(request) {
+  const m = (request.headers.get('accept-language') || '').trim().match(/^([a-z]{2,3})\b/i);
+  return m ? m[1].toLowerCase() : '';
+}
+
+// Site language from the path: Dutch under /nl/, Chinese under /cn/, English everywhere else.
+const SITE_LANG = "CASE WHEN path = '/nl' OR path LIKE '/nl/%' THEN 'nl' WHEN path = '/cn' OR path LIKE '/cn/%' THEN 'cn' ELSE 'en' END";
+const SITE_LANGS = { en: 'English', nl: 'Dutch', cn: 'Chinese' };
+const langName = new Intl.DisplayNames(['en'], { type: 'language' });
+const blangName = (code) => { try { return code ? `${langName.of(code)} (${code})` : '(unknown)'; } catch { return code; } };
 
 // POST /api/hit {p: path, r: referrer}, sent by a small script on every page (src/layouts/Base.astro).
 export async function logHit(request, env) {
@@ -53,8 +68,8 @@ export async function logHit(request, env) {
   try { const r = new URL(b.r); if (r.host !== host) ref = r.host.replace(/^www\./, ''); } catch { /* none */ }
   const day = today();
   const visitor = await sha(`${day}|${request.headers.get('cf-connecting-ip')}|${ua}|${env.STATS_PASSWORD || ''}`);
-  await d.prepare('INSERT INTO hits VALUES (?, ?, ?, ?, ?, ?, ?)')
-    .bind(Date.now(), day, path, ref, request.cf?.country || '', device(ua), visitor).run();
+  await d.prepare('INSERT INTO hits (ts, day, path, ref, country, device, visitor, blang) VALUES (?, ?, ?, ?, ?, ?, ?, ?)')
+    .bind(Date.now(), day, path, ref, request.cf?.country || '', device(ua), visitor, browserLang(request)).run();
   return new Response(null, { status: 204 });
 }
 
@@ -128,7 +143,7 @@ function bars(rows, days, keys) {
     const day = new Date(Date.now() - i * 864e5).toISOString().slice(0, 10);
     list.push(byDay.get(day) || { day });
   }
-  const max = Math.max(1, ...list.map((r) => r[keys[0]] || 0));
+  const max = Math.max(1, ...list.flatMap((r) => keys.map((k) => r[k] || 0)));
   return `<div class="bars">${list.map((r) => `<div class="bar" title="${r.day}: ${keys.map((k) => `${r[k] || 0} ${k}`).join(', ')}">
     ${keys.map((k, i) => `<span class="b${i}" style="height:${((r[k] || 0) / max) * 100}%"></span>`).join('')}</div>`).join('')}</div>
     <div class="axis"><span>${list[0].day.slice(5)}</span><span>${list[list.length - 1].day.slice(5)}</span></div>`;
@@ -160,9 +175,12 @@ export async function statsData(request, env) {
   if (d) {
     await d.prepare('DELETE FROM hits WHERE ts < ?').bind(Date.now() - KEEP_DAYS * 864e5).run();
     const q = (sql) => d.prepare(sql).bind(from);
-    const [tot, daily, pages, refs, countries, devices, ctot, cdaily, cmodels, csources, recent] = (await d.batch([
+    const [tot, daily, langs, langDaily, blangs, pages, refs, countries, devices, ctot, cdaily, cmodels, csources, recent] = (await d.batch([
       q('SELECT COUNT(*) views, (SELECT SUM(n) FROM (SELECT COUNT(DISTINCT visitor) n FROM hits WHERE day >= ?1 GROUP BY day)) visitors FROM hits WHERE day >= ?1'),
       q('SELECT day, COUNT(*) views, COUNT(DISTINCT visitor) visitors FROM hits WHERE day >= ? GROUP BY day'),
+      q(`SELECT ${SITE_LANG} lang, COUNT(*) views, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY 1 ORDER BY views DESC`),
+      q(`SELECT day, SUM(${SITE_LANG} = 'en') en, SUM(${SITE_LANG} = 'nl') nl, SUM(${SITE_LANG} = 'cn') cn FROM hits WHERE day >= ? GROUP BY day`),
+      q("SELECT COALESCE(blang, '') blang, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY 1 ORDER BY visitors DESC LIMIT 15"),
       q('SELECT path, COUNT(*) views, COUNT(DISTINCT visitor) visitors FROM hits WHERE day >= ? GROUP BY path ORDER BY views DESC LIMIT 25'),
       q("SELECT CASE ref WHEN '' THEN '(direct / unknown)' ELSE ref END ref, COUNT(*) views FROM hits WHERE day >= ? GROUP BY 1 ORDER BY views DESC LIMIT 15"),
       q("SELECT CASE country WHEN '' THEN '?' ELSE country END country, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY 1 ORDER BY visitors DESC LIMIT 15"),
@@ -178,6 +196,13 @@ export async function statsData(request, env) {
     site = `<div class="tiles">${tile('Page views', nf.format(t.views || 0))}${tile('Visitors (counted per day)', nf.format(t.visitors || 0))}
       ${tile('Pages per visitor', t.visitors ? (t.views / t.visitors).toFixed(1) : '0')}</div>
       ${days > 1 ? `<h3>Per day <small><i class="k b0"></i>views <i class="k b1"></i>visitors</small></h3>${bars(daily, days, ['views', 'visitors'])}` : ''}
+      <div class="grid"><div><h3>Site language</h3>${table(langs.map((r) => ({ ...r, share: t.views ? `${Math.round((r.views / t.views) * 100)}%` : '' })), [
+        { label: 'Language', html: (r) => `${esc(SITE_LANGS[r.lang])} <span class="muted">/${r.lang === 'en' ? '' : `${r.lang}/`}</span>` },
+        { label: 'Views', key: 'views', num: true }, { label: 'Share', key: 'share', num: true }, { label: 'Visitors', key: 'visitors', num: true }])}
+      ${days > 1 && langs.length ? `<h3>Views per language per day <small><i class="k b0"></i>English <i class="k b1"></i>Dutch <i class="k b2"></i>Chinese</small></h3>${bars(langDaily, days, ['en', 'nl', 'cn'])}` : ''}</div>
+      <div><h3>Browser language</h3>${blangs.some((r) => r.blang) ? table(blangs, [
+        { label: 'Language', html: (r) => esc(blangName(r.blang)) }, { label: 'Visitors', key: 'visitors', num: true }])
+        : '<p class="muted">Collected from now on; no data yet.</p>'}</div></div>
       <div class="grid"><div><h3>Most viewed pages</h3>${table(pages, [
         { label: 'Page', html: (r) => `<a href="${esc(r.path)}">${esc(r.path)}</a>` },
         { label: 'Views', key: 'views', num: true }, { label: 'Visitors', key: 'visitors', num: true }])}</div>
