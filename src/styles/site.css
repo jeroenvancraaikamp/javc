@@ -37,11 +37,11 @@ html:lang(zh) body, html:lang(zh) #nav a { font-family: var(--head-font); }
 .social svg { width: 15px; height: 15px; fill: currentColor; }
 .social svg[hidden] { display: none; }
 .social[hidden] { display: none; }
-.lang-switch { margin-right: auto; display: flex; gap: 8px; padding: 3px 0; }
-/* Flag size: two flags side by side are as wide as the green "JAVC" block of the logo (116/350 of the logo width). */
+.lang-switch { margin-right: auto; display: flex; gap: 5px; padding: 3px 0; }
+/* Flag size: the three flags side by side are as wide as the green "JAVC" block of the logo (116/350 of the logo width). */
 .lang-switch a { display: block; line-height: 0; border-radius: 3px; opacity: .55; transition: opacity .15s; }
 .lang-switch a:hover, .lang-switch a[aria-current] { opacity: 1; }
-.lang-switch svg { width: 44px; height: 29px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(0,0,0,.12); }
+.lang-switch svg { width: 29px; height: 19px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(0,0,0,.12); }
 /* Top bar (flags, contact icons) and menu bar stay at the top together while scrolling. */
 .site-head { position: sticky; top: 0; z-index: 50; }
 .masthead { background: #fff; border-bottom: 1px solid var(--line); position: relative; box-shadow: 0 1px 6px rgba(0,0,0,.04); }
@@ -226,8 +226,8 @@ summary { cursor: pointer; font-weight: 600; color: var(--heading); }
   .wrap { padding-left: 16px; padding-right: 16px; }
   .latest { padding: 50px 16px; }
   .logo img { height: 40px; }
-  .lang-switch { gap: 6px; }
-  .lang-switch svg { width: 35px; height: 23px; }
+  .lang-switch { gap: 4px; }
+  .lang-switch svg { width: 23px; height: 15px; }
   .related-grid, .gallery { grid-template-columns: 1fr; }
   .hero { min-height: 0; }
   .hero h1 { margin-bottom: 18px; }
