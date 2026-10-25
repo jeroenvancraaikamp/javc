@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { langOf, url, t } from '../i18n';
+const lang = langOf(Astro.url.pathname);
+const T = t(lang);
+---
+<Base title={T.search} pageTitle={T.searchResults} crumbs={[{ label: T.search }]}>
+  <div class="wrap layout">
+    <div class="primary">
+      <h1 class="list-title">{T.searchResults}</h1>
+      <form class="searchform big" action={url(lang, '/search/')} data-index={url(lang, '/search.json')} data-lang={lang}>
+        <input name="q" type="search" placeholder={T.searchArticlesPh} id="q" />
+        <button type="submit">{T.search}</button>
+      </form>
+      <p id="summary" class="muted"></p>
+      <div id="results" class="results"></div>
+    </div>
+    <Sidebar />
+  </div>
+  <script>
+    const q = new URLSearchParams(location.search).get('q')?.trim() ?? '';
+    const input = document.getElementById('q') as HTMLInputElement;
+    input.value = q;
+    const form = document.querySelector('.searchform.big') as HTMLElement;
+    const nl = form.dataset.lang === 'nl';
+    const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+    if (q) {
+      fetch(form.dataset.index!).then((r) => r.json()).then((items: any[]) => {
+        const terms = q.toLowerCase().split(/\s+/);
+        const hits = items.filter((i) => {
+          const hay = `${i.title} ${i.excerpt} ${i.categories.join(' ')} ${i.text}`.toLowerCase();
+          return terms.every((t) => hay.includes(t));
+        });
+        document.getElementById('summary')!.textContent = nl
+          ? `${hits.length} resultaat${hits.length === 1 ? '' : 'en'} voor “${q}”`
+          : `${hits.length} result${hits.length === 1 ? '' : 's'} for “${q}”`;
+        document.getElementById('results')!.innerHTML = hits.map((h) =>
+          `<article class="result"><small>${esc(h.categories.join(', '))}</small><h2><a href="${h.url}">${esc(h.title)}</a></h2><p>${esc(h.excerpt)} [...]</p></article>`).join('');
+      });
+    }
+  </script>
+</Base>

@@ -1,21 +1,24 @@
 ---
 import { slugify, formatDate, SITE, type Article } from '../lib';
+import { url, t, categoryName } from '../i18n';
 interface Props { article: Article }
 const { article } = Astro.props;
+const { lang } = article;
+const T = t(lang);
 const { title, date, categories, excerpt, image } = article.data;
-const href = `/${article.id}/`;
+const href = url(lang, `/${article.id}/`);
 ---
 <article class="card">
   <a href={href} class="card-img">
     <img src={image || `/images/${article.id}.svg`} alt="" loading="lazy" width="800" height="450" />
   </a>
   <div class="card-body">
-    <div class="card-cats">{categories.map((c, i) => <>{i > 0 && ', '}<a href={`/category/${slugify(c)}/`}>{c}</a></>)}</div>
+    <div class="card-cats">{categories.map((c, i) => <>{i > 0 && ', '}<a href={url(lang, `/category/${slugify(c)}/`)}>{categoryName(c, lang)}</a></>)}</div>
     <h2><a href={href}>{title}</a></h2>
     <p>{excerpt} [...]</p>
     <div class="card-meta">
-      <span>By {SITE.author} · {formatDate(date)}</span>
-      <a href={href} class="more">Read More</a>
+      <span>{`${T.by} ${SITE.author} · ${formatDate(date, lang)}`}</span>
+      <a href={href} class="more">{T.readMore}</a>
     </div>
   </div>
 </article>

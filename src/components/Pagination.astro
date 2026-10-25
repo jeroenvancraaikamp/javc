@@ -1,14 +1,16 @@
 ---
+import { langOf, t } from '../i18n';
 interface Props { page: { currentPage: number; lastPage: number; url: { prev?: string; next?: string } }; base: string }
 const { page, base } = Astro.props;
+const T = t(langOf(Astro.url.pathname));
 const pages = Array.from({ length: page.lastPage }, (_, i) => i + 1);
 const url = (n: number) => (n === 1 ? base : `${base}${n}/`);
 // On small screens only the first, last and current ±1 pages show; the rest collapse into "…".
 const near = (n: number) => n === 1 || n === page.lastPage || Math.abs(n - page.currentPage) <= 1;
 ---
 {page.lastPage > 1 && (
-  <nav class="pagination" aria-label="Pagination">
-    {page.url.prev && <a href={page.url.prev} class="prev" aria-label="Previous page">‹<span> Previous</span></a>}
+  <nav class="pagination" aria-label={T.pagination}>
+    {page.url.prev && <a href={page.url.prev} class="prev" aria-label={T.prevPage}>‹<span> {T.prev}</span></a>}
     {pages.map((n) => (
       <>
         {!near(n) && near(n - 1) && <span class="gap" aria-hidden="true">…</span>}
@@ -17,6 +19,6 @@ const near = (n: number) => n === 1 || n === page.lastPage || Math.abs(n - page.
           : <a href={url(n)} class:list={{ far: !near(n) }}>{n}</a>}
       </>
     ))}
-    {page.url.next && <a href={page.url.next} class="next" aria-label="Next page"><span>Next </span>›</a>}
+    {page.url.next && <a href={page.url.next} class="next" aria-label={T.nextPage}><span>{T.next} </span>›</a>}
   </nav>
 )}

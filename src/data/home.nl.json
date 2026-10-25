@@ -1,0 +1,27 @@
+{
+  "title": "Welkom bij JAVC Management & Consultancy",
+  "subtitle": "De website van Jeroen A. van Craaikamp in Amstelveen.",
+  "text": "Na meer dan 20 jaar ervaring en kennis te hebben opgebouwd als interne medewerker, kunnen bedrijven mij sinds 2022 inhuren als zelfstandig project-/programmamanager, platform-/product owner of architect op het gebied van Service Management, met IT4IT-platforms zoals ServiceNow.",
+  "intro": "Op de pagina \"[Artikelen/Publicaties](/articles/)\" vind je enkele tientallen blogs over de onderwerpen waar ik mee bezig ben.",
+  "blocks": [
+    {
+      "heading": "Wat ik doe",
+      "text": "Samen met stakeholders en leden van agile teams plan, verwerf, vernieuw, integreer, implementeer en beheer ik IT-producten en -platforms voor grote organisaties.",
+      "button": "Skills/Expertise",
+      "link": "/skills/"
+    },
+    {
+      "heading": "Tot nu toe",
+      "text": "De afgelopen decennia heb ik IT4IT- en CSM-projecten en -teams geleid, als interne medewerker of externe consultant, in uiteenlopende technische, commerciële en leidinggevende rollen.",
+      "button": "Projecten/Opdrachten",
+      "link": "/experience/"
+    },
+    {
+      "heading": "Voor wie",
+      "text": "Ik werkte voor bedrijven als KPN, Belastingdienst, KLM, Ericsson China, Tellabs, ING Bank, CRH, Digital Realty, IKEA, Booking, Action, Brenntag en Stater.",
+      "button": "Klanten/Werkgevers",
+      "link": "/customers-employers/"
+    }
+  ],
+  "source": "b70d3392517fbda7"
+}

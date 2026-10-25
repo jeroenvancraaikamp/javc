@@ -8,6 +8,7 @@ image: /wp-content/uploads/2024/08/law.jpg
 readingTime: 6
 popular: false
 draft: false
+lang: nl
 ---
 
 Met de regulering van arbeidsrelaties wil de overheid meer duidelijkheid en zekerheid bieden over de juridische positie van opdrachtgevers en opdrachtnemers. Door de handhaving van de Wet DBA en de introductie van de Wet VBAR wil zij schijnzelfstandigheid tegengaan en ervoor zorgen dat werkenden binnen het sociaal zekerheidsstelsel blijven. De uiteindelijke doelstelling is een transparante en eerlijke arbeidsmarkt zonder misbruik van flexibiliteit.

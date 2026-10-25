@@ -41,6 +41,30 @@ collections:
               - { name: button, label: Button text, widget: string }
               - { name: link, label: Button link, widget: string, hint: 'For example /skills/' }
 
+  - name: home_nl
+    label: Homepage (Nederlands)
+    files:
+      - name: home_nl
+        label: Homepage (Nederlands)
+        file: src/data/home.nl.json
+        format: json
+        preview_path: '/nl/'
+        fields:
+          - { name: title, label: Title (large heading), widget: string }
+          - { name: subtitle, label: Subtitle, widget: string }
+          - { name: text, label: Text over the video, widget: text }
+          - { name: intro, label: Line below the video, widget: string }
+          - name: blocks
+            label: Blocks
+            widget: list
+            fields:
+              - { name: heading, label: Heading, widget: string }
+              - { name: text, label: Text, widget: text }
+              - { name: button, label: Button text, widget: string }
+              - { name: link, label: Button link, widget: string }
+          - { name: locked, label: Keep my edits, widget: boolean, default: false, required: false, hint: 'Translated automatically from the English homepage. Tick this after correcting it yourself, so a change to the English text does not overwrite your version.' }
+          - { name: source, label: Source, widget: hidden, required: false }
+
   - name: articles
     label: Articles
     label_singular: Article
@@ -79,6 +103,7 @@ collections:
       - { name: readingTime, label: Reading time (minutes), widget: number, value_type: int, required: false }
       - { name: popular, label: Show under Popular, widget: boolean, default: false, required: false }
       - { name: draft, label: Draft (do not publish), widget: boolean, default: false, required: false }
+      - { name: lang, label: Language, widget: select, options: [{ label: English, value: en }, { label: Nederlands, value: nl }], default: en, required: false, hint: 'The language you write this in. The other language is translated automatically (see Translations).' }
       - { name: linkedin, label: LinkedIn post, widget: string, required: false, hint: 'Optional: paste the link to your LinkedIn post about this article. A "Discuss this article on LinkedIn" button then appears next to the comments.' }
       - { name: body, label: Text, widget: markdown, modes: [rich_text, raw] }
 
@@ -116,4 +141,45 @@ collections:
       - { name: wide, label: Full width, widget: boolean, default: false, required: false }
       - { name: layout, label: Layout, widget: select, options: [{ label: Standard, value: default }, { label: 'Two columns (each ## heading is a block)', value: columns }], default: default, required: false }
       - { name: banner, label: Banner at the top, widget: image, required: false }
+      - { name: lang, label: Language, widget: select, options: [{ label: English, value: en }, { label: Nederlands, value: nl }], default: en, required: false, hint: 'The language you write this in. The other language is translated automatically (see Translations).' }
+      - { name: legal, label: Legal text, widget: boolean, default: false, required: false, hint: 'The translation then says that the original text prevails.' }
+      - { name: body, label: Text, widget: markdown, modes: [rich_text, raw] }
+
+  # Automatic translations (scripts/translate.mjs, GitHub Action "Translate"). File name: <slug>.<lang>.md.
+  - name: translations_articles
+    label: Translations of articles
+    label_singular: Translation
+    folder: src/content/translations/articles
+    extension: md
+    format: frontmatter
+    create: false
+    delete: false
+    identifier_field: title
+    summary: "{{locked | ternary('KEPT · ', '')}}{{title}}  ·  {{slug}}"
+    sortable_fields: [title, commit_date]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: excerpt, label: Excerpt, widget: text, required: false }
+      - { name: menu, label: Menu name, widget: string, required: false }
+      - { name: locked, label: Keep my edits, widget: boolean, default: false, required: false, hint: 'Tick this after correcting the translation yourself: changes to the original are then no longer translated over it.' }
+      - { name: source, label: Source, widget: hidden, required: false }
+      - { name: body, label: Text, widget: markdown, modes: [rich_text, raw] }
+
+  - name: translations_pages
+    label: Translations of pages
+    label_singular: Translation
+    folder: src/content/translations/pages
+    extension: md
+    format: frontmatter
+    create: false
+    delete: false
+    identifier_field: title
+    summary: "{{locked | ternary('KEPT · ', '')}}{{title}}  ·  {{slug}}"
+    sortable_fields: [title, commit_date]
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: excerpt, label: Excerpt, widget: text, required: false }
+      - { name: menu, label: Menu name, widget: string, required: false }
+      - { name: locked, label: Keep my edits, widget: boolean, default: false, required: false, hint: 'Tick this after correcting the translation yourself: changes to the original are then no longer translated over it.' }
+      - { name: source, label: Source, widget: hidden, required: false }
       - { name: body, label: Text, widget: markdown, modes: [rich_text, raw] }

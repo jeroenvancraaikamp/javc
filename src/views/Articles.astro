@@ -1,0 +1,9 @@
+---
+// Article list (/articles/), shared by the English and Dutch routes.
+import ArticleList from '../components/ArticleList.astro';
+import { langOf, url, t } from '../i18n';
+const lang = langOf(Astro.url.pathname);
+const T = t(lang);
+const { page } = Astro.props;
+---
+<ArticleList title={T.articles} hideTitle crumbs={[{ label: T.articles }]} page={page} base={url(lang, '/articles/')} />
