@@ -5,6 +5,8 @@ order: 1
 wide: false
 layout: columns
 banner: /wp-content/uploads/2022/10/shutterstock_1133982488.png
+lang: en
+legal: false
 ---
 
 ##  About me
@@ -104,6 +106,4 @@ Since 2001, I have worked in IT in the following roles:
 
 I believe I'm best in a role that requires a mix of managerial, process, and technical/architectural skills. **I prefer roles such as Project/Program Manager or Interim Platform/Product Owner,** collaborating with management, stakeholders, vendors, and internal/external expert teams.
 
-I love sharing the ServiceNow expertise I have built while working as a Consultant. For a couple of years, 
-
-I can **implement, maintain, and innovate the ServiceNow Platform, including its supported Practices and** **Integrations.**
+I love sharing the ServiceNow expertise I have built while working as a Consultant. I **implement, maintain, and innovate the ServiceNow Platform, including its supported Practices and** **Integrations.**
