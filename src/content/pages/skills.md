@@ -98,7 +98,8 @@ Since 2001, I have worked in IT in the following roles:
 -   CSDM 5
 -   ITIL 3, 4, and 5
 -   IT4IT 3.0
--   ArchiMate 3.2 / TOGAF
+-   ArchiMate 3.2
+-   TOGAF 10
 -   Prince2/Agile Scrum/SAFe
 -   Misc, Compliance Frameworks
 
