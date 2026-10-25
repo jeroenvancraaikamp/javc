@@ -15,7 +15,7 @@ const articles = defineCollection({
     // Link to the LinkedIn post about this article: shows a "Discuss on LinkedIn" button under the article.
     linkedin: z.string().url().optional().or(z.literal('')),
     // Language the article is written in; the other languages are translations in src/content/translations.
-    lang: z.enum(['en', 'nl', 'zh']).default('en'),
+    lang: z.enum(['en', 'nl', 'cn']).default('en'),
   }),
 });
 
@@ -28,7 +28,7 @@ const pages = defineCollection({
     wide: z.boolean().default(false),
     layout: z.enum(['default', 'columns']).default('default'),
     banner: z.string().optional(),
-    lang: z.enum(['en', 'nl', 'zh']).default('en'),
+    lang: z.enum(['en', 'nl', 'cn']).default('en'),
     // Legal text: a translation says the original language prevails.
     legal: z.boolean().default(false),
   }),

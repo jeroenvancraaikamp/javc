@@ -1,10 +1,10 @@
 // The site in three languages: English on the plain addresses (/skills/), Dutch under /nl/ (/nl/skills/)
-// and Simplified Chinese under /zh/ (/zh/skills/).
-export type Lang = 'en' | 'nl' | 'zh';
-export const LANGS: Lang[] = ['en', 'nl', 'zh'];
-const PREFIX = /^\/(nl|zh)(?=\/|$)/;
+// and Simplified Chinese under /cn/ (/cn/skills/).
+export type Lang = 'en' | 'nl' | 'cn';
+export const LANGS: Lang[] = ['en', 'nl', 'cn'];
+const PREFIX = /^\/(nl|cn)(?=\/|$)/;
 
-// The language of a path, and the path without its language part: '/zh/skills/' → 'zh', '/skills/'.
+// The language of a path, and the path without its language part: '/cn/skills/' → 'cn', '/skills/'.
 export const langOf = (path: string): Lang => (path.match(PREFIX)?.[1] as Lang) ?? 'en';
 export const basePath = (path: string) => path.replace(PREFIX, '') || '/';
 
@@ -12,15 +12,15 @@ export const basePath = (path: string) => path.replace(PREFIX, '') || '/';
 export const url = (lang: Lang, path: string) =>
   !path.startsWith('/') || path.startsWith('//') ? path : lang === 'en' ? basePath(path) : `/${lang}${basePath(path)}`;
 
-export const locale = { en: 'en-GB', nl: 'nl-NL', zh: 'zh-CN' } as const;
+export const locale = { en: 'en-GB', nl: 'nl-NL', cn: 'zh-CN' } as const;
 // Name of each language in its own language, for the flags.
-export const LANG_LABEL = { en: 'English', nl: 'Nederlands', zh: '简体中文' } as const;
+export const LANG_LABEL = { en: 'English', nl: 'Nederlands', cn: '简体中文' } as const;
 
 // "Translated from ..." in the language of the page.
 const FROM = {
-  en: { en: 'English', nl: 'Dutch', zh: 'Chinese' },
-  nl: { en: 'het Engels', nl: 'het Nederlands', zh: 'het Chinees' },
-  zh: { en: '英文', nl: '荷兰语', zh: '中文' },
+  en: { en: 'English', nl: 'Dutch', cn: 'Chinese' },
+  nl: { en: 'het Engels', nl: 'het Nederlands', cn: 'het Chinees' },
+  cn: { en: '英文', nl: '荷兰语', cn: '中文' },
 };
 
 const STRINGS = {
@@ -94,7 +94,7 @@ const STRINGS = {
     legalNote: 'Dit is een vertaling van het Engelse origineel. Bij verschil in uitleg is de Engelse tekst leidend.',
     legalOriginal: 'Lees het Engelse origineel',
   },
-  zh: {
+  cn: {
     description: 'Jeroen van Craaikamp 的 IT 管理与咨询服务。',
     skip: '跳到正文',
     menu: '菜单',
@@ -124,7 +124,7 @@ const STRINGS = {
     prevPage: '上一页',
     nextPage: '下一页',
     pagination: '分页',
-    translatedFrom: (from: Lang) => `本文译自${FROM.zh[from]}。`,
+    translatedFrom: (from: Lang) => `本文译自${FROM.cn[from]}。`,
     readOriginal: '阅读原文',
     legalNote: '本文为荷兰语原文的中文译本。如有任何解释上的差异，以荷兰语文本为准。',
     legalOriginal: '阅读荷兰语原文',
@@ -133,5 +133,5 @@ const STRINGS = {
 export const t = (lang: Lang) => STRINGS[lang];
 
 // Category names shown on the site; the name itself (and its address) stays the same in both languages.
-const CATEGORY_NAMES: Partial<Record<Lang, Record<string, string>>> = { nl: { Uncategorized: 'Overig' }, zh: { Uncategorized: '其他' } };
+const CATEGORY_NAMES: Partial<Record<Lang, Record<string, string>>> = { nl: { Uncategorized: 'Overig' }, cn: { Uncategorized: '其他' } };
 export const categoryName = (name: string, lang: Lang) => CATEGORY_NAMES[lang]?.[name] || name;

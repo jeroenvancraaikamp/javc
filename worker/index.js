@@ -72,22 +72,22 @@ function search(query, k = TOP_K) {
 const SYSTEM = `You are the assistant on javc.nl, the website of Jeroen van Craaikamp (JAVC Management & Consultancy), a freelance ServiceNow implementation manager and consultant in Amstelveen, the Netherlands. Visitors ask about Jeroen, his experience and services, and the topics he writes about (ServiceNow, CMDB, CSDM, IT4IT, ITIL, TBM, ESM).
 
 How to answer:
-- Answer in the language named with each question (the language of the page the visitor is on: the site is in English, with a Dutch version under /nl/ and a Simplified Chinese version under /zh/).
+- Answer in the language named with each question (the language of the page the visitor is on: the site is in English, with a Dutch version under /nl/ and a Simplified Chinese version under /cn/).
 - Base your answer on the passages provided with each question. If they don't cover the question, say you don't know based on the site, and don't make things up. General background knowledge is fine for explaining a concept, but never invent facts about Jeroen.
 - Keep answers short and conversational (a few sentences or a short list). Your answer may be read aloud, so avoid tables.
 - When an answer comes from an article or page, mention its title and link it in Markdown with the path given, e.g. [Title](/path/).
 - Refer to Jeroen in the third person. For hiring, quotes or contact, point to the contact page [Contact me](/contact-me/) or Info@JAVC.nl.`;
 
-// The Dutch site lives under /nl/, the Chinese one under /zh/: point links to site pages there for those visitors.
-const LANG_NAME = { en: 'English', nl: 'Dutch', zh: 'Simplified Chinese' };
+// The Dutch site lives under /nl/, the Chinese one under /cn/: point links to site pages there for those visitors.
+const LANG_NAME = { en: 'English', nl: 'Dutch', cn: 'Simplified Chinese' };
 const LANGS = Object.keys(LANG_NAME);
 function localPath(path, lang) {
-  if (lang === 'en' || !path?.startsWith('/') || /^\/(nl|zh)\//.test(path) || /^\/(wp-content|images|media|files|api)\//.test(path)) return path;
+  if (lang === 'en' || !path?.startsWith('/') || /^\/(nl|cn)\//.test(path) || /^\/(wp-content|images|media|files|api)\//.test(path)) return path;
   return `/${lang}${path}`;
 }
 const SORRY = {
-  refused: { en: "Sorry, I can't help with that question.", nl: 'Sorry, met die vraag kan ik je niet helpen.', zh: '抱歉，这个问题我无法回答。' },
-  none: { en: 'Sorry, I have no answer to that.', nl: 'Sorry, daar heb ik geen antwoord op.', zh: '抱歉，我没有这个问题的答案。' },
+  refused: { en: "Sorry, I can't help with that question.", nl: 'Sorry, met die vraag kan ik je niet helpen.', cn: '抱歉，这个问题我无法回答。' },
+  none: { en: 'Sorry, I have no answer to that.', nl: 'Sorry, daar heb ik geen antwoord op.', cn: '抱歉，我没有这个问题的答案。' },
 };
 const localLinks = (text, lang) => text.replace(/\]\((\/[^)\s]*)\)/g, (_, p) => `](${localPath(p, lang)})`);
 
@@ -222,8 +222,8 @@ async function contact(request, env) {
   if (denied) return denied;
   let f;
   try { f = await request.json(); } catch { return json({ error: 'Bad request' }, 400); }
-  // Error messages in the language of the form (the Dutch contact page sends lang: 'nl', the Chinese one 'zh').
-  const say = (en, nl, zh) => ({ en, nl, zh })[f?.lang] ?? en;
+  // Error messages in the language of the form (the Dutch contact page sends lang: 'nl', the Chinese one 'cn').
+  const say = (en, nl, cn) => ({ en, nl, cn })[f?.lang] ?? en;
   const field = (k, max) => (typeof f?.[k] === 'string' ? f[k].trim().slice(0, max) : '');
   const name = field('name', 200), email = field('email', 200), phone = field('phone', 50), message = field('message', 5000);
 

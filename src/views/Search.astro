@@ -34,7 +34,7 @@ const T = t(lang);
         });
         document.getElementById('summary')!.textContent = lang === 'nl'
           ? `${hits.length} resultaat${hits.length === 1 ? '' : 'en'} voor “${q}”`
-          : lang === 'zh'
+          : lang === 'cn'
             ? `“${q}”共有 ${hits.length} 条结果`
             : `${hits.length} result${hits.length === 1 ? '' : 's'} for “${q}”`;
         document.getElementById('results')!.innerHTML = hits.map((h) =>

@@ -70,9 +70,9 @@ collections:
     files:
       - name: home_zh
         label: Homepage (中文)
-        file: src/data/home.zh.json
+        file: src/data/home.cn.json
         format: json
-        preview_path: '/zh/'
+        preview_path: '/cn/'
         fields:
           - { name: title, label: Title (large heading), widget: string }
           - { name: subtitle, label: Subtitle, widget: string }

@@ -13,7 +13,7 @@ See `src/content/articles/what-an-article-can-hold.md` for every supported conte
 
 ## Three languages
 
-The site is in English at the plain addresses (`/skills/`), in Dutch under `/nl/` (`/nl/skills/`) and in Simplified Chinese under `/zh/` (`/zh/skills/`); the flags at the top left switch between them. Every article and page has a `lang` field (English by default) for the language it is written in. The other languages are translations in `src/content/translations/<articles|pages>/<slug>.<lang>.md` (homepage: `src/data/home.nl.json`, `src/data/home.zh.json`); until one exists, the original is shown. The Dutch and Chinese routes are copies of the English ones in `src/pages/nl/` and `src/pages/zh/`.
+The site is in English at the plain addresses (`/skills/`), in Dutch under `/nl/` (`/nl/skills/`) and in Simplified Chinese under `/cn/` (`/cn/skills/`); the flags at the top left switch between them. Every article and page has a `lang` field (English by default) for the language it is written in. The other languages are translations in `src/content/translations/<articles|pages>/<slug>.<lang>.md` (homepage: `src/data/home.nl.json`, `src/data/home.cn.json`); until one exists, the original is shown. The Dutch and Chinese routes are copies of the English ones in `src/pages/nl/` and `src/pages/cn/`.
 
 After every change on `main`, the GitHub Action **Translate** (`scripts/translate.mjs`) translates what is new or changed with Claude and commits it. It needs the repository secret `ANTHROPIC_API_KEY`. To correct a translation yourself, edit it in the CMS under *Translations* and tick *Keep my edits*. Interface texts (menu, buttons, sidebar) are in `src/i18n.ts`.
 

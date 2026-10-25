@@ -1,7 +1,7 @@
 ---
 // Floating chat assistant: type or speak a question, the answer comes from /api/chat
 // (see worker/index.js). Voice uses the browser's own speech recognition and speech synthesis.
-interface Props { lang?: 'en' | 'nl' | 'zh' }
+interface Props { lang?: 'en' | 'nl' | 'cn' }
 const { lang = 'en' } = Astro.props;
 ---
 <div class="chat" id="chat" data-open="false" data-lang={lang}>
@@ -44,8 +44,8 @@ const { lang = 'en' } = Astro.props;
 
   // The assistant speaks the language of the page (text, voice input and read-aloud).
   const root = document.getElementById('chat')!;
-  const lang = (['nl', 'zh'].includes(root.dataset.lang!) ? root.dataset.lang : 'en') as 'en' | 'nl' | 'zh';
-  const speech = { en: 'en-GB', nl: 'nl-NL', zh: 'zh-CN' }[lang];
+  const lang = (['nl', 'cn'].includes(root.dataset.lang!) ? root.dataset.lang : 'en') as 'en' | 'nl' | 'cn';
+  const speech = { en: 'en-GB', nl: 'nl-NL', cn: 'zh-CN' }[lang];
   const T = {
     en: {
       sub: "Ask me about Jeroen's work and articles", speak: 'Read answers aloud', reset: 'New conversation',
@@ -59,7 +59,7 @@ const { lang = 'en' } = Astro.props;
       hello: 'Hoi! Ik ken alle artikelen op deze site en het cv van Jeroen. Waarmee kan ik je helpen?',
       error: 'Er ging iets mis. Probeer het later nog eens.', sources: 'Bronnen',
     },
-    zh: {
+    cn: {
       sub: '问我关于 Jeroen 的工作和文章', speak: '朗读回答', reset: '新对话',
       mic: '语音提问', ph: '输入您的问题…', listening: '正在聆听…', thinking: '思考中…',
       hello: '您好！我了解本站的所有文章和 Jeroen 的简历。有什么可以帮您？',
