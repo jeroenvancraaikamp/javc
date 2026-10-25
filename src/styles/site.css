@@ -19,6 +19,9 @@ a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-2); }
 img { max-width: 100%; height: auto; display: block; }
 h1, h2, h3, h4 { font-family: var(--head-font); color: var(--heading); line-height: 1.3; }
+/* Chinese pages: Chinese characters in Noto Sans SC (loaded on /cn/ pages only), Latin letters stay in Open Sans. */
+html:lang(zh) { --head-font: 'Open Sans', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+html:lang(zh) body, html:lang(zh) #nav a { font-family: var(--head-font); }
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
 .skip { position: absolute; left: -999px; }
 .skip:focus { left: 10px; top: 10px; background: #fff; padding: 8px 12px; z-index: 99; }
@@ -35,7 +38,7 @@ h1, h2, h3, h4 { font-family: var(--head-font); color: var(--heading); line-heig
 .social svg[hidden] { display: none; }
 .social[hidden] { display: none; }
 .lang-switch { margin-right: auto; display: flex; gap: 8px; padding: 3px 0; }
-/* Two flags side by side as wide as the green "JAVC" block of the logo (116/350 of the logo width). */
+/* Flag size: two flags side by side are as wide as the green "JAVC" block of the logo (116/350 of the logo width). */
 .lang-switch a { display: block; line-height: 0; border-radius: 3px; opacity: .55; transition: opacity .15s; }
 .lang-switch a:hover, .lang-switch a[aria-current] { opacity: 1; }
 .lang-switch svg { width: 44px; height: 29px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(0,0,0,.12); }

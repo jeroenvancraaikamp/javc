@@ -1,0 +1,8 @@
+---
+import Entry from '../../views/Entry.astro';
+import { entryPaths } from '../../lib';
+export function getStaticPaths() {
+  return entryPaths('cn');
+}
+---
+<Entry {...Astro.props} />

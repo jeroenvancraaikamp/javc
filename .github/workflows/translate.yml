@@ -12,6 +12,7 @@ on:
       - 'src/content/translations/**'
       - 'src/data/home.json'
       - 'src/data/home.nl.json'
+      - 'src/data/home.cn.json'
       - 'scripts/translate.mjs'
   workflow_dispatch:
 
@@ -43,7 +44,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/content/translations src/data/home.nl.json
+          git add src/content/translations src/data/home.nl.json src/data/home.cn.json
           git diff --cached --quiet && echo "Nothing to commit" && exit 0
           git commit -m "Update translations"
           for i in 1 2 3; do git pull --rebase origin main && git push && exit 0; sleep 5; done
