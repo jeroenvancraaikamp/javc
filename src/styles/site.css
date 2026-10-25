@@ -39,7 +39,9 @@ h1, h2, h3, h4 { font-family: var(--head-font); color: var(--heading); line-heig
 .lang-switch a:hover { opacity: 1; background: #e6e6e6; }
 .lang-switch a[aria-current] { opacity: 1; color: var(--text) !important; }
 .lang-switch svg { width: 20px; height: 13px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.12); }
-.masthead { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; box-shadow: 0 1px 6px rgba(0,0,0,.04); }
+/* Top bar (flags, contact icons) and menu bar stay at the top together while scrolling. */
+.site-head { position: sticky; top: 0; z-index: 50; }
+.masthead { background: #fff; border-bottom: 1px solid var(--line); position: relative; box-shadow: 0 1px 6px rgba(0,0,0,.04); }
 .masthead .wrap { max-width: 1400px; display: flex; align-items: center; justify-content: space-between; min-height: 100px; gap: 24px; }
 .logo { display: flex; align-items: center; line-height: 1; flex-shrink: 0; }
 .logo img { height: 50px; width: auto; }
