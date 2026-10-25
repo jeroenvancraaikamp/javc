@@ -24,14 +24,14 @@ The AI agents and Fulfillers collaborate with other AI agents and enable orchest
 -   Request & Maintain **Catalog of Orderable/Consumable products and services** (Catalog Mngt)
 -   Request & Deliver an **Enhancement** to an existing Digital Product (ideation & Planning)
 -   Request & Provide **Logical Access to a Digital Product** (Identity and Access Mngt)
--   Review & Maintain I**nformation/instructions** (Knowledge Mngt)
--   Review & Maintain **Legislation,** **Policies, Controls, and Risks**
+-   Review & Maintain **Information/instructions** (Knowledge Mngt)
+-   Review & Maintain **Legislation, Policies, Controls, and Risks**
 -   Discover & Monitor **Inventory of Digital Products** (CMDB, IT/OT Operations Mngt)
 -   Determine & Manage **License/Asset Utilization** (IT/OT Asset Mngt)
 
 **Technical/IT Support:**
 
--   Ask & Respond to a **Generic question/reques**t (Universal Request Mngt)
+-   Ask & Respond to a **Generic question/request** (Universal Request Mngt)
 -   Request & Orchestrate a **Password or User lock-out reset**
 -   Register & Communicate **Unavailability** (Planned Maintenance & Major incidents)
 -   Raise & Resolve a **Service interruption/degradation** (Incident Mngt.)
@@ -52,15 +52,13 @@ The AI agents and Fulfillers collaborate with other AI agents and enable orchest
 -   Raise & Process a **Finance Case/Request** (Financial Operations)
 -   Raise & Process a **Customer Case/Request** (Customer Service Mngt)
 -   Request & Manage **Joiners, Movers, and Leavers** (JML)
--   **Review & Maintain Business Continuity Plans & DR (**Intergrated Risk Mngt**)**
--   Detect and Resolve **Policy and Compliance Issues (**Audit & follow-up)
+-   Review & Maintain **Business Continuity Plans & DR** (Integrated Risk Mngt)
+-   Detect and Resolve **Policy and Compliance Issues** (Audit & follow-up)
 
 The above includes registration of entitlements, commitments, subscriptions, transactions, usage, traffic, contracts, consumption, purchase orders, deliveries, invoices, etc..  
   
 
-**WHY IS THIS IMPORTANT?  
-  
-**
+**WHY IS THIS IMPORTANT?**
 
 Each of the bullets above represents a separate best practice in enterprise management.  
   

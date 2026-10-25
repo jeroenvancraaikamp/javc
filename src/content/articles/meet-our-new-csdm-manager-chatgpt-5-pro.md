@@ -77,8 +77,8 @@ Got it. Below is a concrete, CSDM-5/TBM-5–aligned modeling recipe for your lan
 
 **Register these CIs and records**
 
-**1) Business Services & Offerings (what the business consumes)  
-****Tables:** cmdb\_ci\_service (Business Service), service\_offering (Service Offering)
+**1) Business Services & Offerings (what the business consumes)**  
+**Tables:** cmdb\_ci\_service (Business Service), service\_offering (Service Offering)
 
 Create Business Services:
 
@@ -102,8 +102,8 @@ Under each, create Offerings (non-exhaustive):
 
 **CSDM link:** Set each Offering’s **business\_service** reference to its parent Business Service.
 
-**2) Application Services per instance/product (the runnable services).  
-**
+**2) Application Services per instance/product (the runnable services).**  
+
 
 **Table:** cmdb\_ci\_service\_auto
 
@@ -132,8 +132,8 @@ For each ServiceNow product you actively run, create **Application Services per 
 
 **NOTE OF THE AUTOR: If the same Self-Service Portal is used for multiple "Shared and Corporate" an "Delivery" TBM5 Solutions, you would technically not be able to create different services for those solutions (e.g. one for resp. HR, FIN, IT, DevOps, SecOps, etc) and link all of these Services to the same offering. Elevating the Self-Service Portal to a Service, would be a technical work around and have "ServiceNow Support \[PRD\]" and "ServiceNow VIP Support \[PRD\]" as Service Offerings. Downside thereof is that you would get thousands of Services when applying this logic. So, instead i would have expected to see one generic "ServiceNow ESM" Business Service. with the offerings such as "ServiceNow Portal Support \[PRD\]", "ServiceNow Back-End Support \[PRD\], "ServiceNow VIP Support \[PRD\]" and "ServiceNow Portal Support \[NON-PRD\]"**
 
-**3) Business Applications (logical apps)  
-****Table:** cmdb\_ci\_business\_app
+**3) Business Applications (logical apps)**  
+**Table:** cmdb\_ci\_business\_app
 
 Create (logical) Business Applications for platform capabilities (stable across environments):
 
@@ -147,8 +147,8 @@ Create (logical) Business Applications for platform capabilities (stable across 
 
 **NOTE OF AUTHOR: Indeed, creating separate business applications and host them on the "ServiceNow Platform" makes perfect sense. That said, i would recommend o club similar applications together to keep the number of ServiceNow Business Applications limited to less than 6., The proposed relation is slighty wrong compared to the slide above, it should be Business Application (parent) "consumes::consumed by" Application Service (child), In all fairness to ChatGPT, in other ServiceNow docs i have also seen** **Business Application (parent) "depends on::uses" Application Service**
 
-**4) Technical Services for shared tech/platforms  
-**
+**4) Technical Services for shared tech/platforms**  
+
 
 **Table:** cmdb\_ci\_service\_technical
 
@@ -182,8 +182,8 @@ For example, ServiceNow ITSM – PRD **Depends on**:
 -   AIOps Event Sources – IT4IT Tools (events to PRD)
 -   Identity & Access – Saviynt (when live)
 
-**5) Infrastructure: Windows VMs and MID Servers  
-****Tables:**
+**5) Infrastructure: Windows VMs and MID Servers**  
+**Tables:**
 
 -   VM/Server: cmdb\_ci\_server (or subclass cmdb\_ci\_win\_server if you use it)
 -   VM instance (optional): cmdb\_ci\_vm\_instance (IaaS metadata)
@@ -354,7 +354,7 @@ Use **cmdb\_rel\_ci** with these types:
     -   OCI – MID Host – PRD
     -   OCI – MID Host – NONPRD
 
--   Software Instances (cmdb**\_ci\_**software\_instance):
+-   Software Instances (cmdb\_ci\_software\_instance):
     -   MID Server – PRD (Runs on OCI – MID Host – PRD)
     -   MID Server – DEV (Runs on OCI – MID Host – NONPRD)
     -   MID Server – TST (Runs on OCI – MID Host – NONPRD)

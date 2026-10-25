@@ -19,7 +19,7 @@ Different lenses, different focus.
 -   Asset Managers track the book value, operational costs, whereabouts, and the owners/consumers of their ****Financial Assets.****
 -   Master Data Stewards administer **Foundational, cross-portfolio data** in various tools.
 
-**ServiceNow considers all of the portfolios to be part of the Digital Product Portfolio of the Enterprise** and manages them using Digital Portfolio Management (DPM). That said, underneath the DPM hood, the individual portfolios, specific practices, and application modules are being used**.** I.e., you can't do IT Service Management in ServiceNow if you don't implement (management of) a Service Portfolio in ServiceNow.
+**ServiceNow considers all of the portfolios to be part of the Digital Product Portfolio of the Enterprise** and manages them using Digital Portfolio Management (DPM). That said, underneath the DPM hood, the individual portfolios, specific practices, and application modules are being used. I.e., you can't do IT Service Management in ServiceNow if you don't implement (management of) a Service Portfolio in ServiceNow.
 
 > Nowadays, the managed portfolio items are manually maintained by their stakeholders (in the various portfolios), and built components (stored in technology-specific repositories) are deployed via automated pipelines. The deployed items are automatically detected and recorded in the CMDB, and related Assets are automatically created/updated. Deployed items may be technically tagged so that non-technical attribute values can be automatically detected, and manual CMDB update is no longer needed.
 
@@ -58,7 +58,7 @@ In CSDM5, the following artifacts were defined:
 -   **Companies may produce/maintain their own Applications on Platforms that they consume as a Service**. E.g., SAP S/4 HANA Is consumed as a Service from SAP, and (a partner of) the company creates custom configurations/workflows for it. Coarse-grained applications that are produced by (a partner of) the company may be registered as applications, and their configurations/scripts/api's are considered as Components.
 -   Considering that the only consistent thing is change, it is recommended to **adopt market standard taxonomy and master data** from an authoritative source that ideally is vendor agnostic and that is kept up to date by a governance body. E.g., the TBM Council maintains a good Taxonomy model with ready to use and well defined data.
 
-**For the Record****:**
+**For the Record**:
 
 -   **Assets** in ISO-27000, ISO55000, IFRS/GAAP, and other formal frameworks are defined/scoped differently than in ITSM/ITIL.
 -   ServiceNow differentiates between **Service Instances** (that are used by consumers) and **Configuration Items** (that may support one or more Service Instances).
@@ -76,7 +76,7 @@ In CSDM5, the following artifacts were defined:
 -   **Technical Applications:** "Intune", "JAMF", "Cisco Works", "SQL Server 2016" , "SQL Server 2022", ".NET 4", "Python 7", "MuleSoft", "Tibco"  
     
 -   **Components:** "SN MidServer", "JAVASCRPT X V93.47", "AI Agent Y"
--   **Services:** "Database Support"**, "**Middleware Support", "PC Support", "Windows Server/VM Support",
+-   **Services:** "Database Support", "Middleware Support", "PC Support", "Windows Server/VM Support",
 -   **Offerings:** "Database \[EMEA, PROD\]", "Database \[LATAM, PROD\]", "Database \[EMEA, NON-PROD\]", "Windows PC \[NL\]", "IT Service Management \[PROD\]",  
     "Windows VM \[AZURE\]","Windows VM \[OCI\]", "Windows VM \[AWS\]"
 -   **Service Instances:** "PRD.Service-Now.com", "DEV.Service-Now.com", "SQL-Server@VM2028038", "API-32312"
