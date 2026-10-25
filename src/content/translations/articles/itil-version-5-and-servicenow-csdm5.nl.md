@@ -1,0 +1,40 @@
+---
+title: "Overlap tussen ITIL Version 5, CSDM5, DevSecOps en IT4IT 3.0"
+excerpt: "ITIL Version 5 is in februari 2026 gepubliceerd en nu vragen mensen me hoe dat aansluit op DevOps, SecOps, IT4IT 3.0 en CSDM5. Het eerlijke antwoord is: er lijkt geen echte aansluiting te zijn tussen de frameworks. Vanuit een satelliet gezien,"
+source: "2d6e7c21bfeb6cc6"
+---
+
+ITIL Version 5 is in februari 2026 gepubliceerd en nu vragen mensen me hoe dat aansluit op DevOps, SecOps, IT4IT 3.0 en CSDM5. Het eerlijke antwoord is: **er lijkt geen echte aansluiting te zijn tussen de frameworks.** Vanuit een satelliet gezien lijken de frameworks op elkaar, maar hoe dichter je bij de praktijk komt, hoe groter de verschillen en de verwarring lijken te worden. Het wordt nog vager wanneer je COTS-producten en productspecifieke practices op een van de frameworks probeert te mappen.
+
+In het beste geval kun je een plaatje maken zoals hierboven of een tabel zoals hieronder. Een CSDM5-domein kan meerdere ITIL Version 5-lifecycles omvatten. Een ITIL Version 5-lifecycle kan op meerdere CSDM5-domeinen van toepassing zijn. De IT4IT-value streams lijken op de CSDM5-domeinen en de stappen van de ITIL Version 5-lifecycle, maar zijn er niet volledig congruent mee.
+
+Dat gezegd hebbende, kan de onderstaande tabel helpen om IT simpel te houden. Bijvoorbeeld:
+
+-   Als je ITIL5 "Discover" en "Design" samenvoegt, krijg je wat in CSDM5 "Ideation, Strategy, Design, Planning, and Manage Portfolio" heet.
+-   Als je ITIL5 "Deliver" en "Support" samenvoegt, krijg je wat in CSDM5 "Service Consumption" heet.
+-   Als je het DevOps-deel van CSDM5 Foundation samenvoegt met CSDM5 Build and Integration, heb je wat agile IT'ers DEVOPS zouden noemen.
+-   Als je het Service Delivery-deel van ITIL5 "Transition" en "Operate" samenvoegt, heb je "Service Delivery" in CSDM5, waar SECOPS onder valt.
+
+Daarna lees je de kleine lettertjes en concludeer je dat het niet zo simpel is. Bovendien doet elk bedrijf IT meestal op zijn eigen manier. Hoe groter of verspreider het bedrijf, hoe groter de diversiteit. De harde realiteit is dat negen van de tien initiatieven om practices in de hele organisatie te institutionaliseren of te standaardiseren geen noemenswaardige waarde of resultaten opleveren. Niets doen om de situatie te verbeteren is echter ook een recept voor een ramp. Ik hanteer vaak het paretoprincipe: steek er 20% van de moeite in en haal 80% van het resultaat. Vaak is er geen haalbare business case om ook de resterende 20% na te streven.
+
+In de huidige praktijk gebruiken DevOps-communities doorgaans een paar dozijn technologiespecifieke tools. Ideation, Strategy en Portfolio worden vaak nog in O365 beheerd. Service Delivery en Service Consumption worden steeds vaker beheerd via servicemanagementtools, waarmee workflows ook buiten IT mogelijk worden. Het wordt steeds logischer om Ideation, Strategy en Portfolio samen te voegen met Service Consumption en Service Delivery.
+
+Als je CSDM "Ideation & Strategy" combineert met "Design and Planning", krijg je IT4IT "Strategy to Portfolio (PLAN)", waar ITIL Version 5 "Discover", "Acquire" en "Design" onder vallen. De drie frameworks zijn het erover eens dat de "BUILD" van een oplossing iets unieks is. Elk framework heeft echter een andere opvatting over de vraag of integratie, testen en release naar productie onder BUILD vallen. Alle drie de frameworks kennen het begrip "DELIVERY", maar ze bedoelen er elk iets anders mee. Waar IT4IT lijkt te wachten tot er iets wordt gedetecteerd dat gecorrigeerd moet worden, zorgt ITIL Version 5 voor "Operate" en "Support" van IT-infrastructuur en levert CSDM "a Consumable Service".
+
+Ik geloof dat er meer is dan IT en dat er enterprise-brede agentic AI-platforms zullen ontstaan die in alle behoeften van medewerkers voorzien. Delivery zal niet langer beperkt blijven tot de levering/release van digitale producten. Ik verwacht dat organisaties binnen een paar jaar elk een of twee enterprise-AI-platforms gebruiken, omringd door nicheproducten/-agents die met die platforms samenwerken. Het zou me ook niet verbazen als bedrijven besluiten Customer Service Management (CSM) en Customer Relationship Management (CRM) via hetzelfde ([IT4ESM?](https://it4esm.nl/)) platform mogelijk te maken.
+
+**Elk framework heeft dus zijn voor- en nadelen, en naar mijn mening is geen enkel framework 100% correct of 100% compleet.** Waarschijnlijk is het het beste om te cherrypicken en richtlijnen/governance uit bestaande frameworks over te nemen, in plaats van all-in te gaan op één framework of alle practices te implementeren die in elk framework zijn gedefinieerd. En ja, dat betekent dat je moet accepteren dat er geen one-size-fits-all framework bestaat. Het goede nieuws: er zijn meerdere leveranciers die common-off-the-shelf platforms aanbieden met eveneens voorgeconfigureerde practices en integraties.
+
+> Ik denk dat het voor commodity servicemanagement het beste is om common-off-the-shelf (COTS) platforms en COTS-practices/-integraties te gebruiken. Omdat COTS-platforms/-practices door de leverancier worden bijgewerkt en vernieuwd (en je daar waarschijnlijk voor betaalt!!), raad ik af om de COTS-platforms/-practices aan te passen door ze opnieuw af te stemmen op IT4IT, ITIL, TOGAF, COBIT of vergelijkbare frameworks. De realiteit is dat je waarschijnlijk toch meerdere platforms moet aanschaffen als je de 16 platformcapabilities uit het plaatje hierboven mogelijk wilt maken. Houd er rekening mee: hoe minder platforms/leveranciers je hebt, hoe beter dat vaak voor je is. Ik raad sterk aan om te kiezen voor best-of-suite platforms in plaats van best-of-breed tools. Voor nichegebieden kun je nog steeds nichetools gebruiken, als het echt moet.
+
+Voor bedrijven die ServiceNow willen gebruiken, is het volgende aan te bevelen:
+
+1.  Gebruik voor **Discovery and Design** ServiceNow Strategic Portfolio Mngt, Digital Portfolio Mngt, Technology Portfolio Mngt en Service Portfolio om de lifecycle te definiëren en te beheren van alles wat het bedrijf levert/afneemt. Als er geen behoefte is aan complexe EA/BPM-capabilities, zou je ook ServiceNow EA kunnen gebruiken voor proces-/bedrijfsontwerp. Omdat enterprise-architecten de voorkeur geven aan enterpriseplatforms (behalve voor zichzelf), gebruiken bedrijven vaak aparte EA/BPM-tools die ze proberen te integreren met enterprise-brede platforms. Meestal mislukt dat laatste, omdat maar weinig mensen ter wereld de taal van architecten begrijpen :-).
+2.  Blijf voor **Build and Transition** voorlopig tientallen technologiespecifieke DevOps-tools gebruiken om digitale producten te bouwen, op te slaan, te integreren, uit te rollen en te observeren/orkestreren. Integreer deze tools met het servicemanagementplatform om risk en compliance te beheersen, (de impact van) storingen te volgen en geobserveerde issues op te volgen. Te zijner tijd zullen deze DevOps-tools waarschijnlijk worden vervangen door AI en/of via AI worden beheerst/aangestuurd (zie hieronder).
+3.  Gebruik voor **Transition and Operation** IT Service Management, IT Operations Management en Security Operations om Service Delivery te beheren. Als je geen apart GRC-platform gebruikt (of wilt gebruiken), kun je ervoor kiezen de bestaande Integrated Risk Management-capabilities in ServiceNow te gebruiken om je operationele risico's te beheren/mitigeren.
+4.  Gebruik voor **Deliver & Support** Enterprise Service Delivery-producten (WPSD, HRSD, LSD, CSM, FSM, enz.) om Service Consumption en securityissues te beheren.
+5.  Gebruik **AI (op het platform of ernaast)** en beheer/govern/orkestreer de agents die door het platform worden gebruikt of geleverd.
+
+In plaats van varianten van ITIL5-processen te interpreteren en te implementeren, is het aan te bevelen de procesgidsen te gebruiken die bij de gekozen ServiceNow-producten horen en die samen met het platform worden geüpgraded/vernieuwd. Als je besluit met een ServiceNow-product te stoppen, koop je waarschijnlijk een ander product dat ook weer zijn eigen COTS-commoditypractices meebrengt.  
+
+![](/wp-content/uploads/2026/04/ITIL5-CSDM5-1.png)
