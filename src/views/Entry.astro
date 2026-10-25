@@ -1,0 +1,82 @@
+---
+// One article or page, in the language of the address (see entryPaths in lib.ts).
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { marked } from 'marked';
+import { slugify, formatDate, SITE } from '../lib';
+import { url, other, t, categoryName } from '../i18n';
+const { item, kind, all } = Astro.props as any;
+const { lang } = item;
+const T = t(lang);
+const { Content } = await render(item.entry);
+const d = item.data;
+const original = url(other(lang), `/${item.id}/`);
+// The CMS entry to edit: the original, or the translation shown here.
+const edit = item.translated
+  ? `translations_${kind === 'page' ? 'pages' : 'articles'}/entries/${item.id}.${lang}`
+  : `${kind === 'page' ? 'pages' : 'articles'}/entries/${item.id}`;
+// Column layout: every '## ' section becomes a block in a two-column grid.
+const sections = kind === 'page' && d.layout === 'columns'
+  ? item.body.split(/^(?=## )/m).map((part: string) => marked.parse(part) as string)
+  : [];
+const intro = sections.length && !item.body.trimStart().startsWith('## ') ? sections.shift() : '';
+const related = kind === 'article'
+  ? all.filter((a: any) => a.id !== item.id && a.data.categories.some((c: string) => d.categories.includes(c))).slice(0, 3)
+  : [];
+const note = !item.translated ? null : d.legal
+  ? { text: T.legalNote, link: T.legalOriginal }
+  : { text: T.translatedFrom, link: T.readOriginal };
+---
+{kind === 'page' ? (
+  <Base title={d.title} edit={edit} pageTitle={d.title} crumbs={[{ label: d.title }]}>
+    {d.layout === 'columns' ? (
+      <div class="wrap page-body page-columns">
+        {d.banner && <img class="banner" src={d.banner} alt="" />}
+        {note && <p class="translated-note">{note.text + " "}<a href={original}>{note.link}</a>.</p>}
+        {intro && <div class="prose" set:html={intro} />}
+        <div class="columns">{sections.map((html: string) => <section class="prose" set:html={html} />)}</div>
+      </div>
+    ) : (
+      <div class:list={["wrap page-body", { wide: d.wide, 'page-columns': d.banner }]}>
+        {d.banner && <img class="banner" src={d.banner} alt="" />}
+        {note && <p class="translated-note">{note.text + " "}<a href={original}>{note.link}</a>.</p>}
+        <div class="prose"><Content /></div>
+      </div>
+    )}
+  </Base>
+) : (
+  <Base title={d.title} edit={edit} description={d.excerpt} pageTitle={d.title} crumbs={[{ label: T.articles, href: url(lang, '/articles/') }, { label: d.title }]}>
+    <div class="wrap layout">
+      <article class="primary single">
+        <h1 class="post-title">{d.title}</h1>
+        <img class="featured" src={d.image || `/images/${item.id}.svg`} alt="" width="1200" height="675" />
+        <div class="meta">
+          {`${T.by} ${SITE.author} · ${formatDate(d.date, lang)}`} · {d.categories.map((c: string, i: number) => <>{i > 0 && ', '}<a href={url(lang, `/category/${slugify(c)}/`)}>{categoryName(c, lang)}</a></>)}
+          {d.readingTime && ` · ${d.readingTime} ${T.minRead}`}
+        </div>
+        {note && <p class="translated-note">{note.text + " "}<a href={original}>{note.link}</a>.</p>}
+        <div class="prose"><Content /></div>
+        {d.linkedin && (
+          <p class="linkedin-discuss">
+            <a class="btn linkedin-btn" href={d.linkedin} target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.83 0-2.1 1.43-2.1 2.9V21H9z"/></svg>
+              {T.discuss}
+            </a>
+          </p>
+        )}
+        {related.length > 0 && (
+          <section class="related">
+            <h3>{T.related}</h3>
+            <div class="related-grid">
+              {related.map((r: any) => (
+                <a href={url(lang, `/${r.id}/`)}><img src={r.data.image || `/images/${r.id}.svg`} alt="" loading="lazy" /><span>{r.data.title}</span><small>{formatDate(r.data.date, lang)}</small></a>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+      <Sidebar />
+    </div>
+  </Base>
+)}

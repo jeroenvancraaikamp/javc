@@ -1,0 +1,8 @@
+---
+import Category from '../../../../views/Category.astro';
+import { categoryPages } from '../../../../lib';
+export function getStaticPaths({ paginate }: any) {
+  return categoryPages(paginate, 'nl');
+}
+---
+<Category {...Astro.props} />

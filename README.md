@@ -11,6 +11,12 @@ Source of the new javc.nl website: a static, WordPress-style blog built with [As
 
 See `src/content/articles/what-an-article-can-hold.md` for every supported content type.
 
+## Two languages
+
+The site is in English at the plain addresses (`/skills/`) and in Dutch under `/nl/` (`/nl/skills/`); the flags at the top left switch between them. Every article and page has a `lang` field (English by default) for the language it is written in. The other language is a translation in `src/content/translations/<articles|pages>/<slug>.<lang>.md` (homepage: `src/data/home.nl.json`); until it exists, the original is shown.
+
+After every change on `main`, the GitHub Action **Translate** (`scripts/translate.mjs`) translates what is new or changed with Claude and commits it. It needs the repository secret `ANTHROPIC_API_KEY`. To correct a translation yourself, edit it in the CMS under *Translations* and tick *Keep my edits*. Interface texts (menu, buttons, sidebar) are in `src/i18n.ts`.
+
 ## Editing in the browser
 
 The site has a Sveltia CMS admin at `/admin/` (settings in `public/admin/config.yml`).

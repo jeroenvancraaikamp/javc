@@ -1,45 +1,48 @@
 ---
 import { getArticles, getCategories, getArchives, monthName, formatDate, pad } from '../lib';
-const articles = await getArticles();
+import { langOf, url, t, categoryName } from '../i18n';
+const lang = langOf(Astro.url.pathname);
+const T = t(lang);
+const articles = await getArticles(lang);
 const recent = articles.slice(0, 3);
 const flagged = articles.filter((a) => a.data.popular);
 const popular = [...flagged, ...recent.filter((a) => !flagged.includes(a))].slice(0, 3);
-const categories = await getCategories();
-const archives = await getArchives();
+const categories = await getCategories(lang);
+const archives = await getArchives(lang);
 ---
 <aside class="sidebar">
   <section class="widget">
-    <form action="/search/" method="get" role="search" class="searchform">
-      <label for="s" class="sr">Search for:</label>
-      <input id="s" name="q" type="search" placeholder="Search..." />
-      <button type="submit" aria-label="Search">🔍</button>
+    <form action={url(lang, '/search/')} method="get" role="search" class="searchform">
+      <label for="s" class="sr">{T.searchFor}</label>
+      <input id="s" name="q" type="search" placeholder={T.searchPh} />
+      <button type="submit" aria-label={T.search}>🔍</button>
     </form>
   </section>
   <section class="widget tabs">
     <div class="tab-buttons" role="tablist">
-      <button role="tab" aria-selected="true" data-tab="popular">Popular</button>
-      <button role="tab" aria-selected="false" data-tab="recent">Recent</button>
+      <button role="tab" aria-selected="true" data-tab="popular">{T.popular}</button>
+      <button role="tab" aria-selected="false" data-tab="recent">{T.recent}</button>
     </div>
     <ul class="tab-panel" data-panel="popular">
       {popular.map((a) => (
-        <li><a href={`/${a.id}/`}>{a.data.title}</a><small>{formatDate(a.data.date)}</small></li>
+        <li><a href={url(lang, `/${a.id}/`)}>{a.data.title}</a><small>{formatDate(a.data.date, lang)}</small></li>
       ))}
     </ul>
     <ul class="tab-panel" data-panel="recent" hidden>
-      {recent.map((a) => <li><a href={`/${a.id}/`}>{a.data.title}</a><small>{formatDate(a.data.date)}</small></li>)}
+      {recent.map((a) => <li><a href={url(lang, `/${a.id}/`)}>{a.data.title}</a><small>{formatDate(a.data.date, lang)}</small></li>)}
     </ul>
   </section>
   <section class="widget">
-    <h4>Categories</h4>
+    <h4>{T.categories}</h4>
     <ul class="list">
-      {categories.map((c) => <li><a href={`/category/${c.slug}/`}>{c.name}</a> <span>({c.count})</span></li>)}
+      {categories.map((c) => <li><a href={url(lang, `/category/${c.slug}/`)}>{categoryName(c.name, lang)}</a> <span>({c.count})</span></li>)}
     </ul>
   </section>
   <section class="widget">
-    <h4>Archives</h4>
+    <h4>{T.archives}</h4>
     <ul class="list">
       {archives.map((m) => (
-        <li><a href={`/archive/${m.year}/${pad(m.month)}/`}>{monthName(m.month)} {m.year}</a> <span>({m.count})</span></li>
+        <li><a href={url(lang, `/archive/${m.year}/${pad(m.month)}/`)}>{monthName(m.month, lang)} {m.year}</a> <span>({m.count})</span></li>
       ))}
     </ul>
   </section>

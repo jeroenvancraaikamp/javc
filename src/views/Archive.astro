@@ -1,0 +1,9 @@
+---
+import ArticleList from '../components/ArticleList.astro';
+import { langOf, url, t } from '../i18n';
+const lang = langOf(Astro.url.pathname);
+const T = t(lang);
+const { label, data } = Astro.props;
+const page = { data, currentPage: 1, lastPage: 1, url: {} };
+---
+<ArticleList title={`${T.archive}: ${label}`} crumbs={[{ label: T.articles, href: url(lang, '/articles/') }, { label }]} page={page} base="" />

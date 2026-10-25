@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../lib';
+import { marked } from 'marked';
+import { langOf, url } from '../i18n';
+// Homepage text: edit in the CMS (/cms/ → Homepage) or in src/data/home.json.
+// The Dutch version (src/data/home.nl.json) is translated from it by the Translate Action.
+import homeEn from '../data/home.json';
+import homeNl from '../data/home.nl.json';
+const lang = langOf(Astro.url.pathname);
+const home = lang === 'nl' ? homeNl : homeEn;
+// Links in the text point to the same language.
+const localLinks = (html: string) => html.replace(/href="(\/[^"]*)"/g, (_, p) => `href="${url(lang, p)}"`);
+---
+<Base title={SITE.name}>
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/media/hero-poster.jpg" aria-hidden="true">
+      <source src="/media/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-shade"></div>
+    <div class="wrap hero-text">
+      <h1>{home.title}</h1>
+      <p class="hero-sub">{home.subtitle}</p>
+      <p class="hero-body"><span>{home.text}</span></p>
+    </div>
+  </section>
+  <section class="home-main">
+    <div class="wrap">
+      <p class="home-intro" set:html={localLinks(marked.parseInline(home.intro) as string)} />
+      <div class="blocks">
+        {home.blocks.map((b) => (
+          <div class="block">
+            <h2>{b.heading}</h2>
+            <p>{b.text}</p>
+            <a class="btn btn-dark" href={url(lang, b.link)}>{b.button}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

@@ -9,6 +9,7 @@ readingTime: 4
 popular: true
 draft: false
 linkedin: ''
+lang: nl
 ---
 
 Het leek zo makkelijk: een website op een eigen VPS met een controlpanel. Zo geregeld toch? Inderdaad, het zat binnen een paar weken in elkaar. Het installeren en upgraden van WordPress-thema's en plugins is vervelend, maar niet onmogelijk. Na een aantal jaren draaien zit menig WordPress-website nu vol met pagina's, blogartikelen  enzovoort. Er is nieuwe techniek beschikbaar om Wordpress te vervangen, maar velen staren naar een -zo lijkt het- hoge drempel.

@@ -72,11 +72,19 @@ function search(query, k = TOP_K) {
 const SYSTEM = `You are the assistant on javc.nl, the website of Jeroen van Craaikamp (JAVC Management & Consultancy), a freelance ServiceNow implementation manager and consultant in Amstelveen, the Netherlands. Visitors ask about Jeroen, his experience and services, and the topics he writes about (ServiceNow, CMDB, CSDM, IT4IT, ITIL, TBM, ESM).
 
 How to answer:
-- Always answer in English, even when the visitor writes in another language (the website is in English).
+- Answer in the language named with each question (the language of the page the visitor is on: the site is in English, with a Dutch version under /nl/).
 - Base your answer on the passages provided with each question. If they don't cover the question, say you don't know based on the site, and don't make things up. General background knowledge is fine for explaining a concept, but never invent facts about Jeroen.
 - Keep answers short and conversational (a few sentences or a short list). Your answer may be read aloud, so avoid tables.
 - When an answer comes from an article or page, mention its title and link it in Markdown with the path given, e.g. [Title](/path/).
 - Refer to Jeroen in the third person. For hiring, quotes or contact, point to the contact page [Contact me](/contact-me/) or Info@JAVC.nl.`;
+
+// The Dutch site lives under /nl/: point links to site pages there for Dutch visitors.
+const LANG_NAME = { en: 'English', nl: 'Dutch' };
+function localPath(path, lang) {
+  if (lang !== 'nl' || !path?.startsWith('/') || path.startsWith('/nl/') || /^\/(wp-content|images|media|files|api)\//.test(path)) return path;
+  return `/nl${path}`;
+}
+const localLinks = (text, lang) => text.replace(/\]\((\/[^)\s]*)\)/g, (_, p) => `](${localPath(p, lang)})`);
 
 function context(chunks) {
   return chunks.map((c, i) =>
@@ -85,7 +93,7 @@ function context(chunks) {
 }
 
 // --- models -----------------------------------------------------------------
-async function askClaude(env, history, question, passages) {
+async function askClaude(env, history, question, passages, lang) {
   const client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
   const res = await client.beta.messages.create({
     model: CLAUDE_MODEL,
@@ -96,20 +104,20 @@ async function askClaude(env, history, question, passages) {
     system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
     messages: [
       ...history,
-      { role: 'user', content: `<passages>\n${passages}\n</passages>\n\nVisitor's question: ${question}` },
+      { role: 'user', content: `<passages>\n${passages}\n</passages>\n\nAnswer in ${LANG_NAME[lang]}.\n\nVisitor's question: ${question}` },
     ],
   });
-  if (res.stop_reason === 'refusal') return "Sorry, I can't help with that question.";
+  if (res.stop_reason === 'refusal') return lang === 'nl' ? 'Sorry, met die vraag kan ik je niet helpen.' : "Sorry, I can't help with that question.";
   return res.content.filter((b) => b.type === 'text').map((b) => b.text).join('').trim();
 }
 
-async function askWorkersAI(env, history, question, passages) {
+async function askWorkersAI(env, history, question, passages, lang) {
   const res = await env.AI.run(WORKERS_AI_MODEL, {
     max_tokens: 800,
     messages: [
       { role: 'system', content: SYSTEM },
       ...history,
-      { role: 'user', content: `Passages from the website:\n\n${passages}\n\nVisitor's question: ${question}` },
+      { role: 'user', content: `Passages from the website:\n\n${passages}\n\nAnswer in ${LANG_NAME[lang]}.\n\nVisitor's question: ${question}` },
     ],
   });
   return (res.response || '').trim();
@@ -145,6 +153,7 @@ async function chat(request, env, ctx) {
 
   let body;
   try { body = await request.json(); } catch { return json({ error: 'Bad request' }, 400); }
+  const lang = body?.lang === 'nl' ? 'nl' : 'en';
   const msgs = (Array.isArray(body?.messages) ? body.messages : [])
     .filter((m) => (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string' && m.content.trim())
     .map((m) => ({ role: m.role, content: m.content.slice(0, MAX_MESSAGE) }))
@@ -164,15 +173,15 @@ async function chat(request, env, ctx) {
 
   try {
     const answer = env.ANTHROPIC_API_KEY
-      ? await askClaude(env, msgs, last.content, passages)
-      : await askWorkersAI(env, msgs, last.content, passages);
+      ? await askClaude(env, msgs, last.content, passages, lang)
+      : await askWorkersAI(env, msgs, last.content, passages, lang);
     const seen = new Set();
     const sources = found
       .filter((c) => c.url && !seen.has(c.url) && seen.add(c.url))
       .slice(0, 3)
-      .map((c) => ({ title: c.title, url: c.url }));
+      .map((c) => ({ title: c.title, url: localPath(c.url, lang) }));
     log(!!answer, sources.map((s) => s.url));
-    return json({ answer: answer || 'Sorry, I have no answer to that.', sources });
+    return json({ answer: answer ? localLinks(answer, lang) : lang === 'nl' ? 'Sorry, daar heb ik geen antwoord op.' : 'Sorry, I have no answer to that.', sources });
   } catch (err) {
     console.error('chat error', err);
     log(false);
@@ -188,16 +197,18 @@ async function contact(request, env) {
   if (denied) return denied;
   let f;
   try { f = await request.json(); } catch { return json({ error: 'Bad request' }, 400); }
+  // Error messages in the language of the form (the Dutch contact page sends lang: 'nl').
+  const nl = f?.lang === 'nl';
   const field = (k, max) => (typeof f?.[k] === 'string' ? f[k].trim().slice(0, max) : '');
   const name = field('name', 200), email = field('email', 200), phone = field('phone', 50), message = field('message', 5000);
 
   // Honeypot: a hidden field people never fill in; bots do (password managers are told to skip it). Pretend it worked. Same for impossibly fast submits.
   if (field('hp_note', 200) || tooFast(f)) return json({ ok: true });
-  if (!(await humanCheck(f, request, env))) return json({ error: 'The spam check failed. Please reload the page and try again.' }, 403);
+  if (!(await humanCheck(f, request, env))) return json({ error: nl ? 'De spamcontrole is mislukt. Laad de pagina opnieuw en probeer het nog eens.' : 'The spam check failed. Please reload the page and try again.' }, 403);
   if (!name || !message || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)) {
-    return json({ error: 'Please fill in your name, a valid email address and a message.' }, 400);
+    return json({ error: nl ? 'Vul je naam, een geldig e-mailadres en een bericht in.' : 'Please fill in your name, a valid email address and a message.' }, 400);
   }
-  if (!env.SMTP2GO_API_KEY) return json({ error: 'The form is not available right now. Please email Info@JAVC.nl.' }, 503);
+  if (!env.SMTP2GO_API_KEY) return json({ error: nl ? 'Het formulier werkt op dit moment niet. Mail naar Info@JAVC.nl.' : 'The form is not available right now. Please email Info@JAVC.nl.' }, 503);
 
   const res = await fetch('https://api.smtp2go.com/v3/email/send', {
     method: 'POST',
@@ -213,7 +224,7 @@ async function contact(request, env) {
   const data = res ? await res.json().catch(() => ({})) : {};
   if (!res?.ok || !data?.data?.succeeded) {
     console.error('smtp2go error', res?.status, JSON.stringify(data));
-    return json({ error: 'Sending failed. Please try again later or email Info@JAVC.nl.' }, 502);
+    return json({ error: nl ? 'Versturen is mislukt. Probeer het later opnieuw of mail naar Info@JAVC.nl.' : 'Sending failed. Please try again later or email Info@JAVC.nl.' }, 502);
   }
   return json({ ok: true });
 }
