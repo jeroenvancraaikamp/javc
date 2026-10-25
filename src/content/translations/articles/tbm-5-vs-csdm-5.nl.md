@@ -1,7 +1,7 @@
 ---
 title: "Waarom het wiel opnieuw uitvinden? Gebruik TBM 5.0-content in het CSDM 5.0-datamodel"
 excerpt: "ServiceNow heeft een Common Service Data Model (CSDM5) gedefinieerd zonder content. De TBM Council heeft zowel een datamodel (TBM5) als de bijbehorende content gedefinieerd. Dit artikel beschrijft hoe je de content van TBM5 in CSDM5 kunt vullen. TBM5 definieert/beschrijft (relaties tussen) artefacten voor"
-source: "c414da852c1bc012"
+source: "6a8e0cade92d9495"
 ---
 
 ServiceNow heeft een Common Service Data Model (CSDM5) gedefinieerd zonder content. De TBM Council heeft zowel een datamodel (TBM5) als de bijbehorende content gedefinieerd. Dit artikel beschrijft hoe je de content van TBM5 in CSDM5 kunt vullen.
@@ -10,25 +10,25 @@ ServiceNow heeft een Common Service Data Model (CSDM5) gedefinieerd zonder conte
 
 TBM5 definieert/beschrijft (relaties tussen) artefacten voor "Technology Consumers" (wie?), "Technology Solutions" (wat?), "Technology Resource Towers" (hoe?) en "Technology Cost Pools" (hoeveel?). Je kunt [**gratis een exemplaar van TBM 5.0 downloaden.**](https://www.tbmcouncil.org/learn-tbm/resource-center/the-tbm-taxonomy-5/)
 
-CSDM5 definieert/beschrijft ook het wie, wat, hoe en hoeveel, al ligt de focus meer op ITSM/ITOM dan op ITAM/ITFM. CSDM5 definieert/beschrijft (relaties tussen) artefacten voor de domeinen "Ideation & Strategy", "Design & Plan", "Build & Integration", "Service Delivery", "Service Consumption" en "Foundation". CSDM5 maakt onderscheid tussen baselines (bijv. Products, Components, Models, Services en Offerings) en instances (bijv. Service Instances, Configuration Items en Assets).. Je kunt [***gratis een exemplaar van CSDM 5.0 downloaden***](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiMzcSloaaPAxVKgP0HHaDLKu4QFnoECCEQAQ&url=https%3A%2F%2Fwww.servicenow.com%2Fcommunity%2Fs%2Fcgfwn76974%2Fattachments%2Fcgfwn76974%2Fcommon-service-data-model-kb%2F744%2F3%2FCSDM%25205%2520w%2520links.pdf&usg=AOvVaw1wlx0sDj-JFaye_6EnN2v1&opi=89978449)
+CSDM5 definieert/beschrijft wie, wat, hoe en hoeveel, al ligt de focus meer op ITSM/ITOM dan op ITAM/ITFM. CSDM5 definieert/beschrijft (relaties tussen) artefacten voor de domeinen "Ideation & Strategy", "Design & Plan", "Build & Integration", "Service Delivery", "Service Consumption" en "Foundation". CSDM5 maakt onderscheid tussen baselines (bijv. Products, Components, Models, Services en Offerings) en instances (bijv. Service Instances, Configuration Items en Assets).. Je kunt [***gratis een exemplaar van CSDM 5.0 downloaden***](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiMzcSloaaPAxVKgP0HHaDLKu4QFnoECCEQAQ&url=https%3A%2F%2Fwww.servicenow.com%2Fcommunity%2Fs%2Fcgfwn76974%2Fattachments%2Fcgfwn76974%2Fcommon-service-data-model-kb%2F744%2F3%2FCSDM%25205%2520w%2520links.pdf&usg=AOvVaw1wlx0sDj-JFaye_6EnN2v1&opi=89978449)
 
 Overwegingen & beperkingen
 
 Bij het mappen van TBM6-content op het CSDM5-model moet je rekening houden met het volgende:
 
--   **TBM5 Technology Consumer****s** zijn gedefinieerd als Entities, die CSDM5 aanduidt als **Foundation Artifacts**. TBM5 Capabilities zijn organisatorische entiteiten; het zijn geen technische/functionele capabilities, die in TBM5 als solutions worden beschreven. De TBM5 Entities zijn verspreid over diverse CSDM5 Foundation-tabellen in ServiceNow, die gevuld worden met data uit Authorized Sources (bijv. ISO-3166 landen/continenten, ISO-3166-2 provincies/staten, talen, valuta, tijdzones, bedrijven, afdelingen, business units, medewerkers, enz.)
+-   **TBM5 Technology Consumers** zijn gedefinieerd als Entities die CSDM5 aanduidt als **Foundation Artifacts**. TBM5 Capabilities zijn organisatorische entiteiten; het zijn geen technische/functionele capabilities, die in TBM5 als solutions worden beschreven. De TBM5 Entities zijn verspreid over diverse CSDM5 Foundation-tabellen in ServiceNow, die worden gevuld met data uit geautoriseerde bronnen (bijv. ISO-3166 landen/continenten, ISO-3166-2 provincies/staten, talen, valuta, tijdzones, bedrijven, afdelingen, business units, medewerkers enz.)
 -   ServiceNow kan verschillende typen **CSDM5 Digital Portfolios** beheren, bijv. Application Portfolio, Service Portfolio, Service Instance Portfolio of Project/Demand Portfolio. Elk portfoliotype kan meerdere portfolio's bevatten, elk met een eigen portfolio owner. Elk portfolio maakt deel uit van het Digital Portfolio.
--   Er zijn drie **CSDM5 Catalogs** gedefinieerd: Service Catalog, Product Catalog en Sales Catalog. De Service Catalog bevat de niet-geversioneerde services die worden geleverd en die afgenomen kunnen worden. De Product Catalog bevat producten met een major-versie (met mogelijk componenten met een minor-versie) die (worden) geautoriseerd voor deployment. De Sales Catalog bevat (varianten van) de items die medewerkers kunnen bestellen/aanvragen. TBM5 definieert geen van deze catalogi; er is dus geen mapping.
--   **TBM5 Solutions** zijn een mix van productonafhankelijke items die CSDM5 heeft gedefinieerd als Capabilities (baselines). De TBM5-whitepaper noemt assets en configuration items (instances), maar levert daar geen content voor. Oftewel: **je kunt alleen TBM5-content voor baselines/models in CSDM5-tabellen mappen.**
--   CSDM5 is afgestemd op het **CMDB-classmodel** van ServiceNow, dat ongeveer 1400 verschillende typen/classes configuration items bevat die je in het IT-landschap kunt tegenkomen. Elke instance asset/CI is gekoppeld aan precies één CMDB-class, één baseline model, één model category en één parent model category. De product models in ServiceNow blijven "as discovered" of "as federated" door ITOM Visibility. **De TBM5 Technology Resource (Sub-)Towers worden in ServiceNow gemodelleerd als (Parent) Model Categories.**
--   In TBM5 zijn **Service Offerings** productspecifiek. In CSDM5 zijn Service Offerings echter varianten van Services, en Services zijn (of beter gezegd: zouden moeten zijn) productonafhankelijk.
+-   Er zijn drie **CSDM5-catalogi** gedefinieerd: Service Catalog, Product Catalog en Sales Catalog. De Service Catalog bevat de niet-geversioneerde services die worden geleverd en die afgenomen kunnen worden. De Product Catalog bevat producten met een major-versie (met mogelijk componenten met een minor-versie) die (nog) geautoriseerd zijn/worden voor deployment. De Sales Catalog bevat (varianten van) de items die medewerkers kunnen bestellen/aanvragen. TBM5 definieert geen van deze catalogi; er is dus geen mapping.
+-   **TBM5 Solutions** zijn een mix van productonafhankelijke items die CSDM5 heeft gedefinieerd als Capabilities (baselines). De TBM5-whitepaper noemt assets en configuration items (instances), maar levert daarvoor geen content. Oftewel: **je kunt alleen TBM5-content voor baselines/models in CSDM5-tabellen mappen.**
+-   CSDM5 is afgestemd op het **CMDB-classmodel** van ServiceNow, met ongeveer 1400 verschillende typen/classes configuration items die je in het IT-landschap kunt tegenkomen. Elke instance-asset/CI is gekoppeld aan slechts één CMDB-class, één baseline-model, één model category en één parent model category. De product models in ServiceNow blijven "zoals gediscoverd" of "zoals gefedereerd" door ITOM Visibility. **De TBM5 Technology Resource (Sub-)Towers worden in ServiceNow gemodelleerd als (Parent) Model Categories.**
+-   In TBM5 zijn **Service Offerings** productspecifiek. In CSDM5 zijn Service Offerings echter varianten van Services, en Services zijn (of liever: horen te zijn) productonafhankelijk.
 -   CSDM5 definieert **Service Instances**: configuration items die "als (onderdeel van) een service" geleverd kunnen worden. Service Instances kunnen een many-to-many-relatie hebben met Service Offerings. **Service Instances zijn de meest voor de hand liggende CI's om naar te verwijzen in incidents of changes**. Bijv. "Workday \[Production\]" of "SAP Business Warehouse \[EMEA, Production\]".
 
 ### Het grotere geheel
 
-Dit artikel richt zich op het mappen van de TBM5-"Solutions" naar CSDM5, al zou je waarschijnlijk ook de TBM5-"Technology Resource Towers" en "Cost Pools" naar ServiceNow kunnen mappen, bijv. als je de applicaties "IT Asset Management", "IT Financial Management" en "Strategic Portfolio Management" van ServiceNow hebt aangeschaft, waarvoor CSDM5 weinig ondersteuning biedt.
+Dit artikel richt zich op het mappen van de TBM5 "Solutions" naar CSDM5, al zou je waarschijnlijk ook de TBM5 "Technology Resource Towers" en "Cost Pools" naar ServiceNow kunnen mappen, bijv. als je de applicaties "IT Asset Management", "IT Financial Management" en "Strategic Portfolio Management" van ServiceNow hebt aangeschaft, waarvoor CSDM5 weinig ondersteuning biedt.
 
-De afbeelding hieronder toont (de relaties tussen) de CSDM5-artefacten en hoe de TBM5-content naar CSDM5 wordt gemapt.
+De afbeelding hieronder toont (de relatie tussen) de CSDM5-artefacten en hoe de TBM5-content naar CSDM5 wordt gemapt.
 
 -   De productonafhankelijke Solution Types zijn CSDM5 Level-0 Business Capabilities
 -   De productonafhankelijke Solution Categories zijn CSDM5 Level-1 Business Capabilities
@@ -41,15 +41,15 @@ De afbeelding hieronder toont (de relaties tussen) de CSDM5-artefacten en hoe de
 
 ### TBM5 Solutions
 
-In TBM5 kunnen solutions een product of een service zijn. De TBM5 Solutions zijn gegroepeerd in 6 types (3 voor Business Solutions en 3 voor Technical Solutions). Deze 6 types bevatten samen 32 categorieën. De categorieën bevatten 141 fijnmazige solutions.
+In TBM5 kunnen solutions een product of een service zijn. De TBM5 Solutions zijn gegroepeerd in 6 typen (3 voor Business Solutions en 3 voor Technical Solutions). Deze 6 typen bevatten op hun beurt in totaal 32 categorieën. De categorieën bevatten 141 fijnmazige solutions.
 
-"Workplace", "Business" en "Shared & Corporate" zijn Solution Types die beschikbaar zijn voor de business. Deze worden ondersteund door de technische Solution Types "Delivery", "Infrastructure" en "Artificial Intelligence". De types worden gemodelleerd als Taxonomy Nodes in het/de Service Portfolio('s). De categorieën binnen de solution types worden in ServiceNow gemodelleerd als Business Services of Technical Services, afhankelijk van het type solution.
+"Workplace", "Business" en "Share & Corporate" zijn Solution Types die beschikbaar zijn voor de business. Deze worden ondersteund door de technische Solution Types "Delivery", "Infrastructure" en "Artificial Intelligence". De typen worden gemodelleerd als taxonomy nodes in het/de Service Portfolio('s). De categorieën binnen de solution types worden in ServiceNow gemodelleerd als Business Services of Technical Services, afhankelijk van het type solution.
 
-"Business" is een bijzonder solution type, dat bedrijven kunnen inrichten in lijn met hun eigen business. Een financiële onderneming wil haar business solutions bijvoorbeeld anders modelleren dan een retailer. De TBM Council heeft marktspecifieke Business Solution Taxonomies gedefinieerd, die je hier ook kunt gebruiken.
+"Business" is een bijzonder solution type, dat bedrijven kunnen inrichten in lijn met hun eigen business. Een financiële instelling wil haar business solutions bijvoorbeeld anders modelleren dan een retailer. De TBM Council heeft marktspecifieke Business Solution Taxonomies gedefinieerd, die je hier ook kunt gebruiken.
 
 "Enabling Platforms" en "Artificial Intelligence" worden beschouwd als technische services, vergelijkbaar met Infrastructure. Ze ondersteunen de Business Services, maar maken er geen deel van uit. Zo kunnen bedrijven de lifecycle van technische services anders beheren/governen dan die van de business services.
 
-De 141 solutions in TBM5 zijn te fijnmazig om als Services of Offerings in ServiceNow te gebruiken. In plaats daarvan worden deze solutions gemodelleerd als (Business of Technical) Capabilities. De capabilities kunnen worden gerelateerd aan business/technische baselines (bijv. Applications, Products, Services of Offerings).
+De 141 solutions in TBM5 zijn te fijnmazig om als Services of Offerings in ServiceNow te gebruiken. In plaats daarvan worden deze solutions gemodelleerd als (Business of Technical) Capabilities. De capabilities kunnen worden gerelateerd aan business-/technische baselines (bijv. Applications, Products, Services of Offerings).
 
 ![](/wp-content/uploads/2025/08/TBM5_Solutions.png)
 

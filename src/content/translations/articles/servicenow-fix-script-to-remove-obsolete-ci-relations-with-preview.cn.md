@@ -1,48 +1,48 @@
 ---
-title: "用于清除过时/无效 CI 关系的 Fix Script（含预览选项）"
-excerpt: "ServiceNow CMDB 中的关系很容易失控，从而导致性能问题并降低数据质量。为帮助解决这一问题，下面的脚本提供了一种安全清理 cmdb_rel_ci 表的方法——例如，在批量更新"
-source: "99b3c942440b81d7"
+title: "用于删除过时/无效 CI 关系的 Fix Script（带预览选项）"
+excerpt: "ServiceNow CMDB 中的关系很容易失控，从而导致性能问题和数据质量下降。为帮助解决这一问题，下面的脚本提供了一种安全清理 cmdb_rel_ci 表的方法——例如，在批量更新"
+source: "726af2c7a6812162"
 ---
 
-ServiceNow CMDB 中的关系很容易失控，从而导致性能问题并降低数据质量。为帮助解决这一问题，下面的脚本提供了一种安全清理 `*cmdb_rel_ci*` 表的方法——例如，在批量更新 CI 的 *Operational State*（运行状态）之后，或在批量删除 CI 之后。
+ServiceNow CMDB 中的关系很容易失控，从而导致性能问题和数据质量下降。为帮助解决这一问题，下面的脚本提供了一种安全清理 `*cmdb_rel_ci*` 表的方法——例如，在批量更新 CI 的 *Operational State*（运行状态）之后，或在批量删除 CI 之后。
 
-由于 ServiceNow CMDB 可能包含数百万条关系，而这些关系又是影响分析（impact analysis）的基础，因此保持该表内容的整洁至关重要。当一个 CI 被删除时，其关系也应随之删除。虽然我通常建议保留不再使用或不再被发现（discovered）的 CI，但我也建议删除涉及*已退役（Retired）* CI 的关系。这样可以防止过时的依赖关系影响影响计算（例如由 AI 或 OOTB 流程执行的计算），也可以避免用户在运营流程中选到已退役的相关项。
+由于一个 ServiceNow CMDB 可能包含数百万条关系，而这些关系又驱动着影响分析，因此保持该表内容的整洁至关重要。当一个 CI 被删除时，其关系也应一并删除。虽然我通常建议保留不再使用或不再被发现的 CI，但我也建议删除涉及*已退役（Retired）* CI 的关系。这样可以防止过时的依赖关系影响影响度计算（例如由 AI 或 OOTB 流程执行的计算），并避免用户在运营流程中选择到已退役的关联项。
 
-基于此，我采用一条简单的规则：
+基于这一点，我采用了一条简单的规则：
 
 -   每条关系都必须同时具有父项（parent）和子项（child）。
 -   父项和子项都必须存在。
--   父项和子项都不得处于 *R**etired*（已退役）状态。
--   其他所有关系均为无效关系，应予以删除。
+-   父项和子项都不得处于 *Retired* 状态。
+-   所有其他关系均为无效关系，应予以删除。
 
-*注：ServiceNow 不支持将关系设为退役状态，这其实是合理的。*
+*注意：ServiceNow 不支持将关系设为退役状态，这其实是合理的。*
 
-下面的 Fix Script 正是这样做的——而且功能更多：
+下面的 Fix Script 正是实现了这一点——而且还不止于此：
 
 -   **预览或删除****：** 通过将 `Preview Only` 设置为 *true*（预览）或 *false*（删除）来控制脚本行为。
--   **定向查询****：** 识别父项或子项不存在，或运行状态为 *7 – Retired* 的过时关系。
--   **预览模式****：** 生成包含所有无效关系的 CSV 报告（包括 Parent、Child 和 Type）。
+-   **定向查询****：** 识别父项或子项不存在、或运行状态为 *7 – Retired* 的过时关系。
+-   **预览模式****：** 生成所有无效关系的 CSV 报告（包括父项、子项和类型）。
 -   **删除模式****：** 以每批 500 条的受控“分块”方式删除无效关系，以避免超时或性能问题。
 -   **汇总****：** 完成后显示已删除关系的总数。
--   **回滚****：** 如有需要，删除操作可以回滚。
+-   **回滚****：** 如有需要，可以撤销删除操作。
 
 *免责声明：*
 
-> 本脚本按“原样”提供，不附带任何形式的明示或暗示的保证或担保。使用本脚本的风险由您自行承担。对于因使用或误用本脚本而导致的任何错误、问题、损害或损失，作者概不负责。
+> 本脚本按“原样”提供，不附带任何明示或暗示的担保或保证。使用本脚本的风险由您自行承担。对于因使用或误用本脚本而导致的任何错误、问题、损害或损失，作者概不承担任何责任。
 
 **提示：预防胜于修复**
 
-建议在 cmdb\_ci 记录上设置级联删除（cascade delete），这样在删除 CI 时，CMDB 关系会被自动删除。但这对已退役的 CI 不起作用。针对这种情况，以及为了修复异常数据，您可以使用下面的脚本。使用 ServiceNow Vancouver 及更高版本的用户，也可以使用 OOTB 的“[**CMDB (Relationship) Health**](https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/configuration-management/task/t_ViewRelationshipsHealth.html)”功能。
+建议在 cmdb\_ci 记录上设置级联删除（cascade delete），这样在删除 CI 时，CMDB 关系也会被自动删除。不过，这对已退役的 CI 不起作用。针对这种情况——以及修复异常数据——您可以使用下面的脚本。使用 ServiceNow Vancouver 及更高版本的用户还可以使用 OOTB 的“[**CMDB (Relationship) Health**](https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/configuration-management/task/t_ViewRelationshipsHealth.html)”功能。
 
 ### 用于清理无效/过时 CMDB 关系的 Fix Script：
 
-当然，作为 SysAdmin，我本可以不用脚本，而是创建一个带预览功能的简单“Delete Job”，但那样这篇文章就会非常简短且乏味了 :-) 本文的另一个目的是分享 AI 目前如何协助完成日常管理任务，并评估所生成脚本的智能程度和效率。我也知道，Java 脚本编写的日子已屈指可数；很快，您就可以通过 AI 提示词删除无效/过时的记录（前提是您的安全部门允许在生产环境中这样做）。
+当然，作为系统管理员，我本可以不用脚本，而是创建一个带预览功能的简单“删除作业”（Delete Job），但那样的话，这篇文章就会非常简短而乏味了 :-) 本文的目的还在于分享 AI 目前如何协助完成日常管理任务，并评估所生成脚本的智能程度和效率。我也知道，Java 脚本编写的日子已经屈指可数了；很快，您就可以通过 AI 提示词来删除无效/过时的记录（前提是您的安全部门允许在生产环境中这样做）。
 
-总之，在我的新朋友——人工智能 ChatGPT 5 PRO 的帮助下，我生成了以下 JavaScript。一开始脚本很简单，但当我开始向这位朋友询问有关性能以及如何处理超时和异常的问题时，脚本迅速变得复杂起来。好消息是，生成的结果令人印象深刻，甚至超过了我见过的一些“专业开发人员”编写的脚本。  
+总之，在我的新“人工智能朋友”ChatGPT 5 PRO 的帮助下，我生成了下面这段 JavaScript。起初它很简单，但当我开始向这位朋友询问有关性能以及超时和异常处理的问题时，脚本很快就变得复杂起来。好消息是，生成的结果令人印象深刻，甚至超过了我见过的一些“专业开发人员”编写的脚本。  
   
-不过，达到这一结果的过程并非一帆风顺。ChatGPT 5 最初没有考虑到 ServiceNow 的限制，前几个版本都无法正常运行。如果不是我要求加入“预览”功能，所有关系都会被删除。经过一番对话，ChatGPT 和我最终得出了一个可行的方案，能够安全地用于大型 CMDB。  
+不过，达成这一结果的过程并非一帆风顺。ChatGPT 5 起初没有考虑到 ServiceNow 的限制，最初几个版本都无法正常工作。要不是我要求加入了“预览”功能，所有关系都会被删除。经过一番对话，ChatGPT 和我最终得出了一个可以正常运行、并且可以在大型 CMDB 中安全使用的方案。  
   
-随后，我请 ChatGPT 为脚本编写文档，效果非常好（见下文）。
+之后，我请 ChatGPT 为脚本编写文档，效果非常好（见下文）。
 
 ```javascript
 // Fix Script: Cleanup of invalid CMDB relationships with Execution Log Output + Progress Counter + Timer + Early Exit + Configurable Parameters
@@ -236,25 +236,24 @@ ServiceNow CMDB 中的关系很容易失控，从而导致性能问题并降低�
 
 `*** Script: [CMDB Cleanup] START 2025-09-07T11:02:01.456Z | Mode: DELETE (invalid relationships will be removed).   *** Script: [CMDB Cleanup] Processed 1000 relationships so far...   *** Script: [CMDB Cleanup] Deleted chunk of 500 records.   *** Script: [CMDB Cleanup] Deleted chunk of 500 records.   *** Script: [CMDB Cleanup] Deleted chunk of 145 records.   *** Script: [CMDB Cleanup] FINISHED | Deleted 1,145 invalid CMDB relationship(s) out of 12,480 processed. Duration: 15 seconds.   `
 
-**  
-要点**：
+**要点**：
 
--   不输出 CSV 行（仅输出计数）。
+-   不输出 CSV 记录行（仅输出计数）。
 -   关系按**分块**删除。
--   每个分块的删除操作都会记录日志。
--   最终汇总显示**已删除数量**、**已处理总数**和**运行时间**。
+-   每次分块删除都会记录日志。
+-   最终汇总显示**已删除数量**、**处理总数**和**运行时间**。
 
 ## 运行手册（Runbook）
 
-### 目的
+### 用途
 
 本脚本用于识别并删除 `cmdb_rel_ci` 中的**无效 CMDB 关系**。  
-无效关系是指以下情况之一：
+无效关系是指满足以下任一条件的关系：
 
--   **父 CI** 不存在，或
--   **子 CI** 不存在，或
--   **父 CI** 处于 **Retired**（已退役）状态（`operational_status = 6`），或
--   **子 CI** 处于 **Retired**（已退役）状态（`operational_status = 6`）。
+-   **父 CI** 缺失，或
+-   **子 CI** 缺失，或
+-   **父 CI** 处于 **Retired** 状态（`operational_status = 6`），或
+-   **子 CI** 处于 **Retired** 状态（`operational_status = 6`）。
 
 ### 配置参数
 
@@ -274,7 +273,7 @@ ServiceNow CMDB 中的关系很容易失控，从而导致性能问题并降低�
         
 -   **`retiredValue`**
     
-    -   “Retired”（已退役）对应的整数值（默认为 `6`）。
+    -   “Retired”对应的整数值（默认为 `6`）。
         
 -   **`previewLogLimit`**
     
@@ -284,7 +283,7 @@ ServiceNow CMDB 中的关系很容易失控，从而导致性能问题并降低�
         
 -   **`progressStep`**
     
-    -   每处理 X 条记录记录一次进度（默认：1000）。
+    -   每处理 X 条记录输出一次进度日志（默认：1000）。
         
     -   设置为 `0` 可禁用进度日志。
         
@@ -309,7 +308,7 @@ ServiceNow CMDB 中的关系很容易失控，从而导致性能问题并降低�
         
     -   发现的无效关系总数。
         
-    -   每处理 1000 条记录输出一次进度更新。
+    -   每处理 1000 条记录的进度更新。
         
     -   以秒为单位的运行时间。
         
@@ -330,9 +329,9 @@ ServiceNow CMDB 中的关系很容易失控，从而导致性能问题并降低�
     
 4.  监控 **System Log**：
     
-    -   删除操作以安全的**分块**方式进行（默认：500）。
+    -   删除以安全的**分块**方式进行（默认：500）。
         
-    -   每个分块的删除操作都会记录日志。
+    -   每次分块删除都会记录日志。
         
     -   汇总显示删除总数和耗时。
         
@@ -343,5 +342,5 @@ ServiceNow CMDB 中的关系很容易失控，从而导致性能问题并降低�
 
 -   务必**先运行预览模式**。
 -   删除前与 CMDB/数据负责人一起审核输出结果。
--   调整 `*chunkSize*`：对于非常大的 CMDB，请采用这种方式以避免超时。
+-   调整 `*chunkSize*`：对于非常大的 CMDB，请使用此方法来避免超时。
 -   脚本会记录开始时间戳、进度和总运行时间，以便追溯。

@@ -1,71 +1,71 @@
 ---
 title: "De ultieme lijst van 1.000+ IT-managementtools, 2026"
-excerpt: "Dit is een overzicht van 1136 IT-managementtools, gegroepeerd in 26 categorieën binnen 7 domeinen — Strategie & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI — afgestemd op de"
-source: "9db9bb1dadb7dfd1"
+excerpt: "Dit is een overzicht van 1136 IT-managementtools, gegroepeerd in 26 categorieën binnen 7 domeinen — Strategie & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI — afgestemd op The Open Group's"
+source: "3deb20f3ffada756"
 ---
 
 ### UPDATE: [IT4IT/IT4ESM Atlas](https://javc.nl/it4it-atlas/) bevat nu 1600 platforms
 
-Dit is een overzicht van 1136 IT-managementtools, gegroepeerd in 26 categorieën binnen 7 domeinen — Strategie & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI — afgestemd op de IT4IT-referentiearchitectuur van The Open Group en uitgebreid met alle leveranciers die worden genoemd in de relevante actuele Gartner Magic Quadrants, plus open-sourceplatforms die op enterpriseschaal worden gebruikt.
+Dit is een overzicht van 1136 IT-managementtools, gegroepeerd in 26 categorieën binnen 7 domeinen — Strategie & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI — afgestemd op de IT4IT-referentiearchitectuur van The Open Group en uitgebreid met alle leveranciers die in de relevante actuele Gartner Magic Quadrants worden genoemd, plus open-sourceplatforms die op enterpriseschaal worden gebruikt.
 
 ### 1) Strategie & Planning
 
 -   **1.1) Enterprise Architecture (EA)** – 32 tools — Gericht op het afstemmen van technologiestrategieën op overkoepelende bedrijfsdoelstellingen, het faciliteren van gestructureerde frameworks en het waarborgen dat IT-investeringen de organisatiedoelen op lange termijn ondersteunen.
--   **2.2) Strategic Portfolio Management (SPM) & Project Portfolio Management (PPM)** – 22 tools — Omvat het prioriteren, plannen en bemensen van IT- en bedrijfsinitiatieven — op basis van Gartners Magic Quadrants voor Strategic Portfolio Management en Adaptive Project Management & Reporting.
--   **1.3) IT Financial Management (ITFM/TBM) & Innovation Managemen**t – 5 tools — Volgt en optimaliseert IT-uitgaven ten opzichte van bedrijfswaarde (Technology Business Management) en beheert de intake en beoordeling van nieuwe ideeën en innovatie-initiatieven.
+-   **2.2) Strategic Portfolio Management (SPM) & Project Portfolio Management (PPM)** – 22 tools — Omvat het prioriteren, plannen en bemensen van IT- en bedrijfsinitiatieven — uit Gartners Magic Quadrants voor Strategic Portfolio Management en Adaptive Project Management & Reporting.
+-   **1.3) IT Financial Management (ITFM/TBM) & Innovation Managemen**t – 5 tools — Volgt en optimaliseert IT-uitgaven ten opzichte van de bedrijfswaarde (Technology Business Management) en beheert de intake en beoordeling van nieuwe ideeën en innovatie-initiatieven.
 
 ### 2) Software Engineering & Delivery
 
--   **2.1) IT Development Operations (DevOps)** – 113 tools — Legt de nadruk op de synergie tussen softwareontwikkeling en operations, en stroomlijnt processen zoals continuous integration, continuous delivery en samenwerking om productreleases te versnellen en de kwaliteit te verbeteren.
--   **2.2) Low-codeapplicatieplatforms** – 14 tools — Enterpriseplatforms voor het bouwen van maatwerkapplicaties met minimale handgeschreven code, voor zowel citizen developers als professionele ontwikkelaars.
+-   **2.1) IT Development Operations (DevOps)** – 113 tools — Legt de nadruk op de synergie tussen softwareontwikkeling en operations, en stroomlijnt processen als continuous integration, delivery en samenwerking om productreleases te versnellen en de kwaliteit te verbeteren.
+-   **2.2) Low-code applicatieplatforms** – 14 tools — Enterpriseplatforms voor het bouwen van maatwerkapplicaties met minimale handgeschreven code, voor zowel citizen developers als professionele ontwikkelaars.
 -   **2.3) Robotic Process Automation (RPA) & Business Process Automation** – 9 tools — Automatiseert repetitieve, regelgebaseerde digitale taken en bedrijfsprocessen, van desktopbots tot orkestratie op enterpriseschaal.
--   **2.4) API Management** – 14 tools — Ontwerpt, publiceert, beveiligt en monitort API's gedurende hun volledige levenscyclus, zodat gecontroleerde toegang tot services en data mogelijk wordt.
--   **2.5) Enterprise iPaaS & integratie** – 16 tools — Verbindt applicaties, data en processen over cloud- en on-premisesystemen heen via integration-platform-as-a-service en tools voor workflowautomatisering.
+-   **2.4) API Management** – 14 tools — Ontwerpt, publiceert, beveiligt en monitort API's gedurende hun volledige levenscyclus, zodat services en data gecontroleerd toegankelijk zijn.
+-   **2.5) Enterprise iPaaS & integratie** – 16 tools — Verbindt applicaties, data en processen in cloud- en on-premisessystemen via integration-platform-as-a-service en tools voor workflowautomatisering.
 
 ### 3) IT Service & Asset Management
 
--   **3.1) IT Service Management (ITSM)** – 71 tools — Biedt best practices en methodieken (bijv. ITIL) om IT-services te structureren en te leveren, en optimaliseert incident-, problem- en change management om een hoge servicekwaliteit en klanttevredenheid te behouden.
--   **3.2) IT Asset Management (ITAM)** – 98 tools — Gericht op het volgen en optimaliseren van de levenscycli van hardware- en softwareassets, met oog voor kosteneffectiviteit, compliance en een robuuste inventarisbeheersing.
--   **3.3) Unified Endpoint Management (UEM)** – 13 tools — Beheert, configureert en beveiligt desktops, mobiele apparaten en andere endpoints centraal gedurende hun levenscyclus.
+-   **3.1) IT Service Management (ITSM)** – 71 tools — Biedt best practices en methodieken (zoals ITIL) om IT-services te structureren en te leveren, en optimaliseert incident, problem en change management voor een hoge servicekwaliteit en klanttevredenheid.
+-   **3.2) IT Asset Management (ITAM)** – 98 tools — Gericht op het volgen en optimaliseren van de levenscycli van hardware- en software-assets, met oog voor kosteneffectiviteit, compliance en een robuust voorraadbeheer.
+-   **3.3) Unified Endpoint Management (UEM)** – 13 tools — Beheert, configureert en beveiligt desktops, mobiele apparaten en andere endpoints centraal gedurende hun hele levenscyclus.
 
 ### 4) IT Operations
 
--   **4.1) Observabilityplatforms (ITOM)** – 145 tools — Levert uitgebreide monitoring en beheer van IT-systemen, netwerken en infrastructuren — metrics, logs, traces en AIOps — waarmee organisaties hoge prestaties, betrouwbaarheid en beschikbaarheid behouden.
+-   **4.1) Observability-platforms (ITOM)** – 145 tools — Biedt uitgebreide monitoring en beheer van IT-systemen, netwerken en infrastructuren — metrics, logs, traces en AIOps — zodat organisaties hoge prestaties, betrouwbaarheid en beschikbaarheid behouden.
 -   **4.2) Enterprise Backup & Data Protection / Disaster Recovery** – 21 tools — Beschermt bedrijfsdata via back-up, replicatie en orkestratie van herstel, inclusief disaster-recovery-as-a-service.
 
 ### 5) Security
 
--   **5.1) Vulnerability & Exposure Management** – 125 tools — Richt zich op vulnerability scanning, attack surface management en prioritering van exposure om bedrijfsdata, netwerken en systemen te beschermen tegen steeds veranderende cyberdreigingen.
--   **5.2) Security Information and Event Management (SIEM)** – 18 tools — Verzamelt, correleert en analyseert securityeventdata binnen de hele organisatie om dreigingen te detecteren en te onderzoeken.
--   **5.3) Security Orchestration, Automation and Response (SOAR) – 8 tools** — Automatiseert en orkestreert workflows voor incidentrespons en het delen van threat intelligence binnen de securitystack.
+-   **5.1) Vulnerability & Exposure Management** – 125 tools — Draait om vulnerability scanning, attack-surface management en het prioriteren van exposure om bedrijfsdata, netwerken en systemen te beschermen tegen steeds veranderende cyberdreigingen.
+-   **5.2) Security Information and Event Management (SIEM)** – 18 tools — Verzamelt, correleert en analyseert securitygebeurtenissen binnen de hele organisatie om dreigingen te detecteren en te onderzoeken.
+-   **5.3) Security Orchestration, Automation and Response (SOAR) – 8 tools** — Automatiseert en orkestreert incidentresponsworkflows en het delen van threat intelligence binnen de hele securitystack.
 -   **5.4) Endpoint Protection Platforms (EPP) & Endpoint Detection and Response (EDR)** – 15 tools — Beschermt tegen, detecteert en reageert op dreigingen op laptops, servers en andere endpoints.
 -   **5.5) Security Service Edge (SSE), SASE & CASB** – 15 tools — Brengt netwerkbeveiligingsfuncties — secure web gateway, CASB, ZTNA — samen in een vanuit de cloud geleverde edge, vaak gecombineerd met SD-WAN als SASE.
 -   **5.6) E-mailbeveiliging** – 13 tools — Beschermt tegen phishing, business email compromise en kwaadaardige bijlagen op zakelijke e-mailplatforms.
--   **5.7) Netwerk- & hybrid mesh-firewalls** – 17 tools — Dwingt netwerksegmentatie en verkeersbeleid af in gedistribueerde, hybride en cloudomgevingen.
+-   **5.7) Netwerk- & Hybrid Mesh Firewalls** – 17 tools — Dwingt netwerksegmentatie en verkeersbeleid af in gedistribueerde, hybride en cloudomgevingen.
 -   **5.8) Identity & Access Management (IAM, IGA & PAM)** – 40 tools — Beheert wie en wat toegang heeft tot bedrijfssystemen, van access management/SSO tot identity governance and administration en privileged access management.
--   **5.9) IT Integrated Risk Management (IRM/GRC)** – 111 tools — Biedt strategieën en systemen om operationele en regelgevingsrisico's te identificeren, te beoordelen en te beperken, zodat compliance behouden blijft en de weerbaarheid van de organisatie wordt ondersteund.
+-   **5.9) IT Integrated Risk Management (IRM/GRC)** – 111 tools — Biedt strategieën en systemen om operationele en regelgevingsrisico's te identificeren, te beoordelen en te beperken, zodat compliance gewaarborgd blijft en de weerbaarheid van de organisatie wordt ondersteund.
 
 ### 6) Corporate & Shared
 
--   \*\*6.1) Workforce (HR)\*\*– 137 tools — Richt zich op werving, personeelsplanning en talentontwikkeling, zodat organisaties de juiste mensen aantrekken, behouden en managen.
+-   **6.1) Workforce (HR)** – 137 tools — Richt zich op werving, personeelsplanning en talentontwikkeling, zodat organisaties de juiste mensen aantrekken, behouden en managen.
 -   **6.2) Finance**
 -   **6.3) Legal**
--   **6.4) Leveranciers & inkoop**
--   **6.5) Vastgoed & facilitair**
--   **6.6) Corporate communicatie**
+-   **6.4) Vendor & Procurement**
+-   **6.5) Property & Facility**
+-   **6.6) Corporate Communication**
 -   **6.7) Environment, Social & Governance (ESG)**
 
 ### 7) AI
 
--   **7.1) AI-platforms** – 41 tools — Omvat foundation-model- en enterprise-AI/LLM-platforms, copilots en tools voor agentorkestratie, en AI-ondersteunde IT-operationslagen die steeds vaker bovenop — en binnen — de andere categorieën zitten.
--   **7.2) Data Science- & Machine Learning-platforms** – 12 tools — Bouwt, traint, implementeert en beheert machine learning- en AI-modellen, inclusief MLOps en zelf gehoste infrastructuur voor model serving.
--   **7.3) Enterprise Conversational AI** – 13 tools — Speciaal ontwikkelde platforms voor het bouwen van virtuele agents, chatbots en spraakassistenten voor klantenservice en medewerkersondersteuning.
+-   **7.1) AI-platforms** – 41 tools — Omvat foundation-model- en enterprise AI/LLM-platforms, copilots en tools voor agentorkestratie, en AI-ondersteunde IT-operationslagen die steeds vaker bovenop — en binnen — de andere categorieën zitten.
+-   **7.2) Data Science & Machine Learning-platforms** – 12 tools — Bouwt, traint, implementeert en beheert machinelearning- en AI-modellen, inclusief MLOps en self-hosted infrastructuur voor model serving.
+-   **7.3) Enterprise Conversational AI** – 13 tools — Speciaal ontwikkelde platforms voor het bouwen van virtual agents, chatbots en spraakassistenten voor klantenservice en medewerkersondersteuning.
 
-Samen weerspiegelen deze tools het veelzijdige karakter van modern IT-management. Het is hoogst onwaarschijnlijk dat een bedrijf alle 1138 tools zal aanschaffen of gebruiken. Het is echter niet onwaarschijnlijk dat een bedrijf honderd van de hieronder vermelde tools gebruikt –en probeert te integreren.
+Samen weerspiegelen deze tools de veelzijdigheid van modern IT-management. Het is hoogst onwaarschijnlijk dat een bedrijf alle 1138 tools koopt of gebruikt. Het is echter niet onwaarschijnlijk dat een bedrijf honderd van de hieronder genoemde tools gebruikt –en probeert te integreren.
 
 Voor grote bedrijven die veel technologieën van verschillende leveranciers gebruiken, is het IT Tooling-domein waarschijnlijk het grootste en meest complexe IT-architectuurdomein dat ze hebben.
 
-Welke tool het best aansluit bij het doel en bij de doelgroep, hangt af van veel factoren. Sommige bedrijven laten IT-teams hun eigen tools kiezen. Andere proberen enterprisestandaarden af te dwingen. Om het landschap te vereenvoudigen, overlap in tooling te voorkomen en schaalvoordelen te maximaliseren (bijv. voor trainingen en toollicenties), vind ik dat bedrijven moeten proberen zo weinig mogelijk tools te gebruiken, en tegelijkertijd de juiste tools voor de taken die er liggen moeten kiezen. Sommige dingen zijn holistisch gezien voor mij gewoon logisch, en andere niet. Zo zouden bedrijven niet meerdere Enterprise Architecture-tools naast elkaar moeten gebruiken, tenzij één daarvan de source of truth is voor de andere.
+Welke tool het beste past bij het doel en bij de doelgroep, hangt af van veel factoren. Sommige bedrijven laten IT-teams hun eigen tools kiezen. Andere proberen enterprisestandaarden af te dwingen. Om het landschap te vereenvoudigen, overlap in tooling te voorkomen en schaalvoordelen te maximaliseren (bijvoorbeeld voor training en toollicenties), vind ik dat bedrijven zo min mogelijk tools moeten proberen te gebruiken, en tegelijk de juiste tools moeten kiezen voor het werk dat gedaan moet worden. Sommige dingen zijn holistisch gezien gewoon logisch voor mij, en andere niet. Zo zouden bedrijven niet meerdere Enterprise Architecture-tools naast elkaar moeten gebruiken, tenzij één daarvan de source of truth is voor de andere.
 
 ## 1. Strategie & Planning
 
@@ -261,7 +261,7 @@ Welke tool het best aansluit bij het doel en bij de doelgroep, hangt af van veel
 115.  XebiaLabs DevOps Platform (Legacy) van Digital.ai
 116.  xtype Native DevOps Automation Platform van xtype
 
-### 2.2.Low-codeapplicatieplatforms
+### 2.2.Low-code applicatieplatforms
 
 1.  App Engine Studio van ServiceNow
 2.  Appian van Appian
@@ -534,7 +534,7 @@ Welke tool het best aansluit bij het doel en bij de doelgroep, hangt af van veel
 
 ## 4. IT Operations
 
-### 4.1.Observabilityplatforms (ITOM)
+### 4.1.Observability-platforms (ITOM)
 
 1.  AIMS van AIMS Innovation
 2.  Alibaba Application Real-Time Monitoring Service (ARMS) van Alibaba Cloud
@@ -920,7 +920,7 @@ Welke tool het best aansluit bij het doel en bij de doelgroep, hangt af van veel
 12.  Proofpoint Aegis (Email Protection) van Proofpoint
 13.  Trend Micro Email Security van Trend Micro
 
-### 5.7.Netwerk- & hybrid mesh-firewalls
+### 5.7.Netwerk- & Hybrid Mesh Firewalls
 
 1.  Check Point Quantum van Check Point
 2.  Cisco Secure Firewall van Cisco
@@ -938,7 +938,7 @@ Welke tool het best aansluit bij het doel en bij de doelgroep, hangt af van veel
 14.  Sophos Firewall van Sophos
 15.  Suricata van Open Information Security Foundation (OISF)
 16.  WatchGuard Firebox van WatchGuard
-17.  Zeek van Zeek Project (community met steun van Corelight)
+17.  Zeek van Zeek Project (community ondersteund door Corelight)
 
 ### 5.8.Identity & Access Management (IAM, IGA & PAM)
 
@@ -1326,7 +1326,7 @@ Welke tool het best aansluit bij het doel en bij de doelgroep, hangt af van veel
 34.  CounselLink van LexisNexis
 35.  Enterprise Legal Service Delivery (LSD) van ServiceNow
 
-### 6.4. Leveranciers & inkoop
+### 6.4. Vendor & Procurement
 
 1.  Aravo Intelligence-First Platform van Aravo
 2.  Basware van Basware
@@ -1364,7 +1364,7 @@ Welke tool het best aansluit bij het doel en bij de doelgroep, hangt af van veel
 34.  Zip van Zip
 35.  Zycus iSource van Zycus
 
-### 6.5. Vastgoed & facilitair
+### 6.5. Property & Facility
 
 1.  Accruent van Accruent
 2.  Angus AnyWhere van RealPage
@@ -1395,7 +1395,7 @@ Welke tool het best aansluit bij het doel en bij de doelgroep, hangt af van veel
 27.  Workplace Service Delivery (WSD) van ServiceNow
 28.  Yardi Voyager van Yardi
 
-### 6.6. Corporate communicatie
+### 6.6. Corporate Communication
 
 1.  Beekeeper van Beekeeper
 2.  Blink van Blink
@@ -1490,7 +1490,7 @@ Welke tool het best aansluit bij het doel en bij de doelgroep, hangt af van veel
 40.  watsonx.ai van IBM
 41.  Writer van Writer
 
-### 7.2.Data Science- & Machine Learning-platforms
+### 7.2.Data Science & Machine Learning-platforms
 
 1.  Altair AI Studio (RapidMiner) van Altair
 2.  Databricks Data Intelligence Platform van Databricks
