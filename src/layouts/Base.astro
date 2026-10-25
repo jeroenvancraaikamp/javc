@@ -1,7 +1,7 @@
 ---
 import '../styles/site.css';
 import { SITE, getPages } from '../lib';
-import { langOf, switchPath, url, t, other, locale } from '../i18n';
+import { langOf, url, t, locale, LANGS, LANG_LABEL } from '../i18n';
 import ChatWidget from '../components/ChatWidget.astro';
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
   chat?: boolean;
 }
 const path = Astro.url.pathname;
-// The language follows the address: /nl/... is Dutch, everything else English.
+// The language follows the address: /nl/... is Dutch, /zh/... Chinese, everything else English.
 const lang = langOf(path);
 const T = t(lang);
 const { title, description = T.description, pageTitle, crumbs = [], edit, noindex = false, chat = true } = Astro.props;
@@ -22,8 +22,13 @@ const menu = (await getPages(lang)).filter((p) => p.data.menu).sort((a, b) => a.
 const isActive = (href: string) => path === href || (href !== url(lang, '/') && path.startsWith(href));
 const articlesActive = ['/articles/', '/category/', '/archive/', '/search/'].some((p) => path.startsWith(url(lang, p)));
 // Pages for signed-in use only (stats, editor) exist in English only, so they get no language switch.
-const alt = noindex ? null : switchPath(path);
+const switchable = !noindex;
 const site = Astro.site?.origin ?? 'https://javc.nl';
+const FLAGS = {
+  en: '<svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="uk-t"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>',
+  nl: '<svg viewBox="0 0 9 6" preserveAspectRatio="none" aria-hidden="true"><path fill="#21468B" d="M0 0h9v6H0z"/><path fill="#fff" d="M0 0h9v4H0z"/><path fill="#AE1C28" d="M0 0h9v2H0z"/></svg>',
+  zh: '<svg viewBox="0 0 30 20" preserveAspectRatio="none" aria-hidden="true"><path fill="#EE1C25" d="M0 0h30v20H0z"/><g fill="#FFDE00"><polygon points="5.00,2.00 5.67,4.07 7.85,4.07 6.09,5.35 6.76,7.43 5.00,6.15 3.24,7.43 3.91,5.35 2.15,4.07 4.33,4.07"/><polygon points="9.14,2.51 9.62,1.97 9.25,1.34 9.91,1.63 10.39,1.08 10.33,1.80 11.00,2.09 10.29,2.25 10.22,2.97 9.85,2.35"/><polygon points="11.01,4.14 11.66,3.82 11.56,3.10 12.07,3.62 12.72,3.30 12.38,3.95 12.88,4.47 12.17,4.34 11.83,4.99 11.73,4.27"/><polygon points="11.04,6.73 11.76,6.70 11.96,6.00 12.21,6.68 12.94,6.66 12.37,7.10 12.62,7.79 12.01,7.38 11.44,7.83 11.64,7.13"/><polygon points="9.22,8.38 9.90,8.63 10.35,8.06 10.32,8.79 11.00,9.05 10.30,9.24 10.26,9.96 9.87,9.36 9.16,9.55 9.62,8.98"/></g></svg>',
+};
 ---
 <!doctype html>
 <html lang={locale[lang]}>
@@ -35,16 +40,16 @@ const site = Astro.site?.origin ?? 'https://javc.nl';
     {noindex && <meta name="robots" content="noindex" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    {alt && (
+    {switchable && (
       <>
-        <link rel="alternate" hreflang={lang} href={site + path} />
-        <link rel="alternate" hreflang={other(lang)} href={site + alt} />
-        <link rel="alternate" hreflang="x-default" href={site + (lang === 'en' ? path : alt)} />
+        {LANGS.map((l) => <link rel="alternate" hreflang={l === 'zh' ? 'zh-Hans' : l} href={site + url(l, path)} />)}
+        <link rel="alternate" hreflang="x-default" href={site + url('en', path)} />
       </>
     )}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" />
+    {lang === 'zh' && <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&display=swap" rel="stylesheet" />}
     {SITE.gaId && (
       <>
         <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${SITE.gaId}`}></script>
@@ -62,14 +67,11 @@ const site = Astro.site?.origin ?? 'https://javc.nl';
     <div class="site-head">
     <div class="topbar">
       <div class="wrap">
-        {alt && (
-          <nav class="lang-switch" aria-label="Language / Taal">
-            <a href={lang === 'en' ? path : alt} hreflang="en" lang="en" title="English" aria-label="English" aria-current={lang === 'en' ? 'page' : undefined}>
-              <svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="uk-t"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></svg>
-            </a>
-            <a href={lang === 'nl' ? path : alt} hreflang="nl" lang="nl" title="Nederlands" aria-label="Nederlands" aria-current={lang === 'nl' ? 'page' : undefined}>
-              <svg viewBox="0 0 9 6" preserveAspectRatio="none" aria-hidden="true"><path fill="#21468B" d="M0 0h9v6H0z"/><path fill="#fff" d="M0 0h9v4H0z"/><path fill="#AE1C28" d="M0 0h9v2H0z"/></svg>
-            </a>
+        {switchable && (
+          <nav class="lang-switch" aria-label="Language / Taal / 语言">
+            {LANGS.map((l) => (
+              <a href={url(l, path)} hreflang={l === 'zh' ? 'zh-Hans' : l} lang={l === 'zh' ? 'zh-Hans' : l} title={LANG_LABEL[l]} aria-label={LANG_LABEL[l]} aria-current={l === lang ? 'page' : undefined} set:html={FLAGS[l]} />
+            ))}
           </nav>
         )}
         <a href={SITE.linkedin} aria-label="LinkedIn" class="social" target="_blank" rel="noopener">

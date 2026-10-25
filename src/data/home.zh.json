@@ -1,0 +1,26 @@
+{
+  "title": "欢迎来到 JAVC Management & Consultancy",
+  "subtitle": "Jeroen A. van Craaikamp 的个人网站，位于荷兰阿姆斯特尔芬。",
+  "text": "我作为企业内部员工积累了 20 多年的经验和技能。自 2022 年起，企业可以聘请我以独立顾问身份担任服务管理领域的项目/项目群经理、平台/产品负责人或架构师，使用 ServiceNow 等 IT4IT 平台。",
+  "intro": "“[文章/出版物](/articles/)”页面收录了数十篇博客，内容涉及我关注和从事的各种主题。",
+  "blocks": [
+    {
+      "heading": "我做什么",
+      "text": "我与利益相关方和敏捷团队成员一起，为大型企业规划、采购、创新、集成、实施和管理 IT 产品与平台。",
+      "button": "技能/专长",
+      "link": "/skills/"
+    },
+    {
+      "heading": "过往经历",
+      "text": "过去几十年里，我以内部员工或外部顾问的身份，在各种技术、商务和管理岗位上负责 IT4IT 和 CSM 项目及团队。",
+      "button": "项目/任务",
+      "link": "/experience/"
+    },
+    {
+      "heading": "服务对象",
+      "text": "我曾为 KPN、荷兰税务局（Belastingdienst）、荷兰皇家航空（KLM）、爱立信中国、Tellabs、ING 银行、CRH、Digital Realty、宜家（IKEA）、Booking、Action、Brenntag 和 Stater 等公司工作。",
+      "button": "客户/雇主",
+      "link": "/customers-employers/"
+    }
+  ]
+}

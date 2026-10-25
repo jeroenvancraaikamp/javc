@@ -5,13 +5,14 @@ import Base from '../layouts/Base.astro';
 import Sidebar from '../components/Sidebar.astro';
 import { marked } from 'marked';
 import { slugify, formatDate, SITE } from '../lib';
-import { url, other, t, categoryName } from '../i18n';
+import { url, t, categoryName } from '../i18n';
 const { item, kind, all } = Astro.props as any;
 const { lang } = item;
 const T = t(lang);
 const { Content } = await render(item.entry);
 const d = item.data;
-const original = url(other(lang), `/${item.id}/`);
+// A translation links to the original, in the language it was written in.
+const original = url(d.lang, `/${item.id}/`);
 // The CMS entry to edit: the original, or the translation shown here.
 const edit = item.translated
   ? `translations_${kind === 'page' ? 'pages' : 'articles'}/entries/${item.id}.${lang}`
@@ -26,7 +27,7 @@ const related = kind === 'article'
   : [];
 const note = !item.translated ? null : d.legal
   ? { text: T.legalNote, link: T.legalOriginal }
-  : { text: T.translatedFrom, link: T.readOriginal };
+  : { text: T.translatedFrom(d.lang), link: T.readOriginal };
 ---
 {kind === 'page' ? (
   <Base title={d.title} edit={edit} pageTitle={d.title} crumbs={[{ label: d.title }]}>
