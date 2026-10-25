@@ -128,7 +128,7 @@ collections:
       - { name: popular, label: Show under Popular, widget: boolean, default: false, required: false }
       - { name: draft, label: Draft (do not publish), widget: boolean, default: false, required: false }
       - { name: lang, label: Language, widget: select, options: [{ label: English, value: en }, { label: Nederlands, value: nl }], default: en, required: false, hint: 'The language you write this in. The other languages are translated automatically (see Translations).' }
-      - { name: linkedin, label: LinkedIn post, widget: string, required: false, hint: 'Optional: paste the link to your LinkedIn post about this article. A "Discuss this article on LinkedIn" button then appears next to the comments.' }
+      - { name: linkedin, label: LinkedIn post, widget: string, required: false, hint: 'Optional: paste the link to your LinkedIn post about this article. A "Discuss this article on LinkedIn" button then appears under the article.' }
       - { name: body, label: Text, widget: markdown, modes: [rich_text, raw] }
 
   - name: categories

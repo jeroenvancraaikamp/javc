@@ -4,7 +4,7 @@
 import Base from '../layouts/Base.astro';
 ---
 <Base title="Stats" pageTitle="Stats" crumbs={[{ label: 'Stats' }]} noindex>
-  <div class="wrap stats"><p class="stats-links"><a href="/comments/">Moderate comments →</a></p><div id="stats-out"><p class="muted">Loading…</p></div></div>
+  <div class="wrap stats"><div id="stats-out"><p class="muted">Loading…</p></div></div>
   <script>
     (async () => {
       const out = document.getElementById('stats-out')!;
