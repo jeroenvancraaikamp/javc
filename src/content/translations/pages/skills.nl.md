@@ -1,23 +1,23 @@
 ---
-title: "Skills/Expertise"
-menu: "Skills/Expertise"
-source: "9701829190e401f2"
+title: "Skills/expertise"
+menu: "Skills/expertise"
+source: "8d7170bfc301965c"
 ---
 
 ##  Over mij
 
-Ik ben geboren in 1966 en woonde de eerste twintig jaar van mijn leven in de regio Amsterdam. Daarna woonde en werkte ik in landen als China, Frankrijk en Ierland. Sinds 2001 woon ik met mijn vrouw en onze twee katten in Amstelveen.
+Ik ben geboren in 1966 en heb de eerste twintig jaar van mijn leven in de regio Amsterdam gewoond. Daarna heb ik gewoond en gewerkt in landen als China, Frankrijk en Ierland. Sinds 2001 woon ik met mijn vrouw en onze twee katten in Amstelveen.
 
-Ik heb de persoonlijkheidskenmerken Extravert, Intuïtief, Denkend en Verkennend ([**ENTP)**](https://www.16personalities.com/nl/de-entp-persoonlijkheid). Mensen met deze kenmerken gelden als gedurfd en creatief: ze halen ideeën met grote mentale wendbaarheid uit elkaar en bouwen ze opnieuw op. Ze streven hun doelen vastberaden na, ook als ze weerstand tegenkomen.
+Ik heb de persoonlijkheidskenmerken Extravert, Intuïtief, Denkend en Verkennend ([**ENTP)**](https://www.16personalities.com/entp-personality). Mensen met deze kenmerken gelden als gedurfd en creatief: ze ontleden ideeën en bouwen ze met grote mentale wendbaarheid weer op. Ze streven hun doelen vastberaden na, ongeacht de weerstand die ze daarbij tegenkomen.
 
-Als hobby duik ik, speel ik met domotica en onderhoud ik hobbywebsites. Verder houd ik van het strand, zeilen, culinair eten en champagne sabreren.
+In mijn vrije tijd duik ik, speel ik met domotica en onderhoud ik hobbywebsites. Ook houd ik van het strand, zeilen, culinair eten en champagne sabreren.
 
 ### Opleiding & certificeringen
 
 -   HAVO (Zaanlands Lyceum)
 -   HBO (Instituut voor Hoger Technisch en Nautisch Onderwijs)
 -   Post-HBO Informatie Analyse & Systeembeheer (Comtecno)
--   Product Owner (ING intern)
+-   Product Owner (intern ING)
 -   AI in Business (Beekestein Business School)
 -   Gecertificeerd PRINCE2 (projectmanagement) Practitioner
 -   Gecertificeerd ITIL 3 (Practitioner) en ITIL Version 5 (Foundation)
@@ -28,25 +28,25 @@ Als hobby duik ik, speel ik met domotica en onderhoud ik hobbywebsites. Verder h
 
 De eerste twaalf jaar van mijn loopbaan werkte ik in de telecomsector als:
 
--   Systeemspecialist
--   Projectmanager
+-   System Specialist
+-   Project Manager
 -   Operations Manager
 -   Business Consultant
--   Programmamanager
+-   Program Manager
 -   Service Marketing Manager
 
 Sinds 2001 werk ik in de IT in de volgende rollen:
 
--   Projectmanager
+-   Project Manager
 -   ITIL Configuration Manager
 -   ITIL Enterprise Process Owner
--   PRINCE2 Projectmanager
--   PRINCE2 Programmamanager
--   IT4IT Afdelingsmanager
+-   PRINCE2 Project Manager
+-   PRINCE2 Program Manager
+-   IT4IT Department Manager
 -   AGILE Product Owner
 -   AGILE Platform Owner
 
-**Sinds 2014 implementeer ik ServiceNow-platforms en -werkwijzen. In deze rollen heb ik technische, leidinggevende, analytische, commerciële, financiële en communicatieve vaardigheden opgebouwd.** Ik ben opgeleid en gecertificeerd in het implementeren van service management-processen, het managen van watervalprojecten en -programma's en het beheren van agile DevSecOps-backlogs. Zelf programmeer ik niet meer, maar waar nodig **werk ik nog graag hands-on met het platform en/of structureer ik data erin of ervoor**. In bovenstaande rollen hielp ik graag mee aan strategieën, operating- en sourcingmodellen, architecturen en roadmaps.
+**Sinds 2014 implementeer ik ServiceNow-platformen en -practices. In deze rollen heb ik technische, leidinggevende, analytische, commerciële, financiële en communicatieve vaardigheden opgebouwd.** Ik ben opgeleid en gecertificeerd in het implementeren van service management-processen, het managen van waterval-projecten en -programma's en het managen van agile DevSecOps-backlogs. Zelf programmeer ik niet meer, maar waar nodig **werk ik nog steeds graag hands-on met het platform en/of structureer ik data in/voor het platform**. In bovenstaande rollen heb ik er met plezier aan bijgedragen om strategieën, operating- en sourcingmodellen, architecturen en roadmaps op te stellen.
 
 ##  Productkennis
 
@@ -61,7 +61,7 @@ Sinds 2001 werk ik in de IT in de volgende rollen:
 -   Core Platform (incl. CSDM, CMDB, Portal, enz.)  
 -   Maatwerkmodule (bijv. Joiner, Mover & Leaver)
 
-**Cloudplatforms**
+**Cloudplatformen**
 
 -   VMware/OpenStack/HyperV
 -   Amazon Web Services (AWS)
@@ -70,7 +70,7 @@ Sinds 2001 werk ik in de IT in de volgende rollen:
 -   Oracle Cloud Infrastructure (OCI)
 -   Microsoft Office365
 
-**Overige platforms**
+**Diverse andere platformen**
 
 -   SAP LeanIX, BlueDolphin (EA)
 -   LDAP/AD/OKTA (SSO)
@@ -99,8 +99,6 @@ Sinds 2001 werk ik in de IT in de volgende rollen:
 
 ### Voorkeursrol
 
-Ik denk dat ik het best tot mijn recht kom in een rol die een mix vraagt van leidinggevende, procesmatige en technisch-architecturale vaardigheden. **Mijn voorkeur gaat uit naar rollen als project-/programmamanager of interim platform-/product owner,** in samenwerking met management, stakeholders, leveranciers en interne/externe expertteams.
+Ik denk dat ik het best tot mijn recht kom in een rol die een mix vraagt van leidinggevende, procesmatige en technische/architecturale vaardigheden. **Mijn voorkeur gaat uit naar rollen als project-/programmamanager of interim platform-/product owner,** in samenwerking met management, stakeholders, leveranciers en interne/externe expertteams.
 
-Ik deel graag de ServiceNow-expertise die ik als consultant heb opgebouwd. Al een paar jaar 
-
-kan ik **het ServiceNow-platform implementeren, onderhouden en vernieuwen, inclusief de ondersteunde werkwijzen en** **integraties.**
+Ik deel graag de ServiceNow-expertise die ik als consultant heb opgebouwd. Ik **implementeer, onderhoud en innoveer het ServiceNow-platform, inclusief de ondersteunde practices en** **integraties.**
