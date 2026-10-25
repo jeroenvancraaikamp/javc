@@ -65,14 +65,62 @@ collections:
           - { name: locked, label: Keep my edits, widget: boolean, default: false, required: false, hint: 'Translated automatically from the English homepage. Tick this after correcting it yourself, so a change to the English text does not overwrite your version.' }
           - { name: source, label: Source, widget: hidden, required: false }
 
-  - name: home_zh
+  - name: home_cn
     label: Homepage (中文)
     files:
-      - name: home_zh
+      - name: home_cn
         label: Homepage (中文)
         file: src/data/home.cn.json
         format: json
         preview_path: '/cn/'
+        fields:
+          - { name: title, label: Title (large heading), widget: string }
+          - { name: subtitle, label: Subtitle, widget: string }
+          - { name: text, label: Text over the video, widget: text }
+          - { name: intro, label: Line below the video, widget: string }
+          - name: blocks
+            label: Blocks
+            widget: list
+            fields:
+              - { name: heading, label: Heading, widget: string }
+              - { name: text, label: Text, widget: text }
+              - { name: button, label: Button text, widget: string }
+              - { name: link, label: Button link, widget: string }
+          - { name: locked, label: Keep my edits, widget: boolean, default: false, required: false, hint: 'Translated automatically from the English homepage. Tick this after correcting it yourself, so a change to the English text does not overwrite your version.' }
+          - { name: source, label: Source, widget: hidden, required: false }
+
+  - name: home_fr
+    label: Homepage (Français)
+    files:
+      - name: home_fr
+        label: Homepage (Français)
+        file: src/data/home.fr.json
+        format: json
+        preview_path: '/fr/'
+        fields:
+          - { name: title, label: Title (large heading), widget: string }
+          - { name: subtitle, label: Subtitle, widget: string }
+          - { name: text, label: Text over the video, widget: text }
+          - { name: intro, label: Line below the video, widget: string }
+          - name: blocks
+            label: Blocks
+            widget: list
+            fields:
+              - { name: heading, label: Heading, widget: string }
+              - { name: text, label: Text, widget: text }
+              - { name: button, label: Button text, widget: string }
+              - { name: link, label: Button link, widget: string }
+          - { name: locked, label: Keep my edits, widget: boolean, default: false, required: false, hint: 'Translated automatically from the English homepage. Tick this after correcting it yourself, so a change to the English text does not overwrite your version.' }
+          - { name: source, label: Source, widget: hidden, required: false }
+
+  - name: home_de
+    label: Homepage (Deutsch)
+    files:
+      - name: home_de
+        label: Homepage (Deutsch)
+        file: src/data/home.de.json
+        format: json
+        preview_path: '/de/'
         fields:
           - { name: title, label: Title (large heading), widget: string }
           - { name: subtitle, label: Subtitle, widget: string }

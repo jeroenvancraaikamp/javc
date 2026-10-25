@@ -1,0 +1,8 @@
+---
+import Articles from '../../../views/Articles.astro';
+import { articlePages } from '../../../lib';
+export function getStaticPaths({ paginate }: any) {
+  return articlePages(paginate, 'fr');
+}
+---
+<Articles page={Astro.props.page} />

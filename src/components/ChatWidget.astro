@@ -1,7 +1,7 @@
 ---
 // Floating chat assistant: type or speak a question, the answer comes from /api/chat
 // (see worker/index.js). Voice uses the browser's own speech recognition and speech synthesis.
-interface Props { lang?: 'en' | 'nl' | 'cn' }
+interface Props { lang?: 'en' | 'nl' | 'cn' | 'fr' | 'de' }
 const { lang = 'en' } = Astro.props;
 ---
 <div class="chat" id="chat" data-open="false" data-lang={lang}>
@@ -44,8 +44,8 @@ const { lang = 'en' } = Astro.props;
 
   // The assistant speaks the language of the page (text, voice input and read-aloud).
   const root = document.getElementById('chat')!;
-  const lang = (['nl', 'cn'].includes(root.dataset.lang!) ? root.dataset.lang : 'en') as 'en' | 'nl' | 'cn';
-  const speech = { en: 'en-GB', nl: 'nl-NL', cn: 'zh-CN' }[lang];
+  const lang = (['nl', 'cn', 'fr', 'de'].includes(root.dataset.lang!) ? root.dataset.lang : 'en') as 'en' | 'nl' | 'cn' | 'fr' | 'de';
+  const speech = { en: 'en-GB', nl: 'nl-NL', cn: 'zh-CN', fr: 'fr-FR', de: 'de-DE' }[lang];
   const T = {
     en: {
       sub: "Ask me about Jeroen's work and articles", speak: 'Read answers aloud', reset: 'New conversation',
@@ -64,6 +64,18 @@ const { lang = 'en' } = Astro.props;
       mic: '语音提问', ph: '输入您的问题…', listening: '正在聆听…', thinking: '思考中…',
       hello: '您好！我了解本站的所有文章和 Jeroen 的简历。有什么可以帮您？',
       error: '出了点问题，请稍后再试。', sources: '来源',
+    },
+    fr: {
+      sub: 'Posez-moi vos questions sur le travail et les articles de Jeroen', speak: 'Lire les réponses à voix haute', reset: 'Nouvelle conversation',
+      mic: 'Dictez votre question', ph: 'Tapez votre question…', listening: 'À l’écoute…', thinking: 'Réflexion…',
+      hello: 'Bonjour ! Je connais tous les articles de ce site et le CV de Jeroen. Comment puis-je vous aider ?',
+      error: 'Une erreur s’est produite. Réessayez plus tard.', sources: 'Sources',
+    },
+    de: {
+      sub: 'Fragen Sie mich nach Jeroens Arbeit und Artikeln', speak: 'Antworten vorlesen', reset: 'Neues Gespräch',
+      mic: 'Frage einsprechen', ph: 'Ihre Frage eingeben…', listening: 'Ich höre zu…', thinking: 'Einen Moment…',
+      hello: 'Hallo! Ich kenne alle Artikel auf dieser Website und Jeroens Lebenslauf. Wie kann ich Ihnen helfen?',
+      error: 'Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.', sources: 'Quellen',
     },
   }[lang];
 

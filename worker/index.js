@@ -71,22 +71,22 @@ function search(query, k = TOP_K) {
 const SYSTEM = `You are the assistant on javc.nl, the website of Jeroen van Craaikamp (JAVC Management & Consultancy), a freelance ServiceNow implementation manager and consultant in Amstelveen, the Netherlands. Visitors ask about Jeroen, his experience and services, and the topics he writes about (ServiceNow, CMDB, CSDM, IT4IT, ITIL, TBM, ESM).
 
 How to answer:
-- Answer in the language named with each question (the language of the page the visitor is on: the site is in English, with a Dutch version under /nl/ and a Simplified Chinese version under /cn/).
+- Answer in the language named with each question (the language of the page the visitor is on: the site is in English, with Dutch, Simplified Chinese, French and German versions under /nl/, /cn/, /fr/ and /de/).
 - Base your answer on the passages provided with each question. If they don't cover the question, say you don't know based on the site, and don't make things up. General background knowledge is fine for explaining a concept, but never invent facts about Jeroen.
 - Keep answers short and conversational (a few sentences or a short list). Your answer may be read aloud, so avoid tables.
 - When an answer comes from an article or page, mention its title and link it in Markdown with the path given, e.g. [Title](/path/).
 - Refer to Jeroen in the third person. For hiring, quotes or contact, point to the contact page [Contact me](/contact-me/) or Info@JAVC.nl.`;
 
-// The Dutch site lives under /nl/, the Chinese one under /cn/: point links to site pages there for those visitors.
-const LANG_NAME = { en: 'English', nl: 'Dutch', cn: 'Simplified Chinese' };
+// The other languages live under /nl/, /cn/, /fr/ and /de/: point links to site pages there for those visitors.
+const LANG_NAME = { en: 'English', nl: 'Dutch', cn: 'Simplified Chinese', fr: 'French', de: 'German' };
 const LANGS = Object.keys(LANG_NAME);
 function localPath(path, lang) {
-  if (lang === 'en' || !path?.startsWith('/') || /^\/(nl|cn)\//.test(path) || /^\/(wp-content|images|media|files|api)\//.test(path)) return path;
+  if (lang === 'en' || !path?.startsWith('/') || /^\/(nl|cn|fr|de)\//.test(path) || /^\/(wp-content|images|media|files|api)\//.test(path)) return path;
   return `/${lang}${path}`;
 }
 const SORRY = {
-  refused: { en: "Sorry, I can't help with that question.", nl: 'Sorry, met die vraag kan ik je niet helpen.', cn: '抱歉，这个问题我无法回答。' },
-  none: { en: 'Sorry, I have no answer to that.', nl: 'Sorry, daar heb ik geen antwoord op.', cn: '抱歉，我没有这个问题的答案。' },
+  refused: { en: "Sorry, I can't help with that question.", nl: 'Sorry, met die vraag kan ik je niet helpen.', cn: '抱歉，这个问题我无法回答。', fr: 'Désolé, je ne peux pas vous aider avec cette question.', de: 'Entschuldigung, bei dieser Frage kann ich nicht helfen.' },
+  none: { en: 'Sorry, I have no answer to that.', nl: 'Sorry, daar heb ik geen antwoord op.', cn: '抱歉，我没有这个问题的答案。', fr: "Désolé, je n'ai pas de réponse à cela.", de: 'Entschuldigung, darauf habe ich keine Antwort.' },
 };
 const localLinks = (text, lang) => text.replace(/\]\((\/[^)\s]*)\)/g, (_, p) => `](${localPath(p, lang)})`);
 
@@ -221,18 +221,18 @@ async function contact(request, env) {
   if (denied) return denied;
   let f;
   try { f = await request.json(); } catch { return json({ error: 'Bad request' }, 400); }
-  // Error messages in the language of the form (the Dutch contact page sends lang: 'nl', the Chinese one 'cn').
-  const say = (en, nl, cn) => ({ en, nl, cn })[f?.lang] ?? en;
+  // Error messages in the language of the form (the Dutch contact page sends lang: 'nl', the Chinese one 'cn', and so on).
+  const say = (en, nl, cn, fr, de) => ({ en, nl, cn, fr, de })[f?.lang] ?? en;
   const field = (k, max) => (typeof f?.[k] === 'string' ? f[k].trim().slice(0, max) : '');
   const name = field('name', 200), email = field('email', 200), phone = field('phone', 50), message = field('message', 5000);
 
   // Honeypot: a hidden field people never fill in; bots do (password managers are told to skip it). Pretend it worked. Same for impossibly fast submits.
   if (field('hp_note', 200) || tooFast(f)) return json({ ok: true });
-  if (!(await humanCheck(f, request, env))) return json({ error: say('The spam check failed. Please reload the page and try again.', 'De spamcontrole is mislukt. Laad de pagina opnieuw en probeer het nog eens.', '垃圾信息检查未通过。请刷新页面后重试。') }, 403);
+  if (!(await humanCheck(f, request, env))) return json({ error: say('The spam check failed. Please reload the page and try again.', 'De spamcontrole is mislukt. Laad de pagina opnieuw en probeer het nog eens.', '垃圾信息检查未通过。请刷新页面后重试。', 'La vérification anti-spam a échoué. Rechargez la page et réessayez.', 'Die Spamprüfung ist fehlgeschlagen. Bitte laden Sie die Seite neu und versuchen Sie es erneut.') }, 403);
   if (!name || !message || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)) {
-    return json({ error: say('Please fill in your name, a valid email address and a message.', 'Vul je naam, een geldig e-mailadres en een bericht in.', '请填写您的姓名、有效的电子邮件地址和留言。') }, 400);
+    return json({ error: say('Please fill in your name, a valid email address and a message.', 'Vul je naam, een geldig e-mailadres en een bericht in.', '请填写您的姓名、有效的电子邮件地址和留言。', 'Veuillez indiquer votre nom, une adresse e-mail valide et un message.', 'Bitte geben Sie Ihren Namen, eine gültige E-Mail-Adresse und eine Nachricht ein.') }, 400);
   }
-  if (!env.SMTP2GO_API_KEY) return json({ error: say('The form is not available right now. Please email Info@JAVC.nl.', 'Het formulier werkt op dit moment niet. Mail naar Info@JAVC.nl.', '表单暂时无法使用。请发送电子邮件至 Info@JAVC.nl。') }, 503);
+  if (!env.SMTP2GO_API_KEY) return json({ error: say('The form is not available right now. Please email Info@JAVC.nl.', 'Het formulier werkt op dit moment niet. Mail naar Info@JAVC.nl.', '表单暂时无法使用。请发送电子邮件至 Info@JAVC.nl。', "Le formulaire n'est pas disponible pour le moment. Écrivez à Info@JAVC.nl.", 'Das Formular ist gerade nicht verfügbar. Bitte schreiben Sie an Info@JAVC.nl.') }, 503);
 
   const res = await fetch('https://api.smtp2go.com/v3/email/send', {
     method: 'POST',
@@ -248,7 +248,7 @@ async function contact(request, env) {
   const data = res ? await res.json().catch(() => ({})) : {};
   if (!res?.ok || !data?.data?.succeeded) {
     console.error('smtp2go error', res?.status, JSON.stringify(data));
-    return json({ error: say('Sending failed. Please try again later or email Info@JAVC.nl.', 'Versturen is mislukt. Probeer het later opnieuw of mail naar Info@JAVC.nl.', '发送失败。请稍后再试，或发送电子邮件至 Info@JAVC.nl。') }, 502);
+    return json({ error: say('Sending failed. Please try again later or email Info@JAVC.nl.', 'Versturen is mislukt. Probeer het later opnieuw of mail naar Info@JAVC.nl.', '发送失败。请稍后再试，或发送电子邮件至 Info@JAVC.nl。', "L'envoi a échoué. Réessayez plus tard ou écrivez à Info@JAVC.nl.", 'Senden fehlgeschlagen. Bitte versuchen Sie es später erneut oder schreiben Sie an Info@JAVC.nl.') }, 502);
   }
   return json({ ok: true });
 }
