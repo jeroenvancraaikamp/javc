@@ -9,7 +9,6 @@ import Anthropic from '@anthropic-ai/sdk';
 import KNOWLEDGE from './knowledge.json';
 import WP_IDS from './wp-ids.json';
 import { logHit, logChat, statsData } from './stats.js';
-import { comments } from './comments.js';
 import { turnstileConfig, humanCheck, tooFast } from './turnstile.js';
 
 const CLAUDE_MODEL = 'claude-opus-5-5';
@@ -287,7 +286,6 @@ export default {
     if (url.pathname === '/api/hit') return logHit(request, env).catch((err) => { console.error('hit', err); return new Response(null, { status: 204 }); });
     if (url.pathname === '/api/stats') return statsData(request, env);
     if (url.pathname === '/api/turnstile') return turnstileConfig(env);
-    if (url.pathname === '/api/comments' || url.pathname === '/api/comments/moderate') return comments(request, env, guard, { humanCheck, tooFast });
     if (url.pathname === '/api/contact') return contact(request, env);
     return env.ASSETS.fetch(request);
   },
