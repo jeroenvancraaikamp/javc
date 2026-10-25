@@ -61,7 +61,7 @@ Assets may be externally procured individually (e.g., per item) or in bulk (e.g.
 
 ### Services and Service Offerings
 
-A **Service** is a black box when the provider owns the products or assets that are consumed. When the consuming company owns them, the service is more of a **management activity** of the service provider**.** Either way, ownership and accountability for the services, as well as the supported product/assets, matter.
+A **Service** is a black box when the provider owns the products or assets that are consumed. When the consuming company owns them, the service is more of a **management activity** of the service provider. Either way, ownership and accountability for the services, as well as the supported product/assets, matter.
 
 To differentiate within Services, we use **Service Offerings**: variations of a service with specific commitments. For example, production vs. non-production environments may be separate offerings. Both Services and Service Offerings are baselines, and they are (directly or indirectly) related to the Instances for which they provide coverage/support. It is considered good practice to tag CIs with the Offering under which they (and their children) are covered.
 

@@ -55,7 +55,7 @@ This is an overview of 1136 IT management tools, grouped into 26 categories acro
 
 ### 6) Corporate & Shared
 
--   \*\*6.1) Workforce (HR)\*\*– 137 Tools — Concentrates on recruitment, workforce planning, and talent development, ensuring that organizations attract, retain, and manage the right personnel.
+-   **6.1) Workforce (HR)** – 137 Tools — Concentrates on recruitment, workforce planning, and talent development, ensuring that organizations attract, retain, and manage the right personnel.
 -   **6.2) Finance**
 -   **6.3) Legal**
 -   **6.4) Vendor & Procurement**

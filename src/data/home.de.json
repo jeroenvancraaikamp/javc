@@ -1,0 +1,26 @@
+{
+  "title": "Willkommen bei JAVC Management & Consultancy",
+  "subtitle": "Die Website von Jeroen A. van Craaikamp in Amstelveen, Niederlande.",
+  "text": "Nach mehr als 20 Jahren Erfahrung als interner Mitarbeiter können Unternehmen mich seit 2022 als selbstständigen Projekt-/Programmmanager, Platform/Product Owner oder Architekten im Bereich Service Management beauftragen, mit IT4IT-Plattformen wie ServiceNow.",
+  "intro": "Auf der Seite „[Artikel/Publikationen](/articles/)“ finden Sie einige Dutzend Blogbeiträge zu den Themen, die mich beschäftigen.",
+  "blocks": [
+    {
+      "heading": "Was ich mache",
+      "text": "Gemeinsam mit Stakeholdern und agilen Teammitgliedern plane, beschaffe, erneuere, integriere, implementiere und verwalte ich IT-Produkte und -Plattformen für große Unternehmen.",
+      "button": "Kompetenzen/Expertise",
+      "link": "/skills/"
+    },
+    {
+      "heading": "Bisher",
+      "text": "In den letzten Jahrzehnten habe ich IT4IT- und CSM-Projekte und -Teams geleitet, als interner Mitarbeiter oder externer Berater, in verschiedenen technischen, kaufmännischen und leitenden Rollen.",
+      "button": "Projekte/Aufträge",
+      "link": "/experience/"
+    },
+    {
+      "heading": "Für wen",
+      "text": "Ich habe für Unternehmen wie KPN, Belastingdienst, KLM, Ericsson China, Tellabs, ING Bank, CRH, Digital Realty, IKEA, Booking, Action, Brenntag und Stater gearbeitet.",
+      "button": "Kunden/Arbeitgeber",
+      "link": "/customers-employers/"
+    }
+  ]
+}

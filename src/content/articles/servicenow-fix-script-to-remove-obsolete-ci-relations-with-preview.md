@@ -18,7 +18,7 @@ With that in mind, I apply a simple rule:
 
 -   Every relation must have both a parent and a child.
 -   Both the parent and child must exist.
--   Neither parent nor child may be *R**etired*.
+-   Neither parent nor child may be *Retired*.
 -   All other relations are invalid and should be removed.
 
 *Note: ServiceNow does not support retiring relations, which actually makes sense.*
@@ -242,8 +242,7 @@ Thereafter, I asked ChatGPT to document the script, which worked like a charm (s
 
 `*** Script: [CMDB Cleanup] START 2025-09-07T11:02:01.456Z | Mode: DELETE (invalid relationships will be removed).   *** Script: [CMDB Cleanup] Processed 1000 relationships so far...   *** Script: [CMDB Cleanup] Deleted chunk of 500 records.   *** Script: [CMDB Cleanup] Deleted chunk of 500 records.   *** Script: [CMDB Cleanup] Deleted chunk of 145 records.   *** Script: [CMDB Cleanup] FINISHED | Deleted 1,145 invalid CMDB relationship(s) out of 12,480 processed. Duration: 15 seconds.   `
 
-**  
-Key points**:
+**Key points**:
 
 -   No CSV rows are printed (only counts).
 -   Relationships are deleted in **chunks**.

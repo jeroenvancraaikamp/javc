@@ -45,8 +45,9 @@ function browserLang(request) {
   return m ? m[1].toLowerCase() : '';
 }
 
-// Site language from the path: Dutch under /nl/, Chinese under /cn/, English everywhere else.
-const SITE_LANG = "CASE WHEN path = '/nl' OR path LIKE '/nl/%' THEN 'nl' WHEN path = '/cn' OR path LIKE '/cn/%' THEN 'cn' ELSE 'en' END";
+// Site language from the path: Dutch under /nl/, Chinese under /cn/, French under /fr/, German under /de/, English everywhere else.
+const SITE_LANGS = ['en', 'nl', 'cn', 'fr', 'de'];
+const SITE_LANG = `CASE ${SITE_LANGS.slice(1).map((l) => `WHEN path = '/${l}' OR path LIKE '/${l}/%' THEN '${l}'`).join(' ')} ELSE 'en' END`;
 
 // POST /api/hit {p: path, r: referrer}, sent by a small script on every page (src/layouts/Base.astro).
 export async function logHit(request, env) {
@@ -129,14 +130,14 @@ async function revisions() {
   }));
 }
 
-// Texts of /stats in the three languages of the site (/stats/, /nl/stats/, /cn/stats/).
-const LOCALE = { en: 'en-GB', nl: 'nl-NL', cn: 'zh-CN' };
+// Texts of /stats in the languages of the site (/stats/, /nl/stats/, /cn/stats/, /fr/stats/, /de/stats/).
+const LOCALE = { en: 'en-GB', nl: 'nl-NL', cn: 'zh-CN', fr: 'fr-FR', de: 'de-DE' };
 const TEXT = {
   en: {
     views: 'views', visitors: 'visitors', questions: 'questions', noData: 'No data yet.', noDb: 'The database is not available yet.',
     pageViews: 'Page views', visitorsDay: 'Visitors (counted per day)', perVisitor: 'Pages per visitor', perDay: 'Per day',
     siteLang: 'Site language', language: 'Language', viewsH: 'Views', share: 'Share', visitorsH: 'Visitors',
-    langNames: { en: 'English', nl: 'Dutch', cn: 'Chinese' }, langPerDay: 'Views per language per day',
+    langNames: { en: 'English', nl: 'Dutch', cn: 'Chinese', fr: 'French', de: 'German' }, langPerDay: 'Views per language per day',
     browserLang: 'Browser language', unknown: '(unknown)', noBrowserLang: 'Collected from now on; no data yet.',
     topPages: 'Most viewed pages', page: 'Page', referrers: 'Referrers', website: 'Website', direct: '(direct / unknown)',
     countries: 'Countries', country: 'Country', devices: 'Devices', device: 'Device',
@@ -151,7 +152,7 @@ const TEXT = {
     views: 'weergaven', visitors: 'bezoekers', questions: 'vragen', noData: 'Nog geen gegevens.', noDb: 'De database is nog niet beschikbaar.',
     pageViews: 'Paginaweergaven', visitorsDay: 'Bezoekers (per dag geteld)', perVisitor: "Pagina's per bezoeker", perDay: 'Per dag',
     siteLang: 'Taal van de site', language: 'Taal', viewsH: 'Weergaven', share: 'Aandeel', visitorsH: 'Bezoekers',
-    langNames: { en: 'Engels', nl: 'Nederlands', cn: 'Chinees' }, langPerDay: 'Weergaven per taal per dag',
+    langNames: { en: 'Engels', nl: 'Nederlands', cn: 'Chinees', fr: 'Frans', de: 'Duits' }, langPerDay: 'Weergaven per taal per dag',
     browserLang: 'Taal van de browser', unknown: '(onbekend)', noBrowserLang: 'Wordt vanaf nu verzameld; nog geen gegevens.',
     topPages: "Meest bekeken pagina's", page: 'Pagina', referrers: 'Verwijzende sites', website: 'Website', direct: '(direct / onbekend)',
     countries: 'Landen', country: 'Land', devices: 'Apparaten', device: 'Apparaat',
@@ -166,7 +167,7 @@ const TEXT = {
     views: '浏览量', visitors: '访客', questions: '问题', noData: '暂无数据。', noDb: '数据库暂不可用。',
     pageViews: '页面浏览量', visitorsDay: '访客（按天计算）', perVisitor: '每位访客浏览页数', perDay: '每天',
     siteLang: '网站语言', language: '语言', viewsH: '浏览量', share: '占比', visitorsH: '访客',
-    langNames: { en: '英文', nl: '荷兰语', cn: '中文' }, langPerDay: '每天各语言浏览量',
+    langNames: { en: '英文', nl: '荷兰语', cn: '中文', fr: '法语', de: '德语' }, langPerDay: '每天各语言浏览量',
     browserLang: '浏览器语言', unknown: '（未知）', noBrowserLang: '从现在开始收集，暂无数据。',
     topPages: '最多浏览的页面', page: '页面', referrers: '来源网站', website: '网站', direct: '（直接访问 / 未知）',
     countries: '国家', country: '国家', devices: '设备', device: '设备',
@@ -176,6 +177,36 @@ const TEXT = {
     change: '更改', noGithub: '暂时无法连接 GitHub。', today: '今天', days: (n) => `${n} 天`,
     site: '网站统计', bot: '聊天机器人统计', revs: '网站修订记录',
     note: '在此浏览器中，您自己的访问不计入统计。访客统计不使用 Cookie。',
+  },
+  fr: {
+    views: 'vues', visitors: 'visiteurs', questions: 'questions', noData: 'Pas encore de données.', noDb: "La base de données n'est pas encore disponible.",
+    pageViews: 'Pages vues', visitorsDay: 'Visiteurs (comptés par jour)', perVisitor: 'Pages par visiteur', perDay: 'Par jour',
+    siteLang: 'Langue du site', language: 'Langue', viewsH: 'Vues', share: 'Part', visitorsH: 'Visiteurs',
+    langNames: { en: 'Anglais', nl: 'Néerlandais', cn: 'Chinois', fr: 'Français', de: 'Allemand' }, langPerDay: 'Vues par langue et par jour',
+    browserLang: 'Langue du navigateur', unknown: '(inconnue)', noBrowserLang: 'Collectée à partir de maintenant ; pas encore de données.',
+    topPages: 'Pages les plus vues', page: 'Page', referrers: 'Sites référents', website: 'Site', direct: '(direct / inconnu)',
+    countries: 'Pays', country: 'Pays', devices: 'Appareils', device: 'Appareil',
+    deviceNames: { desktop: 'ordinateur', mobile: 'mobile', tablet: 'tablette' },
+    questionsH: 'Questions', failedH: 'Échecs', avgTime: 'Temps de réponse moyen', model: 'Modèle', qPerDay: 'Questions par jour',
+    latest: 'Dernières questions', time: 'Heure', question: 'Question', failed: 'échec', sources: 'Sources les plus utilisées', source: 'Source', times: 'Fois',
+    change: 'Modification', noGithub: 'GitHub est injoignable pour le moment.', today: "Aujourd'hui", days: (n) => `${n} jours`,
+    site: 'Statistiques du site', bot: 'Statistiques du chatbot', revs: 'Modifications du site',
+    note: 'Vos propres visites ne sont pas comptées dans ce navigateur. Les visiteurs sont comptés sans cookies.',
+  },
+  de: {
+    views: 'Aufrufe', visitors: 'Besucher', questions: 'Fragen', noData: 'Noch keine Daten.', noDb: 'Die Datenbank ist noch nicht verfügbar.',
+    pageViews: 'Seitenaufrufe', visitorsDay: 'Besucher (pro Tag gezählt)', perVisitor: 'Seiten pro Besucher', perDay: 'Pro Tag',
+    siteLang: 'Sprache der Website', language: 'Sprache', viewsH: 'Aufrufe', share: 'Anteil', visitorsH: 'Besucher',
+    langNames: { en: 'Englisch', nl: 'Niederländisch', cn: 'Chinesisch', fr: 'Französisch', de: 'Deutsch' }, langPerDay: 'Aufrufe pro Sprache und Tag',
+    browserLang: 'Sprache des Browsers', unknown: '(unbekannt)', noBrowserLang: 'Wird ab jetzt erfasst; noch keine Daten.',
+    topPages: 'Meistbesuchte Seiten', page: 'Seite', referrers: 'Verweisende Websites', website: 'Website', direct: '(direkt / unbekannt)',
+    countries: 'Länder', country: 'Land', devices: 'Geräte', device: 'Gerät',
+    deviceNames: { desktop: 'Desktop', mobile: 'Mobil', tablet: 'Tablet' },
+    questionsH: 'Fragen', failedH: 'Fehlgeschlagen', avgTime: 'Durchschn. Antwortzeit', model: 'Modell', qPerDay: 'Fragen pro Tag',
+    latest: 'Neueste Fragen', time: 'Zeit', question: 'Frage', failed: 'fehlgeschlagen', sources: 'Meistgenutzte Quellen', source: 'Quelle', times: 'Mal',
+    change: 'Änderung', noGithub: 'GitHub ist gerade nicht erreichbar.', today: 'Heute', days: (n) => `${n} Tage`,
+    site: 'Website-Statistiken', bot: 'Chatbot-Statistiken', revs: 'Änderungen an der Website',
+    note: 'Ihre eigenen Besuche werden in diesem Browser nicht gezählt. Besucher werden ohne Cookies gezählt.',
   },
 };
 
@@ -231,7 +262,7 @@ export async function statsData(request, env) {
       q('SELECT COUNT(*) views, (SELECT SUM(n) FROM (SELECT COUNT(DISTINCT visitor) n FROM hits WHERE day >= ?1 GROUP BY day)) visitors FROM hits WHERE day >= ?1'),
       q('SELECT day, COUNT(*) views, COUNT(DISTINCT visitor) visitors FROM hits WHERE day >= ? GROUP BY day'),
       q(`SELECT ${SITE_LANG} lang, COUNT(*) views, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY 1 ORDER BY views DESC`),
-      q(`SELECT day, SUM(${SITE_LANG} = 'en') en, SUM(${SITE_LANG} = 'nl') nl, SUM(${SITE_LANG} = 'cn') cn FROM hits WHERE day >= ? GROUP BY day`),
+      q(`SELECT day, ${SITE_LANGS.map((l) => `SUM(${SITE_LANG} = '${l}') ${l}`).join(', ')} FROM hits WHERE day >= ? GROUP BY day`),
       q("SELECT COALESCE(blang, '') blang, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY 1 ORDER BY visitors DESC LIMIT 15"),
       q('SELECT path, COUNT(*) views, COUNT(DISTINCT visitor) visitors FROM hits WHERE day >= ? GROUP BY path ORDER BY views DESC LIMIT 25'),
       q("SELECT ref, COUNT(*) views FROM hits WHERE day >= ? GROUP BY 1 ORDER BY views DESC LIMIT 15"),
@@ -252,7 +283,7 @@ export async function statsData(request, env) {
       <div class="grid"><div><h3>${T.siteLang}</h3>${table(langs.map((r) => ({ ...r, share: t.views ? `${Math.round((r.views / t.views) * 100)}%` : '' })), [
         { label: T.language, html: (r) => `${esc(L[r.lang])} <span class="muted">/${r.lang === 'en' ? '' : `${r.lang}/`}</span>` },
         { label: T.viewsH, key: 'views', num: true }, { label: T.share, key: 'share', num: true }, { label: T.visitorsH, key: 'visitors', num: true }], T)}
-      ${days > 1 && langs.length ? `<h3>${T.langPerDay} <small><i class="k b0"></i>${L.en} <i class="k b1"></i>${L.nl} <i class="k b2"></i>${L.cn}</small></h3>${bars(langDaily, days, ['en', 'nl', 'cn'], [L.en, L.nl, L.cn])}` : ''}</div>
+      ${days > 1 && langs.length ? `<h3>${T.langPerDay} <small>${SITE_LANGS.map((l, i) => `<i class="k b${i}"></i>${L[l]}`).join(' ')}</small></h3>${bars(langDaily, days, SITE_LANGS, SITE_LANGS.map((l) => L[l]))}` : ''}</div>
       <div><h3>${T.browserLang}</h3>${blangs.some((r) => r.blang) ? table(blangs, [
         { label: T.language, html: (r) => esc(blangName(r.blang)) }, { label: T.visitorsH, key: 'visitors', num: true }], T)
         : `<p class="muted">${T.noBrowserLang}</p>`}</div></div>

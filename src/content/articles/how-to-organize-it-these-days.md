@@ -18,14 +18,14 @@ Based on TBM 5, IT can be structured into the following six top-level services. 
 **Scope:** Client Computing, Communication & Collaboration, Connectivity.
 
 -   **Capabilities:** End-user devices, unified communications, messaging, secure access (wired, wireless, VPN).
--   **Typical Products:** Microsoft Intune, JAMF, Citrix Workspace, Zoom, Teams, Slack, ServiceNow Device Management**.**
+-   **Typical Products:** Microsoft Intune, JAMF, Citrix Workspace, Zoom, Teams, Slack, ServiceNow Device Management.
 -   **Outsourcing vs. in-house:** Device provisioning, field support, and patching may be outsourced; policies, identity integration, and user experience design remain in-house.
 
 ### 2\. Business
 
 **Scope:** Sales & Marketing, Customer Service.
 
--   **Capabilities:** CRM, marketing automation, order management, omnichannel service**.**
+-   **Capabilities:** CRM, marketing automation, order management, omnichannel service.
 -   **Typical Products:** Salesforce CRM, HubSpot, SAP CX, Zendesk, Adobe Marketing Cloud.
 -   **Outsourcing vs. in-house:** Platform hosting and commodity CRM setup may be outsourced; ownership of customer data, sales processes, and service policies remains in-house.
 
@@ -73,8 +73,8 @@ The six service types can be grouped into two families:
 
 The distinction is crucial: **business services define *what* IT enables, while technical services define *how* IT enables it.** Why These Six Top-level Services Make Sense
 
--   **Complete coverage of IT** – Every capability, from end-user devices to predictive AI, has its place**.**
--   **Accountability and ownership** – Each service type has a clear responsibility, lifecycle, and governance**.**
+-   **Complete coverage of IT** – Every capability, from end-user devices to predictive AI, has its place.
+-   **Accountability and ownership** – Each service type has a clear responsibility, lifecycle, and governance.
 -   **Balanced sourcing** – Commodity functions can be outsourced; governance and strategic data ownership remain in-house.
 -   **Lifecycle control** – With Delivery Services at the core, enterprises remain in control from ideation to retirement.
 -   **Future-proofing** – AI as a standalone service category reflects its strategic importance.
@@ -91,7 +91,7 @@ The model comprises "Service Portfolios", "Services", "Service Offerings" and "P
 -   The Processes that are facilitated by the Products are owned by **Process Owners,** who are accountable for process definition and improvement
 -   Process Managers oversee individual tasks within their domain/region is done as per the defined process. They also may fulfill process-specific roles. They are responsible for process adherence/improvement within their domain, but they are not accountable for it
 -   The Activities/Tasks, incl. associated task data, is the responsibility of the i**ndividual members** of the **team/squad** that fulfill the tasks (aka Fulfillers).
--   Accountability for Process Adherence, lies with **Line Management** of the Fulfiller**.**
+-   Accountability for Process Adherence, lies with **Line Management** of the Fulfiller.
 -   **Program Managers, and Project Managers**, are responsible for management of change. Their work has a defined start and end, and they don't own anything.
 -   **Data Stewards** are Fulfillers who own data and who are responsible for the data quality of that data. The accountability of the data (and its data quality) lies with the Owner of the Product, Process, Service, Offering, or Tasks which that data is integral part of.
 -   For some specific Data, an accountable **(Master) Data Owner** is assigned. E.g., Master Data artefacts such as "currency", "company" and "country", typically has one (Master) Data Owner. irrespective where that data is stored/used, what that data is used for, and how it is being maintained. This ensures, individual product owners, do not define their own product-specific "currency". "company" or "country" names.

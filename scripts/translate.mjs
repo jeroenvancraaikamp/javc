@@ -1,7 +1,7 @@
 // Keeps the site's translations up to date: every article and page is written in one language
 // (field `lang`, English by default) and gets a translation in each of the other languages in
 // src/content/translations/<articles|pages>/<slug>.<lang>.md; the homepage text (src/data/home.json)
-// gets src/data/home.nl.json and src/data/home.cn.json.
+// gets src/data/home.<lang>.json.
 //
 // A translation remembers a hash of the original it was made from (`source`). When the original
 // changes, it is translated again, with Claude (needs ANTHROPIC_API_KEY). A translation without a
@@ -20,7 +20,7 @@ import Anthropic from '@anthropic-ai/sdk';
 const MODEL = 'claude-opus-5-5';
 const PARALLEL = 4;
 const DRY = process.argv.includes('--dry');
-const NAME = { en: 'English', nl: 'Dutch', cn: 'Simplified Chinese' };
+const NAME = { en: 'English', nl: 'Dutch', cn: 'Simplified Chinese', fr: 'French', de: 'German' };
 const LANGS = Object.keys(NAME);
 
 // --- files ----------------------------------------------------------------------
@@ -39,11 +39,11 @@ function writeMd(path, data, body) {
 }
 const hash = (obj) => createHash('sha256').update(JSON.stringify(obj)).digest('hex').slice(0, 16);
 
-// Links to site pages point to the same language: /skills/ → /nl/skills/, /cn/skills/ (not images, files or the API).
+// Links to site pages point to the same language: /skills/ → /nl/skills/, /cn/skills/ and so on (not images, files or the API).
 function localizeLinks(text, lang) {
   const fix = (p) => {
     if (p.startsWith('//') || /^\/(wp-content|images|media|files|api|admin|cms)\//.test(p) || /\.\w{2,5}([?#].*)?$/.test(p)) return p;
-    const base = p.replace(/^\/(nl|cn)(?=\/)/, '');
+    const base = p.replace(/^\/(nl|cn|fr|de)(?=\/)/, '');
     return lang === 'en' ? base : `/${lang}${base}`;
   };
   return text
@@ -123,7 +123,7 @@ const system = (from, to) => `You translate content of javc.nl, the website of J
 - Keep the Markdown and HTML structure exactly as it is: headings, lists, tables, emphasis, line breaks, HTML tags and attributes, iframes, code and code blocks. Translate visible text only, including link texts and image alt texts.
 - Never change URLs, link targets, image paths, e-mail addresses, phone numbers or file names.
 - Keep product names, company names and established IT terms the way ${NAME[to]}-speaking IT professionals use them (ServiceNow, CMDB, CSDM, ITIL, IT4IT, TBM, ESM, product owner, change management and the like). Keep names of people and organisations.
-${to === 'nl' ? "- Address the reader with 'je'/'jij', unless the original is formal (such as legal text): then use 'u'." : ''}${to === 'cn' ? "- Write Simplified Chinese as used in mainland China, with Chinese punctuation. Keep English product names and IT terms that Chinese IT professionals use in English (ServiceNow, CMDB, ITIL and the like); you may add the Chinese term in brackets the first time where that helps. Write Dutch place names and organisations as they are, with a Chinese explanation in brackets where useful." : ''}
+${to === 'nl' ? "- Address the reader with 'je'/'jij', unless the original is formal (such as legal text): then use 'u'." : ''}${to === 'fr' ? "- Address the reader with 'vous'. Use French typography (a space before : ; ? ! and « » quotes)." : ''}${to === 'de' ? "- Address the reader with 'Sie'. Use German quotation marks („…“)." : ''}${to === 'cn' ? "- Write Simplified Chinese as used in mainland China, with Chinese punctuation. Keep English product names and IT terms that Chinese IT professionals use in English (ServiceNow, CMDB, ITIL and the like); you may add the Chinese term in brackets the first time where that helps. Write Dutch place names and organisations as they are, with a Chinese explanation in brackets where useful. Put a space between a bare web address (such as www.example.com) and the Chinese text after it, so it does not run into the link." : ''}
 - Reply with the translation only, in exactly the requested format.`;
 
 async function ask(job) {

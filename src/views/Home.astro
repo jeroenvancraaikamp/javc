@@ -4,12 +4,14 @@ import { SITE } from '../lib';
 import { marked } from 'marked';
 import { langOf, url } from '../i18n';
 // Homepage text: edit in the CMS (/cms/ → Homepage) or in src/data/home.json.
-// The Dutch and Chinese versions (src/data/home.nl.json, home.cn.json) are translated from it by the Translate Action.
+// The other languages (src/data/home.<lang>.json) are translated from it by the Translate Action.
 import homeEn from '../data/home.json';
 import homeNl from '../data/home.nl.json';
 import homeCn from '../data/home.cn.json';
+import homeFr from '../data/home.fr.json';
+import homeDe from '../data/home.de.json';
 const lang = langOf(Astro.url.pathname);
-const home = { en: homeEn, nl: homeNl, cn: homeCn }[lang];
+const home = { en: homeEn, nl: homeNl, cn: homeCn, fr: homeFr, de: homeDe }[lang];
 // Links in the text point to the same language.
 const localLinks = (html: string) => html.replace(/href="(\/[^"]*)"/g, (_, p) => `href="${url(lang, p)}"`);
 ---
