@@ -25,12 +25,12 @@ With that in mind, I apply a simple rule:
 
 That is precisely what the fix script below does—and more:
 
--   **Preview or Delete****:** Control behavior by setting `Preview Only` to *true* (preview) or *false* (delete).
--   **Targeted Query****:** Identifies obsolete relations where the parent or child does not exist, or the operational status is *7 – Retired*.
--   **Preview Mode****:** Generates a CSV report of all invalid relations (including Parent, Child, and Type).
--   **Delete Mode****:** Removes invalid relations in controlled "chunks" of 500 to avoid timeouts or performance issues.
--   **Summary****:** Displays the total number of deleted relations once completed.
--   **Rollback****:** Deletions can be reverted if required.
+-   **Preview or Delete**: Control behavior by setting `Preview Only` to *true* (preview) or *false* (delete).
+-   **Targeted Query**: Identifies obsolete relations where the parent or child does not exist, or the operational status is *7 – Retired*.
+-   **Preview Mode**: Generates a CSV report of all invalid relations (including Parent, Child, and Type).
+-   **Delete Mode**: Removes invalid relations in controlled "chunks" of 500 to avoid timeouts or performance issues.
+-   **Summary**: Displays the total number of deleted relations once completed.
+-   **Rollback**: Deletions can be reverted if required.
 
 *Disclaimer:*
 

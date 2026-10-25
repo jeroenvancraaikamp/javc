@@ -7,7 +7,7 @@ source: "21ea159e5556a0c2"
 ### UPDATE: Der [IT4IT/IT4ESM-Atlas](https://javc.nl/it4it-atlas/) enthält jetzt 1600 Plattformen
 
 
-Vor Kurzem habe ich einen Artikel mit der [**ultimativen Liste von über 1000 IT4IT-Tools 2026**](/de/the-ultimate-list-of-1000-it-management-tools-2026/) veröffentlicht**.** Seitdem habe ich die Kategorien und Unterkategorien aktualisiert und die Tools in die Liste aufgenommen, die für das Data Center Management und für die Shared/Corporate Functions wie HR, Risk, Finance usw. eingesetzt werden. **Die Liste umfasst jetzt bekannte Tools der/für die IT sowie der/für die Shared Enterprise Functions (z. B. HR, Risk, Finance usw.); derzeit enthält sie 1.438 COMMODITY-IT4ESM-Tools/-Plattformen.**
+Vor Kurzem habe ich einen Artikel mit der [**ultimativen Liste von über 1000 IT4IT-Tools 2026**](/de/the-ultimate-list-of-1000-it-management-tools-2026/) veröffentlicht. Seitdem habe ich die Kategorien und Unterkategorien aktualisiert und die Tools in die Liste aufgenommen, die für das Data Center Management und für die Shared/Corporate Functions wie HR, Risk, Finance usw. eingesetzt werden. **Die Liste umfasst jetzt bekannte Tools der/für die IT sowie der/für die Shared Enterprise Functions (z. B. HR, Risk, Finance usw.); derzeit enthält sie 1.438 COMMODITY-IT4ESM-Tools/-Plattformen.**
 
 Die verwendeten Kategorien und Unterkategorien sind eine Mischung aus TBM- und IT4IT-Namenskonventionen und wurden bewusst so gewählt.
 

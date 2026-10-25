@@ -92,7 +92,7 @@ ITSM processes such as Incident, Change, and Problem management refer to the fol
 -   The **Service Instance** that is impacted by the incident, change, or problem
 -   The **Service Offering**, which includes the commitments and subscriptions that apply to this (and similar other) Service Instances
 -   The **Service**, of which the Offering is a variant of (i.e., the parent of the Service Offering)
--   The **Service Delivery System (aka** **Configuration item/Asset),** which support the Service Instances and that are assigned directly to the User (e.g., the user's PC/Phone).  
+-   The **Service Delivery System (aka Configuration item/Asset)**, which support the Service Instances and that are assigned directly to the User (e.g., the user's PC/Phone).  
     
 -   The Provider's **Assignment Group** and **the Assigned Agent,** responsible for fulfilling the change, incident, or problem.
 -   The **Consumer** (incl. related data such as company, location, etc) who is impacted by the change, incident, or problem.
