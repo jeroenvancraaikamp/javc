@@ -1,6 +1,6 @@
-// Bot check for the contact and comment forms with Cloudflare Turnstile (free, usually invisible).
+// Bot check for the contact form with Cloudflare Turnstile (free, usually invisible).
 // It switches on as soon as the Worker has TURNSTILE_SITE_KEY (variable) and TURNSTILE_SECRET (secret);
-// without them the forms keep working with only the honeypot, timing check and rate limit.
+// without them the form keeps working with only the honeypot, timing check and rate limit.
 
 // GET /api/turnstile: the public site key for the forms (null when Turnstile is not set up).
 export function turnstileConfig(env) {

@@ -51,7 +51,9 @@ Since 2001, I have worked in IT in the following roles:
 -   AGILE Product Owner
 -   AGILE Platform Owner
 
-**I have implemented ServiceNow platforms/practices since 2014. In these roles, I have built technical, managerial, analytical, commercial, financial, and communication skills.** I am trained and certified in implementing service management processes, managing waterfall projects/programs, and managing agile DevSecOps backlogs. I no longer code myself, but if/where needed, **I still like to work hands-on with the platform and/or structure data in/for it**. In the roles above, I enjoyed helping draft strategies and operating/sourcing models, architectures, and roadmaps.
+**I have implemented ServiceNow platforms/practices since 2014. In these roles, I have built technical, managerial, analytical, commercial, financial, and communication skills.** I am trained and certified in implementing service management processes, managing waterfall projects/programs, and managing agile DevSecOps backlogs. 
+
+I no longer code myself, but if/where needed, **I still like to work hands-on with the platform and/or structure data in/for it**. In the roles above, I enjoyed helping draft strategies and operating/sourcing models, architectures, and roadmaps.
 
 ##  Product Knowledge
 
@@ -98,7 +100,8 @@ Since 2001, I have worked in IT in the following roles:
 -   CSDM 5
 -   ITIL 3, 4, and 5
 -   IT4IT 3.0
--   ArchiMate 3.2 / TOGAF
+-   ArchiMate 3.2
+-   TOGAF 10
 -   Prince2/Agile Scrum/SAFe
 -   Misc, Compliance Frameworks
 
