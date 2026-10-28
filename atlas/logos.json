@@ -1,0 +1,3863 @@
+{
+  "products": {
+    "ansible": {
+      "src": "/logos/dev-ansible-original.svg",
+      "label": "Ansible logo"
+    },
+    "apacheairflow": {
+      "src": "/logos/dev-apacheairflow-original.svg",
+      "label": "Apache Airflow logo"
+    },
+    "apacheant": {
+      "src": "/logos/si-apacheant.svg",
+      "label": "Apache Ant logo"
+    },
+    "apachekafka": {
+      "src": "/logos/dev-apachekafka-original.svg",
+      "label": "Apache Kafka logo"
+    },
+    "apachemaven": {
+      "src": "/logos/dev-maven-original.svg",
+      "label": "Apache Maven logo"
+    },
+    "apachenifi": {
+      "src": "/logos/si-apachenifi.svg",
+      "label": "Apache NiFi logo"
+    },
+    "appian": {
+      "src": "/logos/si-appian.svg",
+      "label": "Appian logo"
+    },
+    "argocd": {
+      "src": "/logos/dev-argocd-original.svg",
+      "label": "ArgoCD logo"
+    },
+    "asana": {
+      "src": "/logos/si-asana.svg",
+      "label": "Asana logo"
+    },
+    "astra": {
+      "src": "/logos/si-astra.svg",
+      "label": "Astra logo"
+    },
+    "atlassianconfluence": {
+      "src": "/logos/dev-confluence-original.svg",
+      "label": "Atlassian Confluence logo"
+    },
+    "azuredevops": {
+      "src": "/logos/dev-azuredevops-original.svg",
+      "label": "Azure DevOps logo"
+    },
+    "backstage": {
+      "src": "/logos/si-backstage_casting.svg",
+      "label": "Backstage logo"
+    },
+    "bamboo": {
+      "src": "/logos/dev-bamboo-original.svg",
+      "label": "Bamboo logo"
+    },
+    "betterstack": {
+      "src": "/logos/si-betterstack.svg",
+      "label": "Better Stack logo"
+    },
+    "bitbucket": {
+      "src": "/logos/dev-bitbucket-original.svg",
+      "label": "Bitbucket logo"
+    },
+    "bitrise": {
+      "src": "/logos/si-bitrise.svg",
+      "label": "Bitrise logo"
+    },
+    "buddy": {
+      "src": "/logos/si-buddy.svg",
+      "label": "Buddy logo"
+    },
+    "buildkite": {
+      "src": "/logos/si-buildkite.svg",
+      "label": "BuildKite logo"
+    },
+    "circleci": {
+      "src": "/logos/dev-circleci-plain.svg",
+      "label": "CircleCI logo"
+    },
+    "claudecode": {
+      "src": "/logos/si-claudecode.svg",
+      "label": "Claude Code logo"
+    },
+    "codefresh": {
+      "src": "/logos/si-codefresh.svg",
+      "label": "Codefresh logo"
+    },
+    "codemagic": {
+      "src": "/logos/si-codemagic.svg",
+      "label": "Codemagic logo"
+    },
+    "cursor": {
+      "src": "/logos/si-cursor.svg",
+      "label": "Cursor logo"
+    },
+    "datadog": {
+      "src": "/logos/dev-datadog-original.svg",
+      "label": "Datadog logo"
+    },
+    "dataiku": {
+      "src": "/logos/si-dataiku.svg",
+      "label": "Dataiku logo"
+    },
+    "dynatrace": {
+      "src": "/logos/dev-dynatrace-original.svg",
+      "label": "Dynatrace logo"
+    },
+    "github": {
+      "src": "/logos/dev-github-original.svg",
+      "label": "GitHub logo"
+    },
+    "githubcopilot": {
+      "src": "/logos/si-githubcopilot.svg",
+      "label": "GitHub Copilot logo"
+    },
+    "gitlab": {
+      "src": "/logos/dev-gitlab-original.svg",
+      "label": "GitLab logo"
+    },
+    "gitlabcommunityedition": {
+      "src": "/logos/dev-gitlab-original.svg",
+      "label": "GitLab Community Edition logo"
+    },
+    "gitlabduo": {
+      "src": "/logos/dev-gitlab-original.svg",
+      "label": "GitLab Duo logo"
+    },
+    "gradle": {
+      "src": "/logos/dev-gradle-original.svg",
+      "label": "Gradle logo"
+    },
+    "grafanacloud": {
+      "src": "/logos/dev-grafana-original.svg",
+      "label": "Grafana Cloud logo"
+    },
+    "hcpterraform": {
+      "src": "/logos/dev-terraform-original.svg",
+      "label": "HCP Terraform logo"
+    },
+    "icinga": {
+      "src": "/logos/si-icinga.svg",
+      "label": "Icinga logo"
+    },
+    "jaeger": {
+      "src": "/logos/dev-jaegertracing-original.svg",
+      "label": "Jaeger logo"
+    },
+    "jenkins": {
+      "src": "/logos/dev-jenkins-original.svg",
+      "label": "Jenkins logo"
+    },
+    "k3s": {
+      "src": "/logos/dev-k3s-original.svg",
+      "label": "K3s logo"
+    },
+    "keycloak": {
+      "src": "/logos/si-keycloak.svg",
+      "label": "Keycloak logo"
+    },
+    "kubeflow": {
+      "src": "/logos/dev-kubeflow-original.svg",
+      "label": "Kubeflow logo"
+    },
+    "kubernetes": {
+      "src": "/logos/dev-kubernetes-original.svg",
+      "label": "Kubernetes logo"
+    },
+    "mlflow": {
+      "src": "/logos/si-mlflow.svg",
+      "label": "MLflow logo"
+    },
+    "n8n": {
+      "src": "/logos/si-n8n.svg",
+      "label": "n8n logo"
+    },
+    "netdata": {
+      "src": "/logos/si-netdata.svg",
+      "label": "Netdata logo"
+    },
+    "newrelic": {
+      "src": "/logos/dev-newrelic-original.svg",
+      "label": "New Relic logo"
+    },
+    "nodered": {
+      "src": "/logos/dev-nodered-original.svg",
+      "label": "Node-RED logo"
+    },
+    "npm": {
+      "src": "/logos/dev-npm-original.svg",
+      "label": "npm logo"
+    },
+    "octopusdeploy": {
+      "src": "/logos/si-octopusdeploy.svg",
+      "label": "Octopus Deploy logo"
+    },
+    "okta": {
+      "src": "/logos/dev-okta-original.svg",
+      "label": "Okta logo"
+    },
+    "ollama": {
+      "src": "/logos/si-ollama.svg",
+      "label": "Ollama logo"
+    },
+    "openbao": {
+      "src": "/logos/si-openbao.svg",
+      "label": "OpenBao logo"
+    },
+    "openproject": {
+      "src": "/logos/si-openproject.svg",
+      "label": "OpenProject logo"
+    },
+    "opensearch": {
+      "src": "/logos/si-opensearch.svg",
+      "label": "OpenSearch logo"
+    },
+    "opentelemetry": {
+      "src": "/logos/dev-opentelemetry-original.svg",
+      "label": "OpenTelemetry logo"
+    },
+    "opentofu": {
+      "src": "/logos/si-opentofu.svg",
+      "label": "OpenTofu logo"
+    },
+    "opnsense": {
+      "src": "/logos/si-opnsense.svg",
+      "label": "OPNsense logo"
+    },
+    "pagerduty": {
+      "src": "/logos/si-pagerduty.svg",
+      "label": "PagerDuty logo"
+    },
+    "pingdom": {
+      "src": "/logos/si-pingdom.svg",
+      "label": "Pingdom logo"
+    },
+    "platformsh": {
+      "src": "/logos/si-platformdotsh.svg",
+      "label": "Platform.sh logo"
+    },
+    "prometheus": {
+      "src": "/logos/dev-prometheus-original.svg",
+      "label": "Prometheus logo"
+    },
+    "rancher": {
+      "src": "/logos/dev-rancher-original.svg",
+      "label": "Rancher logo"
+    },
+    "redhatansibleautomationplatform": {
+      "src": "/logos/dev-ansible-original.svg",
+      "label": "Red Hat Ansible Automation Platform logo"
+    },
+    "redmine": {
+      "src": "/logos/si-redmine.svg",
+      "label": "Redmine logo"
+    },
+    "retool": {
+      "src": "/logos/si-retool.svg",
+      "label": "Retool logo"
+    },
+    "root": {
+      "src": "/logos/si-root.svg",
+      "label": "Root logo"
+    },
+    "sentry": {
+      "src": "/logos/dev-sentry-original.svg",
+      "label": "Sentry logo"
+    },
+    "snort": {
+      "src": "/logos/si-snort.svg",
+      "label": "Snort logo"
+    },
+    "spinnaker": {
+      "src": "/logos/si-spinnaker.svg",
+      "label": "Spinnaker logo"
+    },
+    "teamcity": {
+      "src": "/logos/si-teamcity.svg",
+      "label": "TeamCity logo"
+    },
+    "tekton": {
+      "src": "/logos/si-tekton.svg",
+      "label": "Tekton logo"
+    },
+    "terraformcommunityedition": {
+      "src": "/logos/dev-terraform-original.svg",
+      "label": "Terraform (Community Edition) logo"
+    },
+    "travisci": {
+      "src": "/logos/dev-travis-original.svg",
+      "label": "Travis CI logo"
+    },
+    "trello": {
+      "src": "/logos/dev-trello-original.svg",
+      "label": "Trello logo"
+    },
+    "trivy": {
+      "src": "/logos/si-trivy.svg",
+      "label": "Trivy logo"
+    },
+    "victoriametrics": {
+      "src": "/logos/si-victoriametrics.svg",
+      "label": "VictoriaMetrics logo"
+    },
+    "vllm": {
+      "src": "/logos/si-vllm.svg",
+      "label": "vLLM logo"
+    },
+    "windsurf": {
+      "src": "/logos/si-windsurf.svg",
+      "label": "Windsurf logo"
+    },
+    "zapier": {
+      "src": "/logos/si-zapier.svg",
+      "label": "Zapier logo"
+    },
+    "apachecamel": {
+      "src": "/logos/logos-apache-camel.svg",
+      "label": "Apache Camel logo"
+    },
+    "apigee": {
+      "src": "/logos/logos-apigee.svg",
+      "label": "Apigee logo"
+    },
+    "appcircle": {
+      "src": "/logos/logos-appcircle-icon.svg",
+      "label": "Appcircle logo"
+    },
+    "appdynamics": {
+      "src": "/logos/logos-appdynamics-icon.svg",
+      "label": "AppDynamics logo"
+    },
+    "awsamplify": {
+      "src": "/logos/logos-aws-amplify.svg",
+      "label": "AWS Amplify logo"
+    },
+    "awscloudformation": {
+      "src": "/logos/logos-aws-cloudformation.svg",
+      "label": "AWS CloudFormation logo"
+    },
+    "awscodebuild": {
+      "src": "/logos/logos-aws-codebuild.svg",
+      "label": "AWS CodeBuild logo"
+    },
+    "awscodedeploy": {
+      "src": "/logos/logos-aws-codedeploy.svg",
+      "label": "AWS CodeDeploy logo"
+    },
+    "awscodepipeline": {
+      "src": "/logos/logos-aws-codepipeline.svg",
+      "label": "AWS CodePipeline logo"
+    },
+    "awsxray": {
+      "src": "/logos/logos-aws-xray.svg",
+      "label": "AWS X-Ray logo"
+    },
+    "bigpanda": {
+      "src": "/logos/logos-bigpanda.svg",
+      "label": "BigPanda logo"
+    },
+    "devin": {
+      "src": "/logos/logos-devin.svg",
+      "label": "Devin logo"
+    },
+    "harness": {
+      "src": "/logos/logos-harness-icon.svg",
+      "label": "Harness logo"
+    },
+    "hostedgraphite": {
+      "src": "/logos/logos-hosted-graphite.svg",
+      "label": "Hosted Graphite logo"
+    },
+    "signoz": {
+      "src": "/logos/logos-signoz.svg",
+      "label": "SigNoz logo"
+    },
+    "taiga": {
+      "src": "/logos/logos-taiga.svg",
+      "label": "Taiga logo"
+    },
+    "zabbix": {
+      "src": "/logos/logos-zabbix.svg",
+      "label": "Zabbix logo"
+    },
+    "jiraservicemanagement": {
+      "src": "/logos/atlassian-jira-service-management.svg",
+      "label": "Jira Service Management product logo"
+    },
+    "jira": {
+      "src": "/logos/atlassian-jira.svg",
+      "label": "Jira product logo"
+    },
+    "jirasoftware": {
+      "src": "/logos/atlassian-jira.svg",
+      "label": "Jira product logo"
+    },
+    "jiraalign": {
+      "src": "/logos/atlassian-jira-align.svg",
+      "label": "Jira Align product logo"
+    },
+    "atlassianguard": {
+      "src": "/logos/atlassian-guard.svg",
+      "label": "Guard product logo"
+    }
+  },
+  "vendors": {
+    "abb": {
+      "src": "/logos/si-abb.svg",
+      "label": "ABB logo"
+    },
+    "salesforce": {
+      "src": "/logos/logos-salesforce.svg",
+      "label": "Salesforce logo"
+    },
+    "pagerduty": {
+      "src": "/logos/logos-pagerduty-icon.svg",
+      "label": "PagerDuty logo"
+    },
+    "alibabacloud": {
+      "src": "/logos/si-alibabacloud.svg",
+      "label": "Alibaba Cloud logo"
+    },
+    "aws": {
+      "src": "/logos/logos-aws.svg",
+      "label": "AWS logo"
+    },
+    "schneiderelectric": {
+      "src": "/logos/si-schneiderelectric.svg",
+      "label": "Schneider Electric logo"
+    },
+    "google": {
+      "src": "/logos/logos-google-icon.svg",
+      "label": "Google logo"
+    },
+    "appian": {
+      "src": "/logos/si-appian.svg",
+      "label": "Appian logo"
+    },
+    "opentext": {
+      "src": "/logos/si-opentext.svg",
+      "label": "OpenText logo"
+    },
+    "asana": {
+      "src": "/logos/logos-asana-icon.svg",
+      "label": "Asana logo"
+    },
+    "astra": {
+      "src": "/logos/si-astra.svg",
+      "label": "Astra logo"
+    },
+    "atlassian": {
+      "src": "/logos/logos-atlassian.svg",
+      "label": "Atlassian logo"
+    },
+    "betterstack": {
+      "src": "/logos/si-betterstack.svg",
+      "label": "Better Stack logo"
+    },
+    "bitdefender": {
+      "src": "/logos/si-bitdefender.svg",
+      "label": "Bitdefender logo"
+    },
+    "bitrise": {
+      "src": "/logos/logos-bitrise-icon.svg",
+      "label": "Bitrise logo"
+    },
+    "datadog": {
+      "src": "/logos/logos-datadog-icon.svg",
+      "label": "Datadog logo"
+    },
+    "broadcom": {
+      "src": "/logos/logos-broadcom-icon.svg",
+      "label": "Broadcom logo"
+    },
+    "buddy": {
+      "src": "/logos/logos-buddy.svg",
+      "label": "Buddy logo"
+    },
+    "buildkite": {
+      "src": "/logos/logos-buildkite-icon.svg",
+      "label": "Buildkite logo"
+    },
+    "canonical": {
+      "src": "/logos/si-canonical.svg",
+      "label": "Canonical logo"
+    },
+    "checkmkgmbh": {
+      "src": "/logos/si-checkmk.svg",
+      "label": "Checkmk GmbH logo"
+    },
+    "progress": {
+      "src": "/logos/logos-progress.svg",
+      "label": "Progress logo"
+    },
+    "circleci": {
+      "src": "/logos/logos-circleci.svg",
+      "label": "CircleCI logo"
+    },
+    "cisco": {
+      "src": "/logos/si-cisco.svg",
+      "label": "Cisco logo"
+    },
+    "anthropic": {
+      "src": "/logos/logos-anthropic-icon.svg",
+      "label": "Anthropic logo"
+    },
+    "cloudbees": {
+      "src": "/logos/si-cloudbees.svg",
+      "label": "CloudBees logo"
+    },
+    "cloudflare": {
+      "src": "/logos/logos-cloudflare-icon.svg",
+      "label": "Cloudflare logo"
+    },
+    "octopusdeploy": {
+      "src": "/logos/logos-octopus-deploy.svg",
+      "label": "Octopus Deploy logo"
+    },
+    "codemagic": {
+      "src": "/logos/si-codemagic.svg",
+      "label": "Codemagic logo"
+    },
+    "paloaltonetworks": {
+      "src": "/logos/si-paloaltonetworks.svg",
+      "label": "Palo Alto Networks logo"
+    },
+    "databricks": {
+      "src": "/logos/logos-databricks-icon.svg",
+      "label": "Databricks logo"
+    },
+    "dataiku": {
+      "src": "/logos/si-dataiku.svg",
+      "label": "Dataiku logo"
+    },
+    "dynatrace": {
+      "src": "/logos/logos-dynatrace-icon.svg",
+      "label": "Dynatrace logo"
+    },
+    "delltechnologies": {
+      "src": "/logos/si-dell.svg",
+      "label": "Dell Technologies logo"
+    },
+    "elastic": {
+      "src": "/logos/si-elastic.svg",
+      "label": "Elastic logo"
+    },
+    "fortinet": {
+      "src": "/logos/si-fortinet.svg",
+      "label": "Fortinet logo"
+    },
+    "redhat": {
+      "src": "/logos/logos-redhat-icon.svg",
+      "label": "Red Hat logo"
+    },
+    "gitlab": {
+      "src": "/logos/logos-gitlab-icon.svg",
+      "label": "GitLab logo"
+    },
+    "gitlabinc": {
+      "src": "/logos/dev-gitlab-original.svg",
+      "label": "GitLab Inc. logo"
+    },
+    "gradleinc": {
+      "src": "/logos/dev-gradle-original.svg",
+      "label": "Gradle Inc. logo"
+    },
+    "grayloginc": {
+      "src": "/logos/si-graylog.svg",
+      "label": "Graylog, Inc. logo"
+    },
+    "graylog": {
+      "src": "/logos/logos-graylog-icon.svg",
+      "label": "Graylog logo"
+    },
+    "huawei": {
+      "src": "/logos/si-huawei.svg",
+      "label": "Huawei logo"
+    },
+    "huaweitechnologies": {
+      "src": "/logos/si-huawei.svg",
+      "label": "Huawei Technologies logo"
+    },
+    "huggingface": {
+      "src": "/logos/logos-hugging-face-icon.svg",
+      "label": "Hugging Face logo"
+    },
+    "clickhouse": {
+      "src": "/logos/dev-clickhouse-original.svg",
+      "label": "ClickHouse logo"
+    },
+    "icingagmbh": {
+      "src": "/logos/si-icinga.svg",
+      "label": "Icinga GmbH logo"
+    },
+    "jfrog": {
+      "src": "/logos/logos-jfrog.svg",
+      "label": "JFrog logo"
+    },
+    "konginc": {
+      "src": "/logos/si-kong.svg",
+      "label": "Kong Inc. logo"
+    },
+    "langchain": {
+      "src": "/logos/logos-langchain-icon.svg",
+      "label": "LangChain logo"
+    },
+    "sap": {
+      "src": "/logos/logos-sap.svg",
+      "label": "SAP logo"
+    },
+    "meta": {
+      "src": "/logos/logos-meta-icon.svg",
+      "label": "Meta logo"
+    },
+    "siemens": {
+      "src": "/logos/si-siemens.svg",
+      "label": "Siemens logo"
+    },
+    "mistralai": {
+      "src": "/logos/logos-mistral-ai-icon.svg",
+      "label": "Mistral AI logo"
+    },
+    "n8ngmbh": {
+      "src": "/logos/si-n8n.svg",
+      "label": "n8n GmbH logo"
+    },
+    "netapp": {
+      "src": "/logos/si-netapp.svg",
+      "label": "NetApp logo"
+    },
+    "netdatainc": {
+      "src": "/logos/si-netdata.svg",
+      "label": "Netdata Inc. logo"
+    },
+    "dassaultsystemes": {
+      "src": "/logos/si-dassaultsystemes.svg",
+      "label": "Dassault Syst\u00e8mes logo"
+    },
+    "openjsfoundation": {
+      "src": "/logos/logos-openjs-foundation-icon.svg",
+      "label": "OpenJS Foundation logo"
+    },
+    "npminc": {
+      "src": "/logos/dev-npm-original.svg",
+      "label": "npm inc. logo"
+    },
+    "nutanix": {
+      "src": "/logos/si-nutanix.svg",
+      "label": "Nutanix logo"
+    },
+    "okta": {
+      "src": "/logos/logos-okta-icon.svg",
+      "label": "Okta logo"
+    },
+    "ollamainc": {
+      "src": "/logos/si-ollama.svg",
+      "label": "Ollama Inc. logo"
+    },
+    "openprojectgmbh": {
+      "src": "/logos/si-openproject.svg",
+      "label": "OpenProject GmbH logo"
+    },
+    "oracle": {
+      "src": "/logos/logos-oracle.svg",
+      "label": "Oracle logo"
+    },
+    "palantir": {
+      "src": "/logos/si-palantir.svg",
+      "label": "Palantir logo"
+    },
+    "pdq": {
+      "src": "/logos/si-pdq.svg",
+      "label": "PDQ logo"
+    },
+    "perplexity": {
+      "src": "/logos/logos-perplexity-icon.svg",
+      "label": "Perplexity logo"
+    },
+    "platformsh": {
+      "src": "/logos/si-platformdotsh.svg",
+      "label": "Platform.sh logo"
+    },
+    "postman": {
+      "src": "/logos/logos-postman-icon.svg",
+      "label": "Postman logo"
+    },
+    "progresssoftware": {
+      "src": "/logos/si-progress.svg",
+      "label": "Progress Software logo"
+    },
+    "perforce": {
+      "src": "/logos/si-perforce.svg",
+      "label": "Perforce logo"
+    },
+    "qualys": {
+      "src": "/logos/si-qualys.svg",
+      "label": "Qualys logo"
+    },
+    "suse": {
+      "src": "/logos/logos-suse.svg",
+      "label": "SUSE logo"
+    },
+    "rasatechnologies": {
+      "src": "/logos/si-rasa.svg",
+      "label": "Rasa Technologies logo"
+    },
+    "retool": {
+      "src": "/logos/logos-retool-icon.svg",
+      "label": "Retool logo"
+    },
+    "root": {
+      "src": "/logos/si-root.svg",
+      "label": "Root logo"
+    },
+    "sentry": {
+      "src": "/logos/logos-sentry-icon.svg",
+      "label": "Sentry logo"
+    },
+    "sonicwall": {
+      "src": "/logos/si-sonicwall.svg",
+      "label": "SonicWall logo"
+    },
+    "synology": {
+      "src": "/logos/si-synology.svg",
+      "label": "Synology logo"
+    },
+    "jetbrains": {
+      "src": "/logos/logos-jetbrains-icon.svg",
+      "label": "JetBrains logo"
+    },
+    "trendmicro": {
+      "src": "/logos/si-trendmicro.svg",
+      "label": "Trend Micro logo"
+    },
+    "uipath": {
+      "src": "/logos/si-uipath.svg",
+      "label": "UiPath logo"
+    },
+    "veeamsoftware": {
+      "src": "/logos/si-veeam.svg",
+      "label": "Veeam Software logo"
+    },
+    "veritastechnologies": {
+      "src": "/logos/si-veritas.svg",
+      "label": "Veritas Technologies logo"
+    },
+    "googlecloud": {
+      "src": "/logos/logos-google-cloud.svg",
+      "label": "Google Cloud logo"
+    },
+    "victoriametricsinc": {
+      "src": "/logos/si-victoriametrics.svg",
+      "label": "VictoriaMetrics Inc. logo"
+    },
+    "bytedance": {
+      "src": "/logos/si-bytedance.svg",
+      "label": "ByteDance logo"
+    },
+    "zapier": {
+      "src": "/logos/logos-zapier-icon.svg",
+      "label": "Zapier logo"
+    },
+    "zendesk": {
+      "src": "/logos/logos-zendesk-icon.svg",
+      "label": "Zendesk logo"
+    },
+    "zoho": {
+      "src": "/logos/logos-zoho.svg",
+      "label": "Zoho logo"
+    },
+    "altair": {
+      "src": "/logos/logos-altair.svg",
+      "label": "Altair logo"
+    },
+    "apachesoftwarefoundation": {
+      "src": "/logos/logos-apache-software-foundation-icon.svg",
+      "label": "Apache Software Foundation logo"
+    },
+    "appcircle": {
+      "src": "/logos/logos-appcircle-icon.svg",
+      "label": "Appcircle logo"
+    },
+    "ibm": {
+      "src": "/logos/logos-ibm.svg",
+      "label": "IBM logo"
+    },
+    "microsoft": {
+      "src": "/logos/logos-microsoft-icon.svg",
+      "label": "Microsoft logo"
+    },
+    "bigpanda": {
+      "src": "/logos/logos-bigpanda.svg",
+      "label": "BigPanda logo"
+    },
+    "openai": {
+      "src": "/logos/logos-openai-icon.svg",
+      "label": "OpenAI logo"
+    },
+    "xai": {
+      "src": "/logos/logos-x-ai.svg",
+      "label": "xAI logo"
+    },
+    "harness": {
+      "src": "/logos/logos-harness-icon.svg",
+      "label": "Harness logo"
+    },
+    "launchdarkly": {
+      "src": "/logos/logos-launchdarkly-icon.svg",
+      "label": "LaunchDarkly logo"
+    },
+    "rsa": {
+      "src": "/logos/logos-rsa.svg",
+      "label": "RSA logo"
+    },
+    "signoz": {
+      "src": "/logos/logos-signoz.svg",
+      "label": "SigNoz logo"
+    },
+    "craft": {
+      "src": "/logos/logos-craft.svg",
+      "label": "Craft logo"
+    },
+    "adobe": {
+      "src": "/logos/logos-adobe-icon.svg",
+      "label": "Adobe logo"
+    }
+  },
+  "domains": {
+    "global.abb": {
+      "src": "/logos/si-abb.svg",
+      "label": "ABB logo"
+    },
+    "salesforce.com": {
+      "src": "/logos/dev-salesforce-original.svg",
+      "label": "Salesforce logo"
+    },
+    "pagerduty.com": {
+      "src": "/logos/si-pagerduty.svg",
+      "label": "PagerDuty logo"
+    },
+    "alibabacloud.com": {
+      "src": "/logos/si-alibabacloud.svg",
+      "label": "Alibaba Cloud logo"
+    },
+    "aws.amazon.com": {
+      "src": "/logos/dev-amazonwebservices-original-wordmark.svg",
+      "label": "AWS logo"
+    },
+    "se.com": {
+      "src": "/logos/si-schneiderelectric.svg",
+      "label": "Schneider Electric logo"
+    },
+    "google.com": {
+      "src": "/logos/dev-googlecloud-original.svg",
+      "label": "Google Cloud logo"
+    },
+    "appian.com": {
+      "src": "/logos/si-appian.svg",
+      "label": "Appian logo"
+    },
+    "opentext.com": {
+      "src": "/logos/si-opentext.svg",
+      "label": "OpenText logo"
+    },
+    "asana.com": {
+      "src": "/logos/si-asana.svg",
+      "label": "Asana logo"
+    },
+    "getastra.com": {
+      "src": "/logos/si-astra.svg",
+      "label": "Astra logo"
+    },
+    "atlassian.com": {
+      "src": "/logos/si-atlassian.svg",
+      "label": "Atlassian logo"
+    },
+    "betterstack.com": {
+      "src": "/logos/si-betterstack.svg",
+      "label": "Better Stack logo"
+    },
+    "bitdefender.com": {
+      "src": "/logos/si-bitdefender.svg",
+      "label": "Bitdefender logo"
+    },
+    "bitrise.io": {
+      "src": "/logos/si-bitrise.svg",
+      "label": "Bitrise logo"
+    },
+    "datadoghq.com": {
+      "src": "/logos/dev-datadog-original.svg",
+      "label": "Datadog logo"
+    },
+    "broadcom.com": {
+      "src": "/logos/si-broadcom.svg",
+      "label": "Broadcom logo"
+    },
+    "buddy.works": {
+      "src": "/logos/si-buddy.svg",
+      "label": "Buddy logo"
+    },
+    "buildkite.com": {
+      "src": "/logos/si-buildkite.svg",
+      "label": "Buildkite logo"
+    },
+    "canonical.com": {
+      "src": "/logos/si-canonical.svg",
+      "label": "Canonical logo"
+    },
+    "checkmk.com": {
+      "src": "/logos/si-checkmk.svg",
+      "label": "Checkmk GmbH logo"
+    },
+    "progress.com": {
+      "src": "/logos/si-progress.svg",
+      "label": "Progress Software logo"
+    },
+    "circleci.com": {
+      "src": "/logos/dev-circleci-plain.svg",
+      "label": "CircleCI logo"
+    },
+    "cisco.com": {
+      "src": "/logos/si-cisco.svg",
+      "label": "Cisco logo"
+    },
+    "anthropic.com": {
+      "src": "/logos/si-anthropic.svg",
+      "label": "Anthropic logo"
+    },
+    "cloudbees.com": {
+      "src": "/logos/si-cloudbees.svg",
+      "label": "CloudBees logo"
+    },
+    "cloudflare.com": {
+      "src": "/logos/dev-cloudflare-original.svg",
+      "label": "Cloudflare logo"
+    },
+    "octopus.com": {
+      "src": "/logos/si-octopusdeploy.svg",
+      "label": "Octopus Deploy logo"
+    },
+    "codemagic.io": {
+      "src": "/logos/si-codemagic.svg",
+      "label": "Codemagic logo"
+    },
+    "paloaltonetworks.com": {
+      "src": "/logos/si-paloaltonetworks.svg",
+      "label": "Palo Alto Networks logo"
+    },
+    "databricks.com": {
+      "src": "/logos/si-databricks.svg",
+      "label": "Databricks logo"
+    },
+    "dataiku.com": {
+      "src": "/logos/si-dataiku.svg",
+      "label": "Dataiku logo"
+    },
+    "dynatrace.com": {
+      "src": "/logos/dev-dynatrace-original.svg",
+      "label": "Dynatrace logo"
+    },
+    "dell.com": {
+      "src": "/logos/si-dell.svg",
+      "label": "Dell Technologies logo"
+    },
+    "elastic.co": {
+      "src": "/logos/si-elastic.svg",
+      "label": "Elastic logo"
+    },
+    "fortinet.com": {
+      "src": "/logos/si-fortinet.svg",
+      "label": "Fortinet logo"
+    },
+    "redhat.com": {
+      "src": "/logos/dev-redhat-original.svg",
+      "label": "Red Hat logo"
+    },
+    "gitlab.com": {
+      "src": "/logos/dev-gitlab-original.svg",
+      "label": "GitLab logo"
+    },
+    "gradle.com": {
+      "src": "/logos/dev-gradle-original.svg",
+      "label": "Gradle Inc. logo"
+    },
+    "graylog.org": {
+      "src": "/logos/si-graylog.svg",
+      "label": "Graylog logo"
+    },
+    "huawei.com": {
+      "src": "/logos/si-huawei.svg",
+      "label": "Huawei logo"
+    },
+    "huggingface.co": {
+      "src": "/logos/si-huggingface.svg",
+      "label": "Hugging Face logo"
+    },
+    "clickhouse.com": {
+      "src": "/logos/dev-clickhouse-original.svg",
+      "label": "ClickHouse logo"
+    },
+    "icinga.com": {
+      "src": "/logos/si-icinga.svg",
+      "label": "Icinga GmbH logo"
+    },
+    "jfrog.com": {
+      "src": "/logos/si-jfrog.svg",
+      "label": "JFrog logo"
+    },
+    "konghq.com": {
+      "src": "/logos/si-kong.svg",
+      "label": "Kong Inc. logo"
+    },
+    "langchain.com": {
+      "src": "/logos/si-langchain.svg",
+      "label": "LangChain logo"
+    },
+    "sap.com": {
+      "src": "/logos/si-sap.svg",
+      "label": "SAP logo"
+    },
+    "about.meta.com": {
+      "src": "/logos/si-meta.svg",
+      "label": "Meta logo"
+    },
+    "siemens.com": {
+      "src": "/logos/si-siemens.svg",
+      "label": "Siemens logo"
+    },
+    "mistral.ai": {
+      "src": "/logos/si-mistralai.svg",
+      "label": "Mistral AI logo"
+    },
+    "n8n.io": {
+      "src": "/logos/si-n8n.svg",
+      "label": "n8n GmbH logo"
+    },
+    "netapp.com": {
+      "src": "/logos/si-netapp.svg",
+      "label": "NetApp logo"
+    },
+    "netdata.cloud": {
+      "src": "/logos/si-netdata.svg",
+      "label": "Netdata Inc. logo"
+    },
+    "3ds.com": {
+      "src": "/logos/si-dassaultsystemes.svg",
+      "label": "Dassault Syst\u00e8mes logo"
+    },
+    "openjsf.org": {
+      "src": "/logos/si-openjsfoundation.svg",
+      "label": "OpenJS Foundation logo"
+    },
+    "npmjs.com": {
+      "src": "/logos/dev-npm-original.svg",
+      "label": "npm inc. logo"
+    },
+    "nutanix.com": {
+      "src": "/logos/si-nutanix.svg",
+      "label": "Nutanix logo"
+    },
+    "okta.com": {
+      "src": "/logos/dev-okta-original.svg",
+      "label": "Okta logo"
+    },
+    "ollama.com": {
+      "src": "/logos/si-ollama.svg",
+      "label": "Ollama Inc. logo"
+    },
+    "openproject.org": {
+      "src": "/logos/si-openproject.svg",
+      "label": "OpenProject GmbH logo"
+    },
+    "oracle.com": {
+      "src": "/logos/dev-oracle-original.svg",
+      "label": "Oracle logo"
+    },
+    "palantir.com": {
+      "src": "/logos/si-palantir.svg",
+      "label": "Palantir logo"
+    },
+    "pdq.com": {
+      "src": "/logos/si-pdq.svg",
+      "label": "PDQ logo"
+    },
+    "perplexity.ai": {
+      "src": "/logos/si-perplexity.svg",
+      "label": "Perplexity logo"
+    },
+    "platform.sh": {
+      "src": "/logos/si-platformdotsh.svg",
+      "label": "Platform.sh logo"
+    },
+    "postman.com": {
+      "src": "/logos/dev-postman-original.svg",
+      "label": "Postman logo"
+    },
+    "perforce.com": {
+      "src": "/logos/si-perforce.svg",
+      "label": "Perforce logo"
+    },
+    "qualys.com": {
+      "src": "/logos/si-qualys.svg",
+      "label": "Qualys logo"
+    },
+    "suse.com": {
+      "src": "/logos/si-suse.svg",
+      "label": "SUSE logo"
+    },
+    "rasa.com": {
+      "src": "/logos/si-rasa.svg",
+      "label": "Rasa Technologies logo"
+    },
+    "retool.com": {
+      "src": "/logos/si-retool.svg",
+      "label": "Retool logo"
+    },
+    "root.io": {
+      "src": "/logos/si-root.svg",
+      "label": "Root logo"
+    },
+    "sentry.io": {
+      "src": "/logos/dev-sentry-original.svg",
+      "label": "Sentry logo"
+    },
+    "sonicwall.com": {
+      "src": "/logos/si-sonicwall.svg",
+      "label": "SonicWall logo"
+    },
+    "synology.com": {
+      "src": "/logos/si-synology.svg",
+      "label": "Synology logo"
+    },
+    "jetbrains.com": {
+      "src": "/logos/dev-jetbrains-original.svg",
+      "label": "JetBrains logo"
+    },
+    "trendmicro.com": {
+      "src": "/logos/si-trendmicro.svg",
+      "label": "Trend Micro logo"
+    },
+    "uipath.com": {
+      "src": "/logos/si-uipath.svg",
+      "label": "UiPath logo"
+    },
+    "veeam.com": {
+      "src": "/logos/si-veeam.svg",
+      "label": "Veeam Software logo"
+    },
+    "veritas.com": {
+      "src": "/logos/si-veritas.svg",
+      "label": "Veritas Technologies logo"
+    },
+    "victoriametrics.com": {
+      "src": "/logos/si-victoriametrics.svg",
+      "label": "VictoriaMetrics Inc. logo"
+    },
+    "bytedance.com": {
+      "src": "/logos/si-bytedance.svg",
+      "label": "ByteDance logo"
+    },
+    "zapier.com": {
+      "src": "/logos/si-zapier.svg",
+      "label": "Zapier logo"
+    },
+    "zendesk.com": {
+      "src": "/logos/si-zendesk.svg",
+      "label": "Zendesk logo"
+    },
+    "zoho.com": {
+      "src": "/logos/si-zoho.svg",
+      "label": "Zoho logo"
+    },
+    "arize.com": {
+      "src": "/logos/site-277d8c931fd432da.png",
+      "label": "arize.com official brand icon"
+    },
+    "manageengine.com": {
+      "src": "/logos/site-072c08c22964f1c3.png",
+      "label": "manageengine.com official brand icon"
+    },
+    "ifs.com": {
+      "src": "/logos/site-f5f33308e38a22a4.png",
+      "label": "ifs.com official brand icon"
+    },
+    "srlabs.de": {
+      "src": "/logos/site-95decfb7d085cf5f.png",
+      "label": "srlabs.de official brand icon"
+    },
+    "auvik.com": {
+      "src": "/logos/site-b64b00994b303486.png",
+      "label": "auvik.com official brand icon"
+    },
+    "axiom.co": {
+      "src": "/logos/site-f387d41ba29fcf4b.png",
+      "label": "axiom.co official brand icon"
+    },
+    "microsoft.com": {
+      "src": "/logos/site-24299f39915b1fa5.png",
+      "label": "microsoft.com official brand icon"
+    },
+    "barracuda.com": {
+      "src": "/logos/site-90544ec24959a10a.png",
+      "label": "barracuda.com official brand icon"
+    },
+    "ilink-digital.com": {
+      "src": "/logos/site-efcfc1c1830c26a9.png",
+      "label": "ilink-digital.com official brand icon"
+    },
+    "belarc.com": {
+      "src": "/logos/site-a1131adf8529ba15.png",
+      "label": "belarc.com official brand icon"
+    },
+    "beyondtrust.com": {
+      "src": "/logos/site-88c0eb428e584181.png",
+      "label": "beyondtrust.com official brand icon"
+    },
+    "eaton.com": {
+      "src": "/logos/site-680ecd0803737eaf.png",
+      "label": "eaton.com official brand icon"
+    },
+    "brinqa.com": {
+      "src": "/logos/site-beb8806277b97d91.png",
+      "label": "brinqa.com official brand icon"
+    },
+    "inedo.com": {
+      "src": "/logos/site-35babb9c4f2e5fe2.png",
+      "label": "inedo.com official brand icon"
+    },
+    "celigo.com": {
+      "src": "/logos/site-da2e73f68e606edc.png",
+      "label": "celigo.com official brand icon"
+    },
+    "certero.com": {
+      "src": "/logos/site-70b8fd79f1d9f7ea.png",
+      "label": "certero.com official brand icon"
+    },
+    "checkpoint.com": {
+      "src": "/logos/site-287048ca071de058.png",
+      "label": "checkpoint.com official brand icon"
+    },
+    "checklyhq.com": {
+      "src": "/logos/site-1455b660d0284e56.png",
+      "label": "checklyhq.com official brand icon"
+    },
+    "ivanti.com": {
+      "src": "/logos/site-dbafe031091c09ff.png",
+      "label": "ivanti.com official brand icon"
+    },
+    "citrix.com": {
+      "src": "/logos/site-ae3f2e8f6dfe931c.png",
+      "label": "citrix.com official brand icon"
+    },
+    "cloudian.com": {
+      "src": "/logos/site-0feb8469f2d7df6b.png",
+      "label": "cloudian.com official brand icon"
+    },
+    "cohere.com": {
+      "src": "/logos/site-57f17b11a1646f55.png",
+      "label": "cohere.com official brand icon"
+    },
+    "confluent.io": {
+      "src": "/logos/site-9d5c76de6ed62222.png",
+      "label": "confluent.io official brand icon"
+    },
+    "vertiv.com": {
+      "src": "/logos/site-94e312e9c9c676ed.png",
+      "label": "vertiv.com official brand icon"
+    },
+    "strangebee.com": {
+      "src": "/logos/site-9a8154a95825d364.png",
+      "label": "strangebee.com official brand icon"
+    },
+    "zeron.one": {
+      "src": "/logos/site-7de440a2dc9f4ec6.png",
+      "label": "zeron.one official brand icon"
+    },
+    "abnormal.ai": {
+      "src": "/logos/site-115c5e91079a802f.png",
+      "label": "abnormal.ai official brand icon"
+    },
+    "action1.com": {
+      "src": "/logos/site-0173a3de5a89e3ec.png",
+      "label": "action1.com official brand icon"
+    },
+    "alauda.io": {
+      "src": "/logos/site-f3508603c16629b7.png",
+      "label": "alauda.io official brand icon"
+    },
+    "alloysoftware.com": {
+      "src": "/logos/site-2f7045432a9a51f5.png",
+      "label": "alloysoftware.com official brand icon"
+    },
+    "servicenow.com": {
+      "src": "/logos/site-60e4ef211f6127a0.png",
+      "label": "servicenow.com official brand icon"
+    },
+    "appcircle.io": {
+      "src": "/logos/site-0fc703f76228d6be.png",
+      "label": "appcircle.io official brand icon"
+    },
+    "arcticwolf.com": {
+      "src": "/logos/site-89ad91e53f278e86.png",
+      "label": "arcticwolf.com official brand icon"
+    },
+    "auditboard.com": {
+      "src": "/logos/site-a292605320d0e1aa.png",
+      "label": "auditboard.com official brand icon"
+    },
+    "gbtec.com": {
+      "src": "/logos/site-98226cecdb0d7cd7.png",
+      "label": "gbtec.com official brand icon"
+    },
+    "blockapt.com": {
+      "src": "/logos/site-4f0883d4c242ed91.png",
+      "label": "blockapt.com official brand icon"
+    },
+    "causely.ai": {
+      "src": "/logos/site-2b29dcf66dba0b53.png",
+      "label": "causely.ai official brand icon"
+    },
+    "openai.com": {
+      "src": "/logos/site-bb438e1309fd5686.png",
+      "label": "openai.com official brand icon"
+    },
+    "chatsworth.com": {
+      "src": "/logos/site-43b321689d4ace24.png",
+      "label": "chatsworth.com official brand icon"
+    },
+    "clarive.com": {
+      "src": "/logos/site-9284babf8652dc03.png",
+      "label": "clarive.com official brand icon"
+    },
+    "eracent.com": {
+      "src": "/logos/site-81c2553064bb4b8b.png",
+      "label": "eracent.com official brand icon"
+    },
+    "cribl.io": {
+      "src": "/logos/site-aceab037d6256577.png",
+      "label": "cribl.io official brand icon"
+    },
+    "riskwatch.com": {
+      "src": "/logos/site-2813484b81e65d1f.png",
+      "label": "riskwatch.com official brand icon"
+    },
+    "dagger.io": {
+      "src": "/logos/site-e2409b5457077634.png",
+      "label": "dagger.io official brand icon"
+    },
+    "datarobot.com": {
+      "src": "/logos/site-61023e44ce1426bd.png",
+      "label": "datarobot.com official brand icon"
+    },
+    "kaseya.com": {
+      "src": "/logos/site-d9c6046c9e1d0e4f.png",
+      "label": "kaseya.com official brand icon"
+    },
+    "deltaww.com": {
+      "src": "/logos/site-5b94024a4975d11e.png",
+      "label": "deltaww.com official brand icon"
+    },
+    "corcentric.com": {
+      "src": "/logos/site-dad6e44a78ac0b14.png",
+      "label": "corcentric.com official brand icon"
+    },
+    "device42.com": {
+      "src": "/logos/site-e3db5e88cd9a63a5.png",
+      "label": "device42.com official brand icon"
+    },
+    "devtron.ai": {
+      "src": "/logos/site-b3ba649b880e0fb2.png",
+      "label": "devtron.ai official brand icon"
+    },
+    "diligent.com": {
+      "src": "/logos/site-90777b3a41a3e4c2.png",
+      "label": "diligent.com official brand icon"
+    },
+    "domotz.com": {
+      "src": "/logos/site-dd321b738d43f369.png",
+      "label": "domotz.com official brand icon"
+    },
+    "hsi.com": {
+      "src": "/logos/site-e2feb6a0d895978e.png",
+      "label": "hsi.com official brand icon"
+    },
+    "dotcom-monitor.com": {
+      "src": "/logos/site-2407da68721da037.png",
+      "label": "dotcom-monitor.com official brand icon"
+    },
+    "dragon1.com": {
+      "src": "/logos/site-fe5bac70a63063de.png",
+      "label": "dragon1.com official brand icon"
+    },
+    "hcl-software.com": {
+      "src": "/logos/site-4b4bac5711897fe9.png",
+      "label": "hcl-software.com official brand icon"
+    },
+    "edgedelta.com": {
+      "src": "/logos/site-e611f41295da5441.png",
+      "label": "edgedelta.com official brand icon"
+    },
+    "eginnovations.com": {
+      "src": "/logos/site-393bc54b3d506527.png",
+      "label": "eginnovations.com official brand icon"
+    },
+    "quest.com": {
+      "src": "/logos/site-e5e64f33af108f6a.png",
+      "label": "quest.com official brand icon"
+    },
+    "eset.com": {
+      "src": "/logos/site-d8f5a567071c9ae3.png",
+      "label": "eset.com official brand icon"
+    },
+    "exabeam.com": {
+      "src": "/logos/site-22d4a4c6c99ea521.png",
+      "label": "exabeam.com official brand icon"
+    },
+    "extremenetworks.com": {
+      "src": "/logos/site-2fb9a13ebf838e53.png",
+      "label": "extremenetworks.com official brand icon"
+    },
+    "fleetdm.com": {
+      "src": "/logos/site-3fe0398087450015.png",
+      "label": "fleetdm.com official brand icon"
+    },
+    "flexagon.com": {
+      "src": "/logos/site-e8064d701efe1cae.png",
+      "label": "flexagon.com official brand icon"
+    },
+    "forcepoint.com": {
+      "src": "/logos/site-ca621d32f0fa0c1e.png",
+      "label": "forcepoint.com official brand icon"
+    },
+    "github.com": {
+      "src": "/logos/site-3aeb002460381c6f.png",
+      "label": "github.com official brand icon"
+    },
+    "grafana.com": {
+      "src": "/logos/site-84dc88fce520b35d.png",
+      "label": "grafana.com official brand icon"
+    },
+    "gravitee.io": {
+      "src": "/logos/site-803e54018f58a8f0.png",
+      "label": "gravitee.io official brand icon"
+    },
+    "greenly.earth": {
+      "src": "/logos/site-2536829ecbfaf4c6.png",
+      "label": "greenly.earth official brand icon"
+    },
+    "x.ai": {
+      "src": "/logos/site-07fa4e17aacc0146.png",
+      "label": "x.ai official brand icon"
+    },
+    "groundcover.com": {
+      "src": "/logos/site-abe15767fcc634a9.png",
+      "label": "groundcover.com official brand icon"
+    },
+    "h2o.ai": {
+      "src": "/logos/site-e80c8869b6e03f3d.png",
+      "label": "h2o.ai official brand icon"
+    },
+    "h3c.com": {
+      "src": "/logos/site-fc9a87c183b752e9.png",
+      "label": "h3c.com official brand icon"
+    },
+    "hexnode.com": {
+      "src": "/logos/site-6e31e2b9dd031b33.png",
+      "label": "hexnode.com official brand icon"
+    },
+    "hitachivantara.com": {
+      "src": "/logos/site-c0a4fc96d540b0d3.png",
+      "label": "hitachivantara.com official brand icon"
+    },
+    "honeycomb.io": {
+      "src": "/logos/site-273e97e487c70819.png",
+      "label": "honeycomb.io official brand icon"
+    },
+    "hycu.com": {
+      "src": "/logos/site-25053622ea23c23e.png",
+      "label": "hycu.com official brand icon"
+    },
+    "hyperviewhq.com": {
+      "src": "/logos/site-034ef148e5bdc0a1.png",
+      "label": "hyperviewhq.com official brand icon"
+    },
+    "iboss.com": {
+      "src": "/logos/site-62fa9d59dbf22faa.png",
+      "label": "iboss.com official brand icon"
+    },
+    "infoblox.com": {
+      "src": "/logos/site-1e159de503cab101.png",
+      "label": "infoblox.com official brand icon"
+    },
+    "everestims.com": {
+      "src": "/logos/site-77160ed428700484.png",
+      "label": "everestims.com official brand icon"
+    },
+    "rapid7.com": {
+      "src": "/logos/site-0b545c72bbd84c77.png",
+      "label": "rapid7.com official brand icon"
+    },
+    "juniper.net": {
+      "src": "/logos/site-7c4cedaf13452328.png",
+      "label": "juniper.net official brand icon"
+    },
+    "kandji.io": {
+      "src": "/logos/site-2ac029f398c01fb7.png",
+      "label": "kandji.io official brand icon"
+    },
+    "keepersecurity.com": {
+      "src": "/logos/site-4d822a227fd7639a.png",
+      "label": "keepersecurity.com official brand icon"
+    },
+    "navex.com": {
+      "src": "/logos/site-950f43d7f0b65dea.png",
+      "label": "navex.com official brand icon"
+    },
+    "komprise.com": {
+      "src": "/logos/site-d543ea0706516d1d.png",
+      "label": "komprise.com official brand icon"
+    },
+    "kubermatic.com": {
+      "src": "/logos/site-15a83ccb497c2646.png",
+      "label": "kubermatic.com official brand icon"
+    },
+    "launchdarkly.com": {
+      "src": "/logos/site-4d65c261b63d474e.png",
+      "label": "launchdarkly.com official brand icon"
+    },
+    "libraesva.com": {
+      "src": "/logos/site-b0cd12706cb73d39.png",
+      "label": "libraesva.com official brand icon"
+    },
+    "liquit.com": {
+      "src": "/logos/site-9d2464c8642854d3.png",
+      "label": "liquit.com official brand icon"
+    },
+    "localazy.com": {
+      "src": "/logos/site-4644f8270376d37d.png",
+      "label": "localazy.com official brand icon"
+    },
+    "logicgate.com": {
+      "src": "/logos/site-ed283f3ab1f22012.png",
+      "label": "logicgate.com official brand icon"
+    },
+    "logicmanager.com": {
+      "src": "/logos/site-2a04fd04af82b8e3.png",
+      "label": "logicmanager.com official brand icon"
+    },
+    "logit.io": {
+      "src": "/logos/site-3c3d9e353f1b0b08.png",
+      "label": "logit.io official brand icon"
+    },
+    "digitemis.com": {
+      "src": "/logos/site-ad925a09e9076e73.png",
+      "label": "digitemis.com official brand icon"
+    },
+    "mia-platform.eu": {
+      "src": "/logos/site-45ace8902535968b.png",
+      "label": "mia-platform.eu official brand icon"
+    },
+    "middleware.io": {
+      "src": "/logos/site-6d4ca97b7c3cc74e.png",
+      "label": "middleware.io official brand icon"
+    },
+    "monday.com": {
+      "src": "/logos/site-df9ba8c57b8c2795.png",
+      "label": "monday.com official brand icon"
+    },
+    "motadata.com": {
+      "src": "/logos/site-a789fb5ea2285bc2.png",
+      "label": "motadata.com official brand icon"
+    },
+    "nagios.com": {
+      "src": "/logos/site-138478880461a2a2.png",
+      "label": "nagios.com official brand icon"
+    },
+    "nakivo.com": {
+      "src": "/logos/site-cd2cd056c32b03db.png",
+      "label": "nakivo.com official brand icon"
+    },
+    "netscout.com": {
+      "src": "/logos/site-80f1a21308176007.png",
+      "label": "netscout.com official brand icon"
+    },
+    "netskope.com": {
+      "src": "/logos/site-48cd2559e09cff81.png",
+      "label": "netskope.com official brand icon"
+    },
+    "newrelic.com": {
+      "src": "/logos/site-17d2aeb5fcc4ad05.png",
+      "label": "newrelic.com official brand icon"
+    },
+    "carrier.com": {
+      "src": "/logos/site-f23d43ff15cc8d83.png",
+      "label": "carrier.com official brand icon"
+    },
+    "normative.io": {
+      "src": "/logos/site-c2bf1e26077dcfd3.png",
+      "label": "normative.io official brand icon"
+    },
+    "nxt1.com": {
+      "src": "/logos/site-301cfe0708bddb46.png",
+      "label": "nxt1.com official brand icon"
+    },
+    "oneidentity.com": {
+      "src": "/logos/site-72741f683e748f5b.png",
+      "label": "oneidentity.com official brand icon"
+    },
+    "oneuptime.com": {
+      "src": "/logos/site-cfa61d6b15dcce81.png",
+      "label": "oneuptime.com official brand icon"
+    },
+    "onventis.com": {
+      "src": "/logos/site-075e46c5877e4ee6.png",
+      "label": "onventis.com official brand icon"
+    },
+    "logz.io": {
+      "src": "/logos/site-1c2c92fc9f3c6df5.png",
+      "label": "logz.io official brand icon"
+    },
+    "openwebui.com": {
+      "src": "/logos/site-227fe3a994796767.png",
+      "label": "openwebui.com official brand icon"
+    },
+    "deciso.com": {
+      "src": "/logos/site-1e4eea719ee9ea5f.png",
+      "label": "deciso.com official brand icon"
+    },
+    "optial.com": {
+      "src": "/logos/site-cd1fda25973d9e5f.png",
+      "label": "optial.com official brand icon"
+    },
+    "origamirisk.com": {
+      "src": "/logos/site-335122e7c8d8e908.png",
+      "label": "origamirisk.com official brand icon"
+    },
+    "otrs.com": {
+      "src": "/logos/site-aea4c09a9cb77453.png",
+      "label": "otrs.com official brand icon"
+    },
+    "outsystems.com": {
+      "src": "/logos/site-24c68b6764fbe4b7.png",
+      "label": "outsystems.com official brand icon"
+    },
+    "phoenix.security": {
+      "src": "/logos/site-66d8ddd6a42c1239.png",
+      "label": "phoenix.security official brand icon"
+    },
+    "solarwinds.com": {
+      "src": "/logos/site-345d19cff7bbff80.png",
+      "label": "solarwinds.com official brand icon"
+    },
+    "planview.com": {
+      "src": "/logos/site-d00c77043d57613a.png",
+      "label": "planview.com official brand icon"
+    },
+    "procurementexpress.com": {
+      "src": "/logos/site-7c93745dac356f05.png",
+      "label": "procurementexpress.com official brand icon"
+    },
+    "qnap.com": {
+      "src": "/logos/site-40af1b0faf6df154.png",
+      "label": "qnap.com official brand icon"
+    },
+    "quantivate.com": {
+      "src": "/logos/site-8caa0856e9d9d9de.png",
+      "label": "quantivate.com official brand icon"
+    },
+    "midvision.com": {
+      "src": "/logos/site-3bf48ab942c4db86.png",
+      "label": "midvision.com official brand icon"
+    },
+    "redmine.org": {
+      "src": "/logos/site-56c45f346a2e148f.png",
+      "label": "redmine.org official brand icon"
+    },
+    "rsa.com": {
+      "src": "/logos/site-7c623247425fbf42.png",
+      "label": "rsa.com official brand icon"
+    },
+    "samsungsds.com": {
+      "src": "/logos/site-281507c9c0e60be3.png",
+      "label": "samsungsds.com official brand icon"
+    },
+    "secpod.com": {
+      "src": "/logos/site-ed72352d353ae696.png",
+      "label": "secpod.com official brand icon"
+    },
+    "sangfor.com": {
+      "src": "/logos/site-f4efe6750f5bb0f6.png",
+      "label": "sangfor.com official brand icon"
+    },
+    "sas.com": {
+      "src": "/logos/site-fa468089b085eef8.png",
+      "label": "sas.com official brand icon"
+    },
+    "sciencelogic.com": {
+      "src": "/logos/site-d1739cab67e4e575.png",
+      "label": "sciencelogic.com official brand icon"
+    },
+    "securityonionsolutions.com": {
+      "src": "/logos/site-c6f9d0f8ff6dce61.png",
+      "label": "securityonionsolutions.com official brand icon"
+    },
+    "sentinelone.com": {
+      "src": "/logos/site-54fa32e305081360.png",
+      "label": "sentinelone.com official brand icon"
+    },
+    "legrand.com": {
+      "src": "/logos/site-d90982b5a7d98573.png",
+      "label": "legrand.com official brand icon"
+    },
+    "shuffler.io": {
+      "src": "/logos/site-957e0226dc822bea.png",
+      "label": "shuffler.io official brand icon"
+    },
+    "simbian.ai": {
+      "src": "/logos/site-6ecac49788c243fa.png",
+      "label": "simbian.ai official brand icon"
+    },
+    "skyhighsecurity.com": {
+      "src": "/logos/site-ce33750a42239f7a.png",
+      "label": "skyhighsecurity.com official brand icon"
+    },
+    "sn1persecurity.com": {
+      "src": "/logos/site-1074cab110202aef.png",
+      "label": "sn1persecurity.com official brand icon"
+    },
+    "snipeitapp.com": {
+      "src": "/logos/site-752cc002b145787a.png",
+      "label": "snipeitapp.com official brand icon"
+    },
+    "softexpert.com": {
+      "src": "/logos/site-6ae83f58b0191c86.png",
+      "label": "softexpert.com official brand icon"
+    },
+    "solace.com": {
+      "src": "/logos/site-db0e39dc6b9e5ee6.png",
+      "label": "solace.com official brand icon"
+    },
+    "sophos.com": {
+      "src": "/logos/site-e2e54d523dfd2316.png",
+      "label": "sophos.com official brand icon"
+    },
+    "soti.net": {
+      "src": "/logos/site-25a154835730b93d.png",
+      "label": "soti.net official brand icon"
+    },
+    "sparxsystems.com": {
+      "src": "/logos/site-5d3ce453eaca3a7b.png",
+      "label": "sparxsystems.com official brand icon"
+    },
+    "sprinklr.com": {
+      "src": "/logos/site-8d5ce2aab69ca766.png",
+      "label": "sprinklr.com official brand icon"
+    },
+    "strobes.co": {
+      "src": "/logos/site-2e3411cd2349396d.png",
+      "label": "strobes.co official brand icon"
+    },
+    "stulz.com": {
+      "src": "/logos/site-20a361c6e136bf78.png",
+      "label": "stulz.com official brand icon"
+    },
+    "craft.co": {
+      "src": "/logos/site-f341c2505158c2a9.png",
+      "label": "craft.co official brand icon"
+    },
+    "sysaid.com": {
+      "src": "/logos/site-f91f5984b9d6eda3.png",
+      "label": "sysaid.com official brand icon"
+    },
+    "tallyfy.com": {
+      "src": "/logos/site-a6df478aafafe79a.png",
+      "label": "tallyfy.com official brand icon"
+    },
+    "tanium.com": {
+      "src": "/logos/site-8826f8fd98e005e6.png",
+      "label": "tanium.com official brand icon"
+    },
+    "tencentcloud.com": {
+      "src": "/logos/site-a7ec4c7405dfea7b.png",
+      "label": "tencentcloud.com official brand icon"
+    },
+    "tibco.com": {
+      "src": "/logos/site-391f291c23aa2b9a.png",
+      "label": "tibco.com official brand icon"
+    },
+    "toriihq.com": {
+      "src": "/logos/site-a18875a2685ddb74.svg",
+      "label": "toriihq.com official brand icon"
+    },
+    "torq.io": {
+      "src": "/logos/site-4c306dea6121a656.png",
+      "label": "torq.io official brand icon"
+    },
+    "treblle.com": {
+      "src": "/logos/site-f7dbda02b97eb4cf.png",
+      "label": "treblle.com official brand icon"
+    },
+    "trellix.com": {
+      "src": "/logos/site-7e65fa13d64f4783.png",
+      "label": "trellix.com official brand icon"
+    },
+    "aquasec.com": {
+      "src": "/logos/site-cb6c12daea1f0a0f.svg",
+      "label": "aquasec.com official brand icon"
+    },
+    "unicomsi.com": {
+      "src": "/logos/site-5c1824646d1ee27a.png",
+      "label": "unicomsi.com official brand icon"
+    },
+    "vanta.com": {
+      "src": "/logos/site-0f370f5f4cd52a2c.png",
+      "label": "vanta.com official brand icon"
+    },
+    "vastdata.com": {
+      "src": "/logos/site-07467d1a2512db17.png",
+      "label": "vastdata.com official brand icon"
+    },
+    "vigilent.com": {
+      "src": "/logos/site-29d8198adaa40c9a.svg",
+      "label": "vigilent.com official brand icon"
+    },
+    "vivantio.com": {
+      "src": "/logos/site-a314947580572670.png",
+      "label": "vivantio.com official brand icon"
+    },
+    "vllm.ai": {
+      "src": "/logos/site-0f2c464941b1d933.png",
+      "label": "vllm.ai official brand icon"
+    },
+    "wazuh.com": {
+      "src": "/logos/site-f42925973074fade.png",
+      "label": "wazuh.com official brand icon"
+    },
+    "adobe.com": {
+      "src": "/logos/site-d0173bddc13c09c2.png",
+      "label": "adobe.com official brand icon"
+    },
+    "wrike.com": {
+      "src": "/logos/site-836a5b2b2300a36d.png",
+      "label": "wrike.com official brand icon"
+    },
+    "zabbix.com": {
+      "src": "/logos/site-5ddffea1448b1967.png",
+      "label": "zabbix.com official brand icon"
+    },
+    "zeek.org": {
+      "src": "/logos/site-8da2b4d5512253bb.png",
+      "label": "zeek.org official brand icon"
+    },
+    "altair.com": {
+      "src": "/logos/logos-altair.svg",
+      "label": "Altair logo"
+    },
+    "apache.org": {
+      "src": "/logos/logos-apache-software-foundation-icon.svg",
+      "label": "Apache Software Foundation logo"
+    },
+    "ibm.com": {
+      "src": "/logos/logos-ibm.svg",
+      "label": "IBM logo"
+    },
+    "bigpanda.io": {
+      "src": "/logos/logos-bigpanda.svg",
+      "label": "BigPanda logo"
+    },
+    "harness.io": {
+      "src": "/logos/logos-harness-icon.svg",
+      "label": "Harness logo"
+    },
+    "signoz.io": {
+      "src": "/logos/logos-signoz.svg",
+      "label": "SigNoz logo"
+    }
+  },
+  "sources": {
+    "si-abb.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://global.abb",
+      "brand": "ABB"
+    },
+    "dev-salesforce-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/salesforce",
+      "brand": "Salesforce"
+    },
+    "si-pagerduty.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.pagerduty.com/brand/",
+      "brand": "PagerDuty"
+    },
+    "si-alibabacloud.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.alibabagroup.com/en/ir/reports",
+      "brand": "Alibaba Cloud"
+    },
+    "dev-amazonwebservices-original-wordmark.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/amazonwebservices",
+      "brand": "AWS"
+    },
+    "dev-ansible-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/ansible",
+      "brand": "Ansible"
+    },
+    "dev-apacheairflow-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/apacheairflow",
+      "brand": "Apache Airflow"
+    },
+    "si-apacheant.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://apache.org/logos",
+      "brand": "Apache Ant"
+    },
+    "dev-apachekafka-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/apachekafka",
+      "brand": "Apache Kafka"
+    },
+    "dev-maven-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/maven",
+      "brand": "Apache Maven"
+    },
+    "si-apachenifi.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://apache.org/logos",
+      "brand": "Apache NiFi"
+    },
+    "si-schneiderelectric.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.se.com/us/en/assets/739/media/202250/SE_logo-LIO-white_header.svg",
+      "brand": "Schneider Electric"
+    },
+    "dev-google-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/google",
+      "brand": "Google"
+    },
+    "si-appian.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://appian.com",
+      "brand": "Appian"
+    },
+    "si-opentext.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.opentext.com",
+      "brand": "OpenText"
+    },
+    "dev-argocd-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/argocd",
+      "brand": "ArgoCD"
+    },
+    "si-asana.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://asana.com/brand",
+      "brand": "Asana"
+    },
+    "si-astra.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://wpastra.com/brand-assets",
+      "brand": "Astra"
+    },
+    "si-atlassian.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://atlassian.design/resources/logo-library",
+      "brand": "Atlassian"
+    },
+    "dev-confluence-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/confluence",
+      "brand": "Atlassian Confluence"
+    },
+    "dev-azuredevops-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/azuredevops",
+      "brand": "Azure DevOps"
+    },
+    "si-backstage_casting.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://backstage.com",
+      "brand": "Backstage"
+    },
+    "dev-bamboo-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/bamboo",
+      "brand": "Bamboo"
+    },
+    "si-betterstack.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://betterstack.com",
+      "brand": "Better Stack"
+    },
+    "dev-bitbucket-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/bitbucket",
+      "brand": "Bitbucket"
+    },
+    "si-bitdefender.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://brand.bitdefender.com",
+      "brand": "Bitdefender"
+    },
+    "si-bitrise.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.bitrise.io/presskit",
+      "brand": "Bitrise"
+    },
+    "dev-datadog-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/datadog",
+      "brand": "Datadog"
+    },
+    "si-broadcom.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.broadcom.com/support",
+      "brand": "Broadcom"
+    },
+    "si-buddy.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://buddy.works/about",
+      "brand": "Buddy"
+    },
+    "si-buildkite.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://buildkite.com/brand-assets",
+      "brand": "Buildkite"
+    },
+    "si-canonical.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://design.ubuntu.com/resources",
+      "brand": "Canonical"
+    },
+    "si-checkmk.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://checkmk.com",
+      "brand": "Checkmk"
+    },
+    "si-progress.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.progress.com",
+      "brand": "Progress"
+    },
+    "dev-circleci-plain.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/circleci",
+      "brand": "CircleCI"
+    },
+    "si-cisco.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.cisco.com",
+      "brand": "Cisco"
+    },
+    "si-claudecode.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://code.claude.com",
+      "brand": "Claude Code"
+    },
+    "si-anthropic.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.anthropic.com",
+      "brand": "Anthropic"
+    },
+    "si-cloudbees.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.cloudbees.com",
+      "brand": "CloudBees"
+    },
+    "dev-cloudflare-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/cloudflare",
+      "brand": "Cloudflare"
+    },
+    "si-codefresh.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://codefresh.io",
+      "brand": "Codefresh"
+    },
+    "si-octopusdeploy.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://octopus.com/company/brand",
+      "brand": "Octopus Deploy"
+    },
+    "si-codemagic.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://codemagic.io",
+      "brand": "Codemagic"
+    },
+    "si-paloaltonetworks.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.paloaltonetworks.com",
+      "brand": "Palo Alto Networks"
+    },
+    "si-cursor.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://cursor.com/brand",
+      "brand": "Cursor"
+    },
+    "si-databricks.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.databricks.com",
+      "brand": "Databricks"
+    },
+    "si-dataiku.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.dataiku.com/company/media-kit/",
+      "brand": "Dataiku"
+    },
+    "dev-dynatrace-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/dynatrace",
+      "brand": "Dynatrace"
+    },
+    "si-dell.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.dell.com",
+      "brand": "Dell"
+    },
+    "si-elastic.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.elastic.co/brand",
+      "brand": "Elastic"
+    },
+    "si-fortinet.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.fortinet.com",
+      "brand": "Fortinet"
+    },
+    "dev-redhat-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/redhat",
+      "brand": "Red Hat"
+    },
+    "dev-github-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/github",
+      "brand": "GitHub"
+    },
+    "si-githubcopilot.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://primer.style/foundations/icons/copilot-24",
+      "brand": "GitHub Copilot"
+    },
+    "dev-gitlab-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/gitlab",
+      "brand": "GitLab"
+    },
+    "dev-gradle-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/gradle",
+      "brand": "Gradle"
+    },
+    "dev-grafana-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/grafana",
+      "brand": "Grafana"
+    },
+    "si-graylog.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.graylog.org",
+      "brand": "Graylog"
+    },
+    "dev-terraform-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/terraform",
+      "brand": "Terraform"
+    },
+    "si-huawei.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://e.huawei.com/ph/material/partner/0a72728b864949c48b22106454352483",
+      "brand": "Huawei"
+    },
+    "si-huggingface.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://huggingface.co/brand",
+      "brand": "Hugging Face"
+    },
+    "dev-clickhouse-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/clickhouse",
+      "brand": "ClickHouse"
+    },
+    "si-icinga.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/Icinga/icingaweb2/blob/293021b2000e9d459387153ca5690f97e0184aaa/public/img/icinga-logo-compact.svg",
+      "brand": "Icinga"
+    },
+    "dev-jaegertracing-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/jaegertracing",
+      "brand": "Jaeger"
+    },
+    "dev-jenkins-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/jenkins",
+      "brand": "Jenkins"
+    },
+    "si-jfrog.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://jfrog.com/brand-guidelines",
+      "brand": "JFrog"
+    },
+    "dev-k3s-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/k3s",
+      "brand": "K3s"
+    },
+    "si-keycloak.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/keycloak/keycloak-misc/blob/dee033f2d6d6b5c3a6ce8eb84e285f7e5626dbf6/logo/icon-black.svg",
+      "brand": "Keycloak"
+    },
+    "si-kong.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://konghq.com/brand-assets/",
+      "brand": "Kong"
+    },
+    "dev-kubeflow-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/kubeflow",
+      "brand": "Kubeflow"
+    },
+    "dev-kubernetes-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/kubernetes",
+      "brand": "Kubernetes"
+    },
+    "si-langchain.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.langchain.com/langchain",
+      "brand": "LangChain"
+    },
+    "si-sap.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.sap.com",
+      "brand": "SAP"
+    },
+    "si-meta.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.meta.com",
+      "brand": "Meta"
+    },
+    "si-siemens.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://siemens.com",
+      "brand": "Siemens"
+    },
+    "si-mistralai.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://chat.mistral.ai",
+      "brand": "Mistral AI"
+    },
+    "si-mlflow.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/mlflow/mlflow/blob/855881f93703b15ffe643003fb4d7c84f0ec2502/assets/icon.svg",
+      "brand": "MLflow"
+    },
+    "si-n8n.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://n8n.io/press",
+      "brand": "n8n"
+    },
+    "si-netapp.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.netapp.com",
+      "brand": "NetApp"
+    },
+    "si-netdata.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.netdata.cloud",
+      "brand": "Netdata"
+    },
+    "dev-newrelic-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/newrelic",
+      "brand": "New Relic"
+    },
+    "si-dassaultsystemes.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.3ds.com",
+      "brand": "Dassault Syst\u00e8mes"
+    },
+    "dev-nodered-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/nodered",
+      "brand": "Node-RED"
+    },
+    "si-openjsfoundation.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/openjs-foundation/artwork/blob/270575392800eb17a02612203f6f0d5868c634a7/openjs_foundation/openjs_foundation-icon-black.svg",
+      "brand": "OpenJS Foundation"
+    },
+    "dev-npm-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/npm",
+      "brand": "npm"
+    },
+    "si-nutanix.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.nutanix.com/content/dam/nutanix/en/cmn/documents/nutanix-brandbook.pdf",
+      "brand": "Nutanix"
+    },
+    "dev-okta-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/okta",
+      "brand": "Okta"
+    },
+    "si-ollama.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/ollama/ollama/issues/2152#issuecomment-1905286922",
+      "brand": "Ollama"
+    },
+    "si-openbao.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/openbao/artwork/blob/8f75904040f9ca4fcba2b7a46581ecee536315b5/black/openbao-single-black.svg",
+      "brand": "OpenBao"
+    },
+    "si-openproject.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.openproject.org/press/",
+      "brand": "OpenProject"
+    },
+    "si-opensearch.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://opensearch.org/trademark-brand-policy.html",
+      "brand": "OpenSearch"
+    },
+    "dev-opentelemetry-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/opentelemetry",
+      "brand": "OpenTelemetry"
+    },
+    "si-opentofu.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/opentofu/brand-artifacts/blob/0d4d0d6050ca0ff06471400bc3249a64c145f659/symbol-only/transparent/SVG/on-light-mono.svg",
+      "brand": "OpenTofu"
+    },
+    "si-opnsense.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/opnsense/core/blob/f4b69b9b565d2747eb40d7d23e060f4a3c81a071/src/opnsense/www/themes/opnsense/build/images/icon-logo.svg",
+      "brand": "OPNsense"
+    },
+    "dev-oracle-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/oracle",
+      "brand": "Oracle"
+    },
+    "si-palantir.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/palantir/conjure/blob/1b0d450dc52c4822b4c9d1da8c61ad7f78855fe5/docs/media/palantir-logo.svg",
+      "brand": "Palantir"
+    },
+    "si-pdq.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://pdq.com",
+      "brand": "PDQ"
+    },
+    "si-perplexity.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.perplexity.ai",
+      "brand": "Perplexity"
+    },
+    "si-pingdom.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.pingdom.com/resources/brand-assets/",
+      "brand": "Pingdom"
+    },
+    "si-platformdotsh.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://platform.sh/logos/",
+      "brand": "Platform.sh"
+    },
+    "dev-postman-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/postman",
+      "brand": "Postman"
+    },
+    "dev-prometheus-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/prometheus",
+      "brand": "Prometheus"
+    },
+    "si-perforce.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://brandfolder.com/perforce/public-logos",
+      "brand": "Perforce"
+    },
+    "si-qualys.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.qualys.com",
+      "brand": "Qualys"
+    },
+    "dev-rancher-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/rancher",
+      "brand": "Rancher"
+    },
+    "si-suse.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://brand.suse.com",
+      "brand": "SUSE"
+    },
+    "si-rasa.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://rasa.com",
+      "brand": "Rasa"
+    },
+    "si-redmine.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.redmine.org/projects/redmine/wiki/logo",
+      "brand": "Redmine"
+    },
+    "si-retool.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://retool.com",
+      "brand": "Retool"
+    },
+    "si-root.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://root.cern/assets/images/logos/svg/ROOT.svg",
+      "brand": "ROOT"
+    },
+    "dev-sentry-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/sentry",
+      "brand": "Sentry"
+    },
+    "si-snort.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://snort.org",
+      "brand": "Snort"
+    },
+    "si-sonicwall.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://brandfolder.com/sonicwall/sonicwall-external",
+      "brand": "SonicWall"
+    },
+    "si-spinnaker.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/spinnaker/spinnaker.github.io/tree/0cdd37af7541293a810494a1bb4d7df9ef553d60/assets/images",
+      "brand": "Spinnaker"
+    },
+    "si-synology.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.synology.com/en-global/company/branding",
+      "brand": "Synology"
+    },
+    "si-teamcity.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.jetbrains.com/company/brand/logos",
+      "brand": "TeamCity"
+    },
+    "dev-jetbrains-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/jetbrains",
+      "brand": "JetBrains"
+    },
+    "si-tekton.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/cdfoundation/artwork/blob/3e748ca9cf9c3136a4a571f7655271b568c16a64/tekton/icon/black/tekton-icon-black.svg",
+      "brand": "Tekton"
+    },
+    "dev-travis-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/travis",
+      "brand": "Travis CI"
+    },
+    "dev-trello-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/trello",
+      "brand": "Trello"
+    },
+    "si-trendmicro.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.trendmicro.com",
+      "brand": "Trend Micro"
+    },
+    "si-trivy.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.aquasec.com/brand",
+      "brand": "Trivy"
+    },
+    "si-uipath.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.uipath.com/newsroom",
+      "brand": "UiPath"
+    },
+    "si-veeam.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.veeam.com/newsroom/veeam-graphics.html",
+      "brand": "Veeam"
+    },
+    "si-veritas.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://my.veritas.com/cs/groups/partner/documents/styleguide/mdaw/mdq5/~edisp/tus3cpeapp3855186572.pdf",
+      "brand": "Veritas"
+    },
+    "dev-googlecloud-original.svg": {
+      "collection": "Devicon 2.17.0",
+      "source": "https://github.com/devicons/devicon/tree/v2.17.0/icons/googlecloud",
+      "brand": "Google Cloud"
+    },
+    "si-victoriametrics.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/VictoriaMetrics/VictoriaMetrics/blob/24d61bf19374b42ef9839c13c7d35ce8888170e0/docs/assets/images/vm_logo.svg",
+      "brand": "VictoriaMetrics"
+    },
+    "si-vllm.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://github.com/vllm-project/media-kit/blob/79b2ea5db25b723f2d81dae203a87c5b9a076722/vLLM-Logo.svg",
+      "brand": "vLLM"
+    },
+    "si-bytedance.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.bytedance.com",
+      "brand": "ByteDance"
+    },
+    "si-windsurf.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://windsurf.com/brand",
+      "brand": "Windsurf"
+    },
+    "si-zapier.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.figma.com/file/NQFxTCE5pGR3dHZt0DkOyy/Zapier-Brand-Guidelines-%5BExternal%5D?type=design&node-id=101-9701&mode=design",
+      "brand": "Zapier"
+    },
+    "si-zendesk.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://brandland.zendesk.com",
+      "brand": "Zendesk"
+    },
+    "si-zoho.svg": {
+      "collection": "Simple Icons 16.33.0",
+      "source": "https://www.zoho.com/branding",
+      "brand": "Zoho"
+    },
+    "site-277d8c931fd432da.png": {
+      "collection": "Official site icon",
+      "source": "https://arize.com/favicon.ico",
+      "brand": "arize.com"
+    },
+    "site-24299f39915b1fa5.png": {
+      "collection": "Official site icon",
+      "source": "https://www.microsoft.com/favicon.ico",
+      "brand": "microsoft.com"
+    },
+    "site-a1131adf8529ba15.png": {
+      "collection": "Official site icon",
+      "source": "https://www.belarc.com/favicon.ico",
+      "brand": "belarc.com"
+    },
+    "site-efcfc1c1830c26a9.png": {
+      "collection": "Official site icon",
+      "source": "https://www.ilink-digital.com/favicon.ico",
+      "brand": "ilink-digital.com"
+    },
+    "site-95decfb7d085cf5f.png": {
+      "collection": "Official site icon",
+      "source": "https://srlabs.de/favicon.ico",
+      "brand": "srlabs.de"
+    },
+    "site-b64b00994b303486.png": {
+      "collection": "Official site icon",
+      "source": "https://www.auvik.com/favicon.ico",
+      "brand": "auvik.com"
+    },
+    "site-88c0eb428e584181.png": {
+      "collection": "Official site icon",
+      "source": "https://www.beyondtrust.com/favicon.ico",
+      "brand": "beyondtrust.com"
+    },
+    "site-f387d41ba29fcf4b.png": {
+      "collection": "Official site icon",
+      "source": "https://axiom.co/favicon.ico",
+      "brand": "axiom.co"
+    },
+    "site-90544ec24959a10a.png": {
+      "collection": "Official site icon",
+      "source": "https://www.barracuda.com/favicon.ico",
+      "brand": "barracuda.com"
+    },
+    "site-f5f33308e38a22a4.png": {
+      "collection": "Official site icon",
+      "source": "https://www.ifs.com/favicon.ico",
+      "brand": "ifs.com"
+    },
+    "site-072c08c22964f1c3.png": {
+      "collection": "Official site icon",
+      "source": "https://www.manageengine.com/favicon.ico",
+      "brand": "manageengine.com"
+    },
+    "site-680ecd0803737eaf.png": {
+      "collection": "Official site icon",
+      "source": "https://www.eaton.com/favicon.ico",
+      "brand": "eaton.com"
+    },
+    "site-beb8806277b97d91.png": {
+      "collection": "Official site icon",
+      "source": "https://www.brinqa.com/favicon.ico",
+      "brand": "brinqa.com"
+    },
+    "site-287048ca071de058.png": {
+      "collection": "Official site icon",
+      "source": "https://www.checkpoint.com/favicon.ico",
+      "brand": "checkpoint.com"
+    },
+    "site-da2e73f68e606edc.png": {
+      "collection": "Official site icon",
+      "source": "https://www.celigo.com/favicon.ico",
+      "brand": "celigo.com"
+    },
+    "site-1455b660d0284e56.png": {
+      "collection": "Official site icon",
+      "source": "https://www.checklyhq.com/favicon.ico",
+      "brand": "checklyhq.com"
+    },
+    "site-35babb9c4f2e5fe2.png": {
+      "collection": "Official site icon",
+      "source": "https://inedo.com/favicon.ico",
+      "brand": "inedo.com"
+    },
+    "site-dbafe031091c09ff.png": {
+      "collection": "Official site icon",
+      "source": "https://www.ivanti.com/favicon.ico",
+      "brand": "ivanti.com"
+    },
+    "site-70b8fd79f1d9f7ea.png": {
+      "collection": "Official site icon",
+      "source": "https://www.certero.com/favicon.ico",
+      "brand": "certero.com"
+    },
+    "site-ae3f2e8f6dfe931c.png": {
+      "collection": "Official site icon",
+      "source": "https://www.citrix.com/favicon.ico",
+      "brand": "citrix.com"
+    },
+    "site-0feb8469f2d7df6b.png": {
+      "collection": "Official site icon",
+      "source": "https://cloudian.com/favicon.ico",
+      "brand": "cloudian.com"
+    },
+    "site-57f17b11a1646f55.png": {
+      "collection": "Official site icon",
+      "source": "https://cohere.com/favicon.ico",
+      "brand": "cohere.com"
+    },
+    "site-94e312e9c9c676ed.png": {
+      "collection": "Official site icon",
+      "source": "https://www.vertiv.com/favicon.ico",
+      "brand": "vertiv.com"
+    },
+    "site-9d5c76de6ed62222.png": {
+      "collection": "Official site icon",
+      "source": "https://www.confluent.io/favicon.ico",
+      "brand": "confluent.io"
+    },
+    "site-7de440a2dc9f4ec6.png": {
+      "collection": "Official site icon",
+      "source": "https://zeron.one/favicon.ico",
+      "brand": "zeron.one"
+    },
+    "site-e2409b5457077634.png": {
+      "collection": "Official site icon",
+      "source": "https://dagger.io/favicon.ico",
+      "brand": "dagger.io"
+    },
+    "site-d9c6046c9e1d0e4f.png": {
+      "collection": "Official site icon",
+      "source": "https://www.kaseya.com/favicon.ico",
+      "brand": "kaseya.com"
+    },
+    "site-61023e44ce1426bd.png": {
+      "collection": "Official site icon",
+      "source": "https://www.datarobot.com/favicon.ico",
+      "brand": "datarobot.com"
+    },
+    "site-90777b3a41a3e4c2.png": {
+      "collection": "Official site icon",
+      "source": "https://www.diligent.com/favicon.ico",
+      "brand": "diligent.com"
+    },
+    "site-5b94024a4975d11e.png": {
+      "collection": "Official site icon",
+      "source": "https://www.deltaww.com/favicon.ico",
+      "brand": "deltaww.com"
+    },
+    "site-4b4bac5711897fe9.png": {
+      "collection": "Official site icon",
+      "source": "https://www.hcl-software.com/favicon.ico",
+      "brand": "hcl-software.com"
+    },
+    "site-e611f41295da5441.png": {
+      "collection": "Official site icon",
+      "source": "https://edgedelta.com/favicon.ico",
+      "brand": "edgedelta.com"
+    },
+    "site-9a8154a95825d364.png": {
+      "collection": "Official site icon",
+      "source": "https://strangebee.com/favicon.ico",
+      "brand": "strangebee.com"
+    },
+    "site-2f7045432a9a51f5.png": {
+      "collection": "Official site icon",
+      "source": "https://www.alloysoftware.com/favicon.ico",
+      "brand": "alloysoftware.com"
+    },
+    "site-0173a3de5a89e3ec.png": {
+      "collection": "Official site icon",
+      "source": "https://www.action1.com/favicon.ico",
+      "brand": "action1.com"
+    },
+    "site-115c5e91079a802f.png": {
+      "collection": "Official site icon",
+      "source": "https://abnormal.ai/favicon.ico",
+      "brand": "abnormal.ai"
+    },
+    "site-f3508603c16629b7.png": {
+      "collection": "Official site icon",
+      "source": "https://www.alauda.io/favicon.ico",
+      "brand": "alauda.io"
+    },
+    "site-60e4ef211f6127a0.png": {
+      "collection": "Official site icon",
+      "source": "https://www.servicenow.com/favicon.ico",
+      "brand": "servicenow.com"
+    },
+    "site-0fc703f76228d6be.png": {
+      "collection": "Official site icon",
+      "source": "https://appcircle.io/favicon.ico",
+      "brand": "appcircle.io"
+    },
+    "site-89ad91e53f278e86.png": {
+      "collection": "Official site icon",
+      "source": "https://arcticwolf.com/wp-content/uploads/2019/11/aw-favicon-rebrand.png",
+      "brand": "arcticwolf.com"
+    },
+    "site-a292605320d0e1aa.png": {
+      "collection": "Official site icon",
+      "source": "https://optro.ai/favicon.ico",
+      "brand": "auditboard.com"
+    },
+    "site-98226cecdb0d7cd7.png": {
+      "collection": "Official site icon",
+      "source": "https://www.gbtec.com/_assets/58616d81eff1af9bb0e48e1ee4c76c37/Favicons/apple-touch-icon.png",
+      "brand": "gbtec.com"
+    },
+    "site-bb438e1309fd5686.png": {
+      "collection": "Official site icon",
+      "source": "https://openai.com/favicon.ico",
+      "brand": "openai.com"
+    },
+    "site-2b29dcf66dba0b53.png": {
+      "collection": "Official site icon",
+      "source": "https://www.causely.ai/favicon.ico",
+      "brand": "causely.ai"
+    },
+    "site-4f0883d4c242ed91.png": {
+      "collection": "Official site icon",
+      "source": "https://www.blockapt.com/wp-content/uploads/2024/09/Logo-B-150x150.jpg",
+      "brand": "blockapt.com"
+    },
+    "site-9284babf8652dc03.png": {
+      "collection": "Official site icon",
+      "source": "https://clarive.com/favicon.ico",
+      "brand": "clarive.com"
+    },
+    "site-43b321689d4ace24.png": {
+      "collection": "Official site icon",
+      "source": "https://www.chatsworth.com/favicon.ico",
+      "brand": "chatsworth.com"
+    },
+    "site-81c2553064bb4b8b.png": {
+      "collection": "Official site icon",
+      "source": "https://www.eracent.com/favicon.ico",
+      "brand": "eracent.com"
+    },
+    "site-aceab037d6256577.png": {
+      "collection": "Official site icon",
+      "source": "https://cribl.io/favicon.ico",
+      "brand": "cribl.io"
+    },
+    "site-dad6e44a78ac0b14.png": {
+      "collection": "Official site icon",
+      "source": "https://www.corcentric.com/favicon.ico",
+      "brand": "corcentric.com"
+    },
+    "site-2813484b81e65d1f.png": {
+      "collection": "Official site icon",
+      "source": "https://www.riskwatch.com/brand/favicon.webp",
+      "brand": "riskwatch.com"
+    },
+    "site-e3db5e88cd9a63a5.png": {
+      "collection": "Official site icon",
+      "source": "https://www.device42.com/wp-content/uploads/2024/05/D42-180x180-1-150x150.png",
+      "brand": "device42.com"
+    },
+    "site-dd321b738d43f369.png": {
+      "collection": "Official site icon",
+      "source": "https://www.domotz.com/favicon.ico",
+      "brand": "domotz.com"
+    },
+    "site-fe5bac70a63063de.png": {
+      "collection": "Official site icon",
+      "source": "https://www.dragon1.com/favicon.ico",
+      "brand": "dragon1.com"
+    },
+    "site-b3ba649b880e0fb2.png": {
+      "collection": "Official site icon",
+      "source": "https://framerusercontent.com/images/yUBwZmrL52Mcc5CkilsF8DXnVg.png",
+      "brand": "devtron.ai"
+    },
+    "site-2407da68721da037.png": {
+      "collection": "Official site icon",
+      "source": "https://www.dotcom-monitor.com/wp-content/uploads/cropped-Dotcom-Monitor-Favicon-180x180.png",
+      "brand": "dotcom-monitor.com"
+    },
+    "site-393bc54b3d506527.png": {
+      "collection": "Official site icon",
+      "source": "https://www.eginnovations.com/favicon.ico",
+      "brand": "eginnovations.com"
+    },
+    "site-e5e64f33af108f6a.png": {
+      "collection": "Official site icon",
+      "source": "https://www.quest.com/favicon.ico",
+      "brand": "quest.com"
+    },
+    "site-e2feb6a0d895978e.png": {
+      "collection": "Official site icon",
+      "source": "https://hsi.com/apple-touch-icon-60x60.png",
+      "brand": "hsi.com"
+    },
+    "site-d8f5a567071c9ae3.png": {
+      "collection": "Official site icon",
+      "source": "https://www.eset.com/favicon.ico",
+      "brand": "eset.com"
+    },
+    "site-22d4a4c6c99ea521.png": {
+      "collection": "Official site icon",
+      "source": "https://www.exabeam.com/favicon.ico",
+      "brand": "exabeam.com"
+    },
+    "site-2fb9a13ebf838e53.png": {
+      "collection": "Official site icon",
+      "source": "https://www.extremenetworks.com/favicon.ico",
+      "brand": "extremenetworks.com"
+    },
+    "site-e8064d701efe1cae.png": {
+      "collection": "Official site icon",
+      "source": "https://www.flexagon.com/favicon.ico",
+      "brand": "flexagon.com"
+    },
+    "site-3fe0398087450015.png": {
+      "collection": "Official site icon",
+      "source": "https://fleetdm.com/favicon.ico",
+      "brand": "fleetdm.com"
+    },
+    "site-ca621d32f0fa0c1e.png": {
+      "collection": "Official site icon",
+      "source": "https://www.forcepoint.com/favicon.ico",
+      "brand": "forcepoint.com"
+    },
+    "site-3aeb002460381c6f.png": {
+      "collection": "Official site icon",
+      "source": "https://github.com/favicon.ico",
+      "brand": "github.com"
+    },
+    "site-84dc88fce520b35d.png": {
+      "collection": "Official site icon",
+      "source": "https://grafana.com/favicon.ico",
+      "brand": "grafana.com"
+    },
+    "site-2536829ecbfaf4c6.png": {
+      "collection": "Official site icon",
+      "source": "https://greenly.earth/favicon.ico",
+      "brand": "greenly.earth"
+    },
+    "site-803e54018f58a8f0.png": {
+      "collection": "Official site icon",
+      "source": "https://www.gravitee.io/favicon.ico",
+      "brand": "gravitee.io"
+    },
+    "site-07fa4e17aacc0146.png": {
+      "collection": "Official site icon",
+      "source": "https://x.ai/favicon.ico",
+      "brand": "x.ai"
+    },
+    "site-abe15767fcc634a9.png": {
+      "collection": "Official site icon",
+      "source": "https://www.groundcover.com/favicon.ico",
+      "brand": "groundcover.com"
+    },
+    "site-fc9a87c183b752e9.png": {
+      "collection": "Official site icon",
+      "source": "https://www.h3c.com/favicon.ico",
+      "brand": "h3c.com"
+    },
+    "site-e80c8869b6e03f3d.png": {
+      "collection": "Official site icon",
+      "source": "https://h2o.ai/favicon.ico",
+      "brand": "h2o.ai"
+    },
+    "site-c0a4fc96d540b0d3.png": {
+      "collection": "Official site icon",
+      "source": "https://www.hitachivantara.com/favicon.ico",
+      "brand": "hitachivantara.com"
+    },
+    "site-6e31e2b9dd031b33.png": {
+      "collection": "Official site icon",
+      "source": "https://www.hexnode.com/favicon.ico",
+      "brand": "hexnode.com"
+    },
+    "site-273e97e487c70819.png": {
+      "collection": "Official site icon",
+      "source": "https://www.honeycomb.io/favicon.ico",
+      "brand": "honeycomb.io"
+    },
+    "site-25053622ea23c23e.png": {
+      "collection": "Official site icon",
+      "source": "https://www.hycu.com/favicon.ico",
+      "brand": "hycu.com"
+    },
+    "site-034ef148e5bdc0a1.png": {
+      "collection": "Official site icon",
+      "source": "https://hyperviewhq.com/favicon.ico",
+      "brand": "hyperviewhq.com"
+    },
+    "site-1e159de503cab101.png": {
+      "collection": "Official site icon",
+      "source": "https://www.infoblox.com/favicon.ico",
+      "brand": "infoblox.com"
+    },
+    "site-77160ed428700484.png": {
+      "collection": "Official site icon",
+      "source": "https://everestims.com/favicon.ico",
+      "brand": "everestims.com"
+    },
+    "site-62fa9d59dbf22faa.png": {
+      "collection": "Official site icon",
+      "source": "https://www.iboss.com/favicon.ico",
+      "brand": "iboss.com"
+    },
+    "site-0b545c72bbd84c77.png": {
+      "collection": "Official site icon",
+      "source": "https://www.rapid7.com/favicon.ico",
+      "brand": "rapid7.com"
+    },
+    "site-7c4cedaf13452328.png": {
+      "collection": "Official site icon",
+      "source": "https://www.juniper.net/favicon.ico",
+      "brand": "juniper.net"
+    },
+    "site-4d822a227fd7639a.png": {
+      "collection": "Official site icon",
+      "source": "https://www.keepersecurity.com/favicon.ico",
+      "brand": "keepersecurity.com"
+    },
+    "site-d543ea0706516d1d.png": {
+      "collection": "Official site icon",
+      "source": "https://www.komprise.com/favicon.ico",
+      "brand": "komprise.com"
+    },
+    "site-950f43d7f0b65dea.png": {
+      "collection": "Official site icon",
+      "source": "https://www.navex.com/favicon.ico",
+      "brand": "navex.com"
+    },
+    "site-2ac029f398c01fb7.png": {
+      "collection": "Official site icon",
+      "source": "https://www.kandji.io/favicon.ico",
+      "brand": "kandji.io"
+    },
+    "site-b0cd12706cb73d39.png": {
+      "collection": "Official site icon",
+      "source": "https://www.libraesva.com/favicon.ico",
+      "brand": "libraesva.com"
+    },
+    "site-4d65c261b63d474e.png": {
+      "collection": "Official site icon",
+      "source": "https://launchdarkly.com/favicon.ico",
+      "brand": "launchdarkly.com"
+    },
+    "site-9d2464c8642854d3.png": {
+      "collection": "Official site icon",
+      "source": "https://www.liquit.com/favicon.ico",
+      "brand": "liquit.com"
+    },
+    "site-15a83ccb497c2646.png": {
+      "collection": "Official site icon",
+      "source": "https://www.kubermatic.com/images/favicons/apple-touch-icon.png",
+      "brand": "kubermatic.com"
+    },
+    "site-4644f8270376d37d.png": {
+      "collection": "Official site icon",
+      "source": "https://localazy.com/favicon.ico",
+      "brand": "localazy.com"
+    },
+    "site-ed283f3ab1f22012.png": {
+      "collection": "Official site icon",
+      "source": "https://www.logicgate.com/favicon.ico",
+      "brand": "logicgate.com"
+    },
+    "site-3c3d9e353f1b0b08.png": {
+      "collection": "Official site icon",
+      "source": "https://logit.io/favicon.ico",
+      "brand": "logit.io"
+    },
+    "site-2a04fd04af82b8e3.png": {
+      "collection": "Official site icon",
+      "source": "https://www.logicmanager.com/favicon.ico",
+      "brand": "logicmanager.com"
+    },
+    "site-6d4ca97b7c3cc74e.png": {
+      "collection": "Official site icon",
+      "source": "https://middleware.io/favicon.ico",
+      "brand": "middleware.io"
+    },
+    "site-45ace8902535968b.png": {
+      "collection": "Official site icon",
+      "source": "https://mia-platform.eu/favicon.ico",
+      "brand": "mia-platform.eu"
+    },
+    "site-ad925a09e9076e73.png": {
+      "collection": "Official site icon",
+      "source": "https://www.digitemis.com/favicon.ico",
+      "brand": "digitemis.com"
+    },
+    "site-df9ba8c57b8c2795.png": {
+      "collection": "Official site icon",
+      "source": "https://monday.com/favicon.ico",
+      "brand": "monday.com"
+    },
+    "site-138478880461a2a2.png": {
+      "collection": "Official site icon",
+      "source": "https://www.nagios.com/favicon.ico",
+      "brand": "nagios.com"
+    },
+    "site-a789fb5ea2285bc2.png": {
+      "collection": "Official site icon",
+      "source": "https://motadata.com/favicon.ico",
+      "brand": "motadata.com"
+    },
+    "site-cd2cd056c32b03db.png": {
+      "collection": "Official site icon",
+      "source": "https://www.nakivo.com/favicon.ico",
+      "brand": "nakivo.com"
+    },
+    "site-80f1a21308176007.png": {
+      "collection": "Official site icon",
+      "source": "https://www.netscout.com/favicon.ico",
+      "brand": "netscout.com"
+    },
+    "site-48cd2559e09cff81.png": {
+      "collection": "Official site icon",
+      "source": "https://www.netskope.com/favicon.ico",
+      "brand": "netskope.com"
+    },
+    "site-17d2aeb5fcc4ad05.png": {
+      "collection": "Official site icon",
+      "source": "https://newrelic.com/favicon.ico",
+      "brand": "newrelic.com"
+    },
+    "site-c2bf1e26077dcfd3.png": {
+      "collection": "Official site icon",
+      "source": "https://normative.io/favicon.ico",
+      "brand": "normative.io"
+    },
+    "site-f23d43ff15cc8d83.png": {
+      "collection": "Official site icon",
+      "source": "https://www.carrier.com/favicon.ico",
+      "brand": "carrier.com"
+    },
+    "site-301cfe0708bddb46.png": {
+      "collection": "Official site icon",
+      "source": "https://nxt1.com/favicon.ico",
+      "brand": "nxt1.com"
+    },
+    "site-72741f683e748f5b.png": {
+      "collection": "Official site icon",
+      "source": "https://www.oneidentity.com/favicon.ico",
+      "brand": "oneidentity.com"
+    },
+    "site-cfa61d6b15dcce81.png": {
+      "collection": "Official site icon",
+      "source": "https://oneuptime.com/favicon.ico",
+      "brand": "oneuptime.com"
+    },
+    "site-227fe3a994796767.png": {
+      "collection": "Official site icon",
+      "source": "https://openwebui.com/favicon.ico",
+      "brand": "openwebui.com"
+    },
+    "site-1c2c92fc9f3c6df5.png": {
+      "collection": "Official site icon",
+      "source": "https://logz.io/favicon.ico",
+      "brand": "logz.io"
+    },
+    "site-075e46c5877e4ee6.png": {
+      "collection": "Official site icon",
+      "source": "https://www.onventis.com/favicon.ico",
+      "brand": "onventis.com"
+    },
+    "site-cd1fda25973d9e5f.png": {
+      "collection": "Official site icon",
+      "source": "https://www.optial.com/favicon.ico",
+      "brand": "optial.com"
+    },
+    "site-1e4eea719ee9ea5f.png": {
+      "collection": "Official site icon",
+      "source": "https://www.deciso.com/favicon.ico",
+      "brand": "deciso.com"
+    },
+    "site-aea4c09a9cb77453.png": {
+      "collection": "Official site icon",
+      "source": "https://otrs.com/favicon.ico",
+      "brand": "otrs.com"
+    },
+    "site-24c68b6764fbe4b7.png": {
+      "collection": "Official site icon",
+      "source": "https://www.outsystems.com/favicon.ico",
+      "brand": "outsystems.com"
+    },
+    "site-345d19cff7bbff80.png": {
+      "collection": "Official site icon",
+      "source": "https://www.solarwinds.com/favicon.ico",
+      "brand": "solarwinds.com"
+    },
+    "site-66d8ddd6a42c1239.png": {
+      "collection": "Official site icon",
+      "source": "https://phoenix.security/favicon.ico",
+      "brand": "phoenix.security"
+    },
+    "site-d00c77043d57613a.png": {
+      "collection": "Official site icon",
+      "source": "https://www.planview.com/favicon.ico",
+      "brand": "planview.com"
+    },
+    "site-335122e7c8d8e908.png": {
+      "collection": "Official site icon",
+      "source": "https://www.origamirisk.co.uk/wp-content/uploads/sites/5/2025/06/cropped-favicon-512x512-1-32x32.png",
+      "brand": "origamirisk.com"
+    },
+    "site-7c93745dac356f05.png": {
+      "collection": "Official site icon",
+      "source": "https://www.procurementexpress.com/favicon.ico",
+      "brand": "procurementexpress.com"
+    },
+    "site-3bf48ab942c4db86.png": {
+      "collection": "Official site icon",
+      "source": "https://www.midvision.com/favicon.ico",
+      "brand": "midvision.com"
+    },
+    "site-8caa0856e9d9d9de.png": {
+      "collection": "Official site icon",
+      "source": "https://quantivate.com/favicon.ico",
+      "brand": "quantivate.com"
+    },
+    "site-40af1b0faf6df154.png": {
+      "collection": "Official site icon",
+      "source": "https://www.qnap.com/favicon.ico",
+      "brand": "qnap.com"
+    },
+    "site-56c45f346a2e148f.png": {
+      "collection": "Official site icon",
+      "source": "https://www.redmine.org/favicon.ico",
+      "brand": "redmine.org"
+    },
+    "site-7c623247425fbf42.png": {
+      "collection": "Official site icon",
+      "source": "https://www.rsa.com/favicon.ico",
+      "brand": "rsa.com"
+    },
+    "site-281507c9c0e60be3.png": {
+      "collection": "Official site icon",
+      "source": "https://www.samsungsds.com/favicon.ico",
+      "brand": "samsungsds.com"
+    },
+    "site-f4efe6750f5bb0f6.png": {
+      "collection": "Official site icon",
+      "source": "https://www.sangfor.com/favicon.ico",
+      "brand": "sangfor.com"
+    },
+    "site-fa468089b085eef8.png": {
+      "collection": "Official site icon",
+      "source": "https://www.sas.com/favicon.ico",
+      "brand": "sas.com"
+    },
+    "site-c6f9d0f8ff6dce61.png": {
+      "collection": "Official site icon",
+      "source": "https://securityonionsolutions.com/favicon.ico",
+      "brand": "securityonionsolutions.com"
+    },
+    "site-ed72352d353ae696.png": {
+      "collection": "Official site icon",
+      "source": "https://www.secpod.com/apple-touch-icon.png",
+      "brand": "secpod.com"
+    },
+    "site-d1739cab67e4e575.png": {
+      "collection": "Official site icon",
+      "source": "https://sciencelogic.com/wp-content/uploads/2021/05/cropped-MicrosoftTeams-image-23-32x32.png",
+      "brand": "sciencelogic.com"
+    },
+    "site-54fa32e305081360.png": {
+      "collection": "Official site icon",
+      "source": "https://www.sentinelone.com/favicon.ico",
+      "brand": "sentinelone.com"
+    },
+    "site-d90982b5a7d98573.png": {
+      "collection": "Official site icon",
+      "source": "https://www.legrand.com/favicon.ico",
+      "brand": "legrand.com"
+    },
+    "site-957e0226dc822bea.png": {
+      "collection": "Official site icon",
+      "source": "https://shuffler.io/favicon.ico",
+      "brand": "shuffler.io"
+    },
+    "site-6ecac49788c243fa.png": {
+      "collection": "Official site icon",
+      "source": "https://simbian.ai/favicon.ico",
+      "brand": "simbian.ai"
+    },
+    "site-ce33750a42239f7a.png": {
+      "collection": "Official site icon",
+      "source": "https://www.skyhighsecurity.com/favicon.ico",
+      "brand": "skyhighsecurity.com"
+    },
+    "site-6ae83f58b0191c86.png": {
+      "collection": "Official site icon",
+      "source": "https://www.softexpert.com/favicon.ico",
+      "brand": "softexpert.com"
+    },
+    "site-752cc002b145787a.png": {
+      "collection": "Official site icon",
+      "source": "https://snipeitapp.com/favicon.ico",
+      "brand": "snipeitapp.com"
+    },
+    "site-1074cab110202aef.png": {
+      "collection": "Official site icon",
+      "source": "https://sn1persecurity.com/favicon.ico",
+      "brand": "sn1persecurity.com"
+    },
+    "site-e2e54d523dfd2316.png": {
+      "collection": "Official site icon",
+      "source": "https://www.sophos.com/favicon.ico",
+      "brand": "sophos.com"
+    },
+    "site-5d3ce453eaca3a7b.png": {
+      "collection": "Official site icon",
+      "source": "https://sparxsystems.com/favicon.ico",
+      "brand": "sparxsystems.com"
+    },
+    "site-25a154835730b93d.png": {
+      "collection": "Official site icon",
+      "source": "https://soti.net/favicon.ico",
+      "brand": "soti.net"
+    },
+    "site-db0e39dc6b9e5ee6.png": {
+      "collection": "Official site icon",
+      "source": "https://solace.com/favicon.ico",
+      "brand": "solace.com"
+    },
+    "site-8d5ce2aab69ca766.png": {
+      "collection": "Official site icon",
+      "source": "https://www.sprinklr.com/favicon.ico",
+      "brand": "sprinklr.com"
+    },
+    "site-2e3411cd2349396d.png": {
+      "collection": "Official site icon",
+      "source": "https://strobes.co/favicon.ico",
+      "brand": "strobes.co"
+    },
+    "site-20a361c6e136bf78.png": {
+      "collection": "Official site icon",
+      "source": "https://www.stulz.com/favicon.ico",
+      "brand": "stulz.com"
+    },
+    "site-f341c2505158c2a9.png": {
+      "collection": "Official site icon",
+      "source": "https://craft.co/favicon.ico",
+      "brand": "craft.co"
+    },
+    "site-a6df478aafafe79a.png": {
+      "collection": "Official site icon",
+      "source": "https://tallyfy.com/favicon.ico",
+      "brand": "tallyfy.com"
+    },
+    "site-8826f8fd98e005e6.png": {
+      "collection": "Official site icon",
+      "source": "https://www.tanium.com/favicon.ico",
+      "brand": "tanium.com"
+    },
+    "site-391f291c23aa2b9a.png": {
+      "collection": "Official site icon",
+      "source": "https://www.tibco.com/favicon.ico",
+      "brand": "tibco.com"
+    },
+    "site-a7ec4c7405dfea7b.png": {
+      "collection": "Official site icon",
+      "source": "https://www.tencentcloud.com/favicon.ico",
+      "brand": "tencentcloud.com"
+    },
+    "site-4c306dea6121a656.png": {
+      "collection": "Official site icon",
+      "source": "https://torq.io/favicon.ico",
+      "brand": "torq.io"
+    },
+    "site-f7dbda02b97eb4cf.png": {
+      "collection": "Official site icon",
+      "source": "https://treblle.com/favicon.ico",
+      "brand": "treblle.com"
+    },
+    "site-7e65fa13d64f4783.png": {
+      "collection": "Official site icon",
+      "source": "https://www.trellix.com/favicon.ico",
+      "brand": "trellix.com"
+    },
+    "site-f91f5984b9d6eda3.png": {
+      "collection": "Official site icon",
+      "source": "https://www.sysaid.com/favicon.ico",
+      "brand": "sysaid.com"
+    },
+    "site-5c1824646d1ee27a.png": {
+      "collection": "Official site icon",
+      "source": "https://www.unicomsi.com/favicon.ico",
+      "brand": "unicomsi.com"
+    },
+    "site-a18875a2685ddb74.svg": {
+      "collection": "Official site icon",
+      "source": "https://www.toriihq.com/favicon.svg",
+      "brand": "toriihq.com"
+    },
+    "site-29d8198adaa40c9a.svg": {
+      "collection": "Official site icon",
+      "source": "https://www.vigilent.com/favicon.ico",
+      "brand": "vigilent.com"
+    },
+    "site-07467d1a2512db17.png": {
+      "collection": "Official site icon",
+      "source": "https://www.vastdata.com/favicon.ico",
+      "brand": "vastdata.com"
+    },
+    "site-a314947580572670.png": {
+      "collection": "Official site icon",
+      "source": "https://www.vivantio.com/favicon.ico",
+      "brand": "vivantio.com"
+    },
+    "site-cb6c12daea1f0a0f.svg": {
+      "collection": "Official site icon",
+      "source": "https://www.aquasec.com/wp-content/themes/aqua4/assets/img/favicon.svg",
+      "brand": "aquasec.com"
+    },
+    "site-0f2c464941b1d933.png": {
+      "collection": "Official site icon",
+      "source": "https://vllm.ai/favicon.ico",
+      "brand": "vllm.ai"
+    },
+    "site-0f370f5f4cd52a2c.png": {
+      "collection": "Official site icon",
+      "source": "https://cdn.prod.website-files.com/64009032676f24f376f002fc/6a8611e08f776b721ca750c9_ilma-favicon.png",
+      "brand": "vanta.com"
+    },
+    "site-836a5b2b2300a36d.png": {
+      "collection": "Official site icon",
+      "source": "https://www.wrike.com/favicon.ico",
+      "brand": "wrike.com"
+    },
+    "site-d0173bddc13c09c2.png": {
+      "collection": "Official site icon",
+      "source": "https://www.adobe.com/favicon.ico",
+      "brand": "adobe.com"
+    },
+    "site-f42925973074fade.png": {
+      "collection": "Official site icon",
+      "source": "https://wazuh.com/favicon.ico",
+      "brand": "wazuh.com"
+    },
+    "site-5ddffea1448b1967.png": {
+      "collection": "Official site icon",
+      "source": "https://www.zabbix.com/favicon.ico",
+      "brand": "zabbix.com"
+    },
+    "site-8da2b4d5512253bb.png": {
+      "collection": "Official site icon",
+      "source": "https://zeek.org/favicon.ico",
+      "brand": "zeek.org"
+    },
+    "logos-salesforce.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Salesforce"
+    },
+    "logos-pagerduty-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "PagerDuty"
+    },
+    "logos-altair.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Altair"
+    },
+    "logos-aws.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "AWS"
+    },
+    "logos-ansible.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Ansible"
+    },
+    "logos-apache-software-foundation-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Apache Software Foundation"
+    },
+    "logos-apache-camel.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Apache Camel"
+    },
+    "logos-apigee.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Apigee"
+    },
+    "logos-google-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Google"
+    },
+    "logos-appcircle-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Appcircle"
+    },
+    "logos-appdynamics-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "AppDynamics"
+    },
+    "logos-ibm.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "IBM"
+    },
+    "logos-asana-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Asana"
+    },
+    "logos-atlassian.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Atlassian"
+    },
+    "logos-aws-amplify.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "AWS Amplify"
+    },
+    "logos-aws-cloudformation.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "AWS CloudFormation"
+    },
+    "logos-aws-codebuild.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "AWS CodeBuild"
+    },
+    "logos-aws-codedeploy.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "AWS CodeDeploy"
+    },
+    "logos-aws-codepipeline.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "AWS CodePipeline"
+    },
+    "logos-aws-xray.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "AWS X-Ray"
+    },
+    "logos-microsoft-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Microsoft"
+    },
+    "logos-bamboo.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Bamboo"
+    },
+    "logos-bigpanda.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "BigPanda"
+    },
+    "logos-bitbucket.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Bitbucket"
+    },
+    "logos-bitrise-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Bitrise"
+    },
+    "logos-datadog-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Datadog"
+    },
+    "logos-broadcom-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Broadcom"
+    },
+    "logos-buddy.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Buddy"
+    },
+    "logos-buildkite-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Buildkite"
+    },
+    "logos-openai-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "OpenAI"
+    },
+    "logos-progress.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Progress"
+    },
+    "logos-circleci.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "CircleCI"
+    },
+    "logos-claude-code.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Claude Code"
+    },
+    "logos-anthropic-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Anthropic"
+    },
+    "logos-cloudflare-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Cloudflare"
+    },
+    "logos-octopus-deploy.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Octopus Deploy"
+    },
+    "logos-cursor-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Cursor"
+    },
+    "logos-databricks-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Databricks"
+    },
+    "logos-dynatrace-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Dynatrace"
+    },
+    "logos-devin.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Devin"
+    },
+    "logos-redhat-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Red Hat"
+    },
+    "logos-github-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "GitHub"
+    },
+    "logos-github-copilot.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "GitHub Copilot"
+    },
+    "logos-gitlab-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "GitLab"
+    },
+    "logos-gradle.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Gradle"
+    },
+    "logos-graylog-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Graylog"
+    },
+    "logos-x-ai.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "xAI"
+    },
+    "logos-harness-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Harness"
+    },
+    "logos-hosted-graphite.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Hosted Graphite"
+    },
+    "logos-hugging-face-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Hugging Face"
+    },
+    "logos-jenkins.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Jenkins"
+    },
+    "logos-jfrog.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "JFrog"
+    },
+    "logos-kubernetes.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Kubernetes"
+    },
+    "logos-langchain-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "LangChain"
+    },
+    "logos-launchdarkly-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "LaunchDarkly"
+    },
+    "logos-sap.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "SAP"
+    },
+    "logos-meta-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Meta"
+    },
+    "logos-mistral-ai-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Mistral AI"
+    },
+    "logos-n8n-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "n8n"
+    },
+    "logos-new-relic-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "New Relic"
+    },
+    "logos-openjs-foundation-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "OpenJS Foundation"
+    },
+    "logos-npm-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "npm"
+    },
+    "logos-okta-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Okta"
+    },
+    "logos-opensearch-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "OpenSearch"
+    },
+    "logos-opentelemetry-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "OpenTelemetry"
+    },
+    "logos-oracle.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Oracle"
+    },
+    "logos-perplexity-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Perplexity"
+    },
+    "logos-pingdom.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Pingdom"
+    },
+    "logos-postman-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Postman"
+    },
+    "logos-prometheus.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Prometheus"
+    },
+    "logos-rancher-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Rancher"
+    },
+    "logos-suse.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "SUSE"
+    },
+    "logos-retool-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Retool"
+    },
+    "logos-rsa.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "RSA"
+    },
+    "logos-sentry-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Sentry"
+    },
+    "logos-signoz.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "SigNoz"
+    },
+    "logos-spinnaker.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Spinnaker"
+    },
+    "logos-craft.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Craft"
+    },
+    "logos-taiga.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Taiga"
+    },
+    "logos-teamcity.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "TeamCity"
+    },
+    "logos-jetbrains-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "JetBrains"
+    },
+    "logos-travis-ci.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Travis CI"
+    },
+    "logos-trello.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Trello"
+    },
+    "logos-google-cloud.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Google Cloud"
+    },
+    "logos-adobe-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Adobe"
+    },
+    "logos-zabbix.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Zabbix"
+    },
+    "logos-zapier-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Zapier"
+    },
+    "logos-zendesk-icon.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Zendesk"
+    },
+    "logos-zoho.svg": {
+      "collection": "SVG Logos / @iconify-json/logos 1.2.15",
+      "source": "https://github.com/gilbarbara/logos",
+      "brand": "Zoho"
+    },
+    "atlassian-jira-service-management.svg": {
+      "collection": "Official Atlassian product logos",
+      "source": "https://atlassian.design/foundations/logos",
+      "brand": "Jira Service Management product logo"
+    },
+    "atlassian-jira.svg": {
+      "collection": "Official Atlassian product logos",
+      "source": "https://atlassian.design/foundations/logos",
+      "brand": "Jira product logo"
+    },
+    "atlassian-jira-align.svg": {
+      "collection": "Official Atlassian product logos",
+      "source": "https://atlassian.design/foundations/logos",
+      "brand": "Jira Align product logo"
+    },
+    "atlassian-guard.svg": {
+      "collection": "Official Atlassian product logos",
+      "source": "https://atlassian.design/foundations/logos",
+      "brand": "Guard product logo"
+    }
+  },
+  "collectedAt": "2026-10-01"
+}

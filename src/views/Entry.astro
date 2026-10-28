@@ -3,6 +3,7 @@
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Sidebar from '../components/Sidebar.astro';
+import Atlas from '../components/Atlas.astro';
 import { marked } from 'marked';
 import { slugify, formatDate, SITE } from '../lib';
 import { url, t, categoryName } from '../i18n';
@@ -31,7 +32,13 @@ const note = !item.translated ? null : d.legal
 ---
 {kind === 'page' ? (
   <Base title={d.title} edit={edit} pageTitle={d.title} crumbs={[{ label: d.title }]}>
-    {d.layout === 'columns' ? (
+    {d.layout === 'atlas' ? (
+      <div class="wrap page-body atlas-page">
+        {note && <p class="translated-note">{note.text + " "}<a href={original}>{note.link}</a>.</p>}
+        <div class="prose"><Content /></div>
+        <Atlas lang={lang} />
+      </div>
+    ) : d.layout === 'columns' ? (
       <div class="wrap page-body page-columns">
         {d.banner && <img class="banner" src={d.banner} alt="" />}
         {note && <p class="translated-note">{note.text + " "}<a href={original}>{note.link}</a>.</p>}

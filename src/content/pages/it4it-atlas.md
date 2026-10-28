@@ -2,9 +2,9 @@
 title: IT4IT Atlas
 menu: IT4IT Atlas
 order: 4
-wide: true
-layout: default
+wide: false
+layout: atlas
 banner: ''
 ---
 
-<iframe width="100%" height="1200" src="https://it4it-tools-directory.jvancraaikamp.chatgpt.site/"></iframe>
+The IT4IT Atlas is a directory of IT management tools, business applications, workplace platforms and technology platforms. The IT4IT tools are grouped by capability and mapped to the value streams of the [IT4IT standard](https://www.opengroup.org/it4it); business applications follow the TBM 5.0.1 categories. Search, filter and export the list to Excel.

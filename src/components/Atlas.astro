@@ -1,0 +1,452 @@
+---
+// The IT4IT Atlas: a directory of IT management tools, business applications and platforms.
+// The tools come from public/atlas/tools.json and the counts from src/data/atlas-meta.json, both made by
+// scripts/build-atlas.mjs from atlas/IT4IT-Atlas.xlsx; the categories are in src/data/atlas-taxonomy.json.
+// Filtering, search, paging and the Excel export run in the browser; the filters are kept in the address
+// (?view=it4it&sub=it-service-itsm&q=...), so a filtered list can be shared as a link.
+import TAXONOMY from '../data/atlas-taxonomy.json';
+import META from '../data/atlas-meta.json';
+import { locale, type Lang } from '../i18n';
+import { ATLAS_TEXT } from '../data/atlas-text';
+
+const { lang } = Astro.props as { lang: Lang };
+
+const TEXT = ATLAS_TEXT[lang];
+
+const STREAMS = ['Evaluate', 'Explore', 'Integrate', 'Deploy', 'Release', 'Consume', 'Operate'];
+const nf = new Intl.NumberFormat(locale[lang]);
+const counts = META.counts as Record<string, number>;
+const views = META.views as Record<string, number>;
+const subTotal = TAXONOMY.sections.reduce((n, s) => n + s.groups.reduce((m, g) => m + g.subs.length, 0), 0);
+const edition = new Date(META.imported).toLocaleDateString(locale[lang], { month: 'long', year: 'numeric' });
+const checked = new Date(META.checked).toLocaleDateString(locale[lang], { day: 'numeric', month: 'long', year: 'numeric' });
+// What the script in the browser needs: the categories and the texts that it fills in.
+const config = {
+  lang: locale[lang],
+  sections: TAXONOMY.sections.map((s) => ({ id: s.id, name: s.name, groups: s.groups.map((g) => ({ name: g.name, subs: g.subs.map((x) => ({ id: x.id, name: x.name })) })) })),
+  text: { profile: TEXT.profile, capabilities: TEXT.capabilities, labels: TEXT.labels, gartnerHead: TEXT.gartnerHead, report: TEXT.report, sourceHead: TEXT.sourceHead, checkedOn: TEXT.checkedOn, fromProducer: TEXT.fromProducer, fromThird: TEXT.fromThird, website: TEXT.website, close: TEXT.close, streamsLabel: TEXT.streamsLabel, all: TEXT.all, allCaps: TEXT.allCaps, results: TEXT.results('{n}'), none: TEXT.none, reset: TEXT.reset, producer: TEXT.producer, source: TEXT.source, error: TEXT.error, prev: TEXT.prev, next: TEXT.next, page: TEXT.page, mq: TEXT.mq, mqTitle: TEXT.mqTitle },
+};
+---
+<div class="atlas" id="atlas">
+  <div class="atlas-stats">
+    <div><b>{nf.format(META.tools)}</b><span>{TEXT.tools}</span></div>
+    <div><b>{TAXONOMY.sections.length}</b><span>{TEXT.sections}</span></div>
+    <div><b>{subTotal}</b><span>{TEXT.subcategories}</span></div>
+    <div><b>{nf.format(META.gartner)}</b><span>{TEXT.gartner}</span></div>
+  </div>
+  <p class="atlas-edition">
+    {TEXT.edition} {edition} · {TEXT.checked} {checked} · <a href="#atlas-guide">{TEXT.guide}</a> · <a href="https://www.opengroup.org/it4it" target="_blank" rel="noopener">{TEXT.standard}</a>
+  </p>
+
+  <div class="atlas-tabs" role="tablist">
+    <button type="button" role="tab" data-view="" aria-selected="true">{TEXT.all} <small>{nf.format(META.tools)}</small></button>
+    {TAXONOMY.sections.map((s) => <button type="button" role="tab" data-view={s.id} aria-selected="false">{s.name} <small>{nf.format(views[s.id] ?? 0)}</small></button>)}
+  </div>
+
+  <div class="atlas-body">
+    <details class="atlas-side" open>
+      <summary>{TEXT.browse}</summary>
+      <nav id="atlas-caps"></nav>
+    </details>
+    <div class="atlas-main">
+      <div class="atlas-controls">
+        <input type="search" id="atlas-q" placeholder={TEXT.search} aria-label={TEXT.search} />
+        <select id="atlas-sort" aria-label="Sort">
+          <option value="az">{TEXT.sortAZ}</option>
+          <option value="za">{TEXT.sortZA}</option>
+          <option value="vendor">{TEXT.sortVendor}</option>
+        </select>
+        <select id="atlas-stream" aria-label={TEXT.stream}>
+          <option value="">{TEXT.allStreams}</option>
+          {STREAMS.map((s) => <option value={s}>{s}</option>)}
+        </select>
+        <label class="atlas-check"><input type="checkbox" id="atlas-mq" /> {TEXT.gartnerOnly}</label>
+      </div>
+      <div class="atlas-bar">
+        <span id="atlas-count"></span>
+        <button type="button" class="atlas-export" id="atlas-export" disabled>{TEXT.export}</button>
+      </div>
+      <div id="atlas-list" class="atlas-list" aria-live="polite"><p class="muted">{TEXT.loading}</p></div>
+      <nav id="atlas-pages" class="atlas-pages" aria-label={TEXT.page}></nav>
+    </div>
+  </div>
+
+  <section class="atlas-guide" id="atlas-guide">
+    <h2>{TEXT.guide}</h2>
+    <p>{TEXT.guideIntro}</p>
+    {TAXONOMY.sections.map((s, i) => (
+      <div class="atlas-guide-section">
+        <h3><span>{String(i + 1).padStart(2, '0')}</span> {s.name} <small>{nf.format(views[s.id] ?? 0)} {TEXT.tools}</small></h3>
+        <p class="muted">{s.intro}</p>
+        <div class="atlas-guide-groups">
+          {s.groups.map((g) => (
+            <div class="atlas-guide-group">
+              <h4>{g.name}</h4>
+              <ul>
+                {g.subs.map((x) => (
+                  <li>
+                    <a href={`?view=${s.id}&sub=${x.id}#atlas`} data-view={s.id} data-sub={x.id}>{x.name}</a> <small>({counts[x.id] ?? 0})</small>
+                    <div>{x.desc}</div>
+                    {x.streams && <div class="muted" title={TEXT.streamsLabel}>{TEXT.streamsLabel}: {x.streams}</div>}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+    <p class="atlas-note">{TEXT.note}</p>
+  </section>
+
+  <dialog id="atlas-dialog" class="atlas-dialog" aria-labelledby="atlas-dialog-title"></dialog>
+  <script type="application/json" id="atlas-config" is:inline set:html={JSON.stringify(config)}></script>
+</div>
+
+<script>
+  import { xlsx } from '../scripts/xlsx';
+
+  type Tool = { id: string; name: string; vendor: string; url: string; source: string; checked: string; description: string; descSource?: string; note?: string; logo?: string; subs: string[]; tags: string[]; views: string[]; streams: string[]; gartner: { market: string; vendor: string; year: number; url: string }[] };
+  const root = document.getElementById('atlas')!;
+  const cfg = JSON.parse(document.getElementById('atlas-config')!.textContent!);
+  const T = cfg.text;
+  const PER_PAGE = 30;
+  const $ = (id: string) => document.getElementById(id) as any;
+  const esc = (s: string) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+  const nf = new Intl.NumberFormat(cfg.lang);
+
+  // Subcategory id → its name, group and section.
+  const SUB: Record<string, { name: string; group: string; section: string }> = {};
+  for (const s of cfg.sections) for (const g of s.groups) for (const x of g.subs) SUB[x.id] = { name: x.name, group: g.name, section: s.id };
+
+  const state = { view: '', group: '', sub: '', q: '', sort: 'az', stream: '', mq: false, page: 1 };
+  let tools: Tool[] = [];
+
+  function readUrl() {
+    const p = new URLSearchParams(location.search);
+    Object.assign(state, {
+      view: p.get('view') ?? '', group: p.get('group') ?? '', sub: p.get('sub') ?? '', q: p.get('q') ?? '',
+      sort: p.get('sort') ?? 'az', stream: p.get('stream') ?? '', mq: p.get('mq') === '1', page: Math.max(1, +(p.get('page') ?? 1) || 1),
+    });
+  }
+  function writeUrl() {
+    const p = new URLSearchParams();
+    if (state.view) p.set('view', state.view);
+    if (state.group) p.set('group', state.group);
+    if (state.sub) p.set('sub', state.sub);
+    if (state.q) p.set('q', state.q);
+    if (state.sort !== 'az') p.set('sort', state.sort);
+    if (state.stream) p.set('stream', state.stream);
+    if (state.mq) p.set('mq', '1');
+    if (state.page > 1) p.set('page', String(state.page));
+    const qs = p.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+  }
+
+  // Subcategories that count for the chosen section (all of them for "All tools").
+  const subsInView = (t: Tool) => (state.view ? t.subs.filter((s) => SUB[s]?.section === state.view) : t.subs);
+
+  // Everything except the capability filter, so the sidebar can show how many tools each capability has.
+  function baseFilter() {
+    const words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+    return tools.filter((t) => {
+      if (state.view && !t.views.includes(state.view)) return false;
+      if (state.stream && !t.streams.includes(state.stream)) return false;
+      if (state.mq && !t.gartner.length) return false;
+      if (words.length) {
+        const hay = `${t.name} ${t.vendor} ${t.description} ${t.tags.join(' ')} ${t.subs.map((s) => SUB[s]?.name).join(' ')}`.toLowerCase();
+        if (!words.every((w) => hay.includes(w))) return false;
+      }
+      return true;
+    });
+  }
+
+  function render() {
+    root.querySelectorAll<HTMLElement>('.atlas-tabs [data-view]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view)));
+    $('atlas-q').value = state.q;
+    $('atlas-sort').value = state.sort;
+    $('atlas-stream').value = state.stream;
+    $('atlas-mq').checked = state.mq;
+
+    const base = baseFilter();
+    // Sidebar: groups and subcategories of the chosen section(s), with counts.
+    const subCount: Record<string, number> = {};
+    const groupCount: Record<string, number> = {};
+    for (const t of base) {
+      const subs = subsInView(t);
+      for (const s of subs) subCount[s] = (subCount[s] ?? 0) + 1;
+      for (const g of new Set(subs.map((s) => SUB[s]?.group))) if (g) groupCount[g] = (groupCount[g] ?? 0) + 1;
+    }
+    const sections = cfg.sections.filter((s: any) => !state.view || s.id === state.view);
+    let nav = `<a href="#" data-group="" data-sub="" class="${!state.group && !state.sub ? 'on' : ''}">${esc(T.allCaps)} <small>${nf.format(base.length)}</small></a>`;
+    for (const s of sections) {
+      if (!state.view) nav += `<h4>${esc(s.name)}</h4>`;
+      for (const g of s.groups) {
+        const open = state.group === g.name || g.subs.some((x: any) => x.id === state.sub);
+        nav += `<div class="grp"><a href="#" data-group="${esc(g.name)}" data-sub="" class="${state.group === g.name && !state.sub ? 'on' : ''}">${esc(g.name)} <small>${nf.format(groupCount[g.name] ?? 0)}</small></a>`;
+        if (open && g.subs.length > 1) nav += g.subs.map((x: any) => `<a href="#" class="sub ${state.sub === x.id ? 'on' : ''}" data-group="${esc(g.name)}" data-sub="${x.id}">${esc(x.name)} <small>${nf.format(subCount[x.id] ?? 0)}</small></a>`).join('');
+        nav += '</div>';
+      }
+    }
+    $('atlas-caps').innerHTML = nav;
+
+    // The list itself.
+    let list = base.filter((t) => {
+      if (state.sub) return t.subs.includes(state.sub);
+      if (state.group) return subsInView(t).some((s) => SUB[s]?.group === state.group);
+      return true;
+    });
+    const cmp = (a: string, b: string) => a.localeCompare(b, 'en', { sensitivity: 'base' });
+    if (state.sort === 'za') list = [...list].reverse();
+    if (state.sort === 'vendor') list = [...list].sort((a, b) => cmp(a.vendor, b.vendor) || cmp(a.name, b.name));
+    current = list;
+
+    const pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+    if (state.page > pages) state.page = pages;
+    $('atlas-count').textContent = T.results.replace('{n}', nf.format(list.length));
+    $('atlas-export').disabled = !list.length;
+    const shown = list.slice((state.page - 1) * PER_PAGE, state.page * PER_PAGE);
+    $('atlas-list').innerHTML = shown.length ? shown.map(card).join('') : `<p>${esc(T.none)} <a href="#" id="atlas-reset">${esc(T.reset)}</a></p>`;
+    $('atlas-pages').innerHTML = pages > 1 ? pager(pages) : '';
+    writeUrl();
+  }
+  let current: Tool[] = [];
+
+  function host(u: string) { try { return new URL(u).hostname; } catch { return ''; } }
+  function card(t: Tool) {
+    const subs = subsInView(t);
+    const first = SUB[subs[0]];
+    const mq = t.gartner.length ? `<span class="mq" title="${esc(T.mqTitle + ' ' + t.gartner.map((g) => g.market).join('; '))}">${esc(T.mq)}</span>` : '';
+    const tags = subs.slice(0, 2).map((s) => `<span class="tag">${esc(SUB[s]?.name ?? s)}</span>`).join('') + (subs.length > 2 ? `<span class="tag more">+${subs.length - 2}</span>` : '');
+    return `<article class="atlas-card">
+      ${logo(t)}
+      <div class="body">
+        <div class="cap">${esc(first?.group ?? '')}</div>
+        <h3><button type="button" data-tool="${esc(t.id)}">${esc(t.name)}</button></h3>
+        <div class="vendor">${esc(t.vendor)}</div>
+        <p>${esc(t.description)}</p>
+        <div class="tags">${tags}${mq}</div>
+        <div class="links">${t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener nofollow">${esc(T.producer)} ↗</a>` : ''}${t.source && t.source !== t.url ? `<a href="${esc(t.source)}" target="_blank" rel="noopener nofollow">${esc(T.source)} ↗</a>` : ''}</div>
+      </div>
+    </article>`;
+  }
+
+  // Logo: the one from the original Atlas, else the favicon of the product site, else of the producer site,
+  // else the initials (the next candidate is tried when an image fails to load, see the error listener).
+  function logo(t: Tool) {
+    const initials = esc(t.name.replace(/[^A-Za-z0-9 ]/g, '').split(' ').filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase() || '•');
+    const site = (u: string) => { try { const x = new URL(u); return x.protocol === 'https:' ? x.origin + '/favicon.ico' : ''; } catch { return ''; } };
+    const blocked = /(^|\.)aimsinnovation\.com$/; // icon flagged by security software in the original Atlas
+    const candidates = [t.logo, t.descSource === 'producer' && host(t.source) !== host(t.url) ? site(t.source) : '', site(t.url)]
+      .filter((u): u is string => !!u && !blocked.test(host(u)))
+      .filter((u, i, a) => a.indexOf(u) === i);
+    const [first, ...rest] = candidates;
+    return `<div class="logo"><span>${initials}</span>${first ? `<img src="${esc(first)}" data-next="${esc(rest.join(' '))}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">` : ''}</div>`;
+  }
+
+  function profile(t: Tool) {
+    const subs = t.subs.filter((s) => SUB[s]);
+    const date = (d: string) => { const x = new Date(d); return isNaN(+x) ? d : x.toLocaleDateString(cfg.lang, { day: 'numeric', month: 'long', year: 'numeric' }); };
+    const link = (u: string, label: string) => `<a href="${esc(u)}" target="_blank" rel="noopener nofollow">${esc(label)} ↗</a>`;
+    let html = `<form method="dialog"><button class="close" aria-label="${esc(T.close)}">×</button></form>
+      <div class="head">${logo(t)}<div><div class="cap">${esc(T.profile)}</div><h2 id="atlas-dialog-title">${esc(t.name)}</h2><div class="vendor">${esc(t.vendor)}</div></div></div>
+      <p>${esc(t.description)}</p>`;
+    html += `<h3>${esc(T.capabilities)}</h3><ul>${subs.map((s) => `<li>${esc(SUB[s].group)} › <b>${esc(SUB[s].name)}</b></li>`).join('')}</ul>`;
+    if (t.tags.length) html += `<h3>${esc(T.labels)}</h3><div class="tags">${t.tags.map((x) => `<span class="tag">${esc(x)}</span>`).join('')}</div>`;
+    if (t.streams.length) html += `<h3>${esc(T.streamsLabel)}</h3><div class="tags">${t.streams.map((x) => `<span class="tag">${esc(x)}</span>`).join('')}</div>`;
+    if (t.gartner.length) html += `<h3>${esc(T.gartnerHead)}</h3><ul>${t.gartner.map((g) => `<li>${esc(g.market)} <small>(${esc(g.vendor)})</small>${g.url ? ' · ' + link(g.url, T.report) : ''}</li>`).join('')}</ul>`;
+    html += `<h3>${esc(T.sourceHead)}</h3><p class="small">${t.source ? link(t.source, host(t.source)) : ''}${t.checked ? ` · ${esc(T.checkedOn)} ${esc(date(t.checked))}` : ''}<br>${esc(t.descSource === 'producer' ? T.fromProducer : t.descSource ? T.fromThird : '')}</p>`;
+    if (t.note) html += `<p class="small muted">${esc(t.note)}</p>`;
+    if (t.url) html += `<p>${link(t.url, T.website)}</p>`;
+    return html;
+  }
+
+  function pager(pages: number) {
+    const p = state.page;
+    const nums = [...new Set([1, p - 2, p - 1, p, p + 1, p + 2, pages])].filter((n) => n >= 1 && n <= pages).sort((a, b) => a - b);
+    let html = `<button type="button" data-page="${p - 1}" ${p === 1 ? 'disabled' : ''}>‹ ${esc(T.prev)}</button>`;
+    let last = 0;
+    for (const n of nums) {
+      if (n - last > 1) html += '<span>…</span>';
+      html += `<button type="button" data-page="${n}" ${n === p ? 'aria-current="page" class="on"' : ''}>${n}</button>`;
+      last = n;
+    }
+    return html + `<button type="button" data-page="${p + 1}" ${p === pages ? 'disabled' : ''}>${esc(T.next)} ›</button>`;
+  }
+
+  function update(change: Partial<typeof state>) {
+    Object.assign(state, { page: 1 }, change);
+    render();
+  }
+
+  root.querySelector('.atlas-tabs')!.addEventListener('click', (e) => {
+    const b = (e.target as HTMLElement).closest<HTMLElement>('[data-view]');
+    if (b) update({ view: b.dataset.view!, group: '', sub: '' });
+  });
+  $('atlas-caps').addEventListener('click', (e: Event) => {
+    const a = (e.target as HTMLElement).closest<HTMLElement>('a[data-group]');
+    if (!a) return;
+    e.preventDefault();
+    update({ group: a.dataset.group!, sub: a.dataset.sub! });
+  });
+  let timer = 0;
+  $('atlas-q').addEventListener('input', (e: Event) => { clearTimeout(timer); timer = window.setTimeout(() => update({ q: (e.target as HTMLInputElement).value.trim() }), 200); });
+  $('atlas-sort').addEventListener('change', (e: Event) => update({ sort: (e.target as HTMLSelectElement).value }));
+  $('atlas-stream').addEventListener('change', (e: Event) => update({ stream: (e.target as HTMLSelectElement).value }));
+  $('atlas-mq').addEventListener('change', (e: Event) => update({ mq: (e.target as HTMLInputElement).checked }));
+  // A logo that does not load makes way for the next candidate, and finally for the initials.
+  root.addEventListener('error', (e) => {
+    const img = e.target as HTMLImageElement;
+    if (img.tagName !== 'IMG' || !img.closest('.logo')) return;
+    const [next, ...rest] = (img.dataset.next ?? '').split(' ').filter(Boolean);
+    if (next) { img.dataset.next = rest.join(' '); img.src = next; } else img.remove();
+  }, true);
+  const dialog = $('atlas-dialog') as HTMLDialogElement;
+  dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+  $('atlas-list').addEventListener('click', (e: Event) => {
+    const b = (e.target as HTMLElement).closest<HTMLElement>('button[data-tool]');
+    if (b) {
+      const t = tools.find((x) => x.id === b.dataset.tool);
+      if (t) { dialog.innerHTML = profile(t); dialog.showModal(); }
+      return;
+    }
+    if ((e.target as HTMLElement).id !== 'atlas-reset') return;
+    e.preventDefault();
+    update({ view: '', group: '', sub: '', q: '', stream: '', mq: false });
+  });
+  $('atlas-pages').addEventListener('click', (e: Event) => {
+    const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-page]');
+    if (!b || b.disabled) return;
+    state.page = +b.dataset.page!;
+    render();
+    root.querySelector('.atlas-tabs')!.scrollIntoView({ behavior: 'smooth' });
+  });
+  // Links in the category guide filter the list instead of reloading the page.
+  root.querySelector('.atlas-guide')!.addEventListener('click', (e) => {
+    const a = (e.target as HTMLElement).closest<HTMLElement>('a[data-sub]');
+    if (!a || !tools.length) return;
+    e.preventDefault();
+    const sub = SUB[a.dataset.sub!];
+    update({ view: a.dataset.view!, group: sub?.group ?? '', sub: a.dataset.sub!, q: '' });
+    root.querySelector('.atlas-tabs')!.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  $('atlas-export').addEventListener('click', () => {
+    const rows = [['Product', 'Producer', 'Description', 'Capability groups', 'Subcategories', 'IT4IT value streams', 'Gartner MQ 2026 markets', 'Producer website', 'Source', 'Source checked']];
+    for (const t of current) {
+      const subs = subsInView(t);
+      rows.push([t.name, t.vendor, t.description, [...new Set(subs.map((s) => SUB[s]?.group))].join('; '), subs.map((s) => SUB[s]?.name ?? s).join('; '), t.streams.join('; '), t.gartner.map((g) => g.market).join('; '), t.url, t.source, t.checked]);
+    }
+    const blob = new Blob([xlsx('IT4IT Atlas', rows, [40, 30, 80, 35, 45, 30, 45, 40, 50, 14])], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `IT4IT-Atlas-${new Date().toISOString().slice(0, 10)}-${current.length}-tools.xlsx`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+
+  // On a phone the capability list starts folded, so the tools come first.
+  if (matchMedia('(max-width: 900px)').matches) root.querySelector('.atlas-side')!.removeAttribute('open');
+  readUrl();
+  fetch('/atlas/tools.json')
+    .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+    .then((data: Tool[]) => { tools = data; render(); })
+    .catch(() => { $('atlas-list').innerHTML = `<p>${esc(T.error)}</p>`; });
+</script>
+
+<style is:global>
+  .atlas-page { max-width: 1200px; }
+  .atlas-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 10px 0 8px; }
+  .atlas-stats div { border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; background: var(--bg-soft); }
+  .atlas-stats b { display: block; font: 700 26px/1.2 var(--head-font); color: var(--heading); }
+  .atlas-stats span { color: var(--muted); font-size: 13px; line-height: 1.4; display: block; }
+  .atlas-edition { color: var(--muted); font-size: 14px; margin: 0 0 22px; }
+  .atlas-tabs { display: flex; gap: 6px; flex-wrap: wrap; border-bottom: 2px solid var(--line); margin-bottom: 20px; scroll-margin-top: 90px; }
+  .atlas-tabs button { background: none; border: 0; border-bottom: 3px solid transparent; margin-bottom: -2px; padding: 10px 14px; font: 600 15px var(--head-font); color: var(--text); cursor: pointer; }
+  .atlas-tabs button small { color: var(--muted); font-weight: 400; margin-left: 4px; }
+  .atlas-tabs button[aria-selected="true"] { border-bottom-color: var(--accent); color: var(--accent); }
+  .atlas-body { display: grid; grid-template-columns: 270px 1fr; gap: 30px; align-items: start; }
+  .atlas-side summary { font: 600 15px var(--head-font); color: var(--heading); cursor: pointer; margin-bottom: 10px; }
+  .atlas-side nav { display: flex; flex-direction: column; font-size: 14px; line-height: 1.35; }
+  .atlas-side nav h4 { margin: 14px 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
+  .atlas-side nav a { display: flex; justify-content: space-between; gap: 8px; padding: 6px 8px; border-radius: 4px; color: var(--text); }
+  .atlas-side nav a small { color: var(--muted); }
+  .atlas-side nav a:hover { background: var(--bg-soft); }
+  .atlas-side nav a.on { background: var(--accent); color: #fff; }
+  .atlas-side nav a.on small { color: #fff; }
+  .atlas-side nav a.sub { padding-left: 20px; font-size: 13px; }
+  .atlas-controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .atlas-controls input[type="search"] { flex: 1 1 260px; min-width: 0; }
+  .atlas-controls input[type="search"], .atlas-controls select { padding: 9px 10px; border: 1px solid var(--line); border-radius: 4px; font: inherit; font-size: 14px; color: var(--text); background: #fff; }
+  .atlas-check { font-size: 14px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .atlas-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin: 16px 0 12px; font-size: 14px; color: var(--muted); }
+  .atlas-export { background: var(--btn-dark); color: #fff; border: 0; border-radius: 4px; padding: 8px 14px; font: 600 13px var(--head-font); cursor: pointer; }
+  .atlas-export:hover { background: var(--accent); }
+  .atlas-export:disabled { opacity: .5; cursor: default; }
+  .atlas-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .atlas-list > p { grid-column: 1 / -1; }
+  .atlas-card { display: flex; gap: 14px; border: 1px solid var(--line); border-radius: 6px; padding: 16px; background: #fff; }
+  .atlas-card .logo { position: relative; flex: none; width: 40px; height: 40px; border-radius: 8px; background: var(--bg-soft); display: grid; place-items: center; overflow: hidden; }
+  .atlas-card .logo span { font: 700 14px var(--head-font); color: var(--accent); }
+  .atlas-card .logo img { position: absolute; inset: 6px; width: 28px; height: 28px; object-fit: contain; background: var(--bg-soft); }
+  .atlas-card .body { min-width: 0; display: flex; flex-direction: column; }
+  .atlas-card .cap { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--accent); font-weight: 600; }
+  .atlas-card h3 { margin: 2px 0 0; font-size: 17px; line-height: 1.3; }
+  .atlas-card h3 button { all: unset; cursor: pointer; color: var(--heading); }
+  .atlas-card h3 button:hover, .atlas-card h3 button:focus-visible { color: var(--accent); text-decoration: underline; }
+  .atlas-dialog { width: min(640px, calc(100vw - 32px)); max-height: calc(100vh - 60px); border: 0; border-radius: 8px; padding: 24px 26px; box-shadow: 0 20px 60px rgba(0,0,0,.25); color: var(--text); }
+  .atlas-dialog::backdrop { background: rgba(21, 29, 37, .55); }
+  .atlas-dialog .close { position: absolute; top: 10px; right: 12px; border: 0; background: none; font-size: 28px; line-height: 1; color: var(--muted); cursor: pointer; }
+  .atlas-dialog .head { display: flex; gap: 14px; align-items: center; padding-right: 30px; }
+  .atlas-dialog .head .logo { position: relative; flex: none; width: 48px; height: 48px; border-radius: 8px; background: var(--bg-soft); display: grid; place-items: center; overflow: hidden; }
+  .atlas-dialog .head .logo span { font: 700 15px var(--head-font); color: var(--accent); }
+  .atlas-dialog .head .logo img { position: absolute; inset: 8px; width: 32px; height: 32px; object-fit: contain; background: var(--bg-soft); }
+  .atlas-dialog .cap { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--accent); font-weight: 600; }
+  .atlas-dialog h2 { margin: 2px 0 0; font-size: 22px; line-height: 1.25; }
+  .atlas-dialog .vendor { color: var(--muted); font-size: 14px; }
+  .atlas-dialog h3 { font-size: 14px; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: .4px; color: var(--heading); }
+  .atlas-dialog p { margin: 12px 0 0; font-size: 15px; line-height: 1.6; }
+  .atlas-dialog p.small { font-size: 13px; margin-top: 4px; }
+  .atlas-dialog .muted { color: var(--muted); }
+  .atlas-dialog ul { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6; }
+  .atlas-dialog .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .atlas-dialog .tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--line); }
+  .atlas-card .vendor { font-size: 13px; color: var(--muted); }
+  .atlas-card p { margin: 8px 0 10px; font-size: 14px; line-height: 1.5; }
+  .atlas-card .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
+  .atlas-card .tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--line); }
+  .atlas-card .mq { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #fdf3e1; border: 1px solid #f0d49b; color: #8a5a00; cursor: help; }
+  .atlas-card .links { display: flex; gap: 14px; margin-top: 10px; font-size: 13px; font-weight: 600; }
+  .atlas-pages { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin: 24px 0 0; }
+  .atlas-pages button { min-width: 38px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 4px; background: #fff; color: var(--text); font: inherit; font-size: 14px; cursor: pointer; }
+  .atlas-pages button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .atlas-pages button:disabled { opacity: .4; cursor: default; }
+  .atlas-pages span { padding: 7px 2px; color: var(--muted); }
+  .atlas-guide { margin-top: 60px; padding-top: 30px; border-top: 2px solid var(--line); scroll-margin-top: 90px; }
+  .atlas-guide h3 { margin: 30px 0 4px; }
+  .atlas-guide h3 span { color: var(--accent); margin-right: 6px; }
+  .atlas-guide h3 small { font-weight: 400; color: var(--muted); font-size: 14px; margin-left: 6px; }
+  .atlas-guide-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; margin-top: 14px; }
+  .atlas-guide-group { border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; }
+  .atlas-guide-group h4 { margin: 0 0 8px; font-size: 16px; }
+  .atlas-guide-group ul { list-style: none; margin: 0; padding: 0; font-size: 14px; line-height: 1.5; }
+  .atlas-guide-group li { padding: 8px 0; border-top: 1px solid var(--line); }
+  .atlas-guide-group li:first-child { border-top: 0; padding-top: 0; }
+  .atlas-guide-group li a { font-weight: 600; }
+  .atlas-guide-group li small, .atlas-guide .muted { color: var(--muted); }
+  .atlas-guide-group li .muted { font-size: 12px; }
+  .atlas-note { margin-top: 30px; font-size: 13px; color: var(--muted); line-height: 1.6; }
+  @media (max-width: 900px) {
+    .atlas-body { grid-template-columns: 1fr; gap: 16px; }
+    .atlas-side { border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; }
+    .atlas-side summary { margin: 0; }
+    .atlas-side[open] summary { margin-bottom: 8px; }
+    .atlas-list { grid-template-columns: 1fr; }
+    .atlas-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .atlas-tabs { flex-wrap: nowrap; overflow-x: auto; }
+    .atlas-tabs button { white-space: nowrap; padding: 10px; }
+    .atlas-controls select, .atlas-check { flex: 1 1 100%; }
+  }
+</style>

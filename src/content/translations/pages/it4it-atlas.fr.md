@@ -1,7 +1,6 @@
 ---
-title: "Atlas IT4IT"
-menu: "Atlas IT4IT"
-source: "a2aca43613be4cae"
+title: "IT4IT Atlas"
+menu: "IT4IT Atlas"
 ---
 
-<iframe width="100%" height="1200" src="https://it4it-tools-directory.jvancraaikamp.chatgpt.site/"></iframe>
+L’IT4IT Atlas est un répertoire d’outils de gestion informatique, d’applications métier, de plateformes de travail et de plateformes technologiques. Les outils IT4IT sont regroupés par capacité et rattachés aux chaînes de valeur de la [norme IT4IT](https://www.opengroup.org/it4it) ; les applications métier suivent les catégories de TBM 5.0.1. Recherchez, filtrez et exportez la liste vers Excel.

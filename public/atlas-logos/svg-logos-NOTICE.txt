@@ -1,0 +1,4 @@
+SVG Logos by Gil Barbara, distributed through @iconify-json/logos 1.2.15.
+https://github.com/gilbarbara/logos
+CC0-1.0: https://creativecommons.org/publicdomain/zero/1.0/
+All trademarks belong to their respective owners.

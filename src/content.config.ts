@@ -26,7 +26,7 @@ const pages = defineCollection({
     order: z.number().default(99),
     menu: z.string().optional(),
     wide: z.boolean().default(false),
-    layout: z.enum(['default', 'columns']).default('default'),
+    layout: z.enum(['default', 'columns', 'atlas']).default('default'),
     banner: z.string().optional(),
     lang: z.enum(['en', 'nl', 'cn', 'fr', 'de']).default('en'),
     // Legal text: a translation says the original language prevails.
