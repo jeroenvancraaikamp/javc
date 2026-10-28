@@ -39,10 +39,13 @@ const config = {
     {TEXT.edition} {edition} · {TEXT.checked} {checked} · <a href={url(lang, '/it4it-atlas/categories/')}>{TEXT.guide}</a> · <a href={url(lang, '/it4it-atlas/changes/')}>{TEXT.changes}</a> · <a href="https://www.opengroup.org/it4it" target="_blank" rel="noopener">{TEXT.standard}</a>
   </p>
 
+  <div class="atlas-tabbar">
   <div class="atlas-tabs" role="tablist">
     <button type="button" role="tab" data-view="" aria-selected="true">{TEXT.all} <small>{nf.format(META.tools)}</small></button>
     {TAXONOMY.sections.map((s) => <button type="button" role="tab" data-view={s.id} aria-selected="false">{s.name} <small>{nf.format(views[s.id] ?? 0)}</small></button>)}
     <button type="button" role="tab" data-view="gartner" aria-selected="false">{TEXT.mqTab} <small>{nf.format(META.gartner)}</small></button>
+  </div>
+  <span id="atlas-count" class="atlas-count" role="status"></span>
   </div>
 
   <div class="atlas-body">
@@ -65,9 +68,6 @@ const config = {
           <option value="vendor">{TEXT.sortVendor}</option>
         </select>
         <button type="button" class="atlas-export" id="atlas-export" disabled>{TEXT.export}</button>
-      </div>
-      <div class="atlas-bar">
-        <span id="atlas-count"></span>
       </div>
       <div id="atlas-list" class="atlas-list" aria-live="polite"><p class="muted">{TEXT.loading}</p></div>
       <nav id="atlas-pages" class="atlas-pages" aria-label={TEXT.page}></nav>
@@ -310,7 +310,7 @@ const config = {
     if (!b || b.disabled) return;
     state.page = +b.dataset.page!;
     render();
-    root.querySelector('.atlas-tabs')!.scrollIntoView({ behavior: 'smooth' });
+    root.querySelector('.atlas-tabbar')!.scrollIntoView({ behavior: 'smooth' });
   });
   $('atlas-export').addEventListener('click', () => {
     const rows = [['Product', 'Producer', 'Description', 'Capability groups', 'Subcategories', 'IT4IT value streams', 'Gartner MQ 2026 markets', 'Producer website', 'Source', 'Source checked']];
@@ -342,7 +342,9 @@ const config = {
   .atlas-stats b { display: block; font: 700 26px/1.2 var(--head-font); color: var(--heading); }
   .atlas-stats span { color: var(--muted); font-size: 13px; line-height: 1.4; display: block; }
   .atlas-edition { color: var(--muted); font-size: 14px; margin: 0 0 22px; }
-  .atlas-tabs { display: flex; gap: 6px; flex-wrap: wrap; border-bottom: 2px solid var(--line); margin-bottom: 20px; scroll-margin-top: 90px; }
+  .atlas-tabbar { display: flex; align-items: center; gap: 12px; border-bottom: 2px solid var(--line); margin-bottom: 20px; scroll-margin-top: 90px; }
+  .atlas-tabs { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; min-width: 0; }
+  .atlas-count { flex: none; font: 600 14px var(--head-font); color: var(--heading); white-space: nowrap; }
   .atlas-tabs button { background: none; border: 0; border-bottom: 3px solid transparent; margin-bottom: -2px; padding: 10px 14px; font: 600 15px var(--head-font); color: var(--text); cursor: pointer; }
   .atlas-tabs button small { color: var(--muted); font-weight: 400; margin-left: 4px; }
   .atlas-tabs button[aria-selected="true"] { border-bottom-color: var(--accent); color: var(--accent); }
@@ -360,11 +362,10 @@ const config = {
   .atlas-controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
   .atlas-controls input[type="search"] { flex: 1 1 260px; min-width: 0; }
   .atlas-controls input[type="search"], .atlas-controls select { padding: 9px 10px; border: 1px solid var(--line); border-radius: 4px; font: inherit; font-size: 14px; color: var(--text); background: #fff; }
-  .atlas-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin: 16px 0 12px; font-size: 14px; color: var(--muted); }
   .atlas-export { background: var(--btn-dark); color: #fff; border: 0; border-radius: 4px; padding: 10px 14px; white-space: nowrap; font: 600 13px var(--head-font); cursor: pointer; }
   .atlas-export:hover { background: var(--accent); }
   .atlas-export:disabled { opacity: .5; cursor: default; }
-  .atlas-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .atlas-list { margin-top: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
   @media (max-width: 1200px) { .atlas-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .atlas-list > p { grid-column: 1 / -1; }
   .atlas-card { display: flex; gap: 14px; border: 1px solid var(--line); border-radius: 6px; padding: 16px; background: #fff; }
