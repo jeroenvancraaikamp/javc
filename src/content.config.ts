@@ -9,7 +9,8 @@ const articles = defineCollection({
     categories: z.array(z.string()).default(['Uncategorized']),
     excerpt: z.string(),
     image: z.string().optional(),
-    readingTime: z.number().optional(),
+    // Sveltia CMS writes `readingTime: null` when the field is left empty.
+    readingTime: z.number().nullish().transform((v) => v ?? undefined),
     popular: z.boolean().default(false),
     draft: z.boolean().default(false),
     // Link to the LinkedIn post about this article: shows a "Discuss on LinkedIn" button under the article.

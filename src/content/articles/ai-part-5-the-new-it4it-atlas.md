@@ -7,7 +7,6 @@ categories:
   - CSDM/CMDB/TBM
 excerpt: As my third Zero-touch solution, I have transitioned the "IT4IT Atlas" that I build in OpenAI ChatGPT to Anthropic Claude, and integrated it into my website. Underway, I created an algotithme that automatically maps the discovered 1.600 software tools to the IT4IT 3 Value Streams, CSDM 5 Domains and TBM 5 Solution types.
 image: /IT4IT_atlas.png
-readingTime: null
 popular: true
 draft: false
 lang: en
