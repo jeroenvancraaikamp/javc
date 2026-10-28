@@ -13,7 +13,7 @@ export const ATLAS_TEXT = {
     error: 'The catalogue could not be loaded. Please try again later.', prev: 'Previous', next: 'Next', page: 'Page',
     mq: 'Gartner MQ 2026', mqTitle: 'Vendor included in the Gartner Magic Quadrant 2026 for:',
     guideIntro: 'Four sections of the tool landscape. A product can appear in more than one section or category.',
-    show: 'Show tools', updated: (d: string) => `The content on this page is <a href="{changes}">automatically updated weekly</a>; the last update was on ${d}.`, mqTab: 'Gartner Magic Quadrant Tools', streamsLabel: 'IT4IT value streams',
+    show: 'Show tools', updatedOn: 'Updated', sortNew: 'Recently updated first', sortOld: 'Least recently updated first', updated: (d: string) => `The content on this page is <a href="{changes}">automatically updated weekly</a>; the last update was on ${d}.`, mqTab: 'Gartner Magic Quadrant Tools', streamsLabel: 'IT4IT value streams',
     note: 'Classification describes supported capabilities and does not imply certification or endorsement. IT4IT groups and value-stream mappings are editorial; business categories follow TBM 5.0.1. Descriptions are based on the producers’ own documentation, with the source and date kept for each tool. IT4IT is a trademark of The Open Group; Gartner and Magic Quadrant are trademarks of Gartner, Inc. Inclusion of a vendor in a Magic Quadrant does not mean every product or edition was evaluated.',
   },
   nl: {
@@ -29,7 +29,7 @@ export const ATLAS_TEXT = {
     error: 'De catalogus kon niet worden geladen. Probeer het later nog eens.', prev: 'Vorige', next: 'Volgende', page: 'Pagina',
     mq: 'Gartner MQ 2026', mqTitle: 'Leverancier opgenomen in het Gartner Magic Quadrant 2026 voor:',
     guideIntro: 'Vier secties van het toollandschap. Een product kan in meer dan één sectie of categorie staan.',
-    show: 'Toon tools', updated: (d: string) => `De inhoud van deze pagina wordt <a href="{changes}">wekelijks automatisch bijgewerkt</a>; de laatste update was op ${d}.`, mqTab: 'Gartner Magic Quadrant-tools', streamsLabel: 'IT4IT-waardestromen',
+    show: 'Toon tools', updatedOn: 'Bijgewerkt', sortNew: 'Recent bijgewerkt eerst', sortOld: 'Langst niet bijgewerkt eerst', updated: (d: string) => `De inhoud van deze pagina wordt <a href="{changes}">wekelijks automatisch bijgewerkt</a>; de laatste update was op ${d}.`, mqTab: 'Gartner Magic Quadrant-tools', streamsLabel: 'IT4IT-waardestromen',
     note: 'De indeling beschrijft ondersteunde capabilities en is geen certificering of aanbeveling. De IT4IT-groepen en waardestromen zijn een redactionele keuze; de bedrijfscategorieën volgen TBM 5.0.1. Beschrijvingen zijn (in het Engels) gebaseerd op de documentatie van de producenten; per tool zijn de bron en datum bewaard. IT4IT is een handelsmerk van The Open Group; Gartner en Magic Quadrant zijn handelsmerken van Gartner, Inc. Opname van een leverancier in een Magic Quadrant betekent niet dat elk product of elke editie is beoordeeld.',
   },
   cn: {
@@ -45,7 +45,7 @@ export const ATLAS_TEXT = {
     error: '目录无法加载，请稍后再试。', prev: '上一页', next: '下一页', page: '页',
     mq: 'Gartner MQ 2026', mqTitle: '该厂商入选 2026 年 Gartner 魔力象限：',
     guideIntro: '工具版图的四个板块。一个产品可以出现在多个板块或类别中。',
-    show: '查看工具', updated: (d: string) => `本页内容<a href="{changes}">每周自动更新</a>，最近一次更新于 ${d}。`, mqTab: 'Gartner 魔力象限工具', streamsLabel: 'IT4IT 价值流',
+    show: '查看工具', updatedOn: '更新于', sortNew: '最近更新优先', sortOld: '最早更新优先', updated: (d: string) => `本页内容<a href="{changes}">每周自动更新</a>，最近一次更新于 ${d}。`, mqTab: 'Gartner 魔力象限工具', streamsLabel: 'IT4IT 价值流',
     note: '分类描述的是所支持的能力，并不代表认证或推荐。IT4IT 分组和价值流映射为编辑判断；业务类别遵循 TBM 5.0.1。描述（英文）基于厂商自己的文档，每个工具都保留了来源和日期。IT4IT 是 The Open Group 的商标；Gartner 和 Magic Quadrant 是 Gartner, Inc. 的商标。厂商入选魔力象限并不意味着其每个产品或版本都经过评估。',
   },
   fr: {
@@ -61,7 +61,7 @@ export const ATLAS_TEXT = {
     error: 'Le catalogue n’a pas pu être chargé. Réessayez plus tard.', prev: 'Précédent', next: 'Suivant', page: 'Page',
     mq: 'Gartner MQ 2026', mqTitle: 'Éditeur inclus dans le Magic Quadrant Gartner 2026 pour :',
     guideIntro: 'Quatre sections du paysage des outils. Un produit peut figurer dans plusieurs sections ou catégories.',
-    show: 'Voir les outils', updated: (d: string) => `Le contenu de cette page est <a href="{changes}">mis à jour automatiquement chaque semaine</a> ; la dernière mise à jour date du ${d}.`, mqTab: 'Outils Gartner Magic Quadrant', streamsLabel: 'Chaînes de valeur IT4IT',
+    show: 'Voir les outils', updatedOn: 'Mis à jour le', sortNew: 'Mis à jour récemment d’abord', sortOld: 'Mis à jour il y a longtemps d’abord', updated: (d: string) => `Le contenu de cette page est <a href="{changes}">mis à jour automatiquement chaque semaine</a> ; la dernière mise à jour date du ${d}.`, mqTab: 'Outils Gartner Magic Quadrant', streamsLabel: 'Chaînes de valeur IT4IT',
     note: 'La classification décrit les capacités prises en charge et ne constitue ni une certification ni une recommandation. Les groupes IT4IT et les chaînes de valeur sont un choix éditorial ; les catégories métier suivent TBM 5.0.1. Les descriptions (en anglais) reposent sur la documentation des éditeurs, avec la source et la date conservées pour chaque outil. IT4IT est une marque de The Open Group ; Gartner et Magic Quadrant sont des marques de Gartner, Inc. L’inclusion d’un éditeur dans un Magic Quadrant ne signifie pas que chaque produit ou édition a été évalué.',
   },
   de: {
@@ -77,7 +77,7 @@ export const ATLAS_TEXT = {
     error: 'Der Katalog konnte nicht geladen werden. Bitte versuchen Sie es später noch einmal.', prev: 'Zurück', next: 'Weiter', page: 'Seite',
     mq: 'Gartner MQ 2026', mqTitle: 'Hersteller im Gartner Magic Quadrant 2026 vertreten für:',
     guideIntro: 'Vier Bereiche der Tool-Landschaft. Ein Produkt kann in mehr als einem Bereich oder einer Kategorie stehen.',
-    show: 'Tools anzeigen', updated: (d: string) => `Der Inhalt dieser Seite wird <a href="{changes}">wöchentlich automatisch aktualisiert</a>; die letzte Aktualisierung war am ${d}.`, mqTab: 'Gartner-Magic-Quadrant-Tools', streamsLabel: 'IT4IT-Wertströme',
+    show: 'Tools anzeigen', updatedOn: 'Aktualisiert', sortNew: 'Zuletzt aktualisiert zuerst', sortOld: 'Am längsten nicht aktualisiert zuerst', updated: (d: string) => `Der Inhalt dieser Seite wird <a href="{changes}">wöchentlich automatisch aktualisiert</a>; die letzte Aktualisierung war am ${d}.`, mqTab: 'Gartner-Magic-Quadrant-Tools', streamsLabel: 'IT4IT-Wertströme',
     note: 'Die Einordnung beschreibt unterstützte Capabilities und ist keine Zertifizierung oder Empfehlung. IT4IT-Gruppen und Wertstrom-Zuordnungen sind redaktionell; die Geschäftskategorien folgen TBM 5.0.1. Die (englischen) Beschreibungen beruhen auf der Dokumentation der Hersteller; Quelle und Datum sind für jedes Tool gespeichert. IT4IT ist eine Marke von The Open Group; Gartner und Magic Quadrant sind Marken von Gartner, Inc. Die Aufnahme eines Herstellers in einen Magic Quadrant bedeutet nicht, dass jedes Produkt oder jede Edition bewertet wurde.',
   },
 };

@@ -25,7 +25,7 @@ const config = {
   lang: locale[lang],
   sections: TAXONOMY.sections.map((s) => ({ id: s.id, name: s.name, groups: s.groups.map((g) => ({ name: g.name, subs: g.subs.map((x) => ({ id: x.id, name: x.name })) })) })),
   streams: STREAMS,
-  text: { profile: TEXT.profile, capabilities: TEXT.capabilities, labels: TEXT.labels, gartnerHead: TEXT.gartnerHead, report: TEXT.report, sourceHead: TEXT.sourceHead, checkedOn: TEXT.checkedOn, fromProducer: TEXT.fromProducer, fromThird: TEXT.fromThird, website: TEXT.website, close: TEXT.close, streamsLabel: TEXT.streamsLabel, allStreams: TEXT.allStreams, all: TEXT.all, allCaps: TEXT.allCaps, results: TEXT.results('{n}'), none: TEXT.none, reset: TEXT.reset, producer: TEXT.producer, source: TEXT.source, error: TEXT.error, prev: TEXT.prev, next: TEXT.next, page: TEXT.page, mq: TEXT.mq, mqTitle: TEXT.mqTitle },
+  text: { profile: TEXT.profile, capabilities: TEXT.capabilities, labels: TEXT.labels, gartnerHead: TEXT.gartnerHead, report: TEXT.report, sourceHead: TEXT.sourceHead, checkedOn: TEXT.checkedOn, fromProducer: TEXT.fromProducer, fromThird: TEXT.fromThird, website: TEXT.website, close: TEXT.close, streamsLabel: TEXT.streamsLabel, allStreams: TEXT.allStreams, all: TEXT.all, allCaps: TEXT.allCaps, results: TEXT.results('{n}'), none: TEXT.none, reset: TEXT.reset, producer: TEXT.producer, source: TEXT.source, error: TEXT.error, prev: TEXT.prev, next: TEXT.next, page: TEXT.page, mq: TEXT.mq, mqTitle: TEXT.mqTitle, updatedOn: TEXT.updatedOn },
 };
 ---
 <div class="atlas" id="atlas">
@@ -64,6 +64,8 @@ const config = {
           <option value="az">{TEXT.sortAZ}</option>
           <option value="za">{TEXT.sortZA}</option>
           <option value="vendor">{TEXT.sortVendor}</option>
+          <option value="new">{TEXT.sortNew}</option>
+          <option value="old">{TEXT.sortOld}</option>
         </select>
         <button type="button" class="atlas-export" id="atlas-export" disabled>{TEXT.export}</button>
       </div>
@@ -184,6 +186,9 @@ const config = {
     const cmp = (a: string, b: string) => a.localeCompare(b, 'en', { sensitivity: 'base' });
     if (state.sort === 'za') list = [...list].reverse();
     if (state.sort === 'vendor') list = [...list].sort((a, b) => cmp(a.vendor, b.vendor) || cmp(a.name, b.name));
+    // By the date a tool's description was last checked (tools without one last), then by name.
+    if (state.sort === 'new') list = [...list].sort((a, b) => (b.checked ?? '').localeCompare(a.checked ?? '') || cmp(a.name, b.name));
+    if (state.sort === 'old') list = [...list].sort((a, b) => (a.checked || '9').localeCompare(b.checked || '9') || cmp(a.name, b.name));
     current = list;
 
     const pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
@@ -197,6 +202,8 @@ const config = {
   }
   let current: Tool[] = [];
 
+  // A date in short form, e.g. "28 Oct 2026".
+  const short = (d: string) => { const x = new Date(d); return isNaN(+x) ? d : x.toLocaleDateString(cfg.lang, { day: 'numeric', month: 'short', year: 'numeric' }); };
   function host(u: string) { try { return new URL(u).hostname; } catch { return ''; } }
   function card(t: Tool) {
     const subs = subsInView(t);
@@ -211,7 +218,7 @@ const config = {
         <div class="vendor">${esc(t.vendor)}</div>
         <p>${esc(t.description)}</p>
         <div class="tags">${tags}${mq}</div>
-        <div class="links">${t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener nofollow">${esc(T.producer)} ↗</a>` : ''}${t.source && t.source !== t.url ? `<a href="${esc(t.source)}" target="_blank" rel="noopener nofollow">${esc(T.source)} ↗</a>` : ''}</div>
+        <div class="links">${t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener nofollow">${esc(T.producer)} ↗</a>` : ''}${t.source && t.source !== t.url ? `<a href="${esc(t.source)}" target="_blank" rel="noopener nofollow">${esc(T.source)} ↗</a>` : ''}${t.checked ? `<span class="date" title="${esc(T.updatedOn + ' ' + short(t.checked))}">↻ ${esc(short(t.checked))}</span>` : ''}</div>
       </div>
     </article>`;
   }
@@ -397,7 +404,8 @@ const config = {
   .atlas-card .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
   .atlas-card .tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--line); }
   .atlas-card .mq { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #fdf3e1; border: 1px solid #f0d49b; color: #8a5a00; cursor: help; }
-  .atlas-card .links { display: flex; gap: 14px; margin-top: 10px; font-size: 13px; font-weight: 600; }
+  .atlas-card .links { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 10px; font-size: 13px; font-weight: 600; }
+  .atlas-card .links .date { margin-left: auto; color: var(--muted); font-size: 12px; font-weight: 400; white-space: nowrap; }
   .atlas-pages { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin: 24px 0 0; }
   .atlas-pages button { min-width: 38px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 4px; background: #fff; color: var(--text); font: inherit; font-size: 14px; cursor: pointer; }
   .atlas-pages button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
