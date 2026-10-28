@@ -23,7 +23,7 @@ The solution:
 - Surveys the websites of relevant software vendors and gathers (and updates) their Software solutions.
 - Automatically maps the discovered solutions to IT4IT value chains, CSDM 5 Domains, and TBM 5 Solution types.
 - Automatically categorizes the solutions in a mix of the practices above.
-- Automatically updates the 1.6000 tools that it holds (ZERO TOUCH).
+- Automatically updates the 1.600 tools that it holds (ZERO TOUCH).
 - Provides visitors to JAvC.nl with a user experience that lets them query, filter, and export a filtered subset of the tool list.
 
 To keep the scope reasonable and relevant for large enterprise use, Atlas does not include personal software packages designed for PCs or Phones. 
