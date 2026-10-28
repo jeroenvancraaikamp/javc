@@ -9,34 +9,27 @@ image: /wp-content/uploads/2024/12/727ITManagementTools.webp
 readingTime: 23
 popular: false
 draft: false
+lang: en
+linkedin: ''
 ---
+
+### UPDATE: We have published a new [IT4IT Atlas](https://javc.nl/it4it-atlas/) on our site.
 
 Below is an overview of 727 IT management tools meticulously grouped into eight primary categories. This compilation highlights the breadth and depth of the IT management landscape, from strategic planning and governance to day-to-day operations and security oversight  
 
-  
 2.  **IT Enterprise Architecture (EA) – 33 Tools** Focused on aligning technology strategies with overarching business objectives, facilitating structured frameworks, and ensuring that IT investments support long-term organizational goals.
-  
-4.  **IT Development Operations (DevOps) – 85 Tools** Emphasizes the synergy between software development and operations, streamlining processes such as continuous integration, delivery, and collaboration to accelerate product releases and improve quality.
-  
-6.  **IT Asset Management (ITAM) – 94 Tools** Dedicated to tracking and optimizing the life cycles of hardware and software assets, ensuring cost effectiveness, compliance, and robust inventory control.
-  
-8.  **IT Service Management (ITSM) – 64 Tools** Provides best practices and methodologies (e.g., ITIL) to structure and deliver IT services, optimizing incident, problem, and change management to maintain high service quality and customer satisfaction.
-  
-10.  **IT Operations Management (ITOM) – 117 Tools** Delivers comprehensive monitoring and management of IT systems, networks, and infrastructures, helping organizations maintain high performance, reliability, and availability.
-  
-12.  **IT Security Operations (SecOps) – 119 Tools** Centers on threat detection, incident response, and vulnerability management to safeguard corporate data, networks, and systems from ever-evolving cyber threats.
-  
-14.  **IT Integrated Risk Management (IRM/GRC) – 102 Tools** Offers strategies and systems to identify, assess, and mitigate operational and regulatory risks, maintaining compliance while supporting organizational resilience.
-  
-16.  **Human Capital Management (HCM) – 113 Tools** Concentrates on recruitment, workforce planning, and talent development, ensuring that organizations attract, retain, and manage the right personnel.
-  
+3.  **IT Development Operations (DevOps) – 85 Tools** Emphasizes the synergy between software development and operations, streamlining processes such as continuous integration, delivery, and collaboration to accelerate product releases and improve quality.
+4.  **IT Asset Management (ITAM) – 94 Tools** Dedicated to tracking and optimizing the life cycles of hardware and software assets, ensuring cost effectiveness, compliance, and robust inventory control.
+5.  **IT Service Management (ITSM) – 64 Tools** Provides best practices and methodologies (e.g., ITIL) to structure and deliver IT services, optimizing incident, problem, and change management to maintain high service quality and customer satisfaction.
+6.  **IT Operations Management (ITOM) – 117 Tools** Delivers comprehensive monitoring and management of IT systems, networks, and infrastructures, helping organizations maintain high performance, reliability, and availability.
+7.  **IT Security Operations (SecOps) – 119 Tools** Centers on threat detection, incident response, and vulnerability management to safeguard corporate data, networks, and systems from ever-evolving cyber threats.
+8.  **IT Integrated Risk Management (IRM/GRC) – 102 Tools** Offers strategies and systems to identify, assess, and mitigate operational and regulatory risks, maintaining compliance while supporting organizational resilience.
+9.  **Human Capital Management (HCM) – 113 Tools** Concentrates on recruitment, workforce planning, and talent development, ensuring that organizations attract, retain, and manage the right personnel.
 
-  
 These tools collectively represent the multifaceted nature of modern IT management. It is highly unlikely a company will buy/use all 727 tools. However, it is not unlikely a company will use -and will try to integrate- a hundred of the tools listed below.  
 
 > **For large companies that make use of a lot of technologies of different vendors, the IT Tooling Domain probably is the biggest and most complex Architecture IT Domain they have.**
 
-  
 Which tool is best fit for purpose and is nest fit for audience, depends on a lot of factors. Some companies let the IT teams select their own tools. Others try to enforce enterprise standards. To simplify the landscape, to avoid tooling overlap, and to maximize economy of scale (e.g. for training and tool licenses), i believe companies should try to use a little tools as possible, whilst choosing the right tools for the jobs at hand. Some things holistically simply make sense to me, and some don't. E.g. companies should not use multiple Enterprise Architecture Tools side by side, unless if one is the source of truth for the others.
 
 Before buying an IT Management tool it is wise to read recent reviews and market studies of Forester, Gartner and others.
