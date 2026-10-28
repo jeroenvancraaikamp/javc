@@ -36,7 +36,7 @@ const TEXT = {
 
 <style is:global>
   .stats-links { margin: 0 0 12px; }
-  .stats { --b0: var(--accent); --b1: #a9cfc6; --b2: #e0a458; --b3: #6b8fb5; --b4: #c96f6f; padding-top: 30px; padding-bottom: 50px; }
+  .stats { --b0: var(--accent); --b1: #a9cfc6; --b2: #e0a458; --b3: #6b8fb5; --b4: #c96f6f; --b5: #a8a69c; padding-top: 30px; padding-bottom: 50px; }
   .stats h2 { margin: 0 0 12px; font-size: 22px; }
   .stats h3 { font-size: 15px; margin: 18px 0 8px; }
   .stats h3 small { font-weight: 400; color: var(--muted); margin-left: 8px; }
@@ -55,6 +55,9 @@ const TEXT = {
   .stats th, .stats td { text-align: left; padding: 5px 6px; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
   .stats th { color: var(--muted); font-weight: 600; }
   .stats .n { text-align: right; white-space: nowrap; }
+  .stats .nw { white-space: nowrap; }
+  .stats .cd tr:not(.c) td { border-bottom: 0; padding-bottom: 0; font-weight: 600; }
+  .stats .cd tr.c td { font-size: 13px; }
   .stats .bars { display: flex; align-items: flex-end; gap: 2px; height: 120px; border-bottom: 1px solid var(--line); }
   .stats .bar { flex: 1; height: 100%; display: flex; align-items: flex-end; gap: 1px; }
   .stats .bar span { flex: 1; min-height: 1px; border-radius: 2px 2px 0 0; }
@@ -63,6 +66,10 @@ const TEXT = {
   .stats .b2 { background: var(--b2); }
   .stats .b3 { background: var(--b3); }
   .stats .b4 { background: var(--b4); }
+  .stats .b5 { background: var(--b5); }
+  .stats .bars.stacked .bar { flex-direction: column-reverse; justify-content: flex-start; align-items: stretch; gap: 1px; }
+  .stats .bars.stacked .bar span { flex: none; min-height: 0; border-radius: 0; }
+  .stats .bars.stacked .bar span:last-child { border-radius: 2px 2px 0 0; }
   .stats .axis { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; }
   .stats .err { color: #d63638; font-size: 12px; }
   .stats .tag { font-size: 11px; padding: 1px 6px; border-radius: 4px; background: var(--line); }
