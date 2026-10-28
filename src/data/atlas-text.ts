@@ -1,6 +1,7 @@
 // Texts of the IT4IT Atlas (src/components/Atlas.astro) in the five languages of the site.
 export const ATLAS_TEXT = {
   en: {
+    backToAtlas: 'Back to the IT4IT Atlas',
     profile: 'Tool profile', capabilities: 'Capabilities', labels: 'Original labels', gartnerHead: 'Gartner Magic Quadrant 2026', report: 'View report', sourceHead: 'Source', checkedOn: 'Checked on', fromProducer: 'Description based on the producer’s own content.', fromThird: 'Description based on a third-party resource.', website: 'Visit producer website', close: 'Close',
     tools: 'tools', sections: 'sections', subcategories: 'subcategories', gartner: 'in a Gartner Magic Quadrant 2026',
     edition: 'Edition', checked: 'descriptions checked up to', guide: 'Category guide', standard: 'The IT4IT standard',
@@ -15,6 +16,7 @@ export const ATLAS_TEXT = {
     note: 'Classification describes supported capabilities and does not imply certification or endorsement. IT4IT groups and value-stream mappings are editorial; business categories follow TBM 5.0.1. Descriptions are based on the producers’ own documentation, with the source and date kept for each tool. IT4IT is a trademark of The Open Group; Gartner and Magic Quadrant are trademarks of Gartner, Inc. Inclusion of a vendor in a Magic Quadrant does not mean every product or edition was evaluated.',
   },
   nl: {
+    backToAtlas: 'Terug naar de IT4IT Atlas',
     profile: 'Toolprofiel', capabilities: 'Capabilities', labels: 'Oorspronkelijke labels', gartnerHead: 'Gartner Magic Quadrant 2026', report: 'Bekijk rapport', sourceHead: 'Bron', checkedOn: 'Gecontroleerd op', fromProducer: 'Beschrijving gebaseerd op content van de producent zelf.', fromThird: 'Beschrijving gebaseerd op een externe bron.', website: 'Naar de website van de producent', close: 'Sluiten',
     tools: 'tools', sections: 'secties', subcategories: 'subcategorieën', gartner: 'in een Gartner Magic Quadrant 2026',
     edition: 'Editie', checked: 'beschrijvingen gecontroleerd tot', guide: 'Uitleg categorieën', standard: 'De IT4IT-standaard',
@@ -29,6 +31,7 @@ export const ATLAS_TEXT = {
     note: 'De indeling beschrijft ondersteunde capabilities en is geen certificering of aanbeveling. De IT4IT-groepen en waardestromen zijn een redactionele keuze; de bedrijfscategorieën volgen TBM 5.0.1. Beschrijvingen zijn (in het Engels) gebaseerd op de documentatie van de producenten; per tool zijn de bron en datum bewaard. IT4IT is een handelsmerk van The Open Group; Gartner en Magic Quadrant zijn handelsmerken van Gartner, Inc. Opname van een leverancier in een Magic Quadrant betekent niet dat elk product of elke editie is beoordeeld.',
   },
   cn: {
+    backToAtlas: '返回 IT4IT Atlas',
     profile: '工具简介', capabilities: '能力', labels: '原始标签', gartnerHead: '2026 年 Gartner 魔力象限', report: '查看报告', sourceHead: '来源', checkedOn: '核实日期', fromProducer: '描述基于厂商自己的内容。', fromThird: '描述基于第三方资料。', website: '访问厂商网站', close: '关闭',
     tools: '个工具', sections: '个板块', subcategories: '个子类别', gartner: '入选 2026 年 Gartner 魔力象限',
     edition: '版本', checked: '描述核实至', guide: '类别指南', standard: 'IT4IT 标准',
@@ -43,6 +46,7 @@ export const ATLAS_TEXT = {
     note: '分类描述的是所支持的能力，并不代表认证或推荐。IT4IT 分组和价值流映射为编辑判断；业务类别遵循 TBM 5.0.1。描述（英文）基于厂商自己的文档，每个工具都保留了来源和日期。IT4IT 是 The Open Group 的商标；Gartner 和 Magic Quadrant 是 Gartner, Inc. 的商标。厂商入选魔力象限并不意味着其每个产品或版本都经过评估。',
   },
   fr: {
+    backToAtlas: 'Retour à l’IT4IT Atlas',
     profile: 'Fiche de l’outil', capabilities: 'Capacités', labels: 'Libellés d’origine', gartnerHead: 'Magic Quadrant Gartner 2026', report: 'Voir le rapport', sourceHead: 'Source', checkedOn: 'Vérifié le', fromProducer: 'Description fondée sur le contenu de l’éditeur.', fromThird: 'Description fondée sur une source tierce.', website: 'Visiter le site de l’éditeur', close: 'Fermer',
     tools: 'outils', sections: 'sections', subcategories: 'sous-catégories', gartner: 'dans un Magic Quadrant Gartner 2026',
     edition: 'Édition', checked: 'descriptions vérifiées jusqu’au', guide: 'Guide des catégories', standard: 'La norme IT4IT',
@@ -57,6 +61,7 @@ export const ATLAS_TEXT = {
     note: 'La classification décrit les capacités prises en charge et ne constitue ni une certification ni une recommandation. Les groupes IT4IT et les chaînes de valeur sont un choix éditorial ; les catégories métier suivent TBM 5.0.1. Les descriptions (en anglais) reposent sur la documentation des éditeurs, avec la source et la date conservées pour chaque outil. IT4IT est une marque de The Open Group ; Gartner et Magic Quadrant sont des marques de Gartner, Inc. L’inclusion d’un éditeur dans un Magic Quadrant ne signifie pas que chaque produit ou édition a été évalué.',
   },
   de: {
+    backToAtlas: 'Zurück zum IT4IT Atlas',
     profile: 'Tool-Profil', capabilities: 'Capabilities', labels: 'Ursprüngliche Labels', gartnerHead: 'Gartner Magic Quadrant 2026', report: 'Bericht ansehen', sourceHead: 'Quelle', checkedOn: 'Geprüft am', fromProducer: 'Beschreibung basiert auf Inhalten des Herstellers.', fromThird: 'Beschreibung basiert auf einer externen Quelle.', website: 'Website des Herstellers besuchen', close: 'Schließen',
     tools: 'Tools', sections: 'Bereiche', subcategories: 'Unterkategorien', gartner: 'in einem Gartner Magic Quadrant 2026',
     edition: 'Ausgabe', checked: 'Beschreibungen geprüft bis', guide: 'Kategorienübersicht', standard: 'Der IT4IT-Standard',
