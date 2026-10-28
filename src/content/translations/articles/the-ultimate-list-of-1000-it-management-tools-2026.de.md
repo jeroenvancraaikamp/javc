@@ -1,53 +1,53 @@
 ---
 title: "Die ultimative Liste mit über 1.000 IT-Management-Tools, 2026"
-excerpt: "Dies ist ein Überblick über 1136 IT-Management-Tools, gruppiert in 26 Kategorien aus 7 Domänen – Strategy & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI –, ausgerichtet an der"
-source: "3deb20f3ffada756"
+excerpt: "Dies ist eine Übersicht über 1136 IT-Management-Tools, gruppiert in 26 Kategorien aus 7 Domänen – Strategy & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI –, ausgerichtet an der"
+source: "73f60d8c9223d9fe"
 ---
 
-### UPDATE: Der [IT4IT/IT4ESM Atlas](https://javc.nl/it4it-atlas/) enthält inzwischen 1600 Plattformen
+### UPDATE: Wir haben einen neuen [IT4IT Atlas](https://javc.nl/it4it-atlas/) auf unserer Website veröffentlicht.
 
-Dies ist ein Überblick über 1136 IT-Management-Tools, gruppiert in 26 Kategorien aus 7 Domänen – Strategy & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI –, ausgerichtet an der IT4IT-Referenzarchitektur von The Open Group und erweitert um sämtliche Anbieter, die in den jeweils aktuellen Gartner Magic Quadrants genannt werden, sowie um Open-Source-Plattformen, die im Enterprise-Maßstab eingesetzt werden.
+Dies ist eine Übersicht über 1136 IT-Management-Tools, gruppiert in 26 Kategorien aus 7 Domänen – Strategy & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI –, ausgerichtet an der IT4IT-Referenzarchitektur von The Open Group und erweitert um alle Anbieter, die in den relevanten aktuellen Gartner Magic Quadrants genannt werden, sowie um Open-Source-Plattformen, die im Enterprise-Maßstab eingesetzt werden.
 
 ### 1) Strategy & Planning
 
--   **1.1) Enterprise Architecture (EA)** – 32 Tools — Konzentriert sich darauf, Technologiestrategien an übergeordneten Geschäftszielen auszurichten, strukturierte Frameworks zu ermöglichen und sicherzustellen, dass IT-Investitionen die langfristigen Ziele der Organisation unterstützen.
--   **2.2) Strategic Portfolio Management (SPM) & Project Portfolio Management (PPM)** – 22 Tools — Umfasst die Priorisierung, Terminplanung und Ressourcenausstattung von IT- und Business-Initiativen – aus Gartners Magic Quadrants für Strategic Portfolio Management sowie Adaptive Project Management & Reporting.
--   **1.3) IT Financial Management (ITFM/TBM) & Innovation Managemen**t – 5 Tools — Erfasst und optimiert IT-Ausgaben im Verhältnis zum Geschäftswert (Technology Business Management) und steuert die Aufnahme und Bewertung neuer Ideen und Innovationsinitiativen.
+-   **1.1) Enterprise Architecture (EA)** – 32 Tools — Zielt darauf ab, Technologiestrategien an übergeordneten Geschäftszielen auszurichten, strukturierte Frameworks zu ermöglichen und sicherzustellen, dass IT-Investitionen langfristige Unternehmensziele unterstützen.
+-   **2.2) Strategic Portfolio Management (SPM) & Project Portfolio Management (PPM)** – 22 Tools — Umfasst die Priorisierung, Terminplanung und Ressourcenausstattung von IT- und Geschäftsinitiativen – aus Gartners Magic Quadrants für Strategic Portfolio Management und Adaptive Project Management & Reporting.
+-   **1.3) IT Financial Management (ITFM/TBM) & Innovation Managemen**t – 5 Tools — Verfolgt und optimiert IT-Ausgaben im Verhältnis zum Geschäftswert (Technology Business Management) und steuert die Erfassung und Bewertung neuer Ideen und Innovationsinitiativen.
 
 ### 2) Software Engineering & Delivery
 
 -   **2.1) IT Development Operations (DevOps)** – 113 Tools — Betont das Zusammenspiel von Softwareentwicklung und Betrieb und optimiert Prozesse wie Continuous Integration, Continuous Delivery und Zusammenarbeit, um Produktreleases zu beschleunigen und die Qualität zu verbessern.
 -   **2.2) Low-Code Application Platforms** – 14 Tools — Enterprise-Plattformen zur Entwicklung individueller Anwendungen mit minimalem handgeschriebenem Code, sowohl für Citizen Developer als auch für professionelle Entwickler.
--   **2.3) Robotic Process Automation (RPA) & Business Process Automation** – 9 Tools — Automatisiert repetitive, regelbasierte digitale Aufgaben und Geschäftsprozesse, von Desktop-Bots bis hin zur Orchestrierung im Enterprise-Maßstab.
+-   **2.3) Robotic Process Automation (RPA) & Business Process Automation** – 9 Tools — Automatisiert repetitive, regelbasierte digitale Aufgaben und Geschäftsprozesse, von Desktop-Bots bis zur Orchestrierung im Enterprise-Maßstab.
 -   **2.4) API Management** – 14 Tools — Entwirft, veröffentlicht, sichert und überwacht APIs über ihren gesamten Lebenszyklus und ermöglicht so einen kontrollierten Zugriff auf Services und Daten.
 -   **2.5) Enterprise iPaaS & Integration** – 16 Tools — Verbindet Anwendungen, Daten und Prozesse über Cloud- und On-Premises-Systeme hinweg mithilfe von Integration-Platform-as-a-Service- und Workflow-Automation-Tools.
 
 ### 3) IT Service & Asset Management
 
--   **3.1) IT Service Management (ITSM)** – 71 Tools — Bietet Best Practices und Methoden (z. B. ITIL), um IT-Services zu strukturieren und bereitzustellen, und optimiert Incident, Problem und Change Management, um eine hohe Servicequalität und Kundenzufriedenheit sicherzustellen.
+-   **3.1) IT Service Management (ITSM)** – 71 Tools — Bietet Best Practices und Methoden (z. B. ITIL) zur Strukturierung und Bereitstellung von IT-Services und optimiert Incident, Problem und Change Management, um eine hohe Servicequalität und Kundenzufriedenheit sicherzustellen.
 -   **3.2) IT Asset Management (ITAM)** – 98 Tools — Widmet sich der Nachverfolgung und Optimierung der Lebenszyklen von Hardware- und Software-Assets und sorgt für Kosteneffizienz, Compliance und eine zuverlässige Bestandskontrolle.
--   **3.3) Unified Endpoint Management (UEM)** – 13 Tools — Verwaltet, konfiguriert und sichert Desktops, mobile Geräte und andere Endpunkte zentral über ihren gesamten Lebenszyklus.
+-   **3.3) Unified Endpoint Management (UEM)** – 13 Tools — Verwaltet, konfiguriert und sichert Desktops, Mobilgeräte und andere Endpoints zentral über ihren gesamten Lebenszyklus.
 
 ### 4) IT Operations
 
--   **4.1) Observability Platforms (ITOM)** – 145 Tools — Bietet umfassendes Monitoring und Management von IT-Systemen, Netzwerken und Infrastrukturen – Metriken, Logs, Traces und AIOps – und hilft Organisationen, hohe Performance, Zuverlässigkeit und Verfügbarkeit sicherzustellen.
+-   **4.1) Observability Platforms (ITOM)** – 145 Tools — Bietet umfassendes Monitoring und Management von IT-Systemen, Netzwerken und Infrastrukturen – Metriken, Logs, Traces und AIOps – und hilft Unternehmen, hohe Leistung, Zuverlässigkeit und Verfügbarkeit sicherzustellen.
 -   **4.2) Enterprise Backup & Data Protection / Disaster Recovery** – 21 Tools — Schützt Unternehmensdaten durch Backup, Replikation und Recovery-Orchestrierung, einschließlich Disaster-Recovery-as-a-Service.
 
 ### 5) Security
 
--   **5.1) Vulnerability & Exposure Management** – 125 Tools — Konzentriert sich auf Schwachstellenscans, Attack Surface Management und die Priorisierung von Exposures, um Unternehmensdaten, Netzwerke und Systeme vor sich ständig weiterentwickelnden Cyberbedrohungen zu schützen.
+-   **5.1) Vulnerability & Exposure Management** – 125 Tools — Konzentriert sich auf Schwachstellenscans, Attack Surface Management und Exposure-Priorisierung, um Unternehmensdaten, Netzwerke und Systeme vor sich ständig weiterentwickelnden Cyberbedrohungen zu schützen.
 -   **5.2) Security Information and Event Management (SIEM)** – 18 Tools — Aggregiert, korreliert und analysiert sicherheitsrelevante Ereignisdaten im gesamten Unternehmen, um Bedrohungen zu erkennen und zu untersuchen.
 -   **5.3) Security Orchestration, Automation and Response (SOAR) – 8 Tools** — Automatisiert und orchestriert Incident-Response-Workflows und den Austausch von Threat Intelligence über den gesamten Security-Stack hinweg.
--   **5.4) Endpoint Protection Platforms (EPP) & Endpoint Detection and Response (EDR)** – 15 Tools — Schützt Laptops, Server und andere Endpunkte, erkennt Bedrohungen dort und reagiert darauf.
--   **5.5) Security Service Edge (SSE), SASE & CASB** – 15 Tools — Bündelt Netzwerksicherheitsfunktionen – Secure Web Gateway, CASB, ZTNA – in einer aus der Cloud bereitgestellten Edge, häufig in Kombination mit SD-WAN als SASE.
--   **5.6) Email Security** – 13 Tools — Schützt Enterprise-E-Mail-Plattformen vor Phishing, Business Email Compromise und schädlichen Anhängen.
+-   **5.4) Endpoint Protection Platforms (EPP) & Endpoint Detection and Response (EDR)** – 15 Tools — Schützt Laptops, Server und andere Endpoints, erkennt Bedrohungen und reagiert darauf.
+-   **5.5) Security Service Edge (SSE), SASE & CASB** – 15 Tools — Führt Netzwerksicherheitsfunktionen – Secure Web Gateway, CASB, ZTNA – in einem cloudbasierten Edge zusammen, häufig kombiniert mit SD-WAN als SASE.
+-   **5.6) Email Security** – 13 Tools — Schützt vor Phishing, Business Email Compromise und schädlichen Anhängen auf Enterprise-E-Mail-Plattformen.
 -   **5.7) Network & Hybrid Mesh Firewalls** – 17 Tools — Setzt Netzwerksegmentierung und Traffic-Richtlinien in verteilten, hybriden und Cloud-Umgebungen durch.
 -   **5.8) Identity & Access Management (IAM, IGA & PAM)** – 40 Tools — Steuert, wer und was auf Unternehmenssysteme zugreifen darf, und umfasst Access Management/SSO, Identity Governance and Administration sowie Privileged Access Management.
--   **5.9) IT Integrated Risk Management (IRM/GRC)** – 111 Tools — Bietet Strategien und Systeme, um operative und regulatorische Risiken zu identifizieren, zu bewerten und zu mindern, die Compliance sicherzustellen und zugleich die Resilienz der Organisation zu stärken.
+-   **5.9) IT Integrated Risk Management (IRM/GRC)** – 111 Tools — Bietet Strategien und Systeme, um operative und regulatorische Risiken zu identifizieren, zu bewerten und zu mindern, die Compliance sicherzustellen und die Resilienz des Unternehmens zu unterstützen.
 
 ### 6) Corporate & Shared
 
--   **6.1) Workforce (HR)** – 137 Tools — Konzentriert sich auf Recruiting, Personalplanung und Talententwicklung und stellt sicher, dass Organisationen die richtigen Mitarbeitenden gewinnen, halten und führen.
+-   **6.1) Workforce (HR)** – 137 Tools — Konzentriert sich auf Recruiting, Personalplanung und Talententwicklung und stellt sicher, dass Unternehmen die richtigen Mitarbeitenden gewinnen, halten und führen.
 -   **6.2) Finance**
 -   **6.3) Legal**
 -   **6.4) Vendor & Procurement**
@@ -57,15 +57,15 @@ Dies ist ein Überblick über 1136 IT-Management-Tools, gruppiert in 26 Kategori
 
 ### 7) AI
 
--   **7.1) AI Platforms** – 41 Tools — Umfasst Foundation-Model- und Enterprise-AI/LLM-Plattformen, Copilots und Tools zur Agent-Orchestrierung sowie KI-gestützte IT-Operations-Schichten, die zunehmend auf – und innerhalb – der anderen Kategorien angesiedelt sind.
+-   **7.1) AI Platforms** – 41 Tools — Umfasst Foundation-Model- und Enterprise-AI/LLM-Plattformen, Copilots und Tools zur Agent-Orchestrierung sowie KI-gestützte IT-Operations-Schichten, die zunehmend auf – und in – den anderen Kategorien angesiedelt sind.
 -   **7.2) Data Science & Machine Learning Platforms** – 12 Tools — Entwickelt, trainiert, implementiert und steuert Machine-Learning- und KI-Modelle, einschließlich MLOps und selbst gehosteter Model-Serving-Infrastruktur.
--   **7.3) Enterprise Conversational AI** – 13 Tools — Spezialisierte Plattformen zur Entwicklung virtueller Agenten, Chatbots und Sprachassistenten für Kundenservice und Mitarbeitersupport.
+-   **7.3) Enterprise Conversational AI** – 13 Tools — Speziell entwickelte Plattformen zum Aufbau virtueller Agenten, Chatbots und Sprachassistenten für Kundenservice und Mitarbeitersupport.
 
-Zusammen spiegeln diese Tools die Vielschichtigkeit des modernen IT-Managements wider. Es ist höchst unwahrscheinlich, dass ein Unternehmen alle 1138 Tools kauft bzw. nutzt. Es ist jedoch durchaus wahrscheinlich, dass ein Unternehmen hundert der unten aufgeführten Tools nutzt – und zu integrieren versucht.
+Zusammengenommen spiegeln diese Tools die Vielschichtigkeit des modernen IT-Managements wider. Es ist höchst unwahrscheinlich, dass ein Unternehmen alle 1138 Tools kauft bzw. nutzt. Es ist jedoch durchaus wahrscheinlich, dass ein Unternehmen hundert der unten aufgeführten Tools einsetzt – und zu integrieren versucht.
 
-Für große Unternehmen, die zahlreiche Technologien unterschiedlicher Anbieter einsetzen, ist die IT-Tooling-Domäne vermutlich die größte und komplexeste Architektur-IT-Domäne überhaupt.
+Für große Unternehmen, die viele Technologien verschiedener Anbieter nutzen, ist die IT-Tooling-Domäne vermutlich die größte und komplexeste Architektur-IT-Domäne überhaupt.
 
-Welches Tool am besten zum Zweck und zur Zielgruppe passt, hängt von vielen Faktoren ab. Manche Unternehmen lassen die IT-Teams ihre Tools selbst auswählen. Andere versuchen, Unternehmensstandards durchzusetzen. Um die Landschaft zu vereinfachen, Tool-Überschneidungen zu vermeiden und Skaleneffekte zu maximieren (z. B. bei Schulungen und Tool-Lizenzen), sollten Unternehmen meiner Meinung nach versuchen, so wenige Tools wie möglich einzusetzen und dabei für die jeweiligen Aufgaben die richtigen Tools zu wählen. Manches ergibt für mich ganzheitlich betrachtet einfach Sinn, anderes nicht. So sollten Unternehmen beispielsweise nicht mehrere Enterprise-Architecture-Tools parallel einsetzen, es sei denn, eines davon ist die Source of Truth für die anderen.
+Welches Tool am besten zum Zweck und zur Zielgruppe passt, hängt von vielen Faktoren ab. Manche Unternehmen lassen die IT-Teams ihre Tools selbst auswählen. Andere versuchen, Unternehmensstandards durchzusetzen. Um die Landschaft zu vereinfachen, Überschneidungen bei den Tools zu vermeiden und Skaleneffekte (z. B. bei Schulungen und Tool-Lizenzen) zu maximieren, sollten Unternehmen meiner Meinung nach so wenige Tools wie möglich einsetzen und dabei die richtigen Tools für die jeweiligen Aufgaben wählen. Manches ergibt für mich ganzheitlich betrachtet einfach Sinn, anderes nicht. So sollten Unternehmen beispielsweise nicht mehrere Enterprise-Architecture-Tools parallel nutzen, es sei denn, eines davon ist die Source of Truth für die anderen.
 
 ## 1. Strategy & Planning
 
@@ -697,7 +697,7 @@ Welches Tool am besten zum Zweck und zur Zielgruppe passt, hängt von vielen Fak
 11.  IBM Storage Protect von IBM
 12.  N-able Cove Data Protection von N-able
 13.  NAKIVO Backup & Replication von NAKIVO
-14.  OpenText NetBackup (aus der Micro-Focus-Linie) von OpenText
+14.  OpenText NetBackup (Micro-Focus-Linie) von OpenText
 15.  Proxmox Backup Server von Proxmox Server Solutions GmbH
 16.  Rubrik Security Cloud von Rubrik
 17.  Unitrends von Unitrends (Kaseya)
@@ -1071,7 +1071,7 @@ Welches Tool am besten zum Zweck und zur Zielgruppe passt, hängt von vielen Fak
 84.  Quantivate GRC Software Suite von Quantivate
 85.  Reliance Compliance Management Solution von Octave (ETQ)
 86.  resilienceOS von Restrata
-87.  Resolver Core von Resolver (a Kroll Business)
+87.  Resolver Core von Resolver (ein Unternehmen von Kroll)
 88.  Risk Cognizance von Risk Cognizance
 89.  Riskonnect Active Risk Manager von Riskonnect
 90.  Riskonnect von Riskonnect

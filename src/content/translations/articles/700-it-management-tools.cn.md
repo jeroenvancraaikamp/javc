@@ -1,787 +1,778 @@
 ---
 title: "IT 管理工具终极清单（700 余款），2024 年 12 月"
-excerpt: "以下概述了 727 款 IT 管理工具，并经过精心整理，归入八个主要类别。这份汇编展现了 IT 管理领域的广度与深度，涵盖从战略规划与治理到日常运营与安全监督的各个方面 IT Enterprise"
-source: "410bd837282bcfd6"
+excerpt: "以下概述了 727 款 IT 管理工具，并经过细致整理，归入八大主要类别。这份汇编展现了 IT 管理领域的广度与深度，涵盖从战略规划与治理到日常运营与安全监督的方方面面 IT Enterprise"
+source: "1d14f32ec5fa307c"
 ---
 
-以下概述了 727 款 IT 管理工具，并经过精心整理，归入八个主要类别。这份汇编展现了 IT 管理领域的广度与深度，涵盖从战略规划与治理到日常运营与安全监督的各个方面  
+### 更新：我们已在网站上发布了全新的 [IT4IT Atlas](https://javc.nl/it4it-atlas/)。
 
-  
-2.  **IT 企业架构（EA）– 33 款工具** 致力于使技术战略与总体业务目标保持一致，提供结构化的框架，并确保 IT 投资能够支撑组织的长期目标。
-  
-4.  **IT 开发运维（DevOps）– 85 款工具** 强调软件开发与运维之间的协同，简化持续集成、持续交付与协作等流程，从而加快产品发布并提升质量。
-  
-6.  **IT 资产管理（ITAM）– 94 款工具** 专注于跟踪和优化硬件与软件资产的生命周期，确保成本效益、合规性以及完善的库存管控。
-  
-8.  **IT 服务管理（ITSM）– 64 款工具** 提供最佳实践和方法论（例如 ITIL），用于规范和交付 IT 服务，优化事件管理（incident management）、问题管理（problem management）和变更管理（change management），以保持较高的服务质量和客户满意度。
-  
-10.  **IT 运营管理（ITOM）– 117 款工具** 对 IT 系统、网络和基础设施进行全面的监控与管理，帮助组织保持高性能、高可靠性和高可用性。
-  
-12.  **IT 安全运营（SecOps）– 119 款工具** 聚焦于威胁检测、事件响应和漏洞管理，保护企业数据、网络和系统免受不断演变的网络威胁。
-  
-14.  **IT 集成风险管理（IRM/GRC）– 102 款工具** 提供用于识别、评估和缓解运营风险与监管风险的策略和系统，在保持合规的同时增强组织韧性。
-  
-16.  **人力资本管理（HCM）– 113 款工具** 专注于招聘、人力规划和人才发展，确保组织能够吸引、留住并管理合适的人才。
-  
+以下概述了 727 款 IT 管理工具，并经过细致整理，归入八大主要类别。这份汇编展现了 IT 管理领域的广度与深度，涵盖从战略规划与治理到日常运营与安全监督的方方面面  
 
-  
-这些工具共同体现了现代 IT 管理的多面性。一家公司几乎不可能购买或使用全部 727 款工具。但是，一家公司使用下列工具中的上百款（并尝试将其相互集成），这种情况并不罕见。  
+2.  **IT 企业架构（EA）—— 33 款工具** 侧重于使技术战略与整体业务目标保持一致，提供结构化框架，并确保 IT 投资能够支撑组织的长期目标。
+3.  **IT 开发运维（DevOps）—— 85 款工具** 强调软件开发与运维之间的协同，优化持续集成、持续交付和协作等流程，以加快产品发布并提升质量。
+4.  **IT 资产管理（ITAM）—— 94 款工具** 专注于跟踪和优化硬件与软件资产的生命周期，确保成本效益、合规性以及完善的库存控制。
+5.  **IT 服务管理（ITSM）—— 64 款工具** 提供用于构建和交付 IT 服务的最佳实践和方法论（如 ITIL），优化事件管理、问题管理和变更管理，以保持较高的服务质量和客户满意度。
+6.  **IT 运营管理（ITOM）—— 117 款工具** 对 IT 系统、网络和基础设施进行全面的监控与管理，帮助组织保持高性能、高可靠性和高可用性。
+7.  **IT 安全运营（SecOps）—— 119 款工具** 以威胁检测、事件响应和漏洞管理为核心，保护企业数据、网络和系统免受不断演变的网络威胁。
+8.  **IT 集成风险管理（IRM/GRC）—— 102 款工具** 提供识别、评估和缓解运营风险与监管风险的策略和系统，在保持合规的同时增强组织韧性。
+9.  **人力资本管理（HCM）—— 113 款工具** 专注于招聘、劳动力规划和人才发展，确保组织能够吸引、留住并管理合适的人才。
 
-> **对于使用大量不同厂商技术的大型公司而言，IT 工具领域很可能是其规模最大、最为复杂的 IT 架构领域。**
+这些工具共同体现了现代 IT 管理的多面性。一家公司购买或使用全部 727 款工具的可能性极低。然而，一家公司使用下列工具中的上百款——并尝试将其相互集成——却并非不可能。  
 
-  
-哪款工具最符合用途、最适合目标用户，取决于诸多因素。有些公司让 IT 团队自行选择工具，另一些公司则尝试强制推行企业标准。为了简化工具版图、避免工具功能重叠，并最大限度地发挥规模经济效应（例如在培训和工具许可方面），我认为公司应在为具体工作选择合适工具的同时，尽可能少用工具。从整体角度看，有些做法在我看来理所当然，有些则不然。例如，公司不应同时并行使用多款企业架构工具，除非其中一款作为其他工具的唯一可信数据源（source of truth）。
+> **对于使用大量不同厂商技术的大型公司而言，IT 工具领域很可能是其规模最大、最复杂的 IT 架构领域。**
 
-在购买 IT 管理工具之前，最好先阅读 Forrester、Gartner 等机构最新的评测和市场研究报告。
+哪款工具最符合用途、最适合受众，取决于诸多因素。有些公司让 IT 团队自行选择工具，另一些公司则尝试推行企业统一标准。为了简化工具版图、避免工具重叠并最大化规模经济效益（例如在培训和工具许可方面），我认为公司应尽量少用工具，同时为手头的工作选择合适的工具。从整体来看，有些做法在我看来理所当然，有些则不然。例如，公司不应同时并行使用多款企业架构工具，除非其中一款是其他工具的唯一可信数据源（source of truth）。
 
-顺便说一句：这份清单肯定不够完美，也不够完整。如果您有任何建议或补充，欢迎[与我联系](/cn/contact-me/)。
+在购买 IT 管理工具之前，明智的做法是阅读 Forrester、Gartner 等机构近期发布的评测和市场研究报告。
+
+顺便说一句：这份清单肯定不够完美，也不够完整。如果您有任何推荐或补充，欢迎[联系我](/cn/contact-me/)。
 
 ### 企业架构（EA）
 
-1.  ADOIT，BOC Group 出品
-2.  Alfabet Enterprise Architecture Management，Software AG 出品
-3.  Ardoq，Ardoq 出品
-4.  Bee360，Bee360 出品
-5.  Bizzdesign Horizzon，Bizzdesign 出品
-6.  BlueDolphin，ValueBlue 出品
-7.  Dragon1，Dragon1 出品
-8.  erwin Evolve，Quest 出品
-9.  HOPEX，MEGA International 出品
-10.  Innoslate，SPEC Innovations 出品
-11.  InQuisient IQ Platform，InQuisient 出品
-12.  Jalapeno，Capsifi 出品
-13.  **LeanIX Enterprise Architecture，SAP 出品**
-14.  Mavim，Mavim 出品
-15.  NH360 Enterprise Connect，North Highland 出品
-16.  No Magic Cameo，Dassault Systèmes 出品
-17.  **OrbusInfinity，Orbus Software 出品**
-18.  Planisware Enterprise，Planisware 出品
-19.  **Planview Portfolios，Planview 出品**
-20.  QPR Enterprise Architect，QPR Software 出品
-21.  QualiWare X，QualiWare 出品
-22.  SAMU，Atoll Technologies 出品
-23.  Selectycs，Selectycs 出品
-24.  **IT Application Portfolio Management (APM)，ServiceNow 出品**
-25.  IT Enterprise Architecture (EA)，ServiceNow 出品
-26.  Smarchy，Smarchy 出品
-27.  smart360，smart360 出品
-28.  Sparx Systems Enterprise Architect，Sparx Systems 出品
-29.  Stackspot，Zup 出品
-30.  The Essential Project，Enterprise Architecture Solutions 出品
-31.  UNICOM System Architect，UNICOM Systems 出品
-32.  YouDesign，ins-pi 出品
+1.  ADOIT by BOC Group
+2.  Alfabet Enterprise Architecture Management by Software AG
+3.  Ardoq by Ardoq
+4.  Bee360 by Bee360
+5.  Bizzdesign Horizzon by Bizzdesign
+6.  BlueDolphin by ValueBlue
+7.  Dragon1 by Dragon1
+8.  erwin Evolve by Quest
+9.  HOPEX by MEGA International
+10.  Innoslate by SPEC Innovations
+11.  InQuisient IQ Platform by InQuisient
+12.  Jalapeno by Capsifi
+13.  **LeanIX Enterprise Architecture by SAP**
+14.  Mavim by Mavim
+15.  NH360 Enterprise Connect by North Highland
+16.  No Magic Cameo by Dassault Systèmes
+17.  **OrbusInfinity by Orbus Software**
+18.  Planisware Enterprise by Planisware
+19.  **Planview Portfolios by Planview**
+20.  QPR Enterprise Architect by QPR Software
+21.  QualiWare X by QualiWare
+22.  SAMU by Atoll Technologies
+23.  Selectycs by Selectycs
+24.  **IT Application Portfolio Management (APM) by ServiceNow**
+25.  IT Enterprise Architecture (EA) by ServiceNow
+26.  Smarchy by Smarchy
+27.  smart360 by smart360
+28.  Sparx Systems Enterprise Architect by Sparx Systems
+29.  Stackspot by Zup
+30.  The Essential Project by Enterprise Architecture Solutions
+31.  UNICOM System Architect by UNICOM Systems
+32.  YouDesign by ins-pi
 
 ### IT 开发运维（DevOps）
 
-1.  AB Tasty，AB Tasty 出品
-2.  ActiveState Platform，ActiveState Software 出品
-3.  Alauda Container Platform，Alauda 出品
-4.  Appcircle，Appcircle 出品
-5.  Artifact Registry，Google 出品
-6.  **Atlassian Confluence，Atlassian 出品**
-7.  AWS Amplify，Amazon Web Services (AWS) 出品
-8.  AWS CloudFormation，Amazon Web Services (AWS) 出品
-9.  AWS CodeBuild，Amazon Web Services (AWS) 出品
-10.  AWS CodeDeploy，Amazon Web Services (AWS) 出品
-11.  AWS CodePipeline，Amazon Web Services (AWS) 出品
-12.  AWS CodeStar（旧版），Amazon Web Services (AWS) 出品
-13.  **Azure DevOps，Microsoft 出品**
-14.  **Azure Pipelines，Microsoft 出品**
-15.  **Bamboo，Atlassian 出品**
-16.  **Bitbucket，Atlassian 出品**
-17.  Bitrise，Bitrise 出品
-18.  Buddy，Buddy 出品
-19.  BuildKite，Buildkite 出品
-20.  BuildMaster，Inedo 出品
-21.  Buildpiper，Opstree Labs 出品
-22.  CA Release Automation（旧版），Broadcom 出品
-23.  Chef Automate，Progress 出品
-24.  Chef Enterprise Automation Stack，Progress 出品
-25.  Choreo，WSO2 出品
-26.  CircleCI，CircleCI 出品
-27.  Clarive，Clarive 出品
-28.  Cloud Build，Google 出品
-29.  CloudBees CI，CloudBees 出品
-30.  CloudBees Platform，CloudBees 出品
-31.  Codefresh，Octopus Deploy (Codefresh) 出品
-32.  Codemagic，Nevercode 出品
-33.  CodeNOW，Stratox Enterprises 出品
-34.  Continuous Delivery Director，Broadcom 出品
-35.  Continuous Delivery Automation (CDA)（旧版），Broadcom 出品
-36.  Cutover Collaborative Automation Platform，Cutover 出品
-37.  DeployHub，DeployHub 出品
-38.  Devtron，Devtron 出品
-39.  **Digital.ai Deploy，Digital.ai 出品**
-40.  Digital.ai Release，Digital.ai 出品
-41.  DROPS，ARCAD Software 出品
-42.  DuploCloud，DuploCloud 出品
-43.  Facets Cloud，Facets.cloud 出品
-44.  Flagsmith，Flagsmith 出品
-45.  FlexDeploy，Flexagon 出品
-46.  **GitHub，GitHub 出品**
-47.  **GitLab，GitLab 出品**
-48.  Guide-Rails，Guide-Rails 出品
-49.  **Harness，Harness 出品**
-50.  **Harness Feature Flags，Harness 出品**
-51.  HCL Accelerate，HCLTech (HCLSoftware) 出品
-52.  HCL Launch，HCLTech (HCLSoftware) 出品
-53.  Huawei CodeArts，Huawei Technologies（华为技术）出品
-54.  IBM UrbanCode Release，IBM 出品
-55.  IBM UrbanCode Velocity，IBM 出品
-56.  InfoDyn，InfoDyn 出品
-57.  **JFrog Software Supply Chain Platform，JFrog 出品**
-58.  LaunchDarkly Feature Management Platform，LaunchDarkly 出品
-59.  Liquit Workspace，Liquit 出品
-60.  Localazy，Localazy 出品
-61.  Mia‑Platform，Mia-Platform 出品
-62.  NXT1 LaunchIT，NXT1 出品
-63.  Octopus Deploy，Octopus Deploy 出品
-64.  OpenText Deployment Automation，OpenText 出品
-65.  OpenText Release Control，OpenText 出品
-66.  Opsera，Opsera 出品
-67.  Ozone，Ozone 出品
-68.  Plutora Release Management，Plutora 出品
-69.  Prodly DevOps，Prodly 出品
-70.  Puppet Enterprise，Puppet 出品
-71.  Puppet Pipeline（旧版），Puppet 出品
-72.  RapidDeploy，MidVision 出品
-73.  Red Hat Ansible Automation Platform，IBM (Red Hat) 出品
-74.  Red Hat OpenShift Platform Plus，IBM (Red Hat) 出品
-75.  IT Agile & Test Management (ATM)，ServiceNow 出品
-76.  Slim.AI，Slim.AI 出品
-77.  Space（旧版），JetBrains 出品
-78.  Split Software Feature Data Platform，Split Software 出品
-79.  TeamCity，JetBrains 出品
-80.  Travis CI，Travis CI 出品
-81.  UrbanCode Deploy，IBM 出品
-82.  VMware Tanzu Platform，Broadcom (VMware) 出品
-83.  VWO，Wingify 出品
-84.  XebiaLabs DevOps Platform（旧版），Digital.ai 出品
-85.  xtype Native DevOps Automation Platform，xtype 出品
+1.  AB Tasty by AB Tasty
+2.  ActiveState Platform by ActiveState Software
+3.  Alauda Container Platform by Alauda
+4.  Appcircle by Appcircle
+5.  Artifact Registry by Google
+6.  **Atlassian Confluence by Atlassian**
+7.  AWS Amplify by Amazon Web Services (AWS)
+8.  AWS CloudFormation by Amazon Web Services (AWS)
+9.  AWS CodeBuild by Amazon Web Services (AWS)
+10.  AWS CodeDeploy by Amazon Web Services (AWS)
+11.  AWS CodePipeline by Amazon Web Services (AWS)
+12.  AWS CodeStar (Legacy) by Amazon Web Services (AWS)
+13.  **Azure DevOps by Microsoft**
+14.  **Azure Pipelines by Microsoft**
+15.  **Bamboo by Atlassian**
+16.  **Bitbucket by Atlassian**
+17.  Bitrise by Bitrise
+18.  Buddy by Buddy
+19.  BuildKite by Buildkite
+20.  BuildMaster by Inedo
+21.  Buildpiper by Opstree Labs
+22.  CA Release Automation (Legacy) by Broadcom
+23.  Chef Automate by Progress
+24.  Chef Enterprise Automation Stack by Progress
+25.  Choreo by WSO2
+26.  CircleCI by CircleCI
+27.  Clarive by Clarive
+28.  Cloud Build by Google
+29.  CloudBees CI by CloudBees
+30.  CloudBees Platform by CloudBees
+31.  Codefresh by Octopus Deploy (Codefresh)
+32.  Codemagic by Nevercode
+33.  CodeNOW by Stratox Enterprises
+34.  Continuous Delivery Director by Broadcom
+35.  Continuous Delivery Automation (CDA) (Legacy) by Broadcom
+36.  Cutover Collaborative Automation Platform by Cutover
+37.  DeployHub by DeployHub
+38.  Devtron by Devtron
+39.  **Digital.ai Deploy by Digital.ai**
+40.  Digital.ai Release by Digital.ai
+41.  DROPS by ARCAD Software
+42.  DuploCloud by DuploCloud
+43.  Facets Cloud by Facets.cloud
+44.  Flagsmith by Flagsmith
+45.  FlexDeploy by Flexagon
+46.  **GitHub by GitHub**
+47.  **GitLab by GitLab**
+48.  Guide-Rails by Guide-Rails
+49.  **Harness by Harness**
+50.  **Harness Feature Flags by Harness**
+51.  HCL Accelerate by HCLTech (HCLSoftware)
+52.  HCL Launch by HCLTech (HCLSoftware)
+53.  Huawei CodeArts by Huawei Technologies
+54.  IBM UrbanCode Release by IBM
+55.  IBM UrbanCode Velocity by IBM
+56.  InfoDyn by InfoDyn
+57.  **JFrog Software Supply Chain Platform by JFrog**
+58.  LaunchDarkly Feature Management Platform by LaunchDarkly
+59.  Liquit Workspace by Liquit
+60.  Localazy by Localazy
+61.  Mia‑Platform by Mia-Platform
+62.  NXT1 LaunchIT by NXT1
+63.  Octopus Deploy by Octopus Deploy
+64.  OpenText Deployment Automation by OpenText
+65.  OpenText Release Control by OpenText
+66.  Opsera by Opsera
+67.  Ozone by Ozone
+68.  Plutora Release Management by Plutora
+69.  Prodly DevOps by Prodly
+70.  Puppet Enterprise by Puppet
+71.  Puppet Pipeline (Legacy) by Puppet
+72.  RapidDeploy by MidVision
+73.  Red Hat Ansible Automation Platform by IBM (Red Hat)
+74.  Red Hat OpenShift Platform Plus by IBM (Red Hat)
+75.  IT Agile & Test Management (ATM) by ServiceNow
+76.  Slim.AI by Slim.AI
+77.  Space (Legacy) by JetBrains
+78.  Split Software Feature Data Platform by Split Software
+79.  TeamCity by JetBrains
+80.  Travis CI by Travis CI
+81.  UrbanCode Deploy by IBM
+82.  VMware Tanzu Platform by Broadcom (VMware)
+83.  VWO by Wingify
+84.  XebiaLabs DevOps Platform (Legacy) by Digital.ai
+85.  xtype Native DevOps Automation Platform by xtype
 
 ### IT 安全运营（SecOps）
 
-1.  Action1，Action1 出品
-2.  Analyst1 Threat Intelligence Platform，Analyst1 出品
-3.  Apiiro ASPM Platform，Apiiro 出品
-4.  Arctic Wolf Managed Risk，Arctic Wolf Networks 出品
-5.  Armis Centrix，Armis 出品
-6.  Assetnote Continuous Security Platform，Assetnote 出品
-7.  Astra，Astra 出品
-8.  Autobahn，Security Research Labs 出品
-9.  Balbix Security Cloud，Balbix 出品
-10.  Beagle Security，Beagle Security 出品
-11.  Beak，iLink Digital 出品
-12.  beSECURE，Fortra 出品
-13.  BeyondTrust Enterprise Vulnerability Management（旧版），BeyondTrust 出品
-14.  BeyondTrust Network Security Scanner（旧版），BeyondTrust 出品
-15.  BlockAPT Platform，BlockAPT 出品
-16.  BMC Helix Automation Console，BMC 出品
-17.  BoostSecurity，boostsecurity.io 出品
-18.  Brinqa Attack Surface Intelligence Platform，Brinqa 出品
-19.  Camel 360，Camel Secure 出品
-20.  Caveonix Cloud，Caveonix 出品
-21.  Cayosoft Guardian，Cayosoft 出品
-22.  Censys Attack Surface Management，Censys 出品
-23.  Cisco Vulnerability Management，Cisco Systems 出品
-24.  CloudDefense.AI，CloudDefense 出品
-25.  CryEye，CQR 出品
-26.  DarkSight，DarkSight 出品
-27.  Detectify Platform，Detectify 出品
-28.  DigitSec，DigitSec 出品
-29.  eComscan，Sansec 出品
-30.  Edgewatch Attack Surface Management Platform，Edgewatch 出品
-31.  Epiphany Intelligence Platform，Reveald 出品
-32.  ESOF，TAC Security 出品
-33.  Falcon Spotlight，CrowdStrike 出品
-34.  Fleet，Fleet Device Management 出品
-35.  Footprint，出品方：
-36.  FortifyData Cyber Risk Management Platform，FortifyData 出品
-37.  Frontline Vulnerability Manager，Fortra 出品
-38.  GFI LanGuard，Aurea SMB Solutions (GFI Software) 出品
-39.  Greenbone Vulnerability Management，Greenbone Networks 出品
-40.  Hackuity，Hackuity 出品
-41.  Hadrian，Hadrian 出品
-42.  HivePro Uni5，Hive Pro 出品
-43.  Holm Security VMP，Holm Security 出品
-44.  InsightVM，Rapid7 出品
-45.  Intruder，Intruder 出品
-46.  IONIX Attack Surface Management，IONIX 出品
-47.  Ivanti Neurons for RBVM，Ivanti 出品
-48.  Lupasafe，Lupasafe 出品
-49.  ManageEngine Vulnerability Manager Plus，ManageEngine 出品
-50.  MatosSphere，CloudMatos 出品
-51.  MazeBolt RADAR，MazeBolt Technologies 出品
-52.  Microsoft Defender Vulnerability Management，Microsoft 出品
-53.  Nanitor CTEM Platform，Nanitor 出品
-54.  NetSPI Attack Surface Management，NetSPI 出品
-55.  Nexpose，Rapid7 出品
-56.  NopSec Unified VRM，NopSec 出品
-57.  NorthStar Navigator，NorthStar 出品
-58.  Nucleus Platform，Nucleus 出品
-59.  Opus Security，Opus Security 出品
-60.  OTORIO Platform，OTORIO 出品
-61.  Outpost24 Outscan NX，Outpost24 出品
-62.  PDQ Detect，PDQ 出品
-63.  Phen.AI，Canfield CyberDefense Group 出品
-64.  Phoenix Security Platform，Phoenix Security 出品
-65.  Qualys CyberSecurity Asset Management (CSAM)，Qualys 出品
-66.  Qualys Patch Management，Qualys 出品
-67.  Qualys TotalCloud for Cloud and Container Security，Qualys 出品
-68.  Qualys VMDR，Qualys 出品
-69.  Rainforest Cyber Security Platform，Rainforest 出品
-70.  RedSeal Network，RedSeal 出品
-71.  Reflectiz Platform，Reflectiz 出品
-72.  Rezilion Platform，Rezilion 出品
-73.  RHD VM，Alfa Group 出品
-74.  RidgeBot，Ridge Security 出品
-75.  Runecast，Dynatrace 出品
-76.  S4E，S4E 出品
-77.  SanerNow Continuous Vulnerability and Exposure Management (CVEM)，SecPod 出品
-78.  SecHard Zero Trust Orchestrator，SecHard 出品
-79.  Seconize DeRisk Center，Seconize Technologies 出品
-80.  Vulnerability and Patch Management Platform，SecOps Solution 出品
-81.  SecureVoice，Assertion 出品
-82.  Secureworks Taegis VDR，Secureworks 出品
-83.  SecurityGen ACE，SecurityGen 出品
-84.  Seemplicity，Seemplicity 出品
-85.  Semperis Directory Services Protector for Active Directory，Semperis 出品
-86.  IT Security Operations (SecOps)，ServiceNow 出品
-87.  Sevco Security，Sevco Security 出品
-88.  Skybox Vulnerability and Threat Management，Skybox Security 出品
-89.  Sn1perSecurity，Sn1perSecurity 出品
-90.  Software Vulnerability Manager，Flexera 出品
-91.  SRC-AttackGuard，CyberSRC Labs 出品
-92.  StorageGuard，Continuity 出品
-93.  Strobes PTaaS，Strobes 出品
-94.  Strobes RBVM，Strobes 出品
-95.  Swascan Cyber Threat Intelligence，Swascan 出品
-96.  Synack，Synack 出品
-97.  Tanium Platform，Tanium 出品
-98.  Tenable Lumin，Tenable 出品
-99.  Tenable Nessus，Tenable 出品
-100.  Tenable Security Center，Tenable 出品
-101.  Tenable Vulnerability Management，Tenable 出品
-102.  Threatspy，Secure Blink 出品
-103.  ThreatStryker，Deepfence 出品
-104.  Titania Nipper，Titania 出品
-105.  Trickest Platform，Trickest 出品
-106.  Tripwire IP360，Fortra 出品
-107.  Tufin Orchestration Suite，Tufin 出品
-108.  TUTELA，CyberSift 出品
-109.  Veriti，Veriti 出品
-110.  vRx，Vicarius 出品
-111.  Vulcan Cyber，Vulcan Cyber 出品
-112.  VulnDB，Risk Based Security 出品
-113.  Vulnerability Management (VulnDB)，Flashpoint 出品
-114.  VulScan，RapidFire Tools 出品
-115.  watchTowr Platform，watchTowr 出品
-116.  WithSecure Elements Exposure Management，WithSecure 出品
-117.  WithSecure Elements Vulnerability Management，WithSecure 出品
-118.  XM Cyber Exposure Management Platform，XM Cyber 出品
-119.  Zafran Threat Exposure Management Platform，Zafran Security 出品
+1.  Action1 by Action1
+2.  Analyst1 Threat Intelligence Platform by Analyst1
+3.  Apiiro ASPM Platform by Apiiro
+4.  Arctic Wolf Managed Risk by Arctic Wolf Networks
+5.  Armis Centrix by Armis
+6.  Assetnote Continuous Security Platform by Assetnote
+7.  Astra by Astra
+8.  Autobahn by Security Research Labs
+9.  Balbix Security Cloud by Balbix
+10.  Beagle Security by Beagle Security
+11.  Beak by iLink Digital
+12.  beSECURE by Fortra
+13.  BeyondTrust Enterprise Vulnerability Management (Legacy) by BeyondTrust
+14.  BeyondTrust Network Security Scanner (Legacy) by BeyondTrust
+15.  BlockAPT Platform by BlockAPT
+16.  BMC Helix Automation Console by BMC
+17.  BoostSecurity by boostsecurity.io
+18.  Brinqa Attack Surface Intelligence Platform by Brinqa
+19.  Camel 360 by Camel Secure
+20.  Caveonix Cloud by Caveonix
+21.  Cayosoft Guardian by Cayosoft
+22.  Censys Attack Surface Management by Censys
+23.  Cisco Vulnerability Management by Cisco Systems
+24.  CloudDefense.AI by CloudDefense
+25.  CryEye by CQR
+26.  DarkSight by DarkSight
+27.  Detectify Platform by Detectify
+28.  DigitSec by DigitSec
+29.  eComscan by Sansec
+30.  Edgewatch Attack Surface Management Platform by Edgewatch
+31.  Epiphany Intelligence Platform by Reveald
+32.  ESOF by TAC Security
+33.  Falcon Spotlight by CrowdStrike
+34.  Fleet by Fleet Device Management
+35.  Footprint by
+36.  FortifyData Cyber Risk Management Platform by FortifyData
+37.  Frontline Vulnerability Manager by Fortra
+38.  GFI LanGuard by Aurea SMB Solutions (GFI Software)
+39.  Greenbone Vulnerability Management by Greenbone Networks
+40.  Hackuity by Hackuity
+41.  Hadrian by Hadrian
+42.  HivePro Uni5 by Hive Pro
+43.  Holm Security VMP by Holm Security
+44.  InsightVM by Rapid7
+45.  Intruder by Intruder
+46.  IONIX Attack Surface Management by IONIX
+47.  Ivanti Neurons for RBVM by Ivanti
+48.  Lupasafe by Lupasafe
+49.  ManageEngine Vulnerability Manager Plus by ManageEngine
+50.  MatosSphere by CloudMatos
+51.  MazeBolt RADAR by MazeBolt Technologies
+52.  Microsoft Defender Vulnerability Management by Microsoft
+53.  Nanitor CTEM Platform by Nanitor
+54.  NetSPI Attack Surface Management by NetSPI
+55.  Nexpose by Rapid7
+56.  NopSec Unified VRM by NopSec
+57.  NorthStar Navigator by NorthStar
+58.  Nucleus Platform by Nucleus
+59.  Opus Security by Opus Security
+60.  OTORIO Platform by OTORIO
+61.  Outpost24 Outscan NX by Outpost24
+62.  PDQ Detect by PDQ
+63.  Phen.AI by Canfield CyberDefense Group
+64.  Phoenix Security Platform by Phoenix Security
+65.  Qualys CyberSecurity Asset Management (CSAM) by Qualys
+66.  Qualys Patch Management by Qualys
+67.  Qualys TotalCloud for Cloud and Container Security by Qualys
+68.  Qualys VMDR by Qualys
+69.  Rainforest Cyber Security Platform by Rainforest
+70.  RedSeal Network by RedSeal
+71.  Reflectiz Platform by Reflectiz
+72.  Rezilion Platform by Rezilion
+73.  RHD VM by Alfa Group
+74.  RidgeBot by Ridge Security
+75.  Runecast by Dynatrace
+76.  S4E by S4E
+77.  SanerNow Continuous Vulnerability and Exposure Management (CVEM) by SecPod
+78.  SecHard Zero Trust Orchestrator by SecHard
+79.  Seconize DeRisk Center by Seconize Technologies
+80.  Vulnerability and Patch Management Platform by SecOps Solution
+81.  SecureVoice by Assertion
+82.  Secureworks Taegis VDR by Secureworks
+83.  SecurityGen ACE by SecurityGen
+84.  Seemplicity by Seemplicity
+85.  Semperis Directory Services Protector for Active Directory by Semperis
+86.  IT Security Operations (SecOps) by ServiceNow
+87.  Sevco Security by Sevco Security
+88.  Skybox Vulnerability and Threat Management by Skybox Security
+89.  Sn1perSecurity by Sn1perSecurity
+90.  Software Vulnerability Manager by Flexera
+91.  SRC-AttackGuard by CyberSRC Labs
+92.  StorageGuard by Continuity
+93.  Strobes PTaaS by Strobes
+94.  Strobes RBVM by Strobes
+95.  Swascan Cyber Threat Intelligence by Swascan
+96.  Synack by Synack
+97.  Tanium Platform by Tanium
+98.  Tenable Lumin by Tenable
+99.  Tenable Nessus by Tenable
+100.  Tenable Security Center by Tenable
+101.  Tenable Vulnerability Management by Tenable
+102.  Threatspy by Secure Blink
+103.  ThreatStryker by Deepfence
+104.  Titania Nipper by Titania
+105.  Trickest Platform by Trickest
+106.  Tripwire IP360 by Fortra
+107.  Tufin Orchestration Suite by Tufin
+108.  TUTELA by CyberSift
+109.  Veriti by Veriti
+110.  vRx by Vicarius
+111.  Vulcan Cyber by Vulcan Cyber
+112.  VulnDB by Risk Based Security
+113.  Vulnerability Management (VulnDB) by Flashpoint
+114.  VulScan by RapidFire Tools
+115.  watchTowr Platform by watchTowr
+116.  WithSecure Elements Exposure Management by WithSecure
+117.  WithSecure Elements Vulnerability Management by WithSecure
+118.  XM Cyber Exposure Management Platform by XM Cyber
+119.  Zafran Threat Exposure Management Platform by Zafran Security
 
 ### IT 集成风险管理（IRM/GRC）
 
-1.  3rdRisk，3rdRisk 出品
-2.  6clicks，6clicks 出品
-3.  A1 Tracker，A1 Enterprise 出品
-4.  aCCelerate，Chase Cooper 出品
-5.  Acuity Risk Management STREAM，Acuity Risk Management 出品
-6.  AdaptiveGRC，C&F 出品
-7.  Ailance，2B Advice 出品
-8.  Archangel，US AI 出品
-9.  Archer，Archer 出品
-10.  ARIS，Software AG 出品
-11.  AuditBoard，AuditBoard 出品
-12.  Axio360，Axio 出品
-13.  BIC Platform，GBTEC 出品
-14.  Camms.Risk，Riskonnect (Camms) 出品
-15.  Compliance & Policy Management，SAI360 出品
-16.  Compliance Foresight，Whitehats Technologies 出品
-17.  CompliCare，CompliSpace 出品
-18.  CompliSpace，CompliSpace 出品
-19.  Connected Risk，Empowered Systems 出品
-20.  Continuum GRC，Continuum GRC 出品
-21.  Corporater，Corporater 出品
-22.  Covalent Suite，Covalent 出品
-23.  Cyber Risk Posture Management Platform，Zeron 出品
-24.  Cyberator GRC，Zartech 出品
-25.  CyberStrong，CyberSaint 出品
-26.  CyberWatch，RiskWatch 出品
-27.  Cypago，Cypago 出品
-28.  Dataminr Pulse for Corporate Security，Dataminr 出品
-29.  DigitalXForce，DigitalXForce 出品
-30.  Donesafe，HSI Donesafe 出品
-31.  EGERIE Risk Manager，EGERIE 出品
-32.  Enablon Platform，Wolters Kluwer 出品
-33.  Essential ERM，Tracker Networks 出品
-34.  Everbridge，Everbridge 出品
-35.  Fusion Framework System，Fusion Risk Management 出品
-36.  GlobalSuite，GlobalSuite Solutions 出品
-37.  GOAT Risk，Goat Risk Solutions 出品
-38.  GRC Toolbox，Swiss GRC 出品
-39.  HighBond，Diligent 出品
-40.  HOPEX Operational Risk Management，MEGA International 出品
-41.  Hyperproof，Hyperproof 出品
-42.  Ideagen Coruson，Ideagen 出品
-43.  Ideagen EHS，Ideagen 出品
-44.  Ideagen Risk Management，Ideagen 出品
-45.  Infosync，ESC 2 出品
-46.  Inopli，Diazero Security 出品
-47.  iRM Enterprise Risk Management，Integrated Risk Management 出品
-48.  i-Sight case management，i-Sight 出品
-49.  ISOMS，CITS 出品
-50.  Isora GRC，SaltyCloud 出品
-51.  isorobot，Excelledia 出品
-52.  Keylight Platform，NAVEX 出品
-53.  Klear.ai，Klear.ai 出品
-54.  Kovrr Cyber Risk Quantification Platform，Kovrr 出品
-55.  LogicGate Risk Cloud，LogicGate 出品
-56.  LogicManager，LogicManager 出品
-57.  Make IT Safe，DIGITEMIS 出品
-58.  MetricStream Enterprise GRC Solution，MetricStream 出品
-59.  MinerEye DataTracker，MinerEye 出品
-60.  NAVEX Global GRC Solutions，NAVEX 出品
-61.  OneTrust Enterprise Policy Management，OneTrust 出品
-62.  Onspring，Onspring 出品
-63.  OpenPages GRC Platform，IBM 出品
-64.  Operational Risk Management，Cura Software 出品
-65.  OpRiskControl，Hitec 出品
-66.  Optial Enterprise Risk Management，Optial 出品
-67.  Origami Risk Platform，Origami Risk 出品
-68.  Pathlock，Pathlock 出品
-69.  Pirani，Pirani 出品
-70.  Protecht.ERM，Protecht 出品
-71.  Proviti-Governance Portal for Risk Management，Protiviti 出品
-72.  PwC Business Risk and Insights Platform，PwC 出品
-73.  Qooling，Qooling 出品
-74.  Quantivate GRC Software Suite，Quantivate 出品
-75.  Reliance Compliance Management Solution，Hexagon (ETQ) 出品
-76.  resilienceOS，Restrata 出品
-77.  Resolver Core，Resolver 出品
-78.  Risk Cognizance，Risk Cognizance 出品
-79.  Riskonnect Active Risk Manager，Riskonnect 出品
-80.  Riskonnect，Riskonnect 出品
-81.  SafeExcursions，CompliSpace 出品
-82.  SAI360 GRC，SAI360 出品
-83.  SAP Integrated Risk Management Solutions，SAP 出品
-84.  SAP Process Control，SAP 出品
-85.  SAP Risk Management，SAP 出品
-86.  SecureWatch，RiskWatch 出品
-87.  Enterprise ESG Mgmt & Reporting，ServiceNow 出品
-88.  Enterprise Third-party Risk Mgmt. (TPRM)，ServiceNow 出品
-89.  IT Governance Risk and Compliance (GRC)，ServiceNow 出品
-90.  IT Integrated Risk Management (IRM)，ServiceNow 出品
-91.  SoftExpert Suite，SoftExpert 出品
-92.  Sphera Enterprise Risk Management Software，Sphera (sparesFinder) 出品
-93.  StandardFusion，StandardFusion 出品
-94.  StrategyDotZero，Gravity iLabs 出品
-95.  Supply Chain Risk Platform，Craft 出品
-96.  Supply Wisdom，Supply Wisdom 出品
-97.  SureCloud Platform，SureCloud 出品
-98.  Sword Achiever（旧版），Riskonnect 出品
-99.  Synergi Pipeline，DNV 出品
-100.  ThreatConnect Risk Quantifier (RQ)，ThreatConnect 出品
-101.  TrustMAPP，TrustMAPP 出品
-102.  Xybion CQRM XD，Xybion 出品
+1.  3rdRisk by 3rdRisk
+2.  6clicks by 6clicks
+3.  A1 Tracker by A1 Enterprise
+4.  aCCelerate by Chase Cooper
+5.  Acuity Risk Management STREAM by Acuity Risk Management
+6.  AdaptiveGRC by C&F
+7.  Ailance by 2B Advice
+8.  Archangel by US AI
+9.  Archer by Archer
+10.  ARIS by Software AG
+11.  AuditBoard by AuditBoard
+12.  Axio360 by Axio
+13.  BIC Platform by GBTEC
+14.  Camms.Risk by Riskonnect (Camms)
+15.  Compliance & Policy Management by SAI360
+16.  Compliance Foresight by Whitehats Technologies
+17.  CompliCare by CompliSpace
+18.  CompliSpace by CompliSpace
+19.  Connected Risk by Empowered Systems
+20.  Continuum GRC by Continuum GRC
+21.  Corporater by Corporater
+22.  Covalent Suite by Covalent
+23.  Cyber Risk Posture Management Platform by Zeron
+24.  Cyberator GRC by Zartech
+25.  CyberStrong by CyberSaint
+26.  CyberWatch by RiskWatch
+27.  Cypago by Cypago
+28.  Dataminr Pulse for Corporate Security by Dataminr
+29.  DigitalXForce by DigitalXForce
+30.  Donesafe by HSI Donesafe
+31.  EGERIE Risk Manager by EGERIE
+32.  Enablon Platform by Wolters Kluwer
+33.  Essential ERM by Tracker Networks
+34.  Everbridge by Everbridge
+35.  Fusion Framework System by Fusion Risk Management
+36.  GlobalSuite by GlobalSuite Solutions
+37.  GOAT Risk by Goat Risk Solutions
+38.  GRC Toolbox by Swiss GRC
+39.  HighBond by Diligent
+40.  HOPEX Operational Risk Management by MEGA International
+41.  Hyperproof by Hyperproof
+42.  Ideagen Coruson by Ideagen
+43.  Ideagen EHS by Ideagen
+44.  Ideagen Risk Management by Ideagen
+45.  Infosync by ESC 2
+46.  Inopli by Diazero Security
+47.  iRM Enterprise Risk Management by Integrated Risk Management
+48.  i-Sight case management by i-Sight
+49.  ISOMS by CITS
+50.  Isora GRC by SaltyCloud
+51.  isorobot by Excelledia
+52.  Keylight Platform by NAVEX
+53.  Klear.ai by Klear.ai
+54.  Kovrr Cyber Risk Quantification Platform by Kovrr
+55.  LogicGate Risk Cloud by LogicGate
+56.  LogicManager by LogicManager
+57.  Make IT Safe by DIGITEMIS
+58.  MetricStream Enterprise GRC Solution by MetricStream
+59.  MinerEye DataTracker by MinerEye
+60.  NAVEX Global GRC Solutions by NAVEX
+61.  OneTrust Enterprise Policy Management by OneTrust
+62.  Onspring by Onspring
+63.  OpenPages GRC Platform by IBM
+64.  Operational Risk Management by Cura Software
+65.  OpRiskControl by Hitec
+66.  Optial Enterprise Risk Management by Optial
+67.  Origami Risk Platform by Origami Risk
+68.  Pathlock by Pathlock
+69.  Pirani by Pirani
+70.  Protecht.ERM by Protecht
+71.  Proviti-Governance Portal for Risk Management by Protiviti
+72.  PwC Business Risk and Insights Platform by PwC
+73.  Qooling by Qooling
+74.  Quantivate GRC Software Suite by Quantivate
+75.  Reliance Compliance Management Solution by Hexagon (ETQ)
+76.  resilienceOS by Restrata
+77.  Resolver Core by Resolver
+78.  Risk Cognizance by Risk Cognizance
+79.  Riskonnect Active Risk Manager by Riskonnect
+80.  Riskonnect by Riskonnect
+81.  SafeExcursions by CompliSpace
+82.  SAI360 GRC by SAI360
+83.  SAP Integrated Risk Management Solutions by SAP
+84.  SAP Process Control by SAP
+85.  SAP Risk Management by SAP
+86.  SecureWatch by RiskWatch
+87.  Enterprise ESG Mgmt & Reporting by ServiceNow
+88.  Enterprise Third-party Risk Mgmt. (TPRM) by ServiceNow
+89.  IT Governance Risk and Compliance (GRC) by ServiceNow
+90.  IT Integrated Risk Management (IRM) by ServiceNow
+91.  SoftExpert Suite by SoftExpert
+92.  Sphera Enterprise Risk Management Software by Sphera (sparesFinder)
+93.  StandardFusion by StandardFusion
+94.  StrategyDotZero by Gravity iLabs
+95.  Supply Chain Risk Platform by Craft
+96.  Supply Wisdom by Supply Wisdom
+97.  SureCloud Platform by SureCloud
+98.  Sword Achiever (Legacy) by Riskonnect
+99.  Synergi Pipeline by DNV
+100.  ThreatConnect Risk Quantifier (RQ) by ThreatConnect
+101.  TrustMAPP by TrustMAPP
+102.  Xybion CQRM XD by Xybion
 
 ### IT 服务管理（ITSM）
 
-1.  4Biz Service Management，Run2biz 出品
-2.  Alemba Service Manager，Alemba 出品
-3.  Alloy Navigator，Alloy Software 出品
-4.  ALVAO IT Service Management，ALVAO 出品
-5.  Aranda Service Management，Aranda Software 出品
-6.  assyst，IFS 出品
-7.  **BMC Helix ITSM，BMC 出品**
-8.  **BMC Helix Remedyforce，BMC 出品**
-9.  BMC Remedy Service Management Suite（旧版），BMC 出品
-10.  CA Service Management，Broadcom 出品
-11.  ChangeGear，Serviceaide 出品
-12.  Cherwell Service Management（旧版），Ivanti 出品
-13.  CITSmart，Central IT 出品
-14.  Efecte ITSM，Efecte 出品
-15.  EV Service Manager，EasyVista 出品
-16.  FootPrints，BMC 出品
-17.  Freshservice，Freshworks 出品
-18.  GLPI Network Cloud，Teclib 出品
-19.  **HaloITSM，Halo Service Solutions 出品**
-20.  HCL SX，HCLTech (HCLSoftware) 出品
-21.  Hornbill for ITSM，Hornbill 出品
-22.  IBM Control Desk，IBM 出品
-23.  Infraon Desk，EverestIMS Technologies 出品
-24.  Infraon Infinity，Infraon 出品
-25.  InvGate Service Management，InvGate 出品
-26.  Issuetrak，Issuetrak 出品
-27.  iSupport，iSupport Software 出品
-28.  ITinvolve Service Manager（旧版），ITinvolve 出品
-29.  Ivanti Neurons for ITSM，Ivanti 出品
-30.  **Jira Service Management，Atlassian 出品**
-31.  Marval Service Management，Marval Software 出品
-32.  Matrix42 Enterprise Service Management，Matrix42 出品
-33.  Mint Service Desk，OPGK Rzeszow 出品
-34.  Motadata ServiceOps，Mindarray Systems 出品
-35.  NetkaQuartz Service Desk X，Netka System 出品
-36.  Omnitracker IT Service Management Center，OMNINET 出品
-37.  Openser ITSM，Openser 出品
-38.  OpenText Service Management (SMAX)，OpenText 出品
-39.  OpenText Service Manager，OpenText 出品
-40.  OTRS，OTRS Group 出品
-41.  POB (Point of Business)，Serviceaide 出品
-42.  Proactivanet，Proactivanet 出品
-43.  SAP Solution Manager（旧版），SAP 出品
-44.  Service Desk（旧版），Ivanti 出品
-45.  ServiceAide Intelligent Service Management，Serviceaide 出品
-46.  ServiceDesk Plus，ManageEngine 出品
-47.  Servicely，Servicely 出品
-48.  **IT Service Management (ITSM)，ServiceNow 出品**
-49.  ServicePRO，Help Desk Technology 出品
-50.  ServiceTeam ITSM，Provance 出品
-51.  SolarWinds Service Desk，SolarWinds 出品
-52.  SolarWinds Web Help Desk，SolarWinds 出品
-53.  Supportworks（旧版），Hornbill 出品
-54.  SymphonyAI IT Service Management，SymphonyAI 出品
-55.  SysAid，SysAid 出品
-56.  System Center Service Manager，Microsoft 出品
-57.  TeamDynamix ITSM，TeamDynamix 出品
-58.  TOPdesk，TOPdesk 出品
-59.  Track-It!，BMC 出品
-60.  USU IT Service Management，USU 出品
-61.  Vision Helpdesk Service Desk，Vision Helpdesk 出品
-62.  Vivantio，Vivantio 出品
-63.  Wolken ITSM，Wolken Software 出品
-64.  Xurrent，Xurrent Goes Here 出品
+1.  4Biz Service Management by Run2biz
+2.  Alemba Service Manager by Alemba
+3.  Alloy Navigator by Alloy Software
+4.  ALVAO IT Service Management by ALVAO
+5.  Aranda Service Management by Aranda Software
+6.  assyst by IFS
+7.  **BMC Helix ITSM by BMC**
+8.  **BMC Helix Remedyforce by BMC**
+9.  BMC Remedy Service Management Suite (Legacy) by BMC
+10.  CA Service Management by Broadcom
+11.  ChangeGear by Serviceaide
+12.  Cherwell Service Management (Legacy) by Ivanti
+13.  CITSmart by Central IT
+14.  Efecte ITSM by Efecte
+15.  EV Service Manager by EasyVista
+16.  FootPrints by BMC
+17.  Freshservice by Freshworks
+18.  GLPI Network Cloud by Teclib
+19.  **HaloITSM by Halo Service Solutions**
+20.  HCL SX by HCLTech (HCLSoftware)
+21.  Hornbill for ITSM by Hornbill
+22.  IBM Control Desk by IBM
+23.  Infraon Desk by EverestIMS Technologies
+24.  Infraon Infinity by Infraon
+25.  InvGate Service Management by InvGate
+26.  Issuetrak by Issuetrak
+27.  iSupport by iSupport Software
+28.  ITinvolve Service Manager (Legacy) by ITinvolve
+29.  Ivanti Neurons for ITSM by Ivanti
+30.  **Jira Service Management by Atlassian**
+31.  Marval Service Management by Marval Software
+32.  Matrix42 Enterprise Service Management by Matrix42
+33.  Mint Service Desk by OPGK Rzeszow
+34.  Motadata ServiceOps by Mindarray Systems
+35.  NetkaQuartz Service Desk X by Netka System
+36.  Omnitracker IT Service Management Center by OMNINET
+37.  Openser ITSM by Openser
+38.  OpenText Service Management (SMAX) by OpenText
+39.  OpenText Service Manager by OpenText
+40.  OTRS by OTRS Group
+41.  POB (Point of Business) by Serviceaide
+42.  Proactivanet by Proactivanet
+43.  SAP Solution Manager (Legacy) by SAP
+44.  Service Desk (Legacy) by Ivanti
+45.  ServiceAide Intelligent Service Management by Serviceaide
+46.  ServiceDesk Plus by ManageEngine
+47.  Servicely by Servicely
+48.  **IT Service Management (ITSM) by ServiceNow**
+49.  ServicePRO by Help Desk Technology
+50.  ServiceTeam ITSM by Provance
+51.  SolarWinds Service Desk by SolarWinds
+52.  SolarWinds Web Help Desk by SolarWinds
+53.  Supportworks (Legacy) by Hornbill
+54.  SymphonyAI IT Service Management by SymphonyAI
+55.  SysAid by SysAid
+56.  System Center Service Manager by Microsoft
+57.  TeamDynamix ITSM by TeamDynamix
+58.  TOPdesk by TOPdesk
+59.  Track-It! by BMC
+60.  USU IT Service Management by USU
+61.  Vision Helpdesk Service Desk by Vision Helpdesk
+62.  Vivantio by Vivantio
+63.  Wolken ITSM by Wolken Software
+64.  Xurrent by Xurrent Goes Here
 
 ### IT 资产管理（ITAM）
 
-1.  1E Platform，1E 出品
-2.  Ailance ITAsMA，2B Advice 出品
-3.  Alloy Navigator，Alloy Software 出品
-4.  AllSight，Sassafras Software 出品
-5.  ALVAO Asset Management，ALVAO 出品
-6.  Asset Vision Suite，Scalable Software 出品
-7.  AssetExplorer，ManageEngine 出品
-8.  AssetSonar，EZO 出品
-9.  AuditBOT License Saver，AuditBOT 出品
-10.  Beak，iLink Digital 出品
-11.  BelManage，Belarc 出品
-12.  **BMC Helix ITSM，BMC 出品**
-13.  CA Asset Portfolio Management（旧版），Broadcom 出品
-14.  Certero for Cloud（旧版），Certero 出品
-15.  Certero for Enterprise ITAM，Certero 出品
-16.  Certero for Enterprise SAM，Certero 出品
-17.  Certero for IBM，Certero 出品
-18.  Certero for Oracle，Certero 出品
-19.  Cherwell Asset Management（旧版），Ivanti 出品
-20.  Cireson Asset Management，Cireson 出品
-21.  Columbus Inventory Suite（旧版），Flexera 出品
-22.  Continous License Reconciliation (CLR) Advanced for IBM PVU & Sub-Capacity，Eracent 出品
-23.  Continous License Reconciliation (CLR) Advanced for Oracle Applications，Eracent 出品
-24.  DeskCenter Management Suite，Deskcenter 出品
-25.  **Device42，Device42 出品**
-26.  eQuip，AssetWorks 出品
-27.  Eracent Continuous License Reconsiliation (CLR) advanced for SAP，Eracent 出品
-28.  Eracent Continuous License Reconsiliation (CLR) Base，Eracent 出品
-29.  EV Service Manager，EasyVista 出品
-30.  Flexera One IT Asset Management，Flexera 出品
-31.  FlexNet Manager，Flexera 出品
-32.  Freshservice，Freshworks 出品
-33.  Infraon Infinity，Infraon 出品
-34.  IntelliTrack，Barcoding 出品
-35.  InvGate Asset Management，InvGate 出品
-36.  IT Glue，Kaseya 出品
-37.  IT Management Center (ITMC) Suite，Eracent 出品
-38.  ITMC Lifecycle，Eracent 出品
-39.  Ivanti License Optimizer（旧版），Ivanti 出品
-40.  Ivanti Neurons for Discovery，Ivanti 出品
-41.  Ivanti Neurons for ITAM，Ivanti 出品
-42.  JDisc Discovery，JDisc 出品
-43.  Lansweeper，Lansweeper 出品
-44.  LeanIX Enterprise Architecture，SAP 出品
-45.  License Dashboard Discovery，License Dashboard 出品
-46.  License Dashboard License Manager，License Dashboard 出品
-47.  License Dashboard Portal，License Dashboard 出品
-48.  License Dashboard ScanWin，License Dashboard 出品
-49.  LicenseAnalyzer，Open iT 出品
-50.  ManageEngine ServiceDesk Plus，ManageEngine 出品
-51.  ManagementStudio，ManagementStudio 出品
-52.  Matrix42 Software Asset Management，Matrix42 出品
-53.  Movere（旧版），Microsoft 出品
-54.  Oomnitza Enterprise Technology Management，Oomnitza 出品
-55.  Open iT Analyzer for ANSYS Software，Open iT 出品
-56.  Open iT Analyzer for Autodesk Licensing，Open iT 出品
-57.  Open iT Optimizer for SAP Licensing，Open iT 出品
-58.  OpenText ZENworks Asset Management，OpenText 出品
-59.  Productiv SaaS Intelligence Platform，Productiv 出品
-60.  ProfileTailor LicenseAuditor，Pathlock (Grey Monarch) 出品
-61.  Raynet Unified Data Platform (RayVentory)，Raynet 出品
-62.  RaySAMi，Raynet 出品
-63.  samQ，VOQUZ Labs 出品
-64.  IT Enterprise Asset Mgmt (IEAM)，ServiceNow 出品
-65.  **IT Hardware Asset Management (HAM)，ServiceNow 出品**
-66.  **IT Software Asset Management (SAM)，ServiceNow 出品**
-67.  setQ，VOQUZ Labs 出品
-68.  Simplydesk，PCI 出品
-69.  SMARTCENTER，Almaden 出品
-70.  Snow Adoption Tracker，Flexera 出品
-71.  **Snow License Manager，Flexera 出品**
-72.  Snow Spend Optimizer，Flexera 出品
-73.  Snow Virtualization Management Option，Flexera 出品
-74.  Software License Management，OpenLM 出品
-75.  Softwaregini，Softwaregini 出品
-76.  Spider SAM Suite（旧版），Flexera 出品
-77.  SymphonyAI IT Asset Management，SymphonyAI 出品
-78.  SystemAnalyzer（旧版），Open iT 出品
-79.  **Tanium Platform，Tanium 出品**
-80.  Torii，Torii 出品
-81.  Trelica，Trelica 出品
-82.  UsageAnalyzer（旧版），Open iT 出品
-83.  USU Discovery (SmartCollect)，USU 出品
-84.  USU SAM for Clients & Data Center，USU 出品
-85.  USU SAM for SaaS，USU 出品
-86.  USU SAM for SAP Software，USU 出品
-87.  Velory，Velory 出品
-88.  WISER ATLAS，WISER 出品
-89.  Xearch，Xensam 出品
-90.  Xensam，Xensam 出品
-91.  Xpandion ProfileTailor LicenseAuditor（旧版），Pathlock 出品
-92.  Xupervisor，Xensam 出品
-93.  Zluri SaaS Management Platform，Zluri 出品
-94.  Zylo SaaS Management Platform，Zylo 出品
+1.  1E Platform by 1E
+2.  Ailance ITAsMA by 2B Advice
+3.  Alloy Navigator by Alloy Software
+4.  AllSight by Sassafras Software
+5.  ALVAO Asset Management by ALVAO
+6.  Asset Vision Suite by Scalable Software
+7.  AssetExplorer by ManageEngine
+8.  AssetSonar by EZO
+9.  AuditBOT License Saver by AuditBOT
+10.  Beak by iLink Digital
+11.  BelManage by Belarc
+12.  **BMC Helix ITSM by BMC**
+13.  CA Asset Portfolio Management (Legacy) by Broadcom
+14.  Certero for Cloud (Legacy) by Certero
+15.  Certero for Enterprise ITAM by Certero
+16.  Certero for Enterprise SAM by Certero
+17.  Certero for IBM by Certero
+18.  Certero for Oracle by Certero
+19.  Cherwell Asset Management (Legacy) by Ivanti
+20.  Cireson Asset Management by Cireson
+21.  Columbus Inventory Suite (Legacy) by Flexera
+22.  Continous License Reconciliation (CLR) Advanced for IBM PVU & Sub-Capacity by Eracent
+23.  Continous License Reconciliation (CLR) Advanced for Oracle Applications by Eracent
+24.  DeskCenter Management Suite by Deskcenter
+25.  **Device42 by Device42**
+26.  eQuip by AssetWorks
+27.  Eracent Continuous License Reconsiliation (CLR) advanced for SAP by Eracent
+28.  Eracent Continuous License Reconsiliation (CLR) Base by Eracent
+29.  EV Service Manager by EasyVista
+30.  Flexera One IT Asset Management by Flexera
+31.  FlexNet Manager by Flexera
+32.  Freshservice by Freshworks
+33.  Infraon Infinity by Infraon
+34.  IntelliTrack by Barcoding
+35.  InvGate Asset Management by InvGate
+36.  IT Glue by Kaseya
+37.  IT Management Center (ITMC) Suite by Eracent
+38.  ITMC Lifecycle by Eracent
+39.  Ivanti License Optimizer (Legacy) by Ivanti
+40.  Ivanti Neurons for Discovery by Ivanti
+41.  Ivanti Neurons for ITAM by Ivanti
+42.  JDisc Discovery by JDisc
+43.  Lansweeper by Lansweeper
+44.  LeanIX Enterprise Architecture by SAP
+45.  License Dashboard Discovery by License Dashboard
+46.  License Dashboard License Manager by License Dashboard
+47.  License Dashboard Portal by License Dashboard
+48.  License Dashboard ScanWin by License Dashboard
+49.  LicenseAnalyzer by Open iT
+50.  ManageEngine ServiceDesk Plus by ManageEngine
+51.  ManagementStudio by ManagementStudio
+52.  Matrix42 Software Asset Management by Matrix42
+53.  Movere (Legacy) by Microsoft
+54.  Oomnitza Enterprise Technology Management by Oomnitza
+55.  Open iT Analyzer for ANSYS Software by Open iT
+56.  Open iT Analyzer for Autodesk Licensing by Open iT
+57.  Open iT Optimizer for SAP Licensing by Open iT
+58.  OpenText ZENworks Asset Management by OpenText
+59.  Productiv SaaS Intelligence Platform by Productiv
+60.  ProfileTailor LicenseAuditor by Pathlock (Grey Monarch)
+61.  Raynet Unified Data Platform (RayVentory) by Raynet
+62.  RaySAMi by Raynet
+63.  samQ by VOQUZ Labs
+64.  IT Enterprise Asset Mgmt (IEAM) by ServiceNow
+65.  **IT Hardware Asset Management (HAM) by ServiceNow**
+66.  **IT Software Asset Management (SAM) by ServiceNow**
+67.  setQ by VOQUZ Labs
+68.  Simplydesk by PCI
+69.  SMARTCENTER by Almaden
+70.  Snow Adoption Tracker by Flexera
+71.  **Snow License Manager by Flexera**
+72.  Snow Spend Optimizer by Flexera
+73.  Snow Virtualization Management Option by Flexera
+74.  Software License Management by OpenLM
+75.  Softwaregini by Softwaregini
+76.  Spider SAM Suite (Legacy) by Flexera
+77.  SymphonyAI IT Asset Management by SymphonyAI
+78.  SystemAnalyzer (Legacy) by Open iT
+79.  **Tanium Platform by Tanium**
+80.  Torii by Torii
+81.  Trelica by Trelica
+82.  UsageAnalyzer (Legacy) by Open iT
+83.  USU Discovery (SmartCollect) by USU
+84.  USU SAM for Clients & Data Center by USU
+85.  USU SAM for SaaS by USU
+86.  USU SAM for SAP Software by USU
+87.  Velory by Velory
+88.  WISER ATLAS by WISER
+89.  Xearch by Xensam
+90.  Xensam by Xensam
+91.  Xpandion ProfileTailor LicenseAuditor (Legacy) by Pathlock
+92.  Xupervisor by Xensam
+93.  Zluri SaaS Management Platform by Zluri
+94.  Zylo SaaS Management Platform by Zylo
 
 ### IT 运营管理（ITOM）
 
-1.  AIMS，AIMS Innovation 出品
-2.  Alibaba Application Real-Time Monitoring Service (ARMS)，Alibaba Cloud（阿里云）出品
-3.  Alibaba Cloud Observability Suite，Alibaba Cloud（阿里云）出品
-4.  Amazon CloudWatch，Amazon Web Services (AWS) 出品
-5.  Apica Ascent，Apica 出品
-6.  Apica Flow，Apica 出品
-7.  Apica Observe，Apica 出品
-8.  AppDynamics，Cisco Systems (Splunk) 出品
-9.  AppPulse Trace（旧版），OpenText 出品
-10.  Aria Operations for Applications，Broadcom (VMware) 出品
-11.  Atatus，Atatus 出品
-12.  AWS X-Ray，Amazon Web Services (AWS) 出品
-13.  Azure Monitor，Microsoft 出品
-14.  Beak，iLink Digital 出品
-15.  Better Stack，Better Stack 出品
-16.  BigPanda，BigPanda 出品
-17.  BMC Helix Discovery，BMC 出品
-18.  BMC Helix Operations Management with AIOps，BMC 出品
-19.  Bonree AIOps（旧版），Bonree（博睿数据）出品
-20.  Bonree Server，Bonree（博睿数据）出品
-21.  Bonree UEM（旧版），Bonree（博睿数据）出品
-22.  cascadeo.io，Cascadeo 出品
-23.  Chronosphere Platform，Chronosphere 出品
-24.  Citrix uberAgent，Citrix 出品
-25.  CloudFabrix Data-centric AIOps Platform，CloudFabrix 出品
-26.  CloudOps，Amazon Web Services (AWS) 出品
-27.  Coralogix，Coralogix 出品
-28.  **Datadog，Datadog 出品**
-29.  dbsnoop Flightdeck，dbsnoop 出品
-30.  Devo Security Data Platform，Devo Technology 出品
-31.  Doctor Droid，Doctor Droid 出品
-32.  Dotcom-Monitor，Dotcom-Monitor 出品
-33.  DRYiCE IntelliOps，HCLTech (HCLSoftware) 出品
-34.  DX App Experience Analytics（旧版），Broadcom 出品
-35.  DX App Synthetic Monitor（旧版），Broadcom 出品
-36.  DX Application Performance Management，Broadcom 出品
-37.  DX Operational Intelligence，Broadcom 出品
-38.  Dynatrace AppMon（旧版），Dynatrace 出品
-39.  **Dynatrace，Dynatrace 出品**
-40.  Edge Delta，Edge Delta 出品
-41.  eG Enterprise，eG Innovations 出品
-42.  Ekara，ip-label 出品
-43.  Elastic Observability，Elasticsearch 出品
-44.  Epsagon Professional（旧版），Epsagon 出品
-45.  Flexib+，3i Infotech 出品
-46.  FusionReactor，Intergral 出品
-47.  Google Cloud's Operations Suite，Google 出品
-48.  **Grafana Cloud，Grafana Labs 出品**
-49.  Grafana Enterprise Stack，Grafana Labs 出品
-50.  HCL IntelliOps Event Management，HCLTech (HCLSoftware) 出品
-51.  Heal AIOps Platform，HEAL Software 出品
-52.  Honeycomb，Honeycomb 出品
-53.  Hosted Graphite，MetricFire 出品
-54.  Huawei CodeArts，Huawei Technologies（华为技术）出品
-55.  IBM AIOps Insights，IBM 出品
-56.  IBM Cloud Pak for Watson AIOps，IBM 出品
-57.  IBM Instana Observability，IBM 出品
-58.  ignio，Digitate 出品
-59.  Infraon Infinity，Infraon 出品
-60.  Interlink Software AIOps Platform，Interlink Software 出品
-61.  ITRS，ITRS Group 出品
-62.  Jennifer APM，JenniferSoft 出品
-63.  Kloudfuse，Kloudfuse 出品
-64.  Lightrun Developer Observability Platform，Lightrun 出品
-65.  LM Envision，LogicMonitor 出品
-66.  LogEase Intelligent Log Management，Yottabyte（日志易）出品
-67.  LogEase Observability Monitoring (GuanChaYi)，Yottabyte（日志易）出品
-68.  Logit.io，Logit.io 出品
-69.  Lumigo，Lumigo 出品
-70.  ManageEngine Applications Manager，ManageEngine 出品
-71.  ManageEngine Site24x7，ManageEngine 出品
-72.  Micro Focus AppPulse Web（旧版），OpenText 出品
-73.  Moein，Behpaya 出品
-74.  **Moogsoft AIOps，Moogsoft 出品**
-75.  **New Relic，New Relic 出品**
-76.  Nixon Platform，Nixon Digital Services 出品
-77.  Observe，Observe 出品
-78.  OneUptime，OneUptime 出品
-79.  Open 360 Platform，Logz.io 出品
-80.  OpsCruise，Virtana 出品
-81.  OpsRamp，Hewlett Packard Enterprise (HPE) 出品
-82.  Oracle Application Performance Monitoring，Oracle 出品
-83.  Oracle Cloud Observability and Management Platform，Oracle 出品
-84.  **PagerDuty，PagerDuty 出品**
-85.  Platform.sh，Platform.sh 出品
-86.  Portkey，Portkey 出品
-87.  Riverbed Platform，Riverbed 出品
-88.  ScienceLogic SL1，ScienceLogic 出品
-89.  Selector，Selector 出品
-90.  Senser，Senser 出品
-91.  Sentry，Sentry 出品
-92.  Serverless360，Kovai.co 出品
-93.  **IT Operations Management (ITOM)，ServiceNow 出品**
-94.  SigNoz，SigNoz 出品
-95.  SolarWinds Hybrid Cloud Observability，SolarWinds 出品
-96.  SolarWinds Observability，SolarWinds 出品
-97.  Splunk IT Service Intelligence (ITSI)，Cisco Systems (Splunk) 出品
-98.  Splunk Observability Cloud，Cisco Systems (Splunk) 出品
-99.  SquaredUp，SquaredUp 出品
-100.  StackState，StackState 出品
-101.  Sumo Logic SaaS Log Analytics Platform，Sumo Logic 出品
-102.  Tallyfy，Tallyfy 出品
-103.  Tanzu Observability，Broadcom (VMware) 出品
-104.  TingYun APM，Tingyun（听云）出品
-105.  Tingyun BPOA（旧版），Tingyun（听云）出品
-106.  Treblle，Treblle 出品
-107.  TrueSight App Visibility Manager（旧版），BMC 出品
-108.  TrueSight Operations Management（旧版），BMC 出品
-109.  VIA AIOps，Vitria 出品
-110.  Virtana，Virtana 出品
-111.  vuAPP360，VuNet 出品
-112.  vuBJM，VuNet 出品
-113.  vuSmartMaps，VuNet 出品
-114.  VZOR Suite 360，VZOR 出品
-115.  WhaTap，WhaTap Labs 出品
-116.  Zenoss Cloud，Zenoss 出品
-117.  Zero Incident Framework (ZIF)，GAVS Technologies 出品
+1.  AIMS by AIMS Innovation
+2.  Alibaba Application Real-Time Monitoring Service (ARMS) by Alibaba Cloud
+3.  Alibaba Cloud Observability Suite by Alibaba Cloud
+4.  Amazon CloudWatch by Amazon Web Services (AWS)
+5.  Apica Ascent by Apica
+6.  Apica Flow by Apica
+7.  Apica Observe by Apica
+8.  AppDynamics by Cisco Systems (Splunk)
+9.  AppPulse Trace (Legacy) by OpenText
+10.  Aria Operations for Applications by Broadcom (VMware)
+11.  Atatus by Atatus
+12.  AWS X-Ray by Amazon Web Services (AWS)
+13.  Azure Monitor by Microsoft
+14.  Beak by iLink Digital
+15.  Better Stack by Better Stack
+16.  BigPanda by BigPanda
+17.  BMC Helix Discovery by BMC
+18.  BMC Helix Operations Management with AIOps by BMC
+19.  Bonree AIOps (Legacy) by Bonree
+20.  Bonree Server by Bonree
+21.  Bonree UEM (Legacy) by Bonree
+22.  cascadeo.io by Cascadeo
+23.  Chronosphere Platform by Chronosphere
+24.  Citrix uberAgent by Citrix
+25.  CloudFabrix Data-centric AIOps Platform by CloudFabrix
+26.  CloudOps by Amazon Web Services (AWS)
+27.  Coralogix by Coralogix
+28.  **Datadog by Datadog**
+29.  dbsnoop Flightdeck by dbsnoop
+30.  Devo Security Data Platform by Devo Technology
+31.  Doctor Droid by Doctor Droid
+32.  Dotcom-Monitor by Dotcom-Monitor
+33.  DRYiCE IntelliOps by HCLTech (HCLSoftware)
+34.  DX App Experience Analytics (Legacy) by Broadcom
+35.  DX App Synthetic Monitor (Legacy) by Broadcom
+36.  DX Application Performance Management by Broadcom
+37.  DX Operational Intelligence by Broadcom
+38.  Dynatrace AppMon (Legacy) by Dynatrace
+39.  **Dynatrace by Dynatrace**
+40.  Edge Delta by Edge Delta
+41.  eG Enterprise by eG Innovations
+42.  Ekara by ip-label
+43.  Elastic Observability by Elasticsearch
+44.  Epsagon Professional (Legacy) by Epsagon
+45.  Flexib+ by 3i Infotech
+46.  FusionReactor by Intergral
+47.  Google Cloud's Operations Suite by Google
+48.  **Grafana Cloud by Grafana Labs**
+49.  Grafana Enterprise Stack by Grafana Labs
+50.  HCL IntelliOps Event Management by HCLTech (HCLSoftware)
+51.  Heal AIOps Platform by HEAL Software
+52.  Honeycomb by Honeycomb
+53.  Hosted Graphite by MetricFire
+54.  Huawei CodeArts by Huawei Technologies
+55.  IBM AIOps Insights by IBM
+56.  IBM Cloud Pak for Watson AIOps by IBM
+57.  IBM Instana Observability by IBM
+58.  ignio by Digitate
+59.  Infraon Infinity by Infraon
+60.  Interlink Software AIOps Platform by Interlink Software
+61.  ITRS by ITRS Group
+62.  Jennifer APM by JenniferSoft
+63.  Kloudfuse by Kloudfuse
+64.  Lightrun Developer Observability Platform by Lightrun
+65.  LM Envision by LogicMonitor
+66.  LogEase Intelligent Log Management by Yottabyte
+67.  LogEase Observability Monitoring (GuanChaYi) by Yottabyte
+68.  Logit.io by Logit.io
+69.  Lumigo by Lumigo
+70.  ManageEngine Applications Manager by ManageEngine
+71.  ManageEngine Site24x7 by ManageEngine
+72.  Micro Focus AppPulse Web (Legacy) by OpenText
+73.  Moein by Behpaya
+74.  **Moogsoft AIOps by Moogsoft**
+75.  **New Relic by New Relic**
+76.  Nixon Platform by Nixon Digital Services
+77.  Observe by Observe
+78.  OneUptime by OneUptime
+79.  Open 360 Platform by Logz.io
+80.  OpsCruise by Virtana
+81.  OpsRamp by Hewlett Packard Enterprise (HPE)
+82.  Oracle Application Performance Monitoring by Oracle
+83.  Oracle Cloud Observability and Management Platform by Oracle
+84.  **PagerDuty by PagerDuty**
+85.  Platform.sh by Platform.sh
+86.  Portkey by Portkey
+87.  Riverbed Platform by Riverbed
+88.  ScienceLogic SL1 by ScienceLogic
+89.  Selector by Selector
+90.  Senser by Senser
+91.  Sentry by Sentry
+92.  Serverless360 by Kovai.co
+93.  **IT Operations Management (ITOM) by ServiceNow**
+94.  SigNoz by SigNoz
+95.  SolarWinds Hybrid Cloud Observability by SolarWinds
+96.  SolarWinds Observability by SolarWinds
+97.  Splunk IT Service Intelligence (ITSI) by Cisco Systems (Splunk)
+98.  Splunk Observability Cloud by Cisco Systems (Splunk)
+99.  SquaredUp by SquaredUp
+100.  StackState by StackState
+101.  Sumo Logic SaaS Log Analytics Platform by Sumo Logic
+102.  Tallyfy by Tallyfy
+103.  Tanzu Observability by Broadcom (VMware)
+104.  TingYun APM by Tingyun
+105.  Tingyun BPOA (Legacy) by Tingyun
+106.  Treblle by Treblle
+107.  TrueSight App Visibility Manager (Legacy) by BMC
+108.  TrueSight Operations Management (Legacy) by BMC
+109.  VIA AIOps by Vitria
+110.  Virtana by Virtana
+111.  vuAPP360 by VuNet
+112.  vuBJM by VuNet
+113.  vuSmartMaps by VuNet
+114.  VZOR Suite 360 by VZOR
+115.  WhaTap by WhaTap Labs
+116.  Zenoss Cloud by Zenoss
+117.  Zero Incident Framework (ZIF) by GAVS Technologies
 
 ### 人力资本管理（HCM）
 
-1.  **ADP Enterprise HR，ADP 出品**
-2.  **ADP Workforce Now，ADP 出品**
-3.  Advanced HR，Advanced 出品
-4.  Akrivia HCM，Akrivia 出品
-5.  API Healthcare Human Resources And Payroll（旧版），symplr 出品
-6.  Ascentis（旧版），Ascentis 出品
-7.  BambooHR，BambooHR 出品
-8.  BIPO HRMS，BIPO 出品
-9.  Bob，HiBob 出品
-10.  BrightHR，BrightHR 出品
-11.  CatalystOne HR System，CatalystOne Solutions 出品
-12.  CDP，CDP Group 出品
-13.  Cegid Talentsoft，Cegid 出品
-14.  CGI Advantage，CGI 出品
-15.  Chillsoft，Chillsoft 出品
-16.  ClayHR，BizMerlinHR 出品
-17.  COACH，PuumSoft 出品
-18.  Compport，Compport 出品
-19.  Cornerstone，Cornerstone 出品
-20.  Cosmo-hr，Cosmo-hr 出品
-21.  Curio，Menaitech 出品
-22.  DailyPay，DailyPay 出品
-23.  Darwinbox，Darwinbox 出品
-24.  Dayforce，Dayforce 出品
-25.  Deltek Human Capital Management，Deltek 出品
-26.  ELMO HR Core，ELMO Software 出品
-27.  Employment Hero，Employment Hero 出品
-28.  factoHR，factoHR 出品
-29.  Factorial，Factorial 出品
-30.  goBetter，BetterPlace 出品
-31.  greytHR，Greytip Software 出品
-32.  HONO，HONO 出品
-33.  HR Blizz，Mercans 出品
-34.  HR System (HRMS)，Kingdee International Software Group（金蝶国际软件集团）出品
-35.  HR WORKS，DLI-IT GROUP 出品
-36.  HRIS1，Motherson Technology Services 出品
-37.  HRMantra，HRMantra 出品
-38.  HROne，HROne 出品
-39.  Humanforce，Humanforce 出品
-40.  iMocha，iMocha 出品
-41.  Infinity Zucchetti，Zucchetti Group 出品
-42.  Infor Human Resources，Infor 出品
-43.  International Comprehensive Human Resource Integrated Software，Frontier Software 出品
-44.  IRIS Cascade HRi，IRIS Software Group 出品
-45.  isolved People Cloud，isolved 出品
-46.  iTrent，MHR 出品
-47.  Lanteria HR，Lanteria 出品
-48.  M18，Multiable 出品
-49.  MAX HCM，Adrenalin eSystems 出品
-50.  Mekari Talenta，Mekari 出品
-51.  MenaMe-Plus+，Menaitech 出品
-52.  Mentorloop，Mentorloop 出品
-53.  Microsoft Dynamics 365 Human Resources，Microsoft 出品
-54.  MiHCM，MiHCM 出品
-55.  Nakisa Workforce Planning，Nakisa 出品
-56.  Namely，Namely 出品
-57.  NEOGOV HRMS，NEOGOV 出品
-58.  NEOGOV Personality，NEOGOV 出品
-59.  NuView HCM，IgniteTech 出品
-60.  O360，Speridian 出品
-61.  Oracle Fusion Cloud HCM，Oracle 出品
-62.  Paychex HR Services，Paychex 出品
-63.  Paycom，Paycom 出品
-64.  Paycor，Paycor 出品
-65.  Paylocity，Paylocity 出品
-66.  People365，People365 出品
-67.  Peoplebox，Peoplebox 出品
-68.  peopleHum，peopleHum 出品
-69.  PeoplesHR，hSenid Software International 出品
-70.  PeopleSpheres，PeopleSpheres 出品
-71.  PeopleStrong，PeopleStrong 出品
-72.  PeopleXD，The Access Group 出品
-73.  Personio，Personio 出品
-74.  Pocket HRMS，Pocket HRMS 出品
-75.  Popay HR，Popay 出品
-76.  Quidgest Human Resources Management，Quidgest 出品
-77.  Raet Youforce（旧版），Visma 出品
-78.  Ramco Global Payroll，Ramco Systems 出品
-79.  Rippling，Rippling 出品
-80.  Sage People，Sage 出品
-81.  **SAP SuccessFactors HCM，SAP 出品**
-82.  SAPIENCE HRMS，Cartel IT Solutions 出品
-83.  ScopHR，Elap 出品
-84.  **Enterprise Legal Service Delivery (LSD)，ServiceNow 出品**
-85.  **HR Service Delivery (HRSD)，ServiceNow 出品**
-86.  **HR Talent Development，ServiceNow 出品**
-87.  **Workplace Service Delivery (WSD)，ServiceNow 出品**
-88.  **SeviceNow HR Health & Safety，ServiceNow 出品**
-89.  Shiftee，Shiftee 出品
-90.  SHL Platform，SHL 出品
-91.  skillaHR，Realcoderz 出品
-92.  Sopra HR Software，Sopra Steria 出品
-93.  SumTotal，Cornerstone (SumTotal) 出品
-94.  SunFish Workplaze，Humanica 出品
-95.  SutiHR，SutiSoft 出品
-96.  Sympa，Sympa 出品
-97.  Talentia HCM，Talentia 出品
-98.  TechnologyOne Human Resource & Payroll (HRP)，TechnologyOne 出品
-99.  UKG Pro，UKG 出品
-100.  UKG Ready，UKG 出品
-101.  Unit4 Human Capital Management (HCM)，Unit4 出品
-102.  Vantage HCM，ADP 出品
-103.  Vibe HCM（旧版），Vibe HCM 出品
-104.  Visma HRM and Payroll，Visma 出品
-105.  **Workday Human Capital Management，Workday 出品**
-106.  Workline，Workline 出品
-107.  Works Application，Works Application 出品
-108.  Worksome，Worksome 出品
-109.  Xceed365，Xceed365 出品
-110.  YonBIP，Yonyou（用友）出品
-111.  Zellis HCM Cloud，Zellis 出品
-112.  ZingHR，ZingHR 出品
-113.  Zoho People，Zoho 出品
+1.  **ADP Enterprise HR by ADP**
+2.  **ADP Workforce Now by ADP**
+3.  Advanced HR by Advanced
+4.  Akrivia HCM by Akrivia
+5.  API Healthcare Human Resources And Payroll (Legacy) by symplr
+6.  Ascentis (Legacy) by Ascentis
+7.  BambooHR by BambooHR
+8.  BIPO HRMS by BIPO
+9.  Bob by HiBob
+10.  BrightHR by BrightHR
+11.  CatalystOne HR System by CatalystOne Solutions
+12.  CDP by CDP Group
+13.  Cegid Talentsoft by Cegid
+14.  CGI Advantage by CGI
+15.  Chillsoft by Chillsoft
+16.  ClayHR by BizMerlinHR
+17.  COACH by PuumSoft
+18.  Compport by Compport
+19.  Cornerstone by Cornerstone
+20.  Cosmo-hr by Cosmo-hr
+21.  Curio by Menaitech
+22.  DailyPay by DailyPay
+23.  Darwinbox by Darwinbox
+24.  Dayforce by Dayforce
+25.  Deltek Human Capital Management by Deltek
+26.  ELMO HR Core by ELMO Software
+27.  Employment Hero by Employment Hero
+28.  factoHR by factoHR
+29.  Factorial by Factorial
+30.  goBetter by BetterPlace
+31.  greytHR by Greytip Software
+32.  HONO by HONO
+33.  HR Blizz by Mercans
+34.  HR System (HRMS) by Kingdee International Software Group
+35.  HR WORKS by DLI-IT GROUP
+36.  HRIS1 by Motherson Technology Services
+37.  HRMantra by HRMantra
+38.  HROne by HROne
+39.  Humanforce by Humanforce
+40.  iMocha by iMocha
+41.  Infinity Zucchetti by Zucchetti Group
+42.  Infor Human Resources by Infor
+43.  International Comprehensive Human Resource Integrated Software by Frontier Software
+44.  IRIS Cascade HRi by IRIS Software Group
+45.  isolved People Cloud by isolved
+46.  iTrent by MHR
+47.  Lanteria HR by Lanteria
+48.  M18 by Multiable
+49.  MAX HCM by Adrenalin eSystems
+50.  Mekari Talenta by Mekari
+51.  MenaMe-Plus+ by Menaitech
+52.  Mentorloop by Mentorloop
+53.  Microsoft Dynamics 365 Human Resources by Microsoft
+54.  MiHCM by MiHCM
+55.  Nakisa Workforce Planning by Nakisa
+56.  Namely by Namely
+57.  NEOGOV HRMS by NEOGOV
+58.  NEOGOV Personality by NEOGOV
+59.  NuView HCM by IgniteTech
+60.  O360 by Speridian
+61.  Oracle Fusion Cloud HCM by Oracle
+62.  Paychex HR Services by Paychex
+63.  Paycom by Paycom
+64.  Paycor by Paycor
+65.  Paylocity by Paylocity
+66.  People365 by People365
+67.  Peoplebox by Peoplebox
+68.  peopleHum by peopleHum
+69.  PeoplesHR by hSenid Software International
+70.  PeopleSpheres by PeopleSpheres
+71.  PeopleStrong by PeopleStrong
+72.  PeopleXD by The Access Group
+73.  Personio by Personio
+74.  Pocket HRMS by Pocket HRMS
+75.  Popay HR by Popay
+76.  Quidgest Human Resources Management by Quidgest
+77.  Raet Youforce (Legacy) by Visma
+78.  Ramco Global Payroll by Ramco Systems
+79.  Rippling by Rippling
+80.  Sage People by Sage
+81.  **SAP SuccessFactors HCM by SAP**
+82.  SAPIENCE HRMS by Cartel IT Solutions
+83.  ScopHR by Elap
+84.  **Enterprise Legal Service Delivery (LSD) by ServiceNow**
+85.  **HR Service Delivery (HRSD) by ServiceNow**
+86.  **HR Talent Development by ServiceNow**
+87.  **Workplace Service Delivery (WSD) by ServiceNow**
+88.  **SeviceNow HR Health & Safety by ServiceNow**
+89.  Shiftee by Shiftee
+90.  SHL Platform by SHL
+91.  skillaHR by Realcoderz
+92.  Sopra HR Software by Sopra Steria
+93.  SumTotal by Cornerstone (SumTotal)
+94.  SunFish Workplaze by Humanica
+95.  SutiHR by SutiSoft
+96.  Sympa by Sympa
+97.  Talentia HCM by Talentia
+98.  TechnologyOne Human Resource & Payroll (HRP) by TechnologyOne
+99.  UKG Pro by UKG
+100.  UKG Ready by UKG
+101.  Unit4 Human Capital Management (HCM) by Unit4
+102.  Vantage HCM by ADP
+103.  Vibe HCM (Legacy) by Vibe HCM
+104.  Visma HRM and Payroll by Visma
+105.  **Workday Human Capital Management by Workday**
+106.  Workline by Workline
+107.  Works Application by Works Application
+108.  Worksome by Worksome
+109.  Xceed365 by Xceed365
+110.  YonBIP by Yonyou
+111.  Zellis HCM Cloud by Zellis
+112.  ZingHR by ZingHR
+113.  Zoho People by Zoho

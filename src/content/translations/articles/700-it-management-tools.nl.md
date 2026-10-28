@@ -1,40 +1,31 @@
 ---
 title: "De ultieme lijst van (700+) IT-managementtools, december 2024"
-excerpt: "Hieronder vind je een overzicht van 727 IT-managementtools, zorgvuldig ingedeeld in acht hoofdcategorieën. Deze verzameling laat de breedte en diepgang van het IT-managementlandschap zien, van strategische planning en governance tot dagelijkse operatie en securitytoezicht IT Enterprise"
-source: "410bd837282bcfd6"
+excerpt: "Hieronder vind je een overzicht van 727 IT-managementtools, zorgvuldig ingedeeld in acht hoofdcategorieën. Deze verzameling laat de breedte en diepte van het IT-managementlandschap zien, van strategische planning en governance tot dagelijkse operations en securitytoezicht IT Enterprise"
+source: "1d14f32ec5fa307c"
 ---
 
-Hieronder vind je een overzicht van 727 IT-managementtools, zorgvuldig ingedeeld in acht hoofdcategorieën. Deze verzameling laat de breedte en diepgang van het IT-managementlandschap zien, van strategische planning en governance tot dagelijkse operatie en securitytoezicht  
+### UPDATE: We hebben een nieuwe [IT4IT Atlas](https://javc.nl/it4it-atlas/) op onze site gepubliceerd.
 
-  
-2.  **IT Enterprise Architecture (EA) – 33 tools** Gericht op het afstemmen van technologiestrategieën op overkoepelende bedrijfsdoelstellingen, het faciliteren van gestructureerde frameworks en het waarborgen dat IT-investeringen de organisatiedoelen op lange termijn ondersteunen.
-  
-4.  **IT Development Operations (DevOps) – 85 tools** Legt de nadruk op de synergie tussen softwareontwikkeling en operations, en stroomlijnt processen zoals continuous integration, delivery en samenwerking om productreleases te versnellen en de kwaliteit te verbeteren.
-  
-6.  **IT Asset Management (ITAM) – 94 tools** Gericht op het volgen en optimaliseren van de levenscycli van hardware- en softwareassets, met oog voor kosteneffectiviteit, compliance en een robuust voorraadbeheer.
-  
-8.  **IT Service Management (ITSM) – 64 tools** Biedt best practices en methodologieën (bijv. ITIL) om IT-services te structureren en te leveren, en optimaliseert incident-, problem- en change management om een hoge servicekwaliteit en klanttevredenheid te behouden.
-  
-10.  **IT Operations Management (ITOM) – 117 tools** Biedt uitgebreide monitoring en beheer van IT-systemen, netwerken en infrastructuren, zodat organisaties hoge prestaties, betrouwbaarheid en beschikbaarheid kunnen behouden.
-  
-12.  **IT Security Operations (SecOps) – 119 tools** Draait om threat detection, incident response en vulnerability management om bedrijfsdata, netwerken en systemen te beschermen tegen voortdurend veranderende cyberdreigingen.
-  
-14.  **IT Integrated Risk Management (IRM/GRC) – 102 tools** Biedt strategieën en systemen om operationele en regelgevingsrisico's te identificeren, te beoordelen en te beperken, zodat je compliant blijft en de weerbaarheid van de organisatie wordt ondersteund.
-  
-16.  **Human Capital Management (HCM) – 113 tools** Richt zich op werving, personeelsplanning en talentontwikkeling, zodat organisaties de juiste mensen aantrekken, behouden en managen.
-  
+Hieronder vind je een overzicht van 727 IT-managementtools, zorgvuldig ingedeeld in acht hoofdcategorieën. Deze verzameling laat de breedte en diepte van het IT-managementlandschap zien, van strategische planning en governance tot dagelijkse operations en securitytoezicht  
 
-  
-Samen laten deze tools zien hoe veelzijdig modern IT-management is. Het is zeer onwaarschijnlijk dat een bedrijf alle 727 tools zal aanschaffen of gebruiken. Het is echter niet onwaarschijnlijk dat een bedrijf honderd van de hieronder genoemde tools gebruikt -en probeert te integreren-.  
+2.  **IT Enterprise Architecture (EA) – 33 tools** Gericht op het afstemmen van technologiestrategieën op overkoepelende bedrijfsdoelstellingen, het faciliteren van gestructureerde frameworks en het waarborgen dat IT-investeringen de organisatiedoelen op de lange termijn ondersteunen.
+3.  **IT Development Operations (DevOps) – 85 tools** Legt de nadruk op de synergie tussen softwareontwikkeling en operations, met gestroomlijnde processen zoals continuous integration, continuous delivery en samenwerking om productreleases te versnellen en de kwaliteit te verbeteren.
+4.  **IT Asset Management (ITAM) – 94 tools** Gericht op het volgen en optimaliseren van de levenscycli van hardware- en softwareassets, met oog voor kosteneffectiviteit, compliance en een robuust voorraadbeheer.
+5.  **IT Service Management (ITSM) – 64 tools** Biedt best practices en methodieken (bijv. ITIL) om IT-services te structureren en te leveren, met geoptimaliseerd incident, problem en change management voor een hoge servicekwaliteit en klanttevredenheid.
+6.  **IT Operations Management (ITOM) – 117 tools** Levert uitgebreide monitoring en beheer van IT-systemen, netwerken en infrastructuren, zodat organisaties hoge prestaties, betrouwbaarheid en beschikbaarheid kunnen behouden.
+7.  **IT Security Operations (SecOps) – 119 tools** Draait om threat detection, incident response en vulnerability management om bedrijfsdata, netwerken en systemen te beschermen tegen steeds veranderende cyberdreigingen.
+8.  **IT Integrated Risk Management (IRM/GRC) – 102 tools** Biedt strategieën en systemen om operationele en regelgevingsrisico's te identificeren, te beoordelen en te beperken, zodat compliance gewaarborgd blijft en de veerkracht van de organisatie wordt ondersteund.
+9.  **Human Capital Management (HCM) – 113 tools** Richt zich op werving, personeelsplanning en talentontwikkeling, zodat organisaties de juiste mensen aantrekken, behouden en managen.
+
+Samen weerspiegelen deze tools het veelzijdige karakter van modern IT-management. Het is hoogst onwaarschijnlijk dat een bedrijf alle 727 tools koopt of gebruikt. Het is echter niet onwaarschijnlijk dat een bedrijf honderd van de hieronder genoemde tools gebruikt -en probeert te integreren-.  
 
 > **Voor grote bedrijven die veel technologieën van verschillende leveranciers gebruiken, is het IT Tooling Domain waarschijnlijk het grootste en meest complexe IT-architectuurdomein dat ze hebben.**
 
-  
-Welke tool het best past bij het doel en bij de doelgroep, hangt af van veel factoren. Sommige bedrijven laten de IT-teams hun eigen tools kiezen. Andere proberen enterprisestandaarden af te dwingen. Om het landschap te vereenvoudigen, overlap in tooling te voorkomen en schaalvoordelen te maximaliseren (bijv. voor trainingen en toollicenties), vind ik dat bedrijven zo min mogelijk tools moeten proberen te gebruiken, en daarbij de juiste tools voor de taken die er liggen moeten kiezen. Sommige dingen zijn holistisch gezien voor mij gewoon logisch, en andere niet. Bedrijven zouden bijvoorbeeld niet meerdere Enterprise Architecture-tools naast elkaar moeten gebruiken, tenzij één daarvan de source of truth is voor de andere.
+Welke tool het best past bij het doel en bij de doelgroep, hangt af van veel factoren. Sommige bedrijven laten IT-teams hun eigen tools kiezen. Andere proberen enterprisestandaarden af te dwingen. Om het landschap te vereenvoudigen, overlap in tooling te voorkomen en schaalvoordelen te maximaliseren (bijv. voor trainingen en toollicenties), vind ik dat bedrijven moeten proberen zo weinig mogelijk tools te gebruiken, en tegelijk de juiste tools te kiezen voor de taken die er liggen. Sommige dingen zijn voor mij vanuit een holistisch perspectief gewoon logisch, en andere niet. Zo zouden bedrijven niet meerdere Enterprise Architecture-tools naast elkaar moeten gebruiken, tenzij één daarvan de source of truth is voor de andere.
 
-Voordat je een IT-managementtool aanschaft, is het verstandig om recente reviews en marktonderzoeken van Forrester, Gartner en anderen te lezen.
+Voordat je een IT-managementtool aanschaft, is het verstandig om recente reviews en marktstudies van Forrester, Gartner en anderen te lezen.
 
-Trouwens: deze lijst is zeker niet perfect of volledig. Heb je aanbevelingen of aanvullingen? [Neem gerust contact met me op](/nl/contact-me/).
+Trouwens: deze lijst is zeker niet perfect of volledig. Heb je aanbevelingen of aanvullingen, [neem dan gerust contact met me op](/nl/contact-me/).
 
 ### Enterprise Architecture (EA)
 

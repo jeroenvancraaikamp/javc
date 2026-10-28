@@ -1,38 +1,29 @@
 ---
 title: "Die ultimative Liste von (über 700) IT-Management-Tools, Dezember 2024"
-excerpt: "Nachfolgend finden Sie eine Übersicht über 727 IT-Management-Tools, sorgfältig in acht Hauptkategorien gegliedert. Diese Zusammenstellung verdeutlicht die Breite und Tiefe der IT-Management-Landschaft, von strategischer Planung und Governance bis hin zum Tagesbetrieb und zur Sicherheitsüberwachung IT Enterprise"
-source: "410bd837282bcfd6"
+excerpt: "Nachfolgend finden Sie eine Übersicht über 727 IT-Management-Tools, sorgfältig in acht Hauptkategorien gegliedert. Diese Zusammenstellung zeigt die Breite und Tiefe der IT-Management-Landschaft – von strategischer Planung und Governance bis hin zum Tagesbetrieb und zur Sicherheitsüberwachung IT Enterprise"
+source: "1d14f32ec5fa307c"
 ---
 
-Nachfolgend finden Sie eine Übersicht über 727 IT-Management-Tools, sorgfältig in acht Hauptkategorien gegliedert. Diese Zusammenstellung verdeutlicht die Breite und Tiefe der IT-Management-Landschaft, von strategischer Planung und Governance bis hin zum Tagesbetrieb und zur Sicherheitsüberwachung  
+### UPDATE: Wir haben einen neuen [IT4IT Atlas](https://javc.nl/it4it-atlas/) auf unserer Website veröffentlicht.
 
-  
-2.  **IT Enterprise Architecture (EA) – 33 Tools** Ausgerichtet darauf, Technologiestrategien mit übergeordneten Geschäftszielen in Einklang zu bringen, strukturierte Frameworks zu ermöglichen und sicherzustellen, dass IT-Investitionen langfristige Unternehmensziele unterstützen.
-  
-4.  **IT Development Operations (DevOps) – 85 Tools** Betont das Zusammenspiel von Softwareentwicklung und Betrieb und optimiert Prozesse wie Continuous Integration, Continuous Delivery und Zusammenarbeit, um Produktreleases zu beschleunigen und die Qualität zu verbessern.
-  
-6.  **IT Asset Management (ITAM) – 94 Tools** Widmet sich der Nachverfolgung und Optimierung der Lebenszyklen von Hardware- und Software-Assets und sorgt für Kosteneffizienz, Compliance und eine belastbare Bestandskontrolle.
-  
-8.  **IT Service Management (ITSM) – 64 Tools** Bietet Best Practices und Methoden (z. B. ITIL), um IT-Services zu strukturieren und bereitzustellen, und optimiert Incident, Problem und Change Management, um eine hohe Servicequalität und Kundenzufriedenheit zu gewährleisten.
-  
-10.  **IT Operations Management (ITOM) – 117 Tools** Ermöglicht ein umfassendes Monitoring und Management von IT-Systemen, Netzwerken und Infrastrukturen und hilft Unternehmen, hohe Leistung, Zuverlässigkeit und Verfügbarkeit aufrechtzuerhalten.
-  
-12.  **IT Security Operations (SecOps) – 119 Tools** Konzentriert sich auf Bedrohungserkennung, Incident Response und Vulnerability Management, um Unternehmensdaten, Netzwerke und Systeme vor sich ständig weiterentwickelnden Cyberbedrohungen zu schützen.
-  
-14.  **IT Integrated Risk Management (IRM/GRC) – 102 Tools** Bietet Strategien und Systeme, um operative und regulatorische Risiken zu identifizieren, zu bewerten und zu mindern, die Compliance sicherzustellen und gleichzeitig die Resilienz des Unternehmens zu stärken.
-  
-16.  **Human Capital Management (HCM) – 113 Tools** Konzentriert sich auf Recruiting, Personalplanung und Talententwicklung und stellt sicher, dass Unternehmen die richtigen Mitarbeitenden gewinnen, halten und führen.
-  
+Nachfolgend finden Sie eine Übersicht über 727 IT-Management-Tools, sorgfältig in acht Hauptkategorien gegliedert. Diese Zusammenstellung zeigt die Breite und Tiefe der IT-Management-Landschaft – von strategischer Planung und Governance bis hin zum Tagesbetrieb und zur Sicherheitsüberwachung  
 
-  
-Zusammen spiegeln diese Tools die Vielschichtigkeit des modernen IT-Managements wider. Es ist äußerst unwahrscheinlich, dass ein Unternehmen alle 727 Tools kauft bzw. nutzt. Es ist jedoch nicht unwahrscheinlich, dass ein Unternehmen hundert der unten aufgeführten Tools nutzt – und zu integrieren versucht.  
+2.  **IT Enterprise Architecture (EA) – 33 Tools** Konzentriert sich darauf, Technologiestrategien an übergeordneten Geschäftszielen auszurichten, strukturierte Frameworks zu ermöglichen und sicherzustellen, dass IT-Investitionen langfristige Unternehmensziele unterstützen.
+3.  **IT Development Operations (DevOps) – 85 Tools** Betont das Zusammenspiel von Softwareentwicklung und Betrieb und optimiert Prozesse wie Continuous Integration, Continuous Delivery und Zusammenarbeit, um Produktreleases zu beschleunigen und die Qualität zu verbessern.
+4.  **IT Asset Management (ITAM) – 94 Tools** Widmet sich der Nachverfolgung und Optimierung der Lebenszyklen von Hardware- und Software-Assets und sorgt für Kosteneffizienz, Compliance und eine zuverlässige Bestandskontrolle.
+5.  **IT Service Management (ITSM) – 64 Tools** Bietet Best Practices und Methoden (z. B. ITIL), um IT-Services zu strukturieren und bereitzustellen, und optimiert Incident, Problem und Change Management, um eine hohe Servicequalität und Kundenzufriedenheit zu gewährleisten.
+6.  **IT Operations Management (ITOM) – 117 Tools** Ermöglicht umfassendes Monitoring und Management von IT-Systemen, Netzwerken und Infrastrukturen und hilft Unternehmen, hohe Leistung, Zuverlässigkeit und Verfügbarkeit aufrechtzuerhalten.
+7.  **IT Security Operations (SecOps) – 119 Tools** Konzentriert sich auf Bedrohungserkennung, Incident Response und Vulnerability Management, um Unternehmensdaten, Netzwerke und Systeme vor sich ständig weiterentwickelnden Cyberbedrohungen zu schützen.
+8.  **IT Integrated Risk Management (IRM/GRC) – 102 Tools** Bietet Strategien und Systeme, um operative und regulatorische Risiken zu identifizieren, zu bewerten und zu mindern, die Compliance sicherzustellen und gleichzeitig die Resilienz des Unternehmens zu stärken.
+9.  **Human Capital Management (HCM) – 113 Tools** Konzentriert sich auf Recruiting, Personalplanung und Talententwicklung, damit Unternehmen die richtigen Mitarbeitenden gewinnen, halten und führen.
 
-> **Für große Unternehmen, die zahlreiche Technologien verschiedener Anbieter einsetzen, ist die IT-Tooling-Domäne wahrscheinlich die größte und komplexeste Architektur-IT-Domäne überhaupt.**
+Zusammen spiegeln diese Tools die Vielschichtigkeit des modernen IT-Managements wider. Es ist äußerst unwahrscheinlich, dass ein Unternehmen alle 727 Tools kauft bzw. nutzt. Es ist jedoch nicht unwahrscheinlich, dass ein Unternehmen rund hundert der unten aufgeführten Tools nutzt – und zu integrieren versucht.  
 
-  
-Welches Tool am besten für den jeweiligen Zweck und die jeweilige Zielgruppe geeignet ist, hängt von vielen Faktoren ab. Manche Unternehmen lassen die IT-Teams ihre Tools selbst auswählen. Andere versuchen, unternehmensweite Standards durchzusetzen. Um die Landschaft zu vereinfachen, Überschneidungen bei den Tools zu vermeiden und Skaleneffekte (z. B. bei Schulungen und Tool-Lizenzen) zu maximieren, sollten Unternehmen meiner Meinung nach versuchen, so wenige Tools wie möglich einzusetzen und dabei die richtigen Tools für die jeweiligen Aufgaben zu wählen. Manches ergibt für mich ganzheitlich betrachtet einfach Sinn, anderes nicht. So sollten Unternehmen beispielsweise nicht mehrere Enterprise-Architecture-Tools parallel einsetzen, es sei denn, eines davon ist die Source of Truth für die anderen.
+> **Für große Unternehmen, die zahlreiche Technologien verschiedener Anbieter einsetzen, ist die IT-Tooling-Domäne wahrscheinlich die größte und komplexeste IT-Architekturdomäne überhaupt.**
 
-Vor dem Kauf eines IT-Management-Tools ist es ratsam, aktuelle Bewertungen und Marktstudien von Forrester, Gartner und anderen zu lesen.
+Welches Tool am besten für den jeweiligen Zweck und die jeweilige Zielgruppe geeignet ist, hängt von vielen Faktoren ab. Manche Unternehmen lassen ihre IT-Teams die eigenen Tools auswählen. Andere versuchen, unternehmensweite Standards durchzusetzen. Um die Landschaft zu vereinfachen, Überschneidungen bei den Tools zu vermeiden und Skaleneffekte (z. B. bei Schulungen und Tool-Lizenzen) bestmöglich zu nutzen, sollten Unternehmen meiner Meinung nach so wenige Tools wie möglich einsetzen und dabei die richtigen Tools für die jeweiligen Aufgaben wählen. Manches ergibt für mich ganzheitlich betrachtet einfach Sinn, anderes nicht. So sollten Unternehmen beispielsweise nicht mehrere Enterprise-Architecture-Tools parallel einsetzen, es sei denn, eines davon ist die Source of Truth für die anderen.
+
+Bevor Sie ein IT-Management-Tool kaufen, empfiehlt es sich, aktuelle Bewertungen und Marktstudien von Forrester, Gartner und anderen zu lesen.
 
 Übrigens: Diese Liste ist sicherlich weder perfekt noch vollständig. Wenn Sie Empfehlungen oder Ergänzungen haben, [kontaktieren Sie mich](/de/contact-me/) gerne.
 
