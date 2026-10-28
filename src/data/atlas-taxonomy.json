@@ -5,61 +5,55 @@
       "intro": "Management tools for running IT, grouped by capability and mapped to the IT4IT value streams.",
       "groups": [
         { "name": "Strategy & Portfolio", "subs": [
-          { "id": "it-strategy-architecture", "name": "Enterprise Architecture & Product Portfolio", "desc": "Models business capabilities, applications and technology, and maintains architecture roadmaps and digital product portfolios.", "streams": "Plan · Evaluate, Explore" },
-          { "id": "it-strategy-portfolio", "name": "Strategic Portfolio, Demand & Value Streams", "desc": "Prioritizes demand and investment, manages delivery portfolios, and links work to product outcomes.", "streams": "Plan · Evaluate, Explore" } ] },
+          { "id": "it-strategy-architecture", "name": "Enterprise Architecture & Product Portfolio", "desc": "Models business capabilities, applications and technology, and maintains architecture roadmaps and digital product portfolios.", "streams": "Plan · Evaluate, Explore", "csdm": ["design-planning", "manage-portfolio"] },
+          { "id": "it-strategy-portfolio", "name": "Strategic Portfolio, Demand & Value Streams", "desc": "Prioritizes demand and investment, manages delivery portfolios, and links work to product outcomes.", "streams": "Plan · Evaluate, Explore", "csdm": ["ideation-strategy", "manage-portfolio"] } ] },
         { "name": "Software Engineering & Integration", "subs": [
-          { "id": "it-engineering-development", "name": "Development, DevOps & Quality", "desc": "Source control, development, builds, CI, testing and delivery toolchains.", "streams": "Build · Explore, Integrate, Deploy, Release" },
-          { "id": "it-engineering-lowcode", "name": "Low-code Application Development", "desc": "Builds applications and service workflows with visual models and reusable components.", "streams": "Build · Explore, Integrate" },
-          { "id": "it-engineering-integration", "name": "API Management & Integration", "desc": "Develops, publishes and manages APIs, and connects applications through integration, messaging and orchestration.", "streams": "Build, Run · Integrate, Deploy, Operate" } ] },
+          { "id": "it-engineering-development", "name": "Development, DevOps & Quality", "desc": "Source control, development, builds, CI, testing and delivery toolchains.", "streams": "Build · Explore, Integrate, Deploy, Release", "csdm": ["build-integration"] },
+          { "id": "it-engineering-lowcode", "name": "Low-code Application Development", "desc": "Builds applications and service workflows with visual models and reusable components.", "streams": "Build · Explore, Integrate", "csdm": ["build-integration"] },
+          { "id": "it-engineering-integration", "name": "API Management & Integration", "desc": "Develops, publishes and manages APIs, and connects applications through integration, messaging and orchestration.", "streams": "Build, Run · Integrate, Deploy, Operate", "csdm": ["build-integration"] } ] },
         { "name": "Service, Configuration & Assets", "subs": [
-          { "id": "it-service-itsm", "name": "IT Service Management & Support", "desc": "Incidents, problems, changes, requests, service catalogs, knowledge and service levels.", "streams": "Deliver, Run · Consume, Operate, Release" },
-          { "id": "it-service-assets", "name": "IT Assets, Software & Configuration", "desc": "Discovers and manages technology assets, software licenses, configuration records and lifecycle data.", "streams": "Plan, Deliver, Run · Evaluate, Consume, Operate" },
-          { "id": "it-service-endpoint", "name": "Endpoint Management & Employee Experience", "desc": "Provisions, configures and patches employee devices, measures experience, and automates remediation.", "streams": "Deliver, Run · Deploy, Consume, Operate" } ] },
+          { "id": "it-service-itsm", "name": "IT Service Management & Support", "desc": "Incidents, problems, changes, requests, service catalogs, knowledge and service levels.", "streams": "Deliver, Run · Consume, Operate, Release", "csdm": ["service-consumption", "service-delivery"] },
+          { "id": "it-service-assets", "name": "IT Assets, Software & Configuration", "desc": "Discovers and manages technology assets, software licenses, configuration records and lifecycle data.", "streams": "Plan, Deliver, Run · Evaluate, Consume, Operate", "csdm": ["foundation", "service-delivery"] },
+          { "id": "it-service-endpoint", "name": "Endpoint Management & Employee Experience", "desc": "Provisions, configures and patches employee devices, measures experience, and automates remediation.", "streams": "Deliver, Run · Deploy, Consume, Operate", "csdm": ["service-consumption", "service-delivery"] } ] },
         { "name": "Operations & Resilience", "subs": [
-          { "id": "it-operations-observability", "name": "Observability, Events & AIOps", "desc": "Monitors applications and infrastructure through metrics, logs, traces, events and correlation.", "streams": "Run · Operate" },
-          { "id": "it-operations-recovery", "name": "Backup & Disaster Recovery", "desc": "Protects data and workloads and coordinates restore, replication, failover and recovery testing.", "streams": "Run · Operate" },
-          { "id": "it-operations-automation", "name": "Deployment, Configuration & Workload Automation", "desc": "Automates provisioning, infrastructure configuration, deployment and workload execution.", "streams": "Build, Deliver, Run · Deploy, Release, Operate" } ] },
+          { "id": "it-operations-observability", "name": "Observability, Events & AIOps", "desc": "Monitors applications and infrastructure through metrics, logs, traces, events and correlation.", "streams": "Run · Operate", "csdm": ["service-delivery"] },
+          { "id": "it-operations-recovery", "name": "Backup & Disaster Recovery", "desc": "Protects data and workloads and coordinates restore, replication, failover and recovery testing.", "streams": "Run · Operate", "csdm": ["service-delivery"] },
+          { "id": "it-operations-automation", "name": "Deployment, Configuration & Workload Automation", "desc": "Automates provisioning, infrastructure configuration, deployment and workload execution.", "streams": "Build, Deliver, Run · Deploy, Release, Operate", "csdm": ["build-integration", "service-delivery"] } ] },
         { "name": "Security & Identity", "subs": [
-          { "id": "it-security-exposure", "name": "Vulnerability & Exposure Management", "desc": "Finds weaknesses, assesses attack surfaces and prioritizes remediation.", "streams": "Build, Run, Supporting · Integrate, Deploy, Operate" },
-          { "id": "it-security-protection", "name": "Security Protection, Detection & Response", "desc": "Protects endpoints, networks, email, cloud and data; detects threats; coordinates response.", "streams": "Run, Supporting · Operate" },
-          { "id": "it-security-identity", "name": "Identity, Access & Secrets Management", "desc": "Manages identities, authentication, entitlements, privileged access and secrets.", "streams": "Deliver, Run, Supporting · Consume, Operate" } ] },
+          { "id": "it-security-exposure", "name": "Vulnerability & Exposure Management", "desc": "Finds weaknesses, assesses attack surfaces and prioritizes remediation.", "streams": "Build, Run, Supporting · Integrate, Deploy, Operate", "csdm": ["service-delivery"] },
+          { "id": "it-security-protection", "name": "Security Protection, Detection & Response", "desc": "Protects endpoints, networks, email, cloud and data; detects threats; coordinates response.", "streams": "Run, Supporting · Operate", "csdm": ["service-delivery"] },
+          { "id": "it-security-identity", "name": "Identity, Access & Secrets Management", "desc": "Manages identities, authentication, entitlements, privileged access and secrets.", "streams": "Deliver, Run, Supporting · Consume, Operate", "csdm": ["foundation", "service-delivery"] } ] },
         { "name": "Infrastructure Management", "subs": [
-          { "id": "it-infrastructure-datacenter", "name": "Data Center Infrastructure Management", "desc": "Manages racks, equipment, space, connectivity and physical capacity.", "streams": "Deliver, Run · Deploy, Operate" },
-          { "id": "it-infrastructure-networkstorage", "name": "Network & Storage Management", "desc": "Administers, configures and monitors network and storage infrastructure and capacity.", "streams": "Deliver, Run · Deploy, Operate" },
-          { "id": "it-infrastructure-powercooling", "name": "Power & Cooling Management", "desc": "Manages facility electrical capacity, power distribution, energy and cooling.", "streams": "Run · Operate" } ] },
+          { "id": "it-infrastructure-datacenter", "name": "Data Center Infrastructure Management", "desc": "Manages racks, equipment, space, connectivity and physical capacity.", "streams": "Deliver, Run · Deploy, Operate", "csdm": ["service-delivery"] },
+          { "id": "it-infrastructure-networkstorage", "name": "Network & Storage Management", "desc": "Administers, configures and monitors network and storage infrastructure and capacity.", "streams": "Deliver, Run · Deploy, Operate", "csdm": ["service-delivery"] },
+          { "id": "it-infrastructure-powercooling", "name": "Power & Cooling Management", "desc": "Manages facility electrical capacity, power distribution, energy and cooling.", "streams": "Run · Operate", "csdm": ["service-delivery"] } ] },
         { "name": "IT Governance & Enablement", "subs": [
-          { "id": "it-governance-finance", "name": "IT Financial Management, TBM & FinOps", "desc": "Manages technology budgets, costs, allocation, chargeback and cloud financial optimization.", "streams": "Supporting · Evaluate" },
-          { "id": "it-governance-vendors", "name": "Technology Vendor & Contract Management", "desc": "Manages technology suppliers, software procurement, subscriptions, renewals and contracts.", "streams": "Supporting · Evaluate, Consume" },
-          { "id": "it-governance-risk", "name": "Technology Governance, Risk & Compliance", "desc": "Governs technology controls, cyber risk, audit evidence and policy compliance.", "streams": "Supporting · Evaluate, Operate" } ] }
+          { "id": "it-governance-finance", "name": "IT Financial Management, TBM & FinOps", "desc": "Manages technology budgets, costs, allocation, chargeback and cloud financial optimization.", "streams": "Supporting · Evaluate", "csdm": ["manage-portfolio"] },
+          { "id": "it-governance-vendors", "name": "Technology Vendor & Contract Management", "desc": "Manages technology suppliers, software procurement, subscriptions, renewals and contracts.", "streams": "Supporting · Evaluate, Consume", "csdm": ["foundation", "manage-portfolio"] },
+          { "id": "it-governance-risk", "name": "Technology Governance, Risk & Compliance", "desc": "Governs technology controls, cyber risk, audit evidence and policy compliance.", "streams": "Supporting · Evaluate, Operate", "csdm": ["manage-portfolio"] } ] }
       ]
     },
     {
       "id": "business", "name": "Business applications",
-      "intro": "Applications that run the business, classified with the TBM 5.0.1 business categories.",
+      "intro": "Applications that run the business, classified with the TBM 5.0.1 business categories, and the workplace platforms people use to communicate, collaborate and share knowledge.",
       "groups": [
         { "name": "Business", "subs": [
-          { "id": "business-product-management-tools", "name": "Product Management", "desc": "Plans and develops customer-facing products and manages their lifecycles." },
-          { "id": "business-sales-marketing-tools", "name": "Sales & Marketing", "desc": "Customer analytics, commerce, marketing, advertising, sales and channel management." },
-          { "id": "business-manufacturing-delivery-tools", "name": "Manufacturing & Delivery", "desc": "Production, inventory, logistics, resource planning and delivery." },
-          { "id": "business-customer-service-tools", "name": "Customer Service", "desc": "Customer care and order management across service and transaction lifecycles." } ] },
+          { "id": "business-product-management-tools", "name": "Product Management", "desc": "Plans and develops customer-facing products and manages their lifecycles.", "csdm": ["ideation-strategy", "design-planning"] },
+          { "id": "business-sales-marketing-tools", "name": "Sales & Marketing", "desc": "Customer analytics, commerce, marketing, advertising, sales and channel management.", "csdm": ["service-consumption"] },
+          { "id": "business-manufacturing-delivery-tools", "name": "Manufacturing & Delivery", "desc": "Production, inventory, logistics, resource planning and delivery.", "csdm": ["service-consumption"] },
+          { "id": "business-customer-service-tools", "name": "Customer Service", "desc": "Customer care and order management across service and transaction lifecycles.", "csdm": ["service-consumption"] } ] },
         { "name": "Shared & Corporate", "subs": [
-          { "id": "shared-corporate-finance-tools", "name": "Finance", "desc": "Enterprise accounting, financial planning, revenue, payroll, payments, treasury and tax." },
-          { "id": "shared-corporate-workforce-tools", "name": "Workforce", "desc": "Recruitment, employee records, transitions, benefits, development, performance and workforce relations." },
-          { "id": "shared-corporate-vendor-procurement-tools", "name": "Vendor & Procurement", "desc": "Sourcing, purchasing, supplier relationships and contract lifecycle management." },
-          { "id": "shared-corporate-health-safety-environmental-tools", "name": "Health, Safety, and Environmental", "desc": "Health, occupational safety and environmental policies and obligations." },
-          { "id": "shared-corporate-risk-audit-compliance-tools", "name": "Risk, Audit & Compliance", "desc": "Enterprise risk, audits, investigations, records, breach remediation and business continuity." },
-          { "id": "shared-corporate-legal-tools", "name": "Legal", "desc": "Legal counsel, matters and cases, litigation, intellectual property and contract review." },
-          { "id": "shared-corporate-property-facility-tools", "name": "Property & Facility", "desc": "Property, space planning, physical security, facilities maintenance and non-logistics fleet management." },
-          { "id": "shared-corporate-corporate-communications-tools", "name": "Corporate Communications", "desc": "Stakeholder, government, media and community communications." } ] }
-      ]
-    },
-    {
-      "id": "workplace", "name": "Workplace platforms",
-      "intro": "Platforms people use to communicate, collaborate and share knowledge.",
-      "groups": [
+          { "id": "shared-corporate-finance-tools", "name": "Finance", "desc": "Enterprise accounting, financial planning, revenue, payroll, payments, treasury and tax.", "csdm": ["service-consumption"] },
+          { "id": "shared-corporate-workforce-tools", "name": "Workforce", "desc": "Recruitment, employee records, transitions, benefits, development, performance and workforce relations.", "csdm": ["foundation", "service-consumption"] },
+          { "id": "shared-corporate-vendor-procurement-tools", "name": "Vendor & Procurement", "desc": "Sourcing, purchasing, supplier relationships and contract lifecycle management.", "csdm": ["foundation", "service-consumption"] },
+          { "id": "shared-corporate-health-safety-environmental-tools", "name": "Health, Safety, and Environmental", "desc": "Health, occupational safety and environmental policies and obligations.", "csdm": ["service-consumption"] },
+          { "id": "shared-corporate-risk-audit-compliance-tools", "name": "Risk, Audit & Compliance", "desc": "Enterprise risk, audits, investigations, records, breach remediation and business continuity.", "csdm": ["manage-portfolio", "service-consumption"] },
+          { "id": "shared-corporate-legal-tools", "name": "Legal", "desc": "Legal counsel, matters and cases, litigation, intellectual property and contract review.", "csdm": ["service-consumption"] },
+          { "id": "shared-corporate-property-facility-tools", "name": "Property & Facility", "desc": "Property, space planning, physical security, facilities maintenance and non-logistics fleet management.", "csdm": ["foundation", "service-consumption"] },
+          { "id": "shared-corporate-corporate-communications-tools", "name": "Corporate Communications", "desc": "Stakeholder, government, media and community communications.", "csdm": ["service-consumption"] } ] },
         { "name": "Communication, Content & Knowledge", "subs": [
-          { "id": "platform-workplace-communication", "name": "Communication & Collaboration", "desc": "Team messaging, meetings, email, intranets and employee communication." },
-          { "id": "platform-workplace-content", "name": "Content, Documents & Knowledge", "desc": "Document, record, archive, enterprise content and knowledge management." } ] }
+          { "id": "platform-workplace-communication", "name": "Communication & Collaboration", "desc": "Team messaging, meetings, email, intranets and employee communication.", "csdm": ["service-consumption"] },
+          { "id": "platform-workplace-content", "name": "Content, Documents & Knowledge", "desc": "Document, record, archive, enterprise content and knowledge management.", "csdm": ["service-consumption"] } ] }
       ]
     },
     {
@@ -67,30 +61,39 @@
       "intro": "Databases, middleware, compute, data and AI platforms that applications run on.",
       "groups": [
         { "name": "Database Management Systems (DBMS)", "subs": [
-          { "id": "platform-middleware-database-relational", "name": "Relational Database Management Systems", "desc": "Structured data in related tables, SQL queries and transactions." },
-          { "id": "platform-middleware-database-nosql", "name": "NoSQL & Document Databases", "desc": "Document, wide-column and other non-relational engines." } ] },
+          { "id": "platform-middleware-database-relational", "name": "Relational Database Management Systems", "desc": "Structured data in related tables, SQL queries and transactions.", "csdm": ["service-delivery"] },
+          { "id": "platform-middleware-database-nosql", "name": "NoSQL & Document Databases", "desc": "Document, wide-column and other non-relational engines.", "csdm": ["service-delivery"] } ] },
         { "name": "Middleware Platforms", "subs": [
-          { "id": "platform-middleware-web", "name": "Web Servers & Reverse Proxies", "desc": "Serves web content, terminates TLS, proxies traffic and routes requests." },
-          { "id": "platform-middleware-application", "name": "Application Servers & Runtimes", "desc": "Runs application code and provides sessions, transactions, pooling and enterprise Java APIs." },
-          { "id": "platform-middleware-communication", "name": "Communication & Messaging Servers", "desc": "Message brokers, queues, event streaming and email servers." },
-          { "id": "platform-middleware-integration", "name": "Integration Servers & iPaaS", "desc": "Integration servers, ESBs and cloud integration platforms." },
-          { "id": "platform-middleware-api", "name": "API Gateways & Service Connectivity", "desc": "Publishes, routes, secures and governs service interfaces." },
-          { "id": "platform-middleware-cache", "name": "Caches & In-memory Data Stores", "desc": "Shared in-memory stores and caches for fast access and temporary state." },
-          { "id": "platform-middleware-transfer", "name": "Managed File Transfer", "desc": "Secure, automated file exchange between organizations and systems." } ] },
+          { "id": "platform-middleware-web", "name": "Web Servers & Reverse Proxies", "desc": "Serves web content, terminates TLS, proxies traffic and routes requests.", "csdm": ["service-delivery"] },
+          { "id": "platform-middleware-application", "name": "Application Servers & Runtimes", "desc": "Runs application code and provides sessions, transactions, pooling and enterprise Java APIs.", "csdm": ["service-delivery"] },
+          { "id": "platform-middleware-communication", "name": "Communication & Messaging Servers", "desc": "Message brokers, queues, event streaming and email servers.", "csdm": ["service-delivery"] },
+          { "id": "platform-middleware-integration", "name": "Integration Servers & iPaaS", "desc": "Integration servers, ESBs and cloud integration platforms.", "csdm": ["build-integration", "service-delivery"] },
+          { "id": "platform-middleware-api", "name": "API Gateways & Service Connectivity", "desc": "Publishes, routes, secures and governs service interfaces.", "csdm": ["build-integration", "service-delivery"] },
+          { "id": "platform-middleware-cache", "name": "Caches & In-memory Data Stores", "desc": "Shared in-memory stores and caches for fast access and temporary state.", "csdm": ["service-delivery"] },
+          { "id": "platform-middleware-transfer", "name": "Managed File Transfer", "desc": "Secure, automated file exchange between organizations and systems.", "csdm": ["service-delivery"] } ] },
         { "name": "Compute, Cloud & Containers", "subs": [
-          { "id": "platform-workplace-computing", "name": "Compute, Cloud & Container Platforms", "desc": "General compute, cloud, container and application foundation platforms." } ] },
+          { "id": "platform-workplace-computing", "name": "Compute, Cloud & Container Platforms", "desc": "General compute, cloud, container and application foundation platforms.", "csdm": ["service-delivery"] } ] },
         { "name": "Data & Analytics", "subs": [
-          { "id": "platform-data-management", "name": "Data Platforms & Governance", "desc": "Warehouses, lakehouses, integration, master data, quality and metadata." },
-          { "id": "platform-data-analytics", "name": "Business Intelligence & Analytics", "desc": "Reporting, visualization and analytical exploration." },
-          { "id": "platform-data-science", "name": "Data Science & Machine Learning Platforms", "desc": "Model development, experimentation, deployment and ML environments." } ] },
+          { "id": "platform-data-management", "name": "Data Platforms & Governance", "desc": "Warehouses, lakehouses, integration, master data, quality and metadata.", "csdm": ["foundation", "service-delivery"] },
+          { "id": "platform-data-analytics", "name": "Business Intelligence & Analytics", "desc": "Reporting, visualization and analytical exploration.", "csdm": ["service-delivery"] },
+          { "id": "platform-data-science", "name": "Data Science & Machine Learning Platforms", "desc": "Model development, experimentation, deployment and ML environments.", "csdm": ["build-integration"] } ] },
         { "name": "AI Platforms & Assistants", "subs": [
-          { "id": "platform-ai-agentic", "name": "Agentic AI & Intelligent Automation", "desc": "Agents and process automation executing workflows." },
-          { "id": "platform-ai-generative", "name": "Generative AI & Assistants", "desc": "Generates text, code, images, audio or other content." },
-          { "id": "platform-ai-interpretive", "name": "Conversational & Interpretive AI", "desc": "Language, document, image and speech understanding, chat and enterprise AI search." },
-          { "id": "platform-ai-predictive", "name": "Predictive AI", "desc": "Prediction and forecasting services and model platforms." },
-          { "id": "platform-ai-prescriptive", "name": "Prescriptive AI & Optimization", "desc": "Decision optimization, planning and recommendations." },
-          { "id": "platform-ai-development", "name": "AI Development & Model Platforms", "desc": "Training, serving, orchestration and lifecycle platforms where no narrower AI type applies." } ] }
+          { "id": "platform-ai-agentic", "name": "Agentic AI & Intelligent Automation", "desc": "Agents and process automation executing workflows.", "csdm": ["build-integration", "service-delivery"] },
+          { "id": "platform-ai-generative", "name": "Generative AI & Assistants", "desc": "Generates text, code, images, audio or other content.", "csdm": ["build-integration", "service-consumption"] },
+          { "id": "platform-ai-interpretive", "name": "Conversational & Interpretive AI", "desc": "Language, document, image and speech understanding, chat and enterprise AI search.", "csdm": ["service-consumption"] },
+          { "id": "platform-ai-predictive", "name": "Predictive AI", "desc": "Prediction and forecasting services and model platforms.", "csdm": ["service-delivery"] },
+          { "id": "platform-ai-prescriptive", "name": "Prescriptive AI & Optimization", "desc": "Decision optimization, planning and recommendations.", "csdm": ["service-delivery"] },
+          { "id": "platform-ai-development", "name": "AI Development & Model Platforms", "desc": "Training, serving, orchestration and lifecycle platforms where no narrower AI type applies.", "csdm": ["build-integration"] } ] }
       ]
     }
+  ],
+  "csdmDomains": [
+    { "id": "foundation", "name": "Foundation", "desc": "Reference data the rest builds on: locations, groups, users, contracts, product models and assets." },
+    { "id": "ideation-strategy", "name": "Ideation & Strategy", "desc": "Goals, strategic priorities, demand and new product ideas." },
+    { "id": "design-planning", "name": "Design & Planning", "desc": "Enterprise architecture, business capabilities, business applications and information objects." },
+    { "id": "build-integration", "name": "Build & Integration", "desc": "Software development lifecycle, DevOps, integration and AI digital assets." },
+    { "id": "service-delivery", "name": "Service Delivery", "desc": "Technical services and the infrastructure, applications and data that run them." },
+    { "id": "service-consumption", "name": "Service Consumption", "desc": "Business services and the service offerings consumers request and use." },
+    { "id": "manage-portfolio", "name": "Manage Portfolio", "desc": "Governance of the service, product and application portfolio, including cost, risk and value." }
   ]
 }

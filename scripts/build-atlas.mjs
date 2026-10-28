@@ -75,7 +75,7 @@ if (at > 0) {
 
 const TAXONOMY = JSON.parse(readFileSync('src/data/atlas-taxonomy.json', 'utf8'));
 const SUB = {};
-for (const s of TAXONOMY.sections) for (const g of s.groups) for (const x of g.subs) SUB[x.id] = { section: s.id, streams: (x.streams ?? '').split('·')[1]?.split(',').map((v) => v.trim()).filter(Boolean) ?? [] };
+for (const s of TAXONOMY.sections) for (const g of s.groups) for (const x of g.subs) SUB[x.id] = { section: s.id, csdm: x.csdm ?? [], streams: (x.streams ?? '').split('·')[1]?.split(',').map((v) => v.trim()).filter(Boolean) ?? [] };
 
 // Logos copied from the original Atlas app: by product name, then by producer name or website.
 const LOGOS = JSON.parse(readFileSync('atlas/logos.json', 'utf8'));
@@ -106,6 +106,8 @@ const tools = catalogue
       tags: a.tags ?? [],
       views,
       streams,
+      // CSDM 5 domains follow from the subcategories (src/data/atlas-taxonomy.json).
+      domains: [...new Set(subs.flatMap((s) => SUB[s].csdm))],
       gartner: (a.gartnerMagicQuadrants ?? []).map((g) => ({ market: g.market, vendor: g.vendor, year: g.year, url: g.sourceUrl })),
     };
   })
@@ -114,6 +116,8 @@ const tools = catalogue
 
 const counts = {};
 for (const t of tools) for (const s of t.subs) counts[s] = (counts[s] ?? 0) + 1;
+const domains = {};
+for (const t of tools) for (const d of t.domains) domains[d] = (domains[d] ?? 0) + 1;
 const views = {};
 for (const t of tools) for (const v of t.views) views[v] = (views[v] ?? 0) + 1;
 const imported = catalogue.map((a) => a.importDate).filter(Boolean).sort().pop();
@@ -128,6 +132,7 @@ writeFileSync('src/data/atlas-meta.json', JSON.stringify({
   checked: tools.map((t) => t.checked).filter(Boolean).sort().pop(),
   gartner: tools.filter((t) => t.gartner.length).length,
   views,
+  domains,
   counts,
   activity,
 }, null, 2) + '\n');
