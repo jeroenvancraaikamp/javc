@@ -18,8 +18,8 @@ const nf = new Intl.NumberFormat(locale[lang]);
 const counts = META.counts as Record<string, number>;
 const views = META.views as Record<string, number>;
 const subTotal = TAXONOMY.sections.reduce((n, s) => n + s.groups.reduce((m, g) => m + g.subs.length, 0), 0);
-const edition = new Date(META.imported).toLocaleDateString(locale[lang], { month: 'long', year: 'numeric' });
-const checked = new Date(META.checked).toLocaleDateString(locale[lang], { day: 'numeric', month: 'long', year: 'numeric' });
+// The last weekly update (scripts/maintain-atlas.mjs), else the latest check of a description.
+const updated = new Date((META.activity as { date: string }[])[0]?.date ?? META.checked).toLocaleDateString(locale[lang], { day: 'numeric', month: 'long', year: 'numeric' });
 // What the script in the browser needs: the categories and the texts that it fills in.
 const config = {
   lang: locale[lang],
@@ -29,15 +29,13 @@ const config = {
 };
 ---
 <div class="atlas" id="atlas">
+  <div class="prose atlas-updated"><p set:html={TEXT.updated(updated).replace('{changes}', url(lang, '/it4it-atlas/changes/'))} /></div>
   <div class="atlas-stats">
     <div><b>{nf.format(META.tools)}</b><span>{TEXT.tools}</span></div>
     <div><b>{TAXONOMY.sections.length}</b><span>{TEXT.sections}</span></div>
     <div><b>{subTotal}</b><span>{TEXT.subcategories}</span></div>
     <div><b>{nf.format(META.gartner)}</b><span>{TEXT.gartner}</span></div>
   </div>
-  <p class="atlas-edition">
-    {TEXT.edition} {edition} · {TEXT.checked} {checked} · <a href={url(lang, '/it4it-atlas/categories/')}>{TEXT.guide}</a> · <a href={url(lang, '/it4it-atlas/changes/')}>{TEXT.changes}</a> · <a href="https://www.opengroup.org/it4it" target="_blank" rel="noopener">{TEXT.standard}</a>
-  </p>
 
   <div class="atlas-tabbar">
   <div class="atlas-tabs" role="tablist">
@@ -341,7 +339,7 @@ const config = {
   .atlas-stats div { border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; background: var(--bg-soft); }
   .atlas-stats b { display: block; font: 700 26px/1.2 var(--head-font); color: var(--heading); }
   .atlas-stats span { color: var(--muted); font-size: 13px; line-height: 1.4; display: block; }
-  .atlas-edition { color: var(--muted); font-size: 14px; margin: 0 0 22px; }
+  .atlas-updated p { margin-top: 0; }
   .atlas-tabbar { display: flex; align-items: center; gap: 12px; border-bottom: 2px solid var(--line); margin-bottom: 20px; scroll-margin-top: 90px; }
   .atlas-tabs { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; min-width: 0; }
   .atlas-count { flex: none; font: 600 14px var(--head-font); color: var(--heading); white-space: nowrap; }
