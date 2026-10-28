@@ -173,7 +173,7 @@ Answer with a JSON array between <json> and </json> (empty when nothing notable 
         id: createHash('sha256').update(`${norm(f.name)}|${norm(f.vendor)}`).digest('hex').slice(0, 16),
         ...f,
         descriptionSource: f.descriptionSource ?? 'producer',
-        tags: [],
+        tags: f.subcategoryIds.map((s) => SUB[s].name),
         status: 'listed',
         verifiedAt: TODAY,
         addedAt: TODAY,
