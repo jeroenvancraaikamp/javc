@@ -1,6 +1,6 @@
 ---
 // Category guide of the IT4IT Atlas (/it4it-atlas/categories/ and its translations): every section, group and
-// subcategory with its description and number of tools; each subcategory links to the filtered Atlas.
+// subcategory with its description, number of tools and CSDM 5 domains; each subcategory links to the filtered Atlas.
 import TAXONOMY from '../data/atlas-taxonomy.json';
 import META from '../data/atlas-meta.json';
 import Base from '../layouts/Base.astro';
@@ -12,12 +12,23 @@ const TEXT = ATLAS_TEXT[lang];
 const nf = new Intl.NumberFormat(locale[lang]);
 const counts = META.counts as Record<string, number>;
 const views = META.views as Record<string, number>;
+const domains = META.domains as Record<string, number>;
+const DOMAIN = Object.fromEntries(TAXONOMY.csdmDomains.map((d) => [d.id, d.name]));
 ---
 <Base title={`${TEXT.guide} · IT4IT Atlas`} pageTitle={TEXT.guide} crumbs={[{ label: 'IT4IT Atlas', href: url(lang, '/it4it-atlas/') }, { label: TEXT.guide }]}>
   <div class="wrap page-body atlas-page">
     <section class="atlas-guide">
       <h1 class="atlas-guide-title">IT4IT Atlas · {TEXT.guide}</h1>
       <p>{TEXT.guideIntro}</p>
+      <div class="atlas-guide-section">
+        <h3>{TEXT.csdmLabel}</h3>
+        <p class="muted">{TEXT.csdmGuide}</p>
+        <ul class="atlas-guide-domains">
+          {TAXONOMY.csdmDomains.map((d) => (
+            <li><a href={url(lang, `/it4it-atlas/?domain=${d.id}`)}>{d.name}</a> <small>({domains[d.id] ?? 0})</small><div>{d.desc}</div></li>
+          ))}
+        </ul>
+      </div>
       {TAXONOMY.sections.map((s, i) => (
         <div class="atlas-guide-section">
           <h3><span>{String(i + 1).padStart(2, '0')}</span> {s.name} <small>{nf.format(views[s.id] ?? 0)} {TEXT.tools}</small></h3>
@@ -32,6 +43,7 @@ const views = META.views as Record<string, number>;
                       <a href={url(lang, `/it4it-atlas/?view=${s.id}&sub=${x.id}`)}>{x.name}</a> <small>({counts[x.id] ?? 0})</small>
                       <div>{x.desc}</div>
                       {x.streams && <div class="muted" title={TEXT.streamsLabel}>{TEXT.streamsLabel}: {x.streams}</div>}
+                      <div class="csdm" title={TEXT.csdmLabel}>{x.csdm.map((d) => <a href={url(lang, `/it4it-atlas/?domain=${d}`)}>{DOMAIN[d]}</a>)}</div>
                     </li>
                   ))}
                 </ul>
@@ -62,6 +74,12 @@ const views = META.views as Record<string, number>;
   .atlas-guide-group li a { font-weight: 600; }
   .atlas-guide-group li small, .atlas-guide .muted { color: var(--muted); }
   .atlas-guide-group li .muted { font-size: 12px; }
+  .atlas-guide-domains { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px 18px; font-size: 14px; line-height: 1.5; }
+  .atlas-guide-domains li { border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; }
+  .atlas-guide-domains li a { font-weight: 600; }
+  .atlas-guide-domains small { color: var(--muted); }
+  .atlas-guide-group .csdm { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+  .atlas-guide-group .csdm a { font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 3px; border: 1px solid var(--accent); color: var(--accent); }
   .atlas-note { margin-top: 30px; font-size: 13px; color: var(--muted); line-height: 1.6; }
   .atlas-back { font-weight: 600; }
 </style>
