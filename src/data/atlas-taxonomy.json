@@ -35,7 +35,7 @@
     },
     {
       "id": "business", "name": "Business applications",
-      "intro": "Applications that run the business, classified with the TBM 5.0.1 business categories, and the workplace platforms people use to communicate, collaborate and share knowledge.",
+      "intro": "Applications that run the business, classified with the TBM 5 business categories, and the workplace platforms people use to communicate, collaborate and share knowledge.",
       "groups": [
         { "name": "Business", "subs": [
           { "id": "business-product-management-tools", "name": "Product Management", "desc": "Plans and develops customer-facing products and manages their lifecycles.", "csdm": ["ideation-strategy", "design-planning"] },
