@@ -1,23 +1,22 @@
 ---
 title: "1400+ out-of-the-box IT4ESM-tools"
-excerpt: "Onlangs publiceerde ik een artikel met de Ultimate List of 1000+ IT4IT Tools 2026. Sindsdien heb ik de categorieën en subcategorieën bijgewerkt en de tools aan de lijst toegevoegd die worden gebruikt voor datacentermanagement en voor"
-source: "21ea159e5556a0c2"
+excerpt: "Onlangs publiceerde ik een artikel met de Ultimate List of 1000+ IT4IT Tools 2026. Sindsdien heb ik de categorieën en subcategorieën bijgewerkt en de tools aan de lijst toegevoegd die worden gebruikt voor datacenterbeheer en voor"
+source: "c455041bc3c825a8"
 ---
 
-### UPDATE: [IT4IT/IT4ESM Atlas](https://javc.nl/it4it-atlas/) bevat nu 1600 platforms
+### UPDATE: We hebben een nieuwe [IT4IT Atlas](https://javc.nl/it4it-atlas/) op onze site gepubliceerd.
 
-
-Onlangs publiceerde ik een artikel met de [**Ultimate List of 1000+ IT4IT Tools 2026**](/nl/the-ultimate-list-of-1000-it-management-tools-2026/)**.** Sindsdien heb ik de categorieën en subcategorieën bijgewerkt en de tools aan de lijst toegevoegd die worden gebruikt voor datacentermanagement en voor de shared/corporate functies zoals HR, risk, finance enzovoort. **De lijst omvat nu bekende tools van/voor IT en van/voor de gedeelde bedrijfsfuncties (bijv. HR, risk, finance enzovoort); de lijst bevat momenteel 1.438 COMMODITY IT4ESM-tools/-platforms.**
+Onlangs publiceerde ik een artikel met de [**Ultimate List of 1000+ IT4IT Tools 2026**](/nl/the-ultimate-list-of-1000-it-management-tools-2026/)**.** Sindsdien heb ik de categorieën en subcategorieën bijgewerkt en de tools aan de lijst toegevoegd die worden gebruikt voor datacenterbeheer en voor de shared/corporate functies zoals HR, risk, finance, enz. **De lijst omvat nu bekende tools van/voor IT en van/voor de gedeelde bedrijfsfuncties (bijv. HR, risk, finance, enz.); de lijst bevat momenteel 1.438 COMMODITY IT4ESM-tools/-platforms.**
 
 De gebruikte categorieën en subcategorieën zijn een mix van TBM- en IT4IT-naamgevingsconventies, en zijn bewust zo gekozen.
 
 **Door in deze marktstandaardlijst simpelweg de applicaties te markeren die het bedrijf gebruikt, voorkom je discussies/verwarring over de (sub)categorisering van de IT4ESM-applicaties in je landschap, en kun je eenvoudig hiaten en dubbelingen signaleren.**
 
-Ik definieer alle IT4ESM-tools als applicaties, omdat ik vind dat hun lifecycle beheerd moet worden en dat het bedrijfsbeleid ook op hen van toepassing moet zijn. De 'Corporate and Shared'-applicaties komen in een Business Application Portfolio, en de IT4IT-tools in een Technology Management Application Portfolio. De 'echte' business applicaties die door/voor externe klanten worden gebruikt (d.w.z. die niet in deze IT4ESM-lijst zijn opgenomen) komen ook in het Business Application Portfolio.
+Ik definieer alle IT4ESM-tools als applicaties, omdat ik vind dat hun lifecycle beheerd moet worden en dat het bedrijfsbeleid ook op hen van toepassing moet zijn. De 'corporate en shared' applicaties komen in een Business Application Portfolio, en de IT4IT-tools in een Technology Mngt Application Portfolio. De 'echte' business applicaties die door/voor externe klanten worden gebruikt (d.w.z. niet opgenomen in deze IT4ESM-lijst) komen eveneens in het Business Application Portfolio.
 
-Hoewel je zou kunnen stellen dat het IT4IT-CI's zijn, registreer ik modellen van middleware en infra-/OS-software niet als business applicaties, omdat het niet praktisch/efficiënt is om instanties daarvan te definiëren, te onderhouden en te relateren.
+Hoewel je zou kunnen stellen dat het IT4IT-CI's zijn, registreer ik modellen van middleware en infra-/OS-software niet als business applicaties, omdat het niet praktisch/efficiënt is om instances daarvan te definiëren/onderhouden en te relateren.
 
-Alle deployment-specifieke instanties van de IT4ESM-applicaties worden gerelateerd aan de applicatie waarvan ze een instantie zijn. Infrastructuur-CI's worden gemapt op de instanties die ervan afhankelijk zijn, vaak met tag-based mapping.
+Alle deploymentspecifieke instances van de IT4ESM-applicaties worden gerelateerd aan de applicatie waarvan ze een instance zijn. Infrastructuur-CI's worden gekoppeld aan de instances die ervan afhankelijk zijn, vaak met tag-based mapping.
 
 Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatieportfolio, en (on)geautoriseerde run-time (technische) afhankelijkheden worden ontdekt via discovery.
 
@@ -25,7 +24,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 
 ## 1. Strategie & planning
 
-### 1.1. Enterprise Architecture (EA)
+### 1.1. Enterprise architecture (EA)
 
 1.  ADOIT van BOC Group
 2.  Alfabet Enterprise Architecture Management van Bizzdesign
@@ -220,7 +219,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 119.  xtype Native DevOps Automation Platform van xtype
 120.  Yello van Yello
 
-### 2.2. Low-code-applicatieplatforms
+### 2.2. Low-codeapplicatieplatforms
 
 1.  App Engine Studio (AE) van ServiceNow
 2.  Appian van Appian
@@ -250,7 +249,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 8.  SS&C Blue Prism van SS&C Technologies
 9.  UiPath Platform van UiPath
 
-### 2.4. API-management
+### 2.4. API-beheer
 
 1.  Apache APISIX van Apache Software Foundation
 2.  Apigee van Google
@@ -297,9 +296,9 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 43.  Workato van Workato
 44.  Zapier van Zapier
 
-## 3. IT-services & -assets
+## 3. IT-service & asset
 
-### 3.1. IT-servicemanagement (ITSM)
+### 3.1. IT Service Management (ITSM)
 
 1.  4Biz Service Management van Run2biz
 2.  Alemba Service Manager van Alemba
@@ -324,7 +323,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 21.  HaloITSM van Halo Service Solutions
 22.  HCL SX van HCLTech (HCLSoftware)
 23.  Hornbill for ITSM van Hornbill
-24.  IBM Control Desk (Legacy, migratie naar Maximo IT) van IBM
+24.  IBM Control Desk (Legacy, migreert naar Maximo IT) van IBM
 25.  Infraon Desk van EverestIMS Technologies
 26.  Infraon Infinity van Infraon
 27.  InvGate Service Management van InvGate
@@ -349,7 +348,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 46.  POB (Point of Business) van Serviceaide
 47.  Proactivanet van Proactivanet
 48.  Salesforce Service Cloud (ITSM) van Salesforce
-49.  SAP Solution Manager (Legacy, overgang naar SAP Cloud ALM) van SAP
+49.  SAP Solution Manager (Legacy, gaat over naar SAP Cloud ALM) van SAP
 50.  Service Desk (Legacy) van Ivanti
 51.  ServiceAide Intelligent Service Management van Serviceaide
 52.  ServiceDesk Plus van ManageEngine
@@ -373,7 +372,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 70.  Zammad van Zammad GmbH
 71.  Zendesk for ITSM van Zendesk
 
-### 3.2. IT-assetmanagement (ITAM)
+### 3.2. IT Asset Management (ITAM)
 
 1.  1E Platform van 1E
 2.  Ailance ITAsMA van 2B Advice
@@ -667,7 +666,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 
 ## 5. IT-security
 
-### 5.1. Vulnerability & exposure management (VEM)
+### 5.1. Vulnerability & Exposure Management (VEM)
 
 1.  Action1 van Action1
 2.  Analyst1 Threat Intelligence Platform van Analyst1
@@ -880,7 +879,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 12.  Proofpoint Aegis (Email Protection) van Proofpoint
 13.  Trend Micro Email Security van Trend Micro
 
-### 5.7. Netwerk- & hybrid-mesh-firewalls
+### 5.7. Netwerk- & hybrid mesh-firewalls
 
 1.  Check Point Quantum van Check Point
 2.  Cisco Secure Firewall van Cisco
@@ -1033,7 +1032,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 10.  iTRACS DCIM Suite van CommScope
 11.  Metrics (voorheen OpenData) van Modius
 12.  Nlyte DCIM van Carrier Global (voorheen Nlyte Software)
-13.  OpenDCIM van de open-sourcecommunity
+13.  OpenDCIM van de opensourcecommunity
 14.  Power IQ van Sunbird Software
 15.  RackTables van RackTables (open source)
 16.  RF Code van RF Code
@@ -1044,7 +1043,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 21.  Vigilent van Vigilent
 22.  Visual Capacity Optimization Manager (VCOM) van Eaton
 
-### 7.2. Platforms voor netwerkbeheer
+### 7.2. Netwerkbeheerplatforms
 
 1.  Aruba Central van HPE (Aruba Networking)
 2.  Cisco Catalyst Center (DNA Center) van Cisco Systems
@@ -1064,7 +1063,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 16.  SevOne Network Performance Management van SevOne (IBM)
 17.  Statseeker van Statseeker
 
-### 7.3. Platforms voor storagebeheer
+### 7.3. Storagebeheerplatforms
 
 1.  Cisco Intersight (storage-/infrabeheer) van Cisco Systems
 2.  Cloudian HyperStore Manager van Cloudian
@@ -1091,7 +1090,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 23.  VAST Data Platform van VAST Data
 24.  VMware Aria Operations for VMs / vSAN van Broadcom (VMware)
 
-### 7.4. Platforms voor energiebeheer
+### 7.4. Energiebeheerplatforms
 
 1.  ABB Ability Data Center Automation van ABB
 2.  APC PowerChute Network Shutdown / StruxureWare Data Center Expert van Schneider Electric
@@ -1105,12 +1104,12 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 10.  Sinetica Compex3 van Sinetica Enterprises
 11.  Tripp Lite PowerAlert van Eaton (Tripp Lite)
 12.  Vertiv Liebert Environet / Avocent van Vertiv
-13.  7.5. Platforms voor koelingsbeheer
+13.  7.5. Koelingsbeheerplatforms
 14.  Airedale Cooling Management (ACIS) van Airedale (Modine)
 15.  Coolcentric Liquid Cooling Management van Vertiv (Coolcentric)
 16.  CoolIT Systems Coolant Distribution Unit (CDU) Management van CoolIT Systems
 17.  Eaton Data Center Cooling Management van Eaton
-18.  EkkoSense EkkoSoft Critical (koelingsoptimalisatie) van EkkoSense
+18.  EkkoSense EkkoSoft Critical (koeloptimalisatie) van EkkoSense
 19.  Future Facilities 6SigmaDCX (CFD-modellering) van Cadence Design Systems
 20.  Motivair ChilledDoor Control Software van Motivair (Schneider Electric)
 21.  Nlyte Cooling Analytics van Carrier Global (Nlyte)
@@ -1123,7 +1122,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 
 ## 8. Corporate & shared
 
-### 8.1. Personeel & HR
+### 8.1. Workforce & HR
 
 1.  activpayroll van activpayroll
 2.  ADP Enterprise HR van ADP
@@ -1560,7 +1559,7 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 23.  Workvivo van Zoom
 24.  Zoom Team Chat van Zoom
 
-### 8.8. Environment, Social & Governance
+### 8.8. Environment, social & governance
 
 1.  Benchmark Gensuite van Benchmark Digital Partners
 2.  Diligent ESG van Diligent
@@ -1582,4 +1581,4 @@ Design-time (functionele) afhankelijkheden worden gedefinieerd in het applicatie
 18.  Watershed van Watershed
 19.  Workiva van Workiva
 
-Je content komt hier
+Hier komt je content

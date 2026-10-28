@@ -1,23 +1,22 @@
 ---
-title: "Über 1400 IT4ESM-Tools „Out of the Box“"
-excerpt: "Vor Kurzem habe ich einen Artikel mit der ultimativen Liste von über 1000 IT4IT-Tools 2026 veröffentlicht. Seitdem habe ich die Kategorien und Unterkategorien aktualisiert und die Tools in die Liste aufgenommen, die für das Data Center Management und für"
-source: "21ea159e5556a0c2"
+title: "Über 1.400 Out-of-the-Box-IT4ESM-Tools"
+excerpt: "Vor Kurzem habe ich einen Artikel mit der ultimativen Liste von über 1.000 IT4IT-Tools 2026 veröffentlicht. Seitdem habe ich die Kategorien und Unterkategorien aktualisiert und die Tools in die Liste aufgenommen, die für das Data Center Management und für"
+source: "c455041bc3c825a8"
 ---
 
-### UPDATE: Der [IT4IT/IT4ESM-Atlas](https://javc.nl/it4it-atlas/) enthält jetzt 1600 Plattformen
+### UPDATE: Wir haben einen neuen [IT4IT Atlas](https://javc.nl/it4it-atlas/) auf unserer Website veröffentlicht.
 
-
-Vor Kurzem habe ich einen Artikel mit der [**ultimativen Liste von über 1000 IT4IT-Tools 2026**](/de/the-ultimate-list-of-1000-it-management-tools-2026/) veröffentlicht**.** Seitdem habe ich die Kategorien und Unterkategorien aktualisiert und die Tools in die Liste aufgenommen, die für das Data Center Management und für die Shared/Corporate Functions wie HR, Risk, Finance usw. eingesetzt werden. **Die Liste umfasst jetzt bekannte Tools der/für die IT sowie der/für die Shared Enterprise Functions (z. B. HR, Risk, Finance usw.); derzeit enthält sie 1.438 COMMODITY-IT4ESM-Tools/-Plattformen.**
+Vor Kurzem habe ich einen Artikel mit der [**ultimativen Liste von über 1.000 IT4IT-Tools 2026**](/de/the-ultimate-list-of-1000-it-management-tools-2026/)**** veröffentlicht. Seitdem habe ich die Kategorien und Unterkategorien aktualisiert und die Tools in die Liste aufgenommen, die für das Data Center Management und für die Shared/Corporate Functions wie HR, Risk, Finance usw. eingesetzt werden. **Die Liste umfasst nun bekannte Tools der/für die IT sowie der/für die Shared Enterprise Functions (z. B. HR, Risk, Finance usw.); aktuell enthält die Liste 1.438 COMMODITY-IT4ESM-Tools/-Plattformen.**
 
 Die verwendeten Kategorien und Unterkategorien sind eine Mischung aus TBM- und IT4IT-Namenskonventionen und wurden bewusst so gewählt.
 
-**Indem man in dieser marktüblichen Liste einfach die Anwendungen markiert, die im Unternehmen eingesetzt werden, vermeidet man Diskussionen und Verwirrung über die (Unter-)Kategorisierung der IT4ESM-Anwendungen in der eigenen Landschaft und kann Lücken und Dubletten leicht erkennen.**
+**Indem man in dieser marktüblichen Liste einfach die Anwendungen markiert, die im Unternehmen eingesetzt werden, vermeidet man Diskussionen und Unklarheiten über die (Unter-)Kategorisierung der IT4ESM-Anwendungen in der eigenen Landschaft und kann Lücken und Doppelungen leicht erkennen.**
 
-Ich definiere alle IT4ESM-Tools als Applications, da ihr Lebenszyklus meiner Überzeugung nach gemanagt werden muss und auch für sie die Unternehmensrichtlinien gelten müssen. Die „Corporate and Shared“-Applications gehören in ein Business Application Portfolio, die IT4IT-Tools in ein Technology Management Application Portfolio. Die „echten“ Business Applications, die von bzw. für externe Kunden genutzt werden (d. h. nicht in dieser IT4ESM-Liste enthalten sind), gehören ebenfalls in das Business Application Portfolio.
+Ich definiere alle IT4ESM-Tools als Applications, da meiner Überzeugung nach auch ihr Lifecycle gemanagt werden muss und Unternehmensrichtlinien auch für sie gelten müssen. Die „Corporate and Shared“-Applications kommen in ein Business Application Portfolio, die IT4IT-Tools in ein Technology Mngt Application Portfolio. Die „echten“ Business Applications, die von/für externe Kunden genutzt werden (d. h. nicht in dieser IT4ESM-Liste enthalten sind), kommen ebenfalls in das Business Application Portfolio.
 
-Auch wenn man argumentieren könnte, dass es sich um IT4IT-CIs handelt, registriere ich Modelle von Middleware und Infrastruktur-/OS-Software nicht als Business Applications, da es nicht praktikabel bzw. effizient ist, deren Instanzen zu definieren, zu pflegen und in Beziehung zu setzen.
+Auch wenn man argumentieren könnte, dass es sich um IT4IT-CIs handelt, registriere ich Modelle von Middleware- und Infra-/OS-Software nicht als Business Applications, da es weder praktikabel noch effizient ist, deren Instanzen zu definieren, zu pflegen und in Beziehung zu setzen.
 
-Alle deploymentspezifischen Instanzen der IT4ESM-Applications werden mit der Application verknüpft, von der sie eine Instanz sind. Infrastruktur-CIs werden den Instanzen zugeordnet, die von ihnen abhängen, häufig mithilfe von tagbasiertem Mapping.
+Alle deploymentspezifischen Instanzen der IT4ESM-Applications werden mit der Application verknüpft, deren Instanz sie sind. Infrastruktur-CIs werden den Instanzen zugeordnet, die von ihnen abhängen, häufig mittels Tag-basiertem Mapping.
 
 Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definiert, und (nicht) autorisierte Run-Time-Abhängigkeiten (technisch) werden per Discovery ermittelt.
 
@@ -250,7 +249,7 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 8.  SS&C Blue Prism von SS&C Technologies
 9.  UiPath Platform von UiPath
 
-### 2.4. API-Management
+### 2.4. API-Mngt
 
 1.  Apache APISIX von Apache Software Foundation
 2.  Apigee von Google
@@ -297,9 +296,9 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 43.  Workato von Workato
 44.  Zapier von Zapier
 
-## 3. IT Service & Asset
+## 3. IT-Service & Asset
 
-### 3.1. IT Service Management (ITSM)
+### 3.1. IT-Service-Mngt (ITSM)
 
 1.  4Biz Service Management von Run2biz
 2.  Alemba Service Manager von Alemba
@@ -349,7 +348,7 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 46.  POB (Point of Business) von Serviceaide
 47.  Proactivanet von Proactivanet
 48.  Salesforce Service Cloud (ITSM) von Salesforce
-49.  SAP Solution Manager (Legacy, Umstieg auf SAP Cloud ALM) von SAP
+49.  SAP Solution Manager (Legacy, Wechsel zu SAP Cloud ALM) von SAP
 50.  Service Desk (Legacy) von Ivanti
 51.  ServiceAide Intelligent Service Management von Serviceaide
 52.  ServiceDesk Plus von ManageEngine
@@ -373,7 +372,7 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 70.  Zammad von Zammad GmbH
 71.  Zendesk for ITSM von Zendesk
 
-### 3.2. IT Asset Management (ITAM)
+### 3.2. IT-Asset-Mngt (ITAM)
 
 1.  1E Platform von 1E
 2.  Ailance ITAsMA von 2B Advice
@@ -474,7 +473,7 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 97.  Zluri SaaS Management Platform von Zluri
 98.  Zylo SaaS Management Platform von Zylo
 
-### 3.3. Unified Endpoint Management (UEM)
+### 3.3. Unified Endpoint Mngt (UEM)
 
 1.  Adaptiva OneSite von Adaptiva
 2.  Hexnode UEM von Mitsogo
@@ -641,7 +640,7 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 145.  Zenoss Cloud von Virtana
 146.  Zero Incident Framework (ZIF) von GAVS Technologies
 
-### 4.2. Enterprise Backup & Data Protection / Disaster Recovery
+### 4.2. Enterprise-Backup & Datensicherung / Disaster Recovery
 
 1.  Acronis Cyber Protect Cloud von Acronis
 2.  Arcserve UDP von Arcserve
@@ -656,7 +655,7 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 11.  IBM Storage Protect von IBM
 12.  N-able Cove Data Protection von N-able
 13.  NAKIVO Backup & Replication von NAKIVO
-14.  OpenText NetBackup (aus der Micro-Focus-Linie) von OpenText
+14.  OpenText NetBackup (Micro-Focus-Herkunft) von OpenText
 15.  Proxmox Backup Server von Proxmox Server Solutions GmbH
 16.  Rubrik Security Cloud von Rubrik
 17.  Unitrends von Unitrends (Kaseya)
@@ -667,7 +666,7 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 
 ## 5. IT-Sicherheit
 
-### 5.1. Vulnerability & Exposure Management (VEM)
+### 5.1. Vulnerability & Exposure Mngt (VEM)
 
 1.  Action1 von Action1
 2.  Analyst1 Threat Intelligence Platform von Analyst1
@@ -796,7 +795,7 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 125.  XM Cyber Exposure Management Platform von XM Cyber (Schwarz Digits)
 126.  Zafran Threat Exposure Management Platform von Zafran Security
 
-### 5.2. Security Information and Event Management (SIEM)
+### 5.2. Security Information and Event Mngt (SIEM)
 
 1.  CrowdStrike Falcon Next-Gen SIEM von CrowdStrike
 2.  Datadog Cloud SIEM von Datadog
@@ -900,7 +899,7 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 16.  WatchGuard Firebox von WatchGuard
 17.  Zeek von Zeek Project (von Corelight unterstützte Community)
 
-### 5.8. Identity & Access Management (IAM, IGA & PAM)
+### 5.8. Identity & Access Mngt (IAM, IGA & PAM)
 
 1.  Alibaba Cloud IDaaS von Alibaba Cloud
 2.  ARCON PAM von ARCON
@@ -973,7 +972,7 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 24.  Glean von Glean
 25.  Grok Enterprise von xAI
 26.  LangChain / LangGraph Platform von LangChain
-27.  Llama (Enterprise/Llama API) von Meta
+27.  Llama (enterprise/Llama API) von Meta
 28.  Microsoft 365 Copilot von Microsoft
 29.  Mistral AI Platform (Le Chat Enterprise) von Mistral AI
 30.  North von Cohere
@@ -1019,7 +1018,7 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 
 ## 7. Rechenzentrumsbetrieb
 
-### 7.1. Data Center Infrastructure Management (DCIM)
+### 7.1. Data Center Infrastructure Mngt (DCIM)
 
 1.  Aveva Data Center Monitoring von AVEVA
 2.  Brightlayer Data Centers von Eaton
@@ -1123,7 +1122,7 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 
 ## 8. Corporate & Shared
 
-### 8.1. Personal & HR
+### 8.1. Workforce & HR
 
 1.  activpayroll von activpayroll
 2.  ADP Enterprise HR von ADP
@@ -1582,4 +1581,4 @@ Design-Time-Abhängigkeiten (funktional) werden im Application Portfolio definie
 18.  Watershed von Watershed
 19.  Workiva von Workiva
 
-Ihr Inhalt steht hier
+Ihr Inhalt hier

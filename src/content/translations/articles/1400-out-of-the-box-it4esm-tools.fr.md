@@ -1,25 +1,24 @@
 ---
-title: "Plus de 1400 outils IT4ESM prêts à l'emploi"
-excerpt: "J'ai récemment publié un article présentant la Liste ultime de plus de 1000 outils IT4IT 2026. Depuis, j'ai mis à jour les catégories et sous-catégories et ajouté à la liste les outils utilisés pour la gestion des data centers et pour"
-source: "21ea159e5556a0c2"
+title: "Plus de 1 400 outils IT4ESM prêts à l'emploi"
+excerpt: "J'ai récemment publié un article présentant la liste ultime de plus de 1 000 outils IT4IT 2026. Depuis, j'ai mis à jour les catégories et sous-catégories et ajouté à la liste les outils utilisés pour la gestion des data centers et pour"
+source: "c455041bc3c825a8"
 ---
 
-### MISE À JOUR : l'[Atlas IT4IT/IT4ESM](https://javc.nl/it4it-atlas/) contient désormais 1600 plateformes
+### MISE À JOUR : nous avons publié un nouvel [Atlas IT4IT](https://javc.nl/it4it-atlas/) sur notre site.
 
+J'ai récemment publié un article présentant la [**liste ultime de plus de 1 000 outils IT4IT 2026**](/fr/the-ultimate-list-of-1000-it-management-tools-2026/)**.** Depuis, j'ai mis à jour les catégories et sous-catégories et ajouté à la liste les outils utilisés pour la gestion des data centers et pour les fonctions partagées/d'entreprise telles que les RH, les risques, la finance, etc. **La liste couvre désormais des outils bien connus de/pour l'IT et de/pour les fonctions partagées de l'entreprise (par ex. RH, risques, finance, etc.) ; elle contient actuellement 1 438 outils/plateformes IT4ESM STANDARD du marché.**
 
-J'ai récemment publié un article présentant la [**Liste ultime de plus de 1000 outils IT4IT 2026**](/fr/the-ultimate-list-of-1000-it-management-tools-2026/)**.** Depuis, j'ai mis à jour les catégories et sous-catégories et ajouté à la liste les outils utilisés pour la gestion des data centers et pour les fonctions partagées/corporate telles que les RH, les risques, la finance, etc. **La liste couvre désormais les outils bien connus de l'IT et pour l'IT, ainsi que des fonctions partagées de l'entreprise et pour celles-ci (par ex. RH, risques, finance, etc.) ; elle contient actuellement 1 438 outils/plateformes IT4ESM du marché (COMMODITY).**
+Les catégories et sous-catégories utilisées combinent les conventions de nommage TBM et IT4IT, et ont été choisies à dessein.
 
-Les catégories et sous-catégories utilisées mêlent les conventions de nommage de TBM et d'IT4IT, et ont été choisies délibérément.
+**En cochant simplement, dans cette liste standard du marché, les applications utilisées par l'entreprise, on évite les débats et la confusion autour de la (sous-)catégorisation des applications IT4ESM de votre paysage applicatif, et l'on identifie facilement les lacunes et les doublons.**
 
-**En marquant simplement, dans cette liste conforme aux standards du marché, les applications utilisées par l'entreprise, on évite les débats et la confusion sur la (sous-)catégorisation des applications IT4ESM de votre paysage applicatif, et l'on peut facilement identifier les lacunes et les doublons.**
+Je définis tous les outils IT4ESM comme des applications, car j'estime que leur cycle de vie doit être géré et que les politiques de l'entreprise doivent également s'y appliquer. Les applications « d'entreprise et partagées » sont intégrées à un portefeuille d'applications métier (Business Application Portfolio), et les outils IT4IT à un portefeuille d'applications de gestion technologique (Technology Mngt Application Portfolio). Les « véritables » applications métier utilisées par/pour les clients externes (c'est-à-dire non incluses dans cette liste IT4ESM) sont elles aussi intégrées au Business Application Portfolio.
 
-Je définis tous les outils IT4ESM comme des applications, car je suis convaincu que leur cycle de vie doit être géré et que les politiques de l'entreprise doivent également s'y appliquer. Les applications « corporate et partagées » sont intégrées à un portefeuille d'applications métier (Business Application Portfolio), et les outils IT4IT à un portefeuille d'applications de gestion technologique (Technology Mngt Application Portfolio). Les « véritables » applications métier utilisées par ou pour les clients externes (c'est-à-dire non incluses dans cette liste IT4ESM) sont elles aussi intégrées au portefeuille d'applications métier.
+Même si l'on pourrait soutenir qu'il s'agit de CI IT4IT, je n'enregistre pas les modèles de middleware et de logiciels d'infrastructure/OS comme des applications métier, car il n'est ni pratique ni efficace d'en définir, d'en maintenir et d'en relier les instances.
 
-Même si l'on pourrait considérer qu'il s'agit de CI IT4IT, je n'enregistre pas les modèles de middleware et de logiciels d'infrastructure/OS comme des Business Applications, car il n'est ni pratique ni efficace d'en définir, d'en maintenir et d'en relier les instances.
+Toutes les instances spécifiques à un déploiement des applications IT4ESM sont reliées à l'application dont elles sont une instance. Les CI d'infrastructure sont mappés aux instances qui en dépendent, souvent au moyen d'un mapping basé sur des tags.
 
-Toutes les instances propres à un déploiement des applications IT4ESM sont reliées à l'application dont elles sont une instance. Les CI d'infrastructure sont mappés aux instances qui en dépendent, souvent au moyen d'un mapping basé sur des tags.
-
-Les dépendances fonctionnelles (design-time) sont définies dans le portefeuille d'applications, et les dépendances techniques (run-time), autorisées ou non, sont découvertes.
+Les dépendances (fonctionnelles) au moment de la conception sont définies dans le portefeuille d'applications, et les dépendances (techniques) à l'exécution, autorisées ou non, sont découvertes.
 
 ![](/wp-content/uploads/2026/09/1438_tools.png)
 
@@ -88,7 +87,7 @@ Les dépendances fonctionnelles (design-time) sont définies dans le portefeuill
 23.  Workfront par Adobe
 24.  Wrike par Wrike (Cloud Software Group)
 
-### 1.3. Gestion financière de l'IT (ITFM), voir aussi 8.2
+### 1.3. Finance IT (ITFM), voir aussi 8.2
 
 1.  Apptio par IBM
 2.  ITONICS Innovation OS par ITONICS
@@ -266,7 +265,7 @@ Les dépendances fonctionnelles (design-time) sont définies dans le portefeuill
 12.  Solo.io Gloo Platform par Solo.io
 13.  Tyk par Tyk Technologies
 14.  WSO2 API Manager par WSO2
-15.  2.5. iPaaS et intégration d'entreprise
+15.  2.5. iPaaS d'entreprise et intégration
 16.  Apache Camel par Apache Software Foundation
 17.  Apache Kafka par Apache Software Foundation
 18.  Apache NiFi par Apache Software Foundation
@@ -656,7 +655,7 @@ Les dépendances fonctionnelles (design-time) sont définies dans le portefeuill
 11.  IBM Storage Protect par IBM
 12.  N-able Cove Data Protection par N-able
 13.  NAKIVO Backup & Replication par NAKIVO
-14.  OpenText NetBackup (héritage Micro Focus) par OpenText
+14.  OpenText NetBackup (lignée Micro Focus) par OpenText
 15.  Proxmox Backup Server par Proxmox Server Solutions GmbH
 16.  Rubrik Security Cloud par Rubrik
 17.  Unitrends par Unitrends (Kaseya)
@@ -725,7 +724,7 @@ Les dépendances fonctionnelles (design-time) sont définies dans le portefeuill
 54.  MazeBolt RADAR par MazeBolt Technologies
 55.  Microsoft Defender Vulnerability Management par Microsoft
 56.  Nanitor CTEM Platform par Nanitor
-57.  NetSPI (en fusion avec Synack) par NetSPI
+57.  NetSPI (en cours de fusion avec Synack) par NetSPI
 58.  Nexpose par Rapid7
 59.  NopSec Unified VRM par NopSec
 60.  NorthStar Navigator par NorthStar
@@ -828,7 +827,7 @@ Les dépendances fonctionnelles (design-time) sont définies dans le portefeuill
 7.  TheHive par StrangeBee
 8.  Tines par Tines
 
-### 5.4. Plateformes de protection des terminaux (EPP) et détection et réponse sur les terminaux (EDR)
+### 5.4. Plateformes de protection des terminaux (EPP) et de détection et réponse sur les terminaux (EDR)
 
 1.  Bitdefender GravityZone par Bitdefender
 2.  Broadcom (Symantec) Endpoint Security par Broadcom
@@ -880,7 +879,7 @@ Les dépendances fonctionnelles (design-time) sont définies dans le portefeuill
 12.  Proofpoint Aegis (Email Protection) par Proofpoint
 13.  Trend Micro Email Security par Trend Micro
 
-### 5.7. Pare-feu réseau et Hybrid Mesh Firewalls
+### 5.7. Pare-feu réseau et hybrid mesh firewalls
 
 1.  Check Point Quantum par Check Point
 2.  Cisco Secure Firewall par Cisco
@@ -1017,9 +1016,9 @@ Les dépendances fonctionnelles (design-time) sont définies dans le portefeuill
 24.  SoundHound AI (Amelia/Dynamic Interaction) par SoundHound AI
 25.  Sprinklr AI+ par Sprinklr
 
-## 7. Exploitation des data centers
+## 7. Opérations de data center
 
-### 7.1. Gestion de l'infrastructure des data centers (DCIM)
+### 7.1. Gestion de l'infrastructure du data center (DCIM)
 
 1.  Aveva Data Center Monitoring par AVEVA
 2.  Brightlayer Data Centers par Eaton
@@ -1066,7 +1065,7 @@ Les dépendances fonctionnelles (design-time) sont définies dans le portefeuill
 
 ### 7.3. Plateformes de gestion du stockage
 
-1.  Cisco Intersight (gestion du stockage/de l'infra) par Cisco Systems
+1.  Cisco Intersight (gestion du stockage/de l'infrastructure) par Cisco Systems
 2.  Cloudian HyperStore Manager par Cloudian
 3.  DataCore SANsymphony par DataCore Software
 4.  Dell OpenManage / PowerFlex Manager par Dell Technologies
@@ -1091,7 +1090,7 @@ Les dépendances fonctionnelles (design-time) sont définies dans le portefeuill
 23.  VAST Data Platform par VAST Data
 24.  VMware Aria Operations for VMs / vSAN par Broadcom (VMware)
 
-### 7.4. Plateformes de gestion de l'énergie
+### 7.4. Plateformes de gestion de l'alimentation électrique
 
 1.  ABB Ability Data Center Automation par ABB
 2.  APC PowerChute Network Shutdown / StruxureWare Data Center Expert par Schneider Electric
@@ -1121,7 +1120,7 @@ Les dépendances fonctionnelles (design-time) sont définies dans le portefeuill
 26.  Vertiv Liebert iCOM / CW Chiller Controls par Vertiv
 27.  Vigilent Dynamic Cooling Management par Vigilent
 
-## 8. Fonctions corporate et partagées
+## 8. Fonctions d'entreprise et partagées
 
 ### 8.1. Effectifs et RH
 
