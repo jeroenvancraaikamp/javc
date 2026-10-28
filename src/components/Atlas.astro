@@ -3,7 +3,7 @@
 // The tools come from public/atlas/tools.json and the counts from src/data/atlas-meta.json, both made by
 // scripts/build-atlas.mjs from atlas/IT4IT-Atlas.xlsx; the categories are in src/data/atlas-taxonomy.json.
 // Filtering, search, paging and the Excel export run in the browser; the filters are kept in the address
-// (?view=it4it&sub=it-service-itsm&q=...), so a filtered list can be shared as a link.
+// (?view=it4it&stream=Deploy&sub=it-service-itsm&q=...; view=gartner is the Gartner Magic Quadrant tab), so a filtered list can be shared as a link.
 import TAXONOMY from '../data/atlas-taxonomy.json';
 import META from '../data/atlas-meta.json';
 import { locale, url, type Lang } from '../i18n';
@@ -24,7 +24,8 @@ const checked = new Date(META.checked).toLocaleDateString(locale[lang], { day: '
 const config = {
   lang: locale[lang],
   sections: TAXONOMY.sections.map((s) => ({ id: s.id, name: s.name, groups: s.groups.map((g) => ({ name: g.name, subs: g.subs.map((x) => ({ id: x.id, name: x.name })) })) })),
-  text: { profile: TEXT.profile, capabilities: TEXT.capabilities, labels: TEXT.labels, gartnerHead: TEXT.gartnerHead, report: TEXT.report, sourceHead: TEXT.sourceHead, checkedOn: TEXT.checkedOn, fromProducer: TEXT.fromProducer, fromThird: TEXT.fromThird, website: TEXT.website, close: TEXT.close, streamsLabel: TEXT.streamsLabel, all: TEXT.all, allCaps: TEXT.allCaps, results: TEXT.results('{n}'), none: TEXT.none, reset: TEXT.reset, producer: TEXT.producer, source: TEXT.source, error: TEXT.error, prev: TEXT.prev, next: TEXT.next, page: TEXT.page, mq: TEXT.mq, mqTitle: TEXT.mqTitle },
+  streams: STREAMS,
+  text: { profile: TEXT.profile, capabilities: TEXT.capabilities, labels: TEXT.labels, gartnerHead: TEXT.gartnerHead, report: TEXT.report, sourceHead: TEXT.sourceHead, checkedOn: TEXT.checkedOn, fromProducer: TEXT.fromProducer, fromThird: TEXT.fromThird, website: TEXT.website, close: TEXT.close, streamsLabel: TEXT.streamsLabel, allStreams: TEXT.allStreams, all: TEXT.all, allCaps: TEXT.allCaps, results: TEXT.results('{n}'), none: TEXT.none, reset: TEXT.reset, producer: TEXT.producer, source: TEXT.source, error: TEXT.error, prev: TEXT.prev, next: TEXT.next, page: TEXT.page, mq: TEXT.mq, mqTitle: TEXT.mqTitle },
 };
 ---
 <div class="atlas" id="atlas">
@@ -38,16 +39,26 @@ const config = {
     {TEXT.edition} {edition} · {TEXT.checked} {checked} · <a href={url(lang, '/it4it-atlas/categories/')}>{TEXT.guide}</a> · <a href={url(lang, '/it4it-atlas/changes/')}>{TEXT.changes}</a> · <a href="https://www.opengroup.org/it4it" target="_blank" rel="noopener">{TEXT.standard}</a>
   </p>
 
+  <div class="atlas-tabbar">
   <div class="atlas-tabs" role="tablist">
     <button type="button" role="tab" data-view="" aria-selected="true">{TEXT.all} <small>{nf.format(META.tools)}</small></button>
     {TAXONOMY.sections.map((s) => <button type="button" role="tab" data-view={s.id} aria-selected="false">{s.name} <small>{nf.format(views[s.id] ?? 0)}</small></button>)}
+    <button type="button" role="tab" data-view="gartner" aria-selected="false">{TEXT.mqTab} <small>{nf.format(META.gartner)}</small></button>
+  </div>
+  <span id="atlas-count" class="atlas-count" role="status"></span>
   </div>
 
   <div class="atlas-body">
-    <details class="atlas-side" open>
-      <summary>{TEXT.browse}</summary>
-      <nav id="atlas-caps"></nav>
-    </details>
+    <div class="atlas-side">
+      <details id="atlas-streams-box" open>
+        <summary>{TEXT.streamsLabel}</summary>
+        <nav id="atlas-streams"></nav>
+      </details>
+      <details open>
+        <summary>{TEXT.browse}</summary>
+        <nav id="atlas-caps"></nav>
+      </details>
+    </div>
     <div class="atlas-main">
       <div class="atlas-controls">
         <input type="search" id="atlas-q" placeholder={TEXT.search} aria-label={TEXT.search} />
@@ -56,14 +67,6 @@ const config = {
           <option value="za">{TEXT.sortZA}</option>
           <option value="vendor">{TEXT.sortVendor}</option>
         </select>
-        <select id="atlas-stream" aria-label={TEXT.stream}>
-          <option value="">{TEXT.allStreams}</option>
-          {STREAMS.map((s) => <option value={s}>{s}</option>)}
-        </select>
-        <label class="atlas-check"><input type="checkbox" id="atlas-mq" /> {TEXT.gartnerOnly}</label>
-      </div>
-      <div class="atlas-bar">
-        <span id="atlas-count"></span>
         <button type="button" class="atlas-export" id="atlas-export" disabled>{TEXT.export}</button>
       </div>
       <div id="atlas-list" class="atlas-list" aria-live="polite"><p class="muted">{TEXT.loading}</p></div>
@@ -93,15 +96,16 @@ const config = {
   const SUB: Record<string, { name: string; group: string; section: string }> = {};
   for (const s of cfg.sections) for (const g of s.groups) for (const x of g.subs) SUB[x.id] = { name: x.name, group: g.name, section: s.id };
 
-  const state = { view: '', group: '', sub: '', q: '', sort: 'az', stream: '', mq: false, page: 1 };
+  const state = { view: '', group: '', sub: '', q: '', sort: 'az', stream: '', page: 1 };
   let tools: Tool[] = [];
 
   function readUrl() {
     const p = new URLSearchParams(location.search);
     Object.assign(state, {
       view: p.get('view') ?? '', group: p.get('group') ?? '', sub: p.get('sub') ?? '', q: p.get('q') ?? '',
-      sort: p.get('sort') ?? 'az', stream: p.get('stream') ?? '', mq: p.get('mq') === '1', page: Math.max(1, +(p.get('page') ?? 1) || 1),
+      sort: p.get('sort') ?? 'az', stream: p.get('stream') ?? '', page: Math.max(1, +(p.get('page') ?? 1) || 1),
     });
+    if (p.get('mq') === '1') state.view = 'gartner'; // links from before the Gartner tab
   }
   function writeUrl() {
     const p = new URLSearchParams();
@@ -111,22 +115,24 @@ const config = {
     if (state.q) p.set('q', state.q);
     if (state.sort !== 'az') p.set('sort', state.sort);
     if (state.stream) p.set('stream', state.stream);
-    if (state.mq) p.set('mq', '1');
     if (state.page > 1) p.set('page', String(state.page));
     const qs = p.toString();
     history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
   }
 
+  // The chosen section; the tabs "All tools" and "Gartner Magic Quadrant Tools" cover all sections.
+  const section = () => (state.view === 'gartner' ? '' : state.view);
   // Subcategories that count for the chosen section (all of them for "All tools").
-  const subsInView = (t: Tool) => (state.view ? t.subs.filter((s) => SUB[s]?.section === state.view) : t.subs);
+  const subsInView = (t: Tool) => (section() ? t.subs.filter((s) => SUB[s]?.section === section()) : t.subs);
 
-  // Everything except the capability filter, so the sidebar can show how many tools each capability has.
-  function baseFilter() {
+  // Everything except the capability filter, so the sidebar can show how many tools each capability has
+  // (and without the value stream filter too for the value stream counts).
+  function baseFilter(withStream = true) {
     const words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
     return tools.filter((t) => {
-      if (state.view && !t.views.includes(state.view)) return false;
-      if (state.stream && !t.streams.includes(state.stream)) return false;
-      if (state.mq && !t.gartner.length) return false;
+      if (section() && !t.views.includes(section())) return false;
+      if (state.view === 'gartner' && !t.gartner.length) return false;
+      if (withStream && state.stream && !t.streams.includes(state.stream)) return false;
       if (words.length) {
         const hay = `${t.name} ${t.vendor} ${t.description} ${t.tags.join(' ')} ${t.subs.map((s) => SUB[s]?.name).join(' ')}`.toLowerCase();
         if (!words.every((w) => hay.includes(w))) return false;
@@ -139,8 +145,15 @@ const config = {
     root.querySelectorAll<HTMLElement>('.atlas-tabs [data-view]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.view === state.view)));
     $('atlas-q').value = state.q;
     $('atlas-sort').value = state.sort;
-    $('atlas-stream').value = state.stream;
-    $('atlas-mq').checked = state.mq;
+
+    // Sidebar, value streams: same layout as the capabilities, hidden where no tool has a value stream.
+    const all = baseFilter(false);
+    const streamCount: Record<string, number> = {};
+    for (const t of all) for (const s of t.streams) streamCount[s] = (streamCount[s] ?? 0) + 1;
+    const withStreams = all.filter((t) => t.streams.length).length;
+    $('atlas-streams-box').hidden = !withStreams && !state.stream;
+    $('atlas-streams').innerHTML = `<a href="#" data-stream="" class="${!state.stream ? 'on' : ''}">${esc(T.allStreams)} <small>${nf.format(all.length)}</small></a>`
+      + cfg.streams.map((s: string) => `<a href="#" data-stream="${esc(s)}" class="${state.stream === s ? 'on' : ''}">${esc(s)} <small>${nf.format(streamCount[s] ?? 0)}</small></a>`).join('');
 
     const base = baseFilter();
     // Sidebar: groups and subcategories of the chosen section(s), with counts.
@@ -151,10 +164,10 @@ const config = {
       for (const s of subs) subCount[s] = (subCount[s] ?? 0) + 1;
       for (const g of new Set(subs.map((s) => SUB[s]?.group))) if (g) groupCount[g] = (groupCount[g] ?? 0) + 1;
     }
-    const sections = cfg.sections.filter((s: any) => !state.view || s.id === state.view);
+    const sections = cfg.sections.filter((s: any) => !section() || s.id === section());
     let nav = `<a href="#" data-group="" data-sub="" class="${!state.group && !state.sub ? 'on' : ''}">${esc(T.allCaps)} <small>${nf.format(base.length)}</small></a>`;
     for (const s of sections) {
-      if (!state.view) nav += `<h4>${esc(s.name)}</h4>`;
+      if (!section()) nav += `<h4>${esc(s.name)}</h4>`;
       for (const g of s.groups) {
         const open = state.group === g.name || g.subs.some((x: any) => x.id === state.sub);
         nav += `<div class="grp"><a href="#" data-group="${esc(g.name)}" data-sub="" class="${state.group === g.name && !state.sub ? 'on' : ''}">${esc(g.name)} <small>${nf.format(groupCount[g.name] ?? 0)}</small></a>`;
@@ -266,8 +279,12 @@ const config = {
   let timer = 0;
   $('atlas-q').addEventListener('input', (e: Event) => { clearTimeout(timer); timer = window.setTimeout(() => update({ q: (e.target as HTMLInputElement).value.trim() }), 200); });
   $('atlas-sort').addEventListener('change', (e: Event) => update({ sort: (e.target as HTMLSelectElement).value }));
-  $('atlas-stream').addEventListener('change', (e: Event) => update({ stream: (e.target as HTMLSelectElement).value }));
-  $('atlas-mq').addEventListener('change', (e: Event) => update({ mq: (e.target as HTMLInputElement).checked }));
+  $('atlas-streams').addEventListener('click', (e: Event) => {
+    const a = (e.target as HTMLElement).closest<HTMLElement>('a[data-stream]');
+    if (!a) return;
+    e.preventDefault();
+    update({ stream: a.dataset.stream! });
+  });
   // A logo that does not load makes way for the next candidate, and finally for the initials.
   root.addEventListener('error', (e) => {
     const img = e.target as HTMLImageElement;
@@ -286,14 +303,14 @@ const config = {
     }
     if ((e.target as HTMLElement).id !== 'atlas-reset') return;
     e.preventDefault();
-    update({ view: '', group: '', sub: '', q: '', stream: '', mq: false });
+    update({ view: '', group: '', sub: '', q: '', stream: '' });
   });
   $('atlas-pages').addEventListener('click', (e: Event) => {
     const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-page]');
     if (!b || b.disabled) return;
     state.page = +b.dataset.page!;
     render();
-    root.querySelector('.atlas-tabs')!.scrollIntoView({ behavior: 'smooth' });
+    root.querySelector('.atlas-tabbar')!.scrollIntoView({ behavior: 'smooth' });
   });
   $('atlas-export').addEventListener('click', () => {
     const rows = [['Product', 'Producer', 'Description', 'Capability groups', 'Subcategories', 'IT4IT value streams', 'Gartner MQ 2026 markets', 'Producer website', 'Source', 'Source checked']];
@@ -310,7 +327,7 @@ const config = {
   });
 
   // On a phone the capability list starts folded, so the tools come first.
-  if (matchMedia('(max-width: 900px)').matches) root.querySelector('.atlas-side')!.removeAttribute('open');
+  if (matchMedia('(max-width: 900px)').matches) root.querySelectorAll('.atlas-side details').forEach((d) => d.removeAttribute('open'));
   readUrl();
   fetch('/atlas/tools.json')
     .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
@@ -325,11 +342,14 @@ const config = {
   .atlas-stats b { display: block; font: 700 26px/1.2 var(--head-font); color: var(--heading); }
   .atlas-stats span { color: var(--muted); font-size: 13px; line-height: 1.4; display: block; }
   .atlas-edition { color: var(--muted); font-size: 14px; margin: 0 0 22px; }
-  .atlas-tabs { display: flex; gap: 6px; flex-wrap: wrap; border-bottom: 2px solid var(--line); margin-bottom: 20px; scroll-margin-top: 90px; }
+  .atlas-tabbar { display: flex; align-items: center; gap: 12px; border-bottom: 2px solid var(--line); margin-bottom: 20px; scroll-margin-top: 90px; }
+  .atlas-tabs { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; min-width: 0; }
+  .atlas-count { flex: none; font: 600 14px var(--head-font); color: var(--heading); white-space: nowrap; }
   .atlas-tabs button { background: none; border: 0; border-bottom: 3px solid transparent; margin-bottom: -2px; padding: 10px 14px; font: 600 15px var(--head-font); color: var(--text); cursor: pointer; }
   .atlas-tabs button small { color: var(--muted); font-weight: 400; margin-left: 4px; }
   .atlas-tabs button[aria-selected="true"] { border-bottom-color: var(--accent); color: var(--accent); }
   .atlas-body { display: grid; grid-template-columns: 270px 1fr; gap: 30px; align-items: start; }
+  .atlas-side details + details { margin-top: 22px; }
   .atlas-side summary { font: 600 15px var(--head-font); color: var(--heading); cursor: pointer; margin-bottom: 10px; }
   .atlas-side nav { display: flex; flex-direction: column; font-size: 14px; line-height: 1.35; }
   .atlas-side nav h4 { margin: 14px 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
@@ -342,12 +362,10 @@ const config = {
   .atlas-controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
   .atlas-controls input[type="search"] { flex: 1 1 260px; min-width: 0; }
   .atlas-controls input[type="search"], .atlas-controls select { padding: 9px 10px; border: 1px solid var(--line); border-radius: 4px; font: inherit; font-size: 14px; color: var(--text); background: #fff; }
-  .atlas-check { font-size: 14px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
-  .atlas-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin: 16px 0 12px; font-size: 14px; color: var(--muted); }
-  .atlas-export { background: var(--btn-dark); color: #fff; border: 0; border-radius: 4px; padding: 8px 14px; font: 600 13px var(--head-font); cursor: pointer; }
+  .atlas-export { background: var(--btn-dark); color: #fff; border: 0; border-radius: 4px; padding: 10px 14px; white-space: nowrap; font: 600 13px var(--head-font); cursor: pointer; }
   .atlas-export:hover { background: var(--accent); }
   .atlas-export:disabled { opacity: .5; cursor: default; }
-  .atlas-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .atlas-list { margin-top: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
   @media (max-width: 1200px) { .atlas-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .atlas-list > p { grid-column: 1 / -1; }
   .atlas-card { display: flex; gap: 14px; border: 1px solid var(--line); border-radius: 6px; padding: 16px; background: #fff; }
@@ -390,15 +408,16 @@ const config = {
   .atlas-note { margin-top: 30px; font-size: 13px; color: var(--muted); line-height: 1.6; }
   @media (max-width: 900px) {
     .atlas-body { grid-template-columns: 1fr; gap: 16px; }
-    .atlas-side { border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; }
+    .atlas-side details { border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; }
+    .atlas-side details + details { margin-top: 10px; }
     .atlas-side summary { margin: 0; }
-    .atlas-side[open] summary { margin-bottom: 8px; }
+    .atlas-side details[open] summary { margin-bottom: 8px; }
     .atlas-list { grid-template-columns: 1fr; }
     .atlas-stats { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 600px) {
     .atlas-tabs { flex-wrap: nowrap; overflow-x: auto; }
     .atlas-tabs button { white-space: nowrap; padding: 10px; }
-    .atlas-controls select, .atlas-check { flex: 1 1 100%; }
+    .atlas-controls select, .atlas-export { flex: 1 1 100%; }
   }
 </style>
