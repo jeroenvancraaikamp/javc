@@ -1,13 +1,13 @@
-// Builds the data for the IT4IT Atlas page (/it4it-atlas/) from the Excel export in atlas/IT4IT-Atlas.xlsx:
-//   public/atlas/tools.json   every tool, loaded by the page in the browser (logos: public/atlas-logos/, chosen with atlas/logos.json)
-//   src/data/atlas-meta.json  edition, number of tools and tools per subcategory, used when building the page
-// Runs before every build (npm run build). To update the Atlas, replace atlas/IT4IT-Atlas.xlsx with a new
-// export (same columns; the column "Complete attributes (JSON)" holds everything that is used here).
-//   node scripts/build-atlas.mjs [file.xlsx]
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+// Builds the data for the IT4IT Atlas page (/it4it-atlas/) from atlas/tools.json, the catalogue itself
+// (one tool per line, all fields as in the original Atlas app):
+//   public/atlas/tools.json   the tools as the page loads them in the browser (logos: public/atlas-logos/, chosen with atlas/logos.json)
+//   src/data/atlas-meta.json  edition, number of tools, tools per subcategory and the latest weekly update, used when building the pages
+// Runs before every build (npm run build). atlas/tools.json is kept up to date every week by
+// scripts/maintain-atlas.mjs (GitHub Action "Update IT4IT Atlas"); it can also be replaced by an Excel export of the
+// original Atlas app (same columns; the column "Complete attributes (JSON)" holds everything that is used):
+//   node scripts/build-atlas.mjs --import export.xlsx
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { inflateRawSync } from 'node:zlib';
-
-const file = process.argv[2] ?? 'atlas/IT4IT-Atlas.xlsx';
 
 // --- a minimal .xlsx reader: unzip, shared strings, cells of the first sheet ---------------------------
 
@@ -15,7 +15,7 @@ function unzip(buf) {
   const files = {};
   let eocd = buf.length - 22;
   while (eocd >= 0 && buf.readUInt32LE(eocd) !== 0x06054b50) eocd--;
-  if (eocd < 0) throw new Error(`${file} is not an .xlsx file`);
+  if (eocd < 0) throw new Error('not an .xlsx file');
   let p = buf.readUInt32LE(eocd + 16);
   for (let n = buf.readUInt16LE(eocd + 10); n > 0; n--) {
     const method = buf.readUInt16LE(p + 10);
@@ -55,11 +55,27 @@ function readSheet(files) {
   return rows;
 }
 
+// --- import from Excel ---------------------------------------------------------------------------------
+
+export const writeCatalogue = (list) =>
+  writeFileSync('atlas/tools.json', '[\n' + list.map((t) => JSON.stringify(t)).join(',\n') + '\n]\n');
+
+const at = process.argv.indexOf('--import');
+if (at > 0) {
+  const file = process.argv[at + 1];
+  const [head, ...rows] = readSheet(unzip(readFileSync(file)));
+  const col = Object.keys(head).find((c) => head[c] === 'Complete attributes (JSON)');
+  if (!col) throw new Error(`${file}: no column "Complete attributes (JSON)"`);
+  const list = rows.filter((r) => r[col]).map((r) => JSON.parse(r[col]));
+  writeCatalogue(list);
+  console.log(`IT4IT Atlas: imported ${list.length} tools from ${file} into atlas/tools.json`);
+}
+
 // --- tools -------------------------------------------------------------------------------------------
 
-const [head, ...rows] = readSheet(unzip(readFileSync(file)));
-const col = Object.keys(head).find((c) => head[c] === 'Complete attributes (JSON)');
-if (!col) throw new Error(`${file}: no column "Complete attributes (JSON)"`);
+const TAXONOMY = JSON.parse(readFileSync('src/data/atlas-taxonomy.json', 'utf8'));
+const SUB = {};
+for (const s of TAXONOMY.sections) for (const g of s.groups) for (const x of g.subs) SUB[x.id] = { section: s.id, streams: (x.streams ?? '').split('·')[1]?.split(',').map((v) => v.trim()).filter(Boolean) ?? [] };
 
 // Logos copied from the original Atlas app: by product name, then by producer name or website.
 const LOGOS = JSON.parse(readFileSync('atlas/logos.json', 'utf8'));
@@ -67,34 +83,42 @@ const norm = (s) => String(s ?? '').normalize('NFKD').replace(/[\u0300-\u036f]/g
 const host = (u) => { try { return new URL(u).hostname.toLowerCase().replace(/^www\./, ''); } catch { return ''; } };
 const logo = (a) => (LOGOS.products[norm(a.name)] ?? LOGOS.vendors[norm(a.vendor)] ?? LOGOS.domains[host(a.url)])?.src.replace('/logos/', '/atlas-logos/');
 
-const tools = rows
-  .filter((r) => r[col])
-  .map((r) => JSON.parse(r[col]))
-  .filter((a) => a.status !== 'removed')
-  .map((a) => ({
-    id: a.id,
-    name: a.name,
-    vendor: a.vendor,
-    url: a.url,
-    source: a.sourceUrl,
-    checked: a.verifiedAt,
-    description: a.description,
-    descSource: a.descriptionSource,
-    note: a.sourceNote,
-    logo: logo(a),
-    subs: a.subcategoryIds,
-    tags: a.tags,
-    views: a.catalogueViewIds,
-    streams: a.it4itValueStreams,
-    gartner: (a.gartnerMagicQuadrants ?? []).map((g) => ({ market: g.market, vendor: g.vendor, year: g.year, url: g.sourceUrl })),
-  }))
+const catalogue = JSON.parse(readFileSync('atlas/tools.json', 'utf8'));
+const tools = catalogue
+  .filter((a) => !['removed', 'discontinued'].includes(a.status))
+  .map((a) => {
+    const subs = a.subcategoryIds.filter((s) => SUB[s]);
+    // Sections follow from the subcategories; value streams too, for tools that have none of their own.
+    const views = [...new Set(subs.map((s) => SUB[s].section))];
+    const streams = a.it4itValueStreams?.length ? a.it4itValueStreams : views.includes('it4it') ? [...new Set(subs.flatMap((s) => SUB[s].streams))] : [];
+    return {
+      id: a.id,
+      name: a.name,
+      vendor: a.vendor,
+      url: a.url,
+      source: a.sourceUrl,
+      checked: a.verifiedAt,
+      description: a.description,
+      descSource: a.descriptionSource,
+      note: a.sourceNote,
+      logo: logo(a),
+      subs,
+      tags: a.tags ?? [],
+      views,
+      streams,
+      gartner: (a.gartnerMagicQuadrants ?? []).map((g) => ({ market: g.market, vendor: g.vendor, year: g.year, url: g.sourceUrl })),
+    };
+  })
+  .filter((t) => t.subs.length)
   .sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }));
 
 const counts = {};
 for (const t of tools) for (const s of t.subs) counts[s] = (counts[s] ?? 0) + 1;
 const views = {};
 for (const t of tools) for (const v of t.views) views[v] = (views[v] ?? 0) + 1;
-const imported = rows.map((r) => r[col] && JSON.parse(r[col]).importDate).filter(Boolean).sort().pop();
+const imported = catalogue.map((a) => a.importDate).filter(Boolean).sort().pop();
+// Weekly updates (scripts/maintain-atlas.mjs), newest first.
+const activity = existsSync('atlas/activity.json') ? JSON.parse(readFileSync('atlas/activity.json', 'utf8')) : [];
 
 mkdirSync('public/atlas', { recursive: true });
 writeFileSync('public/atlas/tools.json', JSON.stringify(tools));
@@ -105,5 +129,6 @@ writeFileSync('src/data/atlas-meta.json', JSON.stringify({
   gartner: tools.filter((t) => t.gartner.length).length,
   views,
   counts,
+  activity,
 }, null, 2) + '\n');
-console.log(`IT4IT Atlas: ${tools.length} tools from ${file}`);
+console.log(`IT4IT Atlas: ${tools.length} tools from atlas/tools.json`);

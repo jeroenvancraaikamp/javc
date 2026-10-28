@@ -35,11 +35,18 @@ This replaces the sample articles with your published posts and writes your page
 
 ## IT4IT Atlas
 
-The page /it4it-atlas/ (layout "IT4IT Atlas" in the CMS) shows the tools directory under its text. The tools come
-from `atlas/IT4IT-Atlas.xlsx`, an Excel export of the original Atlas app; `scripts/build-atlas.mjs` turns it into
-`public/atlas/tools.json` on every build. To update the Atlas, replace that file with a new export (same columns).
-Categories and their descriptions are in `src/data/atlas-taxonomy.json`, logos in `public/atlas-logos/`
-(matched with `atlas/logos.json`), the texts of the page in `src/data/atlas-text.ts`.
+The page /it4it-atlas/ (layout "IT4IT Atlas" in the CMS) shows the tools directory under its text; the category guide
+is /it4it-atlas/categories/ and the weekly reports /it4it-atlas/changes/. The catalogue is `atlas/tools.json` (one tool
+per line); `scripts/build-atlas.mjs` turns it into `public/atlas/tools.json` on every build. Categories and their
+descriptions are in `src/data/atlas-taxonomy.json`, logos in `public/atlas-logos/` (matched with `atlas/logos.json`),
+the texts of the pages in `src/data/atlas-text.ts`.
+
+Every Monday the GitHub Action "Update IT4IT Atlas" (`scripts/maintain-atlas.mjs`) re-checks the 40 tools checked
+longest ago and looks for missing products in 3 subcategories, with Claude and web search (secret ANTHROPIC_API_KEY),
+and commits the result to main, so it goes live. What changed is kept in `atlas/activity.json`; with the secret
+SMTP2GO_API_KEY the report is also e-mailed to Info@JAVC.nl. Run it by hand under Actions → Update IT4IT Atlas →
+Run workflow (with other numbers if you like). An Excel export of the original Atlas app can still replace the
+catalogue: `node scripts/build-atlas.mjs --import export.xlsx`.
 
 ## Running locally
 
