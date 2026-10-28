@@ -8,10 +8,11 @@ image: /wp-content/uploads/2026/09/1400_IT4ESM_Tools_October_2026.png
 readingTime: 45
 popular: false
 draft: false
+lang: en
+linkedin: ''
 ---
 
-### UPDATE: [IT4IT/IT4ESM Atlas](https://javc.nl/it4it-atlas/) now contains 1600 Platforms
-
+### UPDATE: We have published a new [IT4IT Atlas](https://javc.nl/it4it-atlas/) on our site.
 
 Recently i published an article with the [**Ultimate List of 1000+ IT4IT Tools 2026**](/the-ultimate-list-of-1000-it-management-tools-2026/)**.** Since then i have updated the categories and subcategories and added the tools to the list that are used for Data Center Management and for the Shared/Corporate Functions such as HR, Risk, Finance, etc. **The List now covers well known tools of/for IT and of/for the Shared Enterprise Functions (e.g. HR, Risk, Finance, etc.); the list currently contains 1,438 COMMODITY IT4ESM tools/platforms.**
 
