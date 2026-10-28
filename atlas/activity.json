@@ -1,0 +1,279 @@
+[
+  {
+    "date": "2026-10-28",
+    "checked": 40,
+    "confirmed": 2,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "0364b7a8dbc991a1",
+        "name": "Axway Amplify",
+        "change": "Replaced the quoted FAQ text with a factual description, pointed the source to Axway's current Amplify Platform page and added the integration-platform category for Amplify Fusion."
+      },
+      {
+        "id": "038f63ab5b7e1424",
+        "name": "ADP Enterprise HR",
+        "change": "Replaced the Gartner review page with ADP's own Enterprise HR product sheet and made the description more precise."
+      },
+      {
+        "id": "03d837fdb54dacf1",
+        "name": "Peoplebox.ai",
+        "was": "Peoplebox ai",
+        "change": "Replaced the homepage meta text (marketing copy) with a factual description and fixed the product name to Peoplebox.ai."
+      },
+      {
+        "id": "0471d9d95eb675f5",
+        "name": "Rainforest Cyber Security Platform",
+        "change": "Fixed the producer: the platform is from Rainforest Technologies (rainforest.tech), not Rainforest QA. The source is now the producer's own site and the description reflects its current application security focus."
+      },
+      {
+        "id": "0487e67968846237",
+        "name": "K3s",
+        "change": "Replaced the quoted text with a paraphrased description and moved K3s from development tools to compute and container platforms."
+      },
+      {
+        "id": "001aab395ea88c56",
+        "name": "Slack",
+        "change": "Replaced Salesforce marketing copy with a factual description of Slack and pointed url and source to slack.com."
+      },
+      {
+        "id": "00b4ca577dd71c24",
+        "name": "Synergi Pipeline",
+        "change": "Replaced the quoted marketing line with a factual description of DNV's pipeline integrity and risk management software and added an operations subcategory."
+      },
+      {
+        "id": "00d99b7ba1e960da",
+        "name": "iSupport",
+        "change": "Corrected the producer website to isupport.com, replaced the Gartner source with iSupport's own product page and added asset/CMDB classification."
+      },
+      {
+        "id": "012abce572985580",
+        "name": "ESET PROTECT Platform",
+        "change": "Replaced the Dutch marketing quote with an English factual description and pointed the source to ESET's English platform page."
+      },
+      {
+        "id": "0240561df25c9d12",
+        "name": "Command",
+        "change": "The original 'command' model was deprecated in September 2025, so the entry now describes Cohere's current Command model family (Command A, A Reasoning, A Vision, A Translate, R7B, A+)."
+      },
+      {
+        "id": "02ec4f8f5936170b",
+        "name": "Exabeam New-Scale Fusion",
+        "was": "Exabeam Security Operations Platform",
+        "change": "Exabeam now markets its Security Operations Platform as New-Scale Fusion, so the name, source page and description were updated."
+      },
+      {
+        "id": "02fd2b446fb0de89",
+        "name": "OpenText NetIQ Access Manager",
+        "change": "The product is still offered on OpenText's Access Manager page; the quoted description was replaced with a factual paraphrase and source details were added."
+      },
+      {
+        "id": "0312849b7506964d",
+        "name": "SymphonyAI IT Asset Management",
+        "change": "The product is still offered; the source was moved from an old PDF data sheet to SymphonyAI's current IT Asset Management product page, and the description was rewritten."
+      },
+      {
+        "id": "0352cb35e4ca14bc",
+        "name": "OTORIO Titan",
+        "was": "OTORIO Platform",
+        "change": "The product is now named OTORIO Titan, and OTORIO was acquired by Armis in March 2025; the stored PDF source no longer opens and was replaced."
+      },
+      {
+        "id": "04a43dd937a4c898",
+        "name": "Entrust nShield HSM",
+        "change": "Replaced the customer testimonial with a factual description from Entrust's nShield HSM product page, and added identity and secrets management as a category for key protection."
+      },
+      {
+        "id": "04eac9dde71cd120",
+        "name": "SAP Solution Manager (Legacy, moving to SAP Cloud ALM)",
+        "change": "Product is still supported: SAP says mainstream maintenance runs until the end of 2027 and recommends moving to SAP Cloud ALM before 2028. The quoted text was replaced with a paraphrase."
+      },
+      {
+        "id": "04ebbd758e1fcea3",
+        "name": "Mint Service Desk",
+        "change": "The site now uses the mintsd.com domain and calls the product an ITSM/ESM platform with asset management and a customer portal. Updated the URL, vendor name, description and categories."
+      },
+      {
+        "id": "050d7ebb30c932c4",
+        "name": "ThreatConnect Risk Quantifier (RQ)",
+        "change": "RQ is still documented. ThreatConnect is now owned by Dataminr (deal closed November 2025). Replaced the truncated quote and added technology risk as a category."
+      },
+      {
+        "id": "0525ca5e69441321",
+        "name": "Entra ID Governance",
+        "change": "Product confirmed on Microsoft Learn. Replaced the quoted marketing line with a factual description and set the url to the product page."
+      },
+      {
+        "id": "056b3e7a87c51182",
+        "name": "OpenSearch",
+        "change": "Replaced a description that covered Data Prepper with one for OpenSearch itself, updated the vendor to the OpenSearch Software Foundation (Linux Foundation) and added the NoSQL & Document Databases category."
+      },
+      {
+        "id": "05858aa42b2c78e9",
+        "name": "CounselLink+",
+        "was": "CounselLink",
+        "change": "LexisNexis now sells the product as CounselLink+, enterprise legal management combined with contract lifecycle management; renamed it and switched to a LexisNexis source."
+      },
+      {
+        "id": "059edfa36016e087",
+        "name": "H2O.ai (H2O AI Cloud)",
+        "change": "Replaced the cut-off quoted description; H2O.ai now positions H2O AI Cloud as covering predictive, generative and agentic AI, so the Generative and Agentic AI categories were added."
+      },
+      {
+        "id": "05d01143d9ed0a24",
+        "name": "HR Service Delivery (HRSD)",
+        "change": "Replaced the Gartner source with ServiceNow's own HR Service Delivery product page and made the description more specific."
+      },
+      {
+        "id": "05e4ce7cff360101",
+        "name": "Huawei OceanProtect",
+        "change": "Product is still offered; replaced the quoted marketing text with a factual description and pointed the source to Huawei's enterprise OceanProtect page."
+      },
+      {
+        "id": "05f3b1f232ee64e4",
+        "name": "vuTxn360",
+        "was": "vuBJM",
+        "change": "VuNet's vuBJM product address now opens the vuTxn360 Transaction Observability page, so the entry was renamed and the garbled PDF text was replaced with a new description."
+      },
+      {
+        "id": "05fa4642fef62b98",
+        "name": "SHL Platform",
+        "change": "SHL's talent assessment offering is still active; the source was switched from a Gartner reviews page to SHL's own solutions page and the description was revised."
+      },
+      {
+        "id": "0600aa62dccfdce2",
+        "name": "Infraon Infinity",
+        "change": "Infraon Infinity is still offered; the quoted text was replaced with a paraphrase and network management was added because of its network monitoring and configuration modules."
+      },
+      {
+        "id": "060cb0570fb3b225",
+        "name": "Datadog Cloud SIEM",
+        "change": "Datadog Cloud SIEM is still offered; the quoted marketing text was replaced with a factual description based on Datadog's documentation."
+      },
+      {
+        "id": "0625392c908c975f",
+        "name": "NetBrain",
+        "change": "NetBrain now runs on netbrain.com, so we changed the URL and source page and replaced the 2019 handbook quote with a short summary of the current no-code network automation platform."
+      },
+      {
+        "id": "0635b0851f420fa3",
+        "name": "Alibaba Cloud Observability Suite",
+        "change": "The product is still offered; we pointed the entry to the official ACOS product page and replaced the announcement quote with a description of what the suite does."
+      },
+      {
+        "id": "06600341e8c85424",
+        "name": "Guru",
+        "change": "Guru is still offered; we replaced the marketing slogan with a factual description of its governed knowledge base, enterprise search and wiki features."
+      },
+      {
+        "id": "068ae5c457d33311",
+        "name": "Software Vulnerability Manager",
+        "change": "The product is still offered; we added the official product page, a paraphrased description and the endpoint patching subcategory."
+      },
+      {
+        "id": "0698be788b4e6e64",
+        "name": "Archangel",
+        "change": "Archangel is still offered as an AI-driven cyber compliance and NIST RMF automation platform; we replaced the 2023 press quote with a description from the product page and added technology GRC."
+      },
+      {
+        "id": "069b1ec6af5ccb58",
+        "name": "Solo Enterprise (formerly Gloo Platform)",
+        "was": "Solo.io Gloo Platform",
+        "change": "Solo.io has renamed Gloo Platform to Solo Enterprise (Gloo Gateway is now Solo Enterprise for kgateway and Gloo Mesh is now Solo Enterprise for Istio), so we updated the name, source and description."
+      },
+      {
+        "id": "06f47348bd026e80",
+        "name": "Broadcom (Symantec) Endpoint Security",
+        "change": "Symantec Endpoint Security is still offered by Broadcom; we replaced the quoted marketing text with a factual description and pointed to Broadcom's current product brief."
+      },
+      {
+        "id": "070056910efdee0c",
+        "name": "Procurify",
+        "change": "Procurify is active and now covers procurement through accounts payable, expenses and vendor payments; we rewrote the description and added the Finance subcategory."
+      },
+      {
+        "id": "0784939f061be124",
+        "name": "Qlik Talend Cloud",
+        "change": "Qlik Talend Cloud is current; we replaced the copied marketing text with a factual description from Qlik's documentation and updated the product URL."
+      },
+      {
+        "id": "07919255b495ddf5",
+        "name": "ManageEngine Endpoint Central",
+        "change": "The old description said 'Windows desktop management'; Endpoint Central is now a unified endpoint management and security product, so we rewrote it and added asset, vulnerability and protection subcategories."
+      }
+    ],
+    "added": [
+      {
+        "id": "482fe613287686e7",
+        "name": "Microsoft Dynamics 365 Customer Service",
+        "vendor": "Microsoft",
+        "sub": "Customer Service",
+        "change": "Added as a widely used customer service and case management application that was missing from the catalogue."
+      },
+      {
+        "id": "76eb79220edf89fe",
+        "name": "Freshdesk",
+        "vendor": "Freshworks",
+        "sub": "Customer Service",
+        "change": "Added as a widely used customer support helpdesk; only the separate ITSM product Freshservice was in the catalogue."
+      },
+      {
+        "id": "132b4d8425cb6b03",
+        "name": "NICE CXone Mpower",
+        "vendor": "NICE",
+        "sub": "Customer Service",
+        "change": "Added as a recognised cloud contact center and customer service platform that was missing from the catalogue."
+      },
+      {
+        "id": "6241a33c82b9d461",
+        "name": "SAP Integrated Business Planning for Supply Chain",
+        "vendor": "SAP",
+        "sub": "Manufacturing & Delivery",
+        "change": "Added SAP's widely used supply chain planning (S&OP, demand, supply and inventory) application, which was missing."
+      },
+      {
+        "id": "b963d9ddf58bfc8a",
+        "name": "Epicor Kinetic",
+        "vendor": "Epicor",
+        "sub": "Manufacturing & Delivery",
+        "change": "Added a widely used manufacturing ERP that was missing from the catalogue."
+      },
+      {
+        "id": "f47e23802b5fe5c4",
+        "name": "Siemens Opcenter Execution",
+        "vendor": "Siemens",
+        "sub": "Manufacturing & Delivery",
+        "change": "Added a widely recognised MES product family to cover shop-floor production execution."
+      },
+      {
+        "id": "8b1202598bd137a5",
+        "name": "Teamcenter",
+        "vendor": "Siemens",
+        "sub": "Product Management",
+        "change": "Added Siemens Teamcenter, a leading PLM platform for managing products across their lifecycle, which was missing from the catalogue."
+      },
+      {
+        "id": "3d45b13470a8769e",
+        "name": "Windchill",
+        "vendor": "PTC",
+        "sub": "Product Management",
+        "change": "Added PTC Windchill, a widely used PLM platform for manufacturers' product data and lifecycle processes, which was missing from the catalogue."
+      },
+      {
+        "id": "ba078bdc80e5c33b",
+        "name": "ProductPlan",
+        "vendor": "ProductPlan",
+        "sub": "Product Management",
+        "change": "Added ProductPlan, a well-known product roadmap and prioritisation tool, which was missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Customer Service",
+      "Manufacturing & Delivery",
+      "Product Management"
+    ],
+    "summary": "Checked 40 tools: 2 confirmed, 38 updated, 0 discontinued, 0 could not be verified. Searched Customer Service, Manufacturing & Delivery, Product Management for missing products: 9 added."
+  }
+]
