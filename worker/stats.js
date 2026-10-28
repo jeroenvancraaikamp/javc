@@ -141,6 +141,7 @@ const TEXT = {
     browserLang: 'Browser language', unknown: '(unknown)', noBrowserLang: 'Collected from now on; no data yet.',
     topPages: 'Most viewed pages', page: 'Page', referrers: 'Referrers', website: 'Website', direct: '(direct / unknown)',
     countries: 'Countries', country: 'Country', devices: 'Devices', device: 'Device',
+    countryDay: 'Visitors per country per day', other: 'Other', day: 'Day', cdNote: 'visitors (views)',
     deviceNames: { desktop: 'desktop', mobile: 'mobile', tablet: 'tablet' },
     questionsH: 'Questions', failedH: 'Failed', avgTime: 'Avg. response time', model: 'Model', qPerDay: 'Questions per day',
     latest: 'Latest questions', time: 'Time', question: 'Question', failed: 'failed', sources: 'Most used sources', source: 'Source', times: 'Times',
@@ -156,6 +157,7 @@ const TEXT = {
     browserLang: 'Taal van de browser', unknown: '(onbekend)', noBrowserLang: 'Wordt vanaf nu verzameld; nog geen gegevens.',
     topPages: "Meest bekeken pagina's", page: 'Pagina', referrers: 'Verwijzende sites', website: 'Website', direct: '(direct / onbekend)',
     countries: 'Landen', country: 'Land', devices: 'Apparaten', device: 'Apparaat',
+    countryDay: 'Bezoekers per land per dag', other: 'Overig', day: 'Dag', cdNote: 'bezoekers (weergaven)',
     deviceNames: { desktop: 'desktop', mobile: 'mobiel', tablet: 'tablet' },
     questionsH: 'Vragen', failedH: 'Mislukt', avgTime: 'Gem. antwoordtijd', model: 'Model', qPerDay: 'Vragen per dag',
     latest: 'Laatste vragen', time: 'Tijd', question: 'Vraag', failed: 'mislukt', sources: 'Meest gebruikte bronnen', source: 'Bron', times: 'Keer',
@@ -171,6 +173,7 @@ const TEXT = {
     browserLang: '浏览器语言', unknown: '（未知）', noBrowserLang: '从现在开始收集，暂无数据。',
     topPages: '最多浏览的页面', page: '页面', referrers: '来源网站', website: '网站', direct: '（直接访问 / 未知）',
     countries: '国家', country: '国家', devices: '设备', device: '设备',
+    countryDay: '每日各国访客', other: '其他', day: '日期', cdNote: '访客（浏览量）',
     deviceNames: { desktop: '桌面', mobile: '手机', tablet: '平板' },
     questionsH: '问题', failedH: '失败', avgTime: '平均响应时间', model: '模型', qPerDay: '每天问题数',
     latest: '最新问题', time: '时间', question: '问题', failed: '失败', sources: '最常用来源', source: '来源', times: '次数',
@@ -186,6 +189,7 @@ const TEXT = {
     browserLang: 'Langue du navigateur', unknown: '(inconnue)', noBrowserLang: 'Collectée à partir de maintenant ; pas encore de données.',
     topPages: 'Pages les plus vues', page: 'Page', referrers: 'Sites référents', website: 'Site', direct: '(direct / inconnu)',
     countries: 'Pays', country: 'Pays', devices: 'Appareils', device: 'Appareil',
+    countryDay: 'Visiteurs par pays et par jour', other: 'Autres', day: 'Jour', cdNote: 'visiteurs (vues)',
     deviceNames: { desktop: 'ordinateur', mobile: 'mobile', tablet: 'tablette' },
     questionsH: 'Questions', failedH: 'Échecs', avgTime: 'Temps de réponse moyen', model: 'Modèle', qPerDay: 'Questions par jour',
     latest: 'Dernières questions', time: 'Heure', question: 'Question', failed: 'échec', sources: 'Sources les plus utilisées', source: 'Source', times: 'Fois',
@@ -201,6 +205,7 @@ const TEXT = {
     browserLang: 'Sprache des Browsers', unknown: '(unbekannt)', noBrowserLang: 'Wird ab jetzt erfasst; noch keine Daten.',
     topPages: 'Meistbesuchte Seiten', page: 'Seite', referrers: 'Verweisende Websites', website: 'Website', direct: '(direkt / unbekannt)',
     countries: 'Länder', country: 'Land', devices: 'Geräte', device: 'Gerät',
+    countryDay: 'Besucher pro Land und Tag', other: 'Andere', day: 'Tag', cdNote: 'Besucher (Aufrufe)',
     deviceNames: { desktop: 'Desktop', mobile: 'Mobil', tablet: 'Tablet' },
     questionsH: 'Fragen', failedH: 'Fehlgeschlagen', avgTime: 'Durchschn. Antwortzeit', model: 'Modell', qPerDay: 'Fragen pro Tag',
     latest: 'Neueste Fragen', time: 'Zeit', question: 'Frage', failed: 'fehlgeschlagen', sources: 'Meistgenutzte Quellen', source: 'Quelle', times: 'Mal',
@@ -213,15 +218,16 @@ const TEXT = {
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const when = (ts, lang) => new Date(ts).toLocaleString(LOCALE[lang], { timeZone: 'Europe/Amsterdam', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
 
-function bars(rows, days, keys, labels = keys) {
+// Bars per day: side by side, or stacked (one bar per day, keys stacked from the bottom up).
+function bars(rows, days, keys, labels = keys, stacked = false) {
   const byDay = new Map(rows.map((r) => [r.day, r]));
   const list = [];
   for (let i = days - 1; i >= 0; i--) {
     const day = new Date(Date.now() - i * 864e5).toISOString().slice(0, 10);
     list.push(byDay.get(day) || { day });
   }
-  const max = Math.max(1, ...list.flatMap((r) => keys.map((k) => r[k] || 0)));
-  return `<div class="bars">${list.map((r) => `<div class="bar" title="${r.day}: ${keys.map((k, i) => `${r[k] || 0} ${labels[i]}`).join(', ')}">
+  const max = Math.max(1, ...list.flatMap((r) => (stacked ? [keys.reduce((n, k) => n + (r[k] || 0), 0)] : keys.map((k) => r[k] || 0))));
+  return `<div class="bars${stacked ? ' stacked' : ''}">${list.map((r) => `<div class="bar" title="${r.day}: ${keys.map((k, i) => `${r[k] || 0} ${labels[i]}`).join(', ')}">
     ${keys.map((k, i) => `<span class="b${i}" style="height:${((r[k] || 0) / max) * 100}%"></span>`).join('')}</div>`).join('')}</div>
     <div class="axis"><span>${list[0].day.slice(5)}</span><span>${list[list.length - 1].day.slice(5)}</span></div>`;
 }
@@ -258,7 +264,7 @@ export async function statsData(request, env) {
   if (d) {
     await d.prepare('DELETE FROM hits WHERE ts < ?').bind(Date.now() - KEEP_DAYS * 864e5).run();
     const q = (sql) => d.prepare(sql).bind(from);
-    const [tot, daily, langs, langDaily, blangs, pages, refs, countries, devices, ctot, cdaily, cmodels, csources, recent] = (await d.batch([
+    const [tot, daily, langs, langDaily, blangs, pages, refs, countries, countryDaily, devices, ctot, cdaily, cmodels, csources, recent] = (await d.batch([
       q('SELECT COUNT(*) views, (SELECT SUM(n) FROM (SELECT COUNT(DISTINCT visitor) n FROM hits WHERE day >= ?1 GROUP BY day)) visitors FROM hits WHERE day >= ?1'),
       q('SELECT day, COUNT(*) views, COUNT(DISTINCT visitor) visitors FROM hits WHERE day >= ? GROUP BY day'),
       q(`SELECT ${SITE_LANG} lang, COUNT(*) views, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY 1 ORDER BY views DESC`),
@@ -267,6 +273,7 @@ export async function statsData(request, env) {
       q('SELECT path, COUNT(*) views, COUNT(DISTINCT visitor) visitors FROM hits WHERE day >= ? GROUP BY path ORDER BY views DESC LIMIT 25'),
       q("SELECT ref, COUNT(*) views FROM hits WHERE day >= ? GROUP BY 1 ORDER BY views DESC LIMIT 15"),
       q("SELECT CASE country WHEN '' THEN '?' ELSE country END country, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY 1 ORDER BY visitors DESC LIMIT 15"),
+      q("SELECT day, CASE country WHEN '' THEN '?' ELSE country END country, COUNT(*) views, COUNT(DISTINCT visitor) visitors FROM hits WHERE day >= ? GROUP BY 1, 2"),
       q('SELECT device, COUNT(DISTINCT day || visitor) visitors FROM hits WHERE day >= ? GROUP BY device ORDER BY visitors DESC'),
       q('SELECT COUNT(*) questions, SUM(1 - ok) errors, ROUND(AVG(ms) / 1000.0, 1) secs FROM chats WHERE day >= ?'),
       q('SELECT day, COUNT(*) questions FROM chats WHERE day >= ? GROUP BY day'),
@@ -274,6 +281,27 @@ export async function statsData(request, env) {
       q("SELECT sources FROM chats WHERE day >= ? AND sources != ''"),
       q('SELECT ts, question, sources, ms, ok, country FROM chats WHERE day >= ? ORDER BY ts DESC LIMIT 100'),
     ])).map((r) => r.results);
+
+    // Visitors per country per day: the 5 countries with the most visitors in the period get their own colour, the rest is "other".
+    const regionName = new Intl.DisplayNames([LOCALE[lang]], { type: 'region' });
+    const cname = (code) => { try { return code === '?' ? T.unknown : regionName.of(code); } catch { return code; } };
+    const perCountry = new Map();
+    for (const r of countryDaily) perCountry.set(r.country, (perCountry.get(r.country) || 0) + r.visitors);
+    const topC = [...perCountry].sort((a, b) => b[1] - a[1]).slice(0, 5).map(([c]) => c);
+    const cKeys = [...topC, 'other'];
+    const cLabels = [...topC.map(cname), T.other];
+    const byDay = new Map();
+    for (const r of countryDaily) {
+      const d = byDay.get(r.day) || byDay.set(r.day, { day: r.day, list: [] }).get(r.day);
+      const k = topC.includes(r.country) ? r.country : 'other';
+      d[k] = (d[k] || 0) + r.visitors;
+      d.list.push(r);
+    }
+    const cdRows = [...byDay.values()].sort((a, b) => b.day.localeCompare(a.day)).map((d) => ({
+      ...d, views: d.list.reduce((n, r) => n + r.views, 0), visitors: d.list.reduce((n, r) => n + r.visitors, 0),
+      countries: d.list.sort((a, b) => b.visitors - a.visitors || b.views - a.views)
+        .map((r) => `<span class="nw" title="${esc(cname(r.country))}">${esc(r.country)} ${nf.format(r.visitors)} <span class="muted">(${nf.format(r.views)})</span></span>`).join(' · '),
+    }));
 
     const t = tot[0] || {};
     const L = T.langNames;
@@ -292,7 +320,13 @@ export async function statsData(request, env) {
         { label: T.viewsH, key: 'views', num: true }, { label: T.visitorsH, key: 'visitors', num: true }], T)}</div>
       <div><h3>${T.referrers}</h3>${table(refs, [{ label: T.website, html: (r) => esc(r.ref || T.direct) }, { label: T.viewsH, key: 'views', num: true }], T)}
       <h3>${T.countries}</h3>${table(countries, [{ label: T.country, key: 'country' }, { label: T.visitorsH, key: 'visitors', num: true }], T)}
-      <h3>${T.devices}</h3>${table(devices, [{ label: T.device, html: (r) => esc(T.deviceNames[r.device] || r.device) }, { label: T.visitorsH, key: 'visitors', num: true }], T)}</div></div>`;
+      <h3>${T.devices}</h3>${table(devices, [{ label: T.device, html: (r) => esc(T.deviceNames[r.device] || r.device) }, { label: T.visitorsH, key: 'visitors', num: true }], T)}</div></div>
+      <h3>${T.countryDay}${days > 1 && topC.length ? ` <small>${cLabels.map((l, i) => `<i class="k b${i}"></i>${esc(l)}`).join(' ')}</small>` : ''}</h3>
+      ${days > 1 && topC.length ? bars([...byDay.values()], days, cKeys, cLabels, true) : ''}
+      ${cdRows.length ? `<table class="cd"><tr><th>${T.day}</th><th class="n">${T.viewsH}</th><th class="n">${T.visitorsH}</th></tr>${cdRows.map((r) =>
+        `<tr><td class="nw">${new Date(r.day).toLocaleDateString(LOCALE[lang], { day: 'numeric', month: 'short', weekday: 'short', timeZone: 'UTC' })}</td>
+        <td class="n">${nf.format(r.views)}</td><td class="n">${nf.format(r.visitors)}</td></tr><tr class="c"><td colspan="3">${r.countries}</td></tr>`).join('')}</table>
+        <p class="muted"><small>${T.country}: ${T.cdNote}</small></p>` : `<p class="muted">${T.noData}</p>`}`;
 
     const c = ctot[0] || {};
     const cited = new Map();
