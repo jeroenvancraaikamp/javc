@@ -27,7 +27,7 @@ const T = t(lang);
 const { title, description = T.description, pageTitle, crumbs = [], edit, noindex = false, chat = true, translated = false, image = '/og-image.jpg', type = 'website' } = Astro.props;
 const menu = (await getPages(lang)).filter((p) => p.data.menu).sort((a, b) => a.data.order - b.data.order);
 const isActive = (href: string) => path === href || (href !== url(lang, '/') && path.startsWith(href));
-// Submenu of the IT4IT Atlas page (layout "atlas"): its sections, the category guide, the weekly updates and the standard.
+// Submenu of the IT4IT Atlas page (layout "atlas"): its sections, the category guide, the weekly updates and the IT4IT, CSDM and TBM standards.
 const AT = ATLAS_TEXT[lang];
 const atlasMenu = (href: string) => [
   { label: AT.all, href },
@@ -36,6 +36,8 @@ const atlasMenu = (href: string) => [
   { sep: true, label: AT.guide, href: `${href}categories/` },
   { label: AT.changes, href: `${href}changes/` },
   { label: AT.standard, href: 'https://www.opengroup.org/it4it', external: true },
+  { label: AT.csdmStandard, href: 'https://www.servicenow.com/docs/r/servicenow-platform/common-service-data-model-csdm/csdm-landing-page.html', external: true },
+  { label: AT.tbmStandard, href: 'https://www.tbmcouncil.org/taxonomy/', external: true },
 ];
 const articlesActive = ['/articles/', '/category/', '/archive/', '/search/'].some((p) => path.startsWith(url(lang, p)));
 // Pages for signed-in use only exist in English only (editor), so there the flags lead to the home page of each language.
