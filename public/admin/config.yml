@@ -211,7 +211,7 @@ collections:
       - { name: menu, label: Menu name, widget: string, required: false, hint: 'Leave empty if the page should not be in the menu.' }
       - { name: order, label: Menu order, widget: number, value_type: int, default: 99, required: false }
       - { name: wide, label: Full width, widget: boolean, default: false, required: false }
-      - { name: layout, label: Layout, widget: select, options: [{ label: Standard, value: default }, { label: 'Two columns (each ## heading is a block)', value: columns }], default: default, required: false }
+      - { name: layout, label: Layout, widget: select, options: [{ label: Standard, value: default }, { label: 'Two columns (each ## heading is a block)', value: columns }, { label: 'IT4IT Atlas (text above the tools directory)', value: atlas }], default: default, required: false }
       - { name: banner, label: Banner at the top, widget: image, required: false }
       - { name: lang, label: Language, widget: select, options: [{ label: English, value: en }, { label: Nederlands, value: nl }], default: en, required: false, hint: 'The language you write this in. The other languages are translated automatically (see Translations).' }
       - { name: legal, label: Legal text, widget: boolean, default: false, required: false, hint: 'The translation then says that the original text prevails.' }

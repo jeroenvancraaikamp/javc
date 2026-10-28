@@ -33,6 +33,14 @@ npm run import -- path/to/export.xml
 
 This replaces the sample articles with your published posts and writes your pages to `src/content/pages/`.
 
+## IT4IT Atlas
+
+The page /it4it-atlas/ (layout "IT4IT Atlas" in the CMS) shows the tools directory under its text. The tools come
+from `atlas/IT4IT-Atlas.xlsx`, an Excel export of the original Atlas app; `scripts/build-atlas.mjs` turns it into
+`public/atlas/tools.json` on every build. To update the Atlas, replace that file with a new export (same columns).
+Categories and their descriptions are in `src/data/atlas-taxonomy.json`, logos in `public/atlas-logos/`
+(matched with `atlas/logos.json`), the texts of the page in `src/data/atlas-text.ts`.
+
 ## Running locally
 
 ```sh

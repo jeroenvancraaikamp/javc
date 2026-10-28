@@ -4,3 +4,5 @@ dist/
 .DS_Store
 worker/knowledge.json
 .wrangler/
+public/atlas/tools.json
+src/data/atlas-meta.json
