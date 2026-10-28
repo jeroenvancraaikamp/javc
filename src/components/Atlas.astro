@@ -61,6 +61,11 @@ const config = {
         <summary>{TEXT.browse}</summary>
         <nav id="atlas-caps"></nav>
       </details>
+      <div class="atlas-sponsor">
+        <h3>{TEXT.sponsor}</h3>
+        <a href="https://tikkie.me/pay/JAVCManagem/gaq8bUeXFTBwuJDcnq39vx" target="_blank" rel="noopener"><img src="/atlas/sponsor-qr.png" width="180" height="180" alt={`${TEXT.sponsor} (Tikkie)`} loading="lazy" /></a>
+        <p>{TEXT.sponsorNote}</p>
+      </div>
     </div>
     <div class="atlas-main">
       <div class="atlas-controls">
@@ -382,6 +387,10 @@ const config = {
   .atlas-side details + details { margin-top: 22px; }
   .atlas-side summary { font: 600 15px var(--head-font); color: var(--heading); cursor: pointer; margin-bottom: 10px; }
   .atlas-page .prose a { font-weight: 700; }
+  .atlas-sponsor { margin-top: 22px; text-align: center; border: 1px solid var(--line); border-radius: 6px; padding: 14px 12px; }
+  .atlas-sponsor h3 { font: 600 15px var(--head-font); color: var(--heading); margin: 0 0 10px; }
+  .atlas-sponsor img { display: block; margin: 0 auto; width: 180px; height: auto; }
+  .atlas-sponsor p { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
   .atlas-side nav { display: flex; flex-direction: column; font-size: 14px; line-height: 1.35; }
   .atlas-side nav h4 { margin: 14px 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
   .atlas-side nav a { display: flex; justify-content: space-between; gap: 8px; padding: 6px 8px; border-radius: 4px; color: var(--text); }
