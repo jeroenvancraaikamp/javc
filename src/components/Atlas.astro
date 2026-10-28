@@ -6,7 +6,7 @@
 // (?view=it4it&sub=it-service-itsm&q=...), so a filtered list can be shared as a link.
 import TAXONOMY from '../data/atlas-taxonomy.json';
 import META from '../data/atlas-meta.json';
-import { locale, type Lang } from '../i18n';
+import { locale, url, type Lang } from '../i18n';
 import { ATLAS_TEXT } from '../data/atlas-text';
 
 const { lang } = Astro.props as { lang: Lang };
@@ -35,7 +35,7 @@ const config = {
     <div><b>{nf.format(META.gartner)}</b><span>{TEXT.gartner}</span></div>
   </div>
   <p class="atlas-edition">
-    {TEXT.edition} {edition} · {TEXT.checked} {checked} · <a href="#atlas-guide">{TEXT.guide}</a> · <a href="https://www.opengroup.org/it4it" target="_blank" rel="noopener">{TEXT.standard}</a>
+    {TEXT.edition} {edition} · {TEXT.checked} {checked} · <a href={url(lang, '/it4it-atlas/categories/')}>{TEXT.guide}</a> · <a href="https://www.opengroup.org/it4it" target="_blank" rel="noopener">{TEXT.standard}</a>
   </p>
 
   <div class="atlas-tabs" role="tablist">
@@ -71,33 +71,7 @@ const config = {
     </div>
   </div>
 
-  <section class="atlas-guide" id="atlas-guide">
-    <h2>{TEXT.guide}</h2>
-    <p>{TEXT.guideIntro}</p>
-    {TAXONOMY.sections.map((s, i) => (
-      <div class="atlas-guide-section">
-        <h3><span>{String(i + 1).padStart(2, '0')}</span> {s.name} <small>{nf.format(views[s.id] ?? 0)} {TEXT.tools}</small></h3>
-        <p class="muted">{s.intro}</p>
-        <div class="atlas-guide-groups">
-          {s.groups.map((g) => (
-            <div class="atlas-guide-group">
-              <h4>{g.name}</h4>
-              <ul>
-                {g.subs.map((x) => (
-                  <li>
-                    <a href={`?view=${s.id}&sub=${x.id}#atlas`} data-view={s.id} data-sub={x.id}>{x.name}</a> <small>({counts[x.id] ?? 0})</small>
-                    <div>{x.desc}</div>
-                    {x.streams && <div class="muted" title={TEXT.streamsLabel}>{TEXT.streamsLabel}: {x.streams}</div>}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    ))}
-    <p class="atlas-note">{TEXT.note}</p>
-  </section>
+  <p class="atlas-note">{TEXT.note}</p>
 
   <dialog id="atlas-dialog" class="atlas-dialog" aria-labelledby="atlas-dialog-title"></dialog>
   <script type="application/json" id="atlas-config" is:inline set:html={JSON.stringify(config)}></script>
@@ -321,16 +295,6 @@ const config = {
     render();
     root.querySelector('.atlas-tabs')!.scrollIntoView({ behavior: 'smooth' });
   });
-  // Links in the category guide filter the list instead of reloading the page.
-  root.querySelector('.atlas-guide')!.addEventListener('click', (e) => {
-    const a = (e.target as HTMLElement).closest<HTMLElement>('a[data-sub]');
-    if (!a || !tools.length) return;
-    e.preventDefault();
-    const sub = SUB[a.dataset.sub!];
-    update({ view: a.dataset.view!, group: sub?.group ?? '', sub: a.dataset.sub!, q: '' });
-    root.querySelector('.atlas-tabs')!.scrollIntoView({ behavior: 'smooth' });
-  });
-
   $('atlas-export').addEventListener('click', () => {
     const rows = [['Product', 'Producer', 'Description', 'Capability groups', 'Subcategories', 'IT4IT value streams', 'Gartner MQ 2026 markets', 'Producer website', 'Source', 'Source checked']];
     for (const t of current) {
@@ -355,7 +319,7 @@ const config = {
 </script>
 
 <style is:global>
-  .atlas-page { max-width: 1200px; }
+  .atlas-page { max-width: 1400px; }
   .atlas-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 10px 0 8px; }
   .atlas-stats div { border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; background: var(--bg-soft); }
   .atlas-stats b { display: block; font: 700 26px/1.2 var(--head-font); color: var(--heading); }
@@ -383,7 +347,8 @@ const config = {
   .atlas-export { background: var(--btn-dark); color: #fff; border: 0; border-radius: 4px; padding: 8px 14px; font: 600 13px var(--head-font); cursor: pointer; }
   .atlas-export:hover { background: var(--accent); }
   .atlas-export:disabled { opacity: .5; cursor: default; }
-  .atlas-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .atlas-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  @media (max-width: 1200px) { .atlas-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .atlas-list > p { grid-column: 1 / -1; }
   .atlas-card { display: flex; gap: 14px; border: 1px solid var(--line); border-radius: 6px; padding: 16px; background: #fff; }
   .atlas-card .logo { position: relative; flex: none; width: 40px; height: 40px; border-radius: 8px; background: var(--bg-soft); display: grid; place-items: center; overflow: hidden; }
@@ -422,19 +387,6 @@ const config = {
   .atlas-pages button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
   .atlas-pages button:disabled { opacity: .4; cursor: default; }
   .atlas-pages span { padding: 7px 2px; color: var(--muted); }
-  .atlas-guide { margin-top: 60px; padding-top: 30px; border-top: 2px solid var(--line); scroll-margin-top: 90px; }
-  .atlas-guide h3 { margin: 30px 0 4px; }
-  .atlas-guide h3 span { color: var(--accent); margin-right: 6px; }
-  .atlas-guide h3 small { font-weight: 400; color: var(--muted); font-size: 14px; margin-left: 6px; }
-  .atlas-guide-groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; margin-top: 14px; }
-  .atlas-guide-group { border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; }
-  .atlas-guide-group h4 { margin: 0 0 8px; font-size: 16px; }
-  .atlas-guide-group ul { list-style: none; margin: 0; padding: 0; font-size: 14px; line-height: 1.5; }
-  .atlas-guide-group li { padding: 8px 0; border-top: 1px solid var(--line); }
-  .atlas-guide-group li:first-child { border-top: 0; padding-top: 0; }
-  .atlas-guide-group li a { font-weight: 600; }
-  .atlas-guide-group li small, .atlas-guide .muted { color: var(--muted); }
-  .atlas-guide-group li .muted { font-size: 12px; }
   .atlas-note { margin-top: 30px; font-size: 13px; color: var(--muted); line-height: 1.6; }
   @media (max-width: 900px) {
     .atlas-body { grid-template-columns: 1fr; gap: 16px; }
