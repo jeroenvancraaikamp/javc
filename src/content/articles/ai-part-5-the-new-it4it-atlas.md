@@ -7,15 +7,16 @@ categories:
   - CSDM/CMDB/TBM
 excerpt: As my third Zero-touch solution, I have transitioned the "IT4IT Atlas" that I build in OpenAI ChatGPT to Anthropic Claude, and integrated it into my website. Underway, I created an algotithme that automatically maps the discovered 1.600 software tools to the IT4IT 3 Value Streams, CSDM 5 Domains and TBM 5 Solution types.
 image: /IT4IT_atlas.png
+readingTime: null
 popular: true
 draft: false
 lang: en
 linkedin: ''
 ---
 
-To simplify life, I decided to standardize the IT solutions I have across fewer platforms. I transitioned the WordPress sites and am now consolidating the AI platforms I learned last month.  I will standardize on Anthropic Claude, GitHub, Cloudflare, Supabase, Stripe, and Svetla CMS.
+To simplify life, I decided to standardize the IT solutions I have across fewer platforms. I transitioned the WordPress sites and am now consolidating the AI platforms I learned last month.  I will standardize on Anthropic Claude, GitHub, Cloudflare, Supabase, Stripe, and Svetlia CMS.
 
-In my most recent project, I converted my first ChatGPT Pages attempt, the IT4IT Altas, to Anthropic Claude and integrated it into my website, JAvC.nl. 
+In my most recent project, I converted my first ChatGPT Pages attempt, the [**IT4IT Altas**](https://javc.nl/it4it-atlas/), to Anthropic Claude and integrated it into my website, JAvC.nl. 
 
 The solution:
 
