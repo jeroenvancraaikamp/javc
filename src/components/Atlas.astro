@@ -58,7 +58,7 @@ const config = {
         <nav id="atlas-domains"></nav>
       </details>
       <details open>
-        <summary>{TEXT.browse}</summary>
+        <summary><a class="atlas-side-link" href={url(lang, '/it4it-atlas/categories/')} title={TEXT.guide}>{TEXT.browse}</a></summary>
         <nav id="atlas-caps"></nav>
       </details>
     </div>
@@ -381,6 +381,7 @@ const config = {
   .atlas-body { display: grid; grid-template-columns: 270px 1fr; gap: 30px; align-items: start; }
   .atlas-side details + details { margin-top: 22px; }
   .atlas-side summary { font: 600 15px var(--head-font); color: var(--heading); cursor: pointer; margin-bottom: 10px; }
+  .atlas-side summary .atlas-side-link { color: inherit; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
   .atlas-side nav { display: flex; flex-direction: column; font-size: 14px; line-height: 1.35; }
   .atlas-side nav h4 { margin: 14px 0 4px; font-size: 12px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
   .atlas-side nav a { display: flex; justify-content: space-between; gap: 8px; padding: 6px 8px; border-radius: 4px; color: var(--text); }
