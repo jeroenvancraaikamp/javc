@@ -3,6 +3,8 @@ import '../styles/site.css';
 import { SITE, getPages } from '../lib';
 import { langOf, url, t, locale, LANGS, LANG_LABEL, hreflang } from '../i18n';
 import ChatWidget from '../components/ChatWidget.astro';
+import ATLAS_TAXONOMY from '../data/atlas-taxonomy.json';
+import { ATLAS_TEXT } from '../data/atlas-text';
 
 interface Props {
   title: string;
@@ -25,6 +27,15 @@ const T = t(lang);
 const { title, description = T.description, pageTitle, crumbs = [], edit, noindex = false, chat = true, translated = false, image = '/og-image.jpg', type = 'website' } = Astro.props;
 const menu = (await getPages(lang)).filter((p) => p.data.menu).sort((a, b) => a.data.order - b.data.order);
 const isActive = (href: string) => path === href || (href !== url(lang, '/') && path.startsWith(href));
+// Submenu of the IT4IT Atlas page (layout "atlas"): its sections, the category guide, the weekly updates and the standard.
+const AT = ATLAS_TEXT[lang];
+const atlasMenu = (href: string) => [
+  { label: AT.all, href },
+  ...ATLAS_TAXONOMY.sections.map((s) => ({ label: s.name, href: `${href}?view=${s.id}` })),
+  { sep: true, label: AT.guide, href: `${href}categories/` },
+  { label: AT.changes, href: `${href}changes/` },
+  { label: AT.standard, href: 'https://www.opengroup.org/it4it', external: true },
+];
 const articlesActive = ['/articles/', '/category/', '/archive/', '/search/'].some((p) => path.startsWith(url(lang, p)));
 // Pages for signed-in use only exist in English only (editor), so there the flags lead to the home page of each language.
 const switchable = !noindex;
@@ -117,7 +128,17 @@ const FLAGS = {
           <ul>
             {menu.map((p) => {
               const href = url(lang, `/${p.id}/`);
-              return <li><a href={href} class:list={{ active: isActive(href) }}>{p.data.menu}</a></li>;
+              if (p.data.layout !== 'atlas') return <li><a href={href} class:list={{ active: isActive(href) }}>{p.data.menu}</a></li>;
+              return (
+                <li class="has-sub">
+                  <a href={href} class:list={{ active: isActive(href) }} aria-haspopup="true">{p.data.menu}<span class="caret" aria-hidden="true">▾</span></a>
+                  <ul class="sub">
+                    {atlasMenu(href).map((x) => (
+                      <li class:list={{ sep: x.sep }}><a href={x.href} {...(x.external ? { target: '_blank', rel: 'noopener' } : {})}>{x.label}{x.external && ' ↗'}</a></li>
+                    ))}
+                  </ul>
+                </li>
+              );
             })}
             <li><a href={url(lang, '/articles/')} class:list={{ active: articlesActive }}>{T.articles}</a></li>
             <li><a href={url(lang, '/contact-me/')} class:list={{ active: isActive(url(lang, '/contact-me/')) }}>{T.contact}</a></li>
