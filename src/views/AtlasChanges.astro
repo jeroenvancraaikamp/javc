@@ -1,0 +1,43 @@
+---
+// Weekly updates of the IT4IT Atlas (/it4it-atlas/changes/ and its translations): what scripts/maintain-atlas.mjs
+// checked, changed and added each week, newest first (atlas/activity.json, via src/data/atlas-meta.json).
+import META from '../data/atlas-meta.json';
+import Base from '../layouts/Base.astro';
+import { locale, url, langOf } from '../i18n';
+import { ATLAS_TEXT } from '../data/atlas-text';
+
+const lang = langOf(Astro.url.pathname);
+const TEXT = ATLAS_TEXT[lang];
+type Item = { id: string; name: string; vendor?: string; was?: string; sub?: string; change?: string };
+type Run = { date: string; checked: number; updated: Item[]; added: Item[]; discontinued: Item[]; searched?: string[] };
+const runs = (META as any).activity as Run[] ?? [];
+const day = (d: string) => new Date(d).toLocaleDateString(locale[lang], { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+const atlas = (name: string) => url(lang, `/it4it-atlas/?q=${encodeURIComponent(name)}`);
+---
+<Base title={`${TEXT.changes} · IT4IT Atlas`} pageTitle={TEXT.changes} crumbs={[{ label: 'IT4IT Atlas', href: url(lang, '/it4it-atlas/') }, { label: TEXT.changes }]}>
+  <div class="wrap page-body atlas-changes">
+    <h1>IT4IT Atlas · {TEXT.changes}</h1>
+    <p>{TEXT.changesIntro}</p>
+    {runs.length === 0 && <p class="muted">{TEXT.noChanges}</p>}
+    {runs.map((r) => (
+      <section>
+        <h2>{day(r.date)}</h2>
+        <p class="muted">{TEXT.run(r.checked, r.updated.length, r.added.length, r.discontinued.length)}{r.searched?.length ? ` · ${TEXT.searchedIn}: ${r.searched.join(', ')}` : ''}</p>
+        {r.added.length > 0 && <><h3>{TEXT.addedHead}</h3><ul>{r.added.map((x) => <li><a href={atlas(x.name)}><b>{x.name}</b></a>{x.vendor && ` (${x.vendor})`}{x.sub && ` · ${x.sub}`}{x.change && <span> · {x.change}</span>}</li>)}</ul></>}
+        {r.updated.length > 0 && <><h3>{TEXT.updatedHead}</h3><ul>{r.updated.map((x) => <li><a href={atlas(x.name)}><b>{x.name}</b></a>{x.was && ` (${TEXT.was}: ${x.was})`}{x.change && <span> · {x.change}</span>}</li>)}</ul></>}
+        {r.discontinued.length > 0 && <><h3>{TEXT.discontinuedHead}</h3><ul>{r.discontinued.map((x) => <li><b>{x.name}</b>{x.change && <span> · {x.change}</span>}</li>)}</ul></>}
+      </section>
+    ))}
+    <p><a class="atlas-back" href={url(lang, '/it4it-atlas/')}>← {TEXT.backToAtlas}</a></p>
+  </div>
+</Base>
+
+<style is:global>
+  .atlas-changes h1 { margin: 0 0 8px; font-size: 30px; }
+  .atlas-changes section { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 18px; }
+  .atlas-changes h2 { font-size: 20px; margin: 0 0 4px; }
+  .atlas-changes h3 { font-size: 14px; text-transform: uppercase; letter-spacing: .4px; margin: 16px 0 6px; }
+  .atlas-changes ul { margin: 0; padding-left: 18px; font-size: 15px; line-height: 1.6; }
+  .atlas-changes .muted { color: var(--muted); }
+  .atlas-changes .atlas-back { font-weight: 600; }
+</style>

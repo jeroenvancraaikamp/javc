@@ -1,0 +1,54 @@
+name: Update IT4IT Atlas
+
+# Every Monday morning (09:00 Amsterdam winter time, 10:00 summer time): re-check the oldest entries of the
+# IT4IT Atlas and look for missing products with Claude and web search (scripts/maintain-atlas.mjs), then commit
+# atlas/tools.json and the weekly report (atlas/activity.json) to main, which publishes them.
+# Needs the repository secret ANTHROPIC_API_KEY; with the secret SMTP2GO_API_KEY the report is also e-mailed.
+on:
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+    inputs:
+      check:
+        description: 'Number of tools to re-check'
+        default: '40'
+      new_subs:
+        description: 'Number of subcategories to search for missing products'
+        default: '3'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atlas-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Re-check and extend the Atlas
+        run: node scripts/maintain-atlas.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SMTP2GO_API_KEY: ${{ secrets.SMTP2GO_API_KEY }}
+          ATLAS_CHECK: ${{ inputs.check || '40' }}
+          ATLAS_NEW_SUBS: ${{ inputs.new_subs || '3' }}
+      - name: Check that the site still builds
+        run: node scripts/build-atlas.mjs
+      - name: Commit the update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add atlas/tools.json atlas/activity.json atlas/maintenance.json
+          git diff --cached --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "Weekly update of the IT4IT Atlas"
+          for i in 1 2 3; do git pull --rebase origin main && git push && exit 0; sleep 5; done
+          exit 1
