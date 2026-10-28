@@ -1,7 +1,7 @@
 ---
 title: "IT4IT Atlas"
 menu: "IT4IT Atlas"
-source: "599a6dc0055d2f47"
+source: "bfa4a7086049e4f1"
 ---
 
-Der IT4IT Atlas ist ein Verzeichnis von IT-Management-Tools, Geschäftsanwendungen, Arbeitsplatz-Plattformen und Technologie-Plattformen. Die IT4IT-Tools sind nach Capability gruppiert und den Wertströmen des [IT4IT-Standards](https://www.opengroup.org/it4it) zugeordnet; Geschäftsanwendungen folgen den [Kategorien von TBM 5.0.1](https://www.tbmcouncil.org/taxonomy/). Durchsuchen, filtern und exportieren Sie die Liste nach Excel.
+Der IT4IT Atlas ist ein Verzeichnis von IT-Management-Tools, Business-Anwendungen, Workplace-Plattformen und Technologieplattformen. Die IT4IT-Tools sind nach Capability gruppiert und den Value Streams des [IT4IT-Standards](https://www.opengroup.org/it4it) zugeordnet; Business-Anwendungen folgen den [Kategorien der TBM 5.0.1](https://www.tbmcouncil.org/taxonomy/). Durchsuchen und filtern Sie die Liste und exportieren Sie sie nach Excel.
