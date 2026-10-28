@@ -23,7 +23,7 @@ const updated = new Date((META.activity as { date: string }[])[0]?.date ?? META.
 // What the script in the browser needs: the categories and the texts that it fills in.
 const config = {
   lang: locale[lang],
-  sections: TAXONOMY.sections.map((s) => ({ id: s.id, name: s.name, groups: s.groups.map((g) => ({ name: g.name, subs: g.subs.map((x) => ({ id: x.id, name: x.name, tbm: (x as any).tbm })) })) })),
+  sections: TAXONOMY.sections.map((s) => ({ id: s.id, name: s.name, groups: s.groups.map((g) => ({ name: g.name, subs: g.subs.map((x) => ({ id: x.id, name: x.name })) })) })),
   streams: STREAMS,
   domains: TAXONOMY.csdmDomains.map((d) => ({ id: d.id, name: d.name, desc: d.desc })),
   text: { profile: TEXT.profile, capabilities: TEXT.capabilities, labels: TEXT.labels, gartnerHead: TEXT.gartnerHead, report: TEXT.report, sourceHead: TEXT.sourceHead, checkedOn: TEXT.checkedOn, fromProducer: TEXT.fromProducer, fromThird: TEXT.fromThird, website: TEXT.website, close: TEXT.close, streamsLabel: TEXT.streamsLabel, allStreams: TEXT.allStreams, csdmLabel: TEXT.csdmLabel, allDomains: TEXT.allDomains, all: TEXT.all, allCaps: TEXT.allCaps, results: TEXT.results('{n}'), none: TEXT.none, reset: TEXT.reset, producer: TEXT.producer, source: TEXT.source, error: TEXT.error, prev: TEXT.prev, next: TEXT.next, page: TEXT.page, mq: TEXT.mq, mqTitle: TEXT.mqTitle, updatedOn: TEXT.updatedOn },
@@ -100,8 +100,8 @@ const config = {
   // CSDM 5 domain id → its name.
   const DOMAIN: Record<string, string> = Object.fromEntries(cfg.domains.map((d: any) => [d.id, d.name]));
   // Subcategory id → its name, group and section.
-  const SUB: Record<string, { name: string; group: string; section: string; tbm?: string }> = {};
-  for (const s of cfg.sections) for (const g of s.groups) for (const x of g.subs) SUB[x.id] = { name: x.name, group: g.name, section: s.id, tbm: x.tbm };
+  const SUB: Record<string, { name: string; group: string; section: string }> = {};
+  for (const s of cfg.sections) for (const g of s.groups) for (const x of g.subs) SUB[x.id] = { name: x.name, group: g.name, section: s.id };
 
   const state = { view: '', group: '', sub: '', q: '', sort: 'az', stream: '', domain: '', page: 1 };
   let tools: Tool[] = [];
@@ -261,7 +261,7 @@ const config = {
     let html = `<form method="dialog"><button class="close" aria-label="${esc(T.close)}">×</button></form>
       <div class="head">${logo(t)}<div><div class="cap">${esc(T.profile)}</div><h2 id="atlas-dialog-title">${esc(t.name)}</h2><div class="vendor">${esc(t.vendor)}</div></div></div>
       <p>${esc(t.description)}</p>`;
-    html += `<h3>${esc(T.capabilities)}</h3><ul>${subs.map((s) => `<li>${esc(SUB[s].group)} › <b>${esc(SUB[s].name)}</b>${SUB[s].tbm ? ` · ${link(SUB[s].tbm, 'TBM 5.0.1')}` : ''}</li>`).join('')}</ul>`;
+    html += `<h3>${esc(T.capabilities)}</h3><ul>${subs.map((s) => `<li>${esc(SUB[s].group)} › <b>${esc(SUB[s].name)}</b></li>`).join('')}</ul>`;
     if (t.tags.length) html += `<h3>${esc(T.labels)}</h3><div class="tags">${t.tags.map((x) => `<span class="tag">${esc(x)}</span>`).join('')}</div>`;
     if (t.domains.length) html += `<h3>${esc(T.csdmLabel)}</h3><div class="tags">${t.domains.map((x) => `<span class="tag">${esc(DOMAIN[x] ?? x)}</span>`).join('')}</div>`;
     if (t.streams.length) html += `<h3>${esc(T.streamsLabel)}</h3><div class="tags">${t.streams.map((x) => `<span class="tag">${esc(x)}</span>`).join('')}</div>`;

@@ -41,7 +41,6 @@ const DOMAIN = Object.fromEntries(TAXONOMY.csdmDomains.map((d) => [d.id, d.name]
                   {g.subs.map((x) => (
                     <li>
                       <a href={url(lang, `/it4it-atlas/?view=${s.id}&sub=${x.id}`)}>{x.name}</a> <small>({counts[x.id] ?? 0})</small>
-                      {(x as any).tbm && <a class="tbm" href={(x as any).tbm} target="_blank" rel="noopener" title={TEXT.tbmStandard}>TBM 5.0.1 ↗</a>}
                       <div>{x.desc}</div>
                       {x.streams && <div class="muted" title={TEXT.streamsLabel}>{TEXT.streamsLabel}: {x.streams}</div>}
                       <div class="csdm" title={TEXT.csdmLabel}>{x.csdm.map((d) => <a href={url(lang, `/it4it-atlas/?domain=${d}`)}>{DOMAIN[d]}</a>)}</div>
@@ -79,7 +78,6 @@ const DOMAIN = Object.fromEntries(TAXONOMY.csdmDomains.map((d) => [d.id, d.name]
   .atlas-guide-domains li { border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; }
   .atlas-guide-domains li a { font-weight: 600; }
   .atlas-guide-domains small { color: var(--muted); }
-  .atlas-guide-group .tbm { font-size: 11px; font-weight: 600; margin-left: 6px; }
   .atlas-guide-group .csdm { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
   .atlas-guide-group .csdm a { font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 3px; border: 1px solid var(--accent); color: var(--accent); }
   .atlas-note { margin-top: 30px; font-size: 13px; color: var(--muted); line-height: 1.6; }
