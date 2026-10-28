@@ -3,7 +3,7 @@
 // The tools come from public/atlas/tools.json and the counts from src/data/atlas-meta.json, both made by
 // scripts/build-atlas.mjs from atlas/IT4IT-Atlas.xlsx; the categories are in src/data/atlas-taxonomy.json.
 // Filtering, search, paging and the Excel export run in the browser; the filters are kept in the address
-// (?view=it4it&stream=Deploy&sub=it-service-itsm&q=...; view=gartner is the Gartner Magic Quadrant tab), so a filtered list can be shared as a link.
+// (?view=it4it&stream=Deploy&domain=service-delivery&sub=it-service-itsm&q=...; view=gartner is the Gartner Magic Quadrant tab), so a filtered list can be shared as a link.
 import TAXONOMY from '../data/atlas-taxonomy.json';
 import META from '../data/atlas-meta.json';
 import { locale, url, type Lang } from '../i18n';
@@ -25,7 +25,8 @@ const config = {
   lang: locale[lang],
   sections: TAXONOMY.sections.map((s) => ({ id: s.id, name: s.name, groups: s.groups.map((g) => ({ name: g.name, subs: g.subs.map((x) => ({ id: x.id, name: x.name })) })) })),
   streams: STREAMS,
-  text: { profile: TEXT.profile, capabilities: TEXT.capabilities, labels: TEXT.labels, gartnerHead: TEXT.gartnerHead, report: TEXT.report, sourceHead: TEXT.sourceHead, checkedOn: TEXT.checkedOn, fromProducer: TEXT.fromProducer, fromThird: TEXT.fromThird, website: TEXT.website, close: TEXT.close, streamsLabel: TEXT.streamsLabel, allStreams: TEXT.allStreams, all: TEXT.all, allCaps: TEXT.allCaps, results: TEXT.results('{n}'), none: TEXT.none, reset: TEXT.reset, producer: TEXT.producer, source: TEXT.source, error: TEXT.error, prev: TEXT.prev, next: TEXT.next, page: TEXT.page, mq: TEXT.mq, mqTitle: TEXT.mqTitle, updatedOn: TEXT.updatedOn },
+  domains: TAXONOMY.csdmDomains.map((d) => ({ id: d.id, name: d.name, desc: d.desc })),
+  text: { profile: TEXT.profile, capabilities: TEXT.capabilities, labels: TEXT.labels, gartnerHead: TEXT.gartnerHead, report: TEXT.report, sourceHead: TEXT.sourceHead, checkedOn: TEXT.checkedOn, fromProducer: TEXT.fromProducer, fromThird: TEXT.fromThird, website: TEXT.website, close: TEXT.close, streamsLabel: TEXT.streamsLabel, allStreams: TEXT.allStreams, csdmLabel: TEXT.csdmLabel, allDomains: TEXT.allDomains, all: TEXT.all, allCaps: TEXT.allCaps, results: TEXT.results('{n}'), none: TEXT.none, reset: TEXT.reset, producer: TEXT.producer, source: TEXT.source, error: TEXT.error, prev: TEXT.prev, next: TEXT.next, page: TEXT.page, mq: TEXT.mq, mqTitle: TEXT.mqTitle, updatedOn: TEXT.updatedOn },
 };
 ---
 <div class="atlas" id="atlas">
@@ -51,6 +52,10 @@ const config = {
       <details id="atlas-streams-box" open>
         <summary>{TEXT.streamsLabel}</summary>
         <nav id="atlas-streams"></nav>
+      </details>
+      <details open>
+        <summary>{TEXT.csdmLabel}</summary>
+        <nav id="atlas-domains"></nav>
       </details>
       <details open>
         <summary>{TEXT.browse}</summary>
@@ -83,7 +88,7 @@ const config = {
 <script>
   import { xlsx } from '../scripts/xlsx';
 
-  type Tool = { id: string; name: string; vendor: string; url: string; source: string; checked: string; description: string; descSource?: string; note?: string; logo?: string; subs: string[]; tags: string[]; views: string[]; streams: string[]; gartner: { market: string; vendor: string; year: number; url: string }[] };
+  type Tool = { id: string; name: string; vendor: string; url: string; source: string; checked: string; description: string; descSource?: string; note?: string; logo?: string; subs: string[]; tags: string[]; views: string[]; streams: string[]; domains: string[]; gartner: { market: string; vendor: string; year: number; url: string }[] };
   const root = document.getElementById('atlas')!;
   const cfg = JSON.parse(document.getElementById('atlas-config')!.textContent!);
   const T = cfg.text;
@@ -92,20 +97,23 @@ const config = {
   const esc = (s: string) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
   const nf = new Intl.NumberFormat(cfg.lang);
 
+  // CSDM 5 domain id → its name.
+  const DOMAIN: Record<string, string> = Object.fromEntries(cfg.domains.map((d: any) => [d.id, d.name]));
   // Subcategory id → its name, group and section.
   const SUB: Record<string, { name: string; group: string; section: string }> = {};
   for (const s of cfg.sections) for (const g of s.groups) for (const x of g.subs) SUB[x.id] = { name: x.name, group: g.name, section: s.id };
 
-  const state = { view: '', group: '', sub: '', q: '', sort: 'az', stream: '', page: 1 };
+  const state = { view: '', group: '', sub: '', q: '', sort: 'az', stream: '', domain: '', page: 1 };
   let tools: Tool[] = [];
 
   function readUrl() {
     const p = new URLSearchParams(location.search);
     Object.assign(state, {
       view: p.get('view') ?? '', group: p.get('group') ?? '', sub: p.get('sub') ?? '', q: p.get('q') ?? '',
-      sort: p.get('sort') ?? 'az', stream: p.get('stream') ?? '', page: Math.max(1, +(p.get('page') ?? 1) || 1),
+      sort: p.get('sort') ?? 'az', stream: p.get('stream') ?? '', domain: p.get('domain') ?? '', page: Math.max(1, +(p.get('page') ?? 1) || 1),
     });
     if (p.get('mq') === '1') state.view = 'gartner'; // links from before the Gartner tab
+    if (state.view === 'workplace') state.view = 'business'; // workplace platforms are part of business applications now
   }
   function writeUrl() {
     const p = new URLSearchParams();
@@ -115,6 +123,7 @@ const config = {
     if (state.q) p.set('q', state.q);
     if (state.sort !== 'az') p.set('sort', state.sort);
     if (state.stream) p.set('stream', state.stream);
+    if (state.domain) p.set('domain', state.domain);
     if (state.page > 1) p.set('page', String(state.page));
     const qs = p.toString();
     history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
@@ -126,13 +135,14 @@ const config = {
   const subsInView = (t: Tool) => (section() ? t.subs.filter((s) => SUB[s]?.section === section()) : t.subs);
 
   // Everything except the capability filter, so the sidebar can show how many tools each capability has
-  // (and without the value stream filter too for the value stream counts).
-  function baseFilter(withStream = true) {
+  // (and without the value stream or CSDM domain filter for the counts of those sections).
+  function baseFilter(skip: '' | 'stream' | 'domain' = '') {
     const words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
     return tools.filter((t) => {
       if (section() && !t.views.includes(section())) return false;
       if (state.view === 'gartner' && !t.gartner.length) return false;
-      if (withStream && state.stream && !t.streams.includes(state.stream)) return false;
+      if (skip !== 'stream' && state.stream && !t.streams.includes(state.stream)) return false;
+      if (skip !== 'domain' && state.domain && !t.domains.includes(state.domain)) return false;
       if (words.length) {
         const hay = `${t.name} ${t.vendor} ${t.description} ${t.tags.join(' ')} ${t.subs.map((s) => SUB[s]?.name).join(' ')}`.toLowerCase();
         if (!words.every((w) => hay.includes(w))) return false;
@@ -147,13 +157,20 @@ const config = {
     $('atlas-sort').value = state.sort;
 
     // Sidebar, value streams: same layout as the capabilities, hidden where no tool has a value stream.
-    const all = baseFilter(false);
+    const all = baseFilter('stream');
     const streamCount: Record<string, number> = {};
     for (const t of all) for (const s of t.streams) streamCount[s] = (streamCount[s] ?? 0) + 1;
     const withStreams = all.filter((t) => t.streams.length).length;
     $('atlas-streams-box').hidden = !withStreams && !state.stream;
     $('atlas-streams').innerHTML = `<a href="#" data-stream="" class="${!state.stream ? 'on' : ''}">${esc(T.allStreams)} <small>${nf.format(all.length)}</small></a>`
       + cfg.streams.map((s: string) => `<a href="#" data-stream="${esc(s)}" class="${state.stream === s ? 'on' : ''}">${esc(s)} <small>${nf.format(streamCount[s] ?? 0)}</small></a>`).join('');
+
+    // Sidebar, CSDM 5 domains: the same again.
+    const inDomains = baseFilter('domain');
+    const domainCount: Record<string, number> = {};
+    for (const t of inDomains) for (const d of t.domains) domainCount[d] = (domainCount[d] ?? 0) + 1;
+    $('atlas-domains').innerHTML = `<a href="#" data-domain="" class="${!state.domain ? 'on' : ''}">${esc(T.allDomains)} <small>${nf.format(inDomains.length)}</small></a>`
+      + cfg.domains.map((d: any) => `<a href="#" data-domain="${d.id}" title="${esc(d.desc)}" class="${state.domain === d.id ? 'on' : ''}">${esc(d.name)} <small>${nf.format(domainCount[d.id] ?? 0)}</small></a>`).join('');
 
     const base = baseFilter();
     // Sidebar: groups and subcategories of the chosen section(s), with counts.
@@ -170,7 +187,7 @@ const config = {
       if (!section()) nav += `<h4>${esc(s.name)}</h4>`;
       for (const g of s.groups) {
         const open = state.group === g.name || g.subs.some((x: any) => x.id === state.sub);
-        nav += `<div class="grp"><a href="#" data-group="${esc(g.name)}" data-sub="" class="${state.group === g.name && !state.sub ? 'on' : ''}">${esc(g.name)} <small>${nf.format(groupCount[g.name] ?? 0)}</small></a>`;
+        nav += `<div class="grp"><a href="#" data-group="${esc(g.name)}" data-sub="" class="parent ${state.group === g.name && !state.sub ? 'on' : ''}">${esc(g.name)} <small>${nf.format(groupCount[g.name] ?? 0)}</small></a>`;
         if (open && g.subs.length > 1) nav += g.subs.map((x: any) => `<a href="#" class="sub ${state.sub === x.id ? 'on' : ''}" data-group="${esc(g.name)}" data-sub="${x.id}">${esc(x.name)} <small>${nf.format(subCount[x.id] ?? 0)}</small></a>`).join('');
         nav += '</div>';
       }
@@ -217,6 +234,7 @@ const config = {
         <h3><button type="button" data-tool="${esc(t.id)}">${esc(t.name)}</button></h3>
         <div class="vendor">${esc(t.vendor)}</div>
         <p>${esc(t.description)}</p>
+        <div class="csdm">${t.domains.map((d) => `<span title="CSDM 5">${esc(DOMAIN[d] ?? d)}</span>`).join('')}</div>
         <div class="tags">${tags}${mq}</div>
         <div class="links">${t.url ? `<a href="${esc(t.url)}" target="_blank" rel="noopener nofollow">${esc(T.producer)} ↗</a>` : ''}${t.source && t.source !== t.url ? `<a href="${esc(t.source)}" target="_blank" rel="noopener nofollow">${esc(T.source)} ↗</a>` : ''}${t.checked ? `<span class="date" title="${esc(T.updatedOn + ' ' + short(t.checked))}">↻ ${esc(short(t.checked))}</span>` : ''}</div>
       </div>
@@ -245,6 +263,7 @@ const config = {
       <p>${esc(t.description)}</p>`;
     html += `<h3>${esc(T.capabilities)}</h3><ul>${subs.map((s) => `<li>${esc(SUB[s].group)} › <b>${esc(SUB[s].name)}</b></li>`).join('')}</ul>`;
     if (t.tags.length) html += `<h3>${esc(T.labels)}</h3><div class="tags">${t.tags.map((x) => `<span class="tag">${esc(x)}</span>`).join('')}</div>`;
+    if (t.domains.length) html += `<h3>${esc(T.csdmLabel)}</h3><div class="tags">${t.domains.map((x) => `<span class="tag">${esc(DOMAIN[x] ?? x)}</span>`).join('')}</div>`;
     if (t.streams.length) html += `<h3>${esc(T.streamsLabel)}</h3><div class="tags">${t.streams.map((x) => `<span class="tag">${esc(x)}</span>`).join('')}</div>`;
     if (t.gartner.length) html += `<h3>${esc(T.gartnerHead)}</h3><ul>${t.gartner.map((g) => `<li>${esc(g.market)} <small>(${esc(g.vendor)})</small>${g.url ? ' · ' + link(g.url, T.report) : ''}</li>`).join('')}</ul>`;
     html += `<h3>${esc(T.sourceHead)}</h3><p class="small">${t.source ? link(t.source, host(t.source)) : ''}${t.checked ? ` · ${esc(T.checkedOn)} ${esc(date(t.checked))}` : ''}<br>${esc(t.descSource === 'producer' ? T.fromProducer : t.descSource ? T.fromThird : '')}</p>`;
@@ -284,6 +303,12 @@ const config = {
   let timer = 0;
   $('atlas-q').addEventListener('input', (e: Event) => { clearTimeout(timer); timer = window.setTimeout(() => update({ q: (e.target as HTMLInputElement).value.trim() }), 200); });
   $('atlas-sort').addEventListener('change', (e: Event) => update({ sort: (e.target as HTMLSelectElement).value }));
+  $('atlas-domains').addEventListener('click', (e: Event) => {
+    const a = (e.target as HTMLElement).closest<HTMLElement>('a[data-domain]');
+    if (!a) return;
+    e.preventDefault();
+    update({ domain: a.dataset.domain! });
+  });
   $('atlas-streams').addEventListener('click', (e: Event) => {
     const a = (e.target as HTMLElement).closest<HTMLElement>('a[data-stream]');
     if (!a) return;
@@ -308,7 +333,7 @@ const config = {
     }
     if ((e.target as HTMLElement).id !== 'atlas-reset') return;
     e.preventDefault();
-    update({ view: '', group: '', sub: '', q: '', stream: '' });
+    update({ view: '', group: '', sub: '', q: '', stream: '', domain: '' });
   });
   $('atlas-pages').addEventListener('click', (e: Event) => {
     const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-page]');
@@ -318,12 +343,12 @@ const config = {
     root.querySelector('.atlas-tabbar')!.scrollIntoView({ behavior: 'smooth' });
   });
   $('atlas-export').addEventListener('click', () => {
-    const rows = [['Product', 'Producer', 'Description', 'Capability groups', 'Subcategories', 'IT4IT value streams', 'Gartner MQ 2026 markets', 'Producer website', 'Source', 'Source checked']];
+    const rows = [['Product', 'Producer', 'Description', 'Capability groups', 'Subcategories', 'IT4IT value streams', 'CSDM 5 domains', 'Gartner MQ 2026 markets', 'Producer website', 'Source', 'Source checked']];
     for (const t of current) {
       const subs = subsInView(t);
-      rows.push([t.name, t.vendor, t.description, [...new Set(subs.map((s) => SUB[s]?.group))].join('; '), subs.map((s) => SUB[s]?.name ?? s).join('; '), t.streams.join('; '), t.gartner.map((g) => g.market).join('; '), t.url, t.source, t.checked]);
+      rows.push([t.name, t.vendor, t.description, [...new Set(subs.map((s) => SUB[s]?.group))].join('; '), subs.map((s) => SUB[s]?.name ?? s).join('; '), t.streams.join('; '), t.domains.map((d) => DOMAIN[d] ?? d).join('; '), t.gartner.map((g) => g.market).join('; '), t.url, t.source, t.checked]);
     }
-    const blob = new Blob([xlsx('IT4IT Atlas', rows, [40, 30, 80, 35, 45, 30, 45, 40, 50, 14])], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    const blob = new Blob([xlsx('IT4IT Atlas', rows, [40, 30, 80, 35, 45, 30, 35, 45, 40, 50, 14])], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = `IT4IT-Atlas-${new Date().toISOString().slice(0, 10)}-${current.length}-tools.xlsx`;
@@ -363,6 +388,9 @@ const config = {
   .atlas-side nav a:hover { background: var(--bg-soft); }
   .atlas-side nav a.on { background: var(--accent); color: #fff; }
   .atlas-side nav a.on small { color: #fff; }
+  .atlas-side nav a.parent { font-weight: 600; color: var(--heading); }
+  .atlas-side nav .grp { border-top: 1px solid var(--line); padding-top: 2px; margin-top: 2px; }
+  .atlas-side nav h4 + .grp { border-top: 0; }
   .atlas-side nav a.sub { padding-left: 20px; font-size: 13px; }
   .atlas-controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
   .atlas-controls input[type="search"] { flex: 1 1 260px; min-width: 0; }
@@ -401,7 +429,10 @@ const config = {
   .atlas-dialog .tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--line); }
   .atlas-card .vendor { font-size: 13px; color: var(--muted); }
   .atlas-card p { margin: 8px 0 10px; font-size: 14px; line-height: 1.5; }
+  .atlas-card .csdm { display: flex; flex-wrap: wrap; gap: 5px; margin: auto 0 6px; }
+  .atlas-card .csdm span { font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 3px; border: 1px solid var(--accent); color: var(--accent); }
   .atlas-card .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
+  .atlas-card .csdm + .tags { margin-top: 0; }
   .atlas-card .tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--line); }
   .atlas-card .mq { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #fdf3e1; border: 1px solid #f0d49b; color: #8a5a00; cursor: help; }
   .atlas-card .links { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-top: 10px; font-size: 13px; font-weight: 600; }
