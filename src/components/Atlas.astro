@@ -64,10 +64,10 @@ const config = {
           <option value="za">{TEXT.sortZA}</option>
           <option value="vendor">{TEXT.sortVendor}</option>
         </select>
+        <button type="button" class="atlas-export" id="atlas-export" disabled>{TEXT.export}</button>
       </div>
       <div class="atlas-bar">
         <span id="atlas-count"></span>
-        <button type="button" class="atlas-export" id="atlas-export" disabled>{TEXT.export}</button>
       </div>
       <div id="atlas-list" class="atlas-list" aria-live="polite"><p class="muted">{TEXT.loading}</p></div>
       <nav id="atlas-pages" class="atlas-pages" aria-label={TEXT.page}></nav>
@@ -361,7 +361,7 @@ const config = {
   .atlas-controls input[type="search"] { flex: 1 1 260px; min-width: 0; }
   .atlas-controls input[type="search"], .atlas-controls select { padding: 9px 10px; border: 1px solid var(--line); border-radius: 4px; font: inherit; font-size: 14px; color: var(--text); background: #fff; }
   .atlas-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin: 16px 0 12px; font-size: 14px; color: var(--muted); }
-  .atlas-export { background: var(--btn-dark); color: #fff; border: 0; border-radius: 4px; padding: 8px 14px; font: 600 13px var(--head-font); cursor: pointer; }
+  .atlas-export { background: var(--btn-dark); color: #fff; border: 0; border-radius: 4px; padding: 10px 14px; white-space: nowrap; font: 600 13px var(--head-font); cursor: pointer; }
   .atlas-export:hover { background: var(--accent); }
   .atlas-export:disabled { opacity: .5; cursor: default; }
   .atlas-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
@@ -417,6 +417,6 @@ const config = {
   @media (max-width: 600px) {
     .atlas-tabs { flex-wrap: nowrap; overflow-x: auto; }
     .atlas-tabs button { white-space: nowrap; padding: 10px; }
-    .atlas-controls select { flex: 1 1 100%; }
+    .atlas-controls select, .atlas-export { flex: 1 1 100%; }
   }
 </style>
