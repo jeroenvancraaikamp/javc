@@ -2,6 +2,277 @@
   {
     "date": "2026-10-29",
     "checked": 40,
+    "confirmed": 4,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "0feccdf29b976791",
+        "name": "Trickest Platform",
+        "change": "Trickest's site now calls the product a workflow engine for offensive security that runs on a machine fleet, with isolated sandboxes for agents, and no longer mentions a visual editor, so the description was rewritten to match."
+      },
+      {
+        "id": "101d40434c68b17d",
+        "name": "Darktrace / EMAIL",
+        "was": "Darktrace/EMAIL",
+        "change": "The description talked about Darktrace as a whole company, so it now describes the Darktrace / EMAIL product and points to its own product page."
+      },
+      {
+        "id": "102b56afc5bd5e97",
+        "name": "Proven Optics",
+        "change": "The description was a quoted marketing line, so it was replaced with a factual summary of Proven Optics' IT financial management modules built natively on ServiceNow."
+      },
+      {
+        "id": "10540a3d912b8e35",
+        "name": "Jenkins",
+        "change": "The URL now points to the Jenkins project's own website instead of a 2020 foundation blog post, and the quoted description was replaced with a factual one from the official documentation."
+      },
+      {
+        "id": "105fffb921385e6e",
+        "name": "Lumos",
+        "change": "Replaced a truncated marketing quote with a paraphrase covering Lumos's access requests, access reviews and lifecycle management, sourced from the identity governance page."
+      },
+      {
+        "id": "1071903d12ded710",
+        "name": "FortifyData Cyber Risk Management Platform",
+        "change": "Rewrote the copied marketing text as a factual description and added the technology GRC category, because FortifyData now presents itself as an all-in-one cyber GRC platform."
+      },
+      {
+        "id": "10d9514775eaa5f5",
+        "name": "Microsoft 365 Copilot",
+        "change": "The old source and description were for Copilot Chat, a different product; now sourced from Microsoft's Copilot overview, which notes the app's rename to 'Microsoft Copilot'."
+      },
+      {
+        "id": "111ecfc0a7066966",
+        "name": "Checkmarx One",
+        "change": "Replaced the copied homepage text with a factual description, pointed the source to the product page, and added the vulnerability and exposure category."
+      },
+      {
+        "id": "0f2030a2398bbe59",
+        "name": "IBM Integration Bus for z/OS",
+        "was": "IBM Integration Bus",
+        "change": "IBM Integration Bus has been replaced by App Connect Enterprise on non-mainframe platforms but is still sold and supported for z/OS (v10.1), so the entry now covers the z/OS edition, with a current IBM source and a paraphrased description."
+      },
+      {
+        "id": "0f85261686285e76",
+        "name": "DX App Synthetic Monitor (Legacy)",
+        "change": "DX App Synthetic Monitor is still documented by Broadcom, with a migration path to DX O2 Synthetics (which supports the 'Legacy' label); the quoted description was replaced with a paraphrase."
+      },
+      {
+        "id": "0f9869613325804f",
+        "name": "Balbix Security Cloud",
+        "change": "Confirmed that SAFE bought Balbix in November 2025 and folded it into SAFE One; the source is now SAFE's own press release, and the technology risk subcategory was added."
+      },
+      {
+        "id": "0fd5342cd3207c5d",
+        "name": "Qualys TotalCloud for Cloud and Container Security",
+        "change": "Qualys TotalCloud is still offered and is now described by Qualys as a full cloud-security platform that includes cloud threat detection; the source is now Qualys's documentation and the protection and detection subcategory was added."
+      },
+      {
+        "id": "11359cd7b9b6b546",
+        "name": "Collibra Platform",
+        "was": "Collibra Data Intelligence Platform",
+        "change": "Renamed to Collibra Platform, as Collibra now calls it, and replaced the award-headline description with a product description from Collibra's documentation."
+      },
+      {
+        "id": "11c3d9b49019b404",
+        "name": "Huawei CodeArts",
+        "change": "Replaced a CodeArts Agent press release with a description of the CodeArts DevOps platform, removed the observability category and changed the website to Huawei Cloud's."
+      },
+      {
+        "id": "11d0a2f826c472de",
+        "name": "License Dashboard Portal",
+        "change": "Replaced the quote from a 2018 datasheet with a description based on the current License Dashboard Portal product page."
+      },
+      {
+        "id": "11e741356775ca70",
+        "name": "Cora PPM",
+        "change": "Replaced the quote from an API support article with a description based on Cora's PPM product page."
+      },
+      {
+        "id": "11f0b2f3f38574af",
+        "name": "dbt",
+        "change": "Replaced marketing copy with a factual description of dbt's SQL-based data transformation and noted the completed Fivetran merger."
+      },
+      {
+        "id": "123f4cba57255cae",
+        "name": "Derwent Patent Analytics (formerly Innography)",
+        "was": "Innography",
+        "change": "Clarivate has renamed Innography to Derwent Patent Analytics; updated the name and switched to the producer's product page."
+      },
+      {
+        "id": "12581ee80ead7769",
+        "name": "SAP Business Technology Platform (BTP)",
+        "change": "Replaced the quoted description with a paraphrase and reclassified BTP from enterprise architecture to platform, integration, low-code and data categories."
+      },
+      {
+        "id": "12b66703e2c3e1f6",
+        "name": "UKG Pro",
+        "change": "The description covered only the People Assist module; rewrote it for the full UKG Pro HCM suite and added payroll (finance)."
+      },
+      {
+        "id": "12b806243dfade23",
+        "name": "Tanium Platform",
+        "change": "Replaced the quoted description, pointed the source to Tanium's Autonomous IT Platform page and added threat detection and response."
+      },
+      {
+        "id": "12d5f70af63884ba",
+        "name": "Apiiro",
+        "was": "Apiiro ASPM Platform",
+        "change": "Replaced the Gartner source with Apiiro's own site, rewrote the description from producer content and added vulnerability and exposure management."
+      },
+      {
+        "id": "12d82f64215212cd",
+        "name": "One Identity Manager",
+        "change": "Replaced a customer-testimonial quote with a factual description from One Identity's product page."
+      },
+      {
+        "id": "12fa818237c90e7f",
+        "name": "Runecast Analyzer",
+        "was": "Runecast",
+        "change": "Runecast was acquired by Dynatrace in 2024 and continues as Runecast Analyzer integrated with Dynatrace, so the entry was renamed, re-sourced and its description rewritten."
+      },
+      {
+        "id": "132edc0a868aa10c",
+        "name": "Hive Pro Platform",
+        "was": "HivePro Uni5",
+        "change": "The producer's site now presents the product as the Hive Pro Platform (no longer Uni5) with Arbis AI, so the name, source and description were updated."
+      },
+      {
+        "id": "1349025f3f85d2a2",
+        "name": "Mosaic by Transmit Security",
+        "was": "Transmit Security",
+        "change": "Replaced a marketing quote with a factual description of the Mosaic customer identity platform from Transmit Security's platform page."
+      },
+      {
+        "id": "1385a50e4befa723",
+        "name": "Atlan",
+        "was": "Atlan Active Metadata Platform",
+        "change": "Replaced a customer-story quote with a product description; Atlan now positions its active metadata platform as a 'context layer' for enterprise AI."
+      },
+      {
+        "id": "13aaa966d5ef6d9b",
+        "name": "Zalaris",
+        "change": "Replaced the homepage marketing line with a factual description of Zalaris's HR and payroll services and its PeopleHub platform."
+      },
+      {
+        "id": "1473b2aaf423e640",
+        "name": "Azure Arc",
+        "change": "Replaced a quote with a description and reclassified Azure Arc from development tools to hybrid cloud management and infrastructure automation."
+      },
+      {
+        "id": "14d4522e8b94a5f3",
+        "name": "Grafana Cloud",
+        "change": "Product and category confirmed; replaced the quoted description with a paraphrase and pointed the source to the Grafana Cloud product page."
+      },
+      {
+        "id": "14d669eb62232e5c",
+        "name": "CerteroX Cloud Management",
+        "was": "Certero for Cloud (Legacy)",
+        "change": "The legacy Certero for Cloud is now offered as CerteroX Cloud Management, a FinOps tool; renamed and reclassified, and replaced a customer testimonial with a description."
+      },
+      {
+        "id": "14db8493413481a2",
+        "name": "Supply Wisdom",
+        "change": "Product is still offered; replaced the quoted press-release text with a factual paraphrase and pointed the source to the producer's homepage."
+      },
+      {
+        "id": "151310fb815ed47b",
+        "name": "Vulnerability and Patch Management Platform",
+        "change": "Product is still offered; replaced the quoted blog text with a paraphrase from the producer's product page and added endpoint management because it patches operating systems and third-party apps."
+      },
+      {
+        "id": "15a8b5de42bf5656",
+        "name": "Kloudfuse",
+        "change": "Product is still offered (now at version 4.0); replaced the marketing claim with a factual description of the unified observability platform."
+      },
+      {
+        "id": "16125cc729191892",
+        "name": "Workplace Service Delivery (WSD)",
+        "change": "Product is still offered; moved the source to ServiceNow's own product page, expanded the description and removed the Workforce subcategory because the product handles workplace and facilities services, not HR."
+      },
+      {
+        "id": "16341d2a70e79fc3",
+        "name": "Sisense",
+        "change": "Product is still offered; replaced the marketing tagline with a factual description sourced from the producer's embedded analytics page."
+      }
+    ],
+    "added": [
+      {
+        "id": "f79063a4c42269e5",
+        "name": "AppSheet",
+        "vendor": "Google",
+        "sub": "Low-code Application Development",
+        "change": "Added because Google's widely used no-code app platform was missing from the low-code subcategory."
+      },
+      {
+        "id": "4b3eccaee47bf7f0",
+        "name": "Quickbase",
+        "vendor": "Quickbase",
+        "sub": "Low-code Application Development",
+        "change": "Added because Quickbase is a long-established, widely used low-code application platform that was missing from the catalogue."
+      },
+      {
+        "id": "5b1296fc977afac4",
+        "name": "Betty Blocks",
+        "vendor": "Betty Blocks",
+        "sub": "Low-code Application Development",
+        "change": "Added because Betty Blocks is a recognised Dutch enterprise low-code platform that was missing from the catalogue."
+      },
+      {
+        "id": "e27d78ebf9206b0a",
+        "name": "CloudZero",
+        "vendor": "CloudZero",
+        "sub": "IT Financial Management, TBM & FinOps",
+        "change": "Added CloudZero, a widely recognised FinOps cost allocation and optimization platform that was missing from the catalogue."
+      },
+      {
+        "id": "17e9b3a4a3ff7efc",
+        "name": "Vantage",
+        "vendor": "Vantage (VNTG, Inc.)",
+        "sub": "IT Financial Management, TBM & FinOps",
+        "change": "Added Vantage, a well-known independent cloud cost management (FinOps) platform that was missing from the catalogue."
+      },
+      {
+        "id": "6739ecf7fb99cde4",
+        "name": "VMware Tanzu CloudHealth",
+        "vendor": "Broadcom (VMware)",
+        "sub": "IT Financial Management, TBM & FinOps",
+        "change": "Added Tanzu CloudHealth, one of the most established multi-cloud FinOps platforms, which was missing from the catalogue."
+      },
+      {
+        "id": "2feb3caca2bc2a9f",
+        "name": "Secureframe",
+        "vendor": "Secureframe",
+        "sub": "Technology Governance, Risk & Compliance",
+        "change": "Added a widely used security compliance automation (GRC) platform that was missing from the subcategory."
+      },
+      {
+        "id": "1f77277569c31968",
+        "name": "Sprinto",
+        "vendor": "Sprinto",
+        "sub": "Technology Governance, Risk & Compliance",
+        "change": "Added a recognised compliance automation and GRC platform that was missing from the subcategory."
+      },
+      {
+        "id": "a3446f3ebf738acf",
+        "name": "Bitsight Cyber Risk Intelligence Platform",
+        "vendor": "Bitsight",
+        "sub": "Technology Governance, Risk & Compliance",
+        "change": "Added a widely recognised cyber risk rating and intelligence platform that was missing from the subcategory."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Low-code Application Development",
+      "IT Financial Management, TBM & FinOps",
+      "Technology Governance, Risk & Compliance"
+    ],
+    "summary": "Checked 40 tools: 4 confirmed, 36 updated, 0 discontinued, 0 could not be verified. Searched Low-code Application Development, IT Financial Management, TBM & FinOps, Technology Governance, Risk & Compliance for missing products: 9 added."
+  },
+  {
+    "date": "2026-10-29",
+    "checked": 40,
     "confirmed": 1,
     "unverified": 0,
     "updated": [
