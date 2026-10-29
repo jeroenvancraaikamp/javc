@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy"
-source: "fe9cf3d4ccbc36e4"
+source: "282b690715c005a8"
 ---
 
 # Privacy Policy *JAVC Management & Consultancy*
@@ -11,7 +11,7 @@ source: "fe9cf3d4ccbc36e4"
 This page was last updated on *24 October 2022*.
 
   
-We are aware that you place your trust in us. We therefore consider it our responsibility to protect your privacy. On this page, we explain what data we collect when you use our website, why we collect this data and how we use it to improve your user experience. That way, you know exactly how we work. This privacy policy applies to the services of *JAVC Management & Consultancy*. Please be aware that *JAVC Management & Consultancy* is not responsible for the privacy policies of other sites and sources. By using this website, you indicate that you accept this privacy policy.  
+We are aware that you place your trust in us. We therefore see it as our responsibility to protect your privacy. On this page we explain which data we collect when you use our website, why we collect this data and how we use it to improve your user experience. That way you will understand exactly how we work. This privacy policy applies to the services of *JAVC Management & Consultancy*. Please be aware that *JAVC Management & Consultancy* is not responsible for the privacy policies of other sites and sources. By using this website, you indicate that you accept the privacy policy.  
 *JAVC Management & Consultancy* respects the privacy of all users of its site and ensures that the personal information you provide to us is treated confidentially.
 
 ### Our use of collected data
@@ -22,11 +22,11 @@ When you sign up for one of our services, we ask you to provide personal data. T
 
 #### Communication
 
-When you send us e-mail or other messages, we may retain those messages. Sometimes we ask you for personal details that are relevant to the situation at hand. This enables us to process your questions and respond to your requests. The data is stored on secure servers owned by *JAVC Management & Consultancy* or by a third party. We will not combine this data with other personal data we hold.
+When you send us e-mails or other messages, we may retain those messages. Messages you send via the contact form are retained, together with your name, e-mail address, phone number and the IP address, country and location from which you sent the message, for a maximum of 400 days. Sometimes we ask you for personal data that is relevant to the situation at hand. This enables us to process your questions and respond to your requests. The data is stored on secure servers owned by *JAVC Management & Consultancy* or by a third party. We will not combine this data with other personal data we hold.
 
 #### Daily update of the IT4IT Atlas
 
-When you sign up for the daily e-mail with updates to the IT4IT Atlas, we store your e-mail address, the language of the page on which you signed up and the date of sign-up, solely in order to send you this e-mail. You confirm your sign-up via a link in an e-mail; an unconfirmed sign-up is deleted after one week. The e-mails are sent through our e-mail service provider SMTP2GO. You can unsubscribe at the bottom of every e-mail; your data will then be deleted immediately.
+When you sign up for the daily e-mail with updates of the IT4IT Atlas, we store your name, your e-mail address, the language of the page on which you signed up, the date of sign-up and the IP address, country and location from which you signed up. We use your name and e-mail address solely to send you this e-mail; we use the IP address, country and location only to detect misuse of the sign-up form. You confirm your sign-up via a link in an e-mail; an unconfirmed sign-up is deleted after one week. The e-mails are sent via our e-mail service provider SMTP2GO. You can unsubscribe at the bottom of every e-mail; your data will then be deleted immediately.
 
 #### Cookies
 
@@ -43,23 +43,23 @@ The information is not shared with third parties. In some cases, the information
 
 ### Changes
 
-This privacy statement is tailored to the use and features of this site. Any adjustments and/or changes to this site may lead to changes in this privacy statement. We therefore advise you to consult this privacy statement regularly.
+This privacy statement is tailored to the use and features of this site. Any adjustments and/or changes to this site may lead to changes in this privacy statement. We therefore recommend that you consult this privacy statement regularly.
 
 ### Choices regarding personal data
 
 We offer all visitors the opportunity to view, change or delete any personal information they have provided to us at that time.
 
-#### Changing details/unsubscribing from the newsletter service
+#### Updating/unsubscribing from the newsletter service
 
-At the bottom of every mailing, you will find the option to change your details or to unsubscribe.
+At the bottom of every mailing you will find the option to update your details or to unsubscribe.
 
-#### Changing details/unsubscribing from communication
+#### Updating/unsubscribing from communication
 
-If you would like to change your details or have yourself removed from our files, please contact us. See the contact details below.
+If you would like to update your details or have yourself removed from our records, please contact us. See the contact details below.
 
 #### Disabling cookies
 
-Most browsers are set to accept cookies by default, but you can reset your browser to refuse all cookies or to indicate when a cookie is being sent. However, some features and services, on our website and other websites, may not function correctly if cookies are disabled in your browser.
+Most browsers are set to accept cookies by default, but you can reset your browser to refuse all cookies or to indicate when a cookie is being sent. However, some features and ““services, on our website and others, may not function correctly if cookies are disabled in your browser.
 
 ### Questions and feedback
 
