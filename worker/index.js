@@ -10,6 +10,7 @@ import KNOWLEDGE from './knowledge.json';
 import WP_IDS from './wp-ids.json';
 import { logHit, logChat, logContact, statsData } from './stats.js';
 import { turnstileConfig, humanCheck, tooFast } from './turnstile.js';
+import { contactMail } from '../scripts/atlas-mail.mjs';
 import { subscribe, confirm, unsubscribe, sendUpdates } from './atlas-subscribers.js';
 
 const CLAUDE_MODEL = 'claude-opus-5-5';
@@ -241,8 +242,10 @@ async function contact(request, env) {
     body: JSON.stringify({
       sender: env.CONTACT_FROM,
       to: [env.CONTACT_TO],
-      subject: `Contactformulier javc.nl: ${name.replace(/[\r\n]+/g, ' ')}`,
-      text_body: `Naam: ${name}\nE-mail: ${email}\nTelefoon: ${phone || '-'}\n\n${message}\n\n(Verstuurd via het contactformulier op ${new URL(request.url).host})`,
+      ...(({ subject, text, html }) => ({ subject, text_body: text, html_body: html }))(contactMail({
+        name, email, phone, message, lang: say('en', 'nl', 'cn', 'fr', 'de'),
+        country: request.cf?.country || '', city: request.cf?.city || '', host: new URL(request.url).host,
+      })),
       custom_headers: [{ header: 'Reply-To', value: email.replace(/[\r\n]/g, '') }],
     }),
   }).catch((err) => { console.error('smtp2go fetch', err); return null; });
