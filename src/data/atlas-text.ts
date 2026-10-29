@@ -120,3 +120,12 @@ export const SUBSCRIBE_TEXT = {
     unsubQ: 'Möchten Sie das tägliche Update des IT4IT Atlas nicht mehr erhalten?', unsubButton: 'Abmelden', unsubDone: 'Sie sind abgemeldet. Sie erhalten das tägliche Update nicht mehr.', gone: 'Diese Adresse ist nicht (mehr) angemeldet.',
   },
 };
+
+// The bin on a tool card, only for the signed-in editor (Atlas.astro): archives the tool (status "removed" in atlas/tools.json).
+export const ARCHIVE_TEXT = {
+  en: { title: 'Remove from the Atlas', confirm: 'Remove “{name}” from the IT4IT Atlas? It is archived and will not be added again by the daily update.', failed: 'The tool could not be removed. Sign in again and retry.' },
+  nl: { title: 'Verwijderen uit de Atlas', confirm: '“{name}” uit de IT4IT Atlas verwijderen? Het product wordt gearchiveerd en door de dagelijkse update niet opnieuw toegevoegd.', failed: 'Het product kon niet worden verwijderd. Log opnieuw in en probeer het nog eens.' },
+  cn: { title: '从图谱中移除', confirm: '要从 IT4IT Atlas 中移除“{name}”吗？它将被归档，每日更新不会再次添加。', failed: '无法移除该工具。请重新登录后重试。' },
+  fr: { title: 'Retirer de l’Atlas', confirm: 'Retirer « {name} » de l’IT4IT Atlas ? Il est archivé et ne sera pas rajouté par la mise à jour quotidienne.', failed: 'L’outil n’a pas pu être retiré. Reconnectez-vous et réessayez.' },
+  de: { title: 'Aus dem Atlas entfernen', confirm: '„{name}“ aus dem IT4IT Atlas entfernen? Es wird archiviert und vom täglichen Update nicht erneut hinzugefügt.', failed: 'Das Tool konnte nicht entfernt werden. Bitte melden Sie sich erneut an und versuchen Sie es noch einmal.' },
+};
