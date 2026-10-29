@@ -18,7 +18,7 @@ const nf = new Intl.NumberFormat(locale[lang]);
 const counts = META.counts as Record<string, number>;
 const views = META.views as Record<string, number>;
 const subTotal = TAXONOMY.sections.reduce((n, s) => n + s.groups.reduce((m, g) => m + g.subs.length, 0), 0);
-// The last weekly update (scripts/maintain-atlas.mjs), else the latest check of a description.
+// The last daily update (scripts/maintain-atlas.mjs), else the latest check of a description.
 const updated = new Date((META.activity as { date: string }[])[0]?.date ?? META.checked).toLocaleDateString(locale[lang], { day: 'numeric', month: 'long', year: 'numeric' });
 // What the script in the browser needs: the categories and the texts that it fills in.
 const config = {

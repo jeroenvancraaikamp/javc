@@ -1,10 +1,10 @@
-// Weekly maintenance of the IT4IT Atlas (atlas/tools.json), run by the GitHub Action "Update IT4IT Atlas"
-// every Monday; the result goes live straight away. With Claude and web search it:
+// Daily maintenance of the IT4IT Atlas (atlas/tools.json), run by the GitHub Action "Update IT4IT Atlas"
+// every morning; the result goes live straight away. With Claude and web search it:
 //   - re-checks the tools whose last check is oldest (ATLAS_CHECK, default 40): description, producer, links, source,
 //     classification; a product that has clearly been discontinued is hidden (status "discontinued", kept in the data);
 //   - looks for notable products missing from the subcategories that were searched longest ago (ATLAS_NEW_SUBS, default 3);
 //   - records what changed in atlas/activity.json (shown on /it4it-atlas/changes/) and, when SMTP2GO_API_KEY is set,
-//     e-mails the weekly report to ATLAS_REPORT_TO (default Info@JAVC.nl).
+//     e-mails the daily report to ATLAS_REPORT_TO (default Info@JAVC.nl).
 // Same source policy as the original Atlas: producer content first, then credible third-party sources; exact products,
 // no invented descriptions; the evidence URL, research date and a source note are kept for every tool.
 //   node scripts/maintain-atlas.mjs           needs ANTHROPIC_API_KEY
@@ -12,8 +12,9 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import Anthropic from '@anthropic-ai/sdk';
+import { atlasMail } from './atlas-mail.mjs';
 
-const MODEL = 'claude-opus-5-5';
+const MODEL = 'claude-sonnet-5-5';
 const CHECK = Number(process.env.ATLAS_CHECK || 40);
 const NEW_SUBS = Number(process.env.ATLAS_NEW_SUBS || 3);
 const PER_CALL = 5; // tools re-checked in one conversation with Claude
@@ -29,7 +30,7 @@ const state = existsSync('atlas/maintenance.json') ? JSON.parse(readFileSync('at
 const activity = existsSync('atlas/activity.json') ? JSON.parse(readFileSync('atlas/activity.json', 'utf8')) : [];
 const norm = (s) => String(s ?? '').normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-// --- what to do this week ------------------------------------------------------------------------------
+// --- what to do today ----------------------------------------------------------------------------------
 const listed = catalogue.filter((t) => t.status === 'listed');
 const lastLook = (t) => [t.verifiedAt, t.lastChecked].filter(Boolean).sort().pop() ?? '';
 const toCheck = [...listed].sort((a, b) => lastLook(a).localeCompare(lastLook(b)) || a.id.localeCompare(b.id)).slice(0, CHECK);
@@ -119,7 +120,7 @@ async function checkBatch(batch) {
 - "updated": something is wrong or outdated; give only the corrected fields (name, vendor, url, sourceUrl, description, descriptionSource, sourceNote, subcategoryIds);
 - "discontinued": clear evidence that the product is no longer offered;
 - "unverified": you could not find reliable information.
-Always give "change": one short English sentence on what you found or changed (shown in the public weekly report).
+Always give "change": one short English sentence on what you found or changed (shown in the public daily report).
 
 Entries:
 ${JSON.stringify(batch.map(brief), null, 1)}
@@ -213,23 +214,16 @@ if (report.errors) console.log(`${report.errors} problems, see the warnings abov
 
 // --- e-mail the report -----------------------------------------------------------------------------------
 if (process.env.SMTP2GO_API_KEY) {
-  const line = (x) => `- ${x.name}${x.vendor ? ` (${x.vendor})` : ''}${x.was ? ` (was: ${x.was})` : ''}${x.sub ? ` [${x.sub}]` : ''}: ${x.change}`;
-  const body = [
-    `Wekelijkse update van de IT4IT Atlas, ${TODAY}`, '',
-    report.summary, '',
-    `Toegevoegd (${report.added.length}):`, ...report.added.map(line), '',
-    `Bijgewerkt (${report.updated.length}):`, ...report.updated.map(line), '',
-    `Niet meer leverbaar, verborgen (${report.discontinued.length}):`, ...report.discontinued.map(line), '',
-    'De wijzigingen staan al live: https://javc.nl/it4it-atlas/changes/',
-  ].join('\n');
+  const mail = atlasMail(report);
   const res = await fetch('https://api.smtp2go.com/v3/email/send', {
     method: 'POST',
     headers: { 'content-type': 'application/json', 'X-Smtp2go-Api-Key': process.env.SMTP2GO_API_KEY },
     body: JSON.stringify({
       sender: process.env.ATLAS_REPORT_FROM || 'JAVC website <info@javc.nl>',
       to: [process.env.ATLAS_REPORT_TO || 'Info@JAVC.nl'],
-      subject: `IT4IT Atlas: ${report.updated.length} bijgewerkt, ${report.added.length} toegevoegd (${TODAY})`,
-      text_body: body,
+      subject: mail.subject,
+      text_body: mail.text,
+      html_body: mail.html,
     }),
   }).catch(() => null);
   const data = res ? await res.json().catch(() => ({})) : {};
