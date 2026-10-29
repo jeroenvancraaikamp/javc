@@ -2,6 +2,7 @@
 // every morning; the result goes live straight away. With Claude and web search it:
 //   - re-checks the tools whose last check is oldest (ATLAS_CHECK, default 40): description, producer, links, source,
 //     classification; a product that has clearly been discontinued is hidden (status "discontinued", kept in the data);
+//     products the editor removed on the site (status "removed") are never re-checked nor added again;
 //   - looks for notable products missing from the subcategories that were searched longest ago (ATLAS_NEW_SUBS, default 3);
 //   - records what changed in atlas/activity.json (shown on /it4it-atlas/changes/) and, when SMTP2GO_API_KEY is set,
 //     e-mails the daily report to ATLAS_REPORT_TO (default Info@JAVC.nl).
@@ -153,15 +154,17 @@ Answer with a JSON array between <json> and </json>, one object per entry: {"id"
 }
 
 async function searchSub(sub) {
-  const known = catalogue.filter((t) => t.subcategoryIds.includes(sub.id)).map((t) => `${t.name} (${t.vendor})`);
+  const known = catalogue.filter((t) => t.status !== 'removed' && t.subcategoryIds.includes(sub.id)).map((t) => `${t.name} (${t.vendor})`);
+  // Products the editor removed with the bin on the site (status "removed"): never added again.
+  const removed = catalogue.filter((t) => t.status === 'removed').map((t) => `${t.name} (${t.vendor})`);
   const answer = await research(`Find up to 3 notable, currently offered products that belong in the subcategory "${sub.name}" (${sub.id}: ${sub.desc}) and are missing from the catalogue. Prefer widely used or recognised products. Skip anything already listed below, also under another name or edition.
 
 Already in this subcategory:
 ${known.join('\n') || '(none)'}
 
 All other product names in the catalogue (also skip these):
-${catalogue.filter((t) => !t.subcategoryIds.includes(sub.id)).map((t) => t.name).join('; ')}
-
+${catalogue.filter((t) => t.status !== 'removed' && !t.subcategoryIds.includes(sub.id)).map((t) => t.name).join('; ')}
+${removed.length ? `\nRemoved by the editor because they do not belong in the Atlas (never suggest these, nor other editions of them):\n${removed.join('; ')}\n` : ''}
 Answer with a JSON array between <json> and </json> (empty when nothing notable is missing), each {"name", "vendor", "url", "sourceUrl", "description", "descriptionSource", "sourceNote", "subcategoryIds", "change"} where "change" is one short English sentence on why it was added.`, 10);
   const names = new Set(catalogue.map((t) => norm(t.name)));
   for (const r of (Array.isArray(answer) ? answer : []).slice(0, 3)) {
