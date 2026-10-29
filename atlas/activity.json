@@ -1,6 +1,251 @@
 [
   {
     "date": "2026-10-29",
+    "checked": 40,
+    "confirmed": 6,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "18096fd9c5f8fff7",
+        "name": "Checkly",
+        "change": "Replaced the quoted marketing text with a short paraphrase and added the DevOps/testing category."
+      },
+      {
+        "id": "182790fe8520ff2d",
+        "name": "Coolcentric Liquid Cooling Management",
+        "change": "The old description was an unrelated Vertiv press-release sentence; replaced it with a product description."
+      },
+      {
+        "id": "18cc55ece9ae4f52",
+        "name": "Veracode Application Risk Management",
+        "change": "Added the security exposure category and replaced the marketing line with a paraphrase."
+      },
+      {
+        "id": "1a2826f227407222",
+        "name": "Dell OpenManage / PowerFlex Manager",
+        "change": "Replaced the quoted text with a paraphrase and noted that the entry covers two Dell products."
+      },
+      {
+        "id": "1b3883197d10dc3a",
+        "name": "Snipe-IT",
+        "change": "Description was a stray page quote; replaced with a short factual paraphrase of what Snipe-IT does."
+      },
+      {
+        "id": "1b8eecd0ba7696d4",
+        "name": "Mirantis Kubernetes Engine (k0rdent)",
+        "change": "Switched to Mirantis's own page and moved the category to compute/cloud/container platforms, since it is a Kubernetes platform and not a dev toolchain."
+      },
+      {
+        "id": "1bb159488482c506",
+        "name": "Donesafe",
+        "change": "Donesafe is an EHS/safety platform now owned by HSI, so the category moved to Health, Safety & Environmental. The description was rewritten as a neutral paraphrase."
+      },
+      {
+        "id": "1bfa389961589743",
+        "name": "Postman API Platform",
+        "change": "Description was a generic quote about API platforms; replaced with a product-specific paraphrase. Added a development/quality category."
+      },
+      {
+        "id": "1c314720c6ce80b8",
+        "name": "MISP",
+        "change": "Description was rewritten as a paraphrase, since the original was a direct quote."
+      },
+      {
+        "id": "1a2b13ddfeb15ad3",
+        "name": "SAPIENCE HRMS",
+        "change": "The Sapience HCM listing by Cartel IT Solutions confirms HR modules, but I could not verify the Middle East or payroll claims, so the description now follows the listing."
+      },
+      {
+        "id": "1ae378e001129da6",
+        "name": "Kong Gateway (OSS)",
+        "change": "The old description was only an implementation detail (OpenResty bundling), so I replaced it with a description of what the gateway does."
+      },
+      {
+        "id": "1ae7fd964a155a12",
+        "name": "RedSeal Network",
+        "change": "RedSeal now describes itself as a network exposure management platform, so I added the vulnerability and exposure subcategory and replaced the quoted description with a paraphrase."
+      },
+      {
+        "id": "1c384d03928ac517",
+        "name": "SAP Ariba",
+        "change": "Product is still offered as next-gen SAP Ariba; I replaced the quoted marketing sentence with a factual description."
+      },
+      {
+        "id": "1c43e1653032b864",
+        "name": "Oracle Integration Cloud",
+        "change": "The old source was a utilities-specific documentation page; I replaced it with Oracle's own overview of Integration Cloud and rewrote the description."
+      },
+      {
+        "id": "1c4c13e824d00974",
+        "name": "Nucleus Platform",
+        "change": "Product is current; I replaced the quote with a description of what the platform does and noted the new Nucleus Helix AI engine."
+      },
+      {
+        "id": "1c4ff8a8ec67bf03",
+        "name": "Sage Intacct",
+        "change": "Product is current; the old description was a customer quote from the Sage homepage, so I replaced it with a product description and a product page source."
+      },
+      {
+        "id": "1cb2cf6535da1c4b",
+        "name": "Microsoft Sentinel",
+        "change": "Product is current; set a product-specific URL, a paraphrased description, and added SOAR/SIEM scope."
+      },
+      {
+        "id": "1cb903940505dd17",
+        "name": "CatalystOne HR System",
+        "change": "Product is current; description rewritten from the producer's solutions page as a modular HR/HCM suite."
+      },
+      {
+        "id": "1d2d15d76632315c",
+        "name": "Mend AppSec Platform",
+        "change": "Description replaced with a factual one from the Mend AppSec product page; added security classification."
+      },
+      {
+        "id": "1d3c429cfed6f447",
+        "name": "Luminance",
+        "change": "Description updated to reflect the current legal-AI platform for contract review and legal workflows."
+      },
+      {
+        "id": "1d6a54cf5a71d06d",
+        "name": "Phoenix Security Platform",
+        "change": "Description corrected to reflect ASPM positioning; added security classification."
+      },
+      {
+        "id": "1d975fa9299b110e",
+        "name": "Devin / Windsurf",
+        "change": "Description contained a scraping artefact ('Content type: text/html'); rewrote it and noted Cognition's Windsurf acquisition."
+      },
+      {
+        "id": "1da8300e4e1cff38",
+        "name": "Azure Monitor",
+        "change": "Product is current; replaced generic microsoft.com URL with the Azure Monitor product page and cited Microsoft Learn."
+      },
+      {
+        "id": "1e30043977436516",
+        "name": "boost.ai",
+        "change": "Replaced a partner-guide PDF and marketing claim with a factual description of the conversational AI platform."
+      },
+      {
+        "id": "1ec002f94e8a516d",
+        "name": "Varonis Data Security Platform",
+        "change": "Switched to a more authoritative source and refined the description; category broadened to include data security."
+      },
+      {
+        "id": "1f1f221a364263f1",
+        "name": "SUSE Observability (StackState)",
+        "was": "StackState",
+        "change": "SUSE acquired StackState and now sells it as SUSE Observability; description rewritten as a paraphrase and source moved to the SUSE announcement."
+      },
+      {
+        "id": "1f93d4ea8a143a34",
+        "name": "ZingHR",
+        "change": "Description shortened to fit the 450-character limit; the unconfirmed customer and user statistics were removed. Finance subcategory dropped."
+      },
+      {
+        "id": "20cc3e3811a8a996",
+        "name": "Bee360",
+        "change": "Bee360 is broader than EAM: it also covers portfolio, agile planning and financial management, so subcategories were added and the description paraphrased."
+      },
+      {
+        "id": "20dd257d033b8e1c",
+        "name": "Grok Enterprise",
+        "change": "Grok Business and Enterprise are workplace AI assistant plans, so the category was changed to generative AI and assistants, and the description was paraphrased."
+      },
+      {
+        "id": "20ecfafa15373900",
+        "name": "Datto BCDR",
+        "change": "Product is still offered (Datto SIRIS BCDR on Kaseya); replaced the copied marketing quote with a short paraphrase and added the producer source note."
+      },
+      {
+        "id": "20f966c3aa53edec",
+        "name": "Apache Superset",
+        "change": "Product is active; kept the description and classification, and added a sourceNote with the producer page that was checked."
+      },
+      {
+        "id": "210392f3677afc75",
+        "name": "HashiCorp Vault (Community Edition)",
+        "change": "The old description quoted the Enterprise deployment text, not Community Edition; rewrote it to match Vault Community Edition."
+      },
+      {
+        "id": "2123e84406a2122c",
+        "name": "Dagger",
+        "change": "Product is active; replaced the narrow API quote with a fuller description and checked the producer's docs and homepage."
+      },
+      {
+        "id": "2137cdaf4be450e5",
+        "name": "SAI360 GRC",
+        "change": "Product is active; replaced the copied marketing quote with a neutral paraphrase of the producer's GRC page."
+      }
+    ],
+    "added": [
+      {
+        "id": "67bb1fb5fbc83326",
+        "name": "NetBox",
+        "vendor": "NetBox Labs",
+        "sub": "Data Center Infrastructure Management",
+        "change": "Widely used open-source DCIM/IPAM source of truth that was missing from the catalogue."
+      },
+      {
+        "id": "37a5ec92a14c87be",
+        "name": "netTerrain DCIM",
+        "vendor": "Graphical Networks",
+        "sub": "Data Center Infrastructure Management",
+        "change": "Recognised dedicated DCIM product from Graphical Networks that was missing from the catalogue."
+      },
+      {
+        "id": "bed0f5044a7753ad",
+        "name": "Arista CloudVision",
+        "vendor": "Arista Networks",
+        "sub": "Network & Storage Management",
+        "change": "Widely used network management and automation platform that is missing from the catalogue."
+      },
+      {
+        "id": "c33e6deebf65a263",
+        "name": "Cisco Meraki Dashboard",
+        "vendor": "Cisco",
+        "sub": "Network & Storage Management",
+        "change": "Widely deployed cloud network management product that is missing from the catalogue."
+      },
+      {
+        "id": "1139a2851ca0a94b",
+        "name": "TrueNAS Enterprise",
+        "vendor": "TrueNAS (iXsystems)",
+        "sub": "Network & Storage Management",
+        "change": "Well-known open-source-based enterprise storage platform that is missing from the catalogue."
+      },
+      {
+        "id": "0cad7dc7141a0b45",
+        "name": "EcoStruxure Power Monitoring Expert",
+        "vendor": "Schneider Electric",
+        "sub": "Power & Cooling Management",
+        "change": "Widely used electrical power monitoring software that is missing from the catalogue."
+      },
+      {
+        "id": "3fd72e9338c70aca",
+        "name": "Desigo CC",
+        "vendor": "Siemens",
+        "sub": "Power & Cooling Management",
+        "change": "Recognised building management platform that controls HVAC and electrical facility systems."
+      },
+      {
+        "id": "a1579ac730fccaea",
+        "name": "Metasys Building Automation System",
+        "vendor": "Johnson Controls",
+        "sub": "Power & Cooling Management",
+        "change": "Widely used building automation system for HVAC and facility energy management."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Data Center Infrastructure Management",
+      "Network & Storage Management",
+      "Power & Cooling Management"
+    ],
+    "summary": "Checked 40 tools: 6 confirmed, 34 updated, 0 discontinued, 0 could not be verified. Searched Data Center Infrastructure Management, Network & Storage Management, Power & Cooling Management for missing products: 8 added."
+  },
+  {
+    "date": "2026-10-29",
     "checked": 10,
     "confirmed": 6,
     "unverified": 0,
