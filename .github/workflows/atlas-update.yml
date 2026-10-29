@@ -1,12 +1,12 @@
 name: Update IT4IT Atlas
 
-# Every Monday morning (09:00 Amsterdam winter time, 10:00 summer time): re-check the oldest entries of the
+# Every morning (09:00 Amsterdam winter time, 10:00 summer time): re-check the oldest entries of the
 # IT4IT Atlas and look for missing products with Claude and web search (scripts/maintain-atlas.mjs), then commit
-# atlas/tools.json and the weekly report (atlas/activity.json) to main, which publishes them.
+# atlas/tools.json and the daily report (atlas/activity.json) to main, which publishes them.
 # Needs the repository secret ANTHROPIC_API_KEY; with the secret SMTP2GO_API_KEY the report is also e-mailed.
 on:
   schedule:
-    - cron: '0 8 * * 1'
+    - cron: '0 8 * * *'
   workflow_dispatch:
     inputs:
       check:
@@ -49,6 +49,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add atlas/tools.json atlas/activity.json atlas/maintenance.json
           git diff --cached --quiet && echo "Nothing to commit" && exit 0
-          git commit -m "Weekly update of the IT4IT Atlas"
+          git commit -m "Daily update of the IT4IT Atlas"
           for i in 1 2 3; do git pull --rebase origin main && git push && exit 0; sleep 5; done
           exit 1

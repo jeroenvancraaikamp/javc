@@ -27,7 +27,7 @@ const T = t(lang);
 const { title, description = T.description, pageTitle, crumbs = [], edit, noindex = false, chat = true, translated = false, image = '/og-image.jpg', type = 'website' } = Astro.props;
 const menu = (await getPages(lang)).filter((p) => p.data.menu).sort((a, b) => a.data.order - b.data.order);
 const isActive = (href: string) => path === href || (href !== url(lang, '/') && path.startsWith(href));
-// Submenu of the IT4IT Atlas page (layout "atlas"): its sections, the category guide, the weekly updates and the IT4IT, CSDM and TBM standards.
+// Submenu of the IT4IT Atlas page (layout "atlas"): its sections, the category guide, the daily updates and the IT4IT, CSDM and TBM standards.
 const AT = ATLAS_TEXT[lang];
 const atlasMenu = (href: string) => [
   { label: AT.all, href },

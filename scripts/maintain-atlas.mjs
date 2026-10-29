@@ -1,10 +1,10 @@
-// Weekly maintenance of the IT4IT Atlas (atlas/tools.json), run by the GitHub Action "Update IT4IT Atlas"
-// every Monday; the result goes live straight away. With Claude and web search it:
+// Daily maintenance of the IT4IT Atlas (atlas/tools.json), run by the GitHub Action "Update IT4IT Atlas"
+// every morning; the result goes live straight away. With Claude and web search it:
 //   - re-checks the tools whose last check is oldest (ATLAS_CHECK, default 40): description, producer, links, source,
 //     classification; a product that has clearly been discontinued is hidden (status "discontinued", kept in the data);
 //   - looks for notable products missing from the subcategories that were searched longest ago (ATLAS_NEW_SUBS, default 3);
 //   - records what changed in atlas/activity.json (shown on /it4it-atlas/changes/) and, when SMTP2GO_API_KEY is set,
-//     e-mails the weekly report to ATLAS_REPORT_TO (default Info@JAVC.nl).
+//     e-mails the daily report to ATLAS_REPORT_TO (default Info@JAVC.nl).
 // Same source policy as the original Atlas: producer content first, then credible third-party sources; exact products,
 // no invented descriptions; the evidence URL, research date and a source note are kept for every tool.
 //   node scripts/maintain-atlas.mjs           needs ANTHROPIC_API_KEY
@@ -13,7 +13,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import Anthropic from '@anthropic-ai/sdk';
 
-const MODEL = 'claude-opus-5-5';
+const MODEL = 'claude-sonnet-5-5';
 const CHECK = Number(process.env.ATLAS_CHECK || 40);
 const NEW_SUBS = Number(process.env.ATLAS_NEW_SUBS || 3);
 const PER_CALL = 5; // tools re-checked in one conversation with Claude
@@ -29,7 +29,7 @@ const state = existsSync('atlas/maintenance.json') ? JSON.parse(readFileSync('at
 const activity = existsSync('atlas/activity.json') ? JSON.parse(readFileSync('atlas/activity.json', 'utf8')) : [];
 const norm = (s) => String(s ?? '').normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
-// --- what to do this week ------------------------------------------------------------------------------
+// --- what to do today ----------------------------------------------------------------------------------
 const listed = catalogue.filter((t) => t.status === 'listed');
 const lastLook = (t) => [t.verifiedAt, t.lastChecked].filter(Boolean).sort().pop() ?? '';
 const toCheck = [...listed].sort((a, b) => lastLook(a).localeCompare(lastLook(b)) || a.id.localeCompare(b.id)).slice(0, CHECK);
@@ -119,7 +119,7 @@ async function checkBatch(batch) {
 - "updated": something is wrong or outdated; give only the corrected fields (name, vendor, url, sourceUrl, description, descriptionSource, sourceNote, subcategoryIds);
 - "discontinued": clear evidence that the product is no longer offered;
 - "unverified": you could not find reliable information.
-Always give "change": one short English sentence on what you found or changed (shown in the public weekly report).
+Always give "change": one short English sentence on what you found or changed (shown in the public daily report).
 
 Entries:
 ${JSON.stringify(batch.map(brief), null, 1)}

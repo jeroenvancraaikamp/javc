@@ -28,6 +28,6 @@ The solution:
 
 To keep the scope reasonable and relevant for large enterprise use, Atlas does not include personal software packages designed for PCs or Phones. 
 
-The site automatically seeks and processes updates using API's and AI. To keep AI token costs reasonable, the site updates once per week. In the Changelog, you can find all the changes made last week. 
+The site automatically seeks and processes updates using API's and AI. To keep AI token costs reasonable, the site updates once per day. In the Changelog, you can find all the changes made each day. 
 
-If you find IT4IT Atlas useful, and/or if it has saved you days of survey work, you can contribute and sponsor the AI tokens that IT4IT Atlas consumes by clicking the Tikkie QR code. Sponsors can opt in to the weekly updates via email.
+If you find IT4IT Atlas useful, and/or if it has saved you days of survey work, you can contribute and sponsor the AI tokens that IT4IT Atlas consumes by clicking the Tikkie QR code. Sponsors can opt in to the daily updates via email.
