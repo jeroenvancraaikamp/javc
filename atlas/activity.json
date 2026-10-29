@@ -1,5 +1,289 @@
 [
   {
+    "date": "2026-10-29",
+    "checked": 40,
+    "confirmed": 1,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "081ca61d98704f9f",
+        "name": "assyst",
+        "change": "Replaced the outdated Axios Systems review-site source with the IFS assyst ITSM product page from IFS, and rewrote the description."
+      },
+      {
+        "id": "08505250d61971e4",
+        "name": "WatchGuard Firebox",
+        "change": "Replaced the quoted marketing text with a factual description and moved the source from a single-model hardware guide to the official Firebox firewalls page."
+      },
+      {
+        "id": "086991b650401693",
+        "name": "Qualys Patch Management",
+        "change": "Patch Management is now sold as part of Qualys TruRisk Eliminate; I updated the source to the current docs, rewrote the description and added endpoint management."
+      },
+      {
+        "id": "087f62b0655c24b7",
+        "name": "Collective IQ ITAM (formerly SmartCenter)",
+        "was": "SMARTCENTER",
+        "change": "Almaden renamed SmartCenter to Collective IQ ITAM in September 2024; I updated the name, source and description."
+      },
+      {
+        "id": "0797674a54a95003",
+        "name": "FNT Command Platform",
+        "was": "FNT Command",
+        "change": "Renamed to the official product name, FNT Command Platform, replaced the quoted description with a paraphrase, and added CMDB/asset and network/storage categories because FNT's product page describes those functions."
+      },
+      {
+        "id": "079bc48e822950d5",
+        "name": "Snort",
+        "change": "Replaced the quote about Cisco Firewall Threat Defense with a description of the open-source Snort IPS, and moved url and sourceUrl to the official snort.org site."
+      },
+      {
+        "id": "079ea17a9f2e53ba",
+        "name": "Azure Data Factory",
+        "change": "Replaced the verbatim quote with a paraphrase, added the Data Platforms category, and noted that Microsoft calls Fabric Data Factory the next generation of ADF."
+      },
+      {
+        "id": "07d1bdb280da53ba",
+        "name": "MenaME-Plus+",
+        "was": "MenaME Plus",
+        "change": "Changed the description from an 'ESS portal' to what the producer describes: an employee and manager self-service mobile app. Also updated the name to the official spelling."
+      },
+      {
+        "id": "07d6bf47c174ceb1",
+        "name": "LangGraph / LangSmith Deployment (formerly LangGraph Platform)",
+        "was": "LangChain / LangGraph Platform",
+        "change": "LangGraph Platform was renamed LangSmith Deployment in October 2025, so the name, source and description now cover the open-source LangGraph framework plus the managed deployment service."
+      },
+      {
+        "id": "08c7f521b5cb3f92",
+        "name": "License Dashboard ScanWin",
+        "change": "Confirmed on the producer's ScanWin product page (version 2.2); replaced the quoted description with a paraphrase and pointed the source to the product page."
+      },
+      {
+        "id": "091cd559f7d8c2df",
+        "name": "Tenable Lumin",
+        "change": "Tenable's docs now describe Lumin as a legacy add-on: not included by default in Tenable One, no new features, with Exposure View recommended instead; description and note updated."
+      },
+      {
+        "id": "093d5136f44b93c2",
+        "name": "Automation 360",
+        "change": "Product and documentation page confirmed; replaced the quoted description with a factual paraphrase."
+      },
+      {
+        "id": "09573628938e4bc4",
+        "name": "DISCO",
+        "was": "Disco",
+        "change": "Replaced the homepage marketing tagline with a factual description of DISCO's eDiscovery, legal hold and legal AI products, sourced from its corporate legal page."
+      },
+      {
+        "id": "0966446cd0a8c91a",
+        "name": "Salesforce Platform",
+        "change": "Replaced the partner-PDF source and marketing quote with Salesforce's own app development page and a factual description."
+      },
+      {
+        "id": "0acd2bece3c731ba",
+        "name": "Isora GRC",
+        "change": "Isora GRC is still offered by SaltyCloud; the quoted marketing text was replaced with a factual description and an IT risk and compliance category was added."
+      },
+      {
+        "id": "0afe3bc3ab7b4414",
+        "name": "PwC Business Risk and Insights Platform",
+        "change": "Found PwC India's own product page, which describes the platform as a continuous control monitoring tool; the source and description were updated to match."
+      },
+      {
+        "id": "0b04f018f3f8f016",
+        "name": "Hornbill for ITSM",
+        "change": "Hornbill is still offered; the quoted tagline was replaced with a factual description of the cloud platform that combines ESM, ITSM and enterprise automation."
+      },
+      {
+        "id": "0b425cf4e96f775a",
+        "name": "Nolio Release Automation (formerly CA Release Automation)",
+        "was": "CA Release Automation (Legacy)",
+        "change": "CA Release Automation is now Broadcom's Nolio Release Automation and is still maintained (version 6.9 released); only old versions 6.6 and 6.7 have reached end of support."
+      },
+      {
+        "id": "0b5066bfa8885110",
+        "name": "Xearch",
+        "change": "The Xearch agent is still offered by Xensam; the GDPR-only quote was replaced with a factual description of the software discovery agent."
+      },
+      {
+        "id": "096d7ea35799272e",
+        "name": "Aranda Service Management",
+        "change": "Product still offered; replaced the quoted marketing line with a factual description of its ITIL-aligned service desk features."
+      },
+      {
+        "id": "097affb20a234583",
+        "name": "Agentforce IT Service",
+        "was": "Salesforce Service Cloud (ITSM)",
+        "change": "The entry pointed to Service Cloud, which is Salesforce's customer-service product; Salesforce's ITSM offering is Agentforce IT Service, so the name, source and description were corrected."
+      },
+      {
+        "id": "09ef9e0222b68130",
+        "name": "Microsoft Fabric",
+        "change": "Description still matches Microsoft's documentation; added the BI & analytics subcategory because Fabric includes Power BI reporting."
+      },
+      {
+        "id": "0a3b4c9d84166008",
+        "name": "Holm Security VMP",
+        "change": "Replaced the marketing quote with a factual description and pointed the source to the vulnerability-management product page."
+      },
+      {
+        "id": "0aadf3e0c428f536",
+        "name": "Qumulo Core",
+        "change": "Replaced the cut-off marketing quote with a factual description of Qumulo Core as scale-out file and object storage software."
+      },
+      {
+        "id": "0b674c097f382f0d",
+        "name": "OrbusInfinity",
+        "change": "Still offered; replaced the quoted marketing line with a factual paraphrase and pointed the source to the producer's current product page."
+      },
+      {
+        "id": "0baccc773480d9ee",
+        "name": "Rippling",
+        "change": "Rewrote the description and added IT (identity, device management) and finance subcategories, matching the HR, IT and Finance products shown on the producer's homepage."
+      },
+      {
+        "id": "0bb5cf18619f876c",
+        "name": "eComscan",
+        "change": "Replaced the promotional quote with a description of eComscan as a malware and vulnerability scanner for e-commerce stores, and added the protection/detection subcategory."
+      },
+      {
+        "id": "0c53a78bc4f3eb38",
+        "name": "Scalefusion",
+        "change": "Product and vendor (ProMobi Technologies) confirmed; replaced the quoted description with a paraphrase and switched to the English source page."
+      },
+      {
+        "id": "0d7bc669183f7231",
+        "name": "UpKeep",
+        "change": "Product confirmed as UpKeep's mobile-first CMMS; replaced the copied description with a paraphrase and pointed the source at the CMMS product page."
+      },
+      {
+        "id": "0dcb751db8beac00",
+        "name": "Bits AI",
+        "change": "Bits AI is still documented by Datadog as an agentic assistant; replaced the quoted marketing line with a factual paraphrase."
+      },
+      {
+        "id": "0de764a172bd5f09",
+        "name": "GEP SMART",
+        "change": "GEP SMART confirmed as GEP's source-to-pay suite; replaced the unrelated newsletter-subscription source page and the truncated quote."
+      },
+      {
+        "id": "0e6a3212d00a0875",
+        "name": "SysAid",
+        "change": "SysAid ITSM confirmed; source moved from an old PDF to the current ITSM page, description paraphrased, asset management added, and the private-equity owner dropped from the vendor name because it couldn't be confirmed."
+      },
+      {
+        "id": "0eb79b5ee36bffb9",
+        "name": "GRC Toolbox",
+        "change": "GRC Toolbox is still Swiss GRC's GRC platform; replaced the truncated quote from a 2024 PDF with the current platform page and added technology GRC for its ISMS, NIS2 and DORA coverage."
+      },
+      {
+        "id": "0c72622633acd1e8",
+        "name": "Securonix Unified Defense SIEM",
+        "change": "Product still offered; replaced the quoted marketing text with a factual description based on Securonix's current Unified Defense SIEM product page."
+      },
+      {
+        "id": "0ce988f00120ab19",
+        "name": "Riverbed Platform",
+        "change": "Replaced the quoted marketing text with a factual summary of the platform's modules, and added the endpoint/experience and network management subcategories for Aternity and acceleration."
+      },
+      {
+        "id": "0d1bd5916bd274c8",
+        "name": "RabbitMQ",
+        "change": "Description confirmed against rabbitmq.com; the website URL now points to the RabbitMQ project site instead of the generic Broadcom homepage."
+      },
+      {
+        "id": "0d379e4bcf516eee",
+        "name": "Kentik",
+        "change": "Replaced the quoted marketing text with a factual description, noted that Infoblox announced its acquisition of Kentik in July 2026, and added the network management subcategory."
+      },
+      {
+        "id": "0d3ae75ef3588034",
+        "name": "Alibaba Cloud Container Service for Kubernetes (ACK)",
+        "change": "The description wrongly described ACK One, a different product, and has been rewritten for ACK itself; the entry moved from development tools to Compute, Cloud & Container Platforms."
+      }
+    ],
+    "added": [
+      {
+        "id": "16820a1c373c66f7",
+        "name": "HubSpot Marketing Hub",
+        "vendor": "HubSpot",
+        "sub": "Sales & Marketing",
+        "change": "Added a widely used marketing automation product that was missing from the catalogue."
+      },
+      {
+        "id": "27a1c266f08355ef",
+        "name": "Adobe Marketo Engage",
+        "vendor": "Adobe",
+        "sub": "Sales & Marketing",
+        "change": "Added a leading enterprise B2B marketing automation platform that was not in the catalogue."
+      },
+      {
+        "id": "4999f6dd8f28ca97",
+        "name": "Microsoft Dynamics 365 Sales",
+        "vendor": "Microsoft",
+        "sub": "Sales & Marketing",
+        "change": "Added Microsoft's widely used sales CRM, which was missing while other Dynamics 365 apps are listed."
+      },
+      {
+        "id": "03a3d573f00e3d65",
+        "name": "IntelliJ IDEA",
+        "vendor": "JetBrains",
+        "sub": "Development, DevOps & Quality",
+        "change": "Added a widely used Java/Kotlin IDE that was missing from the development tooling subcategory."
+      },
+      {
+        "id": "c0deea2c5ef08baa",
+        "name": "Cypress",
+        "vendor": "Cypress.io",
+        "sub": "Development, DevOps & Quality",
+        "change": "Added a widely recognised web test automation framework that was not yet in the catalogue."
+      },
+      {
+        "id": "94fd0440707a464b",
+        "name": "Sonatype Nexus Repository",
+        "vendor": "Sonatype",
+        "sub": "Development, DevOps & Quality",
+        "change": "Added a widely used artifact repository manager, a gap next to the JFrog platform already listed."
+      },
+      {
+        "id": "75c46ca47252223a",
+        "name": "Amazon API Gateway",
+        "vendor": "Amazon Web Services",
+        "sub": "API Management & Integration",
+        "change": "Added Amazon API Gateway, a widely used managed API service that was missing from the catalogue."
+      },
+      {
+        "id": "f0a6bc97d57199bb",
+        "name": "Azure API Management",
+        "vendor": "Microsoft",
+        "sub": "API Management & Integration",
+        "change": "Added Azure API Management, Microsoft's major API management service, which was not yet listed."
+      },
+      {
+        "id": "806ea8d1b778020f",
+        "name": "Make",
+        "vendor": "Make (Celonis)",
+        "sub": "API Management & Integration",
+        "change": "Added Make (formerly Integromat), a widely used iPaaS and workflow automation platform that was missing."
+      }
+    ],
+    "discontinued": [
+      {
+        "id": "0c0badb1f16b4c45",
+        "name": "TrueSight Operations Management (Legacy)",
+        "change": "BMC documentation states TrueSight Operations Management reached end of support on 31 March 2025, with BMC Helix Operations Management as the upgrade path."
+      }
+    ],
+    "errors": 0,
+    "searched": [
+      "Sales & Marketing",
+      "Development, DevOps & Quality",
+      "API Management & Integration"
+    ],
+    "summary": "Checked 40 tools: 1 confirmed, 38 updated, 1 discontinued, 0 could not be verified. Searched Sales & Marketing, Development, DevOps & Quality, API Management & Integration for missing products: 9 added."
+  },
+  {
     "date": "2026-10-28",
     "checked": 40,
     "confirmed": 2,
