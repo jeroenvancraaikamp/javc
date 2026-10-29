@@ -35,7 +35,7 @@ const S = SUBSCRIBE_TEXT[lang];
     const status = box.querySelector('.atlas-subscribe-status') as HTMLElement;
     const button = form.querySelector('button[type=submit]') as HTMLButtonElement;
     const show = (text: string, ok: boolean) => { status.textContent = text; status.className = `atlas-subscribe-status notice ${ok ? 'ok' : 'error'}`; status.hidden = false; };
-    const bot = protect(form);
+    const bot = protect(form, { visible: true });
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       button.disabled = true;

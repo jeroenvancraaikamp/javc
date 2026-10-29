@@ -15,6 +15,10 @@ const SITE = 'https://javc.nl';
 const LANGS = ['en', 'nl', 'cn', 'fr', 'de'];
 const BATCH = 25; // mails per cron run (the free Workers plan allows 50 outgoing requests per run)
 const PENDING_DAYS = 7; // unconfirmed addresses are deleted after a week
+// Against mass sign-ups by bots (on top of Turnstile and the rate limit per minute): at most 3 requests per IP address
+// per day, and at most 20 new requests per hour in all.
+const PER_IP_DAY = 3;
+const PER_HOUR = 20;
 const FROM = 'IT4IT Atlas (JAVC) <info@javc.nl>';
 const SEND_AT = '07:30'; // Amsterdam time
 
@@ -70,12 +74,16 @@ export async function subscribe(request, env, ctx) {
 
   const now = Date.now();
   await db.prepare("DELETE FROM atlas_subscribers WHERE status = 'pending' AND created < ?").bind(now - PENDING_DAYS * 864e5).run();
+  const ip = request.headers.get('cf-connecting-ip') || '';
+  const count = async (sql, ...args) => (await db.prepare(sql).bind(...args).first())?.n ?? 0;
+  if (ip && (await count('SELECT COUNT(*) AS n FROM atlas_subscribers WHERE ip = ? AND created > ?', ip, now - 864e5)) >= PER_IP_DAY) return json({ ok: true }); // quietly: no mail, no notice
+  if ((await count("SELECT COUNT(*) AS n FROM atlas_subscribers WHERE status = 'pending' AND created > ?", now - 36e5)) >= PER_HOUR) return json({ error: 'unavailable' }, 503);
   const row = await db.prepare('SELECT status, token, mailed FROM atlas_subscribers WHERE email = ?').bind(email).first();
   if (row?.status === 'active') return json({ ok: true, already: true });
   // At most one confirmation mail per address per hour, so the form cannot be used to flood someone's mailbox.
   if (row && now - (row.mailed || 0) < 36e5) return json({ ok: true });
   const token = row?.token || newToken();
-  const who = { email, name, lang, country: request.cf?.country || '', city: request.cf?.city || '', ip: request.headers.get('cf-connecting-ip') || '' };
+  const who = { email, name, lang, country: request.cf?.country || '', city: request.cf?.city || '', ip };
   if (row) await db.prepare('UPDATE atlas_subscribers SET name = ?, lang = ?, mailed = ?, country = ?, city = ?, ip = ? WHERE email = ?').bind(name, lang, now, who.country, who.city, who.ip, email).run();
   else await db.prepare("INSERT INTO atlas_subscribers (email, name, lang, token, status, created, mailed, country, city, ip) VALUES (?, ?, ?, ?, 'pending', ?, ?, ?, ?, ?)").bind(email, name, lang, token, now, now, who.country, who.city, who.ip).run();
   const ok = await send(env, { to: email, ...confirmMail(lang, `${SITE}/api/atlas/confirm?token=${token}`, name) });

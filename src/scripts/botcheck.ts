@@ -2,7 +2,8 @@
 // plus the time since the form was shown. Turnstile adds its token to the form as "cf-turnstile-response".
 declare const turnstile: { render: (el: HTMLElement, opts: object) => string; reset: (id?: string) => void };
 
-export function protect(form: HTMLFormElement) {
+// visible: always show the Turnstile check (a checkbox when Cloudflare is not sure), instead of only when it needs an action.
+export function protect(form: HTMLFormElement, { visible = false } = {}) {
   const shown = Date.now();
   let widget: string | undefined;
   fetch('/api/turnstile').then((r) => r.json()).then(({ siteKey }) => {
@@ -17,7 +18,7 @@ export function protect(form: HTMLFormElement) {
       btn.before(row);
       row.append(btn, box);
     } else form.append(box);
-    const render = () => { widget = turnstile.render(box, { sitekey: siteKey, appearance: 'interaction-only' }); };
+    const render = () => { widget = turnstile.render(box, { sitekey: siteKey, appearance: visible ? 'always' : 'interaction-only' }); };
     if (typeof turnstile !== 'undefined') return render();
     const s = document.createElement('script');
     s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
