@@ -1,11 +1,11 @@
 // Daily maintenance of the IT4IT Atlas (atlas/tools.json), run by the GitHub Action "Update IT4IT Atlas"
-// every morning; the result goes live straight away. With Claude and web search it:
+// every night; the result goes live straight away. With Claude and web search it:
 //   - re-checks the tools whose last check is oldest (ATLAS_CHECK, default 40): description, producer, links, source,
 //     classification; a product that has clearly been discontinued is hidden (status "discontinued", kept in the data);
 //     products the editor removed on the site (status "removed") are never re-checked nor added again;
 //   - looks for notable products missing from the subcategories that were searched longest ago (ATLAS_NEW_SUBS, default 3);
-//   - records what changed in atlas/activity.json (shown on /it4it-atlas/changes/) and, when SMTP2GO_API_KEY is set,
-//     e-mails the daily report to ATLAS_REPORT_TO (default Info@JAVC.nl).
+//   - records what changed in atlas/activity.json (shown on /it4it-atlas/changes/); the Worker e-mails that report at
+//     07:30 Amsterdam time to Jeroen and the subscribers (worker/atlas-subscribers.js).
 // Same source policy as the original Atlas: producer content first, then credible third-party sources; exact products,
 // no invented descriptions; the evidence URL, research date and a source note are kept for every tool.
 //   node scripts/maintain-atlas.mjs           needs ANTHROPIC_API_KEY
@@ -13,7 +13,6 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import Anthropic from '@anthropic-ai/sdk';
-import { atlasMail } from './atlas-mail.mjs';
 
 const MODEL = 'claude-sonnet-5-5';
 const CHECK = Number(process.env.ATLAS_CHECK || 40);
@@ -214,21 +213,3 @@ activity.unshift(report);
 writeFileSync('atlas/activity.json', JSON.stringify(activity.slice(0, 52), null, 2) + '\n');
 console.log(report.summary);
 if (report.errors) console.log(`${report.errors} problems, see the warnings above.`);
-
-// --- e-mail the report -----------------------------------------------------------------------------------
-if (process.env.SMTP2GO_API_KEY) {
-  const mail = atlasMail(report, { lang: 'nl' });
-  const res = await fetch('https://api.smtp2go.com/v3/email/send', {
-    method: 'POST',
-    headers: { 'content-type': 'application/json', 'X-Smtp2go-Api-Key': process.env.SMTP2GO_API_KEY },
-    body: JSON.stringify({
-      sender: process.env.ATLAS_REPORT_FROM || 'JAVC website <info@javc.nl>',
-      to: [process.env.ATLAS_REPORT_TO || 'Info@JAVC.nl'],
-      subject: mail.subject,
-      text_body: mail.text,
-      html_body: mail.html,
-    }),
-  }).catch(() => null);
-  const data = res ? await res.json().catch(() => ({})) : {};
-  console.log(res?.ok && data?.data?.succeeded ? 'Report e-mailed.' : `::warning::The report could not be e-mailed (${res?.status ?? 'no connection'}).`);
-}

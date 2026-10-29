@@ -5,9 +5,9 @@
 // GET  /api/atlas/unsubscribe?token=… the link in every update: opens the changelog page, which asks to confirm with a button
 // POST /api/atlas/unsubscribe?token=… that button, and the one-click unsubscribe of mail programs (List-Unsubscribe-Post)
 //
-// The cron trigger (wrangler.jsonc) runs sendUpdates() every 15 minutes during the day: once the GitHub Action has published
-// today's report (public/atlas/report.json, written by scripts/build-atlas.mjs), it e-mails it to the active subscribers in
-// batches. Mails go through SMTP2GO with the Worker secret SMTP2GO_API_KEY; Jeroen gets a short note of every (un)subscription.
+// The cron trigger (wrangler.jsonc) runs sendUpdates() every 15 minutes during the day: from 07:30 Amsterdam time, once the
+// GitHub Action has published today's report (public/atlas/report.json, written by scripts/build-atlas.mjs), it e-mails it
+// to Jeroen (ATLAS_REPORT_TO, else CONTACT_TO) and to the active subscribers in batches. Mails go through SMTP2GO with the Worker secret SMTP2GO_API_KEY; Jeroen gets a short note of every (un)subscription.
 import { atlasMail, confirmMail, noticeMail } from '../scripts/atlas-mail.mjs';
 import { humanCheck, tooFast } from './turnstile.js';
 
@@ -16,6 +16,10 @@ const LANGS = ['en', 'nl', 'cn', 'fr', 'de'];
 const BATCH = 25; // mails per cron run (the free Workers plan allows 50 outgoing requests per run)
 const PENDING_DAYS = 7; // unconfirmed addresses are deleted after a week
 const FROM = 'IT4IT Atlas (JAVC) <info@javc.nl>';
+const SEND_AT = '07:30'; // Amsterdam time
+
+// The time of day in Amsterdam as "HH:MM" (follows summer and winter time).
+const amsterdamTime = (d = new Date()) => d.toLocaleTimeString('en-GB', { timeZone: 'Europe/Amsterdam', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
 
 let schema;
 function table(env) {
@@ -113,9 +117,17 @@ export async function sendUpdates(env) {
   const db = await table(env);
   if (!db || !env.SMTP2GO_API_KEY) return;
   await db.prepare("DELETE FROM atlas_subscribers WHERE status = 'pending' AND created < ?").bind(Date.now() - PENDING_DAYS * 864e5).run();
+  if (amsterdamTime(new Date(Date.now() + 60e3)) < SEND_AT) return; // a minute's margin for a cron run that starts early
   const res = await env.ASSETS.fetch(new Request(`${SITE}/atlas/report.json`)).catch(() => null);
   const report = res?.ok ? await res.json().catch(() => null) : null;
   if (!report?.date || report.date !== new Date().toISOString().slice(0, 10)) return;
+  // Jeroen's own copy (Dutch, no unsubscribe link), once per report.
+  await db.prepare('CREATE TABLE IF NOT EXISTS atlas_state (key TEXT PRIMARY KEY, value TEXT)').run();
+  const owner = await db.prepare("SELECT value FROM atlas_state WHERE key = 'owner_report'").first();
+  if (owner?.value !== report.date) {
+    await db.prepare("INSERT INTO atlas_state (key, value) VALUES ('owner_report', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value").bind(report.date).run();
+    await send(env, { to: env.ATLAS_REPORT_TO || env.CONTACT_TO, ...atlasMail(report, { lang: 'nl' }) });
+  }
   const { results } = await db.prepare("SELECT email, name, lang, token FROM atlas_subscribers WHERE status = 'active' AND (last_report IS NULL OR last_report < ?) LIMIT ?").bind(report.date, BATCH).all();
   let sent = 0;
   for (const s of results) {

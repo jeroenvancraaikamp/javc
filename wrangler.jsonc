@@ -17,8 +17,8 @@
     { "pattern": "www.javc.nl", "custom_domain": true }
   ],
   "ai": { "binding": "AI" },
-  // Every 15 minutes from 08:00 to 23:45 UTC: e-mail the day's IT4IT Atlas report to its subscribers once it is live (worker/atlas-subscribers.js).
-  "triggers": { "crons": ["*/15 8-23 * * *"] },
+  // Every 15 minutes from 05:00 to 23:45 UTC: from 07:30 Amsterdam time, e-mail the day's IT4IT Atlas report to Jeroen and the subscribers once it is live (worker/atlas-subscribers.js).
+  "triggers": { "crons": ["*/15 5-23 * * *"] },
   // Statistics database (page views + chatbot questions, see worker/stats.js) and the IT4IT Atlas subscribers.
   // No database_id: wrangler creates the database "javc-stats" automatically on the first deploy.
   "d1_databases": [{ "binding": "DB", "database_name": "javc-stats" }],
