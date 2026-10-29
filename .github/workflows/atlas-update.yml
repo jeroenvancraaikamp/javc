@@ -1,12 +1,13 @@
 name: Update IT4IT Atlas
 
-# Every morning (09:00 Amsterdam winter time, 10:00 summer time): re-check the oldest entries of the
+# Every night (04:00 Amsterdam winter time, 05:00 summer time): re-check the oldest entries of the
 # IT4IT Atlas and look for missing products with Claude and web search (scripts/maintain-atlas.mjs), then commit
-# atlas/tools.json and the daily report (atlas/activity.json) to main, which publishes them.
-# Needs the repository secret ANTHROPIC_API_KEY; with the secret SMTP2GO_API_KEY the report is also e-mailed.
+# atlas/tools.json and the daily report (atlas/activity.json) to main, which publishes them. The Worker e-mails the
+# report at 07:30 Amsterdam time (worker/atlas-subscribers.js); GitHub may start a scheduled run late, hence the margin.
+# Needs the repository secret ANTHROPIC_API_KEY.
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '0 3 * * *'
   workflow_dispatch:
     inputs:
       check:
@@ -38,7 +39,6 @@ jobs:
         run: node scripts/maintain-atlas.mjs
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          SMTP2GO_API_KEY: ${{ secrets.SMTP2GO_API_KEY }}
           ATLAS_CHECK: ${{ inputs.check || '40' }}
           ATLAS_NEW_SUBS: ${{ inputs.new_subs || '3' }}
       - name: Check that the site still builds
