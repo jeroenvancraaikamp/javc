@@ -17,10 +17,12 @@
     { "pattern": "www.javc.nl", "custom_domain": true }
   ],
   "ai": { "binding": "AI" },
-  // Statistics database (page views + chatbot questions), see worker/stats.js.
+  // Every 15 minutes from 08:00 to 23:45 UTC: e-mail the day's IT4IT Atlas report to its subscribers once it is live (worker/atlas-subscribers.js).
+  "triggers": { "crons": ["*/15 8-23 * * *"] },
+  // Statistics database (page views + chatbot questions, see worker/stats.js) and the IT4IT Atlas subscribers.
   // No database_id: wrangler creates the database "javc-stats" automatically on the first deploy.
   "d1_databases": [{ "binding": "DB", "database_name": "javc-stats" }],
-  // Rate limits per visitor IP (per Cloudflare location): chatbot 10/min, contact form 3/min
+  // Rate limits per visitor IP (per Cloudflare location): chatbot 10/min, contact form and Atlas subscribe form 3/min
   "ratelimits": [
     { "name": "CHAT_LIMITER", "namespace_id": "1001", "simple": { "limit": 10, "period": 60 } },
     { "name": "CONTACT_LIMITER", "namespace_id": "1002", "simple": { "limit": 3, "period": 60 } }

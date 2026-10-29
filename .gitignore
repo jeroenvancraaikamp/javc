@@ -6,3 +6,4 @@ worker/knowledge.json
 .wrangler/
 public/atlas/tools.json
 src/data/atlas-meta.json
+public/atlas/report.json

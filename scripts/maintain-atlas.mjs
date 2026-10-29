@@ -214,7 +214,7 @@ if (report.errors) console.log(`${report.errors} problems, see the warnings abov
 
 // --- e-mail the report -----------------------------------------------------------------------------------
 if (process.env.SMTP2GO_API_KEY) {
-  const mail = atlasMail(report);
+  const mail = atlasMail(report, { lang: 'nl' });
   const res = await fetch('https://api.smtp2go.com/v3/email/send', {
     method: 'POST',
     headers: { 'content-type': 'application/json', 'X-Smtp2go-Api-Key': process.env.SMTP2GO_API_KEY },

@@ -81,3 +81,42 @@ export const ATLAS_TEXT = {
     note: 'Die Einordnung beschreibt unterstützte Capabilities und ist keine Zertifizierung oder Empfehlung. IT4IT-Gruppen und Wertstrom-Zuordnungen sind redaktionell; die Geschäftskategorien folgen TBM 5. Die (englischen) Beschreibungen beruhen auf der Dokumentation der Hersteller; Quelle und Datum sind für jedes Tool gespeichert. IT4IT ist eine Marke von The Open Group; Gartner und Magic Quadrant sind Marken von Gartner, Inc. Die Aufnahme eines Herstellers in einen Magic Quadrant bedeutet nicht, dass jedes Produkt oder jede Edition bewertet wurde.',
   },
 };
+
+// The form to subscribe to the daily update e-mail (src/components/AtlasSubscribe.astro, worker/atlas-subscribers.js).
+export const SUBSCRIBE_TEXT = {
+  en: {
+    title: 'Daily update by e-mail', note: 'Receive what was checked, changed and added in the IT4IT Atlas every day. You can unsubscribe at any time.', email: 'Your e-mail address', button: 'Subscribe', sending: 'Sending…',
+    thanks: 'Almost done: check your inbox and click the link to confirm your subscription.', already: 'This address already receives the daily update.',
+    invalid: 'Please enter a valid e-mail address.', spam: 'The spam check failed. Please reload the page and try again.', failed: 'Subscribing failed. Please try again later.',
+    confirmed: 'Thank you, your subscription is confirmed. You will receive the next daily update by e-mail.', badLink: 'This confirmation link is not valid (any more). Please subscribe again.',
+    unsubQ: 'Do you want to stop receiving the daily update of the IT4IT Atlas?', unsubButton: 'Unsubscribe', unsubDone: 'You have been unsubscribed. You will not receive the daily update any more.', gone: 'This address is not subscribed (any more).',
+  },
+  nl: {
+    title: 'Dagelijkse update per e-mail', note: 'Ontvang elke dag wat er in de IT4IT Atlas is gecontroleerd, gewijzigd en toegevoegd. Afmelden kan altijd.', email: 'Je e-mailadres', button: 'Aanmelden', sending: 'Bezig…',
+    thanks: 'Bijna klaar: kijk in je inbox en klik op de link om je aanmelding te bevestigen.', already: 'Dit adres ontvangt de dagelijkse update al.',
+    invalid: 'Vul een geldig e-mailadres in.', spam: 'De spamcontrole is mislukt. Laad de pagina opnieuw en probeer het nog eens.', failed: 'Aanmelden is mislukt. Probeer het later opnieuw.',
+    confirmed: 'Dank je wel, je aanmelding is bevestigd. Je ontvangt de volgende dagelijkse update per e-mail.', badLink: 'Deze bevestigingslink is niet (meer) geldig. Meld je opnieuw aan.',
+    unsubQ: 'Wil je de dagelijkse update van de IT4IT Atlas niet meer ontvangen?', unsubButton: 'Afmelden', unsubDone: 'Je bent afgemeld. Je ontvangt de dagelijkse update niet meer.', gone: 'Dit adres is niet (meer) aangemeld.',
+  },
+  cn: {
+    title: '通过电子邮件接收每日更新', note: '每天接收 IT4IT Atlas 中核查、更改和新增的内容（英文）。您可以随时退订。', email: '您的电子邮件地址', button: '订阅', sending: '正在发送…',
+    thanks: '快完成了：请查看您的收件箱并点击链接确认订阅。', already: '此地址已在接收每日更新。',
+    invalid: '请输入有效的电子邮件地址。', spam: '垃圾信息检查未通过。请刷新页面后重试。', failed: '订阅失败。请稍后再试。',
+    confirmed: '谢谢，您的订阅已确认。您将通过电子邮件收到下一次每日更新。', badLink: '此确认链接无效或已失效。请重新订阅。',
+    unsubQ: '您要停止接收 IT4IT Atlas 的每日更新吗？', unsubButton: '退订', unsubDone: '您已退订，将不再收到每日更新。', gone: '此地址未订阅（或已退订）。',
+  },
+  fr: {
+    title: 'Mise à jour quotidienne par e-mail', note: 'Recevez chaque jour ce qui a été vérifié, modifié et ajouté dans l’IT4IT Atlas (en anglais). Désabonnement possible à tout moment.', email: 'Votre adresse e-mail', button: 'S’abonner', sending: 'Envoi…',
+    thanks: 'Presque terminé : consultez votre boîte de réception et cliquez sur le lien pour confirmer votre abonnement.', already: 'Cette adresse reçoit déjà la mise à jour quotidienne.',
+    invalid: 'Veuillez saisir une adresse e-mail valide.', spam: 'La vérification anti-spam a échoué. Rechargez la page et réessayez.', failed: 'L’abonnement a échoué. Réessayez plus tard.',
+    confirmed: 'Merci, votre abonnement est confirmé. Vous recevrez la prochaine mise à jour quotidienne par e-mail.', badLink: 'Ce lien de confirmation n’est pas (ou plus) valide. Abonnez-vous à nouveau.',
+    unsubQ: 'Voulez-vous ne plus recevoir la mise à jour quotidienne de l’IT4IT Atlas ?', unsubButton: 'Se désabonner', unsubDone: 'Vous êtes désabonné. Vous ne recevrez plus la mise à jour quotidienne.', gone: 'Cette adresse n’est pas (ou plus) abonnée.',
+  },
+  de: {
+    title: 'Tägliches Update per E-Mail', note: 'Erhalten Sie jeden Tag, was im IT4IT Atlas geprüft, geändert und hinzugefügt wurde (auf Englisch). Abmelden ist jederzeit möglich.', email: 'Ihre E-Mail-Adresse', button: 'Abonnieren', sending: 'Wird gesendet…',
+    thanks: 'Fast fertig: Sehen Sie in Ihrem Posteingang nach und klicken Sie auf den Link, um Ihr Abonnement zu bestätigen.', already: 'Diese Adresse erhält das tägliche Update bereits.',
+    invalid: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.', spam: 'Die Spamprüfung ist fehlgeschlagen. Bitte laden Sie die Seite neu und versuchen Sie es erneut.', failed: 'Das Abonnieren ist fehlgeschlagen. Bitte versuchen Sie es später erneut.',
+    confirmed: 'Vielen Dank, Ihr Abonnement ist bestätigt. Sie erhalten das nächste tägliche Update per E-Mail.', badLink: 'Dieser Bestätigungslink ist nicht (mehr) gültig. Bitte abonnieren Sie erneut.',
+    unsubQ: 'Möchten Sie das tägliche Update des IT4IT Atlas nicht mehr erhalten?', unsubButton: 'Abmelden', unsubDone: 'Sie sind abgemeldet. Sie erhalten das tägliche Update nicht mehr.', gone: 'Diese Adresse ist nicht (mehr) angemeldet.',
+  },
+};
