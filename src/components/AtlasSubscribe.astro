@@ -1,0 +1,103 @@
+---
+// Form to subscribe to the daily IT4IT Atlas update e-mail (worker/atlas-subscribers.js), in the Atlas sidebar and on the
+// changelog page. On the changelog page (withStatus) it also shows the outcome of a confirmation link
+// (?subscription=confirmed|invalid|gone) and the unsubscribe button for the link in the e-mails (?unsubscribe=token).
+import { langOf } from '../i18n';
+import { SUBSCRIBE_TEXT } from '../data/atlas-text';
+
+interface Props { withStatus?: boolean }
+const { withStatus = false } = Astro.props;
+const lang = langOf(Astro.url.pathname);
+const S = SUBSCRIBE_TEXT[lang];
+---
+<div class="atlas-subscribe" id={withStatus ? 'subscribe' : undefined} data-status={withStatus ? '' : undefined}
+  data-lang={lang} data-button={S.button} data-sending={S.sending} data-thanks={S.thanks} data-already={S.already}
+  data-invalid={S.invalid} data-spam={S.spam} data-failed={S.failed} data-confirmed={S.confirmed} data-badlink={S.badLink}
+  data-unsubq={S.unsubQ} data-unsubbutton={S.unsubButton} data-unsubdone={S.unsubDone} data-gone={S.gone}>
+  <h3>{S.title}</h3>
+  <p class="atlas-subscribe-status notice" role="status" hidden></p>
+  <form>
+    <p>{S.note}</p>
+    <div class="atlas-subscribe-row">
+      <input name="email" type="email" required placeholder={S.email} aria-label={S.email} autocomplete="email" />
+      <button class="btn" type="submit">{S.button}</button>
+    </div>
+    <label class="hp" aria-hidden="true">-<input name="hp_note" tabindex="-1" autocomplete="off" data-1p-ignore data-lpignore="true" data-bwignore /></label>
+  </form>
+</div>
+
+<script>
+  import { protect } from '../scripts/botcheck';
+  for (const box of document.querySelectorAll<HTMLElement>('.atlas-subscribe')) {
+    const d = box.dataset;
+    const form = box.querySelector('form') as HTMLFormElement;
+    const status = box.querySelector('.atlas-subscribe-status') as HTMLElement;
+    const button = form.querySelector('button[type=submit]') as HTMLButtonElement;
+    const show = (text: string, ok: boolean) => { status.textContent = text; status.className = `atlas-subscribe-status notice ${ok ? 'ok' : 'error'}`; status.hidden = false; };
+    const bot = protect(form);
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      button.disabled = true;
+      button.textContent = d.sending!;
+      let data: { ok?: boolean; already?: boolean; error?: string } = {};
+      try {
+        const res = await fetch('/api/atlas/subscribe', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ ...Object.fromEntries(new FormData(form)), ...bot.extra(), lang: d.lang }),
+        });
+        data = await res.json().catch(() => ({}));
+      } catch {}
+      if (data.ok) { show(data.already ? d.already! : d.thanks!, true); form.reset(); }
+      else show(({ invalid: d.invalid, spam: d.spam } as Record<string, string | undefined>)[data.error ?? ''] ?? d.failed!, false);
+      bot.reset();
+      button.disabled = false;
+      button.textContent = d.button!;
+    });
+
+    // Changelog page: the result of a link in an e-mail.
+    if (d.status === undefined) continue;
+    const q = new URLSearchParams(location.search);
+    const outcome = q.get('subscription');
+    if (outcome === 'confirmed') show(d.confirmed!, true);
+    else if (outcome === 'invalid') show(d.badlink!, false);
+    else if (outcome === 'gone') show(d.gone!, false);
+    const token = q.get('unsubscribe');
+    if (token && /^[0-9a-f]{64}$/.test(token)) {
+      form.hidden = true;
+      status.className = 'atlas-subscribe-status notice';
+      status.hidden = false;
+      status.textContent = d.unsubq! + ' ';
+      const unsub = document.createElement('button');
+      unsub.className = 'btn';
+      unsub.type = 'button';
+      unsub.textContent = d.unsubbutton!;
+      status.append(unsub);
+      unsub.addEventListener('click', async () => {
+        unsub.disabled = true;
+        const res = await fetch(`/api/atlas/unsubscribe?token=${token}`, { method: 'POST' }).catch(() => null);
+        if (res?.ok) show(d.unsubdone!, true); else { show(d.failed!, false); unsub.disabled = false; }
+      });
+    }
+    if (outcome || token) box.scrollIntoView({ block: 'center' });
+  }
+</script>
+
+<style is:global>
+  .atlas-subscribe { margin-top: 22px; border: 1px solid var(--line); border-radius: 6px; padding: 14px 12px; }
+  .atlas-subscribe h3 { font: 600 15px var(--head-font); color: var(--heading); margin: 0 0 6px; }
+  .atlas-subscribe p { margin: 0 0 10px; font-size: 13px; line-height: 1.5; color: var(--text); }
+  .atlas-subscribe-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .atlas-subscribe input[type=email] { flex: 1 1 160px; min-width: 0; font: inherit; font-size: 14px; padding: 9px 11px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-soft); }
+  .atlas-subscribe .btn { padding: 10px 16px; font-size: 13px; }
+  .atlas-subscribe .btn:disabled { opacity: .6; cursor: wait; }
+  .atlas-subscribe .form-actions { gap: 8px; }
+  .atlas-subscribe .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .atlas-subscribe .notice { margin: 0 0 10px; padding: 10px 12px; font-size: 14px; border-radius: var(--radius); }
+  .atlas-subscribe .notice.ok { background: #e6f2ef; color: var(--accent-2); border-left: 4px solid currentColor; }
+  .atlas-subscribe .notice.error { background: #fbeaea; color: #a33; border-left: 4px solid currentColor; }
+  .atlas-subscribe .notice .btn { margin-left: 8px; vertical-align: middle; }
+  .atlas-changes .atlas-subscribe { max-width: 640px; padding: 16px 18px; }
+  .atlas-changes .atlas-subscribe p { font-size: 15px; }
+  .atlas-changes .atlas-subscribe h3 { font-size: 17px; text-transform: none; letter-spacing: 0; margin: 0 0 6px; }
+</style>

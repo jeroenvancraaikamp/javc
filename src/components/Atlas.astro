@@ -8,6 +8,7 @@ import TAXONOMY from '../data/atlas-taxonomy.json';
 import META from '../data/atlas-meta.json';
 import { locale, url, type Lang } from '../i18n';
 import { ATLAS_TEXT } from '../data/atlas-text';
+import AtlasSubscribe from './AtlasSubscribe.astro';
 
 const { lang } = Astro.props as { lang: Lang };
 
@@ -66,6 +67,7 @@ const config = {
         <a href="https://tikkie.me/pay/JAVCManagem/gaq8bUeXFTBwuJDcnq39vx" target="_blank" rel="noopener"><img src="/atlas/sponsor-qr.png" width="180" height="180" alt={`${TEXT.sponsor} (Tikkie)`} loading="lazy" /></a>
         <p>{TEXT.sponsorNote}</p>
       </div>
+      <AtlasSubscribe />
     </div>
     <div class="atlas-main">
       <div class="atlas-controls">

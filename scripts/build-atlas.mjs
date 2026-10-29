@@ -121,11 +121,13 @@ for (const t of tools) for (const d of t.domains) domains[d] = (domains[d] ?? 0)
 const views = {};
 for (const t of tools) for (const v of t.views) views[v] = (views[v] ?? 0) + 1;
 const imported = catalogue.map((a) => a.importDate).filter(Boolean).sort().pop();
-// Weekly updates (scripts/maintain-atlas.mjs), newest first.
+// Daily updates (scripts/maintain-atlas.mjs), newest first.
 const activity = existsSync('atlas/activity.json') ? JSON.parse(readFileSync('atlas/activity.json', 'utf8')) : [];
 
 mkdirSync('public/atlas', { recursive: true });
 writeFileSync('public/atlas/tools.json', JSON.stringify(tools));
+// The latest report, which the Worker e-mails to the subscribers (worker/atlas-subscribers.js).
+writeFileSync('public/atlas/report.json', JSON.stringify(activity[0] ?? null));
 writeFileSync('src/data/atlas-meta.json', JSON.stringify({
   tools: tools.length,
   imported,

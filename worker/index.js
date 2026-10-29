@@ -10,6 +10,7 @@ import KNOWLEDGE from './knowledge.json';
 import WP_IDS from './wp-ids.json';
 import { logHit, logChat, statsData } from './stats.js';
 import { turnstileConfig, humanCheck, tooFast } from './turnstile.js';
+import { subscribe, confirm, unsubscribe, sendUpdates } from './atlas-subscribers.js';
 
 const CLAUDE_MODEL = 'claude-opus-5-5';
 const WORKERS_AI_MODEL = '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
@@ -287,6 +288,13 @@ export default {
     if (url.pathname === '/api/stats') return statsData(request, env);
     if (url.pathname === '/api/turnstile') return turnstileConfig(env);
     if (url.pathname === '/api/contact') return contact(request, env);
+    if (url.pathname === '/api/atlas/subscribe') return (await guard(request, env, env.CONTACT_LIMITER)) ?? subscribe(request, env);
+    if (url.pathname === '/api/atlas/confirm') return confirm(request, env, ctx);
+    if (url.pathname === '/api/atlas/unsubscribe') return unsubscribe(request, env, ctx);
     return env.ASSETS.fetch(request);
+  },
+  // Cron trigger (wrangler.jsonc): e-mail the daily IT4IT Atlas report to its subscribers.
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(sendUpdates(env).catch((err) => console.error('atlas updates', err)));
   },
 };
