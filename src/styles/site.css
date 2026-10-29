@@ -263,3 +263,7 @@ summary { cursor: pointer; font-weight: 600; color: var(--heading); }
 .linkedin-btn { display: inline-flex; align-items: center; gap: 8px; background: #0a66c2; }
 .linkedin-btn svg { width: 16px; height: 16px; fill: currentColor; }
 .translated-note { font-size: 14px; font-style: italic; color: var(--muted); border-left: 3px solid var(--accent); padding: 4px 0 4px 12px; margin: 0 0 20px; }
+#nav li[hidden] { display: none; }
+#nav li.cms-statsmenu .sub { left: auto; right: 0; }
+/* With the Statistics menu (signed in) the menu gets a little tighter, so it still fits on one line. */
+#nav ul:has(> li.cms-statsmenu:not([hidden])) > li > a { padding-left: 8px; padding-right: 8px; font-size: 14.5px; }

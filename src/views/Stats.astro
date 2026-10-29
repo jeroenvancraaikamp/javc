@@ -1,9 +1,14 @@
 ---
-// Private statistics page (/stats/, /nl/stats/, /cn/stats/, /fr/stats/, /de/stats/). The numbers come from /api/stats (worker/stats.js),
+// Private statistics pages (/stats/, /stats/changes/, /stats/contacts/, /stats/subscribers/ and their translations under
+// /nl/, /cn/, /fr/, /de/), in the Statistics menu. The content comes from /api/stats?part=… (worker/stats.js),
 // which only answers for the owner of the repository, signed in to the CMS in this browser,
 // and renders them in the language of the page.
 import Base from '../layouts/Base.astro';
-import { langOf } from '../i18n';
+import { langOf, url } from '../i18n';
+import { STATS_MENU, STATS_PARTS } from '../data/stats-text';
+
+interface Props { part?: 'site' | 'changes' | 'contacts' | 'subscribers' }
+const { part = 'site' } = Astro.props;
 
 const lang = langOf(Astro.url.pathname);
 const TEXT = {
@@ -13,9 +18,14 @@ const TEXT = {
   fr: { title: 'Statistiques', loading: 'Chargement…', login: '<section><p>Cette page n’est visible que si vous êtes connecté au CMS.</p><p><a href="/cms/">Connectez-vous au CMS</a>, puis rouvrez cette page.</p></section>', error: '<section><p>Les statistiques ne sont pas disponibles pour le moment. Réessayez plus tard.</p></section>' },
   de: { title: 'Statistiken', loading: 'Wird geladen…', login: '<section><p>Diese Seite ist nur sichtbar, wenn Sie im CMS angemeldet sind.</p><p><a href="/cms/">Melden Sie sich im CMS an</a> und öffnen Sie diese Seite dann erneut.</p></section>', error: '<section><p>Die Statistiken sind gerade nicht verfügbar. Bitte versuchen Sie es später noch einmal.</p></section>' },
 }[lang];
+const M = STATS_MENU[lang];
+const title = M[part];
 ---
-<Base title={TEXT.title} pageTitle={TEXT.title} crumbs={[{ label: TEXT.title }]} noindex translated>
-  <div class="wrap stats" data-lang={lang} data-login={TEXT.login} data-error={TEXT.error}><div id="stats-out"><p class="muted">{TEXT.loading}</p></div></div>
+<Base title={`${title} · ${M.label}`} pageTitle={title} crumbs={[{ label: M.label, href: url(lang, '/stats/') }, { label: title }]} noindex translated>
+  <div class="wrap stats" data-lang={lang} data-part={part} data-login={TEXT.login} data-error={TEXT.error}>
+    <nav class="stats-tabs">{STATS_PARTS.map((p) => <a href={url(lang, p.path)} class:list={{ on: p.part === part }}>{M[p.part]}</a>)}</nav>
+    <div id="stats-out"><p class="muted">{TEXT.loading}</p></div>
+  </div>
   <script>
     (async () => {
       const out = document.getElementById('stats-out')!;
@@ -26,8 +36,23 @@ const TEXT = {
       if (!token) { out.innerHTML = login; return; }
       const q = new URLSearchParams(location.search);
       q.set('lang', box.lang!);
+      q.set('part', box.part!);
       const res = await fetch('/api/stats?' + q, { headers: { authorization: 'Bearer ' + token } }).catch(() => null);
-      if (res && res.ok) out.innerHTML = await res.text();
+      if (res && res.ok) {
+        out.innerHTML = await res.text();
+        // Subscribers page: the Excel export of the list (the data comes along as JSON).
+        const data = document.getElementById('subs-data');
+        document.getElementById('subs-export')?.addEventListener('click', async () => {
+          const { xlsx } = await import('../scripts/xlsx');
+          const { sheet, rows } = JSON.parse(data!.textContent || '{}');
+          const blob = new Blob([xlsx(sheet, rows, [28, 34, 14, 18, 16, 16, 16, 10, 20, 40])], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = `IT4IT-Atlas-subscribers-${new Date().toISOString().slice(0, 10)}.xlsx`;
+          a.click();
+          setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+        });
+      }
       else if (res && res.status === 401) out.innerHTML = login;
       else out.innerHTML = box.error!;
     })();
@@ -36,6 +61,13 @@ const TEXT = {
 
 <style is:global>
   .stats-links { margin: 0 0 12px; }
+  .stats-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 22px; }
+  .stats-tabs a { padding: 6px 14px; border: 1px solid var(--line); border-radius: 4px; color: var(--text); font-weight: 600; font-size: 14px; }
+  .stats-tabs a.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .stats .contact-list article { border-bottom: 1px solid var(--line); padding: 12px 0; }
+  .stats .contact-list article p { margin: 6px 0 0; white-space: normal; }
+  .stats .contact-list .meta { font-size: 15px; }
+  .stats .btn:disabled { opacity: .5; cursor: default; }
   .stats { --b0: var(--accent); --b1: #a9cfc6; --b2: #e0a458; --b3: #6b8fb5; --b4: #c96f6f; --b5: #a8a69c; padding-top: 30px; padding-bottom: 50px; }
   .stats h2 { margin: 0 0 12px; font-size: 22px; }
   .stats h3 { font-size: 15px; margin: 18px 0 8px; }

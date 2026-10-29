@@ -12,13 +12,14 @@ const S = SUBSCRIBE_TEXT[lang];
 ---
 <div class="atlas-subscribe" id={withStatus ? 'subscribe' : undefined} data-status={withStatus ? '' : undefined}
   data-lang={lang} data-button={S.button} data-sending={S.sending} data-thanks={S.thanks} data-already={S.already}
-  data-invalid={S.invalid} data-spam={S.spam} data-failed={S.failed} data-confirmed={S.confirmed} data-badlink={S.badLink}
+  data-invalid={S.invalid} data-noname={S.noName} data-spam={S.spam} data-failed={S.failed} data-confirmed={S.confirmed} data-badlink={S.badLink}
   data-unsubq={S.unsubQ} data-unsubbutton={S.unsubButton} data-unsubdone={S.unsubDone} data-gone={S.gone}>
   <h3>{S.title}</h3>
   <p class="atlas-subscribe-status notice" role="status" hidden></p>
   <form>
     <p>{S.note}</p>
     <div class="atlas-subscribe-row">
+      <input name="name" type="text" required maxlength="100" placeholder={S.name} aria-label={S.name} autocomplete="name" />
       <input name="email" type="email" required placeholder={S.email} aria-label={S.email} autocomplete="email" />
       <button class="btn" type="submit">{S.button}</button>
     </div>
@@ -49,7 +50,7 @@ const S = SUBSCRIBE_TEXT[lang];
         data = await res.json().catch(() => ({}));
       } catch {}
       if (data.ok) { show(data.already ? d.already! : d.thanks!, true); form.reset(); }
-      else show(({ invalid: d.invalid, spam: d.spam } as Record<string, string | undefined>)[data.error ?? ''] ?? d.failed!, false);
+      else show(({ invalid: d.invalid, name: d.noname, spam: d.spam } as Record<string, string | undefined>)[data.error ?? ''] ?? d.failed!, false);
       bot.reset();
       button.disabled = false;
       button.textContent = d.button!;
@@ -88,7 +89,7 @@ const S = SUBSCRIBE_TEXT[lang];
   .atlas-subscribe h3 { font: 600 15px var(--head-font); color: var(--heading); margin: 0 0 6px; }
   .atlas-subscribe p { margin: 0 0 10px; font-size: 13px; line-height: 1.5; color: var(--text); }
   .atlas-subscribe-row { display: flex; flex-wrap: wrap; gap: 8px; }
-  .atlas-subscribe input[type=email] { flex: 1 1 160px; min-width: 0; font: inherit; font-size: 14px; padding: 9px 11px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-soft); }
+  .atlas-subscribe input[type=email], .atlas-subscribe input[type=text] { flex: 1 1 160px; min-width: 0; font: inherit; font-size: 14px; padding: 9px 11px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-soft); }
   .atlas-subscribe .btn { padding: 10px 16px; font-size: 13px; }
   .atlas-subscribe .btn:disabled { opacity: .6; cursor: wait; }
   .atlas-subscribe .form-actions { gap: 8px; }

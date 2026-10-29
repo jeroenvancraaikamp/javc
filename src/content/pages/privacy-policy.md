@@ -24,11 +24,11 @@ Wanneer u zich aanmeldt voor een van onze diensten vragen we u om persoonsgegeve
 
 #### Communicatie
 
-Wanneer u e-mail of andere berichten naar ons verzendt, is het mogelijk dat we die berichten bewaren. Soms vragen wij u naar uw persoonlijke gegevens die voor de desbetreffende situatie relevant zijn. Dit maakt het mogelijk uw vragen te verwerken en uw verzoeken te beantwoorden. De gegevens worden opgeslagen op eigen beveiligde servers van *JAVC Management & Consultancy* of die van een derde partij. Wij zullen deze gegevens niet combineren met andere persoonlijke gegevens waarover wij beschikken.
+Wanneer u e-mail of andere berichten naar ons verzendt, is het mogelijk dat we die berichten bewaren. Berichten die u via het contactformulier verstuurt, bewaren wij met uw naam, e-mailadres, telefoonnummer en het IP-adres, land en de plaats van waaruit u het bericht verstuurde, maximaal 400 dagen. Soms vragen wij u naar uw persoonlijke gegevens die voor de desbetreffende situatie relevant zijn. Dit maakt het mogelijk uw vragen te verwerken en uw verzoeken te beantwoorden. De gegevens worden opgeslagen op eigen beveiligde servers van *JAVC Management & Consultancy* of die van een derde partij. Wij zullen deze gegevens niet combineren met andere persoonlijke gegevens waarover wij beschikken.
 
 #### Dagelijkse update van de IT4IT Atlas
 
-Wanneer u zich aanmeldt voor de dagelijkse e-mail met de updates van de IT4IT Atlas, bewaren wij uw e-mailadres, de taal van de pagina waarop u zich aanmeldde en de datum van aanmelding, uitsluitend om u deze e-mail te sturen. U bevestigt uw aanmelding via een link in een e-mail; een niet-bevestigde aanmelding wordt na een week verwijderd. De e-mails worden verstuurd via onze e-maildienstverlener SMTP2GO. Onderaan iedere e-mail kunt u zich afmelden; uw gegevens worden dan direct verwijderd.
+Wanneer u zich aanmeldt voor de dagelijkse e-mail met de updates van de IT4IT Atlas, bewaren wij uw naam, uw e-mailadres, de taal van de pagina waarop u zich aanmeldde, de datum van aanmelding en het IP-adres, land en de plaats van waaruit u zich aanmeldde. Uw naam en e-mailadres gebruiken wij uitsluitend om u deze e-mail te sturen; het IP-adres, land en de plaats gebruiken wij alleen om misbruik van het aanmeldformulier te herkennen. U bevestigt uw aanmelding via een link in een e-mail; een niet-bevestigde aanmelding wordt na een week verwijderd. De e-mails worden verstuurd via onze e-maildienstverlener SMTP2GO. Onderaan iedere e-mail kunt u zich afmelden; uw gegevens worden dan direct verwijderd.
 
 #### Cookies
 

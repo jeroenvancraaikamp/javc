@@ -10,7 +10,7 @@ const link = (href, label) => `<a href="${esc(href)}" style="color:${C.accent};f
 
 const T = {
   nl: {
-    locale: 'nl-NL', label: 'IT4IT Atlas · dagelijkse update', title: 'Dagelijkse update van de IT4IT Atlas',
+    locale: 'nl-NL', hello: (n) => `Beste ${n},`, label: 'IT4IT Atlas · dagelijkse update', title: 'Dagelijkse update van de IT4IT Atlas',
     subject: (r) => `IT4IT Atlas: ${r.updated.length} bijgewerkt, ${r.added.length} toegevoegd (${r.date})`,
     intro: (day) => `Hier is de dagelijkse update van de ${link(`${SITE}/nl/it4it-atlas/`, 'IT4IT Atlas')} van <b>${esc(day)}</b>.`,
     box: (r) => `<b>${r.checked} tools gecontroleerd:</b> ${r.updated.length} bijgewerkt, ${r.added.length} toegevoegd, ${r.discontinued.length} niet meer leverbaar.`,
@@ -24,7 +24,7 @@ const T = {
     unsubscribeText: 'Afmelden',
   },
   en: {
-    locale: 'en-GB', label: 'IT4IT Atlas · daily update', title: 'Daily update of the IT4IT Atlas',
+    locale: 'en-GB', hello: (n) => `Dear ${n},`, label: 'IT4IT Atlas · daily update', title: 'Daily update of the IT4IT Atlas',
     subject: (r) => `IT4IT Atlas: ${r.updated.length} updated, ${r.added.length} added (${r.date})`,
     intro: (day) => `Here is the daily update of the ${link(`${SITE}/it4it-atlas/`, 'IT4IT Atlas')} for <b>${esc(day)}</b>.`,
     box: (r) => `<b>${r.checked} tools checked:</b> ${r.updated.length} updated, ${r.added.length} added, ${r.discontinued.length} no longer offered.`,
@@ -73,7 +73,7 @@ ${r.map(([k, v], i) => `<tr style="background:${i % 2 ? '#ffffff' : C.bg}"><td s
 </table></td></tr>`;
 
 // The daily report. lang 'nl' or 'en'; unsubscribe: the subscriber's own unsubscribe link (none for Jeroen's copy).
-export function atlasMail(report, { lang = 'nl', unsubscribe } = {}) {
+export function atlasMail(report, { lang = 'nl', unsubscribe, name } = {}) {
   const L = T[lang] ?? T.en;
   const num = (n) => Number(n || 0).toLocaleString(L.locale);
   const day = new Date(report.date + 'T12:00:00Z').toLocaleDateString(L.locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
@@ -83,8 +83,8 @@ export function atlasMail(report, { lang = 'nl', unsubscribe } = {}) {
     [L.added, num(report.added.length)], [L.discontinued, num(report.discontinued.length)], [L.unverified, num(report.unverified)],
     [L.searched, (report.searched || []).join('; ') || '—'],
   ];
-  const name = (x) => `${x.name}${x.vendor ? ` (${x.vendor})` : ''}${x.was ? ` (${L.was}: ${x.was})` : ''}`;
-  const rows = (list, sub) => list.map((x) => [name(x), (sub && x.sub ? `[${x.sub}] ` : '') + (x.change || '—')]);
+  const label = (x) => `${x.name}${x.vendor ? ` (${x.vendor})` : ''}${x.was ? ` (${L.was}: ${x.was})` : ''}`;
+  const rows = (list, sub) => list.map((x) => [label(x), (sub && x.sub ? `[${x.sub}] ` : '') + (x.change || '—')]);
   const sections = [
     [`${L.added} (${report.added.length})`, rows(report.added, true)],
     [`${L.updated} (${report.updated.length})`, rows(report.updated)],
@@ -92,7 +92,7 @@ export function atlasMail(report, { lang = 'nl', unsubscribe } = {}) {
   ].filter(([, x]) => x.length);
 
   const pad = (x) => x.map(([k, v]) => `${(k + ':').padEnd(24)}${v}`);
-  const text = [`${L.title}, ${day}`, '', ...pad(overview), '',
+  const text = [...(name ? [L.hello(name), ''] : []), `${L.title}, ${day}`, '', ...pad(overview), '',
     ...sections.flatMap(([title, x]) => [title, ...x.map(([k, v]) => `- ${k}: ${v}`), '']),
     `${L.live}: ${L.changelogUrl}`, '', L.regards, '', 'JAVC Management & Consultancy', SITE,
     ...(unsubscribe ? ['', `${L.unsubscribeText}: ${unsubscribe}`] : [])].join('\n') + '\n';
@@ -100,7 +100,7 @@ export function atlasMail(report, { lang = 'nl', unsubscribe } = {}) {
   const html = layout({
     lang, title: L.subject(report), label: L.label, tagline: L.tagline, regards: L.regards, footer: L.footer,
     note: unsubscribe ? L.unsubscribe(unsubscribe) : '',
-    rows: para(L.intro(day), 28) + box(L.box(r)) + table(L.overview, overview, '42%')
+    rows: (name ? para(esc(L.hello(name)), 28) + para(L.intro(day), 10) : para(L.intro(day), 28)) + box(L.box(r)) + table(L.overview, overview, '42%')
       + sections.map(([title, x]) => table(title, x, '34%')).join('') + para(L.changelog),
   });
   return { subject: L.subject(report), text, html };
@@ -108,19 +108,30 @@ export function atlasMail(report, { lang = 'nl', unsubscribe } = {}) {
 
 // The mail with the confirmation link for a new subscriber, in the language of the page they used.
 const CONFIRM = {
-  en: { subject: 'Confirm your subscription to the IT4IT Atlas update', intro: 'Please confirm that you want to receive the daily update of the IT4IT Atlas by e-mail: what was checked, changed and added that day.', button: 'Confirm subscription', ignore: 'Did you not ask for this? Then ignore this e-mail; without confirmation you will not receive anything and your address is deleted within a week.', regards: 'Kind regards,' },
-  nl: { subject: 'Bevestig je aanmelding voor de IT4IT Atlas-update', intro: 'Bevestig dat je de dagelijkse update van de IT4IT Atlas per e-mail wilt ontvangen: wat die dag is gecontroleerd, gewijzigd en toegevoegd.', button: 'Aanmelding bevestigen', ignore: 'Heb je hier niet om gevraagd? Negeer deze mail dan; zonder bevestiging ontvang je niets en wordt je adres binnen een week verwijderd.', regards: 'Met vriendelijke groet,' },
-  cn: { subject: '请确认订阅 IT4IT Atlas 更新', intro: '请确认您希望通过电子邮件接收 IT4IT Atlas 的每日更新：当天核查、更改和新增的内容（英文）。', button: '确认订阅', ignore: '如果您没有申请订阅，请忽略此邮件；未经确认您不会收到任何邮件，您的地址将在一周内删除。', regards: '此致敬礼，' },
-  fr: { subject: 'Confirmez votre abonnement à la mise à jour de l’IT4IT Atlas', intro: 'Confirmez que vous souhaitez recevoir par e-mail la mise à jour quotidienne de l’IT4IT Atlas : ce qui a été vérifié, modifié et ajouté ce jour-là (en anglais).', button: 'Confirmer l’abonnement', ignore: 'Vous n’avez rien demandé ? Ignorez cet e-mail ; sans confirmation vous ne recevrez rien et votre adresse sera supprimée sous une semaine.', regards: 'Cordialement,' },
-  de: { subject: 'Bestätigen Sie Ihr Abonnement des IT4IT-Atlas-Updates', intro: 'Bitte bestätigen Sie, dass Sie das tägliche Update des IT4IT Atlas per E-Mail erhalten möchten: was an dem Tag geprüft, geändert und hinzugefügt wurde (auf Englisch).', button: 'Abonnement bestätigen', ignore: 'Sie haben das nicht angefordert? Dann ignorieren Sie diese E-Mail; ohne Bestätigung erhalten Sie nichts, und Ihre Adresse wird innerhalb einer Woche gelöscht.', regards: 'Mit freundlichen Grüßen,' },
+  en: { hello: 'Dear', subject: 'Confirm your subscription to the IT4IT Atlas update', intro: 'Please confirm that you want to receive the daily update of the IT4IT Atlas by e-mail: what was checked, changed and added that day.', button: 'Confirm subscription', ignore: 'Did you not ask for this? Then ignore this e-mail; without confirmation you will not receive anything and your address is deleted within a week.', regards: 'Kind regards,' },
+  nl: { hello: 'Beste', subject: 'Bevestig je aanmelding voor de IT4IT Atlas-update', intro: 'Bevestig dat je de dagelijkse update van de IT4IT Atlas per e-mail wilt ontvangen: wat die dag is gecontroleerd, gewijzigd en toegevoegd.', button: 'Aanmelding bevestigen', ignore: 'Heb je hier niet om gevraagd? Negeer deze mail dan; zonder bevestiging ontvang je niets en wordt je adres binnen een week verwijderd.', regards: 'Met vriendelijke groet,' },
+  cn: { hello: '您好', subject: '请确认订阅 IT4IT Atlas 更新', intro: '请确认您希望通过电子邮件接收 IT4IT Atlas 的每日更新：当天核查、更改和新增的内容（英文）。', button: '确认订阅', ignore: '如果您没有申请订阅，请忽略此邮件；未经确认您不会收到任何邮件，您的地址将在一周内删除。', regards: '此致敬礼，' },
+  fr: { hello: 'Bonjour', subject: 'Confirmez votre abonnement à la mise à jour de l’IT4IT Atlas', intro: 'Confirmez que vous souhaitez recevoir par e-mail la mise à jour quotidienne de l’IT4IT Atlas : ce qui a été vérifié, modifié et ajouté ce jour-là (en anglais).', button: 'Confirmer l’abonnement', ignore: 'Vous n’avez rien demandé ? Ignorez cet e-mail ; sans confirmation vous ne recevrez rien et votre adresse sera supprimée sous une semaine.', regards: 'Cordialement,' },
+  de: { hello: 'Hallo', subject: 'Bestätigen Sie Ihr Abonnement des IT4IT-Atlas-Updates', intro: 'Bitte bestätigen Sie, dass Sie das tägliche Update des IT4IT Atlas per E-Mail erhalten möchten: was an dem Tag geprüft, geändert und hinzugefügt wurde (auf Englisch).', button: 'Abonnement bestätigen', ignore: 'Sie haben das nicht angefordert? Dann ignorieren Sie diese E-Mail; ohne Bestätigung erhalten Sie nichts, und Ihre Adresse wird innerhalb einer Woche gelöscht.', regards: 'Mit freundlichen Grüßen,' },
 };
-export function confirmMail(lang, confirmUrl) {
+export function confirmMail(lang, confirmUrl, name = '') {
   const L = CONFIRM[lang] ?? CONFIRM.en;
+  const hello = name ? `${L.hello} ${name},` : '';
   const button = `<tr><td style="padding:22px 32px 0"><a href="${esc(confirmUrl)}" style="display:inline-block;background:${C.accent};color:#ffffff;font:700 15px/1 Arial,sans-serif;text-decoration:none;padding:13px 22px;border-radius:4px">${esc(L.button)}</a></td></tr>`;
   const html = layout({
     lang, title: L.subject, label: 'IT4IT Atlas', tagline: (T[lang] ?? T.en).tagline, regards: L.regards, footer: (T[lang] ?? T.en).footer,
-    rows: para(esc(L.intro), 28) + button + `<tr><td style="padding:22px 32px 0;font:13px/1.5 Arial,sans-serif;color:${C.muted}">${esc(L.ignore)}</td></tr>`,
+    rows: (hello ? para(esc(hello), 28) + para(esc(L.intro), 10) : para(esc(L.intro), 28)) + button + `<tr><td style="padding:22px 32px 0;font:13px/1.5 Arial,sans-serif;color:${C.muted}">${esc(L.ignore)}</td></tr>`,
   });
-  const text = [L.intro, '', `${L.button}: ${confirmUrl}`, '', L.ignore, '', L.regards, '', 'JAVC Management & Consultancy', SITE].join('\n') + '\n';
+  const text = [...(hello ? [hello, ''] : []), L.intro, '', `${L.button}: ${confirmUrl}`, '', L.ignore, '', L.regards, '', 'JAVC Management & Consultancy', SITE].join('\n') + '\n';
   return { subject: L.subject, text, html };
+}
+
+// A short notice to Jeroen (a new subscription request, a confirmation, an unsubscription), in the same layout.
+export function noticeMail(title, intro, rows) {
+  const html = layout({
+    lang: 'nl', title, label: 'IT4IT Atlas · abonnees', tagline: T.nl.tagline, regards: T.nl.regards, footer: 'Automatisch bericht van javc.nl.',
+    rows: para(esc(intro), 28) + table('Gegevens', rows, '34%'),
+  });
+  const text = [intro, '', ...rows.map(([k, v]) => `${(k + ':').padEnd(18)}${v}`)].join('\n') + '\n';
+  return { subject: title, text, html };
 }
