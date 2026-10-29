@@ -8,7 +8,7 @@
 import Anthropic from '@anthropic-ai/sdk';
 import KNOWLEDGE from './knowledge.json';
 import WP_IDS from './wp-ids.json';
-import { logHit, logChat, statsData } from './stats.js';
+import { logHit, logChat, logContact, statsData } from './stats.js';
 import { turnstileConfig, humanCheck, tooFast } from './turnstile.js';
 import { subscribe, confirm, unsubscribe, sendUpdates } from './atlas-subscribers.js';
 
@@ -251,6 +251,7 @@ async function contact(request, env) {
     console.error('smtp2go error', res?.status, JSON.stringify(data));
     return json({ error: say('Sending failed. Please try again later or email Info@JAVC.nl.', 'Versturen is mislukt. Probeer het later opnieuw of mail naar Info@JAVC.nl.', '发送失败。请稍后再试，或发送电子邮件至 Info@JAVC.nl。', "L'envoi a échoué. Réessayez plus tard ou écrivez à Info@JAVC.nl.", 'Senden fehlgeschlagen. Bitte versuchen Sie es später erneut oder schreiben Sie an Info@JAVC.nl.') }, 502);
   }
+  await logContact(env, request, { name, email, phone, message, lang: say('en', 'nl', 'cn', 'fr', 'de') }).catch((err) => console.error('contact log', err));
   return json({ ok: true });
 }
 
@@ -288,7 +289,7 @@ export default {
     if (url.pathname === '/api/stats') return statsData(request, env);
     if (url.pathname === '/api/turnstile') return turnstileConfig(env);
     if (url.pathname === '/api/contact') return contact(request, env);
-    if (url.pathname === '/api/atlas/subscribe') return (await guard(request, env, env.CONTACT_LIMITER)) ?? subscribe(request, env);
+    if (url.pathname === '/api/atlas/subscribe') return (await guard(request, env, env.CONTACT_LIMITER)) ?? subscribe(request, env, ctx);
     if (url.pathname === '/api/atlas/confirm') return confirm(request, env, ctx);
     if (url.pathname === '/api/atlas/unsubscribe') return unsubscribe(request, env, ctx);
     return env.ASSETS.fetch(request);

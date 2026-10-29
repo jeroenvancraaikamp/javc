@@ -5,6 +5,8 @@
 // Page views are counted without cookies: a visitor is a hash of IP address + browser + day,
 // so the same person is counted once per day and no IP address is stored.
 
+import { subscriberList } from './atlas-subscribers.js';
+
 const REPO = 'jeroenvancraaikamp/javc';
 const KEEP_DAYS = 400;
 const BOT = /bot|crawl|spider|slurp|preview|monitor|curl|wget|python|headless|lighthouse/i;
@@ -19,6 +21,7 @@ export function db(env) {
     env.DB.prepare('CREATE INDEX IF NOT EXISTS chats_day ON chats (day)'),
     env.DB.prepare("CREATE TABLE IF NOT EXISTS comments (id INTEGER PRIMARY KEY AUTOINCREMENT, ts INTEGER, slug TEXT, name TEXT, email TEXT, body TEXT, status TEXT DEFAULT 'pending')"),
     env.DB.prepare('CREATE INDEX IF NOT EXISTS comments_slug ON comments (slug, status)'),
+    env.DB.prepare('CREATE TABLE IF NOT EXISTS contacts (ts INTEGER, name TEXT, email TEXT, phone TEXT, message TEXT, lang TEXT, country TEXT, city TEXT, ip TEXT)'),
   ])
     // Browser language (added later): add the column to an existing table; fails harmlessly when it is already there.
     .then(() => env.DB.prepare('ALTER TABLE hits ADD COLUMN blang TEXT').run().catch(() => {}))
@@ -69,6 +72,14 @@ export async function logHit(request, env) {
   await d.prepare('INSERT INTO hits (ts, day, path, ref, country, device, visitor, blang) VALUES (?, ?, ?, ?, ?, ?, ?, ?)')
     .bind(Date.now(), day, path, ref, request.cf?.country || '', device(ua), visitor, browserLang(request)).run();
   return new Response(null, { status: 204 });
+}
+
+// Called by the contact form after the message was e-mailed, for the "Contact requests" page.
+export async function logContact(env, request, { name, email, phone, message, lang }) {
+  const d = await db(env).catch((err) => console.error('stats db', err));
+  if (!d) return;
+  await d.prepare('INSERT INTO contacts VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')
+    .bind(Date.now(), name, email, phone, message, lang, request.cf?.country || '', request.cf?.city || '', request.headers.get('cf-connecting-ip') || '').run();
 }
 
 // Called by the chatbot after each question.
@@ -134,6 +145,7 @@ async function revisions() {
 const LOCALE = { en: 'en-GB', nl: 'nl-NL', cn: 'zh-CN', fr: 'fr-FR', de: 'de-DE' };
 const TEXT = {
   en: {
+    contacts: 'Contact requests', noContacts: 'No contact requests yet. Messages sent with the contact form are kept here from now on.', contactsNote: 'The latest 200 messages; messages older than 400 days are deleted.', name: 'Name', email: 'E-mail', city: 'City', status: 'Status', statusNames: { active: 'Subscribed', pending: 'Not confirmed yet' }, subscribed: 'Requested', confirmed: 'Confirmed', lastSent: 'Last update sent', subs: 'IT4IT Atlas subscribers', export: 'Export to Excel', subsNote: 'Unconfirmed requests are deleted after 7 days; unsubscribing deletes the details straight away.',
     views: 'views', visitors: 'visitors', questions: 'questions', noData: 'No data yet.', noDb: 'The database is not available yet.',
     pageViews: 'Page views', visitorsDay: 'Visitors (counted per day)', perVisitor: 'Pages per visitor', perDay: 'Per day',
     siteLang: 'Site language', language: 'Language', viewsH: 'Views', share: 'Share', visitorsH: 'Visitors',
@@ -150,6 +162,7 @@ const TEXT = {
     note: 'Your own visits are not counted in this browser. Visitors are counted without cookies.',
   },
   nl: {
+    contacts: 'Contactaanvragen', noContacts: 'Nog geen contactaanvragen. Berichten via het contactformulier worden vanaf nu hier bewaard.', contactsNote: 'De laatste 200 berichten; berichten ouder dan 400 dagen worden verwijderd.', name: 'Naam', email: 'E-mail', city: 'Plaats', status: 'Status', statusNames: { active: 'Aangemeld', pending: 'Nog niet bevestigd' }, subscribed: 'Aangevraagd', confirmed: 'Bevestigd', lastSent: 'Laatste update verstuurd', subs: 'Abonnees IT4IT Atlas', export: 'Exporteer naar Excel', subsNote: 'Niet-bevestigde aanvragen worden na 7 dagen verwijderd; bij afmelden worden de gegevens direct verwijderd.',
     views: 'weergaven', visitors: 'bezoekers', questions: 'vragen', noData: 'Nog geen gegevens.', noDb: 'De database is nog niet beschikbaar.',
     pageViews: 'Paginaweergaven', visitorsDay: 'Bezoekers (per dag geteld)', perVisitor: "Pagina's per bezoeker", perDay: 'Per dag',
     siteLang: 'Taal van de site', language: 'Taal', viewsH: 'Weergaven', share: 'Aandeel', visitorsH: 'Bezoekers',
@@ -166,6 +179,7 @@ const TEXT = {
     note: 'Je eigen bezoeken worden in deze browser niet geteld. Bezoekers worden geteld zonder cookies.',
   },
   cn: {
+    contacts: '联系请求', noContacts: '暂无联系请求。从现在起，通过联系表单发送的消息将保存在这里。', contactsNote: '最近 200 条消息；超过 400 天的消息将被删除。', name: '姓名', email: '电子邮件', city: '城市', status: '状态', statusNames: { active: '已订阅', pending: '尚未确认' }, subscribed: '申请时间', confirmed: '确认时间', lastSent: '最近发送的更新', subs: 'IT4IT Atlas 订阅者', export: '导出到 Excel', subsNote: '未确认的申请 7 天后删除；退订后数据立即删除。',
     views: '浏览量', visitors: '访客', questions: '问题', noData: '暂无数据。', noDb: '数据库暂不可用。',
     pageViews: '页面浏览量', visitorsDay: '访客（按天计算）', perVisitor: '每位访客浏览页数', perDay: '每天',
     siteLang: '网站语言', language: '语言', viewsH: '浏览量', share: '占比', visitorsH: '访客',
@@ -182,6 +196,7 @@ const TEXT = {
     note: '在此浏览器中，您自己的访问不计入统计。访客统计不使用 Cookie。',
   },
   fr: {
+    contacts: 'Demandes de contact', noContacts: 'Pas encore de demandes de contact. Les messages envoyés via le formulaire de contact sont désormais conservés ici.', contactsNote: 'Les 200 derniers messages ; les messages de plus de 400 jours sont supprimés.', name: 'Nom', email: 'E-mail', city: 'Ville', status: 'Statut', statusNames: { active: 'Abonné', pending: 'Pas encore confirmé' }, subscribed: 'Demandé', confirmed: 'Confirmé', lastSent: 'Dernière mise à jour envoyée', subs: 'Abonnés IT4IT Atlas', export: 'Exporter vers Excel', subsNote: 'Les demandes non confirmées sont supprimées après 7 jours ; le désabonnement supprime les données immédiatement.',
     views: 'vues', visitors: 'visiteurs', questions: 'questions', noData: 'Pas encore de données.', noDb: "La base de données n'est pas encore disponible.",
     pageViews: 'Pages vues', visitorsDay: 'Visiteurs (comptés par jour)', perVisitor: 'Pages par visiteur', perDay: 'Par jour',
     siteLang: 'Langue du site', language: 'Langue', viewsH: 'Vues', share: 'Part', visitorsH: 'Visiteurs',
@@ -198,6 +213,7 @@ const TEXT = {
     note: 'Vos propres visites ne sont pas comptées dans ce navigateur. Les visiteurs sont comptés sans cookies.',
   },
   de: {
+    contacts: 'Kontaktanfragen', noContacts: 'Noch keine Kontaktanfragen. Nachrichten über das Kontaktformular werden ab jetzt hier gespeichert.', contactsNote: 'Die letzten 200 Nachrichten; Nachrichten, die älter als 400 Tage sind, werden gelöscht.', name: 'Name', email: 'E-Mail', city: 'Ort', status: 'Status', statusNames: { active: 'Angemeldet', pending: 'Noch nicht bestätigt' }, subscribed: 'Angefragt', confirmed: 'Bestätigt', lastSent: 'Letztes Update gesendet', subs: 'IT4IT-Atlas-Abonnenten', export: 'Nach Excel exportieren', subsNote: 'Unbestätigte Anfragen werden nach 7 Tagen gelöscht; bei Abmeldung werden die Daten sofort gelöscht.',
     views: 'Aufrufe', visitors: 'Besucher', questions: 'Fragen', noData: 'Noch keine Daten.', noDb: 'Die Datenbank ist noch nicht verfügbar.',
     pageViews: 'Seitenaufrufe', visitorsDay: 'Besucher (pro Tag gezählt)', perVisitor: 'Seiten pro Besucher', perDay: 'Pro Tag',
     siteLang: 'Sprache der Website', language: 'Sprache', viewsH: 'Aufrufe', share: 'Anteil', visitorsH: 'Besucher',
@@ -259,6 +275,57 @@ export async function statsData(request, env) {
   const days = [1, 7, 30, 90, 365].includes(+new URL(request.url).searchParams.get('days')) ? +new URL(request.url).searchParams.get('days') : 30;
   const from = new Date(Date.now() - (days - 1) * 864e5).toISOString().slice(0, 10);
   const d = await db(env).catch((err) => { console.error('stats db', err); return null; });
+  // The four pages of the Statistics menu: site (page views and chatbot), changes, contacts, subscribers.
+  const part = ['site', 'changes', 'contacts', 'subscribers'].includes(params.get('part')) ? params.get('part') : 'site';
+  const done = (html) => new Response(html, {
+    headers: {
+      'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex',
+      'set-cookie': 'javc_me=1; Path=/; Max-Age=31536000; Secure; SameSite=Lax; HttpOnly',
+    },
+  });
+  const fullTime = (ts) => new Date(ts).toLocaleString(LOCALE[lang], { timeZone: 'Europe/Amsterdam', day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+  if (part === 'changes') {
+    const commits = await revisions().catch(() => null);
+    return done(`<section><h2>${T.revs}</h2>${commits ? table(commits.map((x) => ({
+      ...x, sha: x.sha.slice(0, 7), cms: /^(Bijgewerkt|Nieuw|Verwijderd|Afbeelding|Create|Update|Delete|Upload) /.test(x.msg),
+    })), [
+      { label: T.time, html: (r) => esc(when(r.ts, lang)) },
+      { label: T.change, html: (r) => `${r.cms ? '<span class="tag">CMS</span> ' : ''}${esc(r.msg)}` },
+      { label: '', html: (r) => `<a href="${esc(r.url)}" target="_blank" rel="noopener">${r.sha}</a>` },
+    ], T) : `<p class="muted">${T.noGithub}</p>`}</section>`);
+  }
+
+  if (part === 'contacts') {
+    if (!d) return done(`<section><p class="muted">${T.noDb}</p></section>`);
+    await d.prepare('DELETE FROM contacts WHERE ts < ?').bind(Date.now() - KEEP_DAYS * 864e5).run();
+    const rows = (await d.prepare('SELECT * FROM contacts ORDER BY ts DESC LIMIT 200').all()).results;
+    return done(`<section><h2>${T.contacts}</h2>${rows.length ? `<div class="contact-list">${rows.map((r) => `<article>
+      <div class="meta"><b>${esc(r.name)}</b> · <a href="mailto:${esc(r.email)}">${esc(r.email)}</a>${r.phone ? ` · <a href="tel:${esc(r.phone)}">${esc(r.phone)}</a>` : ''}</div>
+      <div class="muted"><small>${esc(fullTime(r.ts))} · ${esc(T.langNames[r.lang] || r.lang)} · ${esc([r.city, r.country].filter(Boolean).join(', ') || T.unknown)} · IP ${esc(r.ip || '—')}</small></div>
+      <p>${esc(r.message).replace(/\n/g, '<br>')}</p></article>`).join('')}</div>` : `<p class="muted">${T.noContacts}</p>`}
+      <p class="muted"><small>${T.contactsNote}</small></p></section>`);
+  }
+
+  if (part === 'subscribers') {
+    const list = await subscriberList(env).catch((err) => { console.error('subscribers', err); return null; });
+    if (!list) return done(`<section><p class="muted">${T.noDb}</p></section>`);
+    const day = (ts) => (ts ? new Date(ts).toLocaleDateString(LOCALE[lang], { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Europe/Amsterdam' }) : '');
+    const rows = list.map((r) => ({ ...r, statusName: T.statusNames[r.status] || r.status, langName: T.langNames[r.lang] || r.lang, createdDay: day(r.created), confirmedDay: day(r.confirmed) }));
+    const head = [T.name, T.email, T.language, T.status, T.subscribed, T.confirmed, T.lastSent, T.country, T.city, 'IP'];
+    const data = rows.map((r) => [r.name || '', r.email, r.langName, r.statusName, r.createdDay, r.confirmedDay, r.last_report || '', r.country || '', r.city || '', r.ip || '']);
+    const n = (st) => list.filter((r) => r.status === st).length;
+    return done(`<section><h2>${T.subs}</h2>
+      <div class="tiles">${tile(T.statusNames.active, nf.format(n('active')))}${tile(T.statusNames.pending, nf.format(n('pending')))}</div>
+      <p><button type="button" class="btn" id="subs-export"${list.length ? '' : ' disabled'}>${T.export}</button></p>
+      ${table(rows, [
+        { label: T.name, key: 'name' }, { label: T.email, html: (r) => `<a href="mailto:${esc(r.email)}">${esc(r.email)}</a>` },
+        { label: T.language, key: 'langName' }, { label: T.status, key: 'statusName' }, { label: T.subscribed, key: 'createdDay' },
+        { label: T.confirmed, key: 'confirmedDay' }, { label: T.lastSent, key: 'last_report' },
+        { label: T.country, key: 'country' }, { label: T.city, key: 'city' }, { label: 'IP', key: 'ip' }], T)}
+      <script type="application/json" id="subs-data">${JSON.stringify({ sheet: T.subs, rows: [head, ...data] }).replace(/</g, '\\u003c')}</script>
+      <p class="muted"><small>${T.subsNote}</small></p></section>`);
+  }
 
   let site = `<p class="muted">${T.noDb}</p>`, bot = site;
   if (d) {
@@ -343,25 +410,10 @@ export async function statsData(request, env) {
         { label: T.source, html: (r) => `<a href="${esc(r.url)}">${esc(r.url)}</a>` }, { label: T.times, key: 'n', num: true }], T)}</div></div>`;
   }
 
-  const commits = await revisions().catch(() => null);
-  const revs = commits ? table(commits.map((x) => ({
-    ...x, sha: x.sha.slice(0, 7), cms: /^(Bijgewerkt|Nieuw|Verwijderd|Afbeelding|Create|Update|Delete|Upload) /.test(x.msg),
-  })), [
-    { label: T.time, html: (r) => esc(when(r.ts, lang)) },
-    { label: T.change, html: (r) => `${r.cms ? '<span class="tag">CMS</span> ' : ''}${esc(r.msg)}` },
-    { label: '', html: (r) => `<a href="${esc(r.url)}" target="_blank" rel="noopener">${r.sha}</a>` },
-  ], T) : `<p class="muted">${T.noGithub}</p>`;
-
   const tabs = [1, 7, 30, 90, 365].map((n) => `<a href="?days=${n}"${n === days ? ' class="on"' : ''}>${n === 1 ? T.today : T.days(n)}</a>`).join('');
   const html = `<div class="ranges">${tabs}</div>
 <section><h2>1. ${T.site}</h2>${site}</section>
 <section><h2>2. ${T.bot}</h2>${bot}</section>
-<section><h2>3. ${T.revs}</h2>${revs}</section>
 <p class="muted">${T.note}</p>`;
-  return new Response(html, {
-    headers: {
-      'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex',
-      'set-cookie': 'javc_me=1; Path=/; Max-Age=31536000; Secure; SameSite=Lax; HttpOnly',
-    },
-  });
+  return done(html);
 }

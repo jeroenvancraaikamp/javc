@@ -5,6 +5,7 @@ import { langOf, url, t, locale, LANGS, LANG_LABEL, hreflang } from '../i18n';
 import ChatWidget from '../components/ChatWidget.astro';
 import ATLAS_TAXONOMY from '../data/atlas-taxonomy.json';
 import { ATLAS_TEXT } from '../data/atlas-text';
+import { STATS_MENU, STATS_PARTS } from '../data/stats-text';
 
 interface Props {
   title: string;
@@ -29,6 +30,8 @@ const menu = (await getPages(lang)).filter((p) => p.data.menu).sort((a, b) => a.
 const isActive = (href: string) => path === href || (href !== url(lang, '/') && path.startsWith(href));
 // Submenu of the IT4IT Atlas page (layout "atlas"): its sections, the category guide, the daily updates and the IT4IT, CSDM and TBM standards.
 const AT = ATLAS_TEXT[lang];
+// Statistics menu, only shown when signed in to the CMS (see showLogin below).
+const SM = STATS_MENU[lang];
 const atlasMenu = (href: string) => [
   { label: AT.all, href },
   ...ATLAS_TAXONOMY.sections.map((s) => ({ label: s.name, href: `${href}?view=${s.id}` })),
@@ -144,6 +147,10 @@ const FLAGS = {
               );
             })}
             <li><a href={url(lang, '/articles/')} class:list={{ active: articlesActive }}>{T.articles}</a></li>
+            <li class="has-sub cms-statsmenu" hidden>
+              <a href={url(lang, '/stats/')} class:list={{ active: isActive(url(lang, '/stats/')) }} aria-haspopup="true">{SM.label}<span class="caret" aria-hidden="true">▾</span></a>
+              <ul class="sub">{STATS_PARTS.map((x) => <li><a href={url(lang, x.path)}>{SM[x.part]}</a></li>)}</ul>
+            </li>
             <li><a href={url(lang, '/contact-me/')} class:list={{ active: isActive(url(lang, '/contact-me/')) }}>{T.contact}</a></li>
           </ul>
         </nav>
@@ -183,6 +190,7 @@ const FLAGS = {
         lock?.setAttribute('aria-label', on ? 'Open the editor' : 'Sign in to the editor');
         lock?.setAttribute('title', on ? 'Open the editor' : 'Sign in to the editor');
         document.querySelector('.cms-stats')?.toggleAttribute('hidden', !on);
+        document.querySelector('.cms-statsmenu')?.toggleAttribute('hidden', !on);
       };
       showLogin();
       addEventListener('storage', (e) => { if (e.key === null || e.key === 'sveltia-cms.user') showLogin(); });
