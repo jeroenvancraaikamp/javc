@@ -1,6 +1,63 @@
 [
   {
     "date": "2026-10-29",
+    "checked": 10,
+    "confirmed": 6,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "164467a4c2e8cbe4",
+        "name": "Oracle Container Engine for Kubernetes (OKE)",
+        "change": "OKE is a managed Kubernetes platform, so I moved it from DevOps tooling to compute, cloud and container platforms."
+      },
+      {
+        "id": "16834c93b1a44a43",
+        "name": "Cherwell Asset Management (Legacy)",
+        "change": "Ivanti has announced end of life for Cherwell Asset Management on 31 December 2026, but the product is still supported until then, so it is not yet discontinued. I replaced the unrelated Express Software Manager source."
+      },
+      {
+        "id": "16c4d02723ddb688",
+        "name": "Cortex XDR",
+        "change": "The description was a truncated quote, so I replaced it with a short paraphrase."
+      },
+      {
+        "id": "16f80b47305ce565",
+        "name": "Shibumi",
+        "change": "The description was a truncated quote, so I replaced it with a paraphrase. Shibumi now positions itself around AI and strategic program portfolios."
+      }
+    ],
+    "added": [
+      {
+        "id": "9be6ac093e5a3bb2",
+        "name": "Productiv SaaS Management Platform",
+        "vendor": "Productiv",
+        "sub": "Technology Vendor & Contract Management",
+        "change": "Widely recognised SaaS management platform covering contracts, renewals and spend that was missing from the catalogue."
+      },
+      {
+        "id": "0fdbc2b7bc18e551",
+        "name": "Tropic",
+        "vendor": "Tropic",
+        "sub": "Technology Vendor & Contract Management",
+        "change": "Dedicated SaaS procurement and renewals platform that was missing from the catalogue."
+      },
+      {
+        "id": "4a7dff13d9822f27",
+        "name": "Vertice",
+        "vendor": "Vertice",
+        "sub": "Technology Vendor & Contract Management",
+        "change": "Recognised SaaS purchasing and renewal platform that was missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Technology Vendor & Contract Management"
+    ],
+    "summary": "Checked 10 tools: 6 confirmed, 4 updated, 0 discontinued, 0 could not be verified. Searched Technology Vendor & Contract Management for missing products: 3 added."
+  },
+  {
+    "date": "2026-10-29",
     "checked": 40,
     "confirmed": 4,
     "unverified": 0,
