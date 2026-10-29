@@ -1,6 +1,7 @@
 // E-mails of the IT4IT Atlas in the layout of the Champagne360 notification mails, in the colours and with the logo
 // of javc.nl: the daily report (Jeroen's copy from scripts/maintain-atlas.mjs, Dutch; the subscribers' copies from
-// worker/atlas-subscribers.js, Dutch or English with an unsubscribe link) and the confirmation mail for a new subscriber.
+// worker/atlas-subscribers.js, Dutch or English with an unsubscribe link), the confirmation mail for a new subscriber,
+// and the messages of the contact form (worker/index.js).
 // No Node.js imports: the Worker bundles this file too. Preview: node scripts/atlas-mail-preview.mjs.
 
 const C = { accent: '#3f8577', soft: '#e8f2ef', ink: '#1f2a37', text: '#4a5560', muted: '#8a96a3', line: '#e4e8ec', bg: '#f4f7fa', dark: '#1d2731' };
@@ -50,7 +51,7 @@ function layout({ lang, title, label, rows, tagline, regards, footer, note }) {
   <div style="padding-top:10px;font:600 12px/1.4 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:${C.accent}">${esc(label)}</div>
 </td></tr>
 ${rows}
-<tr><td style="padding:22px 32px 8px;font:15px/1.5 Arial,sans-serif;color:${C.ink}">${esc(regards)}</td></tr>
+${regards ? `<tr><td style="padding:22px 32px 8px;font:15px/1.5 Arial,sans-serif;color:${C.ink}">${esc(regards)}</td></tr>` : '<tr><td style="padding:14px 0 0"></td></tr>'}
 <tr><td style="padding:8px 32px 28px">
   <table role="presentation" cellpadding="0" cellspacing="0"><tr>
     <td style="border-left:3px solid ${C.accent};padding:2px 0 2px 14px">
@@ -134,4 +135,20 @@ export function noticeMail(title, intro, rows) {
   });
   const text = [intro, '', ...rows.map(([k, v]) => `${(k + ':').padEnd(18)}${v}`)].join('\n') + '\n';
   return { subject: title, text, html };
+}
+
+// A message from the contact form of javc.nl (worker/index.js), to Jeroen in the same layout; replying answers the sender.
+export function contactMail({ name, email, phone, message, lang, country, city, host }) {
+  const LANG = { en: 'Engels', nl: 'Nederlands', cn: 'Chinees', fr: 'Frans', de: 'Duits' };
+  const rows = [['Naam', name], ['E-mailadres', email], ['Telefoon', phone || '—'], ['Taal van de site', `${LANG[lang] || lang} (${lang})`], ['Land (Cloudflare)', country || '—'], ['Plaats', city || '—']];
+  const reply = `<tr><td style="padding:22px 32px 0"><a href="mailto:${esc(email)}" style="display:inline-block;background:${C.accent};color:#ffffff;font:700 15px/1 Arial,sans-serif;text-decoration:none;padding:13px 22px;border-radius:4px">Beantwoorden</a></td></tr>`;
+  const html = layout({
+    lang: 'nl', title: `Contactformulier: ${name}`, label: 'Contactformulier', tagline: 'Contactformulier van javc.nl', regards: '', footer: `Verstuurd via het contactformulier op ${host || 'javc.nl'}.`,
+    rows: para(`<b>${esc(name)}</b> heeft een bericht gestuurd via het contactformulier.`, 28)
+      + `<tr><td style="padding:22px 32px 6px;font:600 12px/1.4 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:${C.muted}">Bericht</td></tr>`
+      + `<tr><td style="padding:0 32px"><div style="background:${C.soft};border-left:4px solid ${C.accent};padding:14px 16px;font:15px/1.55 Arial,sans-serif;color:${C.ink};white-space:pre-wrap;word-break:break-word">${esc(message)}</div></td></tr>`
+      + reply + table('Gegevens', rows, '34%'),
+  });
+  const text = [`Naam: ${name}`, `E-mail: ${email}`, `Telefoon: ${phone || '-'}`, `Taal: ${lang}`, `Land: ${country || '-'}`, `Plaats: ${city || '-'}`, '', message, '', `(Verstuurd via het contactformulier op ${host || 'javc.nl'})`].join('\n') + '\n';
+  return { subject: `Contactformulier javc.nl: ${name.replace(/[\r\n]+/g, ' ')}`, text, html };
 }
