@@ -2,8 +2,9 @@
 // plus the time since the form was shown. Turnstile adds its token to the form as "cf-turnstile-response".
 declare const turnstile: { render: (el: HTMLElement, opts: object) => string; reset: (id?: string) => void };
 
-// visible: always show the Turnstile check (a checkbox when Cloudflare is not sure), instead of only when it needs an action.
-export function protect(form: HTMLFormElement, { visible = false } = {}) {
+// The check stays hidden unless Cloudflare suspects a bot. compact: the small widget (150 px wide) on its own line under the
+// form, for narrow forms such as the Atlas subscribe box.
+export function protect(form: HTMLFormElement, { compact = false } = {}) {
   const shown = Date.now();
   let widget: string | undefined;
   fetch('/api/turnstile').then((r) => r.json()).then(({ siteKey }) => {
@@ -12,13 +13,13 @@ export function protect(form: HTMLFormElement, { visible = false } = {}) {
     box.className = 'botcheck';
     // Next to the submit button, on the right.
     const btn = form.querySelector('button[type="submit"]');
-    if (btn) {
+    if (btn && !compact) {
       const row = document.createElement('div');
       row.className = 'form-actions';
       btn.before(row);
       row.append(btn, box);
     } else form.append(box);
-    const render = () => { widget = turnstile.render(box, { sitekey: siteKey, appearance: visible ? 'always' : 'interaction-only' }); };
+    const render = () => { widget = turnstile.render(box, { sitekey: siteKey, appearance: 'interaction-only', size: compact ? 'compact' : 'normal' }); };
     if (typeof turnstile !== 'undefined') return render();
     const s = document.createElement('script');
     s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
