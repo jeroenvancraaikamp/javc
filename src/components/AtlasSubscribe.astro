@@ -35,7 +35,7 @@ const S = SUBSCRIBE_TEXT[lang];
     const status = box.querySelector('.atlas-subscribe-status') as HTMLElement;
     const button = form.querySelector('button[type=submit]') as HTMLButtonElement;
     const show = (text: string, ok: boolean) => { status.textContent = text; status.className = `atlas-subscribe-status notice ${ok ? 'ok' : 'error'}`; status.hidden = false; };
-    const bot = protect(form, { visible: true });
+    const bot = protect(form, { compact: true });
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       button.disabled = true;
@@ -92,7 +92,7 @@ const S = SUBSCRIBE_TEXT[lang];
   .atlas-subscribe input[type=email], .atlas-subscribe input[type=text] { flex: 1 1 160px; min-width: 0; font: inherit; font-size: 14px; padding: 9px 11px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-soft); }
   .atlas-subscribe .btn { padding: 10px 16px; font-size: 13px; }
   .atlas-subscribe .btn:disabled { opacity: .6; cursor: wait; }
-  .atlas-subscribe .form-actions { gap: 8px; }
+  .atlas-subscribe .botcheck { max-width: 100%; overflow: hidden; }
   .atlas-subscribe .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   .atlas-subscribe .notice { margin: 0 0 10px; padding: 10px 12px; font-size: 14px; border-radius: var(--radius); }
   .atlas-subscribe .notice.ok { background: #e6f2ef; color: var(--accent-2); border-left: 4px solid currentColor; }
