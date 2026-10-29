@@ -12,6 +12,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import Anthropic from '@anthropic-ai/sdk';
+import { atlasMail } from './atlas-mail.mjs';
 
 const MODEL = 'claude-sonnet-5-5';
 const CHECK = Number(process.env.ATLAS_CHECK || 40);
@@ -213,23 +214,16 @@ if (report.errors) console.log(`${report.errors} problems, see the warnings abov
 
 // --- e-mail the report -----------------------------------------------------------------------------------
 if (process.env.SMTP2GO_API_KEY) {
-  const line = (x) => `- ${x.name}${x.vendor ? ` (${x.vendor})` : ''}${x.was ? ` (was: ${x.was})` : ''}${x.sub ? ` [${x.sub}]` : ''}: ${x.change}`;
-  const body = [
-    `Wekelijkse update van de IT4IT Atlas, ${TODAY}`, '',
-    report.summary, '',
-    `Toegevoegd (${report.added.length}):`, ...report.added.map(line), '',
-    `Bijgewerkt (${report.updated.length}):`, ...report.updated.map(line), '',
-    `Niet meer leverbaar, verborgen (${report.discontinued.length}):`, ...report.discontinued.map(line), '',
-    'De wijzigingen staan al live: https://javc.nl/it4it-atlas/changes/',
-  ].join('\n');
+  const mail = atlasMail(report);
   const res = await fetch('https://api.smtp2go.com/v3/email/send', {
     method: 'POST',
     headers: { 'content-type': 'application/json', 'X-Smtp2go-Api-Key': process.env.SMTP2GO_API_KEY },
     body: JSON.stringify({
       sender: process.env.ATLAS_REPORT_FROM || 'JAVC website <info@javc.nl>',
       to: [process.env.ATLAS_REPORT_TO || 'Info@JAVC.nl'],
-      subject: `IT4IT Atlas: ${report.updated.length} bijgewerkt, ${report.added.length} toegevoegd (${TODAY})`,
-      text_body: body,
+      subject: mail.subject,
+      text_body: mail.text,
+      html_body: mail.html,
     }),
   }).catch(() => null);
   const data = res ? await res.json().catch(() => ({})) : {};
