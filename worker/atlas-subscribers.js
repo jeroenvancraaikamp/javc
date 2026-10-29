@@ -132,6 +132,14 @@ export async function sendUpdates(env) {
   if (results.length) console.log(`atlas update ${report.date}: e-mailed ${sent} of ${results.length} subscribers`);
 }
 
+// Removes a subscriber from the stats page (worker/stats.js); true when there was one.
+export async function removeSubscriber(env, email) {
+  const db = await table(env);
+  if (!db) return false;
+  const { meta } = await db.prepare('DELETE FROM atlas_subscribers WHERE email = ?').bind(String(email).trim().toLowerCase()).run();
+  return meta.changes > 0;
+}
+
 // The subscribers for the stats page (worker/stats.js), newest first.
 export async function subscriberList(env) {
   const db = await table(env);

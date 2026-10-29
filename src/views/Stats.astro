@@ -27,7 +27,7 @@ const title = M[part];
     <div id="stats-out"><p class="muted">{TEXT.loading}</p></div>
   </div>
   <script>
-    (async () => {
+    const load = async () => {
       const out = document.getElementById('stats-out')!;
       const box = out.parentElement!.dataset;
       const login = box.login!;
@@ -52,10 +52,20 @@ const title = M[part];
           a.click();
           setTimeout(() => URL.revokeObjectURL(a.href), 1000);
         });
+        // Subscribers page: the bin on each row removes that subscriber after a confirmation.
+        for (const bin of out.querySelectorAll<HTMLButtonElement>('button.subs-remove')) {
+          bin.addEventListener('click', async () => {
+            if (!confirm(bin.dataset.confirm!)) return;
+            bin.disabled = true;
+            const r = await fetch('/api/stats?part=subscribers&email=' + encodeURIComponent(bin.dataset.email!), { method: 'DELETE', headers: { authorization: 'Bearer ' + token } }).catch(() => null);
+            if (r && r.ok) load(); else { bin.disabled = false; alert(box.error!.replace(/<[^>]+>/g, '')); }
+          });
+        }
       }
       else if (res && res.status === 401) out.innerHTML = login;
       else out.innerHTML = box.error!;
-    })();
+    };
+    load();
   </script>
 </Base>
 
@@ -68,6 +78,10 @@ const title = M[part];
   .stats .contact-list article p { margin: 6px 0 0; white-space: normal; }
   .stats .contact-list .meta { font-size: 15px; }
   .stats .btn:disabled { opacity: .5; cursor: default; }
+  .stats.wrap { max-width: 1400px; }
+  .stats .subs-remove { background: none; border: 0; padding: 2px 4px; cursor: pointer; color: var(--muted); line-height: 0; }
+  .stats .subs-remove:hover { color: #d63638; }
+  .stats .subs-remove:disabled { opacity: .4; cursor: wait; }
   .stats { --b0: var(--accent); --b1: #a9cfc6; --b2: #e0a458; --b3: #6b8fb5; --b4: #c96f6f; --b5: #a8a69c; padding-top: 30px; padding-bottom: 50px; }
   .stats h2 { margin: 0 0 12px; font-size: 22px; }
   .stats h3 { font-size: 15px; margin: 18px 0 8px; }
