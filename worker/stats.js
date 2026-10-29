@@ -5,7 +5,7 @@
 // Page views are counted without cookies: a visitor is a hash of IP address + browser + day,
 // so the same person is counted once per day and no IP address is stored.
 
-import { subscriberList } from './atlas-subscribers.js';
+import { subscriberList, removeSubscriber } from './atlas-subscribers.js';
 
 const REPO = 'jeroenvancraaikamp/javc';
 const KEEP_DAYS = 400;
@@ -145,6 +145,7 @@ async function revisions() {
 const LOCALE = { en: 'en-GB', nl: 'nl-NL', cn: 'zh-CN', fr: 'fr-FR', de: 'de-DE' };
 const TEXT = {
   en: {
+    remove: 'Remove from the list', removeQ: (n, e) => `Remove ${n} (${e}) from the list of subscribers? They will not receive the daily update any more.`,
     contacts: 'Contact requests', noContacts: 'No contact requests yet. Messages sent with the contact form are kept here from now on.', contactsNote: 'The latest 200 messages; messages older than 400 days are deleted.', name: 'Name', email: 'E-mail', city: 'City', status: 'Status', statusNames: { active: 'Subscribed', pending: 'Not confirmed yet' }, subscribed: 'Requested', confirmed: 'Confirmed', lastSent: 'Last update sent', subs: 'IT4IT Atlas subscribers', export: 'Export to Excel', subsNote: 'Unconfirmed requests are deleted after 7 days; unsubscribing deletes the details straight away.',
     views: 'views', visitors: 'visitors', questions: 'questions', noData: 'No data yet.', noDb: 'The database is not available yet.',
     pageViews: 'Page views', visitorsDay: 'Visitors (counted per day)', perVisitor: 'Pages per visitor', perDay: 'Per day',
@@ -162,6 +163,7 @@ const TEXT = {
     note: 'Your own visits are not counted in this browser. Visitors are counted without cookies.',
   },
   nl: {
+    remove: 'Verwijderen van de lijst', removeQ: (n, e) => `${n} (${e}) verwijderen van de lijst met abonnees? Die ontvangt de dagelijkse update dan niet meer.`,
     contacts: 'Contactaanvragen', noContacts: 'Nog geen contactaanvragen. Berichten via het contactformulier worden vanaf nu hier bewaard.', contactsNote: 'De laatste 200 berichten; berichten ouder dan 400 dagen worden verwijderd.', name: 'Naam', email: 'E-mail', city: 'Plaats', status: 'Status', statusNames: { active: 'Aangemeld', pending: 'Nog niet bevestigd' }, subscribed: 'Aangevraagd', confirmed: 'Bevestigd', lastSent: 'Laatste update verstuurd', subs: 'Abonnees IT4IT Atlas', export: 'Exporteer naar Excel', subsNote: 'Niet-bevestigde aanvragen worden na 7 dagen verwijderd; bij afmelden worden de gegevens direct verwijderd.',
     views: 'weergaven', visitors: 'bezoekers', questions: 'vragen', noData: 'Nog geen gegevens.', noDb: 'De database is nog niet beschikbaar.',
     pageViews: 'Paginaweergaven', visitorsDay: 'Bezoekers (per dag geteld)', perVisitor: "Pagina's per bezoeker", perDay: 'Per dag',
@@ -179,6 +181,7 @@ const TEXT = {
     note: 'Je eigen bezoeken worden in deze browser niet geteld. Bezoekers worden geteld zonder cookies.',
   },
   cn: {
+    remove: '从列表中删除', removeQ: (n, e) => `要将 ${n}（${e}）从订阅者列表中删除吗？对方将不再收到每日更新。`,
     contacts: '联系请求', noContacts: '暂无联系请求。从现在起，通过联系表单发送的消息将保存在这里。', contactsNote: '最近 200 条消息；超过 400 天的消息将被删除。', name: '姓名', email: '电子邮件', city: '城市', status: '状态', statusNames: { active: '已订阅', pending: '尚未确认' }, subscribed: '申请时间', confirmed: '确认时间', lastSent: '最近发送的更新', subs: 'IT4IT Atlas 订阅者', export: '导出到 Excel', subsNote: '未确认的申请 7 天后删除；退订后数据立即删除。',
     views: '浏览量', visitors: '访客', questions: '问题', noData: '暂无数据。', noDb: '数据库暂不可用。',
     pageViews: '页面浏览量', visitorsDay: '访客（按天计算）', perVisitor: '每位访客浏览页数', perDay: '每天',
@@ -196,6 +199,7 @@ const TEXT = {
     note: '在此浏览器中，您自己的访问不计入统计。访客统计不使用 Cookie。',
   },
   fr: {
+    remove: 'Retirer de la liste', removeQ: (n, e) => `Retirer ${n} (${e}) de la liste des abonnés ? Cette personne ne recevra plus la mise à jour quotidienne.`,
     contacts: 'Demandes de contact', noContacts: 'Pas encore de demandes de contact. Les messages envoyés via le formulaire de contact sont désormais conservés ici.', contactsNote: 'Les 200 derniers messages ; les messages de plus de 400 jours sont supprimés.', name: 'Nom', email: 'E-mail', city: 'Ville', status: 'Statut', statusNames: { active: 'Abonné', pending: 'Pas encore confirmé' }, subscribed: 'Demandé', confirmed: 'Confirmé', lastSent: 'Dernière mise à jour envoyée', subs: 'Abonnés IT4IT Atlas', export: 'Exporter vers Excel', subsNote: 'Les demandes non confirmées sont supprimées après 7 jours ; le désabonnement supprime les données immédiatement.',
     views: 'vues', visitors: 'visiteurs', questions: 'questions', noData: 'Pas encore de données.', noDb: "La base de données n'est pas encore disponible.",
     pageViews: 'Pages vues', visitorsDay: 'Visiteurs (comptés par jour)', perVisitor: 'Pages par visiteur', perDay: 'Par jour',
@@ -213,6 +217,7 @@ const TEXT = {
     note: 'Vos propres visites ne sont pas comptées dans ce navigateur. Les visiteurs sont comptés sans cookies.',
   },
   de: {
+    remove: 'Von der Liste entfernen', removeQ: (n, e) => `${n} (${e}) von der Abonnentenliste entfernen? Die Person erhält das tägliche Update dann nicht mehr.`,
     contacts: 'Kontaktanfragen', noContacts: 'Noch keine Kontaktanfragen. Nachrichten über das Kontaktformular werden ab jetzt hier gespeichert.', contactsNote: 'Die letzten 200 Nachrichten; Nachrichten, die älter als 400 Tage sind, werden gelöscht.', name: 'Name', email: 'E-Mail', city: 'Ort', status: 'Status', statusNames: { active: 'Angemeldet', pending: 'Noch nicht bestätigt' }, subscribed: 'Angefragt', confirmed: 'Bestätigt', lastSent: 'Letztes Update gesendet', subs: 'IT4IT-Atlas-Abonnenten', export: 'Nach Excel exportieren', subsNote: 'Unbestätigte Anfragen werden nach 7 Tagen gelöscht; bei Abmeldung werden die Daten sofort gelöscht.',
     views: 'Aufrufe', visitors: 'Besucher', questions: 'Fragen', noData: 'Noch keine Daten.', noDb: 'Die Datenbank ist noch nicht verfügbar.',
     pageViews: 'Seitenaufrufe', visitorsDay: 'Besucher (pro Tag gezählt)', perVisitor: 'Seiten pro Besucher', perDay: 'Pro Tag',
@@ -307,6 +312,10 @@ export async function statsData(request, env) {
       <p class="muted"><small>${T.contactsNote}</small></p></section>`);
   }
 
+  if (part === 'subscribers' && request.method === 'DELETE') {
+    const ok = await removeSubscriber(env, params.get('email') || '').catch((err) => { console.error('remove subscriber', err); return false; });
+    return new Response(null, { status: ok ? 204 : 404 });
+  }
   if (part === 'subscribers') {
     const list = await subscriberList(env).catch((err) => { console.error('subscribers', err); return null; });
     if (!list) return done(`<section><p class="muted">${T.noDb}</p></section>`);
@@ -322,7 +331,8 @@ export async function statsData(request, env) {
         { label: T.name, key: 'name' }, { label: T.email, html: (r) => `<a href="mailto:${esc(r.email)}">${esc(r.email)}</a>` },
         { label: T.language, key: 'langName' }, { label: T.status, key: 'statusName' }, { label: T.subscribed, key: 'createdDay' },
         { label: T.confirmed, key: 'confirmedDay' }, { label: T.lastSent, key: 'last_report' },
-        { label: T.country, key: 'country' }, { label: T.city, key: 'city' }, { label: 'IP', key: 'ip' }], T)}
+        { label: T.country, key: 'country' }, { label: T.city, key: 'city' }, { label: 'IP', key: 'ip' },
+        { label: '', html: (r) => `<button type="button" class="subs-remove" data-email="${esc(r.email)}" data-confirm="${esc(T.removeQ(r.name || r.email, r.email))}" title="${esc(T.remove)}" aria-label="${esc(T.remove)}"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6"/></svg></button>` }], T)}
       <script type="application/json" id="subs-data">${JSON.stringify({ sheet: T.subs, rows: [head, ...data] }).replace(/</g, '\\u003c')}</script>
       <p class="muted"><small>${T.subsNote}</small></p></section>`);
   }
