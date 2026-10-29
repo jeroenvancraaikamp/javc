@@ -5,7 +5,7 @@ categories:
   - AI4IT
   - IT4IT
   - CSDM/CMDB/TBM
-excerpt: As my third Zero-touch solution, I have transitioned the "IT4IT Atlas" that I build in OpenAI ChatGPT to Anthropic Claude, and integrated it into my website. Underway, I created an algotithme that automatically maps the discovered 1.600 software tools to the IT4IT 3 Value Streams, CSDM 5 Domains and TBM 5 Solution types.
+excerpt: As my third Zero-touch solution, I have transitioned the "IT4IT Atlas" that I build in OpenAI ChatGPT to Anthropic Claude, and integrated it into my website. Underway, I created an algotithme that automatically maps the discovered 1.600 software tools to the IT4IT 3 Value Streams, CSDM 5 Domains and TBM 5 Solution types. If you want, you can subscribe to the daily mail updates.
 image: /IT4IT_atlas.png
 readingTime: null
 popular: true
@@ -30,4 +30,6 @@ To keep the scope reasonable and relevant for large enterprise use, Atlas does n
 
 The site automatically seeks and processes updates using API's and AI. To keep AI token costs reasonable, the site updates once per day. In the Changelog, you can find all the changes made each day. 
 
-If you find IT4IT Atlas useful, and/or if it has saved you days of survey work, you can contribute and sponsor the AI tokens that IT4IT Atlas consumes by clicking the Tikkie QR code. Sponsors can opt in to the daily updates via email.
+Visitors can subscribe to the daily email with the yesterdays updates to the products in the IT4IT Atlas. You can unsubscribe with a click on the button in the daily email, or by contacting me.
+
+If you find IT4IT Atlas -or the daily email update- useful, you can contribute and sponsor the AI tokens that IT4IT Atlas consumes, by clicking the "Tikkie" QR code.
