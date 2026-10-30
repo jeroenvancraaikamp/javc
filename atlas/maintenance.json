@@ -12,6 +12,9 @@
     "it-governance-vendors": "2026-10-29",
     "it-infrastructure-datacenter": "2026-10-29",
     "it-infrastructure-networkstorage": "2026-10-29",
-    "it-infrastructure-powercooling": "2026-10-29"
+    "it-infrastructure-powercooling": "2026-10-29",
+    "it-operations-automation": "2026-10-30",
+    "it-operations-observability": "2026-10-30",
+    "it-operations-recovery": "2026-10-30"
   }
 }

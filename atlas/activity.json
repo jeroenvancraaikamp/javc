@@ -1,5 +1,244 @@
 [
   {
+    "date": "2026-10-30",
+    "checked": 40,
+    "confirmed": 4,
+    "unverified": 5,
+    "updated": [
+      {
+        "id": "24436b614bf434e3",
+        "name": "Nlyte DCIM",
+        "change": "Nlyte was acquired by Carrier Global. I replaced the Gartner listing with a news source and wrote a fuller description."
+      },
+      {
+        "id": "24665ef0ebca280c",
+        "name": "TheHive",
+        "change": "TheHive is now distributed commercially by StrangeBee as an incident response platform. I rewrote the description and added the case management subcategory."
+      },
+      {
+        "id": "21458caf01ef88be",
+        "name": "Nagios Core",
+        "change": "Description was a marketing quote; replaced with a factual paraphrase and pointed to the Nagios Core page. The project site is nagios.org."
+      },
+      {
+        "id": "2185ff267adbaf8b",
+        "name": "OPNsense",
+        "change": "Description described only the central-management plugin; rewritten to describe OPNsense as an open source firewall and routing platform from Deciso."
+      },
+      {
+        "id": "21943aa0ad8346ea",
+        "name": "IBM Storage Protect Plus",
+        "was": "IBM Storage Protect",
+        "change": "Entry named IBM Storage Protect but the description and source covered Storage Protect Plus, a related but separate product. Renamed to match the source and corrected the description."
+      },
+      {
+        "id": "21bd52e814832470",
+        "name": "Teradata VantageCloud",
+        "change": "The source was a Gartner data-science market page; replaced with the AWS Marketplace listing from Teradata. Description made more specific."
+      },
+      {
+        "id": "21cff9dfa49a278f",
+        "name": "Strategy One (MicroStrategy)",
+        "change": "Replaced the Azure Marketplace source with the producer's Strategy One page. Description now matches the producer's AI+BI positioning."
+      },
+      {
+        "id": "21f39692d45987e3",
+        "name": "Dataminr Pulse for Corporate Security",
+        "change": "Description was a verbatim marketing quote, so I replaced it with a paraphrase. I also added the physical-security subcategory."
+      },
+      {
+        "id": "223d40bb8098c6c8",
+        "name": "HR System (HRMS)",
+        "change": "Switched to Kingdee's own Cloud HCM product page as the source and rewrote the description. The product is still offered, and the Gartner listing calls it HR System (HRMS)."
+      },
+      {
+        "id": "22661cc16e200c87",
+        "name": "Axiom",
+        "change": "Description was a verbatim quote, so I replaced it with a paraphrase. Axiom is still active as an observability and event data platform."
+      },
+      {
+        "id": "22c3948bd69ce7bf",
+        "name": "Unit4 Human Capital Management (HCM)",
+        "change": "Switched to Unit4's own HCM page as the source. The product is still offered, now with talent management as well as payroll and core HR."
+      },
+      {
+        "id": "22e9067aadff4cae",
+        "name": "ISOMS",
+        "change": "The vendor site is cits.com.tr, not citsonline.com. I also rewrote the description around ISO management on one platform."
+      },
+      {
+        "id": "2485de1c777a6f1c",
+        "name": "Alibaba Cloud IDaaS",
+        "change": "Description was a quote about design philosophy; replaced with a factual paraphrase from the IDaaS EIAM overview, and the product page now points to the producer's IDaaS documentation."
+      },
+      {
+        "id": "24b1893bb8b2e48e",
+        "name": "BoostSecurity",
+        "change": "Description was marketing copy; replaced with a neutral paraphrase of an application and software supply chain security product, and the vendor name was corrected."
+      },
+      {
+        "id": "24b28e3f156a3c0a",
+        "name": "OpenDCIM",
+        "change": "Description only described the foundation; replaced with a description of the product itself, an open-source web-based DCIM application."
+      },
+      {
+        "id": "24ba61b08959c4cd",
+        "name": "AWS CodeDeploy",
+        "change": "Description was truncated; replaced with a complete paraphrase from the AWS CodeDeploy documentation, and the subcategory changed to deployment automation."
+      },
+      {
+        "id": "24c9be7a667c8ef5",
+        "name": "Determine (Corcentric)",
+        "change": "Corcentric acquired Determine in 2019 and now sells it as part of its source-to-pay platform; the description was rewritten and the source URL changed."
+      },
+      {
+        "id": "25ba3f843f272c2e",
+        "name": "Tanzu Observability",
+        "change": "Description was a customer quote; replaced with a factual description from Broadcom's datasheet. Product is still offered as VMware Tanzu Observability (Wavefront)."
+      },
+      {
+        "id": "25c39e5d0bbe58ff",
+        "name": "Global Relay Archive",
+        "change": "Switched to the producer's product page as source and wrote a more specific description."
+      },
+      {
+        "id": "25e41d337d54202e",
+        "name": "Sumo Logic SaaS Log Analytics Platform",
+        "change": "Replaced a slogan quote with a factual description from Sumo Logic's log analytics page. The product is now marketed as the Sumo Logic Intelligent Operations Platform."
+      },
+      {
+        "id": "2583265d5986b9aa",
+        "name": "Onspring",
+        "change": "Replaced the truncated marketing quote with a factual paraphrase from Onspring's platform overview page."
+      },
+      {
+        "id": "258895d30d41c111",
+        "name": "Cloudera Data Platform",
+        "change": "Replaced the Gartner reviews source with Cloudera's own documentation, and reclassified the product as a data platform in addition to data science."
+      },
+      {
+        "id": "25942bf5762ed12b",
+        "name": "Strobes PTaaS",
+        "change": "Replaced the truncated quote with a factual paraphrase; the page also lists red team and social engineering services."
+      },
+      {
+        "id": "25a81c84ccb6b827",
+        "name": "CGI Advantage",
+        "change": "Switched to CGI's own product page. The suite covers finance, HR, budgeting and procurement, so the workforce-only classification was too narrow."
+      },
+      {
+        "id": "25ad204052a92ceb",
+        "name": "Wrike",
+        "change": "Replaced the slogan quote with a factual paraphrase; Wrike's site shows it as an active work management platform with AI features."
+      },
+      {
+        "id": "2672dc9763ab8baa",
+        "name": "Localazy",
+        "change": "Product is current; replaced the quoted description with a short paraphrase and added localization/TMS wording."
+      },
+      {
+        "id": "268303d6163faf52",
+        "name": "SecureWatch (RiskWatch Physical Security Management)",
+        "was": "SecureWatch",
+        "change": "SecureWatch is now RiskWatch Physical Security Management; the description is reworded and a facility-security category added."
+      },
+      {
+        "id": "268b0495d16d6301",
+        "name": "BuildKite",
+        "change": "Product is current; replaced the quoted marketing text with a factual paraphrase."
+      },
+      {
+        "id": "26bc59b8442c4a80",
+        "name": "Snowflake AI Data Cloud",
+        "change": "Product is current; wording is now a paraphrase and analytics is added as a second category."
+      },
+      {
+        "id": "26bec0f46693eab7",
+        "name": "Axio360",
+        "change": "Product is current; description paraphrased and technology risk governance added as a category."
+      }
+    ],
+    "added": [
+      {
+        "id": "a4ca040870b55874",
+        "name": "Control-M",
+        "vendor": "BMC Software",
+        "sub": "Deployment, Configuration & Workload Automation",
+        "change": "Widely used enterprise workload automation product that was missing from the subcategory."
+      },
+      {
+        "id": "5d69f529aaa6bedb",
+        "name": "Pulumi",
+        "vendor": "Pulumi",
+        "sub": "Deployment, Configuration & Workload Automation",
+        "change": "Well-known infrastructure-as-code alternative to Terraform and OpenTofu that was missing from the catalogue."
+      },
+      {
+        "id": "881f737b5d21d84b",
+        "name": "Universal Automation Center",
+        "vendor": "Stonebranch",
+        "sub": "Deployment, Configuration & Workload Automation",
+        "change": "Recognised workload automation and orchestration platform that was missing from the subcategory."
+      },
+      {
+        "id": "d56c1765c40cc8ec",
+        "name": "Fluent Bit",
+        "vendor": "Cloud Native Computing Foundation (CNCF) – Fluent project",
+        "sub": "Observability, Events & AIOps",
+        "change": "Widely used CNCF telemetry agent for logs, metrics and traces that is missing from the observability list."
+      },
+      {
+        "id": "18baedeea3acdf67",
+        "name": "Zipkin",
+        "vendor": "OpenZipkin",
+        "sub": "Observability, Events & AIOps",
+        "change": "Well-known open-source tracing system, a counterpart to the listed Jaeger, that is missing from the catalogue."
+      },
+      {
+        "id": "d58f50641e76cd58",
+        "name": "Splunk Enterprise",
+        "vendor": "Splunk (Cisco)",
+        "sub": "Observability, Events & AIOps",
+        "change": "Splunk's core log search and analytics platform is missing, although other Splunk products are listed."
+      },
+      {
+        "id": "0e351632487e584f",
+        "name": "AWS Backup",
+        "vendor": "Amazon Web Services",
+        "sub": "Backup & Disaster Recovery",
+        "change": "Widely used native AWS backup service that was missing from the catalogue."
+      },
+      {
+        "id": "ae61eaac4140b914",
+        "name": "Azure Backup",
+        "vendor": "Microsoft",
+        "sub": "Backup & Disaster Recovery",
+        "change": "Major hyperscaler backup service missing from the catalogue."
+      },
+      {
+        "id": "e94083e09ab3f94f",
+        "name": "VMware Live Recovery",
+        "vendor": "Broadcom (VMware)",
+        "sub": "Backup & Disaster Recovery",
+        "change": "VMware's DR and cyber recovery offering was missing from the catalogue."
+      }
+    ],
+    "discontinued": [
+      {
+        "id": "241fdf874e77a6a6",
+        "name": "GitHub Copilot Workspace",
+        "change": "GitHub Copilot Workspace was a technical preview that was sunset on 30 May 2025. It was succeeded by other Copilot features such as Copilot Spaces and the coding agent."
+      }
+    ],
+    "errors": 0,
+    "searched": [
+      "Deployment, Configuration & Workload Automation",
+      "Observability, Events & AIOps",
+      "Backup & Disaster Recovery"
+    ],
+    "summary": "Checked 40 tools: 4 confirmed, 30 updated, 1 discontinued, 5 could not be verified. Searched Deployment, Configuration & Workload Automation, Observability, Events & AIOps, Backup & Disaster Recovery for missing products: 9 added."
+  },
+  {
     "date": "2026-10-29",
     "checked": 40,
     "confirmed": 6,
