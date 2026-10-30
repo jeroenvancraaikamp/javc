@@ -2,6 +2,252 @@
   {
     "date": "2026-10-30",
     "checked": 40,
+    "confirmed": 8,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "2826fc38d41a10a6",
+        "name": "Vertex AI",
+        "change": "Product URL pointed to google.com; changed it to the Vertex AI product page. Also reclassified from predictive AI to ML and AI development platforms."
+      },
+      {
+        "id": "283e75f1447f3699",
+        "name": "IBM Maximo IT (formerly IBM Control Desk)",
+        "was": "IBM Control Desk (Legacy, migrating to Maximo IT)",
+        "change": "IBM says Control Desk is now Maximo IT, an add-on to Maximo Application Suite. Control Desk 7.6.1 support ended on 30 Sept 2025."
+      },
+      {
+        "id": "28c2cb6cefe6878c",
+        "name": "Sauce Labs",
+        "change": "Replaced the marketing-style description with a factual one: Sauce Labs offers a cloud testing platform for web and mobile apps."
+      },
+      {
+        "id": "2927017be1d62296",
+        "name": "DeskCenter Management Suite",
+        "change": "Rewrote the description as a factual paraphrase: Deskcenter Management Suite does inventory, asset and ticket management plus software distribution."
+      },
+      {
+        "id": "2949efeaba031278",
+        "name": "NopSec Unified VRM",
+        "change": "Rewrote the description as a factual paraphrase of NopSec Unified VRM, a SaaS tool that prioritizes vulnerabilities."
+      },
+      {
+        "id": "295924340bb71da7",
+        "name": "Microsoft Entra Internet/Private Access",
+        "change": "Rewrote the description: Entra Internet Access and Private Access make up Microsoft's Global Secure Access security service edge."
+      },
+      {
+        "id": "297d5e1dc7ddf93d",
+        "name": "PDQ Detect",
+        "change": "Rewrote the description and moved the source to the producer's product page; PDQ Detect is an add-on to PDQ for agentless vulnerability scanning."
+      },
+      {
+        "id": "270e211e4b424ba4",
+        "name": "SAP LeanIX",
+        "change": "Product is current; switched to the SAP product page and a short paraphrase, and the vendor URL now points to the product."
+      },
+      {
+        "id": "27667072c288bb69",
+        "name": "NetScaler ADC",
+        "was": "Citrix NetScaler (ADC)",
+        "change": "Product still offered under the NetScaler brand; moved the source to the producer's platform page and the vendor URL to netscaler.com."
+      },
+      {
+        "id": "2814a648fce1376b",
+        "name": "Opsera",
+        "change": "Opsera is still offered; replaced the outdated claim with the current platform page description."
+      },
+      {
+        "id": "281ab466145459b5",
+        "name": "LawVu",
+        "change": "LawVu is still offered but now describes itself as an AI-powered legal operating system (LegalOS); description refreshed."
+      },
+      {
+        "id": "2990642a7b0ebf61",
+        "name": "Application Workspace (formerly Liquit Workspace)",
+        "was": "Liquit Workspace",
+        "change": "Liquit Workspace was rebranded Application Workspace by Recast Software after its 2023 acquisition of Liquit; the entry now points to Recast and uses a proper description."
+      },
+      {
+        "id": "2a38d834ea8da204",
+        "name": "Snow Adoption Tracker",
+        "change": "Replaced the third-party source with Flexera's Snow documentation and a product-specific description."
+      },
+      {
+        "id": "2a509693823c2b4a",
+        "name": "Pathlock Cloud",
+        "change": "Pathlock Cloud is a risk, compliance and access governance platform; the source now points to the producer's product page and the GRC category is added."
+      },
+      {
+        "id": "2abdcf11f7c3c3a4",
+        "name": "Unily",
+        "change": "The description was a slogan; replaced it with a factual description of the employee experience platform."
+      },
+      {
+        "id": "2ac488195b986c9e",
+        "name": "Appian RPA",
+        "change": "The description was a quote; rewritten as a paraphrase from Appian's documentation."
+      },
+      {
+        "id": "2ce5803d770d3b8c",
+        "name": "Backstage",
+        "change": "Backstage is a developer portal framework built around a software catalog, so I added the architecture subcategory and now cite the project's GitHub README."
+      },
+      {
+        "id": "2d43371e9b1e2d8a",
+        "name": "Darwinbox",
+        "change": "Darwinbox describes itself as an AI-native, cloud-based HCM platform, so I replaced the Gartner page with the producer's own page and rewrote the description."
+      },
+      {
+        "id": "2d5a4d7489796a0f",
+        "name": "LivePerson Conversational Cloud",
+        "change": "The producer's knowledge page describes Conversational Cloud as the evolution of LiveEngage, so I switched to it and rewrote the description in my own words."
+      },
+      {
+        "id": "2d8da02aabf63eca",
+        "name": "TOPdesk",
+        "change": "I replaced the brochure PDF with TOPdesk's ITSM product page and rewrote the description in my own words."
+      },
+      {
+        "id": "2af9612dc36c3485",
+        "name": "Invicti",
+        "was": "Invicti (DAST)",
+        "change": "Invicti's site now presents a broader AppSec platform (DAST, SAST, SCA, ASPM, API security), so I updated the description and added security categories."
+      },
+      {
+        "id": "2c4dfadd1a44755f",
+        "name": "Boomi AtomSphere",
+        "change": "Replaced the thin third-party description with one based on Boomi's own integration page, and noted the product now appears as the Boomi Enterprise Platform."
+      },
+      {
+        "id": "2c775dd710a5f3a2",
+        "name": "Tricentis qTest",
+        "change": "The qTest page now stresses agentic AI test creation, so I shortened the description and moved the url to the qTest page."
+      },
+      {
+        "id": "2c86ac56830b61d0",
+        "name": "Amazon Redshift",
+        "change": "Redshift is confirmed as an AWS-managed data warehouse. I switched to the current AWS documentation URL and added analytics as a subcategory."
+      },
+      {
+        "id": "2c8a1d9ccbc29769",
+        "name": "Infor Human Resources",
+        "change": "Replaced the third-party source with Infor's own Human Resources page and updated the description to the current cloud HR offering."
+      },
+      {
+        "id": "2da1ab5d880c4896",
+        "name": "IBM Envizi ESG Suite",
+        "change": "IBM Envizi is still offered; I pointed the entry to the Envizi product page and rewrote the description to cover the whole suite."
+      },
+      {
+        "id": "2e6f95737eb8cdf2",
+        "name": "watchTowr Platform",
+        "change": "The description covered only the watchTowr Intel layer, so I replaced it with the platform's overall description of exposure management."
+      },
+      {
+        "id": "2e9a66e6aa95ce5c",
+        "name": "ManageEngine ServiceDesk Plus",
+        "change": "The old description was only the page's download blurb for a PPT. I replaced it with a description of the product from the same producer page."
+      },
+      {
+        "id": "2eb53e41f1709477",
+        "name": "Trello",
+        "change": "The product is still offered. I replaced the quoted text with a short paraphrase and added the plan details from the Atlassian page."
+      },
+      {
+        "id": "2ed3d86247e4b46e",
+        "name": "InQuisient IQ Platform",
+        "change": "The old description was a truncated marketing quote. I replaced it with a factual paraphrase and added the portfolio subcategory, because the platform covers both EA and PPM."
+      },
+      {
+        "id": "2ef1ce5196061840",
+        "name": "Oracle Fusion Cloud Procurement",
+        "was": "Oracle Procurement Cloud",
+        "change": "The product is current but now named Oracle Fusion Cloud Procurement. I updated the name and replaced the quote with a paraphrase."
+      },
+      {
+        "id": "2f75847b7c5bb38f",
+        "name": "Open iT Analyzer for Autodesk Licensing",
+        "change": "The old description was a truncated quote. I replaced it with a paraphrase of what the product does, which is monitoring Autodesk license usage."
+      }
+    ],
+    "added": [
+      {
+        "id": "18c40fb949906701",
+        "name": "JumpCloud Open Directory Platform",
+        "vendor": "JumpCloud",
+        "sub": "Identity, Access & Secrets Management",
+        "change": "Widely used cloud directory and identity platform that is missing from the catalogue."
+      },
+      {
+        "id": "7dbd3f645509b7cc",
+        "name": "Duo",
+        "vendor": "Cisco",
+        "sub": "Identity, Access & Secrets Management",
+        "change": "Widely adopted MFA and access product from Cisco that is missing from the catalogue."
+      },
+      {
+        "id": "d7a7877bdb572a72",
+        "name": "AWS IAM Identity Center",
+        "vendor": "Amazon Web Services",
+        "sub": "Identity, Access & Secrets Management",
+        "change": "Core AWS workforce identity and SSO service that is missing from the catalogue."
+      },
+      {
+        "id": "71c9dabab46ad381",
+        "name": "Pentera",
+        "vendor": "Pentera",
+        "sub": "Vulnerability & Exposure Management",
+        "change": "Widely recognised automated security validation and exposure validation platform that was missing from the catalogue."
+      },
+      {
+        "id": "0c9c74c92f7ac156",
+        "name": "Cymulate Exposure Validation Platform",
+        "vendor": "Cymulate",
+        "sub": "Vulnerability & Exposure Management",
+        "change": "Recognised breach-and-attack-simulation and CTEM exposure validation product that was not listed."
+      },
+      {
+        "id": "5e88d7c694f6910f",
+        "name": "Cortex Xpanse",
+        "vendor": "Palo Alto Networks",
+        "sub": "Vulnerability & Exposure Management",
+        "change": "Well-known external attack surface management product from a major vendor that was missing from the catalogue."
+      },
+      {
+        "id": "7fed6606680139d6",
+        "name": "Microsoft Defender for Cloud",
+        "vendor": "Microsoft",
+        "sub": "Security Protection, Detection & Response",
+        "change": "Widely used Microsoft cloud workload protection and CSPM product that was missing from the catalogue."
+      },
+      {
+        "id": "98b5c01c73776d5a",
+        "name": "Wiz Cloud (CNAPP)",
+        "vendor": "Wiz (Google)",
+        "sub": "Security Protection, Detection & Response",
+        "change": "Leading CNAPP; the catalogue only lists Wiz Exposure Management."
+      },
+      {
+        "id": "809c40dd2d041ab2",
+        "name": "Arctic Wolf Aurora Platform",
+        "vendor": "Arctic Wolf",
+        "sub": "Security Protection, Detection & Response",
+        "change": "Arctic Wolf's main managed detection and response platform was missing; only Managed Risk is listed."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Vulnerability & Exposure Management",
+      "Identity, Access & Secrets Management",
+      "Security Protection, Detection & Response"
+    ],
+    "summary": "Checked 40 tools: 8 confirmed, 32 updated, 0 discontinued, 0 could not be verified. Searched Vulnerability & Exposure Management, Identity, Access & Secrets Management, Security Protection, Detection & Response for missing products: 9 added."
+  },
+  {
+    "date": "2026-10-30",
+    "checked": 40,
     "confirmed": 4,
     "unverified": 5,
     "updated": [

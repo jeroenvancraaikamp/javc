@@ -15,6 +15,9 @@
     "it-infrastructure-powercooling": "2026-10-29",
     "it-operations-automation": "2026-10-30",
     "it-operations-observability": "2026-10-30",
-    "it-operations-recovery": "2026-10-30"
+    "it-operations-recovery": "2026-10-30",
+    "it-security-identity": "2026-10-30",
+    "it-security-exposure": "2026-10-30",
+    "it-security-protection": "2026-10-30"
   }
 }
