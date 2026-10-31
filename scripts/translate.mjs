@@ -17,7 +17,7 @@ import { createHash } from 'node:crypto';
 import yaml from 'js-yaml';
 import Anthropic from '@anthropic-ai/sdk';
 
-const MODEL = 'claude-opus-5-5';
+const MODEL = 'claude-sonnet-5-5'; // Sonnet: much cheaper than Opus and good enough for translating
 const PARALLEL = 4;
 const DRY = process.argv.includes('--dry');
 const NAME = { en: 'English', nl: 'Dutch', cn: 'Simplified Chinese', fr: 'French', de: 'German' };
