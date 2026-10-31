@@ -1,5 +1,227 @@
 [
   {
+    "date": "2026-10-31",
+    "checked": 40,
+    "confirmed": 5,
+    "unverified": 6,
+    "updated": [
+      {
+        "id": "30e7adec9045ccef",
+        "name": "samQ",
+        "change": "Replaced Gartner source with producer-related samQ material and clarified the description; the product is still offered."
+      },
+      {
+        "id": "312579672746accf",
+        "name": "Mekari Talenta",
+        "change": "Replaced the Indonesian marketing slogan with a factual English description and moved to the English product page."
+      },
+      {
+        "id": "3158dfff1e11b594",
+        "name": "LogicManager",
+        "change": "Replaced the quoted marketing text with a factual paraphrase and used the platform page."
+      },
+      {
+        "id": "31795f82cf19b3cd",
+        "name": "Microsoft Dynamics 365 Finance",
+        "change": "Replaced the Gartner government-budgeting URL with the producer's Dynamics 365 Finance page and improved the description."
+      },
+      {
+        "id": "318ccf66adf95c0c",
+        "name": "OpenText Content Management (Extended ECM)",
+        "change": "Improved the description and recorded the third-party source."
+      },
+      {
+        "id": "2f8c74e4754f0885",
+        "name": "AppDynamics",
+        "change": "Description described a GitHub tool (DEXTER), not the product; replaced with a description of Cisco AppDynamics APM and a better source."
+      },
+      {
+        "id": "2f90e28beb5d95ab",
+        "name": "Fraxion",
+        "change": "Replaced the truncated quoted text with a short paraphrase of Fraxion's procure-to-pay offering."
+      },
+      {
+        "id": "2f96cb782d3c9ba4",
+        "name": "Okta",
+        "change": "Switched to Okta's current Workforce Identity product page and a paraphrased description instead of an old ebook quote."
+      },
+      {
+        "id": "3021391554fef67d",
+        "name": "Travis CI",
+        "change": "Replaced the truncated marketing quote with a neutral description from the product's GitHub page, which is third-party/community content."
+      },
+      {
+        "id": "30238ca1f575c167",
+        "name": "Webex",
+        "change": "Corrected the URL to Webex's own site and improved the description and source."
+      },
+      {
+        "id": "319dfb363e11a023",
+        "name": "Check Point SASE (formerly Harmony SASE)",
+        "was": "Check Point Harmony SASE",
+        "change": "Product is now branded Check Point SASE (formerly Harmony SASE); replaced the quote-style description with a factual one and a producer product page."
+      },
+      {
+        "id": "31d16833ab2e81f6",
+        "name": "Black Duck Polaris",
+        "change": "Replaced the marketing-style description with a factual one for the Polaris platform. The platform covers application security testing, so I added the security exposure subcategory."
+      },
+      {
+        "id": "326e979a5f60b012",
+        "name": "Exaforce Agentic SOC Platform",
+        "change": "Replaced the marketing-style description with a factual one. Third-party coverage describes it as an AI SOC platform covering detection, triage, investigation and response."
+      },
+      {
+        "id": "3281d275a983f881",
+        "name": "Amazon Q",
+        "change": "Amazon Q is a family of products: Amazon Q Business (enterprise assistant) and Amazon Q Developer (software assistant). The description and subcategories now cover both."
+      },
+      {
+        "id": "3285a48de962b355",
+        "name": "GitLab Duo Agent Platform",
+        "was": "GitLab Duo",
+        "change": "The current branding is GitLab Duo Agent Platform; replaced the quote with a factual description."
+      },
+      {
+        "id": "3536d4bbdfa171d1",
+        "name": "Cognigy.AI",
+        "change": "The description was a marketing quote about AI Agents. I replaced it with a factual paraphrase and noted that the vendor now trades as NiCE Cognigy."
+      },
+      {
+        "id": "35c8fc22a9d0c931",
+        "name": "Qualys VMDR",
+        "change": "The description quoted the Policy Audit module, not VMDR as a whole. I rewrote it to describe VMDR's vulnerability management scope."
+      },
+      {
+        "id": "35ca8419aeee1ed5",
+        "name": "Quantivate GRC Software Suite",
+        "change": "I replaced the truncated marketing quote with a factual description and added the IT governance, risk and compliance subcategory."
+      },
+      {
+        "id": "32fbec28cf9dc86a",
+        "name": "Culture Amp",
+        "change": "Description rewritten as a neutral paraphrase instead of marketing copy; the product is still offered."
+      },
+      {
+        "id": "3350fb02d95962c0",
+        "name": "Epiphany Intelligence Platform",
+        "change": "Replaced the quoted sentence with a paraphrase. Epiphany is also described as validating attack paths, so I added a short note on that."
+      },
+      {
+        "id": "33729f497e538511",
+        "name": "IBM UrbanCode Release",
+        "change": "The entry's description was only a figure caption. IBM has withdrawn UrbanCode Release 6.2.x from support, so I rewrote the description and noted that."
+      },
+      {
+        "id": "33ec8dea35dd3bc3",
+        "name": "Resolver Core",
+        "change": "Replaced the third-party source with Resolver's own site. Resolver Core is still offered and also covers incident and investigation management."
+      },
+      {
+        "id": "33ee7df8bbcfad7d",
+        "name": "Cloudian HyperStore Manager",
+        "change": "Replaced quoted HyperStore marketing line with a description of the management console, citing an analyst report."
+      },
+      {
+        "id": "34e1a8332e3b986f",
+        "name": "Llama (enterprise/Llama API)",
+        "change": "Switched source to Meta's official Llama API Python library repository instead of Wikipedia."
+      },
+      {
+        "id": "35e7000091c8c922",
+        "name": "GFI LanGuard",
+        "change": "GFI LanGuard is still offered; I moved the source to the producer's current product page and added patch management to the classification."
+      },
+      {
+        "id": "35f029c5455dece2",
+        "name": "Vertiv Environet Alert",
+        "was": "Vertiv Liebert Environet / Avocent",
+        "change": "The Vertiv Environet page now describes Environet Alert, facility monitoring software for data center hardware, so I corrected the name, description and categories."
+      },
+      {
+        "id": "360bb7c2c1c6e403",
+        "name": "AllSight",
+        "change": "AllSight is a Sassafras KeyServer-platform product that integrates with TeamDynamix, so I wrote a proper description and a note on the limitations."
+      },
+      {
+        "id": "361610f92ee25d81",
+        "name": "Sophos Intercept X (Sophos Central)",
+        "change": "Sophos Intercept X is still offered, so I replaced the truncated PDF excerpt with a proper description and a Sophos blog source."
+      },
+      {
+        "id": "366abcff59aa3299",
+        "name": "System Center Virtual Machine Manager (SCVMM)",
+        "change": "SCVMM is a virtualization and datacenter management tool, not an observability tool, so I corrected the description, source and category."
+      }
+    ],
+    "added": [
+      {
+        "id": "5517559be00eea44",
+        "name": "Nexthink Infinity",
+        "vendor": "Nexthink",
+        "sub": "Endpoint Management & Employee Experience",
+        "change": "Widely recognised DEX platform missing from the endpoint management and employee experience subcategory."
+      },
+      {
+        "id": "b3ec3d17e9ec88d2",
+        "name": "Automox",
+        "vendor": "Automox",
+        "sub": "Endpoint Management & Employee Experience",
+        "change": "Well-known cloud patch and endpoint configuration platform not yet in the catalogue."
+      },
+      {
+        "id": "c2d25e6808e543b8",
+        "name": "Axonius Cybersecurity Asset Management Platform",
+        "vendor": "Axonius",
+        "sub": "IT Assets, Software & Configuration",
+        "change": "Widely recognised cyber asset inventory platform that is missing from the asset category."
+      },
+      {
+        "id": "e165c2af3e3c4239",
+        "name": "i-doit",
+        "vendor": "synetics GmbH",
+        "sub": "IT Assets, Software & Configuration",
+        "change": "Well-known CMDB and IT documentation product in the DACH region, absent from the catalogue."
+      },
+      {
+        "id": "e3626c455d05818c",
+        "name": "Virima ITAM and CMDB",
+        "vendor": "Virima",
+        "sub": "IT Assets, Software & Configuration",
+        "change": "Dedicated ITAM and CMDB vendor with discovery and service mapping, not yet listed."
+      },
+      {
+        "id": "92caf172120a1052",
+        "name": "HappyFox Service Desk",
+        "vendor": "HappyFox",
+        "sub": "IT Service Management & Support",
+        "change": "Widely used cloud ITSM service desk missing from the catalogue."
+      },
+      {
+        "id": "09ed67a74fccb312",
+        "name": "ConnectWise PSA",
+        "vendor": "ConnectWise",
+        "sub": "IT Service Management & Support",
+        "change": "Leading MSP PSA with service desk ticketing, not yet listed."
+      },
+      {
+        "id": "fd60c1049f4cfd0f",
+        "name": "SuperOps",
+        "vendor": "SuperOps",
+        "sub": "IT Service Management & Support",
+        "change": "Recognised MSP-focused service desk and PSA platform missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "IT Assets, Software & Configuration",
+      "Endpoint Management & Employee Experience",
+      "IT Service Management & Support"
+    ],
+    "summary": "Checked 40 tools: 5 confirmed, 29 updated, 0 discontinued, 6 could not be verified. Searched IT Assets, Software & Configuration, Endpoint Management & Employee Experience, IT Service Management & Support for missing products: 8 added."
+  },
+  {
     "date": "2026-10-30",
     "checked": 40,
     "confirmed": 8,
