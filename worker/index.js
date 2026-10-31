@@ -261,7 +261,6 @@ async function contact(request, env) {
 }
 
 // --- redirects: www → javc.nl, and old WordPress addresses → their new place ------
-const WP_ADMIN = 'https://javcmanagement.nl/wp-admin/';
 const CATEGORY_RENAMES = { csdm: 'csdm-cmdb-tbm', 'tbm-csdm-cmdb': 'csdm-cmdb-tbm' };
 
 function redirectFor(url) {
@@ -273,7 +272,8 @@ function redirectFor(url) {
   // ?p=123 and ?page_id=123 (old WordPress short links)
   const id = url.searchParams.get('p') || url.searchParams.get('page_id');
   if (p === '/' && id && WP_IDS[id]) return WP_IDS[id];
-  if (/^\/(wp-admin|wp-login\.php)/.test(p)) return WP_ADMIN;
+  // Old WordPress admin addresses go to the CMS (the old site on javcmanagement.nl now forwards to javc.nl).
+  if (/^\/(wp-admin|wp-login\.php)/.test(p)) return '/cms/';
   if (/^\/(feed|comments\/feed)\/?$/.test(p)) return '/articles/';
   let m;
   if ((m = p.match(/^\/category\/([^/]+)\/(?:page\/(\d+)\/)?$/))) {
