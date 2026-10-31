@@ -8,6 +8,8 @@
 import Anthropic from '@anthropic-ai/sdk';
 import KNOWLEDGE from './knowledge.json';
 import WP_IDS from './wp-ids.json';
+// Large PNG pictures that were turned into much smaller JPGs (old path -> new path), so old links keep working.
+import IMAGE_RENAMES from './image-renames.json';
 import { logHit, logChat, logContact, statsData } from './stats.js';
 import { turnstileConfig, humanCheck, tooFast } from './turnstile.js';
 import { contactMail } from '../scripts/atlas-mail.mjs';
@@ -265,6 +267,9 @@ const CATEGORY_RENAMES = { csdm: 'csdm-cmdb-tbm', 'tbm-csdm-cmdb': 'csdm-cmdb-tb
 function redirectFor(url) {
   if (url.hostname === 'www.javc.nl') return `https://javc.nl${url.pathname}${url.search}`;
   const p = url.pathname;
+  let file;
+  try { file = decodeURIComponent(p); } catch { file = p; }
+  if (IMAGE_RENAMES[file]) return encodeURI(IMAGE_RENAMES[file]);
   // ?p=123 and ?page_id=123 (old WordPress short links)
   const id = url.searchParams.get('p') || url.searchParams.get('page_id');
   if (p === '/' && id && WP_IDS[id]) return WP_IDS[id];

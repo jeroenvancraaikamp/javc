@@ -1,7 +1,7 @@
 ---
 title: "ITIL Version 5 (Foundation) est sortie !!"
 excerpt: "En février 2026, Peoplecert (anciennement Axelos) a publié la très attendue ITIL Version 5 Foundation. Après avoir lu le glossaire et le guide de référence rapide d'ITIL Version 5, j'ai voulu savoir ce que la Version 5 avait à offrir dans le monde actuel"
-source: "9ba26650acb9b23e"
+source: "c800e4f91cec17b6"
 ---
 
 En février 2026, Peoplecert (anciennement Axelos) a publié la très attendue ITIL Version 5 Foundation. Après avoir lu le glossaire et le guide de référence rapide (Quick Reference Guide) d'ITIL Version 5, j'ai voulu savoir ce que la Version 5 avait à offrir dans le monde actuel du Cloud Computing, de l'IA, du DevOps, du SecOps, de l'observabilité et des pipelines CI/CD, ainsi que du Digital Product Management.
@@ -70,7 +70,7 @@ Compte tenu de tout ce qui précède, la plupart des entreprises voudront probab
 
 Pour la promotion des pratiques, leur adoption, l'amélioration continue et la gouvernance, je recommande d'utiliser les recommandations d'ITIL Version 5.
 
-![](/wp-content/uploads/2026/03/Screenshot-2026-04-06-at-20.42.10.png)
+![](/wp-content/uploads/2026/03/Screenshot-2026-04-06-at-20.42.10.jpg)
 
 ### Le 6 avril 2026, j'ai passé l'examen ITIL Version 5.
 

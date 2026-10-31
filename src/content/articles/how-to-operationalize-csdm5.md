@@ -5,7 +5,7 @@ categories:
   - ServiceNow
   - CSDM/CMDB/TBM
 excerpt: Industry figures consistently show that only about 25% of organisations realise meaningful value from their CMDB investments . In most cases, the CMDB data model is implemented from a predominantly technical perspective. As technology stacks grow more complex, the CMDB
-image: /wp-content/uploads/2025/12/CSDM5-Operaionalisation-in-ServiceNow-Concept.png
+image: /wp-content/uploads/2025/12/CSDM5-Operaionalisation-in-ServiceNow-Concept.jpg
 readingTime: 7
 popular: false
 draft: false

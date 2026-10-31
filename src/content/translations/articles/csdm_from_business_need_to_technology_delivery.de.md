@@ -1,7 +1,7 @@
 ---
 title: "Vom Business-Bedarf zur Technologiebereitstellung"
 excerpt: "Das Common Service Data Model von ServiceNow (CSDM5) gewinnt zunehmend die Aufmerksamkeit von Managern auf C-Level-Ebene, zumal eine gute CMDB mit korrekten und vollständigen Inhalten als kritischer Erfolgsfaktor für die Umsetzung von DORA, SOx, SOC2 und Agentic AI gilt. Mitarbeitende in"
-source: "050c3e01c24c7a5b"
+source: "884dc56476f17f1e"
 ---
 
 Das Common Service Data Model von ServiceNow (CSDM5) gewinnt zunehmend die Aufmerksamkeit von Managern auf C-Level-Ebene, zumal eine gute CMDB mit korrekten und vollständigen Inhalten als kritischer Erfolgsfaktor für die Umsetzung von DORA, SOx, SOC2 und Agentic AI gilt.
@@ -42,4 +42,4 @@ Die Tausenden von **SDLC Application Components** erben ihre Referenzen auf Foun
   
 In diesem Modell dürfen Resources, Middleware und Nodes in der CMDB nicht von Menschen angelegt oder aktualisiert werden. Sie enthalten ausschließlich die technische Realität sowie die erkannten Beziehungen, Namen und Attributwerte. Referenzen auf Foundational Data lassen sich in der Regel nicht technisch erkennen. Deshalb müssen die CIs der CMDB – in dieser Interpretation des CSDM – stets direkt oder indirekt mit einer Application und/oder einem Offering verknüpft sein, die Referenzattribute wie „Business Owner“, „IT Owner“, „Support Group“, „Change Group“, „CAB Group“, „Location“, „Organization“ usw. enthalten. Die Organisation kann dabei der klassischen Struktur „Unternehmen => Geschäftsbereich => Abteilung“ oder der modernen agilen Struktur „Tribe/ART => Cluster/Chapter ==> DevSecOps-Team/Squad“ folgen.
 
-![](/wp-content/uploads/2026/06/CSDM5-incl-Relation-Labels.png)
+![](/wp-content/uploads/2026/06/CSDM5-incl-Relation-Labels.jpg)

@@ -4,7 +4,7 @@ date: 2026-10-12
 categories:
   - AI4IT
 excerpt: For the AI Masterclass that I recently attended, we were asked to produce a practical use case. Building on AI Part 1, i decided to create a zero-touch Champagne Webiste that is completely generated using AI, and that makes use
-image: /wp-content/uploads/2026/10/Champagne360.png
+image: /wp-content/uploads/2026/10/Champagne360.jpg
 readingTime: 9
 popular: false
 draft: false

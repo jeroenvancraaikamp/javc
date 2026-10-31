@@ -3,7 +3,7 @@ title: "Change and Drift Mngt in 2025"
 date: 2025-12-04
 categories: ["IT4IT","ServiceNow"]
 excerpt: "Despite rapid advances in cloud computing, DevOps, automation, and Infrastructure-as-Code, many organizations still struggle with a fundamental question: What actually constitutes a “change” in 2025 — and what does not? Is every drift detected, to be managed via change? Misclassification"
-image: "/wp-content/uploads/2025/12/changedrift.png"
+image: "/wp-content/uploads/2025/12/changedrift.jpg"
 readingTime: 5
 ---
 

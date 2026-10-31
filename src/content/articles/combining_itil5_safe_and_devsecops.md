@@ -3,7 +3,7 @@ title: "ITIL Version 5 + IT4IT 3.0 + TOGAF 10 + SAFe 6.0  + DevOps + SecOps = ??
 date: 2026-03-01
 categories: ["IT4IT"]
 excerpt: "Modern IT organizations rarely run on a single doctrine. They operate with a deliberate mix of delivery, operations, risk, and architecture frameworks, all of which want a piece of the same change. Typical ingredients: SAFe (Scaled Agile Framework) for scaled"
-image: "/wp-content/uploads/2026/03/ITIL_Version_5_SAFe_DevSecOps.png"
+image: "/wp-content/uploads/2026/03/ITIL_Version_5_SAFe_DevSecOps.jpg"
 readingTime: 12
 ---
 

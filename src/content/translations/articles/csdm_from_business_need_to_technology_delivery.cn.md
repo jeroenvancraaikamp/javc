@@ -1,7 +1,7 @@
 ---
 title: "从业务需求到技术交付"
 excerpt: "ServiceNow 的通用服务数据模型（Common Service Data Model，CSDM5）正日益受到 C 级管理层的关注，尤其是因为内容准确、完整的优质 CMDB 被视为实施 DORA、SOx、SOC2 和 Agentic AI（智能体 AI）的关键成功因素。从事"
-source: "050c3e01c24c7a5b"
+source: "884dc56476f17f1e"
 ---
 
 ServiceNow 的通用服务数据模型（Common Service Data Model，CSDM5）正日益受到 C 级管理层的关注，尤其是因为内容准确、完整的优质 CMDB 被视为实施 DORA、SOx、SOC2 和 Agentic AI（智能体 AI）的关键成功因素。
@@ -42,4 +42,4 @@ ServiceNow 的通用服务数据模型（Common Service Data Model，CSDM5）正
   
 在该模型中，资源、中间件和节点不得由人工在 CMDB 中创建或更新。它们只包含技术层面的实际情况，以及通过自动发现获得的关系、名称和属性值。对基础数据的引用通常无法通过技术手段发现。正因如此，在这种 CSDM 解读中，CMDB 中的 CI 必须始终直接或间接地关联到某个应用和/或服务产品，而这些应用和服务产品包含诸如"业务负责人（Business Owner）"、"IT 负责人（IT Owner）"、"支持组（Support Group）"、"变更组（Change Group）"、"CAB 组（CAB Group）"、"地点（Location）"、"组织（Organization）"等引用属性。组织可以采用传统的"公司 => 业务单元 => 部门"结构，也可以采用现代敏捷的"部落/ART => 集群/分会（Cluster/Chapter）==> DevSecOps 团队/小队（Squad）"结构。
 
-![](/wp-content/uploads/2026/06/CSDM5-incl-Relation-Labels.png)
+![](/wp-content/uploads/2026/06/CSDM5-incl-Relation-Labels.jpg)

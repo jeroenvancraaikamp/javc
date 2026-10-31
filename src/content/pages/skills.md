@@ -4,7 +4,7 @@ menu: Skills/Expertise
 order: 1
 wide: false
 layout: columns
-banner: /wp-content/uploads/2022/10/shutterstock_1133982488.png
+banner: /wp-content/uploads/2022/10/shutterstock_1133982488.jpg
 lang: en
 legal: false
 ---

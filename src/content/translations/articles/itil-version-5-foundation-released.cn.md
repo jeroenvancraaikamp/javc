@@ -1,7 +1,7 @@
 ---
 title: "ITIL Version 5（Foundation）正式发布！！"
 excerpt: "2026 年 2 月，Peoplecert（前身为 Axelos）发布了期待已久的 ITIL Version 5 Foundation。在阅读了 ITIL Version 5 术语表（Glossary）和快速参考指南（Quick Reference Guide）之后，我很好奇 Version 5 在当今世界究竟能带来什么"
-source: "9ba26650acb9b23e"
+source: "c800e4f91cec17b6"
 ---
 
 2026 年 2 月，Peoplecert（前身为 Axelos）发布了期待已久的 ITIL Version 5 Foundation。在阅读了 ITIL Version 5 术语表（Glossary）和快速参考指南（Quick Reference Guide）之后，我很好奇：在当今这个由云计算、AI、DevOps、SecOps、可观测性（Observability）、CI/CD 流水线以及数字产品管理（Digital Product Mngt）构成的世界里，Version 5 究竟能带来什么。
@@ -70,7 +70,7 @@ V5 Foundation 电子书的附录 C 列出了**各项实践的角色**。V5 中�
 
 对于实践的推广、采纳、持续改进和治理，我建议使用 ITIL Version 5 的指导。
 
-![](/wp-content/uploads/2026/03/Screenshot-2026-04-06-at-20.42.10.png)
+![](/wp-content/uploads/2026/03/Screenshot-2026-04-06-at-20.42.10.jpg)
 
 ### 2026 年 4 月 6 日，我参加了 ITIL Version 5 考试。
 
