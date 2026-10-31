@@ -4,7 +4,7 @@ date: 2026-03-16
 categories:
   - ServiceNow
 excerpt: 'The good news: the platform itself is rarely the problem. Out of the box, ServiceNow works well. Following the vendor roadmap is normally straightforward. The problems usually start when organizations gradually drift away from the platform standards. At some point'
-image: /wp-content/uploads/2026/03/ChatGPT-Image-Mar-16-2026-11_27_03-PM.png
+image: /wp-content/uploads/2026/03/ChatGPT-Image-Mar-16-2026-11_27_03-PM.jpg
 readingTime: 4
 popular: false
 draft: false

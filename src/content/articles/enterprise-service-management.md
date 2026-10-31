@@ -3,7 +3,7 @@ title: "Enterprise Service Management"
 date: 2024-12-14
 categories: ["IT4ESM"]
 excerpt: "Enterprise Service Management (ESM) is the practice of applying service management principles—traditionally used in IT Service Management (ITSM)—to other areas of an organization, such as HR, finance, facilities, legal, or customer service. Essentially, it extends ITSM's structured approach to managing"
-image: "/wp-content/uploads/2024/12/2024-12-20_19-19-42.png"
+image: "/wp-content/uploads/2024/12/2024-12-20_19-19-42.jpg"
 readingTime: 4
 ---
 

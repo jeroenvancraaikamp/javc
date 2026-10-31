@@ -4,7 +4,7 @@ date: 2026-10-23
 categories:
   - AI4IT
 excerpt: Deze week bleek dat de machines waarop PHP draait, gemakkelijk misbruikt konden worden. Voor recente versies van PHP zijn patches/fixes ter beschikking gesteld. Velen kwamen er achter dat hun WordPress toepassing en zelfs onderliggende Linux en/of Database Mngt System ook niet bij waren. WAT TE DOEN?
-image: /Pulling PHP from WordPress.png
+image: /Pulling PHP from WordPress.jpg
 readingTime: 4
 popular: true
 draft: false

@@ -4,7 +4,7 @@ date: 2026-05-31
 categories:
   - CSDM/CMDB/TBM
 excerpt: The Common Service Data Model of ServiceNow (CSDM5) is increasingly gaining the attention of C-Level managers, especially since a good CMDB with accurate/complete content is considered a critical success factor for implementing DORA, SOx, SOC2 and Agentic AI. People in
-image: /wp-content/uploads/2026/05/CMDB-DPM-Infographic.png
+image: /wp-content/uploads/2026/05/CMDB-DPM-Infographic.jpg
 readingTime: 4
 popular: false
 draft: false
@@ -49,4 +49,4 @@ The thousands of **SDLC Application Components** typically inherit foundational 
   
 In this model, Resources, Middleware and Nodes may not be created/updated in the CMDB by humans. They only contain the technical reality and the relations, names, and attribute values that are discovered. Typically references to Foundational data cannot be technically discovered. This is why the CMDB CI’s -in this CSDM interpretation- are always directly or indirectly to be related to an Application and/or Offering that contains reference attributes such as “Business Owner” , “IT Owner” , “Support Group” , “Change Group” , “CAB Group”, “Location”, “Organization”, etc. Organization could be historical “Company => Business Unit => Department” structure or Modern Agile “Tribe/ART => Cluster/Chapter ==> DevSecOps Team/Squad” structure.
 
-![](/wp-content/uploads/2026/06/CSDM5-incl-Relation-Labels.png)
+![](/wp-content/uploads/2026/06/CSDM5-incl-Relation-Labels.jpg)

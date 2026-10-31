@@ -5,7 +5,7 @@ categories:
   - IT4IT
   - IT4ESM
 excerpt: This is an overview of 1136 IT management tools, grouped into 26 categories across 7 domains — Strategy & Planning, Software Engineering & Delivery, IT Service & Asset Management, IT Operations, Security, People, AI — aligned to The Open Group's
-image: /wp-content/uploads/2026/09/1000_IT_Management_Tools_Sept_2026.png
+image: /wp-content/uploads/2026/09/1000_IT_Management_Tools_Sept_2026.jpg
 readingTime: 45
 popular: true
 draft: false
