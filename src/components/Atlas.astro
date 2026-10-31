@@ -420,10 +420,18 @@ const config = {
 
   // On a phone the capability list starts folded, so the tools come first.
   if (matchMedia('(max-width: 900px)').matches) root.querySelectorAll('.atlas-side details').forEach((d) => d.removeAttribute('open'));
+  // ?tool=<id> (the links in the daily update mail) opens that tool's profile once the catalogue is loaded.
+  const deepTool = new URLSearchParams(location.search).get('tool');
   readUrl();
   fetch('/atlas/tools.json')
     .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
-    .then((data: Tool[]) => { const gone = new Set(archived()); tools = data.filter((t) => !gone.has(t.id)); render(); })
+    .then((data: Tool[]) => {
+      const gone = new Set(archived());
+      tools = data.filter((t) => !gone.has(t.id));
+      render();
+      const t = deepTool && tools.find((x) => x.id === deepTool);
+      if (t) { dialog.innerHTML = profile(t); dialog.showModal(); }
+    })
     .catch(() => { $('atlas-list').innerHTML = `<p>${esc(T.error)}</p>`; });
 </script>
 
