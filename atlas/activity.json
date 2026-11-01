@@ -1,5 +1,227 @@
 [
   {
+    "date": "2026-11-01",
+    "checked": 40,
+    "confirmed": 10,
+    "unverified": 1,
+    "updated": [
+      {
+        "id": "376ba6ae512d1b48",
+        "name": "Node-RED",
+        "change": "Node-RED's own site is nodered.org; switched the URL and source to the project's About page."
+      },
+      {
+        "id": "3787d603159ceb01",
+        "name": "YouDesign",
+        "change": "YouDesign is now a ServiceNow-native enterprise transformation suite from ins-pi GmbH, so the description and source were revised."
+      },
+      {
+        "id": "37e45684f9828c7e",
+        "name": "Veriti",
+        "change": "Veriti was acquired by Check Point (reported at about $100M), so the vendor and the note were updated."
+      },
+      {
+        "id": "380a32e3e0d570b8",
+        "name": "xMatters",
+        "was": "X Matters",
+        "change": "Product is xMatters (Everbridge xMatters), an incident management and alerting platform. The old entry had the wrong name and a generic Everbridge description."
+      },
+      {
+        "id": "38216adfb6b1102b",
+        "name": "Skyhigh Security Service Edge",
+        "change": "The description was a quote from a Gartner report. It has been replaced with a description of the product from the producer's page."
+      },
+      {
+        "id": "382f0fc258c68b83",
+        "name": "Upsun (formerly Platform.sh)",
+        "was": "Platform.sh",
+        "change": "Platform.sh was rebranded as Upsun in September 2025. The entry now uses the Upsun name and URL, and the category is corrected from observability to a cloud application platform."
+      },
+      {
+        "id": "38315df02d45778f",
+        "name": "Trend Micro Vision One",
+        "change": "The sourceUrl pointed to a container-security brief. It now points to the Vision One platform page, and the description is a paraphrase of that page."
+      },
+      {
+        "id": "383f703f45324d61",
+        "name": "Cloudflare One",
+        "change": "The sourceUrl was a 2023 PDF brief. It now points to the current Cloudflare One documentation."
+      },
+      {
+        "id": "36b3c0471e7ac9af",
+        "name": "eQuip",
+        "change": "Switched to the product's own site, which describes eQuip as asset management software for federal defense contractors, and replaced the reseller page."
+      },
+      {
+        "id": "372862c0d7dd4d19",
+        "name": "RapidDeploy",
+        "change": "MidVision's site presents RapidDeploy as application release and deployment automation, so the category moves from development to deployment automation."
+      },
+      {
+        "id": "38416d00958ba9dd",
+        "name": "Komprise Intelligent Data Management",
+        "change": "Product is still offered; description was a verbatim quote, so it is now a paraphrase from the producer page."
+      },
+      {
+        "id": "389be6f5d460532d",
+        "name": "FreeIPA",
+        "change": "FreeIPA is a community project (now hosted on Codeberg, with a GitHub mirror), not a Red Hat product page, so I corrected vendor, url and source."
+      },
+      {
+        "id": "38a3ec55b8060501",
+        "name": "ARCON PAM",
+        "change": "The description covered only the Spection reporting feature, so I replaced it with an overview of ARCON PAM."
+      },
+      {
+        "id": "38d8afa38574c8a9",
+        "name": "SigNoz",
+        "change": "Product is active; the quoted description was reworded as a paraphrase and widened to cover the full feature set."
+      },
+      {
+        "id": "3a670f5006390752",
+        "name": "Azure Key Vault",
+        "change": "Added identity/secrets management subcategory and a more specific producer URL; Key Vault stores secrets, keys and certificates."
+      },
+      {
+        "id": "3a702124f74000ef",
+        "name": "SunFish Workplaze",
+        "change": "Replaced Capterra source (a different SunFish HR page) with the producer's SunFish Workplaze page; it is an HRIS with payroll."
+      },
+      {
+        "id": "3ab3efb5902a1f52",
+        "name": "Microsoft FSLogix",
+        "change": "Replaced the Parallels source with Microsoft's own FSLogix documentation; the product is current and covers profile containers."
+      },
+      {
+        "id": "396d99a7cd8dce48",
+        "name": "Enterprise Vault",
+        "change": "Replaced the generic description and the Gartner review page with a fuller description and a SoftwareOne listing, and added the compliance/governance subcategory."
+      },
+      {
+        "id": "39720c7f0d619bc3",
+        "name": "NetFacilities",
+        "change": "NetFacilities is still referenced as part of the Accruent/MRI portfolio, so the Brightly vendor is doubtful. The description is now based on a search-result source, and the vendor and URL are unconfirmed."
+      },
+      {
+        "id": "398adc88108a6793",
+        "name": "Jaeger",
+        "change": "Replaced the quoted text with a paraphrased description and pointed sourceUrl to the project's GitHub repository."
+      },
+      {
+        "id": "39b2d0efde14465c",
+        "name": "Metabase",
+        "change": "Replaced the marketing copy with a factual description from the GitHub README."
+      },
+      {
+        "id": "3a181912b74481c0",
+        "name": "IBM Verify Identity Governance",
+        "was": "IBM Identity Governance",
+        "change": "The product is now named IBM Verify Identity Governance (formerly IBM Security Verify Governance). The description was a course-demo quote and has been replaced."
+      },
+      {
+        "id": "3b5a0adea482ca59",
+        "name": "Sphera Cloud (ESG)",
+        "change": "The old source was a consulting-services page, not the software. Replaced it with Sphera's Sustainability Performance Management software page."
+      },
+      {
+        "id": "3b969dc0b4917cda",
+        "name": "SAP Treasury and Risk Management",
+        "change": "Replaced the Gartner review source with SAP's own community page and gave a more specific description."
+      },
+      {
+        "id": "3bb29f4d0aecc3b0",
+        "name": "Pega Infinity",
+        "change": "The description was a quotation about Smart Claims Engine, not a description of Pega Infinity. Rewrote it from Pega's own release page."
+      },
+      {
+        "id": "3abec6d6a891e900",
+        "name": "Devin",
+        "change": "Replaced the thin Wikipedia-based description with the producer's own documentation: Devin is an autonomous AI software engineer."
+      },
+      {
+        "id": "3af4049639253065",
+        "name": "GitLab Community Edition",
+        "change": "Description was generic; it now reflects that CE is the MIT-licensed free edition of GitLab's development platform."
+      },
+      {
+        "id": "3b15371d765ce36f",
+        "name": "Harness Feature Management & Experimentation",
+        "change": "Replaced the long tracking-parameter source URL with the clean Harness docs page and a paraphrased description."
+      },
+      {
+        "id": "3b32671d57907ae5",
+        "name": "Portkey",
+        "change": "Portkey's documentation is now branded Prisma AIRS AI Gateway. The source URL was a placeholder changelog page, and the entry now also covers gateway connectivity."
+      }
+    ],
+    "added": [
+      {
+        "id": "48609665335bbbfb",
+        "name": "Archi",
+        "vendor": "Archi (Phillip Beauvoir / Archi open source project)",
+        "sub": "Enterprise Architecture & Product Portfolio",
+        "change": "Widely used free ArchiMate modelling tool that is missing from the catalogue."
+      },
+      {
+        "id": "894a8f52d1e6315e",
+        "name": "Visual Paradigm Enterprise",
+        "vendor": "Visual Paradigm",
+        "sub": "Enterprise Architecture & Product Portfolio",
+        "change": "Recognised ArchiMate and TOGAF modelling suite missing from the catalogue."
+      },
+      {
+        "id": "f6f8e97f07ddaecd",
+        "name": "Planview Enterprise Architecture",
+        "vendor": "Planview",
+        "sub": "Enterprise Architecture & Product Portfolio",
+        "change": "Planview's dedicated EA product (the former Troux line) is not yet catalogued."
+      },
+      {
+        "id": "ea41c39f48d1ae5a",
+        "name": "Jira Align",
+        "vendor": "Atlassian",
+        "sub": "Strategic Portfolio, Demand & Value Streams",
+        "change": "Widely used Atlassian enterprise agile and portfolio planning product that is not yet in the catalogue."
+      },
+      {
+        "id": "d3a9d6ee39a54b85",
+        "name": "Meisterplan",
+        "vendor": "Meisterplan",
+        "sub": "Strategic Portfolio, Demand & Value Streams",
+        "change": "Recognised dedicated PPM and capacity planning product that is missing from the catalogue."
+      },
+      {
+        "id": "64b35a667c9b2d3c",
+        "name": "CrewAI",
+        "vendor": "CrewAI",
+        "sub": "Agentic AI & Intelligent Automation",
+        "change": "Widely used multi-agent framework and enterprise platform missing from the agentic AI category."
+      },
+      {
+        "id": "1bf589bb5356e7e8",
+        "name": "Sierra",
+        "vendor": "Sierra",
+        "sub": "Agentic AI & Intelligent Automation",
+        "change": "Prominent customer-experience AI agent platform not yet listed."
+      },
+      {
+        "id": "f7084fc70e07fd5d",
+        "name": "Oracle AI Agent Studio for Fusion Applications",
+        "vendor": "Oracle",
+        "sub": "Agentic AI & Intelligent Automation",
+        "change": "Oracle's agent-building platform for its enterprise applications is not yet in the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Enterprise Architecture & Product Portfolio",
+      "Strategic Portfolio, Demand & Value Streams",
+      "Agentic AI & Intelligent Automation"
+    ],
+    "summary": "Checked 40 tools: 10 confirmed, 29 updated, 0 discontinued, 1 could not be verified. Searched Enterprise Architecture & Product Portfolio, Strategic Portfolio, Demand & Value Streams, Agentic AI & Intelligent Automation for missing products: 8 added."
+  },
+  {
     "date": "2026-10-31",
     "checked": 40,
     "confirmed": 5,

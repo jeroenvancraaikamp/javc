@@ -21,6 +21,9 @@
     "it-security-protection": "2026-10-30",
     "it-service-endpoint": "2026-10-31",
     "it-service-assets": "2026-10-31",
-    "it-service-itsm": "2026-10-31"
+    "it-service-itsm": "2026-10-31",
+    "it-strategy-architecture": "2026-11-01",
+    "it-strategy-portfolio": "2026-11-01",
+    "platform-ai-agentic": "2026-11-01"
   }
 }
