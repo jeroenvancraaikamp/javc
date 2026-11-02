@@ -1,5 +1,245 @@
 [
   {
+    "date": "2026-11-02",
+    "checked": 40,
+    "confirmed": 4,
+    "unverified": 5,
+    "updated": [
+      {
+        "id": "3d12315ca1927c76",
+        "name": "Panzura CloudFS",
+        "change": "Replaced a quoted third-party snippet with a factual description from Panzura's technology page."
+      },
+      {
+        "id": "3d16a66f09167557",
+        "name": "SAP Analytics Cloud",
+        "change": "Switched to SAP's own documentation and added planning and predictive capabilities to the description."
+      },
+      {
+        "id": "3d2cfe8d8064e2b9",
+        "name": "ITMC Lifecycle",
+        "change": "Replaced a truncated quote with a short paraphrase from Eracent's data sheet page."
+      },
+      {
+        "id": "3d3aab4077733010",
+        "name": "DataCore SANsymphony",
+        "change": "Replaced a truncated quote with a paraphrase from DataCore's SANsymphony product page."
+      },
+      {
+        "id": "3dbfa25da759ff01",
+        "name": "Check Point Quantum",
+        "change": "Replaced a generic quote with a description of the Quantum Security Gateways from Check Point's blog."
+      },
+      {
+        "id": "3be51ac61cffd63c",
+        "name": "InsightVM",
+        "change": "Description was a quotation; replaced with a paraphrase, and noted that InsightVM is now part of Rapid7 Exposure Command."
+      },
+      {
+        "id": "3bfa8c4dcdfbc97c",
+        "name": "Tallyfy",
+        "change": "Tallyfy is a no-code workflow and BPM platform, not an observability tool; reclassified and description rewritten."
+      },
+      {
+        "id": "3c6046843e3c7788",
+        "name": "Forcepoint NGFW",
+        "change": "Replaced the quoted description and the version-specific PDF source with the current Forcepoint NGFW product page."
+      },
+      {
+        "id": "3c70d00eeb5f8894",
+        "name": "CloudEagle.ai",
+        "change": "CloudEagle also covers SaaS procurement, renewals and access governance, so a vendor-management category was added and the description paraphrased."
+      },
+      {
+        "id": "3c9934feac0181bf",
+        "name": "DX App Experience Analytics (Legacy)",
+        "change": "Replaced the quoted description with a paraphrase based on Broadcom's datasheet and documentation."
+      },
+      {
+        "id": "3e484d4c1d8abecf",
+        "name": "Cloud Build",
+        "change": "Product is current; replaced the generic google.com URL with the Cloud Build product page and turned the quoted text into a paraphrase."
+      },
+      {
+        "id": "3eb6085edc1678c4",
+        "name": "Everbridge",
+        "change": "Product is current (Everbridge 360 AI); replaced the quoted marketing text with a factual paraphrase."
+      },
+      {
+        "id": "3ec1a5404cf26304",
+        "name": "Tabnine",
+        "change": "Entry looks current; replaced the quoted marketing text with a paraphrase and noted the page could not be re-opened."
+      },
+      {
+        "id": "3ec6a6c463d0fe62",
+        "name": "ARIS",
+        "change": "Replaced the quoted marketing text with a paraphrase and added enterprise architecture, since ARIS is a process and architecture modelling tool."
+      },
+      {
+        "id": "3eda59f340733a8a",
+        "name": "MuleSoft Anypoint Platform",
+        "change": "Confirmed current on Salesforce's page; replaced the quoted text with a paraphrase."
+      },
+      {
+        "id": "3ffa9e56749ff9e1",
+        "name": "NEOGOV Personality",
+        "change": "Rewrote the marketing-style description as a factual one, and noted that NEOGOV acquired High Line in 2018 and still supports Personality."
+      },
+      {
+        "id": "4034d73e6a62e0b7",
+        "name": "Tempus Resource",
+        "change": "Replaced the quoted blog sentence with a paraphrased description of resource portfolio management."
+      },
+      {
+        "id": "407256781ce23e8a",
+        "name": "OpenText Service Management",
+        "was": "OpenText Service Manager",
+        "change": "The product is now called OpenText Service Management (SMAX), so the name and description were updated."
+      },
+      {
+        "id": "40b0e1f17ffe4272",
+        "name": "PeoplesHR",
+        "change": "The vendor is hSenid Business Solutions PLC. The description and source were replaced with a registry listing."
+      },
+      {
+        "id": "3eddce735357211f",
+        "name": "N-able Cove Data Protection",
+        "change": "Cove covers servers, workstations and Microsoft 365, not only M365; switched to the main Cove product page and a broader description."
+      },
+      {
+        "id": "3ee7ede306ce9a59",
+        "name": "SecurityGen ACE",
+        "change": "The description was an award note; replaced it with a product description. ACE is a breach and attack simulation platform for telecom networks."
+      },
+      {
+        "id": "3ef7dfa22fea9396",
+        "name": "OpenText Application Security (Fortify)",
+        "change": "Replaced the Gartner source with OpenText's own data sheet. Fortify is an application security testing suite, which also fits vulnerability management."
+      },
+      {
+        "id": "3f639e2830cac837",
+        "name": "Chronosphere Platform",
+        "change": "Palo Alto Networks announced it will acquire Chronosphere; description rewritten as a neutral paraphrase and the acquisition noted."
+      },
+      {
+        "id": "3f6ca97d046ce1b9",
+        "name": "Arize AX",
+        "was": "Arize AI",
+        "change": "Replaced the quote with a factual description of Arize AX (LLM/agent tracing, evaluation, observability); added the AI development category."
+      },
+      {
+        "id": "3f8c8bcd8182f381",
+        "name": "DailyPay",
+        "change": "Replaced the marketing sentence with a factual description of DailyPay's on-demand pay (earned wage access) service."
+      },
+      {
+        "id": "3f9293d9c865ba35",
+        "name": "UKG Ready",
+        "change": "Rewrote the description as a factual paraphrase of the UKG product page and aimed it at organisations with under 200 employees."
+      },
+      {
+        "id": "3fdbdbdd56610534",
+        "name": "BMC FootPrints Service Core",
+        "was": "FootPrints",
+        "change": "Product is current as BMC FootPrints (Service Core); the description was a UI snippet and has been replaced."
+      },
+      {
+        "id": "40eca16f9667982e",
+        "name": "Now Assist (Otto, incl. Moveworks)",
+        "change": "Replaced the Gartner reviews page with ServiceNow's own Now Assist page, and wrote a specific description. ServiceNow completed the Moveworks acquisition in Dec 2025."
+      },
+      {
+        "id": "411fda9d5f5fc704",
+        "name": "BrightHR",
+        "change": "The old description was marketing copy. I replaced it with a factual paraphrase, and kept the HR and payroll classification."
+      },
+      {
+        "id": "413b6155b5e7678d",
+        "name": "Enterprise Asset Management (EAM)",
+        "change": "Switched to ServiceNow's own EAM product page, and the url now points to the product page too. The description was corrected."
+      },
+      {
+        "id": "416c867ae0750dad",
+        "name": "Optro (formerly AuditBoard)",
+        "was": "AuditBoard",
+        "change": "AuditBoard rebranded as Optro in March 2026, so the name was updated. The old sourceUrl was a demo page and the website is likely to have changed."
+      }
+    ],
+    "added": [
+      {
+        "id": "607e3633911a5fed",
+        "name": "Amazon SageMaker AI",
+        "vendor": "Amazon Web Services (AWS)",
+        "sub": "AI Development & Model Platforms",
+        "change": "Widely used AWS ML training and deployment platform that is missing from the catalogue (Bedrock is listed, SageMaker is not)."
+      },
+      {
+        "id": "184c74ef5c05e6fd",
+        "name": "Weights & Biases (W&B Models and Weave)",
+        "vendor": "Weights & Biases (CoreWeave)",
+        "sub": "AI Development & Model Platforms",
+        "change": "Widely used MLOps and LLM development platform that is not yet in the catalogue."
+      },
+      {
+        "id": "24dea2213626f84b",
+        "name": "NVIDIA AI Enterprise",
+        "vendor": "NVIDIA",
+        "sub": "AI Development & Model Platforms",
+        "change": "Recognised enterprise AI lifecycle software platform that is missing from the catalogue."
+      },
+      {
+        "id": "4d9730ef67651701",
+        "name": "Adobe Firefly",
+        "vendor": "Adobe",
+        "sub": "Generative AI & Assistants",
+        "change": "Adobe Firefly is a widely used generative AI product for images and creative content that was missing from the catalogue."
+      },
+      {
+        "id": "e380304cfcfc9e18",
+        "name": "ElevenLabs",
+        "vendor": "ElevenLabs",
+        "sub": "Generative AI & Assistants",
+        "change": "ElevenLabs is a recognised generative AI product for audio and voice that was missing from the catalogue."
+      },
+      {
+        "id": "454c48a87d4e900e",
+        "name": "Atlassian Rovo",
+        "vendor": "Atlassian",
+        "sub": "Generative AI & Assistants",
+        "change": "Atlassian Rovo is an AI assistant and agent product from Atlassian that was missing from the catalogue."
+      },
+      {
+        "id": "f35c350dc5e8092a",
+        "name": "Amazon Lex",
+        "vendor": "Amazon Web Services (AWS)",
+        "sub": "Conversational & Interpretive AI",
+        "change": "Widely used AWS conversational AI service missing from the catalogue."
+      },
+      {
+        "id": "3ff5c780b12484f0",
+        "name": "Google Dialogflow CX",
+        "vendor": "Google Cloud",
+        "sub": "Conversational & Interpretive AI",
+        "change": "Major cloud conversational AI platform not yet listed."
+      },
+      {
+        "id": "9f621486ef610ba7",
+        "name": "IBM watsonx Assistant",
+        "vendor": "IBM",
+        "sub": "Conversational & Interpretive AI",
+        "change": "Well-known enterprise conversational AI product from IBM missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "AI Development & Model Platforms",
+      "Generative AI & Assistants",
+      "Conversational & Interpretive AI"
+    ],
+    "summary": "Checked 40 tools: 4 confirmed, 31 updated, 0 discontinued, 5 could not be verified. Searched AI Development & Model Platforms, Generative AI & Assistants, Conversational & Interpretive AI for missing products: 9 added."
+  },
+  {
     "date": "2026-11-01",
     "checked": 40,
     "confirmed": 10,

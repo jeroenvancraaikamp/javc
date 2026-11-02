@@ -24,6 +24,9 @@
     "it-service-itsm": "2026-10-31",
     "it-strategy-architecture": "2026-11-01",
     "it-strategy-portfolio": "2026-11-01",
-    "platform-ai-agentic": "2026-11-01"
+    "platform-ai-agentic": "2026-11-01",
+    "platform-ai-development": "2026-11-02",
+    "platform-ai-generative": "2026-11-02",
+    "platform-ai-interpretive": "2026-11-02"
   }
 }
