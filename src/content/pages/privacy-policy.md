@@ -10,7 +10,7 @@ legal: true
 
 
 *Versie 0.1*  
-Deze pagina is voor het laatst aangepast op *24 oktober 2022*.
+Deze pagina is voor het laatst aangepast op *2 november 2026*.
 
   
 Wij zijn er van bewust dat u vertrouwen stelt in ons. Wij zien het dan ook als onze verantwoordelijkheid om uw privacy te beschermen. Op deze pagina laten we u weten welke gegevens we verzamelen als u onze website gebruikt, waarom we deze gegevens verzamelen en hoe we hiermee uw gebruikservaring verbeteren. Zo snapt u precies hoe wij werken. Dit privacybeleid is van toepassing op de diensten van *JAVC Management & Consultancy*. U dient zich ervan bewust te zijn dat *JAVC Management & Consultancy* niet verantwoordelijk is voor het privacybeleid van andere sites en bronnen. Door gebruik te maken van deze website geeft u aan het privacy beleid te accepteren.  
@@ -29,6 +29,14 @@ Wanneer u e-mail of andere berichten naar ons verzendt, is het mogelijk dat we d
 #### Dagelijkse update van de IT4IT Atlas
 
 Wanneer u zich aanmeldt voor de dagelijkse e-mail met de updates van de IT4IT Atlas, bewaren wij uw naam, uw e-mailadres, de taal van de pagina waarop u zich aanmeldde, de datum van aanmelding en het IP-adres, land en de plaats van waaruit u zich aanmeldde. Uw naam en e-mailadres gebruiken wij uitsluitend om u deze e-mail te sturen; het IP-adres, land en de plaats gebruiken wij alleen om misbruik van het aanmeldformulier te herkennen. U bevestigt uw aanmelding via een link in een e-mail; een niet-bevestigde aanmelding wordt na een week verwijderd. De e-mails worden verstuurd via onze e-maildienstverlener SMTP2GO. Onderaan iedere e-mail kunt u zich afmelden; uw gegevens worden dan direct verwijderd.
+
+#### Bezoekersstatistieken, chatbot en beveiliging
+
+Om te zien hoe de website wordt gebruikt, houden wij bij welke pagina's worden bekeken, in welke volgorde en op welk moment, met de website waarvandaan u kwam, het land en de plaats, het soort apparaat en de taal van uw browser. Daarvoor gebruiken wij geen cookies en bewaren wij geen IP-adres: bezoekers worden herkend aan een code die iedere dag verandert en niet naar u te herleiden is. Deze gegevens bewaren wij maximaal 400 dagen.
+
+Vragen die u aan de chatbot stelt, bewaren wij samen met het antwoord, de taal van de pagina, het land, de plaats en het IP-adres, om de chatbot te verbeteren en misbruik te herkennen. Het IP-adres wordt na 30 dagen gewist, de rest na maximaal 400 dagen.
+
+Om de website te beveiligen, leggen wij verzoeken om adressen die niet bestaan en op een aanval lijken (bijvoorbeeld pogingen om in te loggen op een beheeromgeving) vast met het IP-adres, het land, de plaats, de internetprovider en de browser of het programma dat werd gebruikt. Deze gegevens gebruiken wij alleen voor de beveiliging van de website en worden na 30 dagen verwijderd.
 
 #### Cookies
 

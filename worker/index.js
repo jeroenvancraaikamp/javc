@@ -10,7 +10,7 @@ import KNOWLEDGE from './knowledge.json';
 import WP_IDS from './wp-ids.json';
 // Large PNG pictures that were turned into much smaller JPGs (old path -> new path), so old links keep working.
 import IMAGE_RENAMES from './image-renames.json';
-import { logHit, logChat, logContact, statsData } from './stats.js';
+import { logHit, logChat, logContact, logProbe, cleanProbes, statsData } from './stats.js';
 import { turnstileConfig, humanCheck, tooFast } from './turnstile.js';
 import { contactMail } from '../scripts/atlas-mail.mjs';
 import { subscribe, confirm, unsubscribe, sendUpdates } from './atlas-subscribers.js';
@@ -196,7 +196,7 @@ async function chat(request, env, ctx) {
   const passages = context(found);
   const started = Date.now();
   const model = env.ANTHROPIC_API_KEY ? 'claude' : 'workers-ai';
-  const log = (ok, sources = []) => ctx.waitUntil(logChat(env, request, { question: last.content, model, sources, ms: Date.now() - started, ok })
+  const log = (ok, sources = [], answer = '') => ctx.waitUntil(logChat(env, request, { question: last.content, answer, lang, turns: msgs.length, model, sources, ms: Date.now() - started, ok })
     .catch((err) => console.error('stats log', err)));
 
   try {
@@ -208,7 +208,7 @@ async function chat(request, env, ctx) {
       .filter((c) => c.url && !seen.has(c.url) && seen.add(c.url))
       .slice(0, 3)
       .map((c) => ({ title: c.title, url: localPath(c.url, lang) }));
-    log(!!answer, sources.map((s) => s.url));
+    log(!!answer, sources.map((s) => s.url), answer);
     return json({ answer: answer ? localLinks(answer, lang) : SORRY.none[lang], sources });
   } catch (err) {
     console.error('chat error', err);
@@ -291,6 +291,8 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const to = redirectFor(url);
+    // Visits to the old WordPress login are almost always bots trying passwords: log them for the "Hack attempts" page.
+    if (to && /^\/(wp-admin|wp-login\.php)/.test(url.pathname)) ctx.waitUntil(logProbe(env, request, 301).catch((err) => console.error('probe', err)));
     if (to) return Response.redirect(new URL(to, url).toString(), 301);
     if (url.pathname === '/api/chat') return chat(request, env, ctx);
     if (url.pathname === '/api/hit') return logHit(request, env).catch((err) => { console.error('hit', err); return new Response(null, { status: 204 }); });
@@ -300,10 +302,15 @@ export default {
     if (url.pathname === '/api/atlas/subscribe') return (await guard(request, env, env.CONTACT_LIMITER)) ?? subscribe(request, env, ctx);
     if (url.pathname === '/api/atlas/confirm') return confirm(request, env, ctx);
     if (url.pathname === '/api/atlas/unsubscribe') return unsubscribe(request, env, ctx);
-    return env.ASSETS.fetch(request);
+    // The Worker only runs for files that are not on the site, so this is a missing page (or a hack attempt).
+    const res = await env.ASSETS.fetch(request);
+    if (res.status === 404 || res.status === 405) ctx.waitUntil(logProbe(env, request, res.status).catch((err) => console.error('probe', err)));
+    return res;
   },
   // Cron trigger (wrangler.jsonc): e-mail the daily IT4IT Atlas report to its subscribers.
   async scheduled(event, env, ctx) {
     ctx.waitUntil(sendUpdates(env).catch((err) => console.error('atlas updates', err)));
+    // Once an hour: delete logged hack attempts older than 30 days.
+    if (new Date(event.scheduledTime).getUTCMinutes() === 0) ctx.waitUntil(cleanProbes(env).catch((err) => console.error('clean probes', err)));
   },
 };
