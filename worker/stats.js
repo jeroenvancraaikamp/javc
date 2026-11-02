@@ -153,7 +153,21 @@ export async function logChat(env, request, { question, answer = '', lang = '', 
 }
 
 // Questions that try to make the chatbot leave its role (prompt injection) or probe it; shown with a label on the "Chat conversations" page.
-const INJECTION = /ignore (all |any |the )?(previous|prior|above|earlier)|disregard|forget (all|everything|your)|system ?prompt|your (instructions|prompt|rules)|jailbreak|developer mode|\bDAN\b|pretend (to be|you)|act as|you are now|role ?play|<\/?(system|passage|passages|instructions?)>|\[(system|inst)\]|reveal|api[ _-]?key|password|base64|negeer|vergeet (alle|je)|je instructies|systeemprompt|<script|select .* from|union select|\.\.\//i;
+const INJECTION = new RegExp([
+  // leave the role / show the instructions
+  String.raw`ignore (all |any |the |your )?(previous|prior|above|earlier)|disregard|forget (all|everything|your)|override|jailbreak|developer mode|debug(ging)? mode|for debugging|\bDAN\b`,
+  String.raw`system ?prompt|developer (message|instructions)|your (instructions|prompt|rules|guidelines|configuration|context)|verbatim|first \d+ (lines|words)|repeat (everything|the text) above`,
+  String.raw`pretend (to be|you)|act as|you are now|role ?play|i am (the |a )?(site |website )?(admin|administrator|owner|developer)|administrator here|admin here`,
+  String.raw`<\/?(system|passage|passages|instructions?)>|\[(system|inst)\]`,
+  // ask for secrets, internals or other people's data
+  String.raw`reveal|api[ _-]?keys?|tokens?\b|secrets?\b|credentials?|password|connection strings?|environment variables?|env vars?|\.env\b|base64`,
+  String.raw`data ?sources?|databases? (tables?|names?|schema)|databases? (you|can)|or databases|\btables? (names?|and)|its columns|columns? (of|in|names?)|schema|endpoints?|tools?,? functions|functions? (you|or)|can (you )?(access|query)|have access to`,
+  String.raw`e-?mail addresses|subscribers?\b|contact (form )?(submissions|requests)|visitors?'? (data|ip)|ip address|personal data|members? list`,
+  // Dutch
+  String.raw`negeer|vergeet (alle|je)|je instructies|systeemprompt|beheerder|wachtwoord|omgevingsvariabelen|databank|tabellen|e-?mailadressen|abonnees|persoonsgegevens`,
+  // code
+  String.raw`<script|select .* from|union select|\.\.\/`,
+].join('|'), 'i');
 
 // --- /stats -------------------------------------------------------------------
 
