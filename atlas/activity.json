@@ -1,5 +1,249 @@
 [
   {
+    "date": "2026-11-03",
+    "checked": 40,
+    "confirmed": 7,
+    "unverified": 1,
+    "updated": [
+      {
+        "id": "41ae19535c72f0ff",
+        "name": "Dropzone AI",
+        "change": "Dropzone AI is an active AI SOC analyst product; the description was marketing copy, so it is now a factual one with a more specific source page."
+      },
+      {
+        "id": "41df02eb9753a3fa",
+        "name": "DRYiCE IntelliOps",
+        "change": "Product is still offered as DRYiCE IntelliOps (AIOps); the quoted description was replaced with a short paraphrase. Observability and automation are both covered."
+      },
+      {
+        "id": "42079909fa3066f2",
+        "name": "Rittal Liquid Cooling Package (LCP)",
+        "was": "Rittal Liquid Cooling Package (LCP) Management",
+        "change": "Rittal's LCP is a hardware cooling product line rather than management software; the description is now a paraphrase and the source is a catalogue page."
+      },
+      {
+        "id": "42219fa85dd164b2",
+        "name": "Kyriba",
+        "change": "Kyriba is still offered as the Liquidity Performance platform, a cloud treasury management system. The description is now a neutral paraphrase."
+      },
+      {
+        "id": "422d4cc3070f1580",
+        "name": "Securiti Data Command Center",
+        "change": "Veeam announced it would acquire Securiti AI, and the Data Command Center is to be offered alongside Veeam's products. Source replaced with a news article."
+      },
+      {
+        "id": "426a9495306a204d",
+        "name": "Suricata",
+        "change": "Suricata is still current; I replaced the quoted description with a paraphrase."
+      },
+      {
+        "id": "42bfec91d5df05da",
+        "name": "Purview Information Protection",
+        "change": "The description is still accurate; I replaced the generic microsoft.com URL with the Microsoft Purview documentation page."
+      },
+      {
+        "id": "4300740191148780",
+        "name": "Pirani",
+        "change": "The product is still offered; I replaced the quoted description with a paraphrase covering the AML module."
+      },
+      {
+        "id": "430a5f99d013794a",
+        "name": "WhaTap",
+        "change": "WhaTap is still active; I replaced the documentation-site blurb with a description of the monitoring product."
+      },
+      {
+        "id": "433af848e98c21c0",
+        "name": "Infraon Desk",
+        "change": "The product is still listed; I replaced the quoted description with a paraphrase of the ITIL support claim."
+      },
+      {
+        "id": "4341f0a1565a2f00",
+        "name": "Falcon Spotlight (Exposure Management)",
+        "change": "The description was a verbatim quote, so I replaced it with a paraphrase. The product is now also marketed under CrowdStrike Falcon Exposure Management."
+      },
+      {
+        "id": "434349a9d7cdddfd",
+        "name": "Reflectiz Platform",
+        "change": "The description was a truncated verbatim quote, so I replaced it with a paraphrase of the platform's purpose."
+      },
+      {
+        "id": "434f4c271995ab61",
+        "name": "NetSPI",
+        "was": "NetSPI (merging with Synack)",
+        "change": "The NetSPI and Synack merger has been completed, so the name no longer says 'merging'. The description was a verbatim quote, so I paraphrased it."
+      },
+      {
+        "id": "43518309a7ae78c5",
+        "name": "Semperis Directory Services Protector for Active Directory",
+        "change": "The description was a verbatim quote that did not describe the product. I replaced it with a paraphrase and added the detection and response subcategory."
+      },
+      {
+        "id": "44871614be558f76",
+        "name": "Entrust Identity",
+        "change": "Description was a verbatim marketing quote; replaced with a short paraphrase from Entrust's IDaaS page."
+      },
+      {
+        "id": "4510d333c133ece1",
+        "name": "Marval Service Management",
+        "change": "Description was generic; rewritten from Gartner Peer Insights listing, which names the specific ITSM processes covered."
+      },
+      {
+        "id": "4558986801d25a3d",
+        "name": "Retool",
+        "change": "Replaced a 2021 report quote with a current description: Retool now covers internal apps, workflows and AI agents."
+      },
+      {
+        "id": "458adb854e121ea4",
+        "name": "Ollama",
+        "change": "Description was about a model partnership, not the product, and categories were off; Ollama is a tool for running language models locally."
+      },
+      {
+        "id": "45bfa4af1271d4e3",
+        "name": "Open iT Analyzer for ANSYS Software",
+        "change": "Description was a truncated quote; replaced with a paraphrase of the software-license usage monitoring and reporting purpose."
+      },
+      {
+        "id": "44136b9b6f2d03d0",
+        "name": "Ivanti Neurons for ITAM",
+        "change": "Replaced the Gartner Peer Insights source with the Ivanti listing on the Microsoft marketplace and a fuller description covering lifecycle, financial and contract data."
+      },
+      {
+        "id": "4433ee80df9cc29b",
+        "name": "Proactivanet",
+        "change": "Replaced the marketplace blog description with a product-level one: Proactivanet is ITSM and ITAM software, so asset categories were added."
+      },
+      {
+        "id": "469e48da6a14f6bf",
+        "name": "Palo Alto Networks Cortex XSOAR",
+        "change": "Replaced a quoted sentence about the Demisto acquisition with a factual description of what Cortex XSOAR does, and added the automation subcategory."
+      },
+      {
+        "id": "46ad6d759d28ed9f",
+        "name": "LogicGate Risk Cloud",
+        "change": "Replaced a UI help-page quote with a factual description of the Risk Cloud platform, and added the IT governance, risk and compliance subcategory."
+      },
+      {
+        "id": "46be26dec1433362",
+        "name": "Informatica Master Data Management (MDM)",
+        "change": "Replaced a generic MDM buying guide with a description of Informatica's own MDM product."
+      },
+      {
+        "id": "476c3b59394d0be6",
+        "name": "BMC Helix Discovery",
+        "change": "Moved the entry to the IT assets and configuration subcategory, since Helix Discovery is mainly asset and dependency discovery."
+      },
+      {
+        "id": "47fa2737e8f111ad",
+        "name": "Digital.ai Deploy",
+        "change": "Rewrote the truncated marketing quote as a short factual description, and added the automation subcategory."
+      },
+      {
+        "id": "462a752ed3753b9d",
+        "name": "Qooling",
+        "change": "Qooling is a QHSE and workplace safety platform, not a general risk platform, so I changed the description and category to health, safety and environmental."
+      },
+      {
+        "id": "466b848897d36017",
+        "name": "Subversion (SVN)",
+        "change": "Replaced the Wikipedia source with the project's own site and gave Apache Subversion's own URL."
+      },
+      {
+        "id": "48bab3821ca56614",
+        "name": "eG Enterprise",
+        "change": "Replaced the quoted description with a paraphrase and a documentation source. The producer's docs say 500+ technologies, not 650+."
+      },
+      {
+        "id": "49037454e98f89bf",
+        "name": "MOVEit Transfer",
+        "was": "MoveIT Transfer",
+        "change": "Switched the source to Progress's own MOVEit Transfer datasheet, which describes managed file transfer. Removed the API-management category."
+      },
+      {
+        "id": "491a6cd4f06630e6",
+        "name": "NorthStar Navigator",
+        "change": "Replaced the quoted description with a paraphrase. NorthStar Navigator is a risk-based vulnerability management platform that prioritizes remediation."
+      },
+      {
+        "id": "4950b3e95b8ca770",
+        "name": "BMC Remedy Service Management Suite (Legacy)",
+        "change": "The old source was a BMC release-process page that only mentions Remedy. Remedy ITSM is now mostly branded BMC Helix ITSM, so I added a note and a better source."
+      }
+    ],
+    "added": [
+      {
+        "id": "b241ff9b580f9cf9",
+        "name": "Azure Machine Learning",
+        "vendor": "Microsoft",
+        "sub": "Predictive AI",
+        "change": "Major Azure ML model platform for predictive modelling that is missing from the catalogue."
+      },
+      {
+        "id": "38d53c1807fae232",
+        "name": "IBM SPSS Modeler",
+        "vendor": "IBM",
+        "sub": "Predictive AI",
+        "change": "Widely used IBM predictive analytics and data mining tool that is not yet listed."
+      },
+      {
+        "id": "59c3fa846dace61c",
+        "name": "KNIME Analytics Platform",
+        "vendor": "KNIME",
+        "sub": "Predictive AI",
+        "change": "Widely recognised open-source data science and ML platform that is missing from the catalogue."
+      },
+      {
+        "id": "0674fe45604e2b63",
+        "name": "FICO Xpress Optimization",
+        "vendor": "FICO",
+        "sub": "Prescriptive AI & Optimization",
+        "change": "Widely used commercial optimization solver suite, a peer of Gurobi and CPLEX, that was missing from the catalogue."
+      },
+      {
+        "id": "1f029141a84c5100",
+        "name": "Hexaly Optimizer",
+        "vendor": "Hexaly",
+        "sub": "Prescriptive AI & Optimization",
+        "change": "Recognised hybrid optimization solver for routing and scheduling that was missing from the catalogue."
+      },
+      {
+        "id": "14cadb154858779f",
+        "name": "AIMMS",
+        "vendor": "AIMMS",
+        "sub": "Prescriptive AI & Optimization",
+        "change": "Established prescriptive analytics and optimization modeling platform that was missing from the catalogue."
+      },
+      {
+        "id": "54b94bb2fabef363",
+        "name": "Spotfire",
+        "vendor": "Cloud Software Group (TIBCO Spotfire)",
+        "sub": "Business Intelligence & Analytics",
+        "change": "Widely recognised BI and visual analytics product that was missing from the catalogue."
+      },
+      {
+        "id": "923224307d84cecd",
+        "name": "Zoho Analytics",
+        "vendor": "Zoho",
+        "sub": "Business Intelligence & Analytics",
+        "change": "Widely used cloud BI product from Zoho that was not yet listed."
+      },
+      {
+        "id": "8672fbee3e585b8e",
+        "name": "Alteryx One",
+        "vendor": "Alteryx",
+        "sub": "Business Intelligence & Analytics",
+        "change": "Recognised analytics automation platform that was missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Predictive AI",
+      "Prescriptive AI & Optimization",
+      "Business Intelligence & Analytics"
+    ],
+    "summary": "Checked 40 tools: 7 confirmed, 32 updated, 0 discontinued, 1 could not be verified. Searched Predictive AI, Prescriptive AI & Optimization, Business Intelligence & Analytics for missing products: 9 added."
+  },
+  {
     "date": "2026-11-02",
     "checked": 40,
     "confirmed": 4,
