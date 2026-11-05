@@ -30,6 +30,9 @@
     "platform-ai-interpretive": "2026-11-02",
     "platform-ai-predictive": "2026-11-03",
     "platform-ai-prescriptive": "2026-11-03",
-    "platform-data-analytics": "2026-11-03"
+    "platform-data-analytics": "2026-11-03",
+    "platform-data-management": "2026-11-05",
+    "platform-data-science": "2026-11-05",
+    "platform-middleware-api": "2026-11-05"
   }
 }

@@ -1,5 +1,194 @@
 [
   {
+    "date": "2026-11-05",
+    "checked": 40,
+    "confirmed": 14,
+    "unverified": 3,
+    "updated": [
+      {
+        "id": "4afafd78873a1bed",
+        "name": "SAP Integration Suite",
+        "change": "Product is current; switched to the main SAP product page and rewrote the description in plain wording, with the url pointing to the SAP product page."
+      },
+      {
+        "id": "4b26b0e248e2fdc3",
+        "name": "Setyl",
+        "change": "Setyl is still offered; its homepage now covers hardware and software asset management, spend and compliance, so the description was refreshed."
+      },
+      {
+        "id": "4b4e7edcef08f346",
+        "name": "greytHR",
+        "change": "greytHR is still offered, but the description copied marketing text with a typo; replaced with a factual paraphrase of the homepage."
+      },
+      {
+        "id": "4b7b16d357482c59",
+        "name": "Apache Maven",
+        "change": "Maven is active; url changed to the Maven project site and the description to a clean paraphrase."
+      },
+      {
+        "id": "49ff6be8ecc9e193",
+        "name": "SAP Concur",
+        "change": "Switched the source to SAP Concur's own site, pointed the URL at the product, and added expense and invoice scope."
+      },
+      {
+        "id": "4a4a55fe5158a99e",
+        "name": "Idira (formerly CyberArk) Privileged Access Manager",
+        "change": "Replaced the Gartner reviews source with Palo Alto Networks' own Idira page. CyberArk was rebranded as Idira in May 2026."
+      },
+      {
+        "id": "4af688cd0e45da8a",
+        "name": "OutSystems",
+        "change": "Rewrote the description as a paraphrase. OutSystems now presents itself as a low-code platform for building apps and AI agents."
+      },
+      {
+        "id": "495a441f3234794e",
+        "name": "BlackLine",
+        "change": "Replaced the Gartner Reviews source, which had a tracking parameter, with BlackLine's own site. The platform is now described as agentic financial operations covering record-to-report and invoice-to-cash."
+      },
+      {
+        "id": "495c0da8896ec10b",
+        "name": "Vigilent",
+        "change": "Replaced the quoted PDF excerpt with a short paraphrase from Vigilent's homepage. Added power and cooling as a subcategory because the product optimizes cooling."
+      },
+      {
+        "id": "495e1a96f79736fa",
+        "name": "Bacula Enterprise",
+        "change": "The product is current. Replaced the truncated quoted description with a paraphrase of the producer's documentation page."
+      },
+      {
+        "id": "498d8e7ce1254206",
+        "name": "Shuffle",
+        "change": "Product is current. Replaced the verbatim quote with a paraphrase and added the security-orchestration subcategory."
+      },
+      {
+        "id": "49dbc2e1fb395e20",
+        "name": "H3C Intelligent Management Center (IMC)",
+        "change": "Product page is live. Replaced the description, which contained a stray 'Content type' fragment, with a clean paraphrase."
+      },
+      {
+        "id": "4d7fe5fc84e261b0",
+        "name": "Fexa CMMS",
+        "change": "Replaced the marketing-style description with a factual one, based on a third-party directory because I could not check the producer page."
+      },
+      {
+        "id": "4c104eab432ef7a4",
+        "name": "Camel 360",
+        "change": "Switched to the producer's own site as the source and rewrote the description to cover vulnerability scanning and risk matrices."
+      },
+      {
+        "id": "4c24b3db51d84595",
+        "name": "SEEBURGER Business Integration Suite",
+        "change": "Replaced the quoted marketing text with a short paraphrase and pointed to the dedicated BIS product page."
+      },
+      {
+        "id": "4c905edd85167ff0",
+        "name": "USU IT Service Management",
+        "change": "The old source described USU service monitoring, not ITSM. Replaced it with the USU IT Service Management page and a new description."
+      },
+      {
+        "id": "4cc7522103388082",
+        "name": "Brinqa Attack Surface Intelligence Platform",
+        "change": "Switched to Brinqa's own site and updated the description to its current exposure-management positioning."
+      },
+      {
+        "id": "4e83d9dcb8e083f4",
+        "name": "Levelpath",
+        "change": "Levelpath is now positioned as an autonomous source-to-pay procurement platform (Ranger); the description was a vague quote and is replaced by a factual paraphrase."
+      },
+      {
+        "id": "4f1bb855a9114e44",
+        "name": "Rapid7 InsightIDR",
+        "change": "Docs moved to docs.rapid7.com and InsightIDR is now described as SIEM/XDR; the source URL and description were updated."
+      },
+      {
+        "id": "4ffa9a8321abab1a",
+        "name": "resilienceOS",
+        "change": "Description was a quoted support-service sentence; replaced with a paraphrase of what resilienceOS does, and added a second subcategory is not warranted."
+      },
+      {
+        "id": "4ffe0658bf34709f",
+        "name": "NuView HCM",
+        "change": "Switched to IgniteTech's own NuView page; the product now comprises NuView HRMS and CORT Payroll."
+      },
+      {
+        "id": "5124166db4b2ce6c",
+        "name": "Prometheus",
+        "change": "Replaced the news-article source with CNCF's Prometheus project report and a paraphrased description."
+      },
+      {
+        "id": "514968802814d958",
+        "name": "Hosted Graphite",
+        "change": "Replaced the truncated quote with a paraphrased description from MetricFire's Hosted Graphite page."
+      }
+    ],
+    "added": [
+      {
+        "id": "1aede39f2aceb815",
+        "name": "Denodo Platform",
+        "vendor": "Denodo",
+        "sub": "Data Platforms & Governance",
+        "change": "Widely recognised data virtualization and logical data management platform that is missing from the catalogue."
+      },
+      {
+        "id": "b2151c79c62ff4fc",
+        "name": "SAP Datasphere",
+        "vendor": "SAP",
+        "sub": "Data Platforms & Governance",
+        "change": "SAP's data warehouse, catalog and data fabric service is missing. Only the BTP umbrella is listed."
+      },
+      {
+        "id": "6feddcc9634652bd",
+        "name": "AWS Glue",
+        "vendor": "Amazon Web Services",
+        "sub": "Data Platforms & Governance",
+        "change": "Widely used AWS data integration and catalog service that is missing. Redshift is listed, but Glue is not."
+      },
+      {
+        "id": "d9fc80ddf0ac4365",
+        "name": "Anaconda AI Platform",
+        "vendor": "Anaconda",
+        "sub": "Data Science & Machine Learning Platforms",
+        "change": "Widely used open-source data science distribution and enterprise platform that was missing."
+      },
+      {
+        "id": "16d2d6c18b4502f8",
+        "name": "Anyscale (Ray)",
+        "vendor": "Anyscale",
+        "sub": "Data Science & Machine Learning Platforms",
+        "change": "Leading distributed ML compute platform and framework that was missing."
+      },
+      {
+        "id": "86f69df399697379",
+        "name": "Posit Workbench",
+        "vendor": "Posit",
+        "sub": "Data Science & Machine Learning Platforms",
+        "change": "Widely used enterprise R/Python data science environment that was missing."
+      },
+      {
+        "id": "f36f64f24d21422b",
+        "name": "Traefik Hub",
+        "vendor": "Traefik Labs",
+        "sub": "API Gateways & Service Connectivity",
+        "change": "Widely used cloud-native gateway vendor whose commercial API gateway and management product was missing."
+      },
+      {
+        "id": "e1afbadf5a4f08c9",
+        "name": "Envoy Proxy",
+        "vendor": "Cloud Native Computing Foundation (Envoy project)",
+        "sub": "API Gateways & Service Connectivity",
+        "change": "Foundational open-source proxy and gateway project for service connectivity that was missing."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Data Platforms & Governance",
+      "Data Science & Machine Learning Platforms",
+      "API Gateways & Service Connectivity"
+    ],
+    "summary": "Checked 40 tools: 14 confirmed, 23 updated, 0 discontinued, 3 could not be verified. Searched Data Platforms & Governance, Data Science & Machine Learning Platforms, API Gateways & Service Connectivity for missing products: 8 added."
+  },
+  {
     "date": "2026-11-03",
     "checked": 40,
     "confirmed": 7,
