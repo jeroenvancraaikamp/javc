@@ -33,6 +33,9 @@
     "platform-data-analytics": "2026-11-03",
     "platform-data-management": "2026-11-05",
     "platform-data-science": "2026-11-05",
-    "platform-middleware-api": "2026-11-05"
+    "platform-middleware-api": "2026-11-05",
+    "platform-middleware-application": "2026-11-06",
+    "platform-middleware-communication": "2026-11-06",
+    "platform-middleware-cache": "2026-11-06"
   }
 }

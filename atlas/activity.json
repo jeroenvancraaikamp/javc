@@ -1,5 +1,234 @@
 [
   {
+    "date": "2026-11-06",
+    "checked": 40,
+    "confirmed": 6,
+    "unverified": 5,
+    "updated": [
+      {
+        "id": "5440cfdb74673848",
+        "name": "Power Apps (Power Platform)",
+        "change": "Replaced the truncated quoted description with a paraphrase of Microsoft Learn's current Power Apps overview."
+      },
+      {
+        "id": "54a2b2886bdc6ecf",
+        "name": "Cisco Secure Email and Web Manager",
+        "was": "Cisco Secure Email",
+        "change": "The cited page describes Cisco Secure Email and Web Manager, a central management and reporting appliance, not the Secure Email gateway, so the name and description now match it."
+      },
+      {
+        "id": "54b188f9025dc68a",
+        "name": "Beak",
+        "change": "Replaced the quoted description with a paraphrase and added endpoint management, since BEAK includes patch management and remote assistance."
+      },
+      {
+        "id": "54bac451885be494",
+        "name": "IT Operations Management (ITOM/CMDB)",
+        "change": "Rewrote the description to match what ServiceNow's ITOM page states, because the discovery and service-graph claims were not verified on that page."
+      },
+      {
+        "id": "53ab71825750e5f1",
+        "name": "Informatica Intelligent Data Management Cloud",
+        "change": "The source was an old healthcare brochure PDF, so I replaced it with a current page and a paraphrased description. I also added the data platform subcategory."
+      },
+      {
+        "id": "53cf4145ba259e0c",
+        "name": "NinjaOne",
+        "change": "NinjaOne still offers the platform. Its backup capability now justifies an added recovery subcategory, and I pointed the source at the platform page."
+      },
+      {
+        "id": "53fbaa3d3d3f676d",
+        "name": "LaunchDarkly Feature Management Platform",
+        "change": "LaunchDarkly is still active. I replaced the old federal security PDF with a current producer page and a paraphrased description."
+      },
+      {
+        "id": "54cb6b6d510c7c2c",
+        "name": "Oracle EPM Cloud",
+        "change": "Oracle's EPM page still describes the product, but the description now covers AI agents. Url now points to the product page, and a Finance subcategory was added for IT-independent planning and close."
+      },
+      {
+        "id": "5503bf09e84c357d",
+        "name": "Root (Aikido Hardened Images)",
+        "was": "Root",
+        "change": "Root.io was acquired by Aikido Security and root.io now serves Aikido's hardened images page, so vendor, description, source and category were revised."
+      },
+      {
+        "id": "54f5cff4ebc829fd",
+        "name": "OneUptime",
+        "change": "Replaced the quoted tagline with a factual description of the current open-source observability and incident platform, and added ITSM for incident and on-call handling."
+      },
+      {
+        "id": "551f7527af42f910",
+        "name": "Frends iPaaS",
+        "change": "The stored description was a garbled page fragment; replaced it with a proper paraphrase of the producer's iPaaS page."
+      },
+      {
+        "id": "55f6d38f90c8757d",
+        "name": "Igloo Software",
+        "change": "Igloo was acquired by Appspace (announced Sept 2025) and igloosoftware.com now redirects to appspace.com. I updated the vendor, source and note."
+      },
+      {
+        "id": "56481b8aba628f87",
+        "name": "License Dashboard License Manager",
+        "change": "The description was a verbatim marketing quote, so I replaced it with a neutral paraphrase. The product still appears to be offered."
+      },
+      {
+        "id": "5649cec631b4ff30",
+        "name": "Hyland OnBase",
+        "change": "The old description was generic company text. I replaced it with a product-specific description of OnBase as a content management product."
+      },
+      {
+        "id": "565c91455fe5b734",
+        "name": "Jamf Pro",
+        "change": "Jamf Pro is still offered. I replaced the marketing quote with a paraphrase and pointed the source to the Jamf Pro product page."
+      },
+      {
+        "id": "5675ad0a9081cdf4",
+        "name": "Treblle",
+        "change": "Treblle is an API intelligence platform covering the API lifecycle. I replaced the marketing quote and added API management as a category."
+      },
+      {
+        "id": "567b01a69bcc01f1",
+        "name": "Fleet",
+        "change": "Fleet is an open-source device management (MDM, patching, vulnerability) platform; added endpoint management category and a clean source URL."
+      },
+      {
+        "id": "5798f5322c83cfb4",
+        "name": "Clarive",
+        "change": "Clarive's site now describes a unified application delivery workflow (plan, change, track, deploy); description refreshed and release automation added."
+      },
+      {
+        "id": "579c3a9f7a2f0e02",
+        "name": "Domino Enterprise AI Platform",
+        "change": "Domino now uses domino.ai and describes an enterprise AI platform to build, scale and govern AI applications; URL and description updated."
+      },
+      {
+        "id": "57f2dd67b6be37ef",
+        "name": "Youforce (formerly Raet Youforce)",
+        "was": "Raet Youforce (Legacy)",
+        "change": "The product is now sold as Youforce by Visma Raet, so the 'Legacy' label is outdated. I replaced the Gartner source with Visma's own page."
+      },
+      {
+        "id": "57f70632efb9d269",
+        "name": "Extreme Networks ExtremeCloud IQ",
+        "change": "The description was a marketing quote; I replaced it with a factual paraphrase from the producer's page."
+      },
+      {
+        "id": "583393f801db4e8c",
+        "name": "Cosmo-hr",
+        "change": "Switched the source to the producer's Business Central page and refined the description."
+      },
+      {
+        "id": "5891f369b3752754",
+        "name": "Grafana OSS",
+        "change": "Replaced the quoted text with a paraphrase and moved to the official Grafana OSS documentation as the source."
+      },
+      {
+        "id": "5897a27316bfea7b",
+        "name": "Choreo",
+        "change": "Choreo is now described as an internal developer platform, and the 2020-era press release was replaced by a more current source."
+      },
+      {
+        "id": "58a2adaddc098b20",
+        "name": "Domotz",
+        "change": "Replaced the quoted text with a short paraphrase. The Domotz about page confirms the product."
+      },
+      {
+        "id": "58c0fddc1d32138d",
+        "name": "Tray.ai (Tray Universal Automation Cloud)",
+        "change": "Switched the source to the producer's own page. Tray.io is now Tray.ai, and the platform is described as an AI-ready iPaaS."
+      },
+      {
+        "id": "58d00a417a9cf116",
+        "name": "Fortinet FortiSIEM",
+        "change": "The old description was a promotional text fragment. Replaced it with a factual description of FortiSIEM as a SIEM product."
+      },
+      {
+        "id": "596ec7441544dea2",
+        "name": "Corrigo",
+        "change": "Switched the source to JLL's own Corrigo product page, which describes a cloud CMMS for work orders, assets and vendors."
+      },
+      {
+        "id": "59e9df1a196c89c6",
+        "name": "erwin Evolve",
+        "change": "Replaced the truncated quotation with a paraphrase. The Quest product page confirms erwin Evolve is still offered."
+      }
+    ],
+    "added": [
+      {
+        "id": "6de1a928c825f112",
+        "name": "Apache TomEE",
+        "vendor": "Apache Software Foundation",
+        "sub": "Application Servers & Runtimes",
+        "change": "Widely recognised open-source Jakarta EE server based on Tomcat that was missing from the catalogue."
+      },
+      {
+        "id": "a7ff360d3e2c45da",
+        "name": "Quarkus",
+        "vendor": "Quarkus project (Red Hat-sponsored open source)",
+        "sub": "Application Servers & Runtimes",
+        "change": "Widely adopted Java runtime for cloud-native applications that was missing from the catalogue."
+      },
+      {
+        "id": "6b3e79aa261aaa68",
+        "name": "Spring Boot",
+        "vendor": "Broadcom (VMware Tanzu / Spring)",
+        "sub": "Application Servers & Runtimes",
+        "change": "The most widely used Java application runtime framework and it was missing from the catalogue."
+      },
+      {
+        "id": "e2b9982d59c4aa64",
+        "name": "Redpanda",
+        "vendor": "Redpanda Data",
+        "sub": "Communication & Messaging Servers",
+        "change": "Widely used Kafka-compatible event streaming platform that is missing from the catalogue."
+      },
+      {
+        "id": "0a3481e2eb1db895",
+        "name": "Apache ActiveMQ Classic",
+        "vendor": "Apache Software Foundation",
+        "sub": "Communication & Messaging Servers",
+        "change": "The Classic broker is a distinct, widely deployed ActiveMQ product, and only Artemis is currently listed."
+      },
+      {
+        "id": "b4f9731b5bd9a599",
+        "name": "Azure Service Bus",
+        "vendor": "Microsoft",
+        "sub": "Communication & Messaging Servers",
+        "change": "Major managed cloud message broker from Microsoft that is missing from the catalogue."
+      },
+      {
+        "id": "cd0fbf9625161ef7",
+        "name": "Amazon ElastiCache",
+        "vendor": "Amazon Web Services",
+        "sub": "Caches & In-memory Data Stores",
+        "change": "Widely used managed cache service from AWS, missing from the in-memory stores subcategory."
+      },
+      {
+        "id": "0c2facb0e861e2a9",
+        "name": "Apache Ignite",
+        "vendor": "Apache Software Foundation",
+        "sub": "Caches & In-memory Data Stores",
+        "change": "Well-known open-source in-memory data grid and cache, absent from the catalogue."
+      },
+      {
+        "id": "90e9b7fd8e515eab",
+        "name": "Oracle Coherence",
+        "vendor": "Oracle",
+        "sub": "Caches & In-memory Data Stores",
+        "change": "Leading enterprise Java in-memory data grid from Oracle, missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Application Servers & Runtimes",
+      "Caches & In-memory Data Stores",
+      "Communication & Messaging Servers"
+    ],
+    "summary": "Checked 40 tools: 6 confirmed, 29 updated, 0 discontinued, 5 could not be verified. Searched Application Servers & Runtimes, Caches & In-memory Data Stores, Communication & Messaging Servers for missing products: 9 added."
+  },
+  {
     "date": "2026-11-05",
     "checked": 40,
     "confirmed": 14,
