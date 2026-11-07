@@ -1,5 +1,236 @@
 [
   {
+    "date": "2026-11-07",
+    "checked": 40,
+    "confirmed": 7,
+    "unverified": 3,
+    "updated": [
+      {
+        "id": "5a4a698e43dc6d37",
+        "name": "Camms.Risk",
+        "change": "Replaced scraped marketing text with a factual description; Camms is now part of Riskonnect, and the wording was not checked against a live page."
+      },
+      {
+        "id": "5a55b32f69b2f200",
+        "name": "Appian",
+        "change": "Replaced a marketing quote with a factual description of the Appian platform."
+      },
+      {
+        "id": "5d49d1b2513e1d28",
+        "name": "Caveonix Cloud",
+        "change": "Caveonix Cloud covers posture management, workload protection and GRC, so I added protection and governance categories and used a clearer source."
+      },
+      {
+        "id": "5d8b194bcd7deec4",
+        "name": "Unitrends",
+        "change": "Replaced the quoted datasheet text with a short paraphrase and a current Kaseya documentation source."
+      },
+      {
+        "id": "5dc64d0e4430ca6f",
+        "name": "HCP Terraform",
+        "change": "The description covered only the Infragraph feature, so I rewrote it for HCP Terraform and moved the category to automation."
+      },
+      {
+        "id": "5e172944f74ce792",
+        "name": "Cypago",
+        "change": "Replaced the quoted marketing sentence with a short paraphrase. Cypago is a current cyber GRC and compliance automation platform."
+      },
+      {
+        "id": "5e185fbf782b2ffc",
+        "name": "MLflow",
+        "change": "MLflow now presents itself as an open source AI engineering platform for agents, LLMs and ML. I replaced the quote and changed the subcategories, dropping predictive AI."
+      },
+      {
+        "id": "5e4e3102a1e29f05",
+        "name": "Scality RING / ARTESCA",
+        "change": "Scality's products page now lists ADI, ARTESCA and RING. I replaced the truncated quote with a paraphrase and added backup and recovery for ARTESCA."
+      },
+      {
+        "id": "5ed4b03707c72fa0",
+        "name": "UrBackup",
+        "change": "UrBackup is still active (server 2.5.38 listed). I replaced the truncated quote with a full paraphrase."
+      },
+      {
+        "id": "5ba39b81f11a28d8",
+        "name": "npm",
+        "change": "The description was a quote rather than a paraphrase, so I replaced it. Vendor is now GitHub, which owns npm."
+      },
+      {
+        "id": "5d20ed7d3ad35c33",
+        "name": "Looker",
+        "change": "The url pointed to google.com and the source was a Gartner page, so I replaced both with Google Cloud pages. The description is now more specific."
+      },
+      {
+        "id": "5d23d8791899256f",
+        "name": "Nexsan Unity Storage Manager",
+        "change": "The description was a quote about one model, so I replaced it with a paraphrase from the Nexsan Unity page. Nexsan's own pages describe the Unity hardware line, and I did not confirm a product called 'Unity Storage Manager'."
+      },
+      {
+        "id": "5f24d5628b8bb5cb",
+        "name": "Heal AIOps Platform",
+        "change": "Description was a quoted marketing sentence; replaced with a short paraphrase. The product still appears to be offered."
+      },
+      {
+        "id": "5f58d7b749a2c5bc",
+        "name": "VIA AIOps",
+        "change": "The product is still offered, but the producer now calls it Vitria VIA, an event-intelligence (AIOps) platform for service assurance. I replaced the truncated quote with a paraphrase."
+      },
+      {
+        "id": "5f69c37e28ab7fe5",
+        "name": "GitHub Copilot",
+        "change": "The source was a generic Microsoft Copilot roadmap page; it now points to GitHub's own Copilot documentation and has a real description."
+      },
+      {
+        "id": "5f88b1ef5cd7ab55",
+        "name": "TeamCity",
+        "change": "Replaced an old comparison PDF with the current TeamCity documentation and a paraphrased description."
+      },
+      {
+        "id": "5f93e330a6b8fc60",
+        "name": "Kubermatic Kubernetes Platform",
+        "change": "The description is now a paraphrase of the producer's page. The category changed from development tooling to container platforms, because KKP is a Kubernetes cluster management platform."
+      },
+      {
+        "id": "5fb807c51529c02e",
+        "name": "Icinga",
+        "change": "Replaced the quoted description with an original paraphrase based on Icinga's own page."
+      },
+      {
+        "id": "5fcbc3f78de35914",
+        "name": "Integrated Risk Management (IRM)",
+        "change": "Switched sourceUrl to ServiceNow's dedicated Integrated Risk Management product page. The entry stays otherwise correct."
+      },
+      {
+        "id": "5ff4843af6dfe3dc",
+        "name": "Trelica",
+        "change": "The vendor was wrongly given as Gartner. Trelica was acquired by 1Password in January 2025. Corrected the vendor, url and source, and added a security subcategory."
+      },
+      {
+        "id": "5ffc4409bba0d9a2",
+        "name": "Synology DiskStation Manager (DSM)",
+        "change": "Replaced the quoted description with a paraphrase and pointed sourceUrl to Synology's DSM product page."
+      },
+      {
+        "id": "6035626a7e593c0c",
+        "name": "Ivanti Neurons for UEM",
+        "change": "Replaced the Gartner source with Ivanti's own landing page, so the description is now sourced from the producer."
+      },
+      {
+        "id": "603956bb15b25716",
+        "name": "Greenbone Vulnerability Management",
+        "change": "Replaced a forum quote with a paraphrased description and the Greenbone products page; the product is still offered."
+      },
+      {
+        "id": "603d1f20c441ed65",
+        "name": "Compliance & Policy Management",
+        "change": "The description was a generic GRC definition; replaced it with one specific to SAI360's Compliance & Policy Management product."
+      },
+      {
+        "id": "60467c8dd47fcbf6",
+        "name": "LogicManager Vendor Management",
+        "change": "Switched from an RFP-response page to the vendor management product page and paraphrased the description."
+      },
+      {
+        "id": "608483326e079daa",
+        "name": "Workfront",
+        "change": "Replaced the pricing-page quote with Adobe's product description and corrected the product page."
+      },
+      {
+        "id": "60a67dce8faa079f",
+        "name": "Zellis HCM Cloud",
+        "change": "Replaced the vague homepage tagline with Zellis's own product description of HCM Cloud."
+      },
+      {
+        "id": "60e194b398fd6da0",
+        "name": "Citrix uberAgent",
+        "change": "Confirmed on the Citrix docs page, which now sits at a new canonical URL; the entry's product URL now points to the Citrix site and the endpoint security analytics function is added as a category."
+      },
+      {
+        "id": "60fcc2ff8642f6ce",
+        "name": "Paylocity",
+        "change": "The stored description was a JavaScript-disabled placeholder; replaced with the producer's description of its HCM platform."
+      },
+      {
+        "id": "61593821d758ef19",
+        "name": "SAP Analytics Cloud (Planning)",
+        "change": "Replaced the Gartner reviews source with SAP's own Analytics Cloud Planning help page and gave a more specific description."
+      }
+    ],
+    "added": [
+      {
+        "id": "9a47f4bbefcf8bd2",
+        "name": "Amazon DynamoDB",
+        "vendor": "Amazon Web Services",
+        "sub": "NoSQL & Document Databases",
+        "change": "Widely used managed key-value and document NoSQL database that was missing from the catalogue."
+      },
+      {
+        "id": "4b91ae9cfc8885df",
+        "name": "Azure Cosmos DB",
+        "vendor": "Microsoft",
+        "sub": "NoSQL & Document Databases",
+        "change": "Major Microsoft multi-model NoSQL cloud database that was missing from the catalogue."
+      },
+      {
+        "id": "791e18a476adea53",
+        "name": "Neo4j Graph Database",
+        "vendor": "Neo4j",
+        "sub": "NoSQL & Document Databases",
+        "change": "Leading graph database, a non-relational engine type not yet represented in the subcategory."
+      },
+      {
+        "id": "486a2c948c71e006",
+        "name": "SQLite",
+        "vendor": "SQLite Consortium / D. Richard Hipp",
+        "sub": "Relational Database Management Systems",
+        "change": "Widely deployed embedded relational database that was missing from the catalogue."
+      },
+      {
+        "id": "30aaa7d9988d1a1b",
+        "name": "CockroachDB",
+        "vendor": "Cockroach Labs",
+        "sub": "Relational Database Management Systems",
+        "change": "Prominent distributed SQL relational database missing from the catalogue."
+      },
+      {
+        "id": "ec6dde911f3a3533",
+        "name": "Amazon Aurora",
+        "vendor": "Amazon Web Services",
+        "sub": "Relational Database Management Systems",
+        "change": "Major cloud-managed relational database service missing from the catalogue."
+      },
+      {
+        "id": "4f104a0e5c819369",
+        "name": "Google Cloud Application Integration",
+        "vendor": "Google Cloud",
+        "sub": "Integration Servers & iPaaS",
+        "change": "Google's native iPaaS was missing while the Azure, Oracle, SAP and IBM equivalents are listed."
+      },
+      {
+        "id": "15bd1539e084372f",
+        "name": "Cleo Integration Cloud",
+        "vendor": "Cleo",
+        "sub": "Integration Servers & iPaaS",
+        "change": "Widely used B2B/EDI integration platform that is not yet in the catalogue."
+      },
+      {
+        "id": "6e53f4ac31c92569",
+        "name": "Airbyte",
+        "vendor": "Airbyte",
+        "sub": "Integration Servers & iPaaS",
+        "change": "Popular open source data integration platform that is not yet in the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "NoSQL & Document Databases",
+      "Relational Database Management Systems",
+      "Integration Servers & iPaaS"
+    ],
+    "summary": "Checked 40 tools: 7 confirmed, 30 updated, 0 discontinued, 3 could not be verified. Searched NoSQL & Document Databases, Relational Database Management Systems, Integration Servers & iPaaS for missing products: 9 added."
+  },
+  {
     "date": "2026-11-06",
     "checked": 40,
     "confirmed": 6,

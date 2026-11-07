@@ -36,6 +36,9 @@
     "platform-middleware-api": "2026-11-05",
     "platform-middleware-application": "2026-11-06",
     "platform-middleware-communication": "2026-11-06",
-    "platform-middleware-cache": "2026-11-06"
+    "platform-middleware-cache": "2026-11-06",
+    "platform-middleware-database-nosql": "2026-11-07",
+    "platform-middleware-database-relational": "2026-11-07",
+    "platform-middleware-integration": "2026-11-07"
   }
 }
