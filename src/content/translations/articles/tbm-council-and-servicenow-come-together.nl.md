@@ -1,0 +1,11 @@
+---
+title: "TBM Council en ServiceNow slaan de handen ineen"
+excerpt: "Op 5 november 2026 maakten ServiceNow en de TBM Council een samenwerking bekend om het Common Service Data Model (CSDM) van ServiceNow te vullen met de Taxonomy Content van de TBM Council. Deze samenwerking bouwt voort op de TBM Council-whitepaper waaraan ik in 2023 met veel plezier als co-auteur heb meegewerkt. Het nieuwe partnerschap standaardiseert de Service Taxonomies van ServiceNow CSDM en sluit daarnaast aan op de taal van de standaarden Open Group IT4IT en ITIL Version 5. Door content, moderne standaarden en technische mogelijkheden samen te brengen, maakt het ServiceNow-platform nu best practices mogelijk die de governance vergemakkelijken van standaard interacties tussen mensen, enterprise AI-agents en managed service providers."
+source: "9e971cb3067cc8cf"
+---
+
+Sinds het begin van dit decennium pleit ik ervoor om de definities en content van de TBM Council te gebruiken als basis voor IT Service/Operations Management. Ik ben van mening dat commodity services in de digitale portfolio gestructureerd moeten worden met een commodity-taxonomie en gekoppeld moeten worden aan gediscoverde/gefedereerde Configuration Items. Tussen deze twee lagen hoort een laag met offerings die specifiek is voor groepen abonnees, waarbij DevOps-teams deze offerings vernieuwen en onderhouden. Voor non-commodity services (oftewel de kernactiviteiten van het bedrijf) zouden organisaties een vergelijkbaar datamodel moeten toepassen, maar dan met gedifferentieerde services en offerings.
+
+Wanneer je CSDM5 en TBM5 integreert, heb je zowel het datamodel als de commodity-taxonomie. Door de gediscoverde/gefedereerde CI's te relateren aan en te mappen op de gedefinieerde offerings, kun je risico- en impactanalyse automatiseren, en kunnen beoordelingen, eigenaarschap en beheer van de CI's worden overgenomen uit de digitale (applicatie- en service-)portfolio.
+
+Dit idee vormde de basis voor de [**whitepaper**](https://www.servicenow.com/community/s/cgfwn76974/attachments/cgfwn76974/common-service-data-model-forum/7406/1/TBM%20Integration%20with%20ServiceNow%20CSDM%20\(whitepaper\).pdf) die ik in 2023 heb opgesteld met een groep gelijkgestemden uit de TBM Council en de ServiceNow Community. De aankondiging versterkt de samenwerking tussen ServiceNow en de TBM Council.
