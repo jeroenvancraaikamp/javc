@@ -39,6 +39,9 @@
     "platform-middleware-cache": "2026-11-06",
     "platform-middleware-database-nosql": "2026-11-07",
     "platform-middleware-database-relational": "2026-11-07",
-    "platform-middleware-integration": "2026-11-07"
+    "platform-middleware-integration": "2026-11-07",
+    "platform-middleware-transfer": "2026-11-08",
+    "platform-middleware-web": "2026-11-08",
+    "platform-workplace-communication": "2026-11-08"
   }
 }

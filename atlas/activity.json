@@ -1,5 +1,249 @@
 [
   {
+    "date": "2026-11-08",
+    "checked": 40,
+    "confirmed": 7,
+    "unverified": 1,
+    "updated": [
+      {
+        "id": "62974ea680278f61",
+        "name": "Moein",
+        "change": "Moein is still offered; I replaced the truncated quoted description with a complete paraphrase."
+      },
+      {
+        "id": "62befe04368fedac",
+        "name": "Yardi Voyager",
+        "change": "Yardi Voyager is still offered; I gave a product-specific source and description, and added the business-side property category."
+      },
+      {
+        "id": "63180ae375ca9bda",
+        "name": "Plan A",
+        "change": "Plan A is still offered; I replaced the marketing text with a factual description from the producer's site."
+      },
+      {
+        "id": "636fd036e6ef82e9",
+        "name": "Mavim",
+        "change": "Mavim is still offered; I refreshed the description to match the current platform wording."
+      },
+      {
+        "id": "643f41b7333cfe1d",
+        "name": "IntelliTrack",
+        "change": "IntelliTrack is still offered; I added inventory tracking to the classification and gave a clearer description."
+      },
+      {
+        "id": "6445d308ad257894",
+        "name": "ClayHR",
+        "change": "BizMerlinHR was renamed ClayHR; the producer's own site is now clayhr.com, so URL and source were updated."
+      },
+      {
+        "id": "649514f801a9012b",
+        "name": "Apache Airflow",
+        "change": "Airflow is a workflow orchestrator; the entry now also lists the data-orchestration category and uses a paraphrased description."
+      },
+      {
+        "id": "6500f8302bf503b0",
+        "name": "Bamboo",
+        "change": "Bamboo is still offered as Bamboo Data Center, but Atlassian says Data Center support ends on March 28, 2029. The description was reworded and the note records the end-of-support date."
+      },
+      {
+        "id": "61d1b21a23f58f2d",
+        "name": "BIC Platform",
+        "change": "Description rewritten as a factual summary: BIC Platform is a suite covering process design, EAM, automation, process mining and GRC. Added an architecture subcategory."
+      },
+      {
+        "id": "6245d579c0e6aed6",
+        "name": "CA Service Management",
+        "change": "Broadcom's documentation now calls it Service Desk Manager, part of the Broadcom Service Management portfolio. The source and description are updated."
+      },
+      {
+        "id": "625be10ccf27b905",
+        "name": "Workvivo",
+        "change": "The product is now branded Workvivo by Zoom. The producer URL is corrected to workvivo.com and the description made more specific."
+      },
+      {
+        "id": "628db4d78b974ca3",
+        "name": "ProjectManager.com",
+        "change": "The producer's own page is now the source. It describes online project management software with planning, Gantt, kanban, resource and budget tools."
+      },
+      {
+        "id": "674ee44daa20d973",
+        "name": "TrueSight App Visibility Manager (Legacy)",
+        "change": "BMC's own documentation covers the product, so I replaced the Gartner source and wrote a more specific description. I found no end-of-life notice for the product itself."
+      },
+      {
+        "id": "6754c3e43195c2f4",
+        "name": "Progress WhatsUp Gold",
+        "change": "Replaced the quoted LoadMaster deployment guide source with the product's own WhatsUp Gold page and a paraphrased description."
+      },
+      {
+        "id": "675b10b501e099d5",
+        "name": "ServiceAide Intelligent Service Management",
+        "change": "Replaced the quoted marketing line with a paraphrased description based on Serviceaide's documentation."
+      },
+      {
+        "id": "679221dca18a7f8c",
+        "name": "JAMS",
+        "change": "The old source was a TrustRadius PDF. Fortra's JAMS is better described as workload automation, and the description now says so."
+      },
+      {
+        "id": "684d53b30578dfcd",
+        "name": "Virtana Service Observability (formerly Zenoss Cloud)",
+        "was": "Zenoss Cloud",
+        "change": "Zenoss Cloud is now Virtana Service Observability, following Virtana's acquisition of Zenoss in May 2025."
+      },
+      {
+        "id": "6519011d74e6b66a",
+        "name": "SAS Viya",
+        "change": "SAS's current Viya page describes a unified data, analytics and AI governance platform, so I rewrote the description and added data management."
+      },
+      {
+        "id": "65581b33b44a86db",
+        "name": "IBM FileNet Content Manager",
+        "change": "Replaced the third-party Gartner source with IBM's own FileNet Content Manager product page and wrote a more specific description."
+      },
+      {
+        "id": "655c68b01565875a",
+        "name": "QualiWare X",
+        "change": "The old description covered only a workspace UI, so I replaced it with a product-level description from a third-party directory."
+      },
+      {
+        "id": "657c664e1d1d8aea",
+        "name": "Fivetran",
+        "change": "The old description was marketing copy, so I replaced it with a factual description of Fivetran as an automated data movement platform."
+      },
+      {
+        "id": "659fdc241ac91fc0",
+        "name": "Kubeflow",
+        "change": "Kubeflow has graduated from CNCF; I replaced the quoted description with a paraphrase, pointed the URL to the project site, and swapped the predictive-AI category for AI development."
+      },
+      {
+        "id": "660a29a034cab2b9",
+        "name": "Bizzdesign Horizzon",
+        "change": "Product is current; I replaced the quoted marketing sentence with a factual description based on the producer page and the G-Cloud listing."
+      },
+      {
+        "id": "664a54748bed3e70",
+        "name": "Visma.net HRM & Payroll",
+        "was": "Visma HRM and Payroll",
+        "change": "Gartner labels this product 'Legacy'; Visma now markets Visma.net HRM & Payroll, so I switched to the producer source and noted the renaming."
+      },
+      {
+        "id": "66703b21ce6b3894",
+        "name": "SOTI ONE Platform",
+        "change": "Product is current; I replaced the quote with a paraphrase and moved the source to the main SOTI product page."
+      },
+      {
+        "id": "6856aa5412ccffb8",
+        "name": "AWS CodePipeline",
+        "change": "Product is current; replaced the quoted description with a short paraphrase and added a sourceNote."
+      },
+      {
+        "id": "687ab6e8f8e85d19",
+        "name": "DeskAlerts",
+        "change": "Product is current; description rewritten to match what the producer's homepage says (desktop, mobile, SMS and signage alerts)."
+      },
+      {
+        "id": "68a5fd4b2d1db502",
+        "name": "Brex",
+        "change": "Product is current; replaced the marketing tagline with a factual description covering cards, expenses, bill pay, travel and banking."
+      },
+      {
+        "id": "69384f8f21e23d00",
+        "name": "Thales SafeNet Trusted Access",
+        "change": "Product is current on Thales' site; replaced the truncated quote with a paraphrase and pointed url at the Thales product page."
+      },
+      {
+        "id": "69de2d4c80e0cce9",
+        "name": "OpenData",
+        "was": "Metrics (formerly OpenData)",
+        "change": "Modius's site still calls the product OpenData, a DCIM solution, so I corrected the name and replaced the quoted description with a paraphrase."
+      },
+      {
+        "id": "6a28e854378a98b0",
+        "name": "Observe",
+        "change": "observeinc.com now redirects to Snowflake's Observe product page, so Observe is now part of Snowflake. I updated the vendor, URL and description."
+      },
+      {
+        "id": "6acab8119a2fb5bd",
+        "name": "Zip",
+        "change": "Zip's site now has the canonical domain zip.com and describes an AI procurement platform covering intake to pay, so I updated the URL and description."
+      }
+    ],
+    "added": [
+      {
+        "id": "3861cab2f00e7844",
+        "name": "GoAnywhere MFT",
+        "vendor": "Fortra",
+        "sub": "Managed File Transfer",
+        "change": "Widely used MFT product missing from the Managed File Transfer subcategory."
+      },
+      {
+        "id": "a6f3494a984fae22",
+        "name": "Axway SecureTransport",
+        "vendor": "Axway",
+        "sub": "Managed File Transfer",
+        "change": "Recognised enterprise MFT gateway not yet in the catalogue."
+      },
+      {
+        "id": "a944106ce0c69983",
+        "name": "IBM Sterling File Gateway",
+        "vendor": "IBM",
+        "sub": "Managed File Transfer",
+        "change": "Major vendor MFT/B2B file gateway missing from the subcategory."
+      },
+      {
+        "id": "74f717236115db39",
+        "name": "HAProxy",
+        "vendor": "HAProxy Technologies / HAProxy project",
+        "sub": "Web Servers & Reverse Proxies",
+        "change": "Widely used open-source reverse proxy and load balancer that was missing from the subcategory."
+      },
+      {
+        "id": "3208a1c510b68f5c",
+        "name": "Varnish Cache",
+        "vendor": "Varnish Software / Varnish project",
+        "sub": "Web Servers & Reverse Proxies",
+        "change": "Well-known caching reverse proxy that was missing from the subcategory."
+      },
+      {
+        "id": "92cdf9155933819e",
+        "name": "LiteSpeed Web Server",
+        "vendor": "LiteSpeed Technologies",
+        "sub": "Web Servers & Reverse Proxies",
+        "change": "Widely deployed Apache-compatible web server that was missing from the subcategory."
+      },
+      {
+        "id": "3da9ec3b9d054222",
+        "name": "Mattermost",
+        "vendor": "Mattermost",
+        "sub": "Communication & Collaboration",
+        "change": "Widely used self-hosted team messaging platform that was missing from the subcategory."
+      },
+      {
+        "id": "88dd1d674824dfa1",
+        "name": "Rocket.Chat",
+        "vendor": "Rocket.Chat",
+        "sub": "Communication & Collaboration",
+        "change": "Recognised open-source team communication platform that was missing from the subcategory."
+      },
+      {
+        "id": "81284a10078896b6",
+        "name": "RingCentral MVP",
+        "vendor": "RingCentral",
+        "sub": "Communication & Collaboration",
+        "change": "Major UCaaS suite for messaging, video and phone that was missing from the subcategory."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Managed File Transfer",
+      "Web Servers & Reverse Proxies",
+      "Communication & Collaboration"
+    ],
+    "summary": "Checked 40 tools: 7 confirmed, 32 updated, 0 discontinued, 1 could not be verified. Searched Managed File Transfer, Web Servers & Reverse Proxies, Communication & Collaboration for missing products: 9 added."
+  },
+  {
     "date": "2026-11-07",
     "checked": 40,
     "confirmed": 7,
