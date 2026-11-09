@@ -1,5 +1,257 @@
 [
   {
+    "date": "2026-11-09",
+    "checked": 40,
+    "confirmed": 5,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "6c74043e61122020",
+        "name": "SafeExcursions",
+        "change": "SafeExcursions is still offered, but CompliSpace is now branded Ideagen Policy Logic; the description is now a neutral paraphrase and the vendor is updated."
+      },
+      {
+        "id": "6c893bdfb1c1a104",
+        "name": "OpenBao",
+        "change": "OpenBao is active, with docs at version 2.7.x. The description is now a paraphrase, and the entry is also classed as a secrets and encryption system."
+      },
+      {
+        "id": "6ccca06c6ad27863",
+        "name": "KeeperPAM",
+        "was": "Keeper Security PAM",
+        "change": "The old description was an analyst-recognition claim, not a product description. It is replaced with a description of KeeperPAM taken from Keeper's documentation."
+      },
+      {
+        "id": "6d1fa3ee98febe77",
+        "name": "Zerto",
+        "change": "Zerto is still offered by HPE; the description had typos and was marketing text, so it is rewritten and the source note added."
+      },
+      {
+        "id": "6d3f1d444364e5d3",
+        "name": "Lanteria HR solutions",
+        "change": "Lanteria is active, but it is a full HR suite on SharePoint and Microsoft 365, so the description is corrected and the scope widened beyond talent development."
+      },
+      {
+        "id": "6d65d9278f402217",
+        "name": "Cormant-CS",
+        "change": "Replaced the quoted description with a paraphrase. Cormant-CS (formerly CableSolve) is still offered as DCIM software, and its site now also covers campus and edge sites."
+      },
+      {
+        "id": "6d99717c99f94470",
+        "name": "Selector",
+        "change": "Replaced the quoted description with a paraphrase. The product is still offered, as Selector Foundry for agentic network operations."
+      },
+      {
+        "id": "6dc1b323060c7f60",
+        "name": "n8n",
+        "change": "Replaced the quoted description with a paraphrase. n8n is still active and its docs still describe a fair-code workflow automation tool."
+      },
+      {
+        "id": "6e444558813a1b99",
+        "name": "Workiva",
+        "change": "Replaced the quoted description with a paraphrase. Workiva is still offered as a cloud reporting platform."
+      },
+      {
+        "id": "6afde804c6f14c00",
+        "name": "Humanforce",
+        "change": "Humanforce is still offered, but the description is the page's marketing sentence for the US venue offering. I reworded it and added the broader workforce management scope."
+      },
+      {
+        "id": "6b0c0bfd110b05b1",
+        "name": "Messagebird (aka Bird)",
+        "change": "Bird (formerly MessageBird) is still offered, but it is a customer messaging and CRM platform, not workplace collaboration. I switched the source to the producer and reclassified it."
+      },
+      {
+        "id": "6b4f5d438df5354d",
+        "name": "Strobes RBVM",
+        "change": "Strobes now positions itself as an agentic pentesting and exposure management platform. RBVM is one of its pillars, so the entry needed a new description and sources."
+      },
+      {
+        "id": "6b933fa6875cb41b",
+        "name": "SHRED (DarkSight)",
+        "was": "DarkSight",
+        "change": "The description was a truncated quote and the product is SHRED by ECQ. DarkSight is one of SHRED's engines, so I corrected the name, vendor and description."
+      },
+      {
+        "id": "6c057bfc2572ed8b",
+        "name": "OneTrust Enterprise Policy Management",
+        "change": "The description was homepage marketing text for data use governance, not policy management. I replaced it with a description based on OneTrust's policy and notice management announcement."
+      },
+      {
+        "id": "6ff441b1e0ef217f",
+        "name": "Ideagen EHS",
+        "change": "Ideagen EHS is still offered, but the old entry was a quoted fragment with a facilities page as source and the wrong category. It now sits in Health, Safety & Environmental, with a third-party source."
+      },
+      {
+        "id": "7003aab9c0e9aaf3",
+        "name": "Zluri SaaS Management Platform",
+        "change": "Zluri is still offered. The description was a truncated quote, so I replaced it with a paraphrase from Zluri's own page."
+      },
+      {
+        "id": "701fbfba211ceeb7",
+        "name": "StandardFusion",
+        "change": "StandardFusion was acquired by Wolters Kluwer and is being integrated into TeamMate, so the description now says so and a GRC category is added."
+      },
+      {
+        "id": "7063dfee71bea0f6",
+        "name": "Snow Spend Optimizer",
+        "change": "Snow Spend Optimizer is still documented by Flexera. I replaced the datasheet fragment with a paraphrase from the documentation page."
+      },
+      {
+        "id": "6ea64f5a62452a52",
+        "name": "Watershed",
+        "change": "Watershed is still offered as an enterprise sustainability platform; I replaced the quoted marketing line with a paraphrase and pointed the source at the producer's platform page."
+      },
+      {
+        "id": "6f2052f5ce13b404",
+        "name": "Cutover Collaborative Automation Platform",
+        "change": "The product is still offered, but its focus on runbooks for disaster recovery, migration and release fits operations automation better than development."
+      },
+      {
+        "id": "6f24a6c031f50c69",
+        "name": "Service Desk (Legacy)",
+        "change": "Ivanti has announced end of life for Service Desk on 31 Dec 2026, with migration to Service Manager. Support continues until then, so the entry is not yet discontinued, and I replaced the white-paper quote with a description."
+      },
+      {
+        "id": "6f4a7c3aadd56a5d",
+        "name": "Mia-Platform",
+        "change": "Mia-Platform is still offered as a Platform Builder for internal developer platforms; I replaced the quote with a paraphrase and moved the source to a current page."
+      },
+      {
+        "id": "6f99c2d2549dd5ae",
+        "name": "BrowserStack",
+        "change": "BrowserStack is still offered; I rewrote the promotional text as a neutral description of its web and mobile testing platform."
+      },
+      {
+        "id": "70d857fac79df3e2",
+        "name": "Saviynt Identity Cloud",
+        "change": "Description was a verbatim marketing quote; replaced with a short paraphrase of the identity governance platform."
+      },
+      {
+        "id": "70e63aa2850835ff",
+        "name": "ESGgo",
+        "change": "ESGgo is an AI-based ESG/sustainability reporting tool, which fits risk/compliance better than health, safety and environmental; the source is now a Capterra listing."
+      },
+      {
+        "id": "70ee1bd1c762356d",
+        "name": "Interact Software",
+        "change": "Interact now describes itself as an AI-native intranet and employee experience platform; description and source updated to the producer's own site."
+      },
+      {
+        "id": "71a1bd9332b5679c",
+        "name": "Tenable Nessus",
+        "change": "Replaced the truncated marketing quote with a paraphrase; Nessus is still offered by Tenable."
+      },
+      {
+        "id": "72aa09fd36029315",
+        "name": "Microsoft Dynamics 365 Human Resources",
+        "change": "Switched to Microsoft Learn as the producer source, and the description now covers the full HR lifecycle."
+      },
+      {
+        "id": "7334adf37f60aa66",
+        "name": "Power IQ",
+        "change": "Power IQ is still offered by Sunbird as DCIM monitoring software, and its power and environmental monitoring of PDUs also fits power & cooling management, so I added that subcategory."
+      },
+      {
+        "id": "72043e3f8fb5e9bf",
+        "name": "Apica Flow",
+        "change": "Vendor corrected to Apica (no evidence it is part of ITRS Group; they were only partners), and the description was rewritten more neutrally."
+      },
+      {
+        "id": "7274f6db095a4c68",
+        "name": "PRTG Network Monitor",
+        "change": "The description was a broken quote fragment, so it was replaced with a factual paraphrase from the Paessler product page."
+      },
+      {
+        "id": "7281f19972c419b2",
+        "name": "Paycom",
+        "change": "The description was marketing copy and was replaced with a neutral paraphrase. The source page is now Paycom's small-business HR and payroll page."
+      },
+      {
+        "id": "729393c659487d64",
+        "name": "ChatGPT Enterprise",
+        "change": "The sourceUrl was a malformed help-center link and the description was a bare quote. Both were replaced, and the new source is third-party."
+      },
+      {
+        "id": "72975c7739c977c2",
+        "name": "Devo Security Data Platform",
+        "change": "The product is a SIEM/security analytics platform, so it was reclassified from observability to security detection and response, and the description was rewritten."
+      }
+    ],
+    "added": [
+      {
+        "id": "45b04b63ed772e7f",
+        "name": "Amazon EC2",
+        "vendor": "Amazon Web Services (AWS)",
+        "sub": "Compute, Cloud & Container Platforms",
+        "change": "Core AWS compute service and a widely used cloud compute platform that was missing from the catalogue."
+      },
+      {
+        "id": "d53b3c7422d754b8",
+        "name": "OpenStack",
+        "vendor": "OpenInfra Foundation",
+        "sub": "Compute, Cloud & Container Platforms",
+        "change": "Widely deployed open source IaaS cloud platform that was missing from the catalogue."
+      },
+      {
+        "id": "d22c22134245a441",
+        "name": "VMware vSphere",
+        "vendor": "Broadcom (VMware)",
+        "sub": "Compute, Cloud & Container Platforms",
+        "change": "Leading virtualization and compute platform that was missing from the catalogue."
+      },
+      {
+        "id": "5e5063ff366a9230",
+        "name": "Egnyte",
+        "vendor": "Egnyte",
+        "sub": "Content, Documents & Knowledge",
+        "change": "Widely used cloud content collaboration and governance platform that was missing from the catalogue."
+      },
+      {
+        "id": "281b1c2704ea6cc4",
+        "name": "Dropbox Business",
+        "vendor": "Dropbox",
+        "sub": "Content, Documents & Knowledge",
+        "change": "Widely recognised document storage and sharing service that was missing from the catalogue."
+      },
+      {
+        "id": "8bff2a15a1e0ab31",
+        "name": "Cision Communications Cloud",
+        "vendor": "Cision",
+        "sub": "Corporate Communications",
+        "change": "Widely used media relations and PR platform that was missing from the catalogue."
+      },
+      {
+        "id": "e8200d717ea2d985",
+        "name": "Meltwater Media Relations",
+        "vendor": "Meltwater",
+        "sub": "Corporate Communications",
+        "change": "Recognised PR and media relations platform that was missing from the catalogue."
+      },
+      {
+        "id": "5ad0f54cd42c657c",
+        "name": "Muck Rack",
+        "vendor": "Muck Rack",
+        "sub": "Corporate Communications",
+        "change": "Well-known PR management platform, including a public-sector offering, that was missing from the catalogue."
+      }
+    ],
+    "discontinued": [
+      {
+        "id": "704e5e475406d577",
+        "name": "BeyondTrust Enterprise Vulnerability Management (Legacy)",
+        "change": "BeyondTrust ended support for Retina Enterprise Vulnerability Management on 31 Dec 2020 and recommended migrating to Tenable."
+      }
+    ],
+    "errors": 0,
+    "searched": [
+      "Compute, Cloud & Container Platforms",
+      "Content, Documents & Knowledge",
+      "Corporate Communications"
+    ],
+    "summary": "Checked 40 tools: 5 confirmed, 34 updated, 1 discontinued, 0 could not be verified. Searched Compute, Cloud & Container Platforms, Content, Documents & Knowledge, Corporate Communications for missing products: 8 added."
+  },
+  {
     "date": "2026-11-08",
     "checked": 40,
     "confirmed": 7,

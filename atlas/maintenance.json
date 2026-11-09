@@ -42,6 +42,9 @@
     "platform-middleware-integration": "2026-11-07",
     "platform-middleware-transfer": "2026-11-08",
     "platform-middleware-web": "2026-11-08",
-    "platform-workplace-communication": "2026-11-08"
+    "platform-workplace-communication": "2026-11-08",
+    "platform-workplace-computing": "2026-11-09",
+    "platform-workplace-content": "2026-11-09",
+    "shared-corporate-corporate-communications-tools": "2026-11-09"
   }
 }
