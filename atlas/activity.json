@@ -1,5 +1,280 @@
 [
   {
+    "date": "2026-11-10",
+    "checked": 40,
+    "confirmed": 2,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "738451148070c41a",
+        "name": "Honeycomb",
+        "change": "Product is current; replaced the quoted description with a short paraphrase from the Honeycomb platform page."
+      },
+      {
+        "id": "739974cabbe49d04",
+        "name": "vuSmartMaps",
+        "change": "Product is current; switched to the latest documentation version (NG-3.2) and replaced the quote with a paraphrase."
+      },
+      {
+        "id": "739c8adae30b1543",
+        "name": "Cisco Secure Firewall",
+        "change": "Product is current; replaced the truncated quote with a paraphrase from Cisco's documentation."
+      },
+      {
+        "id": "73b16bb3ac345578",
+        "name": "Palantir AIP (Artificial Intelligence Platform)",
+        "change": "Product is current; removed the tracking parameter from sourceUrl, paraphrased the description and added the agentic AI subcategory."
+      },
+      {
+        "id": "73db0a0554fce629",
+        "name": "Interlink Software AIOps Platform",
+        "change": "Product is current; replaced the quote with a paraphrase of the product pillars page."
+      },
+      {
+        "id": "73f0cd09ef2552fd",
+        "name": "Onit",
+        "change": "Replaced the marketing-style description with a factual one: Onit is an AI-native enterprise legal management platform (Unity)."
+      },
+      {
+        "id": "746022a90a2fb451",
+        "name": "Deel",
+        "change": "Rewrote the description in neutral wording. Deel is still offered as a global HR, payroll and hiring platform."
+      },
+      {
+        "id": "74b27580bf1e7b66",
+        "name": "CloudBees Platform",
+        "change": "Replaced the truncated quote with a paraphrase. CloudBees still offers CI/CD products such as the Jenkins-based CloudBees CI."
+      },
+      {
+        "id": "74c0a88023495db6",
+        "name": "Tufin Orchestration Suite",
+        "change": "Added network management as a subcategory. Tufin Orchestration Suite is a network security policy management and change automation product."
+      },
+      {
+        "id": "74db7bd3f104d1bd",
+        "name": "Grafana Enterprise Stack",
+        "change": "Description was a quote; replaced with a paraphrase and pointed to Grafana's launch announcement."
+      },
+      {
+        "id": "74dc964a647b6c42",
+        "name": "Libraesva Email Security",
+        "change": "Replaced the marketing-style description with a factual paraphrase."
+      },
+      {
+        "id": "75658cd885c5d84b",
+        "name": "BMC Helix Operations Management with AIOps",
+        "change": "Replaced a blog quote with a paraphrase from the official BMC Helix AIOps documentation. The product is still offered."
+      },
+      {
+        "id": "75b5b74b54d97585",
+        "name": "People365",
+        "change": "Switched the source to the Microsoft Marketplace listing, which names the vendor's modules. Removed the finance subcategory, since payroll is part of the HCM suite."
+      },
+      {
+        "id": "75c41043ba86da6b",
+        "name": "VulScan",
+        "change": "Replaced a datasheet quote with a paraphrase. VulScan is still offered by RapidFire Tools, part of Kaseya."
+      },
+      {
+        "id": "7657997af718d1e6",
+        "name": "Tencent Cloud TI Platform",
+        "change": "Replaced the proxy source URL with the official Tencent Cloud product page and changed the category to ML platforms, since TI-ONE covers the full ML workflow."
+      },
+      {
+        "id": "76822c298c0a64eb",
+        "name": "SAP Risk Management",
+        "change": "The source URL was a broken placeholder link (PRODUCT_ID), so I replaced it with a working page and rewrote the description."
+      },
+      {
+        "id": "76c94d65cf92d9f2",
+        "name": "Lookout SSE",
+        "change": "Replaced the partner solution-brief source with Lookout's own SSE announcement and wrote a proper description."
+      },
+      {
+        "id": "76e4147764a5b868",
+        "name": "iOFFICE (Eptura Workplace)",
+        "was": "iOFFICE",
+        "change": "iOFFICE has been renamed Eptura Workplace, so I switched the source to Eptura's product page."
+      },
+      {
+        "id": "7700194dbe86de81",
+        "name": "Puppet Enterprise",
+        "change": "The old source was a legal terms PDF with a meaningless description, so I replaced both and added the Perforce acquisition context."
+      },
+      {
+        "id": "78a7ad8b7d405ff7",
+        "name": "Westlaw",
+        "change": "Westlaw is still offered; replaced the Gartner Westlaw Precision source with the Thomson Reuters page."
+      },
+      {
+        "id": "790c41fec219b882",
+        "name": "Wingify (AB Tasty + VWO)",
+        "change": "Wingify (the merged AB Tasty and VWO) is an experience optimization platform for marketing and CX, not a development toolchain; I reclassified it and rewrote the quoted description."
+      },
+      {
+        "id": "7924913d1b0b75d6",
+        "name": "OpenText Release Control",
+        "change": "The product still exists, but it handles IT change and release management, so I moved it from development tooling to ITSM."
+      },
+      {
+        "id": "7995634f34b2982d",
+        "name": "ManageEngine Vulnerability Manager Plus",
+        "change": "The product is current; I replaced the instructional description with a factual one."
+      },
+      {
+        "id": "773fdf37616e98b8",
+        "name": "Zapier",
+        "change": "Zapier is still offered; the description was a marketing quote, so I replaced it with a short paraphrase from the Zapier help page."
+      },
+      {
+        "id": "778783d44895aecb",
+        "name": "Tripwire IP360",
+        "change": "Tripwire IP360 is still offered by Fortra; I replaced the PCI datasheet source with a product description and a more specific Fortra URL."
+      },
+      {
+        "id": "7837f4e67d957b0b",
+        "name": "Cegid Talentsoft (Cegid HR)",
+        "was": "Cegid Talentsoft",
+        "change": "The description was a customer testimonial from the Cegid homepage; the product is now presented as Cegid HR (Talentsoft), so I corrected the description and source."
+      },
+      {
+        "id": "789514fd02847460",
+        "name": "Cisco Observability Platform",
+        "change": "The page describes AppDynamics Cloud APIs for cloud connections, not the platform as a whole, so I rewrote the description to fit the page and added a note on the naming."
+      },
+      {
+        "id": "78a6b524d2ba3c34",
+        "name": "Sophos Firewall",
+        "change": "Sophos Firewall is still offered; I replaced the marketing quote with a paraphrase and kept the product page as the source."
+      },
+      {
+        "id": "79e730fbb8d1ebcc",
+        "name": "DocuSign CLM",
+        "change": "Docusign CLM is still offered; the sourceUrl is now the producer's CLM page, and the entry also fits vendor/procurement contract lifecycle management."
+      },
+      {
+        "id": "7a1c8c691b1b79f5",
+        "name": "Veeam Data Platform",
+        "change": "Veeam Data Platform is still offered; the description is now a paraphrase and the sourceNote is added."
+      },
+      {
+        "id": "7a270a4e7477efbd",
+        "name": "Cisco Intersight",
+        "was": "Cisco Intersight (storage/infra management)",
+        "change": "Cisco's own page describes Intersight as a cloud-native management platform for Cisco UCS compute infrastructure, so I replaced the Gartner source and the storage-focused wording."
+      },
+      {
+        "id": "7a580b7227a95a11",
+        "name": "Outpost24 Outscan NX",
+        "change": "The product still exists, but the source was only a Gartner listing, so the description and sourceNote now reflect that."
+      },
+      {
+        "id": "7a5f94007cd78b62",
+        "name": "Lightrun Developer Observability Platform",
+        "change": "Replaced the truncated, marketing-style description with a factual one, and the sourceUrl now points to Lightrun's GitHub page."
+      },
+      {
+        "id": "7a654ee0f7ae6ec7",
+        "name": "HR WORKS",
+        "change": "The sourceUrl now points to the dedicated HR WORKS product page, and the description has been shortened."
+      },
+      {
+        "id": "7a867c29514a93f9",
+        "name": "Xensam",
+        "change": "The old description was a Gartner Peer Insights ranking claim. It now describes the product itself."
+      },
+      {
+        "id": "7aafbb472ca44e6d",
+        "name": "ServicePRO",
+        "change": "ServicePRO is now served from servicepro.solutions, and the description is more specific. The old URL and the Gartner source were replaced."
+      },
+      {
+        "id": "7acaeb76f775b2f9",
+        "name": "Edge Delta",
+        "change": "Description now covers the telemetry pipelines that are Edge Delta's core product, in addition to observability."
+      }
+    ],
+    "added": [
+      {
+        "id": "c0947b797ba7c313",
+        "name": "Xero",
+        "vendor": "Xero",
+        "sub": "Finance",
+        "change": "Widely used cloud accounting product that was missing from the Finance subcategory."
+      },
+      {
+        "id": "f6e61b1742b42e78",
+        "name": "QuickBooks Online",
+        "vendor": "Intuit",
+        "sub": "Finance",
+        "change": "Leading small-business accounting product that was missing from the catalogue."
+      },
+      {
+        "id": "4d0a05ab191563ca",
+        "name": "CCH Tagetik",
+        "vendor": "Wolters Kluwer",
+        "sub": "Finance",
+        "change": "Well-known financial planning and consolidation (CPM) platform that was missing from the catalogue."
+      },
+      {
+        "id": "667aa05225df2130",
+        "name": "VelocityEHS Accelerate Platform",
+        "vendor": "VelocityEHS",
+        "sub": "Health, Safety, and Environmental",
+        "change": "Widely recognised EHS software vendor missing from the subcategory."
+      },
+      {
+        "id": "d0202a00e89c5db2",
+        "name": "CorityOne",
+        "vendor": "Cority",
+        "sub": "Health, Safety, and Environmental",
+        "change": "Cority is a recognised EHS vendor that is not yet in the catalogue."
+      },
+      {
+        "id": "e06b33789d0fb32a",
+        "name": "SafetyCulture",
+        "vendor": "SafetyCulture",
+        "sub": "Health, Safety, and Environmental",
+        "change": "Widely used inspection and workplace-safety platform that is not yet in the catalogue."
+      },
+      {
+        "id": "a31bf1becf2dbbe3",
+        "name": "Clio Manage",
+        "vendor": "Clio",
+        "sub": "Legal",
+        "change": "Widely used legal practice and matter management platform that is missing from the Legal subcategory."
+      },
+      {
+        "id": "42ce4e5357b185e8",
+        "name": "Filevine",
+        "vendor": "Filevine",
+        "sub": "Legal",
+        "change": "Well-known legal case management and work platform that is missing from the catalogue."
+      },
+      {
+        "id": "1e8e77f00857bc0a",
+        "name": "Juro",
+        "vendor": "Juro",
+        "sub": "Legal",
+        "change": "Recognised contract automation and lifecycle platform that is missing from the Legal subcategory."
+      }
+    ],
+    "discontinued": [
+      {
+        "id": "79eee318acca8a5a",
+        "name": "BeyondTrust Network Security Scanner (Legacy)",
+        "change": "BeyondTrust ended support for Retina Network Security Scanner and its other vulnerability management products on 31 December 2020."
+      }
+    ],
+    "errors": 0,
+    "searched": [
+      "Finance",
+      "Health, Safety, and Environmental",
+      "Legal"
+    ],
+    "summary": "Checked 40 tools: 2 confirmed, 37 updated, 1 discontinued, 0 could not be verified. Searched Finance, Health, Safety, and Environmental, Legal for missing products: 9 added."
+  },
+  {
     "date": "2026-11-09",
     "checked": 40,
     "confirmed": 5,

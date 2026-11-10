@@ -45,6 +45,9 @@
     "platform-workplace-communication": "2026-11-08",
     "platform-workplace-computing": "2026-11-09",
     "platform-workplace-content": "2026-11-09",
-    "shared-corporate-corporate-communications-tools": "2026-11-09"
+    "shared-corporate-corporate-communications-tools": "2026-11-09",
+    "shared-corporate-finance-tools": "2026-11-10",
+    "shared-corporate-health-safety-environmental-tools": "2026-11-10",
+    "shared-corporate-legal-tools": "2026-11-10"
   }
 }
