@@ -1,5 +1,268 @@
 [
   {
+    "date": "2026-11-11",
+    "checked": 40,
+    "confirmed": 3,
+    "unverified": 1,
+    "updated": [
+      {
+        "id": "7d04e8a99902b283",
+        "name": "BMC Helix Automation Console",
+        "change": "Switched the source to BMC's official documentation, which describes the console as analysing and remediating vulnerabilities and patches via TrueSight Server Automation."
+      },
+      {
+        "id": "7d1f1509cb709aab",
+        "name": "Detectify Platform",
+        "change": "Replaced the quoted marketing text with a short paraphrase; the product is a DAST plus attack surface management platform."
+      },
+      {
+        "id": "7d2cccf35e7ec327",
+        "name": "Google Cloud Key Management",
+        "change": "Reclassified from security protection to identity, access and secrets management, since the product manages cryptographic keys; the description is unchanged in substance."
+      },
+      {
+        "id": "7d8d603f94aac0be",
+        "name": "Notion",
+        "change": "Replaced the marketing tagline with a factual description of Notion as a workspace for notes, documents, databases and projects, with AI features."
+      },
+      {
+        "id": "7bcd8d7c5ba1cccc",
+        "name": "Gemini Enterprise",
+        "change": "Replaced the truncated quote with a paraphrase. Gemini Enterprise is still offered; the Google Cloud documentation describes an agent platform, so I added the agentic category."
+      },
+      {
+        "id": "7bfa98b93a5b7a0d",
+        "name": "Vision Helpdesk Service Desk",
+        "change": "Replaced the truncated quote about a 2022 event with a paraphrase based on the producer's home page. The product is still listed there."
+      },
+      {
+        "id": "7c5bc3ee8d1d8594",
+        "name": "IBM Instana Observability",
+        "change": "Switched to the current IBM Instana documentation page and replaced the verbatim quote with a paraphrase."
+      },
+      {
+        "id": "7c5f37168626d5e5",
+        "name": "Oomnitza Enterprise Technology Management",
+        "change": "Replaced the truncated quote with a paraphrase. A third-party directory page confirms the product is listed, so I used it as the source."
+      },
+      {
+        "id": "7c920a0d5d04ac83",
+        "name": "Better Stack",
+        "change": "Replaced the verbatim quote with a paraphrase. Better Stack is still offered and combines monitoring, logs and incident management."
+      },
+      {
+        "id": "7adac6911378b452",
+        "name": "IBM Cognos Analytics",
+        "change": "Replaced the vague description and Gartner source with IBM's product page and a factual description."
+      },
+      {
+        "id": "7b35a5e6f5adfbe9",
+        "name": "LM Envision",
+        "change": "Replaced the quoted marketing sentence with a short paraphrase, and the 2022 PDF source with LogicMonitor's own announcement blog."
+      },
+      {
+        "id": "7b705adfc0668058",
+        "name": "Apache ServiceMix",
+        "change": "Replaced the quoted sentence from the 6.x docs with a paraphrase. A third-party source is used because the Apache site could not be opened."
+      },
+      {
+        "id": "7b88c16fcc7834ff",
+        "name": "SutiHR",
+        "change": "Replaced the case-study headline with a factual description, sourced from Gartner Peer Insights because the producer's homepage gives no product description."
+      },
+      {
+        "id": "7ed534c09c9d1667",
+        "name": "iTop",
+        "change": "Replaced the quoted description with a paraphrase; iTop is an open-source ITSM and CMDB, and the entry's quote covered only the service catalog."
+      },
+      {
+        "id": "7ef74244095a8985",
+        "name": "SymphonyAI Apex Aspen (IT Service Management)",
+        "was": "SymphonyAI IT Service Management",
+        "change": "Replaced the marketing quote with a paraphrase; the product is now called SymphonyAI Apex Aspen."
+      },
+      {
+        "id": "7f6317aa2ffd6292",
+        "name": "Adrenalin MAX",
+        "was": "MAX HCM",
+        "change": "The product is now marketed as Adrenalin MAX, a cloud-native HCM suite. Switched to the producer's own source, and the finance category is not supported."
+      },
+      {
+        "id": "7ff8c90e4d0220dd",
+        "name": "Lansweeper",
+        "change": "Replaced the quoted description with a paraphrase and added the security-exposure category, since the platform positions itself as cyber asset intelligence."
+      },
+      {
+        "id": "7db2ea8bc3e74696",
+        "name": "Claude Enterprise",
+        "change": "Replaced the quoted description with a short paraphrase of the Claude Enterprise plan; the product is still offered."
+      },
+      {
+        "id": "7dfa5e4ff36adbb6",
+        "name": "Hackuity",
+        "change": "Replaced the quoted description with a paraphrase; the product is still listed with the same vendor and category."
+      },
+      {
+        "id": "7e1880f830a38171",
+        "name": "Infinidat InfiniVerse",
+        "change": "Replaced the quoted description with a paraphrase; the product is current and also covers AIOps and storage monitoring."
+      },
+      {
+        "id": "7e332ff9b1979326",
+        "name": "TUTELA",
+        "change": "Replaced the quoted documentation sentence with a paraphrase of what Tutela does."
+      },
+      {
+        "id": "7e71b5453461599e",
+        "name": "Vulcan Cyber (Exposure Management)",
+        "change": "Tenable closed the Vulcan Cyber acquisition in February 2025 and is folding it into Tenable One instead of selling it standalone; I replaced the Gartner source with Tenable's own."
+      },
+      {
+        "id": "7e819e938dbee838",
+        "name": "Turbonomic",
+        "change": "Turbonomic is application resource management software, not data center infrastructure management. I moved it to automation, switched to IBM's product page and wrote a product-specific description."
+      },
+      {
+        "id": "7ea72ae03bcb07bc",
+        "name": "One Identity Safeguard (Passwords, Sessions, Analytics, Cloud PAM Essentials)",
+        "change": "Replaced the Gartner source with the producer's Safeguard page and a more specific description."
+      },
+      {
+        "id": "7eb8eac05d4cd1ad",
+        "name": "International Comprehensive Human Resource Integrated Software",
+        "change": "Replaced the Gartner source with Frontier Software's own site and made the description more specific. The product is branded ichris."
+      },
+      {
+        "id": "7ed13220e14a8625",
+        "name": "pfSense CE",
+        "change": "The description described Netgate rather than pfSense CE. I replaced it with a product description and a release-notes source (2.9.0 is current)."
+      },
+      {
+        "id": "80f331a53b80bf86",
+        "name": "Everlaw",
+        "change": "Replaced the marketing tagline with a factual description of the cloud eDiscovery platform."
+      },
+      {
+        "id": "8152cd970ca5d022",
+        "name": "Seemplicity",
+        "change": "Replaced the 2022 brochure quote with a current description; the product is now positioned as agentic exposure management and response."
+      },
+      {
+        "id": "820fd6a723068841",
+        "name": "Cisco Secure Access",
+        "change": "Switched to the current Cisco product page and a paraphrased description."
+      },
+      {
+        "id": "8228218a2d4ad46f",
+        "name": "Cornerstone OnDemand",
+        "change": "Replaced the slogan with a factual description of the talent platform."
+      },
+      {
+        "id": "82d6034c6f9e3bca",
+        "name": "EGERIE Risk Manager",
+        "change": "Replaced the terms-of-use quote with a product description and added the technology GRC subcategory, since it is a cyber risk management tool."
+      },
+      {
+        "id": "7ffe940fe0d0cea3",
+        "name": "GTreasury",
+        "change": "gtreasury.com now redirects to Ripple's treasury site (GTreasury is part of Ripple); I replaced the third-party source with the producer page and rewrote the description."
+      },
+      {
+        "id": "80211fb6bc3623d4",
+        "name": "Lumigo",
+        "change": "Replaced the quoted marketing sentence with a short paraphrase. Lumigo now describes itself as an AI-powered observability platform that correlates traces, logs and metrics."
+      },
+      {
+        "id": "80b56e93fd6d5488",
+        "name": "Laserfiche",
+        "change": "Replaced the copied marketing text with a short paraphrase of the current Laserfiche homepage."
+      },
+      {
+        "id": "80b729541cf62b4e",
+        "name": "WSO2 API Manager",
+        "change": "Replaced the quoted text with a paraphrase. The search result I could confirm was Microsoft's Marketplace listing, not WSO2's own page."
+      },
+      {
+        "id": "80cacd7371ac435f",
+        "name": "Gradle",
+        "change": "Gradle is now branded 'Gradle by Develocity' with its site at gradle.org. I replaced the 2019 eBook quote with a current producer description."
+      }
+    ],
+    "added": [
+      {
+        "id": "6438326322361f85",
+        "name": "IBM Maximo Real Estate and Facilities (formerly IBM TRIRIGA)",
+        "vendor": "IBM",
+        "sub": "Property & Facility",
+        "change": "Widely used IBM IWMS for real estate and facilities, missing from the catalogue."
+      },
+      {
+        "id": "e10473a0088899ca",
+        "name": "Genetec Security Center",
+        "vendor": "Genetec",
+        "sub": "Property & Facility",
+        "change": "Recognised physical security platform, and the catalogue has no physical security management product from a security-system vendor."
+      },
+      {
+        "id": "f134d82dec43c30c",
+        "name": "Fiix CMMS",
+        "vendor": "Rockwell Automation",
+        "sub": "Property & Facility",
+        "change": "Well-known cloud CMMS for facilities maintenance, comparable to the listed UpKeep and Limble."
+      },
+      {
+        "id": "05bd8fce5b98cec6",
+        "name": "TeamMate+ Audit",
+        "vendor": "Wolters Kluwer",
+        "sub": "Risk, Audit & Compliance",
+        "change": "Widely used internal audit management product from Wolters Kluwer that was missing from the catalogue."
+      },
+      {
+        "id": "e69fbd6ff3b35fdb",
+        "name": "NAVEX One",
+        "vendor": "NAVEX",
+        "sub": "Risk, Audit & Compliance",
+        "change": "NAVEX's main ethics and compliance platform was missing from the catalogue."
+      },
+      {
+        "id": "bfaa1b588f8fe426",
+        "name": "ZenGRC",
+        "vendor": "Reciprocity",
+        "sub": "Risk, Audit & Compliance",
+        "change": "Recognised GRC platform for information security risk and compliance that was missing from the catalogue."
+      },
+      {
+        "id": "5c0bb12344f1307b",
+        "name": "Fairmarkit",
+        "vendor": "Fairmarkit",
+        "sub": "Vendor & Procurement",
+        "change": "Widely recognised autonomous sourcing product missing from the catalogue."
+      },
+      {
+        "id": "4f531e9f1cc00b96",
+        "name": "Gatekeeper",
+        "vendor": "Gatekeeper",
+        "sub": "Vendor & Procurement",
+        "change": "Well-known contract and vendor management product missing from the catalogue."
+      },
+      {
+        "id": "18087076bd7052d7",
+        "name": "Keelvar",
+        "vendor": "Keelvar",
+        "sub": "Vendor & Procurement",
+        "change": "Recognised sourcing optimization platform missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Property & Facility",
+      "Risk, Audit & Compliance",
+      "Vendor & Procurement"
+    ],
+    "summary": "Checked 40 tools: 3 confirmed, 36 updated, 0 discontinued, 1 could not be verified. Searched Property & Facility, Risk, Audit & Compliance, Vendor & Procurement for missing products: 9 added."
+  },
+  {
     "date": "2026-11-10",
     "checked": 40,
     "confirmed": 2,
