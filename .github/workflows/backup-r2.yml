@@ -1,7 +1,12 @@
-# Weekly backup of this repository (full history) to a Cloudflare R2 bucket.
+# Weekly backup of this repository (full history) and of the D1 database
+# (javc-stats: visitor stats, contact messages, Atlas subscribers) to a Cloudflare R2 bucket.
 # Needs these GitHub secrets (Settings > Secrets and variables > Actions):
 #   R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET
-# Restore: download a .bundle file and run:  git clone javc-YYYY-MM-DD.bundle javc
+#   CLOUDFLARE_API_TOKEN  (token with "D1: Edit" on this account; without it the database step is skipped)
+# Restore the repo: download a .bundle file and run:  git clone javc-YYYY-MM-DD.bundle javc
+# Restore the database: download javc-stats-YYYY-MM-DD.sql.gz, gunzip it, then run:
+#   npx wrangler d1 execute javc-stats --remote --file=javc-stats-YYYY-MM-DD.sql
+#   (into an empty database; existing tables would clash)
 name: Weekly backup to Cloudflare R2
 
 on:
@@ -37,14 +42,32 @@ jobs:
           git bundle verify "javc-$D.bundle"
           ls -l javc-*
 
+      - name: Export the D1 database
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::warning::CLOUDFLARE_API_TOKEN is not set, so the database is not backed up this week."
+            exit 0
+          fi
+          D=$(date -u +%F)
+          npx --yes wrangler@4 d1 export javc-stats --remote --output="javc-stats-$D.sql"
+          test -s "javc-stats-$D.sql"
+          gzip -9 "javc-stats-$D.sql"
+          ls -l javc-stats-*
+
       - name: Upload to R2
         run: |
           aws s3 cp javc-*.bundle "s3://$BUCKET/javc/" --endpoint-url "$ENDPOINT"
           aws s3 cp javc-*.zip "s3://$BUCKET/javc/" --endpoint-url "$ENDPOINT"
+          for f in javc-stats-*.sql.gz; do
+            if [ -e "$f" ]; then aws s3 cp "$f" "s3://$BUCKET/javc/" --endpoint-url "$ENDPOINT"; fi
+          done
 
       - name: Remove old backups (keep the last ${{ env.KEEP }} weeks)
         run: |
-          for ext in bundle zip; do
+          for ext in bundle zip sql.gz; do
             aws s3 ls "s3://$BUCKET/javc/" --endpoint-url "$ENDPOINT" | awk '{print $4}' | grep "\.$ext$" | sort | head -n -$KEEP | while read -r f; do
               [ -n "$f" ] && aws s3 rm "s3://$BUCKET/javc/$f" --endpoint-url "$ENDPOINT"
             done
