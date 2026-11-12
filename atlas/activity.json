@@ -1,5 +1,248 @@
 [
   {
+    "date": "2026-11-12",
+    "checked": 40,
+    "confirmed": 2,
+    "unverified": 6,
+    "updated": [
+      {
+        "id": "856f7fa8e4f0b67d",
+        "name": "Catchpoint",
+        "change": "Replaced the truncated quote with a short paraphrase and moved the source to the producer's homepage."
+      },
+      {
+        "id": "85bc0ec2277b898b",
+        "name": "Splunk SOAR",
+        "change": "Replaced the truncated quote with a paraphrase of the producer's product page."
+      },
+      {
+        "id": "86be744748397e7b",
+        "name": "Precoro",
+        "change": "Replaced the quoted marketing text with a paraphrase of the homepage."
+      },
+      {
+        "id": "86e3f60a8b15651d",
+        "name": "Stripe Billing",
+        "change": "The description covered Stripe as a whole, so it now describes Stripe Billing, with a Billing documentation source."
+      },
+      {
+        "id": "871ad5f107136170",
+        "name": "Blueriq",
+        "change": "Replaced the Dutch text with an English paraphrase and added the decision-automation category."
+      },
+      {
+        "id": "8328d86b599587f1",
+        "name": "Doctor Droid",
+        "change": "Doctor Droid's own pages and LinkedIn profile describe it as an observability assistant for engineering teams. The description and source now come from those pages instead of a directory."
+      },
+      {
+        "id": "83dfb3b54d1cc97e",
+        "name": "ITONICS Innovation OS",
+        "change": "ITONICS Innovation OS is an innovation management suite covering foresight, ideation, portfolio management and roadmapping, not IT financial management. I changed the category to strategic portfolio."
+      },
+      {
+        "id": "83eeabfc22951cb4",
+        "name": "Prisma SASE",
+        "change": "Prisma SASE combines Prisma Access and Prisma SD-WAN into one cloud-delivered service. I replaced the marketing quote with a factual description, using the Palo Alto Networks press release as source, and added a network category."
+      },
+      {
+        "id": "83f18955eb09a26b",
+        "name": "Auvik",
+        "change": "Replaced a quote from a support article with a description of the product, based on Auvik's homepage."
+      },
+      {
+        "id": "84134273b959bf92",
+        "name": "HRMantra HRIS Solution",
+        "change": "Rewrote the description from the HRMantra homepage: an HRMS and payroll product, not only HRIS."
+      },
+      {
+        "id": "84ca17327871620f",
+        "name": "NETSCOUT nGeniusONE",
+        "change": "Replaced the truncated quote with a full paraphrase from the NETSCOUT product page."
+      },
+      {
+        "id": "852d3c37d8f73b5d",
+        "name": "Glean",
+        "change": "Corrected the sourceUrl to the Glean homepage and rewrote the description, since the API-reference page was a poor source."
+      },
+      {
+        "id": "85613f62b5d72615",
+        "name": "MRI Software Property Management",
+        "change": "Rewrote the marketing-style description as a factual one. MRI's homepage describes real estate software generally, so the product page was not verified."
+      },
+      {
+        "id": "88288a5b6b7a7b0e",
+        "name": "Carerix",
+        "change": "Carerix is still offered as a recruitment ATS and CRM platform. I replaced the Dutch marketing text with an English description and corrected the sourceNote."
+      },
+      {
+        "id": "8861f6ea32d0a7c1",
+        "name": "Innoslate",
+        "change": "Innoslate is still offered. I replaced the quoted tagline with a factual description and reclassified it from architecture to engineering tooling."
+      },
+      {
+        "id": "892d3583f3c7c36f",
+        "name": "Mentorloop",
+        "change": "Mentorloop is still offered. I shortened the marketing copy to a factual description that mentions its AI matching and analytics."
+      },
+      {
+        "id": "8960b1b33a3f54d5",
+        "name": "Selenium",
+        "change": "Selenium is still actively released (4.52 in October 2026). I shortened the description and replaced the old site text with the current wording."
+      },
+      {
+        "id": "8970f27993830329",
+        "name": "Zammad",
+        "change": "Zammad is still offered. I replaced the quote about one minor feature with a description of the helpdesk as a whole."
+      },
+      {
+        "id": "872334a3367b6ac1",
+        "name": "HPE OpsRamp Software",
+        "change": "Replaced the quoted snippet with a short paraphrase and moved the source to HPE's own product page."
+      },
+      {
+        "id": "87446734b47f9ca0",
+        "name": "Keylight Platform (NAVEX IRM)",
+        "was": "Keylight Platform",
+        "change": "Replaced the quote from an old Lockpath PDF with a paraphrase of a current description. The product is now marketed as NAVEX IRM, formerly Lockpath Keylight."
+      },
+      {
+        "id": "87566b90112561e1",
+        "name": "BlockAPT Platform",
+        "change": "Described the product as a SOAR and security operations platform rather than only vulnerability management, and replaced the 2021 newsletter quote with a Microsoft Marketplace listing."
+      },
+      {
+        "id": "875ccc10094fe917",
+        "name": "NinjaOne ITSM",
+        "change": "Replaced the Gartner reviews page with NinjaOne's own ITSM page and wrote a more specific description."
+      },
+      {
+        "id": "87989f883c0ab223",
+        "name": "Bonree ONE",
+        "was": "Bonree AIOps (Legacy)",
+        "change": "The product is now called Bonree ONE, not 'AIOps (Legacy)'. The description was a raw search snippet and has been replaced."
+      },
+      {
+        "id": "8992a35d6bb66898",
+        "name": "Pathlock",
+        "change": "Pathlock Cloud is still described on the producer's site, but the entry quoted marketing text and omitted the access-governance side, so I paraphrased it and added identity."
+      },
+      {
+        "id": "899b9eacd67a457a",
+        "name": "RSA ID Plus",
+        "change": "RSA ID Plus is still offered, but the description was a marketing quote about one add-on, so I rewrote it as a paraphrase of the whole platform."
+      },
+      {
+        "id": "89a0ac9b9e7ce12e",
+        "name": "Open 360 Platform",
+        "change": "Open 360 is still the Logz.io platform name; I replaced the quoted text with a paraphrase and noted the source is a 2022 announcement."
+      },
+      {
+        "id": "8a455b957e6b00b8",
+        "name": "Microsoft Powershell",
+        "change": "The entry described Azure PowerShell, a different product, and was classed as low-code; it now describes PowerShell itself and is classed as automation."
+      },
+      {
+        "id": "8bb2d9922709f041",
+        "name": "Zycus iSource",
+        "change": "Switched to Zycus's own iSource page and refined the description; the product is still offered."
+      },
+      {
+        "id": "8c183025b823ac36",
+        "name": "Microsoft Viva Engage (Yammer)",
+        "change": "Yammer is now Viva Engage; replaced the third-party source with Microsoft documentation and corrected the url."
+      },
+      {
+        "id": "8cba635f6900cb85",
+        "name": "PolyAI",
+        "change": "The description was a marketing quote; replaced it with a factual one based on PolyAI's platform documentation."
+      },
+      {
+        "id": "8d6c7fcb30e0acfd",
+        "name": "Enterprise Third-party Risk Mgmt. (TPRM)",
+        "change": "Pointed to the dedicated ServiceNow TPRM page and corrected the description wording."
+      },
+      {
+        "id": "8d7e8e8b9e47d5ce",
+        "name": "Sweep",
+        "change": "The description was a marketing quote; replaced it with a factual description of Sweep's carbon and ESG platform. Also added risk/compliance reporting category is not needed; kept the environmental category."
+      }
+    ],
+    "added": [
+      {
+        "id": "e01c38599f8a26d3",
+        "name": "iCIMS Talent Cloud",
+        "vendor": "iCIMS",
+        "sub": "Workforce",
+        "change": "Widely used enterprise recruiting platform that is missing from the Workforce subcategory."
+      },
+      {
+        "id": "72a735fa535fe684",
+        "name": "Gusto",
+        "vendor": "Gusto",
+        "sub": "Workforce",
+        "change": "Well-known SMB payroll, benefits and HR platform that is missing from the Workforce subcategory."
+      },
+      {
+        "id": "a2f100d488a26fa0",
+        "name": "SmartRecruiters Talent Acquisition Suite",
+        "vendor": "SmartRecruiters",
+        "sub": "Workforce",
+        "change": "Recognised enterprise recruiting suite that is missing from the Workforce subcategory."
+      },
+      {
+        "id": "81431c087a614088",
+        "name": "Zendesk Customer Service (Support)",
+        "vendor": "Zendesk",
+        "sub": "Customer Service",
+        "change": "Widely used customer service platform missing from the catalogue; only Zendesk for ITSM is listed."
+      },
+      {
+        "id": "34772862efe6d4b0",
+        "name": "Salesforce Service Cloud (Agentforce Service)",
+        "vendor": "Salesforce",
+        "sub": "Customer Service",
+        "change": "Leading customer service product, absent from the catalogue."
+      },
+      {
+        "id": "0d7ae133f9ddb5b4",
+        "name": "Intercom (Fin)",
+        "vendor": "Fin (formerly Intercom)",
+        "sub": "Customer Service",
+        "change": "Well-known customer messaging and support platform not yet listed."
+      },
+      {
+        "id": "832c941f4914a98b",
+        "name": "Plex Smart Manufacturing Platform",
+        "vendor": "Rockwell Automation (Plex)",
+        "sub": "Manufacturing & Delivery",
+        "change": "Widely used cloud MES/ERP platform for manufacturers that was missing from the catalogue."
+      },
+      {
+        "id": "27154f3aede76581",
+        "name": "DELMIA Apriso",
+        "vendor": "Dassault Systèmes",
+        "sub": "Manufacturing & Delivery",
+        "change": "Recognised MOM/MES product missing from the catalogue."
+      },
+      {
+        "id": "b07578e28ae2a834",
+        "name": "Infor CloudSuite Industrial (SyteLine)",
+        "vendor": "Infor",
+        "sub": "Manufacturing & Delivery",
+        "change": "Well-known manufacturing ERP not yet in the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Workforce",
+      "Customer Service",
+      "Manufacturing & Delivery"
+    ],
+    "summary": "Checked 40 tools: 2 confirmed, 32 updated, 0 discontinued, 6 could not be verified. Searched Workforce, Customer Service, Manufacturing & Delivery for missing products: 9 added."
+  },
+  {
     "date": "2026-11-11",
     "checked": 40,
     "confirmed": 3,

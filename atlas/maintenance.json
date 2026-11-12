@@ -1,7 +1,7 @@
 {
   "searched": {
-    "business-customer-service-tools": "2026-10-28",
-    "business-manufacturing-delivery-tools": "2026-10-28",
+    "business-customer-service-tools": "2026-11-12",
+    "business-manufacturing-delivery-tools": "2026-11-12",
     "business-product-management-tools": "2026-10-28",
     "business-sales-marketing-tools": "2026-10-29",
     "it-engineering-development": "2026-10-29",
@@ -51,6 +51,7 @@
     "shared-corporate-legal-tools": "2026-11-10",
     "shared-corporate-property-facility-tools": "2026-11-11",
     "shared-corporate-risk-audit-compliance-tools": "2026-11-11",
-    "shared-corporate-vendor-procurement-tools": "2026-11-11"
+    "shared-corporate-vendor-procurement-tools": "2026-11-11",
+    "shared-corporate-workforce-tools": "2026-11-12"
   }
 }
