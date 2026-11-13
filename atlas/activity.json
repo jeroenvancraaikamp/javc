@@ -1,5 +1,245 @@
 [
   {
+    "date": "2026-11-13",
+    "checked": 40,
+    "confirmed": 8,
+    "unverified": 1,
+    "updated": [
+      {
+        "id": "8d86262bf84204ba",
+        "name": "PaySpace",
+        "change": "The PaySpace site now brands the product 'Deel Local Payroll, powered by PaySpace' and says it is backed by Deel, so the vendor was changed from Sage to Deel."
+      },
+      {
+        "id": "8e1c988fc017d080",
+        "name": "IT Glue",
+        "change": "The old description was a verbatim quote; replaced with a short paraphrase. The setup guide on Kaseya's IT Glue help site confirms the product is still offered."
+      },
+      {
+        "id": "8e1ee6b2c2d5437e",
+        "name": "Proggio",
+        "change": "The old description was a verbatim marketing quote; replaced with a factual paraphrase. The product is still offered, with newer AI features such as TimelineGPT."
+      },
+      {
+        "id": "8e7bf7626a82600c",
+        "name": "LumApps",
+        "change": "LumApps now describes itself as an AI employee hub and intranet, and Beekeeper is now part of LumApps. The description was updated to match."
+      },
+      {
+        "id": "8e9928d75a972a9a",
+        "name": "BILL (Bill.com)",
+        "was": "Bill.com",
+        "change": "Replaced the Gartner review source with the producer's homepage. The description now covers AP, AR and spend & expense, not just payables and receivables."
+      },
+      {
+        "id": "8eaafe366ea9d009",
+        "name": "StorMagic SvSAN",
+        "change": "The product is still offered; I replaced the verbatim quote with a short paraphrase from the SvSAN features page."
+      },
+      {
+        "id": "8f05350581519b50",
+        "name": "Port",
+        "change": "Port's documentation now describes it as an AI software factory platform with a context lake, workflows, agent management and governance, so I updated the description."
+      },
+      {
+        "id": "8f1aab1e3697b3ee",
+        "name": "Diligent One Platform (formerly HighBond)",
+        "was": "HighBond",
+        "change": "The Diligent help site says HighBond is now named the Diligent One Platform, so I updated the name, description and source."
+      },
+      {
+        "id": "901403951dd48151",
+        "name": "Velory",
+        "change": "Velory's homepage now describes IT lifecycle management covering procurement, asset management, software and mobile subscriptions, so I updated the description and added the vendor category."
+      },
+      {
+        "id": "9016865b5c674f40",
+        "name": "Sentry",
+        "change": "Replaced the quote from a PDF with a paraphrase of Sentry's current documentation, which covers error tracking, tracing, profiling, session replay and logs."
+      },
+      {
+        "id": "90961174785e17fd",
+        "name": "isolved People Cloud",
+        "change": "Replaced an analyst-award blurb with a factual description of isolved People Cloud as a unified HCM platform."
+      },
+      {
+        "id": "90caa62c8c54e908",
+        "name": "Fusion Framework System",
+        "change": "Replaced the quoted snippet with a factual description and a product-page source."
+      },
+      {
+        "id": "90d37be9dc37bccb",
+        "name": "Nexpose",
+        "change": "Nexpose is still offered by Rapid7 as an on-premises scanner; replaced the quote with a current description."
+      },
+      {
+        "id": "916eec0827df441a",
+        "name": "Corporater",
+        "change": "Replaced the quoted snippet with a short description of the Corporater GPRC platform."
+      },
+      {
+        "id": "9181b43446d71519",
+        "name": "Cireson Asset Management",
+        "change": "Replaced the quoted snippet with a description of Cireson Asset Management, which integrates with Microsoft Service Manager."
+      },
+      {
+        "id": "927aef6f90fb58a9",
+        "name": "VAST Data Platform",
+        "change": "Replaced the quoted description with a short paraphrase. VAST describes the platform as unifying storage, database and compute for AI workloads."
+      },
+      {
+        "id": "92b0539eaf749915",
+        "name": "IBM UrbanCode Deploy (now IBM DevOps Deploy)",
+        "was": "UrbanCode Deploy",
+        "change": "IBM now sells newer releases as DevOps Deploy. UrbanCode Deploy 7.3.x reaches its end-of-support transition on 30 Sep 2026, with extended support to 2030. The product is not discontinued. It is a deployment-automation tool."
+      },
+      {
+        "id": "91da71f686c07a88",
+        "name": "BigID Data Security Platform",
+        "change": "Switched to BigID's own site as the source; it describes data security, DSPM and AI governance, so a data-governance subcategory was added."
+      },
+      {
+        "id": "91dfd7c8104b9fd7",
+        "name": "System Center Operations Manager (SCOM)",
+        "change": "Operations Manager is still current (2025 release); the entry now has a better description and a more specific vendor URL."
+      },
+      {
+        "id": "91f994698031662d",
+        "name": "Tyk",
+        "change": "Replaced the quoted marketing text with a factual paraphrase based on Tyk's home page."
+      },
+      {
+        "id": "92163dd4d2714023",
+        "name": "Rubrik Security Cloud",
+        "change": "Replaced the quoted text with a paraphrase and added the Rubrik cyber-recovery page as source."
+      },
+      {
+        "id": "9257542d4d380447",
+        "name": "BeyondTrust Privileged Access Management",
+        "change": "Replaced the quoted marketing text with a paraphrase and named the PAM suite components."
+      },
+      {
+        "id": "9304baefefaced1d",
+        "name": "Planforge",
+        "was": "ONEPOINT Projects",
+        "change": "The product has been renamed Planforge (Planforge GmbH, planforge.io), and the old description was a marketing tagline, so I replaced it with a factual one."
+      },
+      {
+        "id": "93bde93637c5a23c",
+        "name": "CloudBees CI",
+        "change": "The product is still offered, but I replaced the quoted description with a paraphrase based on CloudBees' own wording."
+      },
+      {
+        "id": "9450d1535acc015c",
+        "name": "SS&C Blue Prism",
+        "change": "Replaced the quoted marketing sentence with a short factual description and a more specific source."
+      },
+      {
+        "id": "946418dc7e3d146d",
+        "name": "Planview Sciforma",
+        "change": "The source and description described Planview ProjectAdvantage, not Sciforma; corrected to the Sciforma acquisition announcement."
+      },
+      {
+        "id": "94bb433cfae79f92",
+        "name": "Dynatrace AppMon (Legacy)",
+        "change": "AppMon is a legacy product whose support has ended, so I replaced the Gartner source with Dynatrace community pages and reworded the description. I found no explicit statement that it is withdrawn."
+      },
+      {
+        "id": "94c28f4b509d983e",
+        "name": "Semarchy Data Platform (xDM)",
+        "change": "I replaced the reseller source with Semarchy's own page and refined the description. xDM is a master data management platform."
+      },
+      {
+        "id": "951306e672e765f9",
+        "name": "Paychex HR Services",
+        "change": "The description was copied from marketing text, so I replaced it with a short factual one. I also kept finance for payroll and workforce for HR."
+      },
+      {
+        "id": "9540b8e61f3b89c9",
+        "name": "Talentia HCM",
+        "change": "I replaced the directory source with the producer's HCM 13 announcement. The description now mentions AI and workforce planning."
+      },
+      {
+        "id": "956cafd3ae82f8df",
+        "name": "ShareGate Platform",
+        "change": "ShareGate is a Microsoft 365 migration and governance tool, not an asset-management tool. I added the ITSM category and kept the assets category."
+      }
+    ],
+    "added": [
+      {
+        "id": "f5154ead3079e759",
+        "name": "Salesforce Marketing Cloud Engagement",
+        "vendor": "Salesforce",
+        "sub": "Sales & Marketing",
+        "change": "Widely used enterprise marketing automation product that was missing from the Salesforce entries."
+      },
+      {
+        "id": "65b5d938548c2e2b",
+        "name": "Shopify Plus",
+        "vendor": "Shopify",
+        "sub": "Sales & Marketing",
+        "change": "Leading commerce platform missing from the Sales & Marketing category."
+      },
+      {
+        "id": "c9fdde556d5f0450",
+        "name": "Braze",
+        "vendor": "Braze",
+        "sub": "Sales & Marketing",
+        "change": "Well-known customer engagement and marketing platform that was missing."
+      },
+      {
+        "id": "c027af169a441f83",
+        "name": "Pendo",
+        "vendor": "Pendo",
+        "sub": "Product Management",
+        "change": "Widely used product experience and analytics platform with feedback and roadmap features, missing from Product Management."
+      },
+      {
+        "id": "db1725412f84bfe2",
+        "name": "ENOVIA",
+        "vendor": "Dassault Systèmes",
+        "sub": "Product Management",
+        "change": "Major PLM suite comparable to the listed Teamcenter and Windchill, missing from the catalogue."
+      },
+      {
+        "id": "ba4bcc109a0488a6",
+        "name": "Arena PLM",
+        "vendor": "PTC",
+        "sub": "Product Management",
+        "change": "Widely used cloud PLM, separate from Windchill, missing from the catalogue."
+      },
+      {
+        "id": "58ee6791e388b092",
+        "name": "Visual Studio Code",
+        "vendor": "Microsoft",
+        "sub": "Development, DevOps & Quality",
+        "change": "Widely used developer editor from Microsoft that is missing from the development toolchain category."
+      },
+      {
+        "id": "bd82ce53f23081b2",
+        "name": "Visual Studio",
+        "vendor": "Microsoft",
+        "sub": "Development, DevOps & Quality",
+        "change": "Microsoft's flagship IDE is missing, while only IntelliJ IDEA and Azure DevOps are listed."
+      },
+      {
+        "id": "f561b2d4ab7533d5",
+        "name": "Perforce P4 (formerly Helix Core)",
+        "vendor": "Perforce",
+        "sub": "Development, DevOps & Quality",
+        "change": "Widely used enterprise source control system that is missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Product Management",
+      "Sales & Marketing",
+      "Development, DevOps & Quality"
+    ],
+    "summary": "Checked 40 tools: 8 confirmed, 31 updated, 0 discontinued, 1 could not be verified. Searched Product Management, Sales & Marketing, Development, DevOps & Quality for missing products: 9 added."
+  },
+  {
     "date": "2026-11-12",
     "checked": 40,
     "confirmed": 2,
