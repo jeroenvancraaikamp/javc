@@ -1,5 +1,264 @@
 [
   {
+    "date": "2026-11-14",
+    "checked": 40,
+    "confirmed": 5,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "96551a538b5f5e7c",
+        "name": "goBetter",
+        "change": "Description was marketing text about the whole BetterPlace company; rewrote it as a short factual description of goBetter and moved sourceUrl to the goBetter page."
+      },
+      {
+        "id": "968586071c1098ba",
+        "name": "MetricStream Enterprise GRC Solution",
+        "change": "Replaced the quoted text with a short paraphrase and a product-specific source page."
+      },
+      {
+        "id": "968f40885f41527e",
+        "name": "HaloITSM",
+        "change": "Halo's product pages are now on usehalo.com, so I updated the URL and source and paraphrased the description."
+      },
+      {
+        "id": "96fc397410ddc12c",
+        "name": "OpenText ZENworks Asset Management",
+        "change": "The product is still offered; I switched sourceUrl to the dedicated product page and paraphrased the description."
+      },
+      {
+        "id": "97655ea99f06b6ae",
+        "name": "GAN Integrity Platform",
+        "change": "Replaced the truncated quote with a paraphrase and pointed sourceUrl to the platform overview page."
+      },
+      {
+        "id": "97b92c95133c718d",
+        "name": "Kovrr Cyber Risk Quantification Platform",
+        "change": "Description was a quoted marketing sentence; replaced with a short paraphrase from Kovrr's page."
+      },
+      {
+        "id": "97c4add53dafaf00",
+        "name": "Unit4 Financials by Coda",
+        "was": "Unit4 Financials",
+        "change": "Description rewritten as a factual paraphrase; the product is now named Unit4 Financials by Coda."
+      },
+      {
+        "id": "97d992c32612fe20",
+        "name": "BIPO HRMS",
+        "change": "Switched to BIPO's own site as the source; the product is a cloud HR and payroll system."
+      },
+      {
+        "id": "983876fc6b918b0b",
+        "name": "Fortra Vulnerability Management (formerly Frontline Vulnerability Manager)",
+        "was": "Frontline Vulnerability Manager",
+        "change": "Product was renamed Fortra VM from version 7.0.0.0; name and source updated."
+      },
+      {
+        "id": "95b46f0f8f88595a",
+        "name": "Hyperview",
+        "change": "Hyperview is still offered as a cloud DCIM platform; I replaced the quoted marketing text with a paraphrase, moved the source to the homepage and added power/energy management."
+      },
+      {
+        "id": "95cee2e487aae736",
+        "name": "monday.com",
+        "change": "monday.com is still offered but now positions itself as an AI workspace with agents; I replaced the quoted text with a paraphrase and added IT service management (monday service)."
+      },
+      {
+        "id": "95f0726b861eeed8",
+        "name": "NH360 Enterprise Connect",
+        "change": "The NH360 Enterprise Connect page is live; I replaced the quote with a paraphrase and added portfolio optimization as a second subcategory."
+      },
+      {
+        "id": "95f104583a086319",
+        "name": "SAP Build Process Automation",
+        "change": "The product is current in SAP's documentation; I moved the source to the official 'What is' page, used a paraphrase and added low-code application development."
+      },
+      {
+        "id": "96198294545cd684",
+        "name": "PagerDuty",
+        "change": "PagerDuty Operations Cloud is current (a Spring 2026 release is announced); I replaced the DORA PDF source with the product page, used a paraphrase and added incident management."
+      },
+      {
+        "id": "983df243b5c0df06",
+        "name": "Laiye",
+        "change": "Product is current (Laiye Work Execution Platform); replaced the quoted marketing text with a short paraphrase and added a source note."
+      },
+      {
+        "id": "986339ab8ea7321b",
+        "name": "BuildMaster",
+        "change": "BuildMaster is still documented by Inedo, with 2026 upgrade notes; replaced the quoted text with a paraphrase."
+      },
+      {
+        "id": "9865705f93232996",
+        "name": "New Relic",
+        "change": "Product is current; replaced the 2022 IDC white-paper source with the producer's homepage and paraphrased the description."
+      },
+      {
+        "id": "98beb4891fc340cc",
+        "name": "Qlik Sense",
+        "change": "Qlik Sense page still exists but now promotes moving to Qlik Cloud Analytics; replaced the banner text with a neutral description."
+      },
+      {
+        "id": "98c44f34cf3dbc8f",
+        "name": "Microsoft OneDrive (Microsoft 365)",
+        "change": "OneDrive is file storage and collaboration, not network or storage infrastructure management, so the category was changed to content management."
+      },
+      {
+        "id": "98db0940887cd24d",
+        "name": "Netdata",
+        "change": "Netdata is still offered. I replaced the quoted description with a short paraphrase from the official docs."
+      },
+      {
+        "id": "98e98b2da6553c96",
+        "name": "StorageGuard",
+        "change": "StorageGuard is still the product of Continuity Software. I replaced the quoted description with a paraphrase and added the third-party profile as source."
+      },
+      {
+        "id": "98ea6943f77d4bf1",
+        "name": "Ivalua",
+        "change": "The old description covered only one feature (Search 360). I replaced it with a description of the Ivalua source-to-pay platform."
+      },
+      {
+        "id": "990b47eb0aa1dd4a",
+        "name": "License Dashboard Discovery",
+        "change": "The product is still listed. I replaced the truncated quote with a paraphrase."
+      },
+      {
+        "id": "994978e47bd3d186",
+        "name": "PeopleXD",
+        "change": "PeopleXD is still offered by The Access Group, so I replaced the Gartner source with the producer's page and a more specific description."
+      },
+      {
+        "id": "9985722ef6075504",
+        "name": "Playwright",
+        "change": "Playwright is still maintained by Microsoft; the url now points to the product site instead of the generic Microsoft homepage."
+      },
+      {
+        "id": "99a02bc03878adb4",
+        "name": "HYCU R-Cloud",
+        "change": "Replaced the verbatim quote with a short paraphrase of the official documentation."
+      },
+      {
+        "id": "9a57dc735e880dbb",
+        "name": "Josys",
+        "change": "The old description was a support-hours quote. Josys now presents itself as an identity governance platform for SaaS access, so I rewrote the description and added the identity category."
+      },
+      {
+        "id": "9aeb2d4cc071f20f",
+        "name": "Zafran Threat Exposure Management Platform",
+        "change": "Rewrote the description as a paraphrase instead of the site's marketing sentence."
+      },
+      {
+        "id": "9af548d80458db7a",
+        "name": "Flashpoint Vulnerability Intelligence (VulnDB)",
+        "was": "Vulnerability Management (VulnDB)",
+        "change": "Switched the source to Flashpoint's own VulnDB page and corrected the description."
+      },
+      {
+        "id": "9af9dfc2c0ce6af0",
+        "name": "Thales CipherTrust Data Security Platform",
+        "change": "Switched the source to Thales's own CipherTrust page and corrected the URL and description."
+      },
+      {
+        "id": "9b1a97d8220260b9",
+        "name": "Spectro Cloud Palette",
+        "change": "Replaced the quoted restaurant-edge page with the Palette product page. Palette is a Kubernetes lifecycle management platform, so I reclassified it."
+      },
+      {
+        "id": "9b2f351eabc4d8ab",
+        "name": "Supply Chain Risk Platform",
+        "change": "Reclassified the entry as supplier risk and procurement and reworded the description. The platform page is still current."
+      },
+      {
+        "id": "9b327a40dfb02a8a",
+        "name": "Oracle Cloud Observability and Management Platform",
+        "change": "Corrected the source URL to oracle.com/manageability and replaced the quoted description with a paraphrase."
+      },
+      {
+        "id": "9b3d86c62e23017d",
+        "name": "Certero for IBM",
+        "change": "Product is current, but the source page moved to the CerteroX Datacenter Management URL, so I corrected sourceUrl and wrote the description as a paraphrase."
+      },
+      {
+        "id": "9ba4fb0cd4335e2d",
+        "name": "SumTotal",
+        "change": "The SumTotal page now promotes upgrading to Cornerstone Workforce AI (formerly Galaxy), and the old description was only a marketing meta line."
+      }
+    ],
+    "added": [
+      {
+        "id": "16db7c6d62b9a0b3",
+        "name": "Camunda",
+        "vendor": "Camunda",
+        "sub": "API Management & Integration",
+        "change": "Widely used workflow and orchestration engine that was missing from the integration category."
+      },
+      {
+        "id": "2c98e9faf05cd216",
+        "name": "Apollo GraphOS",
+        "vendor": "Apollo GraphQL",
+        "sub": "API Management & Integration",
+        "change": "Leading GraphQL API management and federation platform that was missing."
+      },
+      {
+        "id": "8a61ad9ba5c85949",
+        "name": "Temporal",
+        "vendor": "Temporal Technologies",
+        "sub": "API Management & Integration",
+        "change": "Well-known workflow orchestration platform for coordinating services that was missing."
+      },
+      {
+        "id": "7b838af38953dd45",
+        "name": "Microsoft Cost Management",
+        "vendor": "Microsoft",
+        "sub": "IT Financial Management, TBM & FinOps",
+        "change": "Widely used native Azure cost management and budgeting tool that is missing from the FinOps subcategory."
+      },
+      {
+        "id": "7bfd28118a9b3bf0",
+        "name": "Finout",
+        "vendor": "Finout",
+        "sub": "IT Financial Management, TBM & FinOps",
+        "change": "Recognised FinOps platform for cost allocation and showback that is not yet listed."
+      },
+      {
+        "id": "c2c826be9c0b9382",
+        "name": "nOps",
+        "vendor": "nOps",
+        "sub": "IT Financial Management, TBM & FinOps",
+        "change": "Well-known cloud cost optimization product that is missing from the catalogue."
+      },
+      {
+        "id": "4a6499ee0d189a94",
+        "name": "Claris FileMaker",
+        "vendor": "Claris (Apple)",
+        "sub": "Low-code Application Development",
+        "change": "Widely used long-standing low-code platform that is missing from the catalogue."
+      },
+      {
+        "id": "6f8f354a47acafda",
+        "name": "Kissflow Low-Code Platform",
+        "vendor": "Kissflow",
+        "sub": "Low-code Application Development",
+        "change": "Recognised low-code platform; the catalogue only has its procurement product."
+      },
+      {
+        "id": "712102eef336a34e",
+        "name": "Joget",
+        "vendor": "Joget",
+        "sub": "Low-code Application Development",
+        "change": "Notable open-source low-code platform that is missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "API Management & Integration",
+      "Low-code Application Development",
+      "IT Financial Management, TBM & FinOps"
+    ],
+    "summary": "Checked 40 tools: 5 confirmed, 35 updated, 0 discontinued, 0 could not be verified. Searched API Management & Integration, Low-code Application Development, IT Financial Management, TBM & FinOps for missing products: 9 added."
+  },
+  {
     "date": "2026-11-13",
     "checked": 40,
     "confirmed": 8,
