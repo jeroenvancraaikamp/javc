@@ -1,5 +1,239 @@
 [
   {
+    "date": "2026-11-15",
+    "checked": 40,
+    "confirmed": 6,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "9dbcdfe6a177ac73",
+        "name": "Mendix",
+        "change": "Mendix is a Siemens low-code platform; the entry now points to Mendix's own site, with an English description in place of the quoted Dutch text."
+      },
+      {
+        "id": "9dcb7fbb90485cc3",
+        "name": "Vicarius vRx",
+        "change": "Vicarius now describes vRx as an automated vulnerability remediation platform, so the description is refreshed and a short patch-management paraphrase replaces the marketing text."
+      },
+      {
+        "id": "9de92c9ef4f121d6",
+        "name": "Sage People",
+        "change": "The old source was Sage's generic home page; Sage People is a cloud HR and people system built on Salesforce, so it now has an HR product page and a workforce-only category."
+      },
+      {
+        "id": "9e0229d11b8a7260",
+        "name": "Codefresh",
+        "change": "Octopus Deploy acquired Codefresh in February 2024, so the vendor is confirmed; the entry now uses a news source for the acquisition and a CI/CD plus GitOps description."
+      },
+      {
+        "id": "9e07dff4d2dc77d9",
+        "name": "Kore.ai XO Platform",
+        "change": "Kore.ai describes the XO Platform as a conversational AI platform for building virtual assistants, so the source is now its own platform page."
+      },
+      {
+        "id": "9c16eb1d90f52a43",
+        "name": "Google BigQuery",
+        "change": "Product is current; url pointed to google.com, so I replaced it with the BigQuery product page, and added a BI/analytics category."
+      },
+      {
+        "id": "9c4ad891da51d03b",
+        "name": "Flexib+",
+        "change": "Flexib+ is an automated software testing platform, not core banking or observability, so I corrected the description and category."
+      },
+      {
+        "id": "9c65b0ffd56de69d",
+        "name": "Icertis Contract Intelligence",
+        "change": "Replaced the marketing-style description with a factual summary of the contract lifecycle platform."
+      },
+      {
+        "id": "9cd9a2bc042b42fb",
+        "name": "Huawei USG Firewalls",
+        "change": "The description was a customer quote; I replaced it with a factual description of the USG firewall line."
+      },
+      {
+        "id": "9cfb07aa7a1ec926",
+        "name": "Data Security Manager",
+        "change": "Reworded the description to match the product pages; added identity, access and secrets management as a category because of key management and HSM."
+      },
+      {
+        "id": "9d05a348ec86a5c0",
+        "name": "Windsurf",
+        "change": "Windsurf is now owned by Cognition; the entry now points to the producer's site and a producer page instead of the G2 listing."
+      },
+      {
+        "id": "9d0ad1ed762ed9f4",
+        "name": "Asana",
+        "change": "The description was a marketing quote; replaced with a short factual paraphrase of the work management platform."
+      },
+      {
+        "id": "9d8c0ed605428887",
+        "name": "Veritas NetBackup",
+        "change": "The Veritas NetBackup page now redirects to Cohesity (canonical: cohesity.com/platform/netbackup); NetBackup is still offered, so vendor and URL were updated."
+      },
+      {
+        "id": "9e2b21421c0b85aa",
+        "name": "Curio",
+        "change": "The description covered Menaitech's training academy rather than the product, so I rewrote it from the Curio product page."
+      },
+      {
+        "id": "9eae2a1a2b1bbdc7",
+        "name": "Pebl (formerly Velocity Global)",
+        "was": "Velocity Global",
+        "change": "Velocity Global rebranded as Pebl in September 2025, so I updated the name, URL and source."
+      },
+      {
+        "id": "9ec91adfd1580e0b",
+        "name": "Segura (formerly senhasegura)",
+        "was": "Segura (Senhasegura)",
+        "change": "Product is current but now branded Segura (formerly senhasegura); replaced the quoted marketing text with a short paraphrase."
+      },
+      {
+        "id": "9ed716c256014b84",
+        "name": "MazeBolt RADAR",
+        "change": "Product still offered by MazeBolt; replaced the quoted description with a paraphrase and noted it is now marketed as RADAR Testing."
+      },
+      {
+        "id": "9ef555e232ec69ab",
+        "name": "Vantage HCM",
+        "change": "Switched to a producer source and reworded the description; Vantage HCM is still supported by ADP (current developer API documentation)."
+      },
+      {
+        "id": "9f03a16b3e1cf979",
+        "name": "Safeguard Global",
+        "change": "Company is active; description reworded to reflect the current offering (employer of record, global payroll, contractor management, entity setup, HR and recruitment)."
+      },
+      {
+        "id": "9f3bc31741b08269",
+        "name": "Saviynt PAM",
+        "change": "The old description was an analyst-report teaser, so I replaced it with a product description from Gartner's product page. Privileged access also fits identity, access and secrets management."
+      },
+      {
+        "id": "9fba7cedb2a1e871",
+        "name": "Cribl Stream",
+        "change": "The old description was a promotional quote, so I replaced it with a factual paraphrase from the Cribl Stream product page."
+      },
+      {
+        "id": "9fd303d83bf974bc",
+        "name": "Kong Konnect",
+        "change": "The Kong docs have moved to developer.konghq.com, and Konnect is now described as a SaaS API platform that also covers AI gateway and management. I rewrote the description to match."
+      },
+      {
+        "id": "9fdd91fe59c7f719",
+        "name": "Unit4 Source-to-contract by Scanmarket",
+        "was": "Scanmarket",
+        "change": "Scanmarket was acquired by Unit4 in 2022, and Gartner now lists it as Unit4 Source-to-contract by Scanmarket, so Coupa was the wrong vendor."
+      },
+      {
+        "id": "9fde7f51f885753d",
+        "name": "SanerNow Continuous Vulnerability and Exposure Management (CVEM)",
+        "change": "The old description was a marketing claim, so I replaced it with a factual summary. The category is unchanged."
+      },
+      {
+        "id": "a001ee740feda447",
+        "name": "Haiilo",
+        "change": "Added a producer source note and a more precise description. The existing entry was still accurate but had no sourceNote."
+      },
+      {
+        "id": "a020b11703ef2cdc",
+        "name": "Gravitee",
+        "change": "The Gravitee documentation now describes governing APIs, events and AI agent traffic. I replaced the old quoted description with a paraphrase."
+      },
+      {
+        "id": "a033d16addfa8de8",
+        "name": "Nutanix Kubernetes Platform (NKP)",
+        "change": "Replaced the quoted marketing text with a paraphrase. Added the platform-workplace-computing subcategory, since NKP is a Kubernetes platform rather than a development toolchain."
+      },
+      {
+        "id": "a03489001888cc5a",
+        "name": "Planview Portfolios",
+        "change": "Replaced the quoted text with a paraphrase. Added the strategic portfolio subcategory, because the product centres on portfolio, demand and capacity planning."
+      },
+      {
+        "id": "a036322fd7423c8c",
+        "name": "Zscaler Zero Trust Exchange",
+        "change": "Replaced the quoted text with a paraphrase and added a sourceNote. The product is still offered and the existing classification stands."
+      },
+      {
+        "id": "a08ee45c7ececcb4",
+        "name": "IT Management Center (ITMC) Suite",
+        "change": "Replaced the quoted licensing sentence with a factual description of what ITMC does."
+      },
+      {
+        "id": "a0f15d0502e5920e",
+        "name": "Flexera One IT Asset Management",
+        "change": "Replaced the marketing quote with a factual paraphrase of the product description."
+      },
+      {
+        "id": "a1073d3307c3a69f",
+        "name": "Tenable Security Center",
+        "change": "Replaced the quote (which described the separate Security Center Plus) with a description of Tenable Security Center itself."
+      },
+      {
+        "id": "a18a7f0cdd77b0d0",
+        "name": "Cayosoft Guardian",
+        "change": "Description now covers the whole Guardian product (AD threat detection, monitoring and recovery) rather than only the top tier. Detection and protection added as a category."
+      },
+      {
+        "id": "a1acd76ca6d53cec",
+        "name": "BuildPiper",
+        "was": "Buildpiper",
+        "change": "The description was a customer testimonial; replaced with a factual description of BuildPiper as a Kubernetes and microservices delivery platform."
+      }
+    ],
+    "added": [
+      {
+        "id": "f8136ea8f298ee72",
+        "name": "BetterCloud SaaS Management Platform",
+        "vendor": "BetterCloud",
+        "sub": "Technology Vendor & Contract Management",
+        "change": "Widely recognised SaaS management platform that is missing from the vendor and subscription management subcategory."
+      },
+      {
+        "id": "10f08a210b2fd851",
+        "name": "Tangoe One",
+        "vendor": "Tangoe",
+        "sub": "Technology Vendor & Contract Management",
+        "change": "Established technology expense management platform covering telecom, mobile and cloud vendor spend that is missing from the catalogue."
+      },
+      {
+        "id": "b5fc8e4100a772ef",
+        "name": "SecurityScorecard",
+        "vendor": "SecurityScorecard",
+        "sub": "Technology Governance, Risk & Compliance",
+        "change": "Widely used cyber risk ratings platform missing from the GRC subcategory."
+      },
+      {
+        "id": "b6b90b20b17a411d",
+        "name": "UpGuard",
+        "vendor": "UpGuard",
+        "sub": "Technology Governance, Risk & Compliance",
+        "change": "Recognised third-party cyber risk and compliance platform absent from the catalogue."
+      },
+      {
+        "id": "abb87af112f04b0f",
+        "name": "Xacta",
+        "vendor": "Telos",
+        "sub": "Technology Governance, Risk & Compliance",
+        "change": "Established cyber GRC and continuous-compliance product missing from the catalogue."
+      },
+      {
+        "id": "f5d0a4cc50fbd6ac",
+        "name": "Delta InfraSuite Manager",
+        "vendor": "Delta Electronics",
+        "sub": "Data Center Infrastructure Management",
+        "change": "Delta's DCIM platform is currently offered and was missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Technology Governance, Risk & Compliance",
+      "Technology Vendor & Contract Management",
+      "Data Center Infrastructure Management"
+    ],
+    "summary": "Checked 40 tools: 6 confirmed, 34 updated, 0 discontinued, 0 could not be verified. Searched Technology Governance, Risk & Compliance, Technology Vendor & Contract Management, Data Center Infrastructure Management for missing products: 6 added."
+  },
+  {
     "date": "2026-11-14",
     "checked": 40,
     "confirmed": 5,
