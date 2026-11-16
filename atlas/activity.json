@@ -1,5 +1,242 @@
 [
   {
+    "date": "2026-11-16",
+    "checked": 40,
+    "confirmed": 6,
+    "unverified": 2,
+    "updated": [
+      {
+        "id": "a2f00652eae91d2d",
+        "name": "IBM Verify",
+        "change": "IBM Verify is now described as a combined workforce and consumer IAM product, so I updated the URL, source and description."
+      },
+      {
+        "id": "a2fca96956524752",
+        "name": "USU IT Financial Management",
+        "change": "The description and source covered USU IT Service Management in general, so I replaced them with the USU IT Financial Management page."
+      },
+      {
+        "id": "a34eae990c837d1e",
+        "name": "Cascadeo AI (formerly cascadeo.io)",
+        "was": "cascadeo.io",
+        "change": "The product has been renamed Cascadeo AI (formerly cascadeo.io), an AI-driven cloud monitoring and management platform, so I updated the name, description and source."
+      },
+      {
+        "id": "a22715487520c29b",
+        "name": "Sana",
+        "change": "Description was marketing text; Sana is Workday's agentic AI interface and platform, so I rewrote it and moved the sourceUrl to the product page."
+      },
+      {
+        "id": "a2402bbd2fb5821e",
+        "name": "beSECURE",
+        "change": "Description was a datasheet spec fragment; replaced with a real product description, and beSECURE is now combined with Frontline VM in Fortra VM."
+      },
+      {
+        "id": "a2bfd55aeaacd1b7",
+        "name": "TingYun APM",
+        "change": "Switched to the producer's own site as source; the vendor is Tingyun (基调听云) and its APM covers mobile, server and network monitoring."
+      },
+      {
+        "id": "a2d2c9b3e559b4bf",
+        "name": "Simpplr",
+        "change": "Description refreshed: Simpplr now positions itself as an AI-powered employee experience platform with an intranet and EX agents."
+      },
+      {
+        "id": "a2e0dabc3cbdfed8",
+        "name": "Mimecast Cloud Archive",
+        "change": "Replaced marketing wording with a factual description from Mimecast's current Cloud Archive page."
+      },
+      {
+        "id": "a1b983e4e09c196e",
+        "name": "Optial Enterprise Risk Management",
+        "change": "Product is still offered; replaced the quoted marketing line with a paraphrase of the risk module's features."
+      },
+      {
+        "id": "a1ca0047c1c477e2",
+        "name": "Sprinklr AI+",
+        "change": "Sprinklr's page describes AI+ as generative AI with prompt and workflow orchestration (AI+ Studio), so the category changes from interpretive to generative and AI development, and the quote becomes a paraphrase."
+      },
+      {
+        "id": "a1cc9529710d5ddc",
+        "name": "Protiviti Governance Portal",
+        "was": "Proviti Governance Portal for Risk Management",
+        "change": "Corrected the product name typo and replaced the Gartner link, which had a misspelled slug, with a source describing the Governance Portal as Protiviti's GRC software."
+      },
+      {
+        "id": "a1d8451190dd1571",
+        "name": "Buddy",
+        "change": "Buddy is still active; replaced the quoted text with a paraphrase and added the product's wider scope."
+      },
+      {
+        "id": "a20ed3628c6b1986",
+        "name": "Shiftee",
+        "change": "Switched to the producer's own site as source and widened the description to cover leave, workflow and payroll."
+      },
+      {
+        "id": "a3af597624cc69ca",
+        "name": "DeployHub",
+        "change": "DeployHub now presents itself as a CTEM platform, so I added vulnerability and exposure management to its categories."
+      },
+      {
+        "id": "a3bbb2df4af23d04",
+        "name": "FlexDeploy",
+        "change": "FlexDeploy is a DevOps release and deployment automation platform with many plugins and integrations, so I added the deployment automation category and rewrote the description."
+      },
+      {
+        "id": "a43d013c0f5b1a6b",
+        "name": "Tencent Kubernetes Engine (TKE)",
+        "change": "TKE is a managed Kubernetes and container platform, so I moved it to the compute, cloud and container category."
+      },
+      {
+        "id": "a51190815704806a",
+        "name": "Graylog Open",
+        "change": "Description was a comparison-page teaser; replaced with a product description from Graylog's Graylog Open page, and reclassified as log management."
+      },
+      {
+        "id": "a51ce3feab1c39d0",
+        "name": "DRUID AI",
+        "change": "Replaced the quoted whitepaper text with a paraphrase of the current Druid homepage; the product is still offered."
+      },
+      {
+        "id": "a54355906c8075b8",
+        "name": "Sastrify",
+        "change": "Description now covers software discovery, license, contract and renewal management, so a vendor/contract subcategory was added. The site notes Sastrify has joined Deel."
+      },
+      {
+        "id": "a598a01265d551e9",
+        "name": "North",
+        "change": "North is now described as an agentic AI platform (North 2) with agents, automations and guardrails, so the classification moved to agentic and generative AI."
+      },
+      {
+        "id": "a5a349990ab667b9",
+        "name": "Sopra HR Software",
+        "change": "Kept the third-party Gartner source, set the vendor to Sopra HR Software (a Sopra Steria subsidiary), and dropped the Finance category because payroll is an HR function."
+      },
+      {
+        "id": "a5ab12c614a0f974",
+        "name": "Titania Nipper",
+        "change": "Rewrote the description as a neutral paraphrase and pointed the source to Titania's Nipper product page."
+      },
+      {
+        "id": "a5ca977c4bf636c0",
+        "name": "xtype Native DevOps Automation Platform",
+        "change": "xtype now describes itself as an automated governance platform for ServiceNow, so the description, source and categories were updated."
+      },
+      {
+        "id": "a5eecee2310321c8",
+        "name": "CoreWeave AI Cloud Platform",
+        "change": "Replaced the marketing quote with a factual description of the platform and corrected the source URL."
+      },
+      {
+        "id": "a60473b288249287",
+        "name": "SevOne Network Performance Management",
+        "change": "Replaced the quoted text with a paraphrase and corrected the source. IBM SevOne is now part of the Concert platform and the product is still offered, so I added the observability category."
+      },
+      {
+        "id": "a6338a730b3fa778",
+        "name": "BigPanda",
+        "change": "The description was a quoted marketing sentence, so I replaced it with a paraphrase. I also dropped the AI-development category, because BigPanda's pages describe event correlation and incident automation."
+      },
+      {
+        "id": "a6c65cbeddb7113b",
+        "name": "CodeNOW",
+        "change": "Replaced the Gartner Peer Insights source with Stratox's own LinkedIn page and made the description more specific."
+      },
+      {
+        "id": "a6e32506db680777",
+        "name": "Paycor",
+        "change": "The description was marketing copy. Paychex completed its acquisition of Paycor in 2025, and Paycor remains an HCM, payroll and talent product."
+      },
+      {
+        "id": "a7732ca02280be1d",
+        "name": "Azure DevOps",
+        "change": "Confirmed on Microsoft Learn; replaced the quoted description with a paraphrase and pointed the URL to the product page."
+      },
+      {
+        "id": "a79144e3bac7e014",
+        "name": "Planon Universe",
+        "change": "Replaced the Dutch demo-page text with an English paraphrase of the Planon Universe platform."
+      },
+      {
+        "id": "a7bf2237dbe0b219",
+        "name": "Radiant Security AI SOC Platform",
+        "change": "Switched the source from the contact page to the homepage and paraphrased the description."
+      },
+      {
+        "id": "a7dad6f0b39cdcba",
+        "name": "Adaptive from Workday (Adaptive Planning)",
+        "was": "Workday Adaptive Planning",
+        "change": "Workday now brands the product 'Adaptive from Workday', and the page describes workforce planning with HR and finance; added a workforce subcategory."
+      }
+    ],
+    "added": [
+      {
+        "id": "94a6969a2361294e",
+        "name": "Cisco Nexus Dashboard",
+        "vendor": "Cisco",
+        "sub": "Network & Storage Management",
+        "change": "Cisco's data center network management and automation platform is missing from the catalogue."
+      },
+      {
+        "id": "a194d851148c292f",
+        "name": "Red Hat Ceph Storage",
+        "vendor": "Red Hat",
+        "sub": "Network & Storage Management",
+        "change": "A widely used enterprise distributed storage platform that is not yet in the catalogue."
+      },
+      {
+        "id": "d2a8254aab16392b",
+        "name": "Trellis Platform (Monitoring & Management)",
+        "vendor": "Vertiv",
+        "sub": "Power & Cooling Management",
+        "change": "Widely recognised Vertiv power and infrastructure monitoring platform that is missing from the catalogue."
+      },
+      {
+        "id": "7c3f659744a96ec0",
+        "name": "EcoStruxure Building Operation",
+        "vendor": "Schneider Electric",
+        "sub": "Power & Cooling Management",
+        "change": "Major building and facility energy and HVAC control platform, comparable to the Desigo CC and Metasys entries already listed."
+      },
+      {
+        "id": "a8fdd1424fceff2f",
+        "name": "Eaton Power Distribution Monitoring and Control (formerly Power Xpert Dashboard)",
+        "vendor": "Eaton",
+        "sub": "Power & Cooling Management",
+        "change": "Covers facility electrical distribution monitoring, which the catalogue's Eaton entries do not."
+      },
+      {
+        "id": "82566e4ef2737e77",
+        "name": "RunMyJobs by Redwood",
+        "vendor": "Redwood Software",
+        "sub": "Deployment, Configuration & Workload Automation",
+        "change": "Widely recognised SaaS workload automation and job scheduling product that was missing from the subcategory."
+      },
+      {
+        "id": "90ecee9c1a377b52",
+        "name": "PagerDuty Runbook Automation (Rundeck)",
+        "vendor": "PagerDuty",
+        "sub": "Deployment, Configuration & Workload Automation",
+        "change": "Well-known runbook and operations automation platform (Rundeck, now PagerDuty) that was missing."
+      },
+      {
+        "id": "ea10ac55cef695c4",
+        "name": "Salt Project (Salt)",
+        "vendor": "Broadcom (VMware Tanzu Salt)",
+        "sub": "Deployment, Configuration & Workload Automation",
+        "change": "Widely used open-source configuration management and orchestration tool that was missing."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Network & Storage Management",
+      "Power & Cooling Management",
+      "Deployment, Configuration & Workload Automation"
+    ],
+    "summary": "Checked 40 tools: 6 confirmed, 32 updated, 0 discontinued, 2 could not be verified. Searched Network & Storage Management, Power & Cooling Management, Deployment, Configuration & Workload Automation for missing products: 8 added."
+  },
+  {
     "date": "2026-11-15",
     "checked": 40,
     "confirmed": 6,
