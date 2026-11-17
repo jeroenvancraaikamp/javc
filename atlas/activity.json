@@ -1,5 +1,243 @@
 [
   {
+    "date": "2026-11-17",
+    "checked": 40,
+    "confirmed": 8,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "a7ecbe89436cb03b",
+        "name": "Lupasafe",
+        "change": "Description is now a paraphrase from the producer's homepage. Added the protection category because the platform covers awareness training, phishing simulation and DMARC."
+      },
+      {
+        "id": "a81aed88e9fa8b9d",
+        "name": "StrongDM",
+        "change": "Moved the source to StrongDM's own technical overview page and replaced the quoted description with a paraphrase."
+      },
+      {
+        "id": "a8dcd9ad4e244b0e",
+        "name": "IT Asset Management (ITAM)",
+        "was": "IT Enterprise Asset Mgmt (IEAM)",
+        "change": "The cited EAM page covers physical asset maintenance, which does not fit IT assets. Re-pointed the entry to ServiceNow's IT Asset Management page."
+      },
+      {
+        "id": "a971069823630cd4",
+        "name": "Board",
+        "change": "Board's page still describes the Agentic Planning Platform, but the entry is better classed as planning software, so I added a source note and a fuller description. I kept the finance category."
+      },
+      {
+        "id": "a9cd8a8b3a9a94d7",
+        "name": "InvGate Service Management",
+        "change": "The product is current. I replaced the quoted description with a paraphrase and removed the tracking parameter from the source URL."
+      },
+      {
+        "id": "a9f789f961822be5",
+        "name": "Mitratech TeamConnect",
+        "change": "TeamConnect is current. I replaced the page-title description with a paraphrase and added an ARIES AI note."
+      },
+      {
+        "id": "aa390ed970454776",
+        "name": "Red Hat Ansible Automation Platform",
+        "change": "The product is current, but it is an automation platform rather than a development toolchain. I moved it to the automation subcategory and rewrote the description."
+      },
+      {
+        "id": "aa62102b30600978",
+        "name": "Bitrise",
+        "change": "Bitrise is still offered, but its site now positions it around CI, build cache, release management and remote dev environments for the agentic era, so I updated the description."
+      },
+      {
+        "id": "aa82e5bf59837720",
+        "name": "AssetSonar",
+        "change": "AssetSonar is still offered by EZO; description rewritten as a paraphrase and sourceUrl moved to the product's Knowledge Base page."
+      },
+      {
+        "id": "aacff9f59eb74d62",
+        "name": "Writer",
+        "change": "Writer is still active; the vendor now positions it as an enterprise generative AI platform, so a generative AI category was added and the description was rewritten."
+      },
+      {
+        "id": "aad6e56395b4d8f0",
+        "name": "GlobalSuite",
+        "change": "GlobalSuite is still offered; the description was rewritten and sourceUrl now points to the Business Continuity product page."
+      },
+      {
+        "id": "aae733735b8f65c1",
+        "name": "OTRS",
+        "change": "OTRS is still offered as a service management platform; the old 6.0 admin PDF was replaced with the current platform page."
+      },
+      {
+        "id": "aaff8f9138e56da1",
+        "name": "Swascan Cyber Threat Intelligence",
+        "change": "Swascan is part of Tinexta Group; the service is offered by the producer and resold by Vodafone Business, so the description was rewritten, and its category now covers exposure management."
+      },
+      {
+        "id": "ac4b43599ea56352",
+        "name": "Reltio Data Cloud",
+        "change": "Reltio is now owned by SAP (acquisition completed May 2026) but is still sold under the Reltio name; I replaced the Gartner source with the producer's homepage and a fresh description."
+      },
+      {
+        "id": "ac7e11361ec21c39",
+        "name": "RidgeBot",
+        "change": "RidgeBot is still offered; I rewrote the description as a paraphrase that reflects its current positioning as an AI-powered offensive security validation platform."
+      },
+      {
+        "id": "acb265700ac181bc",
+        "name": "WithSecure Elements Endpoint Protection",
+        "change": "The product is still offered; I replaced the quoted marketing line with a factual description and a current producer source."
+      },
+      {
+        "id": "ad4977b505acc6e8",
+        "name": "groundcover",
+        "change": "groundcover is still offered, but it now presents itself as a full-stack observability platform deployed in the customer's cloud (BYOC) with an AI agent mode, so I updated the description."
+      },
+      {
+        "id": "ab1fbfb24e07e5a7",
+        "name": "Assetnote Continuous Security Platform",
+        "change": "Assetnote was acquired by Searchlight Cyber in 2025; the product is still offered, so the entry now uses the producer's own page."
+      },
+      {
+        "id": "ab7a4c1e94adc668",
+        "name": "Claude Code",
+        "change": "The description was a customer quote from a 2025 launch post. It is replaced with a factual description from the official docs."
+      },
+      {
+        "id": "ab80a4fdb8bd5746",
+        "name": "Logit.io",
+        "change": "The description was a direct quote from the docs. It is replaced with a paraphrase that reflects the managed OpenSearch, Grafana and Prometheus offering."
+      },
+      {
+        "id": "ab8c7b3374b44689",
+        "name": "GLPI Network Cloud",
+        "change": "The Gartner page was replaced with the vendor-related product description; GLPI Network Cloud is a Teclib SaaS ITSM offering and is still offered."
+      },
+      {
+        "id": "abaeab559efd9e8f",
+        "name": "RF Code",
+        "change": "The description was a quote from the partners page. It is replaced with a description from the home page of what RF Code does."
+      },
+      {
+        "id": "ad5b84f1c99e8ff0",
+        "name": "Vroozi",
+        "change": "Replaced the quoted marketing line with a factual description and a Vroozi solution-overview page as source."
+      },
+      {
+        "id": "ad790f33a7452d05",
+        "name": "Planisware Enterprise",
+        "change": "Rewrote the quoted description in neutral wording and reclassified the product to strategic portfolio management, which fits PPM better than enterprise architecture."
+      },
+      {
+        "id": "ad9a38caf7b521f0",
+        "name": "Ncontracts",
+        "change": "Replaced the truncated quote with a full factual description; the product is still offered."
+      },
+      {
+        "id": "ae31d688aac7b0f9",
+        "name": "Creatio Studio",
+        "change": "Creatio Studio is now described as a no-code agentic platform for building applications and AI agents, so the description was refreshed."
+      },
+      {
+        "id": "aefafcd1bfda6d14",
+        "name": "Seconize DeRisk Center",
+        "change": "Replaced the marketing quote with a paraphrase and added risk and compliance as a second category."
+      },
+      {
+        "id": "af3aa0d0c89ab4e0",
+        "name": "SystemAnalyzer",
+        "was": "SystemAnalyzer (Legacy)",
+        "change": "Open iT's current documentation still describes SystemAnalyzer as a data-collection module, so I replaced the 2019 brochure quote with a paraphrase of the docs."
+      },
+      {
+        "id": "af3ff3db96dcca86",
+        "name": "OnePlan",
+        "change": "Recategorised from enterprise architecture to strategic portfolio management, and replaced the quote with a paraphrase."
+      },
+      {
+        "id": "af6a550a04bd6268",
+        "name": "Cato SASE Cloud Platform",
+        "change": "Replaced the quote with a paraphrase and added network management as a category, since the platform includes SD-WAN."
+      },
+      {
+        "id": "ae5e6317bf9e3dcd",
+        "name": "Sirion (SirionOne)",
+        "was": "SirionOne (SirionLabs)",
+        "change": "The producer now brands the product as Sirion, an AI-native contract lifecycle management platform. I replaced the third-party source with the producer's own page."
+      }
+    ],
+    "added": [
+      {
+        "id": "81cda2845391d286",
+        "name": "Grafana Tempo",
+        "vendor": "Grafana Labs",
+        "sub": "Observability, Events & AIOps",
+        "change": "Widely used open-source tracing backend of the Grafana stack, missing while Loki and Jaeger are listed."
+      },
+      {
+        "id": "4a8a90ac1d9bcd54",
+        "name": "Mezmo Telemetry Pipeline",
+        "vendor": "Mezmo",
+        "sub": "Observability, Events & AIOps",
+        "change": "Recognised observability telemetry pipeline vendor; the catalogue lists Cribl Stream and Edge Delta but not Mezmo."
+      },
+      {
+        "id": "56f1951f2d5d18ac",
+        "name": "CrowdStrike Falcon LogScale (formerly Humio)",
+        "vendor": "CrowdStrike",
+        "sub": "Observability, Events & AIOps",
+        "change": "Well-known log management and observability engine (formerly Humio) that is not in the catalogue, which only has Falcon Next-Gen SIEM under security."
+      },
+      {
+        "id": "9918bd511c6c8b11",
+        "name": "Azure Site Recovery",
+        "vendor": "Microsoft",
+        "sub": "Backup & Disaster Recovery",
+        "change": "Widely used Microsoft DR replication and failover service that is missing from the catalogue."
+      },
+      {
+        "id": "53e39f6d06084427",
+        "name": "Arctera Backup Exec",
+        "vendor": "Arctera",
+        "sub": "Backup & Disaster Recovery",
+        "change": "Long-established backup product, now from Arctera (formerly Veritas), that is not in the catalogue."
+      },
+      {
+        "id": "a9b191ade0c8fe02",
+        "name": "NodeZero",
+        "vendor": "Horizon3.ai",
+        "sub": "Vulnerability & Exposure Management",
+        "change": "Widely recognised autonomous pentesting/exposure validation product that was missing from the subcategory."
+      },
+      {
+        "id": "01dcd9d30e3ba3bd",
+        "name": "Burp Suite DAST",
+        "vendor": "PortSwigger",
+        "sub": "Vulnerability & Exposure Management",
+        "change": "Well-known web vulnerability scanning product from PortSwigger that was missing from the subcategory."
+      },
+      {
+        "id": "59f058d54debc2bf",
+        "name": "Microsoft Defender External Attack Surface Management",
+        "vendor": "Microsoft",
+        "sub": "Vulnerability & Exposure Management",
+        "change": "Microsoft's external attack surface management service was missing, and it is distinct from the listed Defender Vulnerability Management."
+      }
+    ],
+    "discontinued": [
+      {
+        "id": "aea63aff1bff07c3",
+        "name": "Oracle Application Performance Monitoring",
+        "change": "Oracle has given the Oracle Management Cloud services, including Application Performance Monitoring Cloud Service, an end-of-life status. They were shut down from 31 January 2024, and OCI Application Performance Monitoring is the successor."
+      }
+    ],
+    "errors": 0,
+    "searched": [
+      "Observability, Events & AIOps",
+      "Backup & Disaster Recovery",
+      "Vulnerability & Exposure Management"
+    ],
+    "summary": "Checked 40 tools: 8 confirmed, 31 updated, 1 discontinued, 0 could not be verified. Searched Observability, Events & AIOps, Backup & Disaster Recovery, Vulnerability & Exposure Management for missing products: 8 added."
+  },
+  {
     "date": "2026-11-16",
     "checked": 40,
     "confirmed": 6,
