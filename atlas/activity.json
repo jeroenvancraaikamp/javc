@@ -1,5 +1,251 @@
 [
   {
+    "date": "2026-11-18",
+    "checked": 40,
+    "confirmed": 5,
+    "unverified": 1,
+    "updated": [
+      {
+        "id": "af91d11feea176db",
+        "name": "Azure Pipelines",
+        "change": "Replaced the quoted text with a short paraphrase and set the producer's URL and source note."
+      },
+      {
+        "id": "aff74a9ebd9c0790",
+        "name": "Leah (formerly ContractPodAi)",
+        "was": "ContractPodAi",
+        "change": "ContractPodAi rebranded as Leah in January 2026; the entry now uses the new name, the producer's site and its own description."
+      },
+      {
+        "id": "b0092a23069e8c29",
+        "name": "GitHub",
+        "change": "Replaced the quoted text with a short paraphrase and removed the tracking parameter from the source URL."
+      },
+      {
+        "id": "b009b6ee27aff3b4",
+        "name": "Cursor",
+        "change": "The old description was a quote from a research PDF that did not describe the product; replaced it with a product description and the producer's site."
+      },
+      {
+        "id": "b15aad9aceaa5932",
+        "name": "VTS",
+        "change": "Description started with a page title and was marketing copy; rewrote it as a factual summary based on VTS's own product description."
+      },
+      {
+        "id": "b16832e02db82849",
+        "name": "KnowBe4 PhishER/Defend",
+        "change": "Replaced the direct quote with a paraphrase of the KnowBe4 datasheet; the product is still offered."
+      },
+      {
+        "id": "b178fffcd575f8aa",
+        "name": "FloQast",
+        "change": "Rewrote the marketing-style description as a neutral summary of FloQast's close and accounting automation."
+      },
+      {
+        "id": "b17ac292a3b2f1da",
+        "name": "Torq Hyperautomation (HyperSOC)",
+        "change": "Switched to Torq's HyperSOC announcement page and paraphrased the description; HyperSOC is Torq's AI-driven SOC solution."
+      },
+      {
+        "id": "b1a4ec50215fd43a",
+        "name": "Ramco Global Payroll",
+        "change": "The old description was generic company text; replaced it with a payroll-specific description from a third-party marketplace listing."
+      },
+      {
+        "id": "b1ab11213e75e96b",
+        "name": "RackTables",
+        "change": "Description was a verbatim quote; replaced with a paraphrase of the producer's homepage text."
+      },
+      {
+        "id": "b1b40c9c35b241ee",
+        "name": "Certero for Enterprise SAM",
+        "change": "Description was a truncated verbatim quote; replaced with a paraphrase of what the product does."
+      },
+      {
+        "id": "b1be32fa81bd0879",
+        "name": "Shelf",
+        "change": "Description rewritten as a neutral paraphrase instead of marketing copy; the product is still offered."
+      },
+      {
+        "id": "b1c9fc4e2d0dc521",
+        "name": "Moogsoft AIOps",
+        "change": "Moogsoft is confirmed as acquired by Dell Technologies in September 2023; the source is now Moogsoft's own announcement and the vendor URL points to Moogsoft."
+      },
+      {
+        "id": "b044167774db2ec0",
+        "name": "AWS Key Management Service (KMS)",
+        "change": "Switched the source to the official KMS developer guide and added the identity/secrets subcategory, since key management is the core purpose."
+      },
+      {
+        "id": "b075e669e709a50c",
+        "name": "Artifact Registry",
+        "change": "Replaced the verbatim quote with a paraphrase of Google's overview page."
+      },
+      {
+        "id": "b0e40782cdcb3e9a",
+        "name": "Microsoft Defender for Office 365",
+        "change": "Replaced the truncated quote with a paraphrase and pointed the source at Microsoft's current overview page."
+      },
+      {
+        "id": "b1183bcf2ba547dc",
+        "name": "JFrog Software Supply Chain Platform",
+        "change": "Replaced the SLA marketing quote with a description of the platform's actual scope and added the exposure-management subcategory."
+      },
+      {
+        "id": "b13b88f6709d575b",
+        "name": "Ironclad",
+        "change": "Rewrote the description, which was a page meta tag, as a factual summary of the contract lifecycle management product, and added the procurement/contract subcategory."
+      },
+      {
+        "id": "b23d439e0026abb0",
+        "name": "Certero for Enterprise ITAM",
+        "change": "The Certero documentation page is now titled CerteroX, so I replaced the quoted marketing line with a paraphrase and added a note about the rename."
+      },
+      {
+        "id": "b2b3c6facb4a64cf",
+        "name": "Riskonnect Active Risk Manager",
+        "change": "The product page is still live, and its canonical URL moved to /solutions/active-risk-manager/. I replaced the quoted text with a paraphrase."
+      },
+      {
+        "id": "b2bd22014ab87f7b",
+        "name": "Smarsh Enterprise Archive",
+        "change": "The Smarsh archive page is still live. I added the risk and compliance subcategory and rewrote the description in my own words."
+      },
+      {
+        "id": "b2e8faad1adac607",
+        "name": "Asset Panda",
+        "change": "The site is live and describes asset lifecycle tracking, so I added the IT assets subcategory and rewrote the description in my own words."
+      },
+      {
+        "id": "b2f2f727ca6ccca1",
+        "name": "InvGate Asset Management",
+        "change": "Product is still offered; replaced the truncated quote with a short paraphrase from the producer's FAQ page."
+      },
+      {
+        "id": "b2fd6984818022dc",
+        "name": "factoHR",
+        "change": "Product is still offered; replaced the marketing tagline with a factual description of the HR and payroll modules."
+      },
+      {
+        "id": "b373eb417aa97d07",
+        "name": "Archer",
+        "change": "Product is still offered; replaced the truncated quote with a paraphrase of the producer's About page."
+      },
+      {
+        "id": "b37fb5543cb5b0e0",
+        "name": "FusionReactor",
+        "change": "Product documentation is current; replaced the truncated quote with a short paraphrase."
+      },
+      {
+        "id": "b3fe6bd121a7b225",
+        "name": "Huawei Cloud Container Engine (CCE)",
+        "change": "The description covered Istio instead of CCE; replaced it with the CCE service description and moved it to container platforms."
+      },
+      {
+        "id": "b40b75a4001e98ab",
+        "name": "AdaptiveGRC",
+        "change": "Kept the product and description, and added the technology GRC subcategory because the suite covers general GRC."
+      },
+      {
+        "id": "b47856c8922abeff",
+        "name": "FAMIS 360",
+        "was": "FAMIS 360: Facility Management Software | Accruent",
+        "change": "Replaced the page-title name and promotional description with a factual description of FAMIS 360."
+      },
+      {
+        "id": "b48de16f283fffa2",
+        "name": "Check Point Harmony Email & Collaboration",
+        "change": "The product is current. I replaced the truncated quote with a factual description and a clearer source page."
+      },
+      {
+        "id": "b526242ed81f9560",
+        "name": "Power Automate",
+        "change": "Description rewritten as a neutral paraphrase covering cloud flows, desktop RPA and process mining; url and categories adjusted."
+      },
+      {
+        "id": "b58b5ba14b9bbf8f",
+        "name": "Sn1perSecurity",
+        "change": "Description rewritten to match the current overview page, which describes an automated pentesting toolkit integrating scanners."
+      },
+      {
+        "id": "b58dfd0dbdc3f736",
+        "name": "Mercans HR Blizz",
+        "change": "Shortened the description to the producer's current wording and pointed the source to the HR Blizz product page."
+      },
+      {
+        "id": "b5aa6698beef6c46",
+        "name": "DSPM",
+        "change": "Description shortened and aligned with Cyera's current DSPM page; category extended with exposure management."
+      }
+    ],
+    "added": [
+      {
+        "id": "d2c9c469b9e3e7de",
+        "name": "1Password Business",
+        "vendor": "1Password",
+        "sub": "Identity, Access & Secrets Management",
+        "change": "Widely used business credential manager from 1Password, missing from the catalogue."
+      },
+      {
+        "id": "91e89f25d45f0774",
+        "name": "Bitwarden Business (Password Manager and Secrets Manager)",
+        "vendor": "Bitwarden",
+        "sub": "Identity, Access & Secrets Management",
+        "change": "Well-known password and secrets manager, absent from the catalogue."
+      },
+      {
+        "id": "bf80296e58284ab3",
+        "name": "Akeyless Platform",
+        "vendor": "Akeyless",
+        "sub": "Identity, Access & Secrets Management",
+        "change": "Recognised SaaS secrets and privileged access platform not yet in the catalogue."
+      },
+      {
+        "id": "eefbf9d8edc871dd",
+        "name": "Microsoft Defender XDR",
+        "vendor": "Microsoft",
+        "sub": "Security Protection, Detection & Response",
+        "change": "Widely used Microsoft XDR suite that is not listed; the catalogue only has its individual Defender components."
+      },
+      {
+        "id": "c9419599138343a0",
+        "name": "IBM Security QRadar SIEM",
+        "vendor": "IBM",
+        "sub": "Security Protection, Detection & Response",
+        "change": "Well-known SIEM missing from the catalogue."
+      },
+      {
+        "id": "d32aab78a81027c1",
+        "name": "Vectra AI Platform",
+        "vendor": "Vectra AI",
+        "sub": "Security Protection, Detection & Response",
+        "change": "Recognised NDR/XDR vendor not yet in the catalogue."
+      },
+      {
+        "id": "f333275e593d0d36",
+        "name": "runZero",
+        "vendor": "runZero",
+        "sub": "IT Assets, Software & Configuration",
+        "change": "Widely recognised network discovery and asset inventory product that is missing from the catalogue."
+      },
+      {
+        "id": "3161a9645d69a9d3",
+        "name": "Cloudaware",
+        "vendor": "Cloudaware",
+        "sub": "IT Assets, Software & Configuration",
+        "change": "Multi-cloud CMDB and asset inventory product that is not yet in the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Identity, Access & Secrets Management",
+      "Security Protection, Detection & Response",
+      "IT Assets, Software & Configuration"
+    ],
+    "summary": "Checked 40 tools: 5 confirmed, 34 updated, 0 discontinued, 1 could not be verified. Searched Identity, Access & Secrets Management, Security Protection, Detection & Response, IT Assets, Software & Configuration for missing products: 8 added."
+  },
+  {
     "date": "2026-11-17",
     "checked": 40,
     "confirmed": 8,
