@@ -1,5 +1,264 @@
 [
   {
+    "date": "2026-11-19",
+    "checked": 40,
+    "confirmed": 3,
+    "unverified": 2,
+    "updated": [
+      {
+        "id": "b5ce6db13ff58eff",
+        "name": "Canonical Kubernetes",
+        "change": "Description rewritten as a paraphrase, and the entry reclassified as a Kubernetes distribution (compute/container platform) instead of development tooling."
+      },
+      {
+        "id": "b5ed86fda302082b",
+        "name": "CloudPay",
+        "change": "The producer's site now uses cloudpay.com, and the description is now based on CloudPay's own homepage."
+      },
+      {
+        "id": "b5f5ee83d8579af0",
+        "name": "SoundHound AI OASYS (incl. Amelia)",
+        "was": "SoundHound AI (Amelia/Dynamic Interaction)",
+        "change": "The platform is now presented as OASYS, a voice-native agent system, and SoundHound has completed its acquisition of LivePerson."
+      },
+      {
+        "id": "b61c6f60c2ad05bc",
+        "name": "Arcserve UDP",
+        "change": "Replaced the quoted cloud-storage FAQ sentence with a paraphrase of what UDP does, and switched to the canonical product page."
+      },
+      {
+        "id": "b62a0ac0a014f306",
+        "name": "Google Kubernetes Engine (GKE)",
+        "change": "Description rewritten as a paraphrase, vendor URL changed to the Google Cloud GKE page, and the entry reclassified as a container platform."
+      },
+      {
+        "id": "b73498079f4d6ce2",
+        "name": "Brightlayer Data Centers",
+        "change": "Replaced the truncated quotation with a short paraphrase based on the Eaton page; the classification still fits."
+      },
+      {
+        "id": "b7722cb757843884",
+        "name": "Open iT Optimizer for SAP Licensing",
+        "change": "Replaced the quotation with a paraphrase; the product is still offered on Open iT's site."
+      },
+      {
+        "id": "b789e04a1dfbcf8b",
+        "name": "Tradeshift",
+        "change": "The old description covered only the Reporting & Analytics add-on; it now describes Tradeshift's e-invoicing and accounts payable automation platform and adds a finance category."
+      },
+      {
+        "id": "b7ccb8492174877b",
+        "name": "AIOps",
+        "change": "Replaced the quotation with a paraphrase of the PagerDuty docs; the product is still documented and offered."
+      },
+      {
+        "id": "b7e35457efdf4b93",
+        "name": "Legal Tracker",
+        "change": "Switched to Thomson Reuters' own Legal Tracker page and wrote a description of e-billing and matter management."
+      },
+      {
+        "id": "b7fd3d1483dea702",
+        "name": "SD Worx",
+        "change": "The old description was marketing copy, so I replaced it with a factual one. The producer page returned no readable content, so the wording rests on its earlier tagline."
+      },
+      {
+        "id": "b80825d084aef1b5",
+        "name": "Confluent Platform",
+        "change": "Confirmed on the Confluent docs. The description is now a paraphrase rather than a quote, with the Kafka basis added."
+      },
+      {
+        "id": "b8596c719e73b7fd",
+        "name": "Graylog Security",
+        "change": "Replaced the licensing quote with a description of what Graylog Security does (SIEM on log management)."
+      },
+      {
+        "id": "b86cd704f0ece95c",
+        "name": "Snyk",
+        "change": "Rewrote the marketing text as a factual description and added vulnerability management as a second category."
+      },
+      {
+        "id": "b874d1953b67004b",
+        "name": "Copilot Studio",
+        "change": "Replaced the licensing-guide PDF with Microsoft Learn documentation and set a precise product URL. The product now covers agents and app building, so I changed the categories."
+      },
+      {
+        "id": "b8a2627f5a95f2b5",
+        "name": "Trend Micro Email Security",
+        "change": "The source page was for the Directory Sync tool, so the URL is now Trend Micro's product page. Only a third-party result for the related Cloud App Security was found, so the source is unconfirmed."
+      },
+      {
+        "id": "b8b522366ca78400",
+        "name": "incident.io",
+        "change": "incident.io now presents itself as a reliability platform covering on-call, investigations, incident response and status pages, so the description and categories were updated."
+      },
+      {
+        "id": "b8b714196c1707e2",
+        "name": "Wolken ITSM",
+        "change": "Wolken's own site was not retrievable, so the source is now a Capterra listing, and the description is more specific."
+      },
+      {
+        "id": "b8c0aa057bdff340",
+        "name": "Prism PPM",
+        "change": "Switched to the producer's solution page, which describes the product as portfolio management software."
+      },
+      {
+        "id": "b913ca0dd939d1ec",
+        "name": "Ivanti Neurons for ITSM",
+        "change": "Replaced the quoted marketing text with a short paraphrase. The InvGate directory supports it as third-party information."
+      },
+      {
+        "id": "b943eb973f547870",
+        "name": "Microsoft Entra Domain Services",
+        "was": "Domain Services",
+        "change": "The product is now called Microsoft Entra Domain Services (formerly Azure AD Domain Services). The source is now Microsoft's documentation."
+      },
+      {
+        "id": "b953e97928f1e200",
+        "name": "Ataccama",
+        "change": "Switched to Ataccama's documentation, which describes the platform as unified data quality, catalog and observability."
+      },
+      {
+        "id": "b97fe1288867a449",
+        "name": "Jaggaer",
+        "change": "Replaced a garbled quoted description (with encoding artefacts) with a short paraphrase from JAGGAER's Source-to-Pay page."
+      },
+      {
+        "id": "b9b3e951e2c79303",
+        "name": "Red Hat Fuse",
+        "change": "Red Hat's documentation says Fuse 6 is unsupported as of Feb 2025 and points to Red Hat build of Apache Camel; I switched to producer documentation and noted that."
+      },
+      {
+        "id": "ba0ed21186f47549",
+        "name": "Forward Networks",
+        "change": "Replaced a truncated marketing quote with a factual description of Forward Enterprise, the network digital twin platform."
+      },
+      {
+        "id": "baf9142da4ca2933",
+        "name": "Wiz Exposure Management",
+        "change": "Replaced the quote with a paraphrase and added a current Wiz page. Wiz Exposure Management (Wiz XM) is still offered."
+      },
+      {
+        "id": "bb3dad795111c3e6",
+        "name": "Site24x7",
+        "was": "ManageEngine Site24x7",
+        "change": "Pointed url and sourceUrl to Site24x7's own site and replaced the Gartner source with a producer features page."
+      },
+      {
+        "id": "bb80581e5b289faf",
+        "name": "HiredScore",
+        "change": "Replaced the G2 source with Workday's AWS Marketplace listing and expanded the description to cover recruiting and talent mobility."
+      },
+      {
+        "id": "bb851a00d1361ba8",
+        "name": "Trivy",
+        "change": "Replaced the marketing quote with a factual description and added vulnerability management as a subcategory."
+      },
+      {
+        "id": "bb9c1c9bcdf129b2",
+        "name": "WALLIX Bastion",
+        "change": "Replaced the quote with a paraphrase of the PAM function and switched to the newer WALLIX datasheet."
+      },
+      {
+        "id": "bbe3c1b8a5bbb75c",
+        "name": "M18",
+        "change": "Corrected the description and categories: M18 is an ERP suite (finance, manufacturing, HR), not just workforce software, and the old text was site marketing copy."
+      },
+      {
+        "id": "bc0da07b37ef648c",
+        "name": "Trellix Endpoint Security",
+        "change": "Product is current; replaced the quoted description with a short paraphrase and a fuller source note."
+      },
+      {
+        "id": "bce087051250caed",
+        "name": "Pyramid Decision Intelligence Platform",
+        "change": "Pyramid's homepage now says ServiceNow has acquired Pyramid Analytics (announced Feb 2026); the product is still offered, and the description was rewritten as a factual paraphrase."
+      },
+      {
+        "id": "bcf2dcc8c39c5859",
+        "name": "Google Cloud Observability",
+        "change": "The url pointed to google.com; it now points to the Google Cloud product page, and the description was rewritten as a paraphrase covering the whole suite."
+      },
+      {
+        "id": "bd21c3df25cdce77",
+        "name": "KEY ESG",
+        "change": "The homepage wording has changed; the description was rewritten to match the current page."
+      }
+    ],
+    "added": [
+      {
+        "id": "1c7f7625d82c5bbd",
+        "name": "HCL BigFix",
+        "vendor": "HCL Software",
+        "sub": "Endpoint Management & Employee Experience",
+        "change": "Widely used endpoint management and patching platform that was missing from the catalogue."
+      },
+      {
+        "id": "703d3245a082a7f1",
+        "name": "Lakeside SysTrack",
+        "vendor": "Lakeside Software",
+        "sub": "Endpoint Management & Employee Experience",
+        "change": "Recognised DEX product that measures employee experience and was missing from the catalogue."
+      },
+      {
+        "id": "1f0cc85933a9811d",
+        "name": "Kaseya VSA",
+        "vendor": "Kaseya",
+        "sub": "Endpoint Management & Employee Experience",
+        "change": "Well-known RMM and endpoint management product that was missing from the catalogue."
+      },
+      {
+        "id": "457e1dff5d5dcb4b",
+        "name": "Request Tracker (RT)",
+        "vendor": "Best Practical Solutions",
+        "sub": "IT Service Management & Support",
+        "change": "Widely used open-source ticketing system that was missing from the ITSM list."
+      },
+      {
+        "id": "887bafce19defaee",
+        "name": "Znuny",
+        "vendor": "Znuny GmbH",
+        "sub": "IT Service Management & Support",
+        "change": "Actively maintained open-source ITSM fork of OTRS that was missing from the catalogue."
+      },
+      {
+        "id": "0efd17d6940f8b6d",
+        "name": "Autotask PSA",
+        "vendor": "Kaseya (Datto)",
+        "sub": "IT Service Management & Support",
+        "change": "Leading MSP PSA and service desk platform, comparable to ConnectWise PSA, that was missing from the catalogue."
+      },
+      {
+        "id": "78a64a6b90b2b78a",
+        "name": "SAP PowerDesigner",
+        "vendor": "SAP",
+        "sub": "Enterprise Architecture & Product Portfolio",
+        "change": "Widely used SAP modeling tool with an explicit enterprise architecture domain, missing from the catalogue."
+      },
+      {
+        "id": "07e3061d5c003757",
+        "name": "Modelio",
+        "vendor": "Modeliosoft (Modelio open source project)",
+        "sub": "Enterprise Architecture & Product Portfolio",
+        "change": "Open-source ArchiMate and TOGAF modeling tool missing from the catalogue."
+      },
+      {
+        "id": "523cf10a6dcc313a",
+        "name": "Structurizr",
+        "vendor": "Structurizr (Simon Brown)",
+        "sub": "Enterprise Architecture & Product Portfolio",
+        "change": "Recognised architecture-as-code tool for C4 software architecture models, missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Endpoint Management & Employee Experience",
+      "IT Service Management & Support",
+      "Enterprise Architecture & Product Portfolio"
+    ],
+    "summary": "Checked 40 tools: 3 confirmed, 35 updated, 0 discontinued, 2 could not be verified. Searched Endpoint Management & Employee Experience, IT Service Management & Support, Enterprise Architecture & Product Portfolio for missing products: 9 added."
+  },
+  {
     "date": "2026-11-18",
     "checked": 40,
     "confirmed": 5,
