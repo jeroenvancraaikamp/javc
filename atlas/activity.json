@@ -1,5 +1,253 @@
 [
   {
+    "date": "2026-11-20",
+    "checked": 40,
+    "confirmed": 1,
+    "unverified": 6,
+    "updated": [
+      {
+        "id": "be6052cc6578915e",
+        "name": "Ivanti RBVM",
+        "was": "Ivanti Neurons for RBVM",
+        "change": "Ivanti now brands this as Ivanti Risk-Based Vulnerability Management (RBVM); name and description were updated and the description is now a paraphrase instead of a quote."
+      },
+      {
+        "id": "bee53930b8cf1158",
+        "name": "SureCloud Platform",
+        "change": "The SureCloud platform is a broader GRC suite (Assure, Automate, Orchestrate); the description was rewritten to cover it and a governance/risk/compliance subcategory was added."
+      },
+      {
+        "id": "bf060b3d2798a7b3",
+        "name": "Centraleyes",
+        "change": "The description was rewritten as a paraphrase and now also covers third-party risk, and a technology governance, risk and compliance subcategory was added."
+      },
+      {
+        "id": "bf11bf142c05f52f",
+        "name": "Case IQ",
+        "change": "The product is still offered, but the description was rewritten as a paraphrase."
+      },
+      {
+        "id": "c0d4d17842e4a719",
+        "name": "Appcircle",
+        "change": "Replaced the quoted marketing sentence with a short paraphrase; Appcircle is a mobile CI/CD and distribution platform, confirmed on GitHub Marketplace."
+      },
+      {
+        "id": "c0d7a6eeb8e08e6f",
+        "name": "Rasa Open Source",
+        "change": "Rewrote the quoted description as a paraphrase and used the RasaHQ GitHub repository as source; the repo now separates classic Rasa Open Source from the newer CALM approach."
+      },
+      {
+        "id": "c10c8fdd5c4cd728",
+        "name": "GOAT Risk",
+        "change": "Moved the entry to the producer's site and a cloud risk management description; the producer is at goatrisksolutions.com."
+      },
+      {
+        "id": "c139f3dd8978c892",
+        "name": "Mimecast Email Security",
+        "change": "Replaced the marketing text with a factual description from Mimecast's email security page."
+      },
+      {
+        "id": "bf4ca7f6dc3c853d",
+        "name": "Microsoft Viva Connections",
+        "change": "Replaced the Gartner reviews page with Microsoft's own Viva documentation, which describes Viva Connections as a Teams app for tools, news and resources."
+      },
+      {
+        "id": "bf794ff50f2f9acf",
+        "name": "Monte Carlo Data + AI Observability",
+        "change": "Switched to the producer's own site; Monte Carlo now brands itself as an agent trust platform and its site canonical is montecarlo.ai."
+      },
+      {
+        "id": "c00b3421fcd900cf",
+        "name": "Autobahn Security",
+        "was": "Autobahn",
+        "change": "The product is Autobahn Security, a SaaS platform with its own site at autobahn.security, so the URL and vendor were corrected."
+      },
+      {
+        "id": "c07353082a4ea285",
+        "name": "EcoStruxure IT",
+        "change": "Description rewritten as a paraphrase from Schneider Electric's current EcoStruxure IT Expert page, which describes a vendor-agnostic DCIM monitoring solution with AI analytics."
+      },
+      {
+        "id": "c0ae15f267eb4f23",
+        "name": "Certero for Oracle",
+        "change": "Description rewritten as a paraphrase, and the category now covers Oracle license management, which is software asset management."
+      },
+      {
+        "id": "c433f7e87c684a2f",
+        "name": "Gurucul Unified Security & Risk Analytics",
+        "change": "Replaced the truncated quote with a short paraphrase from the producer's launch announcement; the product is the Gurucul platform for security analytics, now marketed under newer names."
+      },
+      {
+        "id": "c46ea709983dd388",
+        "name": "Secureworks Taegis VDR",
+        "change": "Replaced the truncated quote with a paraphrase; Taegis VDR covers vulnerability prioritization and also threat detection and response, now sold by Sophos."
+      },
+      {
+        "id": "c47ec084587e7723",
+        "name": "Prophix",
+        "change": "Rewrote the description from marketing copy into a factual paraphrase; the product is current as Prophix One."
+      },
+      {
+        "id": "c4804f11af9470ee",
+        "name": "Hexnode UEM",
+        "change": "The existing description covered only the MSP portal; it now describes the UEM product as a whole."
+      },
+      {
+        "id": "c482eece1a47ae16",
+        "name": "Versa SASE",
+        "change": "Replaced the portal-only quote with a description of the Versa Unified SASE platform, which combines SD-WAN, SSE and SASE."
+      },
+      {
+        "id": "c348fb5a3d88f857",
+        "name": "Contrast Security Platform (IAST/RASP)",
+        "change": "Contrast covers IAST, RASP/ADR, SAST and SCA; subcategories now include protection and exposure, and the source is changed to a specialist publication."
+      },
+      {
+        "id": "c37a0494ba268226",
+        "name": "PandaDoc",
+        "change": "PandaDoc is a document workflow platform covering e-signature, contract management, CPQ and payments, so a content/documents category fits alongside legal."
+      },
+      {
+        "id": "c380d14ccc3f7119",
+        "name": "CircleCI",
+        "change": "Replaced the quoted marketing text with a short factual paraphrase of what CircleCI does."
+      },
+      {
+        "id": "c3894a2b6670bdc0",
+        "name": "CompliSpace",
+        "change": "CompliSpace focuses on policy management, compliance training and reporting for schools, aged care and corporate customers; the description was made more specific."
+      },
+      {
+        "id": "c3e6bc9859a829a3",
+        "name": "Proactis",
+        "change": "Replaced the quoted marketing text with a paraphrase and added the producer's own what-is-Proactis page as the source."
+      },
+      {
+        "id": "c1f4b412399ff6b4",
+        "name": "CyberPower PowerPanel Business Edition",
+        "change": "Replaced the quoted description with a paraphrase and switched to a working producer page covering the Local, Remote and Management editions."
+      },
+      {
+        "id": "c2509c7410427751",
+        "name": "Commvault Cloud",
+        "change": "The old source was a VM-backup capability page, not the platform. I replaced the quote with a paraphrase and cited a third-party article on the Commvault Cloud Unity release."
+      },
+      {
+        "id": "c27af9f125e45004",
+        "name": "Dynatrace",
+        "change": "Still current. I replaced the quoted marketing sentence with a paraphrase and kept the producer's documentation page as the source."
+      },
+      {
+        "id": "c2b9bf680b95d5c8",
+        "name": "Freshservice",
+        "change": "The product is still offered. I replaced the quote with a paraphrase and kept the producer's data sheet as the source."
+      },
+      {
+        "id": "c2fb6326cbf9a71e",
+        "name": "Ailance",
+        "change": "The product is still offered by 2B Advice. I replaced the quote with a paraphrase, and the full feature scope was not confirmed."
+      },
+      {
+        "id": "c512bba5d3325b31",
+        "name": "Causely",
+        "change": "Description rewritten as a paraphrase: Causely is a causal-reasoning AI SRE platform for root cause analysis; source switched to the producer's platform page."
+      },
+      {
+        "id": "c51f0254f5e104fb",
+        "name": "Novisto",
+        "change": "Novisto is a broader ESG/sustainability reporting and carbon platform; description paraphrased and sourced from its ESG platform page."
+      },
+      {
+        "id": "c56a317ac2af1e43",
+        "name": "JDisc Discovery",
+        "change": "Description paraphrased from the producer's product page; JDisc Discovery is an active agentless network discovery and inventory tool."
+      },
+      {
+        "id": "c5a9e2898ca11b2f",
+        "name": "CrowdStrike Falcon Exposure Management",
+        "change": "Replaced the marketing quote with a factual paraphrase from the CrowdStrike trial page."
+      },
+      {
+        "id": "c5c3b07cbded1132",
+        "name": "Sphera Enterprise Risk Management Software",
+        "change": "The old quote described supply chain risk; replaced with a description of Sphera's risk assessment software that combines enterprise and operational risk."
+      }
+    ],
+    "added": [
+      {
+        "id": "7f0922f76c9816c5",
+        "name": "Microsoft Project (Project Plan 5)",
+        "vendor": "Microsoft",
+        "sub": "Strategic Portfolio, Demand & Value Streams",
+        "change": "Widely used Microsoft PPM product that is missing from the portfolio and demand category."
+      },
+      {
+        "id": "bda5afce0d203996",
+        "name": "Digital.ai Agility",
+        "vendor": "Digital.ai",
+        "sub": "Strategic Portfolio, Demand & Value Streams",
+        "change": "Established agile portfolio and value stream planning tool that is missing from the catalogue."
+      },
+      {
+        "id": "036ed35af482c30a",
+        "name": "Oracle Primavera Cloud",
+        "vendor": "Oracle",
+        "sub": "Strategic Portfolio, Demand & Value Streams",
+        "change": "Widely recognised enterprise PPM and capital planning product that is missing from the catalogue."
+      },
+      {
+        "id": "66214db13f5f7b0c",
+        "name": "OpenAI API Platform",
+        "vendor": "OpenAI",
+        "sub": "AI Development & Model Platforms",
+        "change": "Widely used model API and developer platform for building AI applications, missing from the catalogue."
+      },
+      {
+        "id": "98cdcc0cbaa27bf7",
+        "name": "Cohere Platform",
+        "vendor": "Cohere",
+        "sub": "AI Development & Model Platforms",
+        "change": "Recognised enterprise LLM platform with several deployment options, missing from the catalogue."
+      },
+      {
+        "id": "4c2c0c44b66648a9",
+        "name": "Together AI Platform",
+        "vendor": "Together AI",
+        "sub": "AI Development & Model Platforms",
+        "change": "Well-known AI-native cloud for inference, fine-tuning and GPU clusters, missing from the catalogue."
+      },
+      {
+        "id": "fccf59bd5e4ebaa9",
+        "name": "OpenAI AgentKit",
+        "vendor": "OpenAI",
+        "sub": "Agentic AI & Intelligent Automation",
+        "change": "Widely recognised agent-building toolkit from OpenAI that was missing from the agentic AI subcategory."
+      },
+      {
+        "id": "12efba7a5165861a",
+        "name": "Dify",
+        "vendor": "LangGenius (Dify)",
+        "sub": "Agentic AI & Intelligent Automation",
+        "change": "Popular open-source agentic workflow platform that was missing from the catalogue."
+      },
+      {
+        "id": "acc2127ffa469e71",
+        "name": "LlamaIndex (LlamaAgents / LlamaCloud)",
+        "vendor": "LlamaIndex",
+        "sub": "Agentic AI & Intelligent Automation",
+        "change": "Well-known agent workflow framework and cloud platform for document-centric agents that was missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Strategic Portfolio, Demand & Value Streams",
+      "Agentic AI & Intelligent Automation",
+      "AI Development & Model Platforms"
+    ],
+    "summary": "Checked 40 tools: 1 confirmed, 33 updated, 0 discontinued, 6 could not be verified. Searched Strategic Portfolio, Demand & Value Streams, Agentic AI & Intelligent Automation, AI Development & Model Platforms for missing products: 9 added."
+  },
+  {
     "date": "2026-11-19",
     "checked": 40,
     "confirmed": 3,
