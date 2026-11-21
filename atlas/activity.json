@@ -1,5 +1,261 @@
 [
   {
+    "date": "2026-11-21",
+    "checked": 40,
+    "confirmed": 4,
+    "unverified": 1,
+    "updated": [
+      {
+        "id": "c74d9088ead38898",
+        "name": "Jira Service Management",
+        "change": "Replaced a copied quotation with a short paraphrased description; the product is still offered by Atlassian."
+      },
+      {
+        "id": "c75260b4ddd3b542",
+        "name": "Enablon Platform",
+        "change": "Replaced a quotation about an integration kit with a platform description, and added the EHS category, which the producer page puts first."
+      },
+      {
+        "id": "c797538599607d18",
+        "name": "ValueOps / Clarity",
+        "change": "Confirmed Clarity is current Broadcom ValueOps strategic portfolio management; replaced the quote with a clean paraphrase."
+      },
+      {
+        "id": "c7c38803f87a4a99",
+        "name": "Issuetrak",
+        "change": "Replaced the quote with a paraphrase based on Issuetrak's current homepage; the product is still offered."
+      },
+      {
+        "id": "c7f8d8a12fa237fd",
+        "name": "SailPoint IdentityIQ / Identity Security Cloud",
+        "change": "The old text only described an add-on analytics product; rewrote it to cover the identity security products, with limited evidence."
+      },
+      {
+        "id": "c686e7ee370caebd",
+        "name": "Celigo Integrator.io",
+        "change": "Celigo is still offered; I replaced the quoted text with a short paraphrase and noted the check of the producer site."
+      },
+      {
+        "id": "c6ba71a619a7217f",
+        "name": "Harness",
+        "change": "Replaced the marketing quote with a factual paraphrase based on the current Harness homepage, which describes a unified AI software delivery platform."
+      },
+      {
+        "id": "c7005588317eba42",
+        "name": "Palo Alto Networks Cortex XSIAM",
+        "change": "Switched to the current producer product page and a paraphrased description, since XSIAM is now described as an AI-driven SOC platform that replaces traditional SIEM."
+      },
+      {
+        "id": "c803de6091777fdc",
+        "name": "Matrix42 Enterprise Service Management",
+        "change": "Replaced the quoted marketing text with a short paraphrase and a sourceUrl on Matrix42's own ESM documentation."
+      },
+      {
+        "id": "c863474e0fe06fc7",
+        "name": "Omnitracker IT Service Management Center",
+        "change": "Switched the source from a Gartner review page to the producer's OMNITRACKER product page and wrote a more specific description."
+      },
+      {
+        "id": "c863abc096d66308",
+        "name": "Employment Hero",
+        "change": "Rewrote the marketing-style description; the product is a cloud HR, recruitment, payroll and employee platform."
+      },
+      {
+        "id": "c8b77c8b38daf863",
+        "name": "Bitdefender GravityZone",
+        "change": "Replaced the quoted text with a paraphrase and moved the source to the current GravityZone platform page."
+      },
+      {
+        "id": "c8fabdfd85710780",
+        "name": "ThreatStryker",
+        "change": "ThreatStryker is an enterprise CNAPP with runtime protection built on ThreatMapper, so I changed the sourceUrl and description and added a protection subcategory."
+      },
+      {
+        "id": "c963fe4b11d2547b",
+        "name": "Cherwell Service Management (Legacy)",
+        "change": "Ivanti has announced end of life for Cherwell Service Management on 31 Dec 2026 and points customers to Ivanti Neurons for ITSM. The product is not yet withdrawn, so the description now says so."
+      },
+      {
+        "id": "c96f79a0be86e2ab",
+        "name": "Intruder",
+        "change": "The description was a customer quote. I replaced it with a factual summary from Intruder's homepage, which now describes an exposure management platform."
+      },
+      {
+        "id": "c9a3dc5b9d16c8d8",
+        "name": "Vanta",
+        "change": "The description was a marketing quote. I replaced it with a factual summary from the Vanta platform page and added the security risk subcategory."
+      },
+      {
+        "id": "c9adbb927bf75776",
+        "name": "H3C Firewalls",
+        "change": "The description was about the Comware OS, not the firewalls. I replaced it with a summary of the current H3C SecPath F5000-AI firewall series page."
+      },
+      {
+        "id": "ca81362a34bf5cbd",
+        "name": "iiPay",
+        "change": "iiPay is still offered as a global payroll service, now part of Vistra. I rewrote the description in neutral wording and added an ownership note."
+      },
+      {
+        "id": "cad4223d9bb27573",
+        "name": "OpenPages GRC Platform",
+        "change": "IBM OpenPages is still offered. I replaced the quoted marketing line with a short paraphrase from the IBM product page."
+      },
+      {
+        "id": "caea881d962f1966",
+        "name": "TestRail",
+        "change": "TestRail is still offered by Gurock Software, an Idera company. I corrected the vendor name and the description, and added the test-management subcategory."
+      },
+      {
+        "id": "cb16b54f8b9ea92b",
+        "name": "OneLogin",
+        "change": "OneLogin is still offered, now by One Identity (acquired October 2021). I set a more suitable source page and replaced the quote with a paraphrase."
+      },
+      {
+        "id": "cb23a127c8c1b511",
+        "name": "A1 Tracker",
+        "change": "A1 Tracker is still offered by A1 Enterprise. I replaced the quoted text with a paraphrase and added the producer's product site as the source."
+      },
+      {
+        "id": "cb49f8d7108b48ed",
+        "name": "DuploCloud",
+        "change": "Replaced the quoted description with a paraphrase, since the entry's own classification omitted its infrastructure automation role. Added operations automation as a category."
+      },
+      {
+        "id": "cb88eaef5da9cf14",
+        "name": "Kira Systems",
+        "change": "Switched to Litera's own Kira page as the source and rewrote the description. Kira is now part of Litera and is an AI contract review and due diligence tool."
+      },
+      {
+        "id": "cb9f02a74abefe3a",
+        "name": "OpenText Documentum",
+        "change": "Replaced the Gartner reviews source with OpenText's own product page and gave a more precise description."
+      },
+      {
+        "id": "cba7040c7ec8d24e",
+        "name": "USU Discovery (SmartCollect)",
+        "change": "Replaced the truncated PDF quote with a paraphrase based on USU's own factsheet, which says SmartCollect is the former Aspera product and feeds USU's Software Asset Management."
+      },
+      {
+        "id": "cc12c3cc3c80f1bf",
+        "name": "Cisco ThousandEyes",
+        "change": "Moved the source to the current cisco.com ThousandEyes page and rewrote the description as a paraphrase. Added the network category."
+      },
+      {
+        "id": "cc48d40bd826e678",
+        "name": "USU SAM for Clients & Data Center",
+        "change": "Switched the source to USU's own fact sheet and updated the description: the tool is AI-driven and also covers cloud and SaaS data."
+      },
+      {
+        "id": "cc79eb3ba5d099fa",
+        "name": "Alibaba Application Real-Time Monitoring Service (ARMS)",
+        "change": "Replaced the truncated quoted description with a complete paraphrase from Alibaba Cloud's documentation."
+      },
+      {
+        "id": "ccb7e2378d3b5a78",
+        "name": "USU SAM for SaaS",
+        "change": "Replaced the marketing quote with a short paraphrase; the product is still offered."
+      },
+      {
+        "id": "cd49648994183915",
+        "name": "Tines",
+        "change": "Tines is a no-code workflow automation and AI agent platform used beyond security, so the description is rewritten and automation categories are added."
+      },
+      {
+        "id": "cd4ed75c9dbaf835",
+        "name": "Ivanti Neurons for Discovery",
+        "change": "Description was a truncated quote; replaced with a clean paraphrase from Ivanti's own product blog."
+      },
+      {
+        "id": "cd527802933eafe9",
+        "name": "Relativity",
+        "change": "Relativity renamed RelativityOne to Relativity aiR; description and source updated to the announcement."
+      },
+      {
+        "id": "cd5c5bcbeb10d17d",
+        "name": "HCL SX",
+        "change": "HCL SX is an AI-driven service management and enterprise service fulfilment product; description and source moved to the HCL brochure."
+      },
+      {
+        "id": "cd824e9826a99ed6",
+        "name": "Normative",
+        "change": "Normative is a carbon accounting platform, so it is reclassified; the source is now the current homepage."
+      }
+    ],
+    "added": [
+      {
+        "id": "9867b61b05b69068",
+        "name": "Jasper",
+        "vendor": "Jasper AI",
+        "sub": "Generative AI & Assistants",
+        "change": "Widely used generative AI marketing content platform that was missing from the catalogue."
+      },
+      {
+        "id": "e9bc8578e831b96e",
+        "name": "Synthesia",
+        "vendor": "Synthesia",
+        "sub": "Generative AI & Assistants",
+        "change": "Recognised enterprise generative AI video and avatar platform that was missing from the catalogue."
+      },
+      {
+        "id": "c7423754f98eec62",
+        "name": "JetBrains AI Assistant",
+        "vendor": "JetBrains",
+        "sub": "Generative AI & Assistants",
+        "change": "Widely used IDE-integrated AI coding assistant that was missing from the catalogue."
+      },
+      {
+        "id": "2d8d5ba1e71020c1",
+        "name": "Azure AI Document Intelligence",
+        "vendor": "Microsoft",
+        "sub": "Conversational & Interpretive AI",
+        "change": "Widely used document-understanding service that is missing from the interpretive AI subcategory."
+      },
+      {
+        "id": "80aa1520be8a9d50",
+        "name": "Coveo Relevance Cloud",
+        "vendor": "Coveo",
+        "sub": "Conversational & Interpretive AI",
+        "change": "Recognised enterprise AI search and generative answering platform that is not yet listed."
+      },
+      {
+        "id": "3065810184bfb0b2",
+        "name": "Amazon Textract",
+        "vendor": "Amazon Web Services (AWS)",
+        "sub": "Conversational & Interpretive AI",
+        "change": "Widely used AWS document-understanding service that is missing from the catalogue."
+      },
+      {
+        "id": "4189e14dbc5fa050",
+        "name": "Pecan AI",
+        "vendor": "Pecan AI",
+        "sub": "Predictive AI",
+        "change": "Added a widely marketed predictive analytics platform that was missing from the Predictive AI subcategory."
+      },
+      {
+        "id": "911e3bf28541b45f",
+        "name": "Nixtla TimeGPT",
+        "vendor": "Nixtla",
+        "sub": "Predictive AI",
+        "change": "Added a recognised time-series forecasting model API that was missing from the catalogue."
+      },
+      {
+        "id": "be1ad35dd422a5ae",
+        "name": "Qlik Predict (formerly Qlik AutoML)",
+        "vendor": "Qlik",
+        "sub": "Predictive AI",
+        "change": "Added Qlik's AutoML-based predictive offering, which is separate from the listed Qlik Sense."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Generative AI & Assistants",
+      "Conversational & Interpretive AI",
+      "Predictive AI"
+    ],
+    "summary": "Checked 40 tools: 4 confirmed, 35 updated, 0 discontinued, 1 could not be verified. Searched Generative AI & Assistants, Conversational & Interpretive AI, Predictive AI for missing products: 9 added."
+  },
+  {
     "date": "2026-11-20",
     "checked": 40,
     "confirmed": 1,
