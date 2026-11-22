@@ -1,5 +1,250 @@
 [
   {
+    "date": "2026-11-22",
+    "checked": 40,
+    "confirmed": 3,
+    "unverified": 5,
+    "updated": [
+      {
+        "id": "ce07ea1a5ff60aea",
+        "name": "Power BI",
+        "change": "Description and source described Power Platform, not Power BI; replaced with Power BI-specific details."
+      },
+      {
+        "id": "ce18bbec7b720414",
+        "name": "Octave Reliance (Reliance Compliance Management Solution)",
+        "was": "Reliance Compliance Management Solution",
+        "change": "Product is now branded Octave Reliance (formerly ETQ Reliance); the description was a rebrand quote and is now a proper functional description."
+      },
+      {
+        "id": "ce299f45d1d2c190",
+        "name": "Security Onion",
+        "change": "Replaced the slogan with a factual description of what Security Onion does."
+      },
+      {
+        "id": "ce92836357203d52",
+        "name": "Vivantio",
+        "change": "Replaced the comparative marketing quote with a factual description of the Vivantio SaaS service management suite."
+      },
+      {
+        "id": "cea4e362c97f0349",
+        "name": "AvidXchange",
+        "change": "Noted the 2025 agreement for AvidXchange to be acquired by TPG with Corpay; the product is still offered."
+      },
+      {
+        "id": "cf863585b8229b60",
+        "name": "SynerTrade Accelerate",
+        "change": "Product still offered by Synertrade; I replaced the quoted text with a paraphrased description. I did not re-check the source URL's content in detail."
+      },
+      {
+        "id": "cfc6fdea607664c9",
+        "name": "Supportworks (Legacy)",
+        "change": "Hornbill's documentation covers only a migration utility for Supportworks data, not the product itself, so I reworded the entry to say that."
+      },
+      {
+        "id": "d00173a6b623b2f1",
+        "name": "Ping Identity Platform (incl. ForgeRock)",
+        "change": "Confirmed ForgeRock was merged into Ping Identity and its technology is part of the Ping platform; I replaced the quoted text with a paraphrase."
+      },
+      {
+        "id": "d00e0db9872ed9dc",
+        "name": "Riskonnect",
+        "change": "Product is current; I replaced the quote with a paraphrase and added a more specific source page."
+      },
+      {
+        "id": "d010d06f1a3ef6ec",
+        "name": "Origami Risk Platform",
+        "change": "Product is current; I replaced the news-release quote with a paraphrase of what the platform does."
+      },
+      {
+        "id": "ceb7ba0e39e372ea",
+        "name": "Precisely Data Integrity Suite",
+        "change": "Replaced the generic homepage text with a description from Precisely's Data Integrity Suite product sheet."
+      },
+      {
+        "id": "cedad85037529e3b",
+        "name": "SolarWinds Observability Self-Hosted",
+        "was": "SolarWinds Hybrid Cloud Observability",
+        "change": "The product is now called SolarWinds Observability Self-Hosted. The sourceUrl is now a clean page URL and the description is a paraphrase."
+      },
+      {
+        "id": "cedd8bb043c25d91",
+        "name": "NetkaQuartz Service Desk X",
+        "change": "Switched to the producer's own product page. The product is an ITSM platform, so the description now says that."
+      },
+      {
+        "id": "cf2ea9f84101f1f9",
+        "name": "Iru (formerly Kandji)",
+        "was": "Kandji",
+        "change": "Kandji has been renamed Iru. It now covers Apple, Windows and Android devices."
+      },
+      {
+        "id": "d0ff9aaac919d9fd",
+        "name": "OpenText Functional Testing (UFT One)",
+        "change": "Replaced the reseller PDF with an independent source. Wikipedia confirms UFT One is OpenText's AI-powered functional testing tool, formerly Micro Focus UFT and QTP."
+      },
+      {
+        "id": "d014857bfc909e0b",
+        "name": "ScopHR",
+        "change": "ScopHR is a SaaS HR information system from ScopLab, now part of Élap. I replaced the Gartner source with the product site and corrected the URL."
+      },
+      {
+        "id": "d06c646b32eb2ccd",
+        "name": "CyberWatch",
+        "change": "Rewrote the description as a paraphrase instead of a quote. Product is now named RiskWatch Cyber Security Risk Management and uses NIST CSF 2.0."
+      },
+      {
+        "id": "d082614f55b91653",
+        "name": "Planview AdaptiveWork",
+        "change": "Rewrote the description as a paraphrase. It is still offered and is project and portfolio management software, not only IT portfolio tooling."
+      },
+      {
+        "id": "d09dc386635badfe",
+        "name": "DX Operational Intelligence",
+        "change": "The product is still listed on Broadcom's site. I rewrote the description as a paraphrase and added the techdocs details."
+      },
+      {
+        "id": "d0c6efeb99f4f8d8",
+        "name": "Selectycs",
+        "change": "Selectycs is a system and vendor selection and technology planning platform. Corrected the description and added the portfolio and planning category."
+      },
+      {
+        "id": "d261d99c9ee123e6",
+        "name": "Databricks Data Intelligence Platform",
+        "change": "Description was a garbled PDF fragment; replaced it with a clean description, a better source page, and data-platform categories."
+      },
+      {
+        "id": "d2b9c9595257c971",
+        "name": "Matillion Data Productivity Cloud",
+        "change": "Switched the source to the product page and rewrote the description as a short factual summary."
+      },
+      {
+        "id": "d2e0c7b8290d5e49",
+        "name": "Obkio",
+        "change": "Obkio is a network performance monitoring tool, so I added an observability category and replaced the quoted description."
+      },
+      {
+        "id": "d3003350e399e9e0",
+        "name": "SAP Integrated Risk Management Solutions",
+        "change": "Replaced the generic GRC explainer with SAP's GRC solutions page, and added the technology GRC category."
+      },
+      {
+        "id": "d3e7ac64f68ac601",
+        "name": "UiPath Platform",
+        "change": "Product is current and still agentic; replaced the verbatim quote with a short paraphrase and added a note on what was checked."
+      },
+      {
+        "id": "d4273c6b6d98f784",
+        "name": "Cisco Secure Endpoint",
+        "change": "Product still offered (Gartner lists it); replaced the verbatim quote with a paraphrase and noted the source's age."
+      },
+      {
+        "id": "d43ef700af89e378",
+        "name": "Zoho People",
+        "change": "Description was vague and its source was a Microsoft marketplace page; replaced with a more specific description from a Gartner listing."
+      },
+      {
+        "id": "d449f1973b3fecb4",
+        "name": "Elastic Security",
+        "change": "Product is current; replaced the verbatim quote with a paraphrase, with a note on the sources used."
+      },
+      {
+        "id": "d44a7f6c7a65493e",
+        "name": "Open WebUI",
+        "change": "Product is current; replaced the marketing quote with a factual paraphrase based on the site's meta description."
+      },
+      {
+        "id": "d466fcbac9139470",
+        "name": "Sirion",
+        "was": "SirionLabs",
+        "change": "The vendor now trades as Sirion, an AI contract lifecycle management platform; the name, vendor, source and description were updated."
+      },
+      {
+        "id": "d4ad56eb78fef404",
+        "name": "Cohesity DataProtect",
+        "change": "The product is still offered; the description was rewritten as a paraphrase instead of a quotation."
+      },
+      {
+        "id": "d4d6c18617b43a48",
+        "name": "SimpleLegal",
+        "change": "SimpleLegal is still offered by Onit; the description was rewritten from marketing copy into a factual one."
+      }
+    ],
+    "added": [
+      {
+        "id": "33e70b8a2b764f28",
+        "name": "Timefold Solver",
+        "vendor": "Timefold",
+        "sub": "Prescriptive AI & Optimization",
+        "change": "Widely used successor to OptaPlanner and a notable planning optimization solver that was missing."
+      },
+      {
+        "id": "15b67bdd1a91427b",
+        "name": "NVIDIA cuOpt",
+        "vendor": "NVIDIA",
+        "sub": "Prescriptive AI & Optimization",
+        "change": "Recognised GPU-based decision optimization engine missing from the catalogue."
+      },
+      {
+        "id": "0ff3e9cb54405137",
+        "name": "Nextmv",
+        "vendor": "Nextmv",
+        "sub": "Prescriptive AI & Optimization",
+        "change": "Decision optimization operations platform that was missing from this subcategory."
+      },
+      {
+        "id": "f9f1dc3e03541bfb",
+        "name": "Dremio Intelligent Lakehouse Platform",
+        "vendor": "Dremio",
+        "sub": "Data Platforms & Governance",
+        "change": "Widely used open lakehouse platform that is missing from the data platforms subcategory."
+      },
+      {
+        "id": "36c83bc4c122d800",
+        "name": "Starburst Enterprise",
+        "vendor": "Starburst",
+        "sub": "Data Platforms & Governance",
+        "change": "Well-known Trino-based data federation and lakehouse query platform that is missing from the catalogue."
+      },
+      {
+        "id": "2202b8f815fb2a0e",
+        "name": "Oracle Autonomous Data Warehouse",
+        "vendor": "Oracle",
+        "sub": "Data Platforms & Governance",
+        "change": "Major cloud data warehouse service that is missing, although Oracle's other database products are listed."
+      },
+      {
+        "id": "336f9fb19b1bcaba",
+        "name": "Sigma",
+        "vendor": "Sigma Computing",
+        "sub": "Business Intelligence & Analytics",
+        "change": "Widely adopted cloud-native BI platform missing from the catalogue."
+      },
+      {
+        "id": "a8337c27063d785e",
+        "name": "Looker Studio",
+        "vendor": "Google",
+        "sub": "Business Intelligence & Analytics",
+        "change": "Google's widely used free BI and dashboard tool, separate from the listed Looker platform."
+      },
+      {
+        "id": "e7e1b6dbe6dcea21",
+        "name": "Jaspersoft",
+        "vendor": "Cloud Software Group (TIBCO Jaspersoft)",
+        "sub": "Business Intelligence & Analytics",
+        "change": "Well-known embedded reporting and analytics product missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Prescriptive AI & Optimization",
+      "Business Intelligence & Analytics",
+      "Data Platforms & Governance"
+    ],
+    "summary": "Checked 40 tools: 3 confirmed, 32 updated, 0 discontinued, 5 could not be verified. Searched Prescriptive AI & Optimization, Business Intelligence & Analytics, Data Platforms & Governance for missing products: 9 added."
+  },
+  {
     "date": "2026-11-21",
     "checked": 40,
     "confirmed": 4,
