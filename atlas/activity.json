@@ -1,5 +1,241 @@
 [
   {
+    "date": "2026-11-23",
+    "checked": 40,
+    "confirmed": 8,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "d89c264e28e7292d",
+        "name": "Bizzdesign HOPEX",
+        "change": "Replaced the integration-only description with a description of the platform's scope. Hopex covers enterprise architecture, portfolios, process, data and GRC."
+      },
+      {
+        "id": "d583ff370dfc858d",
+        "name": "Yello",
+        "change": "Yello is a recruiting platform (talent acquisition/recruitment CRM), not a development tool; I replaced the quote with a paraphrase and changed the category to Workforce."
+      },
+      {
+        "id": "d6dad476ff9ba31e",
+        "name": "OpenText Deployment Automation",
+        "change": "Replaced the PeerSpot source with a Gartner page and the OpenText community and marketplace pages. The product is now labelled legacy, and I could not find an end-of-life notice."
+      },
+      {
+        "id": "d72366752a1f5a7b",
+        "name": "Document360",
+        "change": "Replaced the customer testimonial with a factual description of the knowledge base platform, and sourced it from a third-party marketplace listing."
+      },
+      {
+        "id": "d7a6011c3c762703",
+        "name": "Workato",
+        "change": "Replaced the truncated marketing quote with a factual paraphrase; the product is current and its categories are unchanged."
+      },
+      {
+        "id": "d7b3413f34320b3c",
+        "name": "Workday Strategic Sourcing",
+        "change": "Replaced the generic Workday boilerplate quote with a description of the sourcing product, and sourced it from the product page."
+      },
+      {
+        "id": "d4f77fc71253b874",
+        "name": "Building Engines (Prism)",
+        "was": "Building Engines",
+        "change": "Building Engines' Prism platform is now offered by JLL Technologies. I replaced the review-page source with JLL's product page and wrote a more specific description."
+      },
+      {
+        "id": "d50762b6917b4f66",
+        "name": "Digital.ai Release",
+        "change": "The description was a quoted line about editions. I replaced it with a paraphrase of what the product does, using Digital.ai's own page."
+      },
+      {
+        "id": "d52786d3696a16cf",
+        "name": "Coralogix",
+        "change": "The description was marketing copy. I rewrote it as a factual summary of the full-stack observability platform."
+      },
+      {
+        "id": "d5528113903fcd2e",
+        "name": "Track-It!",
+        "change": "Track-It! is still sold under BMC. I switched to the product's own site as the source and corrected the audience: small to medium businesses."
+      },
+      {
+        "id": "d555b231a525871e",
+        "name": "Ailance ITAsMa",
+        "was": "Ailance ITAsMA",
+        "change": "The description was a quoted marketing line. I replaced it with a paraphrase. The product name is spelled Ailance ITAsMa."
+      },
+      {
+        "id": "d9da3659c8f30f31",
+        "name": "Atlas HXM",
+        "change": "Atlas HXM's own site is atlashxm.com. It describes an Employer of Record platform for onboarding, paying and managing global talent, so I switched to the producer source."
+      },
+      {
+        "id": "d9edfe767577b8dd",
+        "name": "vLLM",
+        "change": "vLLM is an open-source LLM inference and serving engine. I replaced the generative-AI category with the AI development and model platforms category."
+      },
+      {
+        "id": "da12f9436bf36183",
+        "name": "Chargebee Billing",
+        "change": "Description was marketing copy over 450 characters; replaced with a short factual paraphrase from Chargebee's Billing page."
+      },
+      {
+        "id": "da1c4c40854cf2b0",
+        "name": "Spinnaker",
+        "change": "The description was a blog headline, not a product description. Replaced it with one based on spinnaker.io and pointed the source there."
+      },
+      {
+        "id": "da52dd62bf49faad",
+        "name": "Elastic Observability",
+        "change": "The description was a quote; replaced it with a paraphrase from Elastic's current observability documentation."
+      },
+      {
+        "id": "daa45c0585bfd87d",
+        "name": "One Identity Active Roles",
+        "change": "Replaced the video-page quote with a paraphrase from the Active Roles product page."
+      },
+      {
+        "id": "daa7d2810cdcecf3",
+        "name": "Uppwise PPM",
+        "change": "Replaced the quote with a paraphrase and added the strategic portfolio and IT portfolio context from Uppwise's own pages."
+      },
+      {
+        "id": "dae7162d17788509",
+        "name": "KeyedIn",
+        "change": "Replaced the quoted marketing text with a factual paraphrase; KeyedIn Projects is still described as project and portfolio management software."
+      },
+      {
+        "id": "db4136b6dbcafed7",
+        "name": "Omilia Cloud Platform",
+        "change": "Replaced a glossary quote with a paraphrase from Omilia's own description of the Omilia Cloud Platform."
+      },
+      {
+        "id": "dbc71ae02e85ba99",
+        "name": "Ideagen Coruson",
+        "change": "Replaced the quoted text with a paraphrase of what Ideagen Coruson does: cloud-based aviation safety and quality management."
+      },
+      {
+        "id": "dbc9cbbe1ff60eb6",
+        "name": "Mosyle Fuse",
+        "change": "Mosyle Fuse MSP is an Apple-only management and security product for MSPs; description rewritten and source changed to the MSP page."
+      },
+      {
+        "id": "dc1883e0ad6d9a00",
+        "name": "SmartZone / SmartZone Cloud",
+        "change": "SmartZone Cloud is still offered by Panduit as a cloud DCIM product; I replaced the quoted description with a paraphrase and used the product page as source."
+      },
+      {
+        "id": "dcbec319c1a37afc",
+        "name": "COACH",
+        "change": "PuumSoft is a Thai HCM vendor and its COACH app exists, but I found no producer page for the product. I rewrote the description and marked the third-party source."
+      },
+      {
+        "id": "dcdcec595d850f18",
+        "name": "Strategic Portfolio Management (SPM)",
+        "change": "ServiceNow SPM is still offered; I replaced the truncated marketing quote with a factual paraphrase and added the enterprise architecture and portfolio subcategory."
+      },
+      {
+        "id": "dd353bf7316b358b",
+        "name": "Alauda Container Platform",
+        "change": "Alauda Container Platform is still documented by the producer. The cited page covers Application Services, not the platform, so I changed the source, description and category."
+      },
+      {
+        "id": "dd4103b3c761fe76",
+        "name": "isorobot",
+        "change": "isorobot from Excelledia is still listed. The old description was a customer testimonial, so I replaced it with a factual paraphrase."
+      },
+      {
+        "id": "dd4764dbffe26113",
+        "name": "AWS X-Ray",
+        "change": "Description was a truncated quote; replaced with a short paraphrase. The AWS docs URL and X-Ray product match, but I could not open the producer guide in this check, so the AWS-specific wording rests on my prior knowledge and third-party pages."
+      },
+      {
+        "id": "dd4a9848283f0632",
+        "name": "Spacelift",
+        "change": "Spacelift is active. Description rewritten as a paraphrase (it was a truncated quote). Added operations automation, since the product provisions and governs infrastructure."
+      },
+      {
+        "id": "dd6e97792ee10240",
+        "name": "LicenseAnalyzer",
+        "change": "Product confirmed on the Open iT page. Description rewritten as a paraphrase (it was a truncated quote)."
+      },
+      {
+        "id": "dd7952f5954c5d4d",
+        "name": "Vertex",
+        "change": "Vertex's homepage now positions it as an indirect tax and compliance company; the old '10,000+ businesses since 1978' claim is no longer on the page, so I rewrote the description."
+      },
+      {
+        "id": "dd9244b42e1826d9",
+        "name": "Tableau",
+        "change": "The old description covered only Tableau Semantics and the sourceUrl was a generic Salesforce page. Replaced both with Salesforce's Tableau analytics page."
+      }
+    ],
+    "added": [
+      {
+        "id": "c7e60bb616a4da61",
+        "name": "PyTorch",
+        "vendor": "PyTorch Foundation (Linux Foundation)",
+        "sub": "Data Science & Machine Learning Platforms",
+        "change": "Widely used open source ML framework for model development that is missing from the catalogue."
+      },
+      {
+        "id": "7aad5a8d3cd01a42",
+        "name": "ClearML",
+        "vendor": "ClearML",
+        "sub": "Data Science & Machine Learning Platforms",
+        "change": "Recognised MLOps and AI infrastructure platform that is missing from the catalogue."
+      },
+      {
+        "id": "b4296814d79d4636",
+        "name": "Node.js",
+        "vendor": "OpenJS Foundation (Node.js project)",
+        "sub": "Application Servers & Runtimes",
+        "change": "Widely used server-side JavaScript runtime that was missing from the application servers and runtimes subcategory."
+      },
+      {
+        "id": "0b7a352cba00f250",
+        "name": "ASP.NET Core",
+        "vendor": "Microsoft",
+        "sub": "Application Servers & Runtimes",
+        "change": "Microsoft's main .NET application hosting runtime was not yet listed."
+      },
+      {
+        "id": "b8189e112cc1dfb3",
+        "name": "Helidon",
+        "vendor": "Oracle (Helidon project)",
+        "sub": "Application Servers & Runtimes",
+        "change": "Oracle's Java microservice runtime with MicroProfile support was missing from the subcategory."
+      },
+      {
+        "id": "f254af4ed5b608f4",
+        "name": "Istio",
+        "vendor": "Istio project (Cloud Native Computing Foundation)",
+        "sub": "API Gateways & Service Connectivity",
+        "change": "Widely used open source service mesh and gateway for service connectivity that was missing from the catalogue."
+      },
+      {
+        "id": "f9d4d67a35c9378f",
+        "name": "Layer7 API Gateway",
+        "vendor": "Broadcom",
+        "sub": "API Gateways & Service Connectivity",
+        "change": "Established enterprise API gateway from Broadcom (formerly CA Layer7) that was missing from the catalogue."
+      },
+      {
+        "id": "ccbbfc1af9faa12e",
+        "name": "Spring Cloud Gateway",
+        "vendor": "VMware (Broadcom) – Spring project",
+        "sub": "API Gateways & Service Connectivity",
+        "change": "Widely used Java-ecosystem API gateway that was missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Data Science & Machine Learning Platforms",
+      "API Gateways & Service Connectivity",
+      "Application Servers & Runtimes"
+    ],
+    "summary": "Checked 40 tools: 8 confirmed, 32 updated, 0 discontinued, 0 could not be verified. Searched Data Science & Machine Learning Platforms, API Gateways & Service Connectivity, Application Servers & Runtimes for missing products: 8 added."
+  },
+  {
     "date": "2026-11-22",
     "checked": 40,
     "confirmed": 3,
