@@ -126,8 +126,13 @@ const activity = existsSync('atlas/activity.json') ? JSON.parse(readFileSync('at
 
 mkdirSync('public/atlas', { recursive: true });
 writeFileSync('public/atlas/tools.json', JSON.stringify(tools));
-// The latest report, which the Worker e-mails to the subscribers (worker/atlas-subscribers.js).
-writeFileSync('public/atlas/report.json', JSON.stringify(activity[0] ?? null));
+// The latest report, which the Worker e-mails (worker/atlas-subscribers.js). Each tool gets its producer, its website
+// and whether it is on the site (listed), so the mail can link to its profile on javc.nl and to the producer.
+const byId = new Map(catalogue.map((a) => [a.id, a]));
+const shown = new Set(tools.map((t) => t.id));
+const withLinks = (list) => (list ?? []).map((x) => ({ ...x, vendor: x.vendor ?? byId.get(x.id)?.vendor, url: byId.get(x.id)?.url, listed: shown.has(x.id) }));
+const report = activity[0] ? { ...activity[0], added: withLinks(activity[0].added), updated: withLinks(activity[0].updated), discontinued: withLinks(activity[0].discontinued) } : null;
+writeFileSync('public/atlas/report.json', JSON.stringify(report));
 writeFileSync('src/data/atlas-meta.json', JSON.stringify({
   tools: tools.length,
   imported,

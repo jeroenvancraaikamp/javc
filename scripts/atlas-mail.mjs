@@ -17,7 +17,7 @@ const T = {
     box: (r) => `<b>${r.checked} tools gecontroleerd:</b> ${r.updated.length} bijgewerkt, ${r.added.length} toegevoegd, ${r.discontinued.length} niet meer leverbaar.`,
     overview: 'Overzicht', checked: 'Tools gecontroleerd', confirmed: 'Ongewijzigd bevestigd', updated: 'Bijgewerkt', added: 'Toegevoegd',
     discontinued: 'Niet meer leverbaar', discontinuedHead: 'Niet meer leverbaar, verborgen', unverified: 'Niet te verifiëren', searched: 'Gezocht in',
-    was: 'was',
+    was: 'was', producer: 'Producent',
     changelog: `Alle wijzigingen staan ook in de ${link(`${SITE}/nl/it4it-atlas/changes/`, 'changelog')} op de site.`, changelogUrl: `${SITE}/nl/it4it-atlas/changes/`,
     live: 'Alle wijzigingen', regards: 'Met vriendelijke groet,', tagline: 'IT4IT Atlas: IT-managementtools per business capability',
     footer: 'Deze mail is automatisch verstuurd door de dagelijkse update van de IT4IT Atlas op javc.nl.',
@@ -31,7 +31,7 @@ const T = {
     box: (r) => `<b>${r.checked} tools checked:</b> ${r.updated.length} updated, ${r.added.length} added, ${r.discontinued.length} no longer offered.`,
     overview: 'Overview', checked: 'Tools checked', confirmed: 'Confirmed unchanged', updated: 'Updated', added: 'Added',
     discontinued: 'No longer offered', discontinuedHead: 'No longer offered, hidden', unverified: 'Could not be verified', searched: 'Searched in',
-    was: 'was',
+    was: 'was', producer: 'Producer',
     changelog: `All changes are also in the ${link(`${SITE}/it4it-atlas/changes/`, 'changelog')} on the site.`, changelogUrl: `${SITE}/it4it-atlas/changes/`,
     live: 'All changes', regards: 'Kind regards,', tagline: 'IT4IT Atlas: IT management tools by business capability',
     footer: 'This e-mail was sent automatically by the daily update of the IT4IT Atlas on javc.nl.',
@@ -67,10 +67,11 @@ ${note ? `<tr><td style="padding:0 32px 22px;font:13px/1.5 Arial,sans-serif;colo
 
 const para = (html, top = 22) => `<tr><td style="padding:${top}px 32px 0;font:16px/1.5 Arial,sans-serif;color:${C.ink}">${html}</td></tr>`;
 const box = (html) => `<tr><td style="padding:14px 32px 0"><div style="background:${C.soft};border-left:4px solid ${C.accent};padding:12px 14px;font:15px/1.45 Arial,sans-serif;color:${C.ink}">${html}</div></td></tr>`;
+// r: [key, value] rows; a key may be { html, text } for a key with links.
 const table = (title, r, keyWidth) => `
 <tr><td style="padding:22px 32px 6px;font:600 12px/1.4 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:${C.muted}">${esc(title)}</td></tr>
 <tr><td style="padding:0 32px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border:1px solid ${C.line}">
-${r.map(([k, v], i) => `<tr style="background:${i % 2 ? '#ffffff' : C.bg}"><td style="width:${keyWidth};padding:9px 12px;border-bottom:1px solid ${C.line};font:600 14px/1.4 Arial,sans-serif;color:${C.ink};vertical-align:top">${esc(k)}</td><td style="padding:9px 12px;border-bottom:1px solid ${C.line};font:14px/1.45 Arial,sans-serif;color:${C.text};word-break:break-word">${esc(v)}</td></tr>`).join('\n')}
+${r.map(([k, v], i) => `<tr style="background:${i % 2 ? '#ffffff' : C.bg}"><td style="width:${keyWidth};padding:9px 12px;border-bottom:1px solid ${C.line};font:600 14px/1.4 Arial,sans-serif;color:${C.ink};vertical-align:top">${k?.html ?? esc(k)}</td><td style="padding:9px 12px;border-bottom:1px solid ${C.line};font:14px/1.45 Arial,sans-serif;color:${C.text};word-break:break-word">${esc(v)}</td></tr>`).join('\n')}
 </table></td></tr>`;
 
 // The daily report. lang 'nl' or 'en'; unsubscribe: the subscriber's own unsubscribe link (none for Jeroen's copy).
@@ -85,7 +86,17 @@ export function atlasMail(report, { lang = 'nl', unsubscribe, name } = {}) {
     [L.searched, (report.searched || []).join('; ') || '—'],
   ];
   const label = (x) => `${x.name}${x.vendor ? ` (${x.vendor})` : ''}${x.was ? ` (${L.was}: ${x.was})` : ''}`;
-  const rows = (list, sub) => list.map((x) => [label(x), (sub && x.sub ? `[${x.sub}] ` : '') + (x.change || '—')]);
+  // The tool's profile on javc.nl (when it is on the site) and the producer's website.
+  const profileUrl = (x) => (x.listed && x.id ? `${SITE}${lang === 'nl' ? '/nl' : ''}/it4it-atlas/?tool=${encodeURIComponent(x.id)}` : '');
+  const site = (x) => (/^https:\/\//.test(x.url || '') ? x.url : '');
+  const key = (x) => ({
+    text: [label(x), profileUrl(x), site(x) && `${L.producer}: ${site(x)}`].filter(Boolean).join(' · '),
+    html: (profileUrl(x) ? `<a href="${esc(profileUrl(x))}" style="color:${C.accent};font-weight:700;text-decoration:none">${esc(x.name)}</a>` : esc(x.name))
+      + (x.vendor ? ` <span style="font-weight:400;color:${C.text}">(${esc(x.vendor)})</span>` : '')
+      + (x.was ? ` <span style="font-weight:400;color:${C.muted}">(${esc(L.was)}: ${esc(x.was)})</span>` : '')
+      + (site(x) ? `<br><a href="${esc(site(x))}" style="font:400 12px/1.6 Arial,sans-serif;color:${C.accent}">${esc(L.producer)} ↗</a>` : ''),
+  });
+  const rows = (list, sub) => list.map((x) => [key(x), (sub && x.sub ? `[${x.sub}] ` : '') + (x.change || '—')]);
   const sections = [
     [`${L.added} (${report.added.length})`, rows(report.added, true)],
     [`${L.updated} (${report.updated.length})`, rows(report.updated)],
@@ -94,7 +105,7 @@ export function atlasMail(report, { lang = 'nl', unsubscribe, name } = {}) {
 
   const pad = (x) => x.map(([k, v]) => `${(k + ':').padEnd(24)}${v}`);
   const text = [...(name ? [L.hello(name), ''] : []), `${L.title}, ${day}`, '', ...pad(overview), '',
-    ...sections.flatMap(([title, x]) => [title, ...x.map(([k, v]) => `- ${k}: ${v}`), '']),
+    ...sections.flatMap(([title, x]) => [title, ...x.map(([k, v]) => `- ${k.text}: ${v}`), '']),
     `${L.live}: ${L.changelogUrl}`, '', L.regards, '', 'JAVC Management & Consultancy', SITE,
     ...(unsubscribe ? ['', `${L.unsubscribeText}: ${unsubscribe}`] : [])].join('\n') + '\n';
 
