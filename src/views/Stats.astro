@@ -1,5 +1,5 @@
 ---
-// Private statistics pages (/stats/, /stats/visits/, /stats/security/, /stats/chats/, /stats/changes/, /stats/contacts/, /stats/subscribers/ and their translations under
+// Private statistics pages (/stats/, /stats/visits/, /stats/articles/, /stats/security/, /stats/chats/, /stats/changes/, /stats/contacts/, /stats/subscribers/ and their translations under
 // /nl/, /cn/, /fr/, /de/), in the Statistics menu. The content comes from /api/stats?part=… (worker/stats.js),
 // which only answers for the owner of the repository, signed in to the CMS in this browser,
 // and renders them in the language of the page.
@@ -7,7 +7,7 @@ import Base from '../layouts/Base.astro';
 import { langOf, url } from '../i18n';
 import { STATS_MENU, STATS_PARTS } from '../data/stats-text';
 
-interface Props { part?: 'site' | 'visits' | 'security' | 'chats' | 'changes' | 'contacts' | 'subscribers' }
+interface Props { part?: 'site' | 'visits' | 'articles' | 'security' | 'chats' | 'changes' | 'contacts' | 'subscribers' }
 const { part = 'site' } = Astro.props;
 
 const lang = langOf(Astro.url.pathname);
@@ -127,5 +127,11 @@ const title = M[part];
   .stats .bars.stacked .bar span:last-child { border-radius: 2px 2px 0 0; }
   .stats .axis { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; }
   .stats .err { color: #d63638; font-size: 12px; }
+  .stats .bars.months, .stats .axis.months { gap: 10px; justify-content: flex-start; }
+  .stats .bars.months .bar, .stats .axis.months span { flex: 0 1 64px; text-align: center; }
+  .stats .scroll { overflow-x: auto; }
+  .stats .art td.n, .stats .art th.n { min-width: 52px; }
+  .stats .art .zero { color: var(--muted); }
+  .stats .art tr.sum td { font-weight: 700; border-top: 2px solid var(--line); }
   .stats .tag { font-size: 11px; padding: 1px 6px; border-radius: 4px; background: var(--line); }
 </style>

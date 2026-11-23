@@ -325,6 +325,20 @@ const TEXT = {
   },
 };
 
+// Texts of the page "Article views per month" (/stats/articles/).
+const ART_TEXT = {
+  en: { title: 'Article views per month', article: 'Article', total: 'Total', views: 'Views', allLangs: 'All languages', read: (m) => `Articles read in ${m}`, top: (m) => `Most read in ${m}`, perMonth: 'Article views per month', perArticle: 'Per article',
+    note: 'Views of each blog article per calendar month (UTC). All language versions of an article are added up (the English page and its /nl/, /cn/, /fr/ and /de/ translations), because they are the same article: hover over a number to see the split per language, or pick one language at the top. Every opening of the article page counts as a view, so a reader who opens it twice counts twice. Bots and your own visits in this browser are not counted. Page views are kept for 400 days; counting started when the new site went live in October 2026.' },
+  nl: { title: 'Artikelweergaven per maand', article: 'Artikel', total: 'Totaal', views: 'Weergaven', allLangs: 'Alle talen', read: (m) => `Artikelen gelezen in ${m}`, top: (m) => `Meest gelezen in ${m}`, perMonth: 'Artikelweergaven per maand', perArticle: 'Per artikel',
+    note: 'Weergaven van elk blogartikel per kalendermaand (UTC). Alle taalversies van een artikel worden opgeteld (de Engelse pagina en de vertalingen onder /nl/, /cn/, /fr/ en /de/), omdat het om hetzelfde artikel gaat: houd de muis op een getal voor de verdeling per taal, of kies bovenaan één taal. Elke keer dat de artikelpagina wordt geopend telt als een weergave, dus wie het twee keer opent telt twee keer. Bots en je eigen bezoeken in deze browser tellen niet mee. Paginaweergaven worden 400 dagen bewaard; het tellen begon toen de nieuwe site live ging in oktober 2026.' },
+  cn: { title: '每月文章浏览量', article: '文章', total: '合计', views: '浏览量', allLangs: '所有语言', read: (m) => `${m}被阅读的文章`, top: (m) => `${m}阅读最多`, perMonth: '每月文章浏览量', perArticle: '按文章',
+    note: '每篇博客文章每个自然月（UTC）的浏览量。一篇文章的所有语言版本会合并计算（英文页面及其 /nl/、/cn/、/fr/ 和 /de/ 翻译），因为它们是同一篇文章：将鼠标悬停在数字上可查看各语言的分布，或在顶部选择一种语言。每次打开文章页面都算一次浏览，因此打开两次的读者算两次。机器人和您在此浏览器中的访问不计入。页面浏览记录保留 400 天；统计从 2026 年 10 月新网站上线时开始。' },
+  fr: { title: 'Vues des articles par mois', article: 'Article', total: 'Total', views: 'Vues', allLangs: 'Toutes les langues', read: (m) => `Articles lus en ${m}`, top: (m) => `Le plus lu en ${m}`, perMonth: 'Vues des articles par mois', perArticle: 'Par article',
+    note: 'Vues de chaque article du blog par mois civil (UTC). Toutes les versions linguistiques d’un article sont additionnées (la page anglaise et ses traductions sous /nl/, /cn/, /fr/ et /de/), car il s’agit du même article : survolez un nombre pour voir la répartition par langue, ou choisissez une langue en haut. Chaque ouverture de la page compte comme une vue : un lecteur qui l’ouvre deux fois compte deux fois. Les robots et vos propres visites dans ce navigateur ne sont pas comptés. Les pages vues sont conservées 400 jours ; le comptage a commencé à la mise en ligne du nouveau site en octobre 2026.' },
+  de: { title: 'Artikelaufrufe pro Monat', article: 'Artikel', total: 'Gesamt', views: 'Aufrufe', allLangs: 'Alle Sprachen', read: (m) => `Gelesene Artikel im ${m}`, top: (m) => `Meistgelesen im ${m}`, perMonth: 'Artikelaufrufe pro Monat', perArticle: 'Pro Artikel',
+    note: 'Aufrufe jedes Blogartikels pro Kalendermonat (UTC). Alle Sprachversionen eines Artikels werden zusammengezählt (die englische Seite und ihre Übersetzungen unter /nl/, /cn/, /fr/ und /de/), da es derselbe Artikel ist: Fahren Sie mit der Maus über eine Zahl, um die Aufteilung nach Sprache zu sehen, oder wählen Sie oben eine Sprache. Jedes Öffnen der Artikelseite zählt als Aufruf, wer sie zweimal öffnet, zählt also zweimal. Bots und Ihre eigenen Besuche in diesem Browser werden nicht gezählt. Seitenaufrufe werden 400 Tage aufbewahrt; die Zählung begann mit dem Start der neuen Website im Oktober 2026.' },
+};
+
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const when = (ts, lang) => new Date(ts).toLocaleString(LOCALE[lang], { timeZone: 'Europe/Amsterdam', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
 
@@ -369,8 +383,8 @@ export async function statsData(request, env) {
   const days = [1, 7, 30, 90, 365].includes(+new URL(request.url).searchParams.get('days')) ? +new URL(request.url).searchParams.get('days') : 30;
   const from = new Date(Date.now() - (days - 1) * 864e5).toISOString().slice(0, 10);
   const d = await db(env).catch((err) => { console.error('stats db', err); return null; });
-  // The pages of the Statistics menu: site (page views and chatbot), visits (page paths), security (hack attempts), changes, contacts, subscribers.
-  const part = ['site', 'visits', 'security', 'chats', 'changes', 'contacts', 'subscribers'].includes(params.get('part')) ? params.get('part') : 'site';
+  // The pages of the Statistics menu: site (page views and chatbot), visits (page paths), articles (views per article per month), security (hack attempts), changes, contacts, subscribers.
+  const part = ['site', 'visits', 'articles', 'security', 'chats', 'changes', 'contacts', 'subscribers'].includes(params.get('part')) ? params.get('part') : 'site';
   const done = (html) => new Response(html, {
     headers: {
       'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex',
@@ -444,6 +458,66 @@ export async function statsData(request, env) {
       <div><h3>${T.exit}</h3>${table(count((v) => v.pages[v.pages.length - 1].path), pageCols, T)}</div></div>
       <h3>${T.latestVisits}</h3>${n ? `<div class="visit-list">${list}</div>` : `<p class="muted">${T.noData}</p>`}
       <p class="muted"><small>${T.visitsNote}</small></p></section>`);
+  }
+
+  if (part === 'articles') {
+    if (!d) return done(`<section><p class="muted">${T.noDb}</p></section>`);
+    const A = ART_TEXT[lang];
+    // The articles (title in every language) come from the static file made at build time (src/pages/stats/article-list.json.ts).
+    const res = await env.ASSETS.fetch(new Request(new URL('/stats/article-list.json', request.url))).catch(() => null);
+    const articles = res && res.ok ? await res.json().catch(() => []) : [];
+    // The last 12 calendar months, oldest first (page views are kept for 400 days).
+    const now = new Date();
+    const months = [];
+    for (let i = 11; i >= 0; i--) months.push(new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - i, 1)).toISOString().slice(0, 7));
+    const only = SITE_LANGS.includes(params.get('lang2')) ? params.get('lang2') : '';
+    const rows = (await d.prepare(`SELECT substr(day, 1, 7) month, ${SITE_LANG} lang, path, COUNT(*) views FROM hits WHERE day >= ? GROUP BY 1, 2, 3`)
+      .bind(`${months[0]}-01`).all()).results;
+    // /nl/hello-ai/, /hello-ai and /hello-ai/ all count for the article "hello-ai".
+    const slugOf = (path) => decodeURIComponent(path.replace(/^\/(nl|cn|fr|de)(?=\/|$)/, '').replace(/^\/+|\/+$/g, ''));
+    const known = new Map(articles.map((a) => [a.slug, { ...a, m: {}, total: 0, langs: {} }]));
+    for (const r of rows) {
+      let slug;
+      try { slug = slugOf(r.path); } catch { continue; }
+      const a = known.get(slug);
+      if (!a || (only && r.lang !== only)) continue;
+      const cell = a.m[r.month] ??= { n: 0, langs: {} };
+      cell.n += r.views;
+      cell.langs[r.lang] = (cell.langs[r.lang] || 0) + r.views;
+      a.total += r.views;
+      a.langs[r.lang] = (a.langs[r.lang] || 0) + r.views;
+    }
+    const list = [...known.values()].sort((x, y) => y.total - x.total || y.date.localeCompare(x.date));
+    // Only months from the first month with data, so the table does not start with empty columns.
+    const firstData = months.findIndex((m) => list.some((a) => a.m[m]));
+    const shown = firstData < 0 ? months.slice(-1) : months.slice(firstData);
+    const sum = (m) => list.reduce((n, a) => n + (a.m[m]?.n || 0), 0);
+    const sumLang = (m, l) => list.reduce((n, a) => n + (a.m[m]?.langs[l] || 0), 0);
+    const split = (langs) => SITE_LANGS.filter((l) => langs[l]).map((l) => `${l.toUpperCase()} ${langs[l]}`).join(' · ');
+    const monthName = (m, style = 'short') => new Date(`${m}-01T00:00:00Z`).toLocaleDateString(LOCALE[lang], { month: style, year: style === 'short' ? '2-digit' : 'numeric', timeZone: 'UTC' });
+    const cur = months[11], prev = months[10];
+    const top = list.filter((a) => a.m[cur]).sort((x, y) => y.m[cur].n - x.m[cur].n)[0];
+    const link = (a) => `<a href="${lang === 'en' ? '' : `/${lang}`}/${esc(a.slug)}/">${esc(a.titles[lang] || a.titles.en || a.slug)}</a>`;
+    const langTabs = `<div class="ranges">${['', ...SITE_LANGS].map((l) => `<a href="${l ? `?lang2=${l}` : '?'}"${l === only ? ' class="on"' : ''}>${l ? T.langNames[l] : A.allLangs}</a>`).join('')}</div>`;
+    // Bars per month: all languages stacked (or one language when a language is picked).
+    const keys = only ? [only] : SITE_LANGS;
+    const max = Math.max(1, ...shown.map(sum));
+    const chart = `<div class="bars stacked months">${shown.map((m) => `<div class="bar" title="${esc(monthName(m, 'long'))}: ${sum(m)} ${T.views}${only ? '' : ` (${split(Object.fromEntries(SITE_LANGS.map((l) => [l, sumLang(m, l)])))})`}">
+      ${keys.map((l) => `<span class="b${SITE_LANGS.indexOf(l)}" style="height:${(sumLang(m, l) / max) * 100}%"></span>`).join('')}</div>`).join('')}</div>
+      <div class="axis months">${shown.map((m) => `<span>${esc(monthName(m))}</span>`).join('')}</div>`;
+    const cell = (a, m) => (a.m[m] ? `<td class="n"${only ? '' : ` title="${esc(split(a.m[m].langs))}"`}>${nf.format(a.m[m].n)}</td>` : '<td class="n zero">·</td>');
+    const tableHtml = articles.length ? `<div class="scroll"><table class="art"><tr><th>${A.article}</th>${shown.map((m) => `<th class="n nw">${esc(monthName(m))}</th>`).join('')}<th class="n">${A.total}</th></tr>
+      ${list.map((a) => `<tr${a.total ? '' : ' class="zero"'}><td>${link(a)} <small class="muted nw">${esc(a.date)}</small></td>${shown.map((m) => cell(a, m)).join('')}
+        <td class="n"${only || !a.total ? '' : ` title="${esc(split(a.langs))}"`}><b>${a.total ? nf.format(a.total) : '·'}</b></td></tr>`).join('')}
+      <tr class="sum"><td>${A.total}</td>${shown.map((m) => `<td class="n">${nf.format(sum(m))}</td>`).join('')}<td class="n">${nf.format(list.reduce((n, a) => n + a.total, 0))}</td></tr></table></div>`
+      : `<p class="muted">${T.noData}</p>`;
+    return done(`${langTabs}<section><h2>${A.title}</h2>
+      <div class="tiles">${tile(`${A.views} ${esc(monthName(cur, 'long'))}`, nf.format(sum(cur)))}${tile(`${A.views} ${esc(monthName(prev, 'long'))}`, nf.format(sum(prev)))}
+      ${tile(A.read(monthName(cur, 'long')), `${nf.format(list.filter((a) => a.m[cur]).length)} / ${nf.format(list.length)}`)}
+      ${tile(A.top(monthName(cur, 'long')), top ? `<span style="font-size:15px">${link(top)} (${nf.format(top.m[cur].n)})</span>` : '-')}</div>
+      <h3>${A.perMonth}${only ? '' : ` <small>${SITE_LANGS.map((l, i) => `<i class="k b${i}"></i>${T.langNames[l]}`).join(' ')}</small>`}</h3>${chart}
+      <h3>${A.perArticle}</h3>${tableHtml}
+      <p class="muted"><small>${A.note}</small></p></section>`);
   }
 
   if (part === 'security') {
