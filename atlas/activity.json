@@ -1,5 +1,216 @@
 [
   {
+    "date": "2026-11-24",
+    "checked": 40,
+    "confirmed": 3,
+    "unverified": 11,
+    "updated": [
+      {
+        "id": "dd92da7220ad7533",
+        "name": "ProcurementExpress.com",
+        "change": "Description rewritten as a short paraphrase of the producer FAQ page; category unchanged."
+      },
+      {
+        "id": "ddc3e0ebf4d309c2",
+        "name": "Zapproved",
+        "change": "Description now covers the full ZDiscovery scope (legal holds through processing and review); the source is a third-party directory."
+      },
+      {
+        "id": "dde2f52be0ea80f3",
+        "name": "Thomson Reuters ONESOURCE",
+        "change": "The generic Thomson Reuters homepage was replaced by the ONESOURCE tax page, and the description was rewritten to describe the product."
+      },
+      {
+        "id": "de076b645a48c377",
+        "name": "SquaredUp",
+        "change": "SquaredUp now describes itself as an observability platform with unified dashboards across 100+ tools."
+      },
+      {
+        "id": "de3438a089fdb93a",
+        "name": "Greenly",
+        "change": "The description was broadened from the LCA module to Greenly's sustainability suite, and the carbon accounting category was kept."
+      },
+      {
+        "id": "e10d3c2f57be2218",
+        "name": "MatosSphere",
+        "change": "Producer site is now cloudmatos.ai; MatosSphere is a cloud security posture platform, so the description and source were updated."
+      },
+      {
+        "id": "e12719d0bc040fdd",
+        "name": "ESOF",
+        "change": "Replaced the truncated quote with a short paraphrase from TAC Security's ESOF VMP page; ESOF is a risk-based vulnerability management platform."
+      },
+      {
+        "id": "e15249096127188b",
+        "name": "HCL DevOps Velocity",
+        "change": "Replaced the truncated quote with a paraphrase from the producer's product page; the entry also fits the portfolio and value stream category."
+      },
+      {
+        "id": "e17b3bb7752e23b1",
+        "name": "Sangfor NGAF",
+        "change": "Switched to Sangfor's own NGAF brochure; NGAF is a converged next-generation and web application firewall with sandbox threat protection."
+      },
+      {
+        "id": "e1feebc7932f58d4",
+        "name": "Azure Kubernetes Service (AKS)",
+        "change": "AKS is a managed container platform, so it moves to the compute, cloud and container category; the source page is unchanged."
+      },
+      {
+        "id": "e2f7dc92f4aefb05",
+        "name": "OpenText NetIQ Identity Governance",
+        "change": "Product is current on opentext.com; replaced the quoted description with a paraphrase and a canonical source page."
+      },
+      {
+        "id": "e3819cb45136948a",
+        "name": "O360",
+        "change": "O360 is confirmed as Speridian's HRMS/HCM product; switched to the producer's own page and tightened the description."
+      },
+      {
+        "id": "e3afd4a3a2889294",
+        "name": "Solace PubSub+ Platform",
+        "change": "Replaced the Tanzu-specific quote with a description of the overall PubSub+ platform from Solace's own pages."
+      },
+      {
+        "id": "e476d4c01a3b2841",
+        "name": "Oracle APEX (Application Express)",
+        "change": "Oracle APEX remains current; replaced the truncated quote with a paraphrase and a more general Oracle source."
+      },
+      {
+        "id": "e489e886587dd3a2",
+        "name": "Nixon Platform",
+        "change": "The producer's site is nixondigital.io. The platform scans and manages website portfolios for privacy and compliance, so the category moves from observability to governance, risk and compliance."
+      },
+      {
+        "id": "e4b7ee8df0c25318",
+        "name": "Zero Incident Framework (ZIF)",
+        "change": "Replaced the generic description with the vendor's AIOps description and a source that was actually checked."
+      },
+      {
+        "id": "e4e99b86ab867c1f",
+        "name": "Tekton",
+        "change": "The CD Foundation announced in July 2025 that Tekton is moving to the Cloud Native Computing Foundation (CNCF), so the vendor and source were updated."
+      },
+      {
+        "id": "e5a7f58a761ee033",
+        "name": "Zendesk for ITSM",
+        "change": "Rewrote the truncated quoted description as a short paraphrase and confirmed the Zendesk employee service page covers ITSM."
+      },
+      {
+        "id": "e637193685a06132",
+        "name": "Simplydesk",
+        "change": "The producer's site shows SimplyDesk combines ITSM and ITAM, so I added the ITSM subcategory and switched the source to the producer."
+      },
+      {
+        "id": "e6518435374b5087",
+        "name": "DocuSign",
+        "change": "Replaced the marketing text with a factual description of Docusign's e-signature and Intelligent Agreement Management platform, and added the contract-lifecycle focus."
+      },
+      {
+        "id": "e6774bec45e97834",
+        "name": "HCL DevOps Deploy",
+        "change": "Replaced the old dxdev portal link with the current HCL Software product page, and paraphrased the description. HCL DevOps Deploy is the renamed HCL Launch."
+      },
+      {
+        "id": "e67b3a718a737c10",
+        "name": "Microsoft Cloud for Sustainability",
+        "change": "Replaced the quoted description with a paraphrase and added Microsoft's release-plan page as the source. The product is still offered, and its scope covers ESG data and reporting."
+      },
+      {
+        "id": "e6dddca520304a50",
+        "name": "HROne HRMS",
+        "change": "Replaced the description with the vendor's current wording: an HR and payroll platform covering payroll, attendance, recruitment and performance. The '127 processes' figure was not confirmed."
+      },
+      {
+        "id": "e6e22bbe22476ca7",
+        "name": "dcTrack",
+        "change": "Replaced the customer-testimonial text with a factual description of dcTrack. The product is still offered."
+      },
+      {
+        "id": "e6fb8b4539baa4b1",
+        "name": "SonicWall Network Security",
+        "change": "Replaced the quoted PDF text with a paraphrase from SonicWall's current Network Security Manager product page. The entry is about NSM firewall management."
+      },
+      {
+        "id": "e7069132b061e72a",
+        "name": "GoTo Resolve",
+        "change": "Replaced the Wikipedia source with a vendor-partner catalogue page and corrected the description. GoTo Resolve is an all-in-one IT management and support product."
+      }
+    ],
+    "added": [
+      {
+        "id": "3275ec728db087ff",
+        "name": "Azure Managed Redis",
+        "vendor": "Microsoft",
+        "sub": "Caches & In-memory Data Stores",
+        "change": "Major hyperscaler managed in-memory store missing from the catalogue (only Amazon ElastiCache listed)."
+      },
+      {
+        "id": "fa9402f4cd12cecf",
+        "name": "Google Cloud Memorystore",
+        "vendor": "Google",
+        "sub": "Caches & In-memory Data Stores",
+        "change": "Google Cloud's managed cache service is missing from the catalogue."
+      },
+      {
+        "id": "3960eb1b45075ada",
+        "name": "Dragonfly",
+        "vendor": "DragonflyDB",
+        "sub": "Caches & In-memory Data Stores",
+        "change": "Widely recognised Redis-alternative in-memory store missing from the catalogue."
+      },
+      {
+        "id": "dad40b0366f3b1d8",
+        "name": "Amazon SQS (Simple Queue Service)",
+        "vendor": "Amazon Web Services",
+        "sub": "Communication & Messaging Servers",
+        "change": "Widely used managed message queue service missing from the catalogue."
+      },
+      {
+        "id": "d878d84f753adaeb",
+        "name": "Google Cloud Pub/Sub",
+        "vendor": "Google",
+        "sub": "Communication & Messaging Servers",
+        "change": "Major cloud messaging and event ingestion service missing from the catalogue."
+      },
+      {
+        "id": "24bf10846994a34f",
+        "name": "Azure Event Hubs",
+        "vendor": "Microsoft",
+        "sub": "Communication & Messaging Servers",
+        "change": "Azure's event streaming service is missing, while sibling Azure Service Bus is listed."
+      },
+      {
+        "id": "9447031a48520077",
+        "name": "ScyllaDB",
+        "vendor": "ScyllaDB",
+        "sub": "NoSQL & Document Databases",
+        "change": "Widely used wide-column NoSQL database compatible with Cassandra and DynamoDB that was missing from the catalogue."
+      },
+      {
+        "id": "3bf18451414e9454",
+        "name": "Apache CouchDB",
+        "vendor": "Apache Software Foundation",
+        "sub": "NoSQL & Document Databases",
+        "change": "Well-known open-source document database that was missing from the catalogue."
+      },
+      {
+        "id": "bff137f5833ff616",
+        "name": "Amazon DocumentDB",
+        "vendor": "Amazon Web Services",
+        "sub": "NoSQL & Document Databases",
+        "change": "Managed MongoDB-compatible document database from AWS that was missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Caches & In-memory Data Stores",
+      "Communication & Messaging Servers",
+      "NoSQL & Document Databases"
+    ],
+    "summary": "Checked 40 tools: 3 confirmed, 26 updated, 0 discontinued, 11 could not be verified. Searched Caches & In-memory Data Stores, Communication & Messaging Servers, NoSQL & Document Databases for missing products: 9 added."
+  },
+  {
     "date": "2026-11-23",
     "checked": 40,
     "confirmed": 8,
