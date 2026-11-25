@@ -1,5 +1,224 @@
 [
   {
+    "date": "2026-11-25",
+    "checked": 40,
+    "confirmed": 13,
+    "unverified": 0,
+    "updated": [
+      {
+        "id": "ebae149e0472d896",
+        "name": "Arctic Wolf Managed Risk",
+        "change": "Arctic Wolf now presents Managed Risk as Aurora Vulnerability Management within Aurora Exposure Management; the old quoted description was replaced."
+      },
+      {
+        "id": "ebd7d7092b443eb3",
+        "name": "Sevco Security",
+        "change": "Arctic Wolf acquired Sevco Security in February 2026 and is integrating it into the Aurora Platform."
+      },
+      {
+        "id": "ebe74b859362693f",
+        "name": "IBM Maximo Application Suite",
+        "change": "The old entry used a generic IBM home page and a marketing claim. It now uses the Maximo product page, and the category is corrected."
+      },
+      {
+        "id": "ec1c1f7c9053e006",
+        "name": "ManageEngine Applications Manager",
+        "change": "The old description was a marketing tagline, so it was replaced with a factual one from the product overview page."
+      },
+      {
+        "id": "e9ad145f4f6fa1a2",
+        "name": "OneStream",
+        "change": "Product is current; replaced the marketing-style description with a short factual paraphrase."
+      },
+      {
+        "id": "e9bae6c7e878613a",
+        "name": "Druva Data Resiliency Cloud",
+        "change": "Product is still offered; replaced the quoted text with a paraphrase and described the scope as unified data protection, security and recovery."
+      },
+      {
+        "id": "ea1737b9a399bb7a",
+        "name": "Checkmk Community (formerly Raw Edition)",
+        "was": "Checkmk (Raw Edition)",
+        "change": "Checkmk Raw has been renamed Checkmk Community in the new edition lineup; name and description updated."
+      },
+      {
+        "id": "eaa95ccc3e2b331a",
+        "name": "IBM Storage Insights / Spectrum Control",
+        "change": "Product is still documented by IBM; replaced the quoted text with a paraphrase."
+      },
+      {
+        "id": "eb0256013a496d81",
+        "name": "Facets Cloud",
+        "change": "Facets is still offered; replaced the quoted text with a paraphrase."
+      },
+      {
+        "id": "ec6d3b137dcc44ca",
+        "name": "SolarWinds Web Help Desk",
+        "change": "Product is still supported by SolarWinds; replaced the quoted change-request sentence with a paraphrase of the help desk and ticketing scope and moved the source to the support page."
+      },
+      {
+        "id": "ecb86000dee4ed59",
+        "name": "ThoughtSpot",
+        "change": "Product is current; reworded the marketing-style description as a neutral summary of the AI-driven analytics platform."
+      },
+      {
+        "id": "ecc48d7fdb3a412f",
+        "name": "DigitSec",
+        "change": "DigitSec is a Salesforce security scanning and penetration testing product, so I moved it from development tooling to vulnerability and exposure management."
+      },
+      {
+        "id": "ed1fd54cb01a2db3",
+        "name": "Blue Marble",
+        "change": "Blue Marble Payroll is still offered; I swapped the G2 source for the Capterra listing, which describes a cloud global payroll service in 150+ countries, and put payroll under finance first."
+      },
+      {
+        "id": "ed22b4a0b1c3ad5a",
+        "name": "VMware Tanzu Platform",
+        "change": "Tanzu Platform is current (version 10 became generally available in November 2024); I replaced the truncated quote with a paraphrase and added the cloud and container category."
+      },
+      {
+        "id": "edf309f0e8db81f2",
+        "name": "Dotcom-Monitor",
+        "change": "The stored description was a truncated marketing quote; I replaced it with a short paraphrase from the producer's homepage."
+      },
+      {
+        "id": "eeae5bd6035c6aee",
+        "name": "Xupervisor",
+        "change": "The description was a verbatim quote about one hardware tab; I replaced it with an overview paraphrase of the Xupervisor interface."
+      },
+      {
+        "id": "eeba1b869e1199db",
+        "name": "IBM webMethods",
+        "was": "webMethods",
+        "change": "webMethods is now marketed as IBM webMethods Integration and Hybrid Integration; the old source was a version 10.5 release-notes PDF with a marketing quote."
+      },
+      {
+        "id": "ef2ae7deec70b140",
+        "name": "IT Hardware Asset Management (HAM)",
+        "change": "The ServiceNow page is current, but the stored description was a marketing quote; I replaced it with a paraphrase."
+      },
+      {
+        "id": "ef5c51665f3a4611",
+        "name": "Spryng",
+        "change": "Spryng is a business messaging provider (SMS, RCS, WhatsApp, APIs), not team collaboration; description rewritten and category changed to the closest fit."
+      },
+      {
+        "id": "efca81efbf1b34a3",
+        "name": "Jalapeno",
+        "change": "Jalapeno was Capsifi's platform; Orbus Software acquired Capsifi in December 2024, so the vendor is now Orbus, but the Gartner source is third-party."
+      },
+      {
+        "id": "f08e07f259f5f8d8",
+        "name": "Itential Platform",
+        "was": "Itential Automation Platform",
+        "change": "Name, source and description updated: Itential Platform is now described as an infrastructure and network orchestration platform, and the old entry quoted a 2023 Studio docs page."
+      },
+      {
+        "id": "f0bac2e92681ba67",
+        "name": "Spendflo",
+        "change": "Source moved to Spendflo's own product page, and the category corrected from IT assets to vendor/contract management."
+      },
+      {
+        "id": "f0d6169592e69b5b",
+        "name": "Avaamo",
+        "change": "Replaced the 2018 one-pager with the current Avaamo page: an agentic, voice-first conversational AI platform."
+      },
+      {
+        "id": "f125b2d72a1ae371",
+        "name": "ProcessUnity Vendor Risk Management",
+        "change": "Description was a truncated marketing quote about issue management; replaced with a short paraphrase of the product, sourced from the Gartner Peer Insights product page, which is third-party."
+      },
+      {
+        "id": "f13bc61b79e25099",
+        "name": "iboss Zero Trust SSE",
+        "change": "Replaced the truncated quote with a short paraphrase; the product is still offered and listed in the CrowdStrike marketplace."
+      },
+      {
+        "id": "f140c0250d886181",
+        "name": "Microsoft Defender Vulnerability Management",
+        "change": "Switched to the official Microsoft Learn page and replaced the quote with a paraphrase; the portal section now sits under Exposure management."
+      },
+      {
+        "id": "f18816cea69df2f2",
+        "name": "SecureVoice",
+        "change": "Reclassified from vulnerability management to security protection, since the product screens and blocks scam and robocalls, and updated the source to the SecureVoice page."
+      }
+    ],
+    "added": [
+      {
+        "id": "663c4b57544d311d",
+        "name": "Amazon Relational Database Service (Amazon RDS)",
+        "vendor": "Amazon Web Services",
+        "sub": "Relational Database Management Systems",
+        "change": "Widely used managed relational database service from AWS, not yet in the catalogue (Aurora is listed separately)."
+      },
+      {
+        "id": "b6aa2c1831d20bdd",
+        "name": "Google Cloud Spanner",
+        "vendor": "Google",
+        "sub": "Relational Database Management Systems",
+        "change": "Prominent globally distributed relational database from Google Cloud that is missing from the catalogue."
+      },
+      {
+        "id": "8f336192b91eacbf",
+        "name": "YugabyteDB",
+        "vendor": "Yugabyte",
+        "sub": "Relational Database Management Systems",
+        "change": "Well-known open-source distributed SQL database that complements CockroachDB in the catalogue."
+      },
+      {
+        "id": "c1c4e8654112b2b3",
+        "name": "Oracle SOA Suite",
+        "vendor": "Oracle",
+        "sub": "Integration Servers & iPaaS",
+        "change": "Widely deployed Oracle on-premises ESB/SOA integration server that is missing, distinct from Oracle Integration Cloud."
+      },
+      {
+        "id": "f91831dbc3d12fab",
+        "name": "Digibee Integration Platform",
+        "vendor": "Digibee",
+        "sub": "Integration Servers & iPaaS",
+        "change": "Recognised cloud-born iPaaS vendor missing from the catalogue."
+      },
+      {
+        "id": "b8b675bc33f08da9",
+        "name": "Adeptia Connect",
+        "vendor": "Adeptia",
+        "sub": "Integration Servers & iPaaS",
+        "change": "Known B2B/data integration iPaaS missing from the catalogue."
+      },
+      {
+        "id": "cab26aa9b8da1602",
+        "name": "Files.com",
+        "vendor": "Files.com",
+        "sub": "Managed File Transfer",
+        "change": "Widely recognised cloud-native MFT service that was missing from the catalogue."
+      },
+      {
+        "id": "300b1fce8a0c895e",
+        "name": "Kiteworks Secure MFT",
+        "vendor": "Kiteworks",
+        "sub": "Managed File Transfer",
+        "change": "Notable MFT offering from Kiteworks that was not in the catalogue."
+      },
+      {
+        "id": "cf8c30cde2c60fb0",
+        "name": "Serv-U Managed File Transfer Server",
+        "vendor": "SolarWinds",
+        "sub": "Managed File Transfer",
+        "change": "Well-known MFT server from SolarWinds that was missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Relational Database Management Systems",
+      "Integration Servers & iPaaS",
+      "Managed File Transfer"
+    ],
+    "summary": "Checked 40 tools: 13 confirmed, 27 updated, 0 discontinued, 0 could not be verified. Searched Relational Database Management Systems, Integration Servers & iPaaS, Managed File Transfer for missing products: 9 added."
+  },
+  {
     "date": "2026-11-24",
     "checked": 40,
     "confirmed": 3,
