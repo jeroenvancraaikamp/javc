@@ -1,5 +1,267 @@
 [
   {
+    "date": "2026-11-26",
+    "checked": 40,
+    "confirmed": 3,
+    "unverified": 1,
+    "updated": [
+      {
+        "id": "f2ebec6ebd169ad3",
+        "name": "Quidgest Human Resources Management",
+        "change": "Switched to the producer's own product page and wrote a more specific description."
+      },
+      {
+        "id": "f2f7dc9277b19883",
+        "name": "RaySAMi",
+        "change": "Switched to Raynet's own RaySAMi page and made the description more precise."
+      },
+      {
+        "id": "f3287a92ea4795d5",
+        "name": "Ascentis (Legacy, part of UKG)",
+        "change": "Ascentis was acquired by UKG in 2022 and one directory labels it discontinued, but I found no producer end-of-life notice, so the entry stays with a corrected source."
+      },
+      {
+        "id": "f3b1adb41bdf8d3b",
+        "name": "Last9",
+        "change": "Replaced the truncated marketing quote with a short factual description based on Last9's documentation."
+      },
+      {
+        "id": "f3b41c025939a262",
+        "name": "Pocket HRMS",
+        "change": "Replaced the marketing text with a factual description and added a third-party source. The producer site was not opened."
+      },
+      {
+        "id": "f1a36b1afe63e6e7",
+        "name": "Greenhouse",
+        "change": "Switched to the producer's own page; Greenhouse now uses greenhouse.com and describes an end-to-end AI-assisted hiring platform."
+      },
+      {
+        "id": "f1ef27c19d1d66fc",
+        "name": "Hadrian",
+        "change": "Replaced the old quoted AEV slogan with the producer's current description: an agentic offensive security platform (Atlas and Nova)."
+      },
+      {
+        "id": "f2271202aced58fd",
+        "name": "osTicket",
+        "change": "Rewrote the quoted description as a paraphrase; the producer's features page still presents osTicket as an open-source ticketing system."
+      },
+      {
+        "id": "f237c3f3520b0025",
+        "name": "ManageEngine OpManager",
+        "change": "Rewrote the description as a paraphrase and added the observability subcategory, since OpManager monitors network, systems and applications."
+      },
+      {
+        "id": "f465363362ef4c00",
+        "name": "Pure1",
+        "change": "Replaced a quoted white-paper fragment with a paraphrased description from Pure Storage's Pure1 product page."
+      },
+      {
+        "id": "f4c3dbfbf7457849",
+        "name": "Symantec Data Loss Prevention",
+        "change": "Switched the source to Broadcom's own DLP product page and set the producer URL."
+      },
+      {
+        "id": "f59f301884cb8afa",
+        "name": "SolarWinds Service Desk",
+        "change": "Replaced a quoted video text with a paraphrase from SolarWinds' documentation, and added the vendor's current ITSM/AI description."
+      },
+      {
+        "id": "f5c684c015dca8ca",
+        "name": "Motadata ServiceOps",
+        "change": "Replaced a quoted description with a paraphrase of the current docs, which now cover asset and patch management too."
+      },
+      {
+        "id": "f5fddf37c3725a98",
+        "name": "CryEye",
+        "change": "Product still offered by CQR. I replaced the quoted description with a paraphrase and added uptime monitoring to the classification."
+      },
+      {
+        "id": "f6a5f48ede3919e2",
+        "name": "Flagsmith",
+        "change": "Product is active. Flagsmith describes itself as a feature flag and remote config platform with experimentation, so I paraphrased the description."
+      },
+      {
+        "id": "f6a41dff5ef4632b",
+        "name": "Atera",
+        "change": "Atera is active. It is an RMM, PSA and remote access platform, so I added endpoint management to the classification and paraphrased the description."
+      },
+      {
+        "id": "f6ff9b08e2ef6af3",
+        "name": "CA Asset Portfolio Management (Legacy)",
+        "change": "Broadcom still documents the product. I replaced the quoted description with a paraphrase and added the Broadcom docs site as the producer source."
+      },
+      {
+        "id": "f3b6e51b2cc045a4",
+        "name": "Risk Cognizance",
+        "change": "Product is current; replaced the quoted marketing text with a paraphrase, moved the source to a Risk Cognizance GRC page that opened, and added IT governance/risk/compliance as a second category."
+      },
+      {
+        "id": "f3cff66a4ead9cf1",
+        "name": "ALVAO Asset Management",
+        "change": "Product is current; replaced the SaaS terms PDF with ALVAO's own IT asset management product page and rewrote the description as a paraphrase."
+      },
+      {
+        "id": "f3d7b43048bf8f33",
+        "name": "Google Security Operations (Chronicle)",
+        "change": "Product is current; url now points to Google Cloud's Security Operations product page instead of google.com, and the description is rewritten as a paraphrase covering SIEM and SOAR."
+      },
+      {
+        "id": "f3dafb54c5a9f36c",
+        "name": "Chillsoft",
+        "change": "Chillsoft is still offered as an HRMS; description sharpened to match the vendor's own channels (LinkedIn, App Store), and the source note now says the website itself could not be opened."
+      },
+      {
+        "id": "f8dee810683e2328",
+        "name": "QPR EnterpriseArchitect",
+        "was": "QPR Enterprise Architect",
+        "change": "Product is now spelled QPR EnterpriseArchitect and the page has new wording, so I rewrote the description."
+      },
+      {
+        "id": "f91073a153e15a91",
+        "name": "Microsoft Defender for Endpoint",
+        "change": "Product is current; I replaced the quoted description with a paraphrase and a clearer source note."
+      },
+      {
+        "id": "f9467f2634e0c755",
+        "name": "Dataiku",
+        "change": "Dataiku now presents itself as an enterprise AI orchestration platform with agents, so I reworded the description and added the agentic AI category."
+      },
+      {
+        "id": "f987896eb880fdfc",
+        "name": "App Engine Studio (AE)",
+        "change": "Product is still offered in the Zurich release; I removed stray artifacts from the description."
+      },
+      {
+        "id": "fac13a72b269fa8e",
+        "name": "NAKIVO Backup & Replication",
+        "change": "Product is current; I replaced the truncated quote with a full paraphrased description."
+      },
+      {
+        "id": "f78e3a9d60287659",
+        "name": "TIBCO BusinessWorks",
+        "change": "Replaced the quoted text with a short paraphrase and a TIBCO documentation page for the current BusinessWorks product."
+      },
+      {
+        "id": "f7fa3d6b51a53e38",
+        "name": "Cybereason Defense Platform",
+        "change": "Replaced the quoted text with a paraphrase of the XDR datasheet and noted that LevelBlue agreed to acquire Cybereason in October 2025."
+      },
+      {
+        "id": "f85581860c9d2f64",
+        "name": "ServiceTeam ITSM",
+        "change": "Replaced the quoted text with a paraphrase and updated the source to the Provance site."
+      },
+      {
+        "id": "f8618af0809883c9",
+        "name": "EV Service Manager",
+        "change": "Replaced the quoted text with a paraphrase. EV Service Manager is current and is now described as an AI-enhanced ITSM platform."
+      },
+      {
+        "id": "f889e8997a677a84",
+        "name": "Namely",
+        "change": "Shortened the description to a paraphrase and updated the source to Vensure coverage of the Namely HCM platform."
+      },
+      {
+        "id": "faef56b6afa50053",
+        "name": "BMC Helix ITSM",
+        "change": "Still offered (release 26.2.00 listed); replaced the quoted description and PDF source with a paraphrase from BMC's product page."
+      },
+      {
+        "id": "fb3972d1b043962d",
+        "name": "HyperDX",
+        "change": "ClickHouse acquired HyperDX; replaced the Wikipedia source with ClickHouse's own announcement."
+      },
+      {
+        "id": "fb63090748553f1b",
+        "name": "vuAPP360",
+        "change": "Product is current; replaced the quoted marketing sentence with a short paraphrase and a current documentation source."
+      },
+      {
+        "id": "fb9c97875fc6fc8a",
+        "name": "Chef Automate",
+        "change": "Chef Automate is still offered by Progress; replaced the Gartner source with Progress documentation and moved it to automation."
+      },
+      {
+        "id": "fbbc634c0850bb89",
+        "name": "RHD VM",
+        "change": "Alfa Group's website is alfagroup.it, not alfa-group.io; switched to the producer's RHDVM product page."
+      }
+    ],
+    "added": [
+      {
+        "id": "2b911f43fc0efa0b",
+        "name": "Zoho Cliq",
+        "vendor": "Zoho",
+        "sub": "Communication & Collaboration",
+        "change": "Widely used team messaging product from Zoho that was missing from the subcategory."
+      },
+      {
+        "id": "017dc6e2f6ade12e",
+        "name": "Element",
+        "vendor": "Element",
+        "sub": "Communication & Collaboration",
+        "change": "Recognised secure, sovereign messaging and collaboration platform that was missing from the subcategory."
+      },
+      {
+        "id": "44b2886a5d09f3d0",
+        "name": "Zimbra Collaboration",
+        "vendor": "Zimbra",
+        "sub": "Communication & Collaboration",
+        "change": "Long-established email and collaboration suite that was missing from the subcategory."
+      },
+      {
+        "id": "6a782c25922ee448",
+        "name": "Squid",
+        "vendor": "Squid project",
+        "sub": "Web Servers & Reverse Proxies",
+        "change": "Widely used open-source caching and forwarding proxy that is missing from the catalogue."
+      },
+      {
+        "id": "396a5bf7a5397750",
+        "name": "Apache Traffic Server",
+        "vendor": "Apache Software Foundation",
+        "sub": "Web Servers & Reverse Proxies",
+        "change": "Apache Software Foundation caching reverse proxy that is missing from the catalogue."
+      },
+      {
+        "id": "2dd0732c9fc866e1",
+        "name": "lighttpd",
+        "vendor": "lighttpd project",
+        "sub": "Web Servers & Reverse Proxies",
+        "change": "Well-known lightweight open-source web server that is missing from the catalogue."
+      },
+      {
+        "id": "472c85a516ff193a",
+        "name": "Azure Virtual Machines",
+        "vendor": "Microsoft",
+        "sub": "Compute, Cloud & Container Platforms",
+        "change": "Core Azure IaaS compute service, missing while Amazon EC2 and Google's equivalents are covered."
+      },
+      {
+        "id": "0e1127faf5d4594e",
+        "name": "Google Compute Engine",
+        "vendor": "Google",
+        "sub": "Compute, Cloud & Container Platforms",
+        "change": "Google Cloud's core VM compute service, missing while GKE and EC2 are listed."
+      },
+      {
+        "id": "e1b8d6d98690c776",
+        "name": "Proxmox Virtual Environment",
+        "vendor": "Proxmox Server Solutions GmbH",
+        "sub": "Compute, Cloud & Container Platforms",
+        "change": "Widely used open-source virtualization and container platform not yet in the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Web Servers & Reverse Proxies",
+      "Communication & Collaboration",
+      "Compute, Cloud & Container Platforms"
+    ],
+    "summary": "Checked 40 tools: 3 confirmed, 36 updated, 0 discontinued, 1 could not be verified. Searched Web Servers & Reverse Proxies, Communication & Collaboration, Compute, Cloud & Container Platforms for missing products: 9 added."
+  },
+  {
     "date": "2026-11-25",
     "checked": 40,
     "confirmed": 13,
