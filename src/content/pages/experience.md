@@ -3,14 +3,17 @@ title: Projects/Assignments
 menu: Projects/Assignments
 order: 2
 wide: false
+layout: default
 banner: /wp-content/uploads/2022/10/shutterstock_1756612595.jpg
+lang: en
+legal: false
 ---
 
 ## Projects/Assignments:
 
 **2025-2027, Stater Amersfoort (Mortgage Services)**
 
--   ServiceNow Expert for the implementation of CMDB/CSDM, ITOM, and ITAM.
+-   ServiceNow Expert for the implementation of CMDB/CSDM, ITOM. SOC2 Certification
 
 **2024-2025, Brenntag Amsterdam (Global Chemical Company)**
 
