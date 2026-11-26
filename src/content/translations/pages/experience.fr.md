@@ -1,68 +1,68 @@
 ---
 title: "Projets/Missions"
 menu: "Projets/Missions"
-source: "7914e35b332e666d"
+source: "84daf17558943bd1"
 ---
 
 ## Projets/Missions :
 
 **2025-2027, Stater Amersfoort (services hypothécaires)**
 
--   Expert ServiceNow pour la mise en œuvre de la CMDB/du CSDM, d'ITOM et d'ITAM.
+-   Expert ServiceNow pour la mise en œuvre de la CMDB/CSDM et d'ITOM. Certification SOC2
 
-**2024-2025, Brenntag Amsterdam (groupe chimique international)**
+**2024-2025, Brenntag Amsterdam (groupe chimique mondial)**
 
--   Responsable de la mise en œuvre du Configuration Management, du Digital Portfolio Mngt, de l'Application Portfolio Mngt et de l'IT Operations Mngt
+-   Responsable de la mise en œuvre de la Configuration Management, du Digital Portfolio Mngt, de l'Application Portfolio Mngt et de l'IT Operations Mngt
 
-**2023-2024, Action (enseigne de distribution européenne)**
+**2023-2024, Action (distributeur européen)**
 
--   Chef de projet IT ServiceNow Enterprise Service Management (CSM, ITSM, SPM, RH)
+-   Chef de projet IT ServiceNow Enterprise Service Management (CSM, ITSM, SPM, HR)
 
 **2023-S1, Booking.com (agence de voyages en ligne)**
 
--   Directeur de programme ServiceNow (IT Asset Management et IT Operations Management)
+-   Program manager ServiceNow (IT Asset Management et IT Operations Management)
 
-**2021-2022, Inter IKEA Group (holding d'IKEA)**
+**2021-2022, Inter IKEA Group (société holding d'IKEA)**
 
--   Platform Manager ServiceNow
+-   Platform manager ServiceNow
 
-**2019-2021, Digital Realty / Interxion (fournisseur international de data centers)**
+**2019-2021, Digital Realty / Interxion (fournisseur mondial de centres de données)**
 
--   Product Owner ServiceNow
--   Responsable de l'information ICT & OPS Service Management
+-   Product owner ServiceNow
+-   Information manager ICT & OPS Service Management
 -   Architecte d'entreprise pour le Service Management
 
-**2017-2019, CRH Europe (fabricant de produits de construction, holding)**
+**2017-2019, CRH Europe (groupe de matériaux de construction, holding)**
 
--   IT Service Manager et Product Owner ServiceNow
+-   IT Service Manager et product owner ServiceNow
 
 **2008-2017, ING Bank**
 
--   Chief Product Owner ServiceNow (Shared/Group Services)
--   Product Owner ServiceNow Agile/Backlog Mngt (Retail Banking, IT)
--   Product Owner ServiceNow pour le Private Cloud (IT Infra Services)
--   Manager de l'équipe d'experts IT4IT (Retail Banking, IT)
--   Directeur de programme, mise en œuvre de l'uCMDB de HP (Proc. Auth.)
+-   Chief product owner ServiceNow (Shared/Group Services)
+-   Product owner ServiceNow Agile/Backlog Mngt (Retail Banking, IT)
+-   Product owner ServiceNow pour le Private Cloud (IT Infra Services)
+-   Responsable de l'équipe d'experts IT4IT (Retail Banking, IT)
+-   Program manager, mise en œuvre de l'uCMDB de HP (Proc. Auth.)
 -   Enterprise Process Owner pour l'ITIL Configuration Mngt (Proc. Auth.)
 -   Consultant en management ITIL Configuration Mngt (Retail Banking, IT)
 
 **2001-2007, Altran/CapGemini (cabinet de conseil)**
 
--   Directeur de programme Transformation IT chez ING (Retail Banking, IT)
--   Chef de projet remplacement True64/Alpha chez T-Mobile-NL
--   Chef de projet mise en œuvre de TIBCO chez T-Mobile-NL
+-   Program manager de la transformation IT chez ING (Retail Banking, IT)
+-   Chef de projet pour le remplacement de True64/Alpha chez T-Mobile-NL
+-   Chef de projet pour la mise en œuvre de TIBCO chez T-Mobile-NL
 
-**1999-2001, Tellabs (équipementier télécom)**
+**1999-2001, Tellabs (équipementier télécoms)**
 
--   Manager Customer Services EMEA
+-   Responsable Customer Services EMEA
 -   Service Marketing Manager EMEA
--   Directeur de programme Voice over IP pour divers clients en EMEA
--   Directeur de programme, déploiement de réseaux câblés en France et en Irlande
+-   Program manager Voice over IP pour divers clients en EMEA
+-   Program manager, déploiement de réseaux câblés en France et en Irlande
 
 **1997-1998, Intercai/StrICT (cabinet de conseil)**
 
--   Directeur de programme Telephony Blueprint chez Belastingdienst
--   Directeur de programme externalisation de la téléphonie chez KLM
+-   Program manager Telephony Blueprint auprès de la Belastingdienst
+-   Program manager Outsourcing Telephony chez KLM
 
 **1996-1997, Ericsson China Company Ltd**
 
@@ -70,8 +70,8 @@ source: "7914e35b332e666d"
 
 **1990-1996, KPN Telecom**
 
--   Business Consultant pour le Corporate Account Group de KPN
--   Manager des opérations, Voice Response & Operator Services
+-   Consultant métier pour le Corporate Account Group de KPN
+-   Responsable des opérations, Voice Response & Operator Services
 -   Chef de projet, Operator & Credit Card Calling Services
 -   Ingénieur logiciel, Ericsson Public Telephony Exchange
 
