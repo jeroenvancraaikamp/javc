@@ -1,5 +1,166 @@
 [
   {
+    "date": "2026-11-27",
+    "checked": 40,
+    "confirmed": 8,
+    "unverified": 16,
+    "updated": [
+      {
+        "id": "fc07961203ce42db",
+        "name": "Darktrace ActiveAI Security Platform",
+        "change": "Replaced the quoted marketing line with a factual paraphrase based on the platform's described scope; the product is still offered."
+      },
+      {
+        "id": "fc7977ea4daecfb3",
+        "name": "Onventis",
+        "change": "Rewrote the quoted description as a paraphrase and pointed the source to the Onventis company page."
+      },
+      {
+        "id": "fcc5ed8ea4338540",
+        "name": "Omada Identity",
+        "change": "Rewrote the description as a paraphrase focused on identity governance, based on the KuppingerCole summary of Omada Identity Cloud."
+      },
+      {
+        "id": "fcdacfdcbf123e72",
+        "name": "Protecht.ERM",
+        "change": "Replaced the analyst-report quote with a factual paraphrase of Protecht.ERM as an enterprise risk management solution."
+      },
+      {
+        "id": "fce871a2eeee5f68",
+        "name": "Tenable Vulnerability Management",
+        "change": "The old 'Cyber Exposure platform' wording is outdated, and the Gartner Peer Insights listing now supports a description of risk-based vulnerability management."
+      },
+      {
+        "id": "ff130d261ed1f196",
+        "name": "Eightfold AI",
+        "change": "Kept the HR talent classification, but replaced the slogan with a factual description from Eightfold's own platform page."
+      },
+      {
+        "id": "ff4c5a8643d89ebb",
+        "name": "Chef Enterprise Automation Stack",
+        "change": "The description was investor-site boilerplate. Replaced it with a description of the Chef EAS automation stack and added automation as a subcategory."
+      },
+      {
+        "id": "ff6a564d757ed429",
+        "name": "OpenProject",
+        "change": "The description was a history quote about forks. Replaced it with a functional description of OpenProject."
+      },
+      {
+        "id": "ff6e2f0d6f791a5e",
+        "name": "Kibana",
+        "change": "Replaced the download promo text with Elastic's own description of Kibana."
+      },
+      {
+        "id": "ffe525a8a2b9739c",
+        "name": "setQ",
+        "change": "setQ is VOQUZ Labs' SAP user and authorization management tool, not license management, which is the job of samQ. Corrected the description, subcategory and URL."
+      },
+      {
+        "id": "open-policy-agent",
+        "name": "Open Policy Agent",
+        "change": "The OPA docs describe a general-purpose policy engine for policy-as-code. I replaced the identity subcategory, which fits poorly, with governance/risk and kept development."
+      },
+      {
+        "id": "portainer",
+        "name": "Portainer",
+        "change": "Portainer's site now describes it as a multi-cluster Kubernetes management platform that also covers Docker, Swarm and Podman. I refreshed the description and kept the same subcategories."
+      },
+      {
+        "id": "0814a34e73a39fb2",
+        "name": "EkkoSense EkkoSoft Critical (cooling optimization)",
+        "change": "EkkoSoft Critical is still offered; the page now also covers capacity planning, power monitoring and 3DCIM, so I added the DCIM subcategory and refreshed the description."
+      },
+      {
+        "id": "0a8b71afc70381ff",
+        "name": "Cisco UCS Manager",
+        "change": "Cisco has announced end-of-sale for UCS Manager on 2027-12-31 and end of support on 2030-12-31, with a move to Intersight; the product is still offered. Description and subcategories were refined."
+      },
+      {
+        "id": "0ab508351771cad5",
+        "name": "Einstein AI",
+        "change": "The Salesforce AI page is now branded AIforce (alongside Agentforce), with Einstein mentioned only in its metadata. I corrected the classification from AI development to predictive and generative AI."
+      },
+      {
+        "id": "18060e7a9ef0f6a4",
+        "name": "Phen.AI",
+        "change": "The producer describes Phen.AI as the AI engine behind CheckMate, a behavioral-analytics (UEBA) threat-detection product. I moved it to security protection and detection and corrected the URL."
+      }
+    ],
+    "added": [
+      {
+        "id": "9ff3b79810c7f322",
+        "name": "Nextcloud Hub",
+        "vendor": "Nextcloud",
+        "sub": "Content, Documents & Knowledge",
+        "change": "Widely used open-source file and content collaboration platform that was missing from the catalogue."
+      },
+      {
+        "id": "7820f0ca5ebac607",
+        "name": "Google Drive",
+        "vendor": "Google",
+        "sub": "Content, Documents & Knowledge",
+        "change": "Major cloud document storage and sharing product from Google that was missing from the catalogue."
+      },
+      {
+        "id": "7c96db95e3f40cd4",
+        "name": "Xerox DocuShare",
+        "vendor": "Xerox",
+        "sub": "Content, Documents & Knowledge",
+        "change": "Established enterprise content management platform from Xerox that was missing from the catalogue."
+      },
+      {
+        "id": "4989c13c3d6766d1",
+        "name": "Quorum",
+        "vendor": "Quorum",
+        "sub": "Corporate Communications",
+        "change": "Widely used public affairs and government relations platform that was missing from the Corporate Communications subcategory."
+      },
+      {
+        "id": "6ef59f993c6c690f",
+        "name": "Business Wire",
+        "vendor": "Business Wire",
+        "sub": "Corporate Communications",
+        "change": "Major newswire for media and stakeholder communications that is not yet in the catalogue."
+      },
+      {
+        "id": "202637e0c3d38d10",
+        "name": "GlobeNewswire",
+        "vendor": "Notified",
+        "sub": "Corporate Communications",
+        "change": "Well-known newswire for media and investor communications that is missing from the catalogue."
+      },
+      {
+        "id": "54004372b369654b",
+        "name": "Acumatica Cloud ERP Financial Management",
+        "vendor": "Acumatica",
+        "sub": "Finance",
+        "change": "Widely used cloud ERP with a dedicated financial suite that was missing from the Finance subcategory."
+      },
+      {
+        "id": "5fb2e8d5a25e35c1",
+        "name": "Planful",
+        "vendor": "Planful",
+        "sub": "Finance",
+        "change": "Recognised FP&A and financial performance management platform that was missing from the Finance subcategory."
+      },
+      {
+        "id": "2b3fc911e65507a9",
+        "name": "Adyen",
+        "vendor": "Adyen",
+        "sub": "Finance",
+        "change": "Major enterprise payments platform that was missing from the Finance subcategory."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Content, Documents & Knowledge",
+      "Corporate Communications",
+      "Finance"
+    ],
+    "summary": "Checked 40 tools: 8 confirmed, 16 updated, 0 discontinued, 16 could not be verified. Searched Content, Documents & Knowledge, Corporate Communications, Finance for missing products: 9 added."
+  },
+  {
     "date": "2026-11-26",
     "checked": 40,
     "confirmed": 3,
