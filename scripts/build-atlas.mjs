@@ -128,11 +128,24 @@ mkdirSync('public/atlas', { recursive: true });
 writeFileSync('public/atlas/tools.json', JSON.stringify(tools));
 // The latest report, which the Worker e-mails to the subscribers (worker/atlas-subscribers.js).
 writeFileSync('public/atlas/report.json', JSON.stringify(activity[0] ?? null));
+// Per Gartner Magic Quadrant (market + year) the Atlas tools in it, for /it4it-atlas/gartner/.
+const mqs = new Map();
+for (const t of tools) for (const g of t.gartner) {
+  const key = `${g.market}|${g.year}`;
+  if (!mqs.has(key)) mqs.set(key, { market: g.market, year: g.year, url: '', tools: [] });
+  const q = mqs.get(key);
+  // Some report links point to an internal Gartner host; use the public one.
+  if (!q.url && g.url) q.url = g.url.replace('://gcomdr.pdo.aws.gartner.com/', '://www.gartner.com/');
+  if (!q.tools.some((x) => x.id === t.id)) q.tools.push({ id: t.id, name: t.name, vendor: t.vendor });
+}
+const quadrants = [...mqs.values()].sort((a, b) => a.market.localeCompare(b.market, 'en', { sensitivity: 'base' }) || b.year - a.year);
+
 writeFileSync('src/data/atlas-meta.json', JSON.stringify({
   tools: tools.length,
   imported,
   checked: tools.map((t) => t.checked).filter(Boolean).sort().pop(),
   gartner: tools.filter((t) => t.gartner.length).length,
+  quadrants,
   views,
   domains,
   counts,
