@@ -1,10 +1,10 @@
-// The site in five languages: English on the plain addresses (/skills/); Dutch, Simplified Chinese,
-// French and German under /nl/, /cn/, /fr/ and /de/ (/nl/skills/ and so on).
-export type Lang = 'en' | 'nl' | 'cn' | 'fr' | 'de';
-export const LANGS: Lang[] = ['en', 'nl', 'cn', 'fr', 'de'];
-const PREFIX = /^\/(nl|cn|fr|de)(?=\/|$)/;
+// The site in four languages: English on the plain addresses (/skills/); Dutch, French and German
+// under /nl/, /fr/ and /de/ (/nl/skills/ and so on).
+export type Lang = 'en' | 'nl' | 'fr' | 'de';
+export const LANGS: Lang[] = ['en', 'nl', 'fr', 'de'];
+const PREFIX = /^\/(nl|fr|de)(?=\/|$)/;
 
-// The language of a path, and the path without its language part: '/cn/skills/' → 'cn', '/skills/'.
+// The language of a path, and the path without its language part: '/nl/skills/' → 'nl', '/skills/'.
 export const langOf = (path: string): Lang => (path.match(PREFIX)?.[1] as Lang) ?? 'en';
 export const basePath = (path: string) => path.replace(PREFIX, '') || '/';
 
@@ -12,19 +12,18 @@ export const basePath = (path: string) => path.replace(PREFIX, '') || '/';
 export const url = (lang: Lang, path: string) =>
   !path.startsWith('/') || path.startsWith('//') ? path : lang === 'en' ? basePath(path) : `/${lang}${basePath(path)}`;
 
-export const locale = { en: 'en-GB', nl: 'nl-NL', cn: 'zh-CN', fr: 'fr-FR', de: 'de-DE' } as const;
-// Language code for hreflang and lang attributes ('cn' is the address, Simplified Chinese the language).
-export const hreflang = (l: Lang) => (l === 'cn' ? 'zh-Hans' : l);
+export const locale = { en: 'en-GB', nl: 'nl-NL', fr: 'fr-FR', de: 'de-DE' } as const;
+// Language code for hreflang and lang attributes.
+export const hreflang = (l: Lang) => l;
 // Name of each language in its own language, for the flags.
-export const LANG_LABEL = { en: 'English', nl: 'Nederlands', cn: '简体中文', fr: 'Français', de: 'Deutsch' } as const;
+export const LANG_LABEL = { en: 'English', nl: 'Nederlands', fr: 'Français', de: 'Deutsch' } as const;
 
 // "Translated from ..." in the language of the page.
 const FROM = {
-  en: { en: 'English', nl: 'Dutch', cn: 'Chinese', fr: 'French', de: 'German' },
-  nl: { en: 'het Engels', nl: 'het Nederlands', cn: 'het Chinees', fr: 'het Frans', de: 'het Duits' },
-  cn: { en: '英文', nl: '荷兰语', cn: '中文', fr: '法语', de: '德语' },
-  fr: { en: "l'anglais", nl: 'le néerlandais', cn: 'le chinois', fr: 'le français', de: "l'allemand" },
-  de: { en: 'dem Englischen', nl: 'dem Niederländischen', cn: 'dem Chinesischen', fr: 'dem Französischen', de: 'dem Deutschen' },
+  en: { en: 'English', nl: 'Dutch', fr: 'French', de: 'German' },
+  nl: { en: 'het Engels', nl: 'het Nederlands', fr: 'het Frans', de: 'het Duits' },
+  fr: { en: "l'anglais", nl: 'le néerlandais', fr: 'le français', de: "l'allemand" },
+  de: { en: 'dem Englischen', nl: 'dem Niederländischen', fr: 'dem Französischen', de: 'dem Deutschen' },
 };
 
 const STRINGS = {
@@ -97,41 +96,6 @@ const STRINGS = {
     readOriginal: 'Lees het origineel',
     legalNote: 'Dit is een vertaling van het Engelse origineel. Bij verschil in uitleg is de Engelse tekst leidend.',
     legalOriginal: 'Lees het Engelse origineel',
-  },
-  cn: {
-    description: 'Jeroen van Craaikamp 的 IT 管理与咨询服务。',
-    skip: '跳到正文',
-    menu: '菜单',
-    articles: '文章/出版物',
-    contact: '联系我',
-    privacy: '隐私政策',
-    terms: '条款与条件',
-    toTop: '返回顶部',
-    search: '搜索',
-    searchFor: '搜索：',
-    searchPh: '搜索…',
-    searchArticlesPh: '搜索文章…',
-    searchResults: '搜索结果',
-    popular: '热门',
-    recent: '最新',
-    categories: '分类',
-    archives: '归档',
-    category: '分类',
-    archive: '归档',
-    by: '作者',
-    readMore: '阅读全文',
-    minRead: '分钟阅读',
-    related: '相关文章',
-    discuss: '在 LinkedIn 上讨论这篇文章',
-    prev: '上一篇',
-    next: '下一篇',
-    prevPage: '上一页',
-    nextPage: '下一页',
-    pagination: '分页',
-    translatedFrom: (from: Lang) => `本文译自${FROM.cn[from]}。`,
-    readOriginal: '阅读原文',
-    legalNote: '本文为荷兰语原文的中文译本。如有任何解释上的差异，以荷兰语文本为准。',
-    legalOriginal: '阅读荷兰语原文',
   },
   fr: {
     description: 'Gestion et conseil en informatique par Jeroen van Craaikamp.',
@@ -207,5 +171,5 @@ const STRINGS = {
 export const t = (lang: Lang) => STRINGS[lang];
 
 // Category names shown on the site; the name itself (and its address) stays the same in both languages.
-const CATEGORY_NAMES: Partial<Record<Lang, Record<string, string>>> = { nl: { Uncategorized: 'Overig' }, cn: { Uncategorized: '其他' }, fr: { Uncategorized: 'Divers' }, de: { Uncategorized: 'Sonstiges' } };
+const CATEGORY_NAMES: Partial<Record<Lang, Record<string, string>>> = { nl: { Uncategorized: 'Overig' }, fr: { Uncategorized: 'Divers' }, de: { Uncategorized: 'Sonstiges' } };
 export const categoryName = (name: string, lang: Lang) => CATEGORY_NAMES[lang]?.[name] || name;

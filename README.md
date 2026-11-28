@@ -13,7 +13,7 @@ See `src/content/articles/what-an-article-can-hold.md` for every supported conte
 
 ## Five languages
 
-The site is in English at the plain addresses (`/skills/`), and in Dutch, Simplified Chinese, French and German under `/nl/`, `/cn/`, `/fr/` and `/de/` (`/nl/skills/` and so on); the flags at the top left switch between them. Every article and page has a `lang` field (English by default) for the language it is written in. The other languages are translations in `src/content/translations/<articles|pages>/<slug>.<lang>.md` (homepage: `src/data/home.<lang>.json`); until one exists, the original is shown. The routes of the other languages are copies of the English ones in `src/pages/<lang>/`.
+The site is in English at the plain addresses (`/skills/`), and in Dutch, French and German under `/nl/`, `/fr/` and `/de/` (`/nl/skills/` and so on); the flags at the top left switch between them. Every article and page has a `lang` field (English by default) for the language it is written in. The other languages are translations in `src/content/translations/<articles|pages>/<slug>.<lang>.md` (homepage: `src/data/home.<lang>.json`); until one exists, the original is shown. The routes of the other languages are copies of the English ones in `src/pages/<lang>/`.
 
 After every change on `main`, the GitHub Action **Translate** (`scripts/translate.mjs`) translates what is new or changed with Claude and commits it. It needs the repository secret `ANTHROPIC_API_KEY`. To correct a translation yourself, edit it in the CMS under *Translations* and tick *Keep my edits*. Interface texts (menu, buttons, sidebar) are in `src/i18n.ts`.
 

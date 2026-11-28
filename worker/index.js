@@ -75,22 +75,22 @@ function search(query, k = TOP_K) {
 const SYSTEM = `You are the assistant on javc.nl, the website of Jeroen van Craaikamp (JAVC Management & Consultancy), a freelance ServiceNow implementation manager and consultant in Amstelveen, the Netherlands. Visitors ask about Jeroen, his experience and services, and the topics he writes about (ServiceNow, CMDB, CSDM, IT4IT, ITIL, TBM, ESM).
 
 How to answer:
-- Answer in the language named with each question (the language of the page the visitor is on: the site is in English, with Dutch, Simplified Chinese, French and German versions under /nl/, /cn/, /fr/ and /de/).
+- Answer in the language named with each question (the language of the page the visitor is on: the site is in English, with Dutch, French and German versions under /nl/, /fr/ and /de/).
 - Base your answer on the passages provided with each question. If they don't cover the question, say you don't know based on the site, and don't make things up. General background knowledge is fine for explaining a concept, but never invent facts about Jeroen.
 - Keep answers short and conversational (a few sentences or a short list). Your answer may be read aloud, so avoid tables.
 - When an answer comes from an article or page, mention its title and link it in Markdown with the path given, e.g. [Title](/path/).
 - Refer to Jeroen in the third person. For hiring, quotes or contact, point to the contact page [Contact me](/contact-me/) or Info@JAVC.nl.`;
 
-// The other languages live under /nl/, /cn/, /fr/ and /de/: point links to site pages there for those visitors.
-const LANG_NAME = { en: 'English', nl: 'Dutch', cn: 'Simplified Chinese', fr: 'French', de: 'German' };
+// The other languages live under /nl/, /fr/ and /de/: point links to site pages there for those visitors.
+const LANG_NAME = { en: 'English', nl: 'Dutch', fr: 'French', de: 'German' };
 const LANGS = Object.keys(LANG_NAME);
 function localPath(path, lang) {
-  if (lang === 'en' || !path?.startsWith('/') || /^\/(nl|cn|fr|de)\//.test(path) || /^\/(wp-content|images|media|files|api)\//.test(path)) return path;
+  if (lang === 'en' || !path?.startsWith('/') || /^\/(nl|fr|de)\//.test(path) || /^\/(wp-content|images|media|files|api)\//.test(path)) return path;
   return `/${lang}${path}`;
 }
 const SORRY = {
-  refused: { en: "Sorry, I can't help with that question.", nl: 'Sorry, met die vraag kan ik je niet helpen.', cn: '抱歉，这个问题我无法回答。', fr: 'Désolé, je ne peux pas vous aider avec cette question.', de: 'Entschuldigung, bei dieser Frage kann ich nicht helfen.' },
-  none: { en: 'Sorry, I have no answer to that.', nl: 'Sorry, daar heb ik geen antwoord op.', cn: '抱歉，我没有这个问题的答案。', fr: "Désolé, je n'ai pas de réponse à cela.", de: 'Entschuldigung, darauf habe ich keine Antwort.' },
+  refused: { en: "Sorry, I can't help with that question.", nl: 'Sorry, met die vraag kan ik je niet helpen.', fr: 'Désolé, je ne peux pas vous aider avec cette question.', de: 'Entschuldigung, bei dieser Frage kann ich nicht helfen.' },
+  none: { en: 'Sorry, I have no answer to that.', nl: 'Sorry, daar heb ik geen antwoord op.', fr: "Désolé, je n'ai pas de réponse à cela.", de: 'Entschuldigung, darauf habe ich keine Antwort.' },
 };
 const localLinks = (text, lang) => text.replace(/\]\((\/[^)\s]*)\)/g, (_, p) => `](${localPath(p, lang)})`);
 
@@ -225,8 +225,8 @@ async function contact(request, env) {
   if (denied) return denied;
   let f;
   try { f = await request.json(); } catch { return json({ error: 'Bad request' }, 400); }
-  // Error messages in the language of the form (the Dutch contact page sends lang: 'nl', the Chinese one 'cn', and so on).
-  const say = (en, nl, cn, fr, de) => ({ en, nl, cn, fr, de })[f?.lang] ?? en;
+  // Error messages in the language of the form (the Dutch contact page sends lang: 'nl', the French one 'fr', and so on).
+  const say = (en, nl, fr, de) => ({ en, nl, fr, de })[f?.lang] ?? en;
   const field = (k, max) => (typeof f?.[k] === 'string' ? f[k].trim().slice(0, max) : '');
   const name = field('name', 200), email = field('email', 200), phone = field('phone', 50), message = field('message', 5000);
 
@@ -245,7 +245,7 @@ async function contact(request, env) {
       sender: env.CONTACT_FROM,
       to: [env.CONTACT_TO],
       ...(({ subject, text, html }) => ({ subject, text_body: text, html_body: html }))(contactMail({
-        name, email, phone, message, lang: say('en', 'nl', 'cn', 'fr', 'de'),
+        name, email, phone, message, lang: say('en', 'nl', 'fr', 'de'),
         country: request.cf?.country || '', city: request.cf?.city || '', host: new URL(request.url).host,
       })),
       custom_headers: [{ header: 'Reply-To', value: email.replace(/[\r\n]/g, '') }],
@@ -256,7 +256,7 @@ async function contact(request, env) {
     console.error('smtp2go error', res?.status, JSON.stringify(data));
     return json({ error: say('Sending failed. Please try again later or email Info@JAVC.nl.', 'Versturen is mislukt. Probeer het later opnieuw of mail naar Info@JAVC.nl.', '发送失败。请稍后再试，或发送电子邮件至 Info@JAVC.nl。', "L'envoi a échoué. Réessayez plus tard ou écrivez à Info@JAVC.nl.", 'Senden fehlgeschlagen. Bitte versuchen Sie es später erneut oder schreiben Sie an Info@JAVC.nl.') }, 502);
   }
-  await logContact(env, request, { name, email, phone, message, lang: say('en', 'nl', 'cn', 'fr', 'de') }).catch((err) => console.error('contact log', err));
+  await logContact(env, request, { name, email, phone, message, lang: say('en', 'nl', 'fr', 'de') }).catch((err) => console.error('contact log', err));
   return json({ ok: true });
 }
 
@@ -274,6 +274,8 @@ function redirectFor(url) {
   if (p === '/' && id && WP_IDS[id]) return WP_IDS[id];
   // Old WordPress admin addresses go to the CMS (the old site on javcmanagement.nl now forwards to javc.nl).
   if (/^\/(wp-admin|wp-login\.php)/.test(p)) return '/cms/';
+  // The Chinese version of the site (/cn/...) was removed on 2026-11-28: send old links to the English page.
+  if (p === '/cn' || p.startsWith('/cn/')) return `${p.slice(3) || '/'}${url.search}`;
   if (/^\/(feed|comments\/feed)\/?$/.test(p)) return '/articles/';
   let m;
   if ((m = p.match(/^\/category\/([^/]+)\/(?:page\/(\d+)\/)?$/))) {
