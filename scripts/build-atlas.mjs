@@ -108,7 +108,7 @@ const tools = catalogue
       streams,
       // CSDM 5 domains follow from the subcategories (src/data/atlas-taxonomy.json).
       domains: [...new Set(subs.flatMap((s) => SUB[s].csdm))],
-      gartner: (a.gartnerMagicQuadrants ?? []).map((g) => ({ market: g.market, vendor: g.vendor, year: g.year, url: g.sourceUrl })),
+      gartner: (a.gartnerMagicQuadrants ?? []).map((g) => ({ market: g.market, vendor: g.vendor, year: g.year, url: g.sourceUrl, placement: g.placement ?? '' })),
     };
   })
   .filter((t) => t.subs.length)
@@ -136,7 +136,7 @@ for (const t of tools) for (const g of t.gartner) {
   const q = mqs.get(key);
   // Some report links point to an internal Gartner host; use the public one.
   if (!q.url && g.url) q.url = g.url.replace('://gcomdr.pdo.aws.gartner.com/', '://www.gartner.com/');
-  if (!q.tools.some((x) => x.id === t.id)) q.tools.push({ id: t.id, name: t.name, vendor: t.vendor });
+  if (!q.tools.some((x) => x.id === t.id)) q.tools.push({ id: t.id, name: t.name, vendor: t.vendor, placement: g.placement && g.placement !== 'unknown' ? g.placement : '' });
 }
 const quadrants = [...mqs.values()].sort((a, b) => a.market.localeCompare(b.market, 'en', { sensitivity: 'base' }) || b.year - a.year);
 
