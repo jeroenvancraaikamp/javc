@@ -12,7 +12,7 @@ import { atlasMail, confirmMail, noticeMail } from '../scripts/atlas-mail.mjs';
 import { humanCheck, tooFast } from './turnstile.js';
 
 const SITE = 'https://javc.nl';
-const LANGS = ['en', 'nl', 'cn', 'fr', 'de'];
+const LANGS = ['en', 'nl', 'fr', 'de'];
 const BATCH = 25; // mails per cron run (the free Workers plan allows 50 outgoing requests per run)
 const PENDING_DAYS = 7; // unconfirmed addresses are deleted after a week
 // Against mass sign-ups by bots (on top of Turnstile and the rate limit per minute): at most 3 requests per IP address
@@ -52,7 +52,7 @@ async function send(env, { to, subject, text, html, headers = [] }) {
 }
 
 // A short note to Jeroen (CONTACT_TO) with the subscriber's details. Failures are only logged.
-const LANG_NAME = { en: 'Engels', nl: 'Nederlands', cn: 'Chinees', fr: 'Frans', de: 'Duits' };
+const LANG_NAME = { en: 'Engels', nl: 'Nederlands', fr: 'Frans', de: 'Duits' };
 const notifyOwner = (env, subject, intro, s) => send(env, { to: env.CONTACT_TO, ...noticeMail(subject, intro, [
   ['Naam', s.name || '—'], ['E-mailadres', s.email], ['Taal van de site', `${LANG_NAME[s.lang] || s.lang} (${s.lang})`],
   ['Land (Cloudflare)', s.country || '—'], ['Plaats', s.city || '—'], ['IP-adres', s.ip || '—'],

@@ -32,22 +32,6 @@ export const ATLAS_TEXT = {
     show: 'Toon tools', csdmLabel: 'CSDM 5-domeinen', csdmGuide: 'Elke subcategorie is ook gekoppeld aan een of meer van de zeven domeinen van het Common Service Data Model van ServiceNow (CSDM 5); een tool krijgt de domeinen van zijn subcategorieën.', allDomains: 'Alle CSDM-domeinen', updatedOn: 'Bijgewerkt', sortNew: 'Recent bijgewerkt eerst', sortOld: 'Langst niet bijgewerkt eerst', updated: (d: string) => `De inhoud van deze pagina wordt dagelijks automatisch bijgewerkt (<a href="{changes}">zie changelog</a>); de laatste update was op ${d}.`, mqTab: 'Gartner Magic Quadrant-tools', streamsLabel: 'IT4IT 3-waardestromen',
     note: 'De indeling beschrijft ondersteunde capabilities en is geen certificering of aanbeveling. De IT4IT-groepen en waardestromen zijn een redactionele keuze; de bedrijfscategorieën volgen TBM 5. Beschrijvingen zijn (in het Engels) gebaseerd op de documentatie van de producenten; per tool zijn de bron en datum bewaard. IT4IT is een handelsmerk van The Open Group; Gartner en Magic Quadrant zijn handelsmerken van Gartner, Inc. Opname van een leverancier in een Magic Quadrant betekent niet dat elk product of elke editie is beoordeeld.',
   },
-  cn: {
-    changes: '每日更新', changesIntro: '每天会重新核查最久未核查的 40 个条目（描述、厂商、链接和分类），并在几个子类别中查找缺失的知名产品。更改会立即上线。每个工具的说明为英文。', noChanges: '尚未进行每日更新。', run: (c: number, u: number, a: number, d: number) => `核查 ${c} 个工具 · 更新 ${u} 个 · 新增 ${a} 个 · ${d} 个已停止提供`, addedHead: '新增', updatedHead: '已更新', discontinuedHead: '已停止提供（已隐藏）', searchedIn: '查找缺失产品的子类别', was: '原名',
-    backToAtlas: '返回 IT4IT Atlas',
-    profile: '工具简介', capabilities: '能力', labels: '原始标签', gartnerHead: '2026 年 Gartner 魔力象限', report: '查看报告', sourceHead: '来源', checkedOn: '核实日期', fromProducer: '描述基于厂商自己的内容。', fromThird: '描述基于第三方资料。', website: '访问厂商网站', close: '关闭',
-    tools: '个工具', sections: '个板块', subcategories: '个子类别', gartner: '入选 2026 年 Gartner 魔力象限',
-    edition: '版本', checked: '描述核实至', guide: '类别指南', standard: 'IT4IT 标准', csdmStandard: 'CSDM 5 标准', tbmStandard: 'TBM 5 标准',
-    all: '全部工具', sponsor: '赞助 IT4IT Atlas', sponsorNote: '扫描或点击二维码，通过 Tikkie 支持。', browse: '业务能力', allCaps: '全部能力', search: '搜索产品、厂商或描述…',
-    sortAZ: '按字母 A–Z', sortZA: '按字母 Z–A', sortVendor: '厂商 A–Z', gartnerOnly: '仅 Gartner MQ 2026',
-    stream: 'IT4IT 价值流', allStreams: '全部价值流', export: '导出到 Excel', results: (n: string) => `${n} 个工具`,
-    none: '没有符合这些筛选条件的工具。', reset: '清除筛选', producer: '厂商', source: '来源', loading: '正在加载目录…',
-    error: '目录无法加载，请稍后再试。', prev: '上一页', next: '下一页', page: '页',
-    mq: 'Gartner MQ 2026', mqTitle: '该厂商入选 2026 年 Gartner 魔力象限：',
-    guideIntro: '工具版图的四个板块。一个产品可以出现在多个板块或类别中。',
-    show: '查看工具', csdmLabel: 'CSDM 5 域', csdmGuide: '每个子类别还对应 ServiceNow 通用服务数据模型（CSDM 5）七个域中的一个或多个；工具继承其子类别的域。', allDomains: '全部 CSDM 域', updatedOn: '更新于', sortNew: '最近更新优先', sortOld: '最早更新优先', updated: (d: string) => `本页内容每天自动更新（<a href="{changes}">查看更新日志</a>），最近一次更新于 ${d}。`, mqTab: 'Gartner 魔力象限工具', streamsLabel: 'IT4IT 3 价值流',
-    note: '分类描述的是所支持的能力，并不代表认证或推荐。IT4IT 分组和价值流映射为编辑判断；业务类别遵循 TBM 5。描述（英文）基于厂商自己的文档，每个工具都保留了来源和日期。IT4IT 是 The Open Group 的商标；Gartner 和 Magic Quadrant 是 Gartner, Inc. 的商标。厂商入选魔力象限并不意味着其每个产品或版本都经过评估。',
-  },
   fr: {
     changes: 'Mises à jour quotidiennes', changesIntro: 'Chaque jour, les 40 fiches vérifiées le plus anciennement sont réexaminées (description, éditeur, liens et classification) et quelques sous-catégories sont parcourues à la recherche de produits notables manquants. Les modifications sont publiées immédiatement. Les notes par outil sont en anglais.', noChanges: 'Aucune mise à jour quotidienne n’a encore eu lieu.', run: (c: number, u: number, a: number, d: number) => `${c} outils vérifiés · ${u} mis à jour · ${a} ajoutés · ${d} plus proposés`, addedHead: 'Ajoutés', updatedHead: 'Mis à jour', discontinuedHead: 'Plus proposés (masqués)', searchedIn: 'Produits manquants recherchés dans', was: 'anciennement',
     backToAtlas: 'Retour à l’IT4IT Atlas',
@@ -98,13 +82,6 @@ export const SUBSCRIBE_TEXT = {
     confirmed: 'Dank je wel, je aanmelding is bevestigd. Je ontvangt de volgende dagelijkse update per e-mail.', badLink: 'Deze bevestigingslink is niet (meer) geldig. Meld je opnieuw aan.',
     unsubQ: 'Wil je de dagelijkse update van de IT4IT Atlas niet meer ontvangen?', unsubButton: 'Afmelden', unsubDone: 'Je bent afgemeld. Je ontvangt de dagelijkse update niet meer.', gone: 'Dit adres is niet (meer) aangemeld.',
   },
-  cn: {
-    name: '您的姓名', noName: '请输入您的姓名。', title: '通过电子邮件接收每日更新', note: '每天接收 IT4IT Atlas 中核查、更改和新增的内容（英文）。您可以随时退订。', email: '您的电子邮件地址', button: '订阅', sending: '正在发送…',
-    thanks: '快完成了：请查看您的收件箱并点击链接确认订阅。', already: '此地址已在接收每日更新。',
-    invalid: '请输入有效的电子邮件地址。', spam: '垃圾信息检查未通过。请刷新页面后重试。', failed: '订阅失败。请稍后再试。',
-    confirmed: '谢谢，您的订阅已确认。您将通过电子邮件收到下一次每日更新。', badLink: '此确认链接无效或已失效。请重新订阅。',
-    unsubQ: '您要停止接收 IT4IT Atlas 的每日更新吗？', unsubButton: '退订', unsubDone: '您已退订，将不再收到每日更新。', gone: '此地址未订阅（或已退订）。',
-  },
   fr: {
     name: 'Votre nom', noName: 'Veuillez saisir votre nom.', title: 'Mise à jour quotidienne par e-mail', note: 'Recevez chaque jour ce qui a été vérifié, modifié et ajouté dans l’IT4IT Atlas (en anglais). Désabonnement possible à tout moment.', email: 'Votre adresse e-mail', button: 'S’abonner', sending: 'Envoi…',
     thanks: 'Presque terminé : consultez votre boîte de réception et cliquez sur le lien pour confirmer votre abonnement.', already: 'Cette adresse reçoit déjà la mise à jour quotidienne.',
@@ -125,7 +102,6 @@ export const SUBSCRIBE_TEXT = {
 export const ARCHIVE_TEXT = {
   en: { title: 'Remove from the Atlas', confirm: 'Remove “{name}” from the IT4IT Atlas? It is archived and will not be added again by the daily update.', failed: 'The tool could not be removed. Sign in again and retry.' },
   nl: { title: 'Verwijderen uit de Atlas', confirm: '“{name}” uit de IT4IT Atlas verwijderen? Het product wordt gearchiveerd en door de dagelijkse update niet opnieuw toegevoegd.', failed: 'Het product kon niet worden verwijderd. Log opnieuw in en probeer het nog eens.' },
-  cn: { title: '从图谱中移除', confirm: '要从 IT4IT Atlas 中移除“{name}”吗？它将被归档，每日更新不会再次添加。', failed: '无法移除该工具。请重新登录后重试。' },
   fr: { title: 'Retirer de l’Atlas', confirm: 'Retirer « {name} » de l’IT4IT Atlas ? Il est archivé et ne sera pas rajouté par la mise à jour quotidienne.', failed: 'L’outil n’a pas pu être retiré. Reconnectez-vous et réessayez.' },
   de: { title: 'Aus dem Atlas entfernen', confirm: '„{name}“ aus dem IT4IT Atlas entfernen? Es wird archiviert und vom täglichen Update nicht erneut hinzugefügt.', failed: 'Das Tool konnte nicht entfernt werden. Bitte melden Sie sich erneut an und versuchen Sie es noch einmal.' },
 };

@@ -1,6 +1,6 @@
 ---
 // Private statistics pages (/stats/, /stats/visits/, /stats/articles/, /stats/security/, /stats/chats/, /stats/changes/, /stats/contacts/, /stats/subscribers/ and their translations under
-// /nl/, /cn/, /fr/, /de/), in the Statistics menu. The content comes from /api/stats?part=… (worker/stats.js),
+// /nl/, /fr/, /de/), in the Statistics menu. The content comes from /api/stats?part=… (worker/stats.js),
 // which only answers for the owner of the repository, signed in to the CMS in this browser,
 // and renders them in the language of the page.
 import Base from '../layouts/Base.astro';
@@ -14,7 +14,6 @@ const lang = langOf(Astro.url.pathname);
 const TEXT = {
   en: { title: 'Statistics', loading: 'Loading…', login: '<section><p>This page is only visible when you are signed in to the CMS.</p><p><a href="/cms/">Sign in to the CMS</a>, then open this page again.</p></section>', error: '<section><p>The statistics are not available right now. Please try again later.</p></section>' },
   nl: { title: 'Statistieken', loading: 'Laden…', login: '<section><p>Deze pagina is alleen zichtbaar als je bent ingelogd in het CMS.</p><p><a href="/cms/">Log in op het CMS</a> en open deze pagina daarna opnieuw.</p></section>', error: '<section><p>De statistieken zijn nu niet beschikbaar. Probeer het later nog eens.</p></section>' },
-  cn: { title: '统计', loading: '加载中…', login: '<section><p>只有登录 CMS 后才能查看此页面。</p><p><a href="/cms/">登录 CMS</a>，然后重新打开此页面。</p></section>', error: '<section><p>统计数据暂时不可用，请稍后再试。</p></section>' },
   fr: { title: 'Statistiques', loading: 'Chargement…', login: '<section><p>Cette page n’est visible que si vous êtes connecté au CMS.</p><p><a href="/cms/">Connectez-vous au CMS</a>, puis rouvrez cette page.</p></section>', error: '<section><p>Les statistiques ne sont pas disponibles pour le moment. Réessayez plus tard.</p></section>' },
   de: { title: 'Statistiken', loading: 'Wird geladen…', login: '<section><p>Diese Seite ist nur sichtbar, wenn Sie im CMS angemeldet sind.</p><p><a href="/cms/">Melden Sie sich im CMS an</a> und öffnen Sie diese Seite dann erneut.</p></section>', error: '<section><p>Die Statistiken sind gerade nicht verfügbar. Bitte versuchen Sie es später noch einmal.</p></section>' },
 }[lang];

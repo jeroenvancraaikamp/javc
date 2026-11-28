@@ -54,8 +54,9 @@ function browserLang(request) {
   return m ? m[1].toLowerCase() : '';
 }
 
-// Site language from the path: Dutch under /nl/, Chinese under /cn/, French under /fr/, German under /de/, English everywhere else.
-const SITE_LANGS = ['en', 'nl', 'cn', 'fr', 'de'];
+// Site language from the path: Dutch under /nl/, French under /fr/, German under /de/, English everywhere else.
+// (Old visits to the former Chinese pages under /cn/ count as English.)
+const SITE_LANGS = ['en', 'nl', 'fr', 'de'];
 const SITE_LANG = `CASE ${SITE_LANGS.slice(1).map((l) => `WHEN path = '/${l}' OR path LIKE '/${l}/%' THEN '${l}'`).join(' ')} ELSE 'en' END`;
 
 // POST /api/hit {p: path, r: referrer}, sent by a small script on every page (src/layouts/Base.astro).
@@ -220,8 +221,8 @@ async function revisions() {
   }));
 }
 
-// Texts of /stats in the languages of the site (/stats/, /nl/stats/, /cn/stats/, /fr/stats/, /de/stats/).
-const LOCALE = { en: 'en-GB', nl: 'nl-NL', cn: 'zh-CN', fr: 'fr-FR', de: 'de-DE' };
+// Texts of /stats in the languages of the site (/stats/, /nl/stats/, /fr/stats/, /de/stats/).
+const LOCALE = { en: 'en-GB', nl: 'nl-NL', fr: 'fr-FR', de: 'de-DE' };
 const TEXT = {
   en: {
     chatsT: "Chat conversations", oddH: "Suspicious questions", oddTag: "suspicious", showOdd: "Show only suspicious questions", showAll: "Show all questions", answer: "Answer", followUp: (n) => `follow-up question (${n} earlier)`, noAnswer: "No answer saved (from before 2 November 2026, or the chatbot failed).", chatsNote: "The latest 200 questions to the chatbot with its answer. \"Suspicious\" marks questions that try to make the chatbot leave its role (prompt injection, asking for its instructions or keys). Answers, place and IP address are saved from 2 November 2026; the IP address is wiped after 30 days.",
@@ -231,7 +232,7 @@ const TEXT = {
     views: 'views', visitors: 'visitors', questions: 'questions', noData: 'No data yet.', noDb: 'The database is not available yet.',
     pageViews: 'Page views', visitorsDay: 'Visitors (counted per day)', perVisitor: 'Pages per visitor', perDay: 'Per day',
     siteLang: 'Site language', language: 'Language', viewsH: 'Views', share: 'Share', visitorsH: 'Visitors',
-    langNames: { en: 'English', nl: 'Dutch', cn: 'Chinese', fr: 'French', de: 'German' }, langPerDay: 'Views per language per day',
+    langNames: { en: 'English', nl: 'Dutch', fr: 'French', de: 'German' }, langPerDay: 'Views per language per day',
     browserLang: 'Browser language', unknown: '(unknown)', noBrowserLang: 'Collected from now on; no data yet.',
     topPages: 'Most viewed pages', page: 'Page', referrers: 'Referrers', website: 'Website', direct: '(direct / unknown)',
     countries: 'Countries', country: 'Country', devices: 'Devices', device: 'Device',
@@ -251,7 +252,7 @@ const TEXT = {
     views: 'weergaven', visitors: 'bezoekers', questions: 'vragen', noData: 'Nog geen gegevens.', noDb: 'De database is nog niet beschikbaar.',
     pageViews: 'Paginaweergaven', visitorsDay: 'Bezoekers (per dag geteld)', perVisitor: "Pagina's per bezoeker", perDay: 'Per dag',
     siteLang: 'Taal van de site', language: 'Taal', viewsH: 'Weergaven', share: 'Aandeel', visitorsH: 'Bezoekers',
-    langNames: { en: 'Engels', nl: 'Nederlands', cn: 'Chinees', fr: 'Frans', de: 'Duits' }, langPerDay: 'Weergaven per taal per dag',
+    langNames: { en: 'Engels', nl: 'Nederlands', fr: 'Frans', de: 'Duits' }, langPerDay: 'Weergaven per taal per dag',
     browserLang: 'Taal van de browser', unknown: '(onbekend)', noBrowserLang: 'Wordt vanaf nu verzameld; nog geen gegevens.',
     topPages: "Meest bekeken pagina's", page: 'Pagina', referrers: 'Verwijzende sites', website: 'Website', direct: '(direct / onbekend)',
     countries: 'Landen', country: 'Land', devices: 'Apparaten', device: 'Apparaat',
@@ -263,26 +264,6 @@ const TEXT = {
     site: 'Statistieken van de website', bot: 'Statistieken van de chatbot', revs: 'Wijzigingen aan de site',
     note: 'Je eigen bezoeken worden in deze browser niet geteld. Bezoekers worden geteld zonder cookies.',
   },
-  cn: {
-    chatsT: "聊天记录", oddH: "可疑问题", oddTag: "可疑", showOdd: "只显示可疑问题", showAll: "显示所有问题", answer: "回答", followUp: (n) => `追问（之前 ${n} 个）`, noAnswer: "未保存回答（2026 年 11 月 2 日之前，或聊天机器人出错）。", chatsNote: "向聊天机器人提出的最近 200 个问题及其回答。“可疑”标记试图让聊天机器人脱离角色的问题（提示注入、索要其指令或密钥）。回答、城市和 IP 地址从 2026 年 11 月 2 日起保存；IP 地址 30 天后清除。",
-    visitsT: "访问", visitsH: "访问次数", oneBounce: "只看一页就离开", avgPages: "每次访问页数", avgDur: "平均时长", entry: "入口页面", exit: "退出页面", latestVisits: "最近的访问", pagesN: (n) => `${n} 页`, visitsNote: "一次访问是指同一访客（不使用 Cookie 识别，最多一天）浏览的一系列页面，页面之间间隔少于 30 分钟。时长是从第一页到最后一页的时间：无法测量在最后一页停留的时间，因此只有一页的访问没有时长。此处显示最近 300 次访问；城市从 2026 年 11 月 2 日起记录。", secT: "入侵尝试", attempts: "可疑请求", ips: "IP 地址", topIps: "最活跃的 IP 地址", provider: "提供商", lastSeen: "最后出现", tried: "最常尝试的地址", address: "地址", latestAttempts: "最近的尝试", method: "方法", browser: "浏览器 / 工具", notFound: "其他未找到的页面（可能是失效链接）", linkedFrom: "来源链接", count: "次数", noAttempts: "此期间没有可疑请求。", secNote: "对本网站上不存在且看似攻击的地址的请求（例如 wp-login.php、xmlrpc.php、.env 或 .git）会连同 IP 地址、城市、国家和提供商一起记录，30 天后删除。点击 IP 地址可在 AbuseIPDB 上查询。其他未找到的页面不记录 IP 地址。您在此浏览器中的访问不会被记录。从 2026 年 11 月 2 日开始记录。",
-    remove: '从列表中删除', removeQ: (n, e) => `要将 ${n}（${e}）从订阅者列表中删除吗？对方将不再收到每日更新。`,
-    contacts: '联系请求', noContacts: '暂无联系请求。从现在起，通过联系表单发送的消息将保存在这里。', contactsNote: '最近 200 条消息；超过 400 天的消息将被删除。', name: '姓名', email: '电子邮件', city: '城市', status: '状态', statusNames: { active: '已订阅', pending: '尚未确认' }, subscribed: '申请时间', confirmed: '确认时间', lastSent: '最近发送的更新', subs: 'IT4IT Atlas 订阅者', export: '导出到 Excel', subsNote: '未确认的申请 7 天后删除；退订后数据立即删除。',
-    views: '浏览量', visitors: '访客', questions: '问题', noData: '暂无数据。', noDb: '数据库暂不可用。',
-    pageViews: '页面浏览量', visitorsDay: '访客（按天计算）', perVisitor: '每位访客浏览页数', perDay: '每天',
-    siteLang: '网站语言', language: '语言', viewsH: '浏览量', share: '占比', visitorsH: '访客',
-    langNames: { en: '英文', nl: '荷兰语', cn: '中文', fr: '法语', de: '德语' }, langPerDay: '每天各语言浏览量',
-    browserLang: '浏览器语言', unknown: '（未知）', noBrowserLang: '从现在开始收集，暂无数据。',
-    topPages: '最多浏览的页面', page: '页面', referrers: '来源网站', website: '网站', direct: '（直接访问 / 未知）',
-    countries: '国家', country: '国家', devices: '设备', device: '设备',
-    countryDay: '每日各国访客', other: '其他', day: '日期', cdNote: '访客（浏览量）',
-    deviceNames: { desktop: '桌面', mobile: '手机', tablet: '平板' },
-    questionsH: '问题', failedH: '失败', avgTime: '平均响应时间', model: '模型', qPerDay: '每天问题数',
-    latest: '最新问题', time: '时间', question: '问题', failed: '失败', sources: '最常用来源', source: '来源', times: '次数',
-    change: '更改', noGithub: '暂时无法连接 GitHub。', today: '今天', days: (n) => `${n} 天`,
-    site: '网站统计', bot: '聊天机器人统计', revs: '网站修订记录',
-    note: '在此浏览器中，您自己的访问不计入统计。访客统计不使用 Cookie。',
-  },
   fr: {
     chatsT: "Conversations du chatbot", oddH: "Questions suspectes", oddTag: "suspect", showOdd: "Seulement les questions suspectes", showAll: "Toutes les questions", answer: "Réponse", followUp: (n) => `question de suivi (${n} avant)`, noAnswer: "Pas de réponse enregistrée (avant le 2 novembre 2026, ou le chatbot a échoué).", chatsNote: "Les 200 dernières questions posées au chatbot avec sa réponse. « Suspect » signale les questions qui tentent de faire sortir le chatbot de son rôle (injection de prompt, demande de ses instructions ou de clés). Les réponses, la ville et l'adresse IP sont enregistrées depuis le 2 novembre 2026 ; l'adresse IP est effacée après 30 jours.",
     visitsT: "Visites", visitsH: "Visites", oneBounce: "Parti après une page", avgPages: "Pages par visite", avgDur: "Durée moyenne", entry: "Pages d'entrée", exit: "Pages de sortie", latestVisits: "Dernières visites", pagesN: (n) => (n === 1 ? '1 page' : `${n} pages`), visitsNote: "Une visite est une suite de pages vues par le même visiteur (reconnu sans cookies, pendant un jour au maximum) avec moins de 30 minutes d'intervalle. La durée est le temps entre la première et la dernière page : le temps passé sur la dernière page ne peut pas être mesuré, donc une visite d'une seule page n'a pas de durée. Les 300 dernières visites sont affichées ; la ville est connue depuis le 2 novembre 2026.", secT: "Tentatives de piratage", attempts: "Requêtes suspectes", ips: "Adresses IP", topIps: "Adresses IP les plus actives", provider: "Fournisseur", lastSeen: "Vu en dernier", tried: "Adresses les plus tentées", address: "Adresse", latestAttempts: "Dernières tentatives", method: "Méthode", browser: "Navigateur / outil", notFound: "Autres pages introuvables (liens peut-être cassés)", linkedFrom: "Lien depuis", count: "Fois", noAttempts: "Aucune requête suspecte sur cette période.", secNote: "Les requêtes vers des adresses qui n'existent pas sur ce site et ressemblent à une attaque (comme wp-login.php, xmlrpc.php, .env ou .git) sont enregistrées avec l'adresse IP, la ville, le pays et le fournisseur, et supprimées après 30 jours. Cliquez sur une adresse IP pour la vérifier sur AbuseIPDB. Les autres pages introuvables sont enregistrées sans adresse IP. Vos propres visites dans ce navigateur ne sont pas enregistrées. L'enregistrement a commencé le 2 novembre 2026.",
@@ -291,7 +272,7 @@ const TEXT = {
     views: 'vues', visitors: 'visiteurs', questions: 'questions', noData: 'Pas encore de données.', noDb: "La base de données n'est pas encore disponible.",
     pageViews: 'Pages vues', visitorsDay: 'Visiteurs (comptés par jour)', perVisitor: 'Pages par visiteur', perDay: 'Par jour',
     siteLang: 'Langue du site', language: 'Langue', viewsH: 'Vues', share: 'Part', visitorsH: 'Visiteurs',
-    langNames: { en: 'Anglais', nl: 'Néerlandais', cn: 'Chinois', fr: 'Français', de: 'Allemand' }, langPerDay: 'Vues par langue et par jour',
+    langNames: { en: 'Anglais', nl: 'Néerlandais', fr: 'Français', de: 'Allemand' }, langPerDay: 'Vues par langue et par jour',
     browserLang: 'Langue du navigateur', unknown: '(inconnue)', noBrowserLang: 'Collectée à partir de maintenant ; pas encore de données.',
     topPages: 'Pages les plus vues', page: 'Page', referrers: 'Sites référents', website: 'Site', direct: '(direct / inconnu)',
     countries: 'Pays', country: 'Pays', devices: 'Appareils', device: 'Appareil',
@@ -311,7 +292,7 @@ const TEXT = {
     views: 'Aufrufe', visitors: 'Besucher', questions: 'Fragen', noData: 'Noch keine Daten.', noDb: 'Die Datenbank ist noch nicht verfügbar.',
     pageViews: 'Seitenaufrufe', visitorsDay: 'Besucher (pro Tag gezählt)', perVisitor: 'Seiten pro Besucher', perDay: 'Pro Tag',
     siteLang: 'Sprache der Website', language: 'Sprache', viewsH: 'Aufrufe', share: 'Anteil', visitorsH: 'Besucher',
-    langNames: { en: 'Englisch', nl: 'Niederländisch', cn: 'Chinesisch', fr: 'Französisch', de: 'Deutsch' }, langPerDay: 'Aufrufe pro Sprache und Tag',
+    langNames: { en: 'Englisch', nl: 'Niederländisch', fr: 'Französisch', de: 'Deutsch' }, langPerDay: 'Aufrufe pro Sprache und Tag',
     browserLang: 'Sprache des Browsers', unknown: '(unbekannt)', noBrowserLang: 'Wird ab jetzt erfasst; noch keine Daten.',
     topPages: 'Meistbesuchte Seiten', page: 'Seite', referrers: 'Verweisende Websites', website: 'Website', direct: '(direkt / unbekannt)',
     countries: 'Länder', country: 'Land', devices: 'Geräte', device: 'Gerät',
@@ -328,15 +309,13 @@ const TEXT = {
 // Texts of the page "Article views per month" (/stats/articles/).
 const ART_TEXT = {
   en: { title: 'Article views per month', article: 'Article', total: 'Total', views: 'Views', allLangs: 'All languages', read: (m) => `Articles read in ${m}`, top: (m) => `Most read in ${m}`, perMonth: 'Article views per month', perArticle: 'Per article',
-    note: 'Views of each blog article per calendar month (UTC). All language versions of an article are added up (the English page and its /nl/, /cn/, /fr/ and /de/ translations), because they are the same article: hover over a number to see the split per language, or pick one language at the top. Every opening of the article page counts as a view, so a reader who opens it twice counts twice. Bots and your own visits in this browser are not counted. Page views are kept for 400 days; counting started when the new site went live in October 2026.' },
+    note: 'Views of each blog article per calendar month (UTC). All language versions of an article are added up (the English page and its /nl/, /fr/ and /de/ translations), because they are the same article: hover over a number to see the split per language, or pick one language at the top. Every opening of the article page counts as a view, so a reader who opens it twice counts twice. Bots and your own visits in this browser are not counted. Page views are kept for 400 days; counting started when the new site went live in October 2026.' },
   nl: { title: 'Artikelweergaven per maand', article: 'Artikel', total: 'Totaal', views: 'Weergaven', allLangs: 'Alle talen', read: (m) => `Artikelen gelezen in ${m}`, top: (m) => `Meest gelezen in ${m}`, perMonth: 'Artikelweergaven per maand', perArticle: 'Per artikel',
-    note: 'Weergaven van elk blogartikel per kalendermaand (UTC). Alle taalversies van een artikel worden opgeteld (de Engelse pagina en de vertalingen onder /nl/, /cn/, /fr/ en /de/), omdat het om hetzelfde artikel gaat: houd de muis op een getal voor de verdeling per taal, of kies bovenaan één taal. Elke keer dat de artikelpagina wordt geopend telt als een weergave, dus wie het twee keer opent telt twee keer. Bots en je eigen bezoeken in deze browser tellen niet mee. Paginaweergaven worden 400 dagen bewaard; het tellen begon toen de nieuwe site live ging in oktober 2026.' },
-  cn: { title: '每月文章浏览量', article: '文章', total: '合计', views: '浏览量', allLangs: '所有语言', read: (m) => `${m}被阅读的文章`, top: (m) => `${m}阅读最多`, perMonth: '每月文章浏览量', perArticle: '按文章',
-    note: '每篇博客文章每个自然月（UTC）的浏览量。一篇文章的所有语言版本会合并计算（英文页面及其 /nl/、/cn/、/fr/ 和 /de/ 翻译），因为它们是同一篇文章：将鼠标悬停在数字上可查看各语言的分布，或在顶部选择一种语言。每次打开文章页面都算一次浏览，因此打开两次的读者算两次。机器人和您在此浏览器中的访问不计入。页面浏览记录保留 400 天；统计从 2026 年 10 月新网站上线时开始。' },
+    note: 'Weergaven van elk blogartikel per kalendermaand (UTC). Alle taalversies van een artikel worden opgeteld (de Engelse pagina en de vertalingen onder /nl/, /fr/ en /de/), omdat het om hetzelfde artikel gaat: houd de muis op een getal voor de verdeling per taal, of kies bovenaan één taal. Elke keer dat de artikelpagina wordt geopend telt als een weergave, dus wie het twee keer opent telt twee keer. Bots en je eigen bezoeken in deze browser tellen niet mee. Paginaweergaven worden 400 dagen bewaard; het tellen begon toen de nieuwe site live ging in oktober 2026.' },
   fr: { title: 'Vues des articles par mois', article: 'Article', total: 'Total', views: 'Vues', allLangs: 'Toutes les langues', read: (m) => `Articles lus en ${m}`, top: (m) => `Le plus lu en ${m}`, perMonth: 'Vues des articles par mois', perArticle: 'Par article',
-    note: 'Vues de chaque article du blog par mois civil (UTC). Toutes les versions linguistiques d’un article sont additionnées (la page anglaise et ses traductions sous /nl/, /cn/, /fr/ et /de/), car il s’agit du même article : survolez un nombre pour voir la répartition par langue, ou choisissez une langue en haut. Chaque ouverture de la page compte comme une vue : un lecteur qui l’ouvre deux fois compte deux fois. Les robots et vos propres visites dans ce navigateur ne sont pas comptés. Les pages vues sont conservées 400 jours ; le comptage a commencé à la mise en ligne du nouveau site en octobre 2026.' },
+    note: 'Vues de chaque article du blog par mois civil (UTC). Toutes les versions linguistiques d’un article sont additionnées (la page anglaise et ses traductions sous /nl/, /fr/ et /de/), car il s’agit du même article : survolez un nombre pour voir la répartition par langue, ou choisissez une langue en haut. Chaque ouverture de la page compte comme une vue : un lecteur qui l’ouvre deux fois compte deux fois. Les robots et vos propres visites dans ce navigateur ne sont pas comptés. Les pages vues sont conservées 400 jours ; le comptage a commencé à la mise en ligne du nouveau site en octobre 2026.' },
   de: { title: 'Artikelaufrufe pro Monat', article: 'Artikel', total: 'Gesamt', views: 'Aufrufe', allLangs: 'Alle Sprachen', read: (m) => `Gelesene Artikel im ${m}`, top: (m) => `Meistgelesen im ${m}`, perMonth: 'Artikelaufrufe pro Monat', perArticle: 'Pro Artikel',
-    note: 'Aufrufe jedes Blogartikels pro Kalendermonat (UTC). Alle Sprachversionen eines Artikels werden zusammengezählt (die englische Seite und ihre Übersetzungen unter /nl/, /cn/, /fr/ und /de/), da es derselbe Artikel ist: Fahren Sie mit der Maus über eine Zahl, um die Aufteilung nach Sprache zu sehen, oder wählen Sie oben eine Sprache. Jedes Öffnen der Artikelseite zählt als Aufruf, wer sie zweimal öffnet, zählt also zweimal. Bots und Ihre eigenen Besuche in diesem Browser werden nicht gezählt. Seitenaufrufe werden 400 Tage aufbewahrt; die Zählung begann mit dem Start der neuen Website im Oktober 2026.' },
+    note: 'Aufrufe jedes Blogartikels pro Kalendermonat (UTC). Alle Sprachversionen eines Artikels werden zusammengezählt (die englische Seite und ihre Übersetzungen unter /nl/, /fr/ und /de/), da es derselbe Artikel ist: Fahren Sie mit der Maus über eine Zahl, um die Aufteilung nach Sprache zu sehen, oder wählen Sie oben eine Sprache. Jedes Öffnen der Artikelseite zählt als Aufruf, wer sie zweimal öffnet, zählt also zweimal. Bots und Ihre eigenen Besuche in diesem Browser werden nicht gezählt. Seitenaufrufe werden 400 Tage aufbewahrt; die Zählung begann mit dem Start der neuen Website im Oktober 2026.' },
 };
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -473,7 +452,7 @@ export async function statsData(request, env) {
     const only = SITE_LANGS.includes(params.get('lang2')) ? params.get('lang2') : '';
     const rows = (await d.prepare(`SELECT substr(day, 1, 7) month, ${SITE_LANG} lang, path, COUNT(*) views FROM hits WHERE day >= ? GROUP BY 1, 2, 3`)
       .bind(`${months[0]}-01`).all()).results;
-    // /nl/hello-ai/, /hello-ai and /hello-ai/ all count for the article "hello-ai".
+    // /nl/hello-ai/, /hello-ai and /hello-ai/ all count for the article "hello-ai" (cn: old visits to the former Chinese pages).
     const slugOf = (path) => decodeURIComponent(path.replace(/^\/(nl|cn|fr|de)(?=\/|$)/, '').replace(/^\/+|\/+$/g, ''));
     const known = new Map(articles.map((a) => [a.slug, { ...a, m: {}, total: 0, langs: {} }]));
     for (const r of rows) {

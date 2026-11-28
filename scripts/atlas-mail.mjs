@@ -111,7 +111,6 @@ export function atlasMail(report, { lang = 'nl', unsubscribe, name } = {}) {
 const CONFIRM = {
   en: { hello: 'Dear', subject: 'Confirm your subscription to the IT4IT Atlas update', intro: 'Please confirm that you want to receive the daily update of the IT4IT Atlas by e-mail: what was checked, changed and added that day.', button: 'Confirm subscription', ignore: 'Did you not ask for this? Then ignore this e-mail; without confirmation you will not receive anything and your address is deleted within a week.', regards: 'Kind regards,' },
   nl: { hello: 'Beste', subject: 'Bevestig je aanmelding voor de IT4IT Atlas-update', intro: 'Bevestig dat je de dagelijkse update van de IT4IT Atlas per e-mail wilt ontvangen: wat die dag is gecontroleerd, gewijzigd en toegevoegd.', button: 'Aanmelding bevestigen', ignore: 'Heb je hier niet om gevraagd? Negeer deze mail dan; zonder bevestiging ontvang je niets en wordt je adres binnen een week verwijderd.', regards: 'Met vriendelijke groet,' },
-  cn: { hello: '您好', subject: '请确认订阅 IT4IT Atlas 更新', intro: '请确认您希望通过电子邮件接收 IT4IT Atlas 的每日更新：当天核查、更改和新增的内容（英文）。', button: '确认订阅', ignore: '如果您没有申请订阅，请忽略此邮件；未经确认您不会收到任何邮件，您的地址将在一周内删除。', regards: '此致敬礼，' },
   fr: { hello: 'Bonjour', subject: 'Confirmez votre abonnement à la mise à jour de l’IT4IT Atlas', intro: 'Confirmez que vous souhaitez recevoir par e-mail la mise à jour quotidienne de l’IT4IT Atlas : ce qui a été vérifié, modifié et ajouté ce jour-là (en anglais).', button: 'Confirmer l’abonnement', ignore: 'Vous n’avez rien demandé ? Ignorez cet e-mail ; sans confirmation vous ne recevrez rien et votre adresse sera supprimée sous une semaine.', regards: 'Cordialement,' },
   de: { hello: 'Hallo', subject: 'Bestätigen Sie Ihr Abonnement des IT4IT-Atlas-Updates', intro: 'Bitte bestätigen Sie, dass Sie das tägliche Update des IT4IT Atlas per E-Mail erhalten möchten: was an dem Tag geprüft, geändert und hinzugefügt wurde (auf Englisch).', button: 'Abonnement bestätigen', ignore: 'Sie haben das nicht angefordert? Dann ignorieren Sie diese E-Mail; ohne Bestätigung erhalten Sie nichts, und Ihre Adresse wird innerhalb einer Woche gelöscht.', regards: 'Mit freundlichen Grüßen,' },
 };
@@ -139,7 +138,7 @@ export function noticeMail(title, intro, rows) {
 
 // A message from the contact form of javc.nl (worker/index.js), to Jeroen in the same layout; replying answers the sender.
 export function contactMail({ name, email, phone, message, lang, country, city, host }) {
-  const LANG = { en: 'Engels', nl: 'Nederlands', cn: 'Chinees', fr: 'Frans', de: 'Duits' };
+  const LANG = { en: 'Engels', nl: 'Nederlands', fr: 'Frans', de: 'Duits' };
   const rows = [['Naam', name], ['E-mailadres', email], ['Telefoon', phone || '—'], ['Taal van de site', `${LANG[lang] || lang} (${lang})`], ['Land (Cloudflare)', country || '—'], ['Plaats', city || '—']];
   const reply = `<tr><td style="padding:22px 32px 0"><a href="mailto:${esc(email)}" style="display:inline-block;background:${C.accent};color:#ffffff;font:700 15px/1 Arial,sans-serif;text-decoration:none;padding:13px 22px;border-radius:4px">Beantwoorden</a></td></tr>`;
   const html = layout({
