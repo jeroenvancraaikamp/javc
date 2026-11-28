@@ -1,0 +1,76 @@
+---
+// Gartner Magic Quadrants of the IT4IT Atlas (/it4it-atlas/gartner/ and its translations): per Magic Quadrant the
+// Atlas tools in it (product + producer), in two columns. Data comes from scripts/build-atlas.mjs (atlas-meta.json).
+// Each tool shows its placement (Leader, Challenger, Visionary, Niche Player) from public announcements, looked up by
+// scripts/atlas-mq-placement.mjs. The MQ graphics are Gartner's copyright, so they are not shown; each block links to the report.
+import META from '../data/atlas-meta.json';
+import Base from '../layouts/Base.astro';
+import { locale, url, langOf } from '../i18n';
+import { ATLAS_TEXT } from '../data/atlas-text';
+
+type Quadrant = { market: string; year: number; url: string; tools: { id: string; name: string; vendor: string; placement?: string }[] };
+const ORDER = ['Leader', 'Challenger', 'Visionary', 'Niche Player', ''];
+const rank = (p?: string) => { const i = ORDER.indexOf(p ?? ''); return i < 0 ? ORDER.length : i; };
+const lang = langOf(Astro.url.pathname);
+const TEXT = ATLAS_TEXT[lang];
+const nf = new Intl.NumberFormat(locale[lang]);
+const quadrants = ((META as { quadrants?: Quadrant[] }).quadrants ?? []).map((q) => ({
+  ...q,
+  tools: [...q.tools].sort((a, b) => rank(a.placement) - rank(b.placement) || a.name.localeCompare(b.name, 'en', { sensitivity: 'base' })),
+}));
+const toolCount = new Set(quadrants.flatMap((q) => q.tools.map((t) => t.id))).size;
+const atlas = url(lang, '/it4it-atlas/');
+---
+<Base title={`${TEXT.mqPage} · IT4IT Atlas`} pageTitle={TEXT.mqPage} crumbs={[{ label: 'IT4IT Atlas', href: atlas }, { label: TEXT.mqPage }]}>
+  <div class="wrap page-body atlas-page">
+    <section class="atlas-mq">
+      <h1 class="atlas-guide-title">IT4IT Atlas · {TEXT.mqPage}</h1>
+      <p>{TEXT.mqIntro(nf.format(toolCount), nf.format(quadrants.length))}</p>
+      <div class="atlas-mq-grid">
+        {quadrants.map((q) => (
+          <article class="atlas-mq-block">
+            <h2>{q.market} <small>{q.year}</small></h2>
+            <ul>
+              {q.tools.map((t) => (
+                <li>
+                  <a href={`${atlas}?q=${encodeURIComponent(t.name)}`}>{t.name}</a>
+                  <span>{t.vendor}</span>
+                  {t.placement ? <em class={`pl pl-${t.placement.replace(' ', '-').toLowerCase()}`}>{t.placement}</em> : ''}
+                </li>
+              ))}
+            </ul>
+            <p class="atlas-mq-foot">
+              <span>{nf.format(q.tools.length)} {TEXT.tools}</span>
+              {q.url && <a href={q.url} target="_blank" rel="noopener">{TEXT.mqReport} ↗</a>}
+            </p>
+          </article>
+        ))}
+      </div>
+      <p class="atlas-note">{TEXT.mqNote}</p>
+      <p><a class="atlas-back" href={atlas}>← {TEXT.backToAtlas}</a></p>
+    </section>
+  </div>
+</Base>
+
+<style is:global>
+  .atlas-page { max-width: 1400px; }
+  .atlas-guide-title { margin: 0 0 8px; font-size: 30px; }
+  .atlas-mq-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 20px; }
+  @media (max-width: 760px) { .atlas-mq-grid { grid-template-columns: 1fr; } }
+  .atlas-mq-block { border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; display: flex; flex-direction: column; }
+  .atlas-mq-block h2 { margin: 0 0 10px; font-size: 18px; line-height: 1.3; }
+  .atlas-mq-block h2 small { font-weight: 400; color: var(--muted); font-size: 14px; margin-left: 4px; }
+  .atlas-mq-block ul { list-style: none; margin: 0; padding: 0; font-size: 14px; line-height: 1.45; columns: 2; column-gap: 18px; flex: 1; }
+  @media (max-width: 1000px) { .atlas-mq-block ul { columns: 1; } }
+  .atlas-mq-block li { padding: 5px 0; border-top: 1px solid var(--line); break-inside: avoid; }
+  .atlas-mq-block li a { font-weight: 600; }
+  .atlas-mq-block li span { display: block; color: var(--muted); font-size: 13px; }
+  .atlas-mq-block .pl { display: inline-block; margin-top: 3px; font-style: normal; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: 3px; border: 1px solid; }
+  .atlas-mq-block .pl-leader { color: #fff; background: var(--accent); border-color: var(--accent); }
+  .atlas-mq-block .pl-challenger, .atlas-mq-block .pl-visionary { color: var(--accent); border-color: var(--accent); }
+  .atlas-mq-block .pl-niche-player { color: #5b6b63; border-color: #b9c4be; }
+  .atlas-mq-foot { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin: 12px 0 0; font-size: 13px; color: var(--muted); }
+  .atlas-mq-foot a { font-weight: 600; }
+  .atlas-note { margin-top: 30px; font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .atlas-back { font-weight: 600; }
+</style>

@@ -36,6 +36,7 @@ const atlasMenu = (href: string) => [
   { label: AT.all, href },
   ...ATLAS_TAXONOMY.sections.map((s) => ({ label: s.name, href: `${href}?view=${s.id}` })),
   { label: AT.mqTab, href: `${href}?view=gartner` },
+  { label: AT.mqPage, href: `${href}gartner/` },
   { sep: true, label: AT.guide, href: `${href}categories/` },
   { label: AT.changes, href: `${href}changes/` },
   { label: AT.standard, href: 'https://www.opengroup.org/it4it', external: true },

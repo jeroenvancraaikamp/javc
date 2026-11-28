@@ -41,6 +41,10 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ATLAS_CHECK: ${{ inputs.check || '40' }}
           ATLAS_NEW_SUBS: ${{ inputs.new_subs || '3' }}
+      - name: Look up Gartner Magic Quadrant placements that are missing
+        run: node scripts/atlas-mq-placement.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       - name: Check that the site still builds
         run: node scripts/build-atlas.mjs
       - name: Commit the update
