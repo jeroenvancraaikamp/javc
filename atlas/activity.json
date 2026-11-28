@@ -1,5 +1,163 @@
 [
   {
+    "date": "2026-11-28",
+    "checked": 40,
+    "confirmed": 20,
+    "unverified": 6,
+    "updated": [
+      {
+        "id": "288db0df5943f320",
+        "name": "Volcano Engine (Volcano Ark)",
+        "change": "Switched the source to Volcano Engine's own Ark documentation and described Ark as covering inference, fine-tuning, evaluation and agent development."
+      },
+      {
+        "id": "2c7b0c79455ed027",
+        "name": "skillaHR",
+        "change": "Moved the source to Realcoderz's LinkedIn page and described skillaHR as an HRMS with AI features, payroll and expense management."
+      },
+      {
+        "id": "203686836021843b",
+        "name": "Xybion CQRM XD",
+        "change": "Product still listed as a GRC and quality management system; replaced the 2022 PDF with a current product page and refined the description."
+      },
+      {
+        "id": "220f5f8d57f05263",
+        "name": "EkkoSoft Critical / 3DCIM",
+        "change": "The product is still offered, but it covers thermal and power optimisation, so I added the power and cooling subcategory."
+      },
+      {
+        "id": "38d7111f1e1cf870",
+        "name": "Pentana Performance (formerly Covalent)",
+        "was": "Covalent Suite",
+        "change": "Covalent was rebranded by Ideagen as Pentana Performance within the Pentana Assurance Suite, so the name and description now reflect the current product."
+      },
+      {
+        "id": "3b3ca8ba6e187b70",
+        "name": "Hugging Face Hub / Transformers",
+        "change": "Product still offered; reclassified from predictive AI to AI development and model platforms, which fits a model hub and library better."
+      },
+      {
+        "id": "3d8625389f5ac3e0",
+        "name": "APC PowerChute Network Shutdown / EcoStruxure IT Data Center Expert",
+        "was": "APC PowerChute Network Shutdown / StruxureWare Data Center Expert",
+        "change": "StruxureWare Data Center Expert is now EcoStruxure IT Data Center Expert; the entry now names it that way and also covers data center infrastructure management."
+      },
+      {
+        "id": "2d190e6106e00229",
+        "name": "Nlyte Energy Optimizer",
+        "was": "Nlyte Cooling Analytics",
+        "change": "Nlyte now markets this as Nlyte Energy Optimizer (power and capacity planning); the 'Cooling Analytics' name is not used on the page, so the name and description were corrected."
+      },
+      {
+        "id": "2e1a7cc94b9a9a80",
+        "name": "DirectLine",
+        "was": "Directline Software",
+        "change": "DirectLine is still offered by Megamation; the description now covers its broader CMMS scope (work orders, assets, inventory, space, fleet) and the entry is also classed under IT assets is not needed, so only the description and note were refined."
+      },
+      {
+        "id": "2f4a86e422d26e07",
+        "name": "Vigilent Synergy",
+        "was": "Vigilent Dynamic Cooling Management",
+        "change": "Vigilent's current platform is Vigilent Synergy (predictive AI cooling control) plus Vigilent Vision (analytics), so the name and description were updated."
+      },
+      {
+        "id": "2fff15dce12e47e8",
+        "name": "Talent Development",
+        "was": "HR Talent Development (HR)",
+        "change": "ServiceNow's page now names the product 'Talent Development' (formerly Employee Growth and Development), so the name was corrected."
+      },
+      {
+        "id": "3e0ce2ebf713a0b8",
+        "name": "OpsCruise",
+        "change": "Virtana's current product page is the Kubernetes observability page. The old sourceUrl is replaced and the description is adjusted to match it."
+      },
+      {
+        "id": "4a7cc06f7717faf4",
+        "name": "Stackgini (formerly Softwaregini)",
+        "change": "Opened stackgini.de: it is now an AI-native IT demand management platform (intake, architecture, vendor research, approvals). Reclassified to the demand/portfolio subcategory."
+      },
+      {
+        "id": "4cf848009ac17eef",
+        "name": "VMware Aria Operations (now VCF Operations)",
+        "was": "VMware Aria Operations for VMs / vSAN",
+        "change": "Broadcom documentation says Aria Operations 8.18 is the last standalone release. Its functionality is now VCF Operations in VMware Cloud Foundation/vSphere Foundation 9.0. Reclassified to observability."
+      }
+    ],
+    "added": [
+      {
+        "id": "047732226c403b5d",
+        "name": "Intelex",
+        "vendor": "Intelex Technologies (Fortive)",
+        "sub": "Health, Safety, and Environmental",
+        "change": "Widely recognised EHS software suite that is missing from the catalogue."
+      },
+      {
+        "id": "988e0f0a63fbdc41",
+        "name": "EcoOnline EHS",
+        "vendor": "EcoOnline",
+        "sub": "Health, Safety, and Environmental",
+        "change": "Well-known European EHS platform that is missing from the catalogue."
+      },
+      {
+        "id": "5d827831ca55f882",
+        "name": "Salesforce Net Zero Cloud",
+        "vendor": "Salesforce",
+        "sub": "Health, Safety, and Environmental",
+        "change": "Major vendor's carbon and sustainability management product that is missing from the catalogue."
+      },
+      {
+        "id": "c9d29cc30dae6d8e",
+        "name": "Exterro Legal GRC Platform",
+        "vendor": "Exterro",
+        "sub": "Legal",
+        "change": "Widely used e-discovery and legal GRC vendor that is missing from the Legal subcategory."
+      },
+      {
+        "id": "d3790a624fbbfc3b",
+        "name": "Spellbook",
+        "vendor": "Spellbook",
+        "sub": "Legal",
+        "change": "Well-known AI contract drafting and review tool for lawyers that is not yet in the catalogue."
+      },
+      {
+        "id": "0bb193e28d4caeef",
+        "name": "MyCase",
+        "vendor": "8am",
+        "sub": "Legal",
+        "change": "Widely used law-firm practice management product that is missing from the Legal subcategory."
+      },
+      {
+        "id": "26fc051ca92ddb85",
+        "name": "Brivo Access Control",
+        "vendor": "Brivo",
+        "sub": "Property & Facility",
+        "change": "Widely used cloud access control platform for physical security that is missing from the Property & Facility subcategory."
+      },
+      {
+        "id": "31eb83deabdc3724",
+        "name": "Envoy",
+        "vendor": "Envoy",
+        "sub": "Property & Facility",
+        "change": "Well-known workplace platform for visitor management and space booking that is missing from the subcategory."
+      },
+      {
+        "id": "10aa833eff9339cc",
+        "name": "LenelS2 OnGuard",
+        "vendor": "Honeywell (LenelS2)",
+        "sub": "Property & Facility",
+        "change": "Widely deployed enterprise physical access control system that is missing from the subcategory."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Health, Safety, and Environmental",
+      "Legal",
+      "Property & Facility"
+    ],
+    "summary": "Checked 40 tools: 20 confirmed, 14 updated, 0 discontinued, 6 could not be verified. Searched Health, Safety, and Environmental, Legal, Property & Facility for missing products: 9 added."
+  },
+  {
     "date": "2026-11-27",
     "checked": 40,
     "confirmed": 8,
