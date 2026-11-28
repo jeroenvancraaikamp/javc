@@ -1,6 +1,6 @@
 ---
 // Gartner Magic Quadrants of the IT4IT Atlas (/it4it-atlas/gartner/ and its translations): per Magic Quadrant the
-// Atlas tools in it (product + producer), in two columns. Data comes from scripts/build-atlas.mjs (atlas-meta.json).
+// Atlas tools in it (product + producer), one block per MQ; on the left a list of all MQs linking to their block (#anchor). Data comes from scripts/build-atlas.mjs (atlas-meta.json).
 // Each tool shows its placement (Leader, Challenger, Visionary, Niche Player) from public announcements, looked up by
 // scripts/atlas-mq-placement.mjs. The MQ graphics are Gartner's copyright, so they are not shown; each block links to the report.
 import META from '../data/atlas-meta.json';
@@ -20,31 +20,44 @@ const quadrants = ((META as { quadrants?: Quadrant[] }).quadrants ?? []).map((q)
 }));
 const toolCount = new Set(quadrants.flatMap((q) => q.tools.map((t) => t.id))).size;
 const atlas = url(lang, '/it4it-atlas/');
+const slug = (q: Quadrant) => `${q.market}-${q.year}`.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 ---
 <Base title={`${TEXT.mqPage} · IT4IT Atlas`} pageTitle={TEXT.mqPage} crumbs={[{ label: 'IT4IT Atlas', href: atlas }, { label: TEXT.mqPage }]}>
   <div class="wrap page-body atlas-page">
     <section class="atlas-mq">
       <h1 class="atlas-guide-title">IT4IT Atlas · {TEXT.mqPage}</h1>
       <p>{TEXT.mqIntro(nf.format(toolCount), nf.format(quadrants.length))}</p>
-      <div class="atlas-mq-grid">
-        {quadrants.map((q) => (
-          <article class="atlas-mq-block">
-            <h2>{q.market} <small>{q.year}</small></h2>
-            <ul>
-              {q.tools.map((t) => (
-                <li>
-                  <a href={`${atlas}?q=${encodeURIComponent(t.name)}`}>{t.name}</a>
-                  <span>{t.vendor}</span>
-                  {t.placement ? <em class={`pl pl-${t.placement.replace(' ', '-').toLowerCase()}`}>{t.placement}</em> : ''}
-                </li>
+      <div class="atlas-mq-body">
+        <div class="atlas-mq-side">
+          <details open>
+            <summary>Gartner Magic Quadrants <small>{nf.format(quadrants.length)}</small></summary>
+            <nav>
+              {quadrants.map((q) => (
+                <a href={`#${slug(q)}`}><span>{q.market}</span> <small>{nf.format(q.tools.length)}</small></a>
               ))}
-            </ul>
-            <p class="atlas-mq-foot">
-              <span>{nf.format(q.tools.length)} {TEXT.tools}</span>
-              {q.url && <a href={q.url} target="_blank" rel="noopener">{TEXT.mqReport} ↗</a>}
-            </p>
-          </article>
-        ))}
+            </nav>
+          </details>
+        </div>
+        <div class="atlas-mq-list">
+          {quadrants.map((q) => (
+            <article class="atlas-mq-block" id={slug(q)}>
+              <h2><a href={`#${slug(q)}`}>{q.market}</a> <small>{q.year}</small></h2>
+              <ul>
+                {q.tools.map((t) => (
+                  <li>
+                    <a href={`${atlas}?q=${encodeURIComponent(t.name)}`}>{t.name}</a>
+                    <span>{t.vendor}</span>
+                    {t.placement ? <em class={`pl pl-${t.placement.replace(' ', '-').toLowerCase()}`}>{t.placement}</em> : ''}
+                  </li>
+                ))}
+              </ul>
+              <p class="atlas-mq-foot">
+                <span>{nf.format(q.tools.length)} {TEXT.tools}</span>
+                {q.url && <a href={q.url} target="_blank" rel="noopener">{TEXT.mqReport} ↗</a>}
+              </p>
+            </article>
+          ))}
+        </div>
       </div>
       <p class="atlas-note">{TEXT.mqNote}</p>
       <p><a class="atlas-back" href={atlas}>← {TEXT.backToAtlas}</a></p>
@@ -52,16 +65,39 @@ const atlas = url(lang, '/it4it-atlas/');
   </div>
 </Base>
 
+<script>
+  // On small screens the list of Magic Quadrants starts folded, like the sidebar of the Atlas.
+  if (matchMedia('(max-width: 900px)').matches) document.querySelectorAll('.atlas-mq-side details').forEach((d) => d.removeAttribute('open'));
+</script>
+
 <style is:global>
   .atlas-page { max-width: 1400px; }
   .atlas-guide-title { margin: 0 0 8px; font-size: 30px; }
-  .atlas-mq-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 20px; }
-  @media (max-width: 760px) { .atlas-mq-grid { grid-template-columns: 1fr; } }
+  .atlas-mq-body { display: grid; grid-template-columns: 300px 1fr; gap: 30px; align-items: start; margin-top: 20px; }
+  .atlas-mq-side { position: sticky; top: 150px; max-height: calc(100vh - 170px); overflow-y: auto; }
+  .atlas-mq-side details { border: 0; padding: 0; }
+  .atlas-mq-side summary { font: 600 15px var(--head-font); color: var(--heading); cursor: pointer; margin-bottom: 10px; }
+  .atlas-mq-side summary small { color: var(--muted); font-weight: 400; margin-left: 4px; }
+  .atlas-mq-side nav { display: flex; flex-direction: column; font-size: 14px; line-height: 1.35; }
+  .atlas-mq-side nav a { display: flex; justify-content: space-between; gap: 8px; padding: 6px 8px; border-radius: 4px; color: var(--text); }
+  .atlas-mq-side nav a small { color: var(--muted); }
+  .atlas-mq-side nav a:hover { background: var(--bg-soft); }
+  .atlas-mq-list { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+  .atlas-mq-block { scroll-margin-top: 150px; }
+  .atlas-mq-block h2 a { color: inherit; }
+  @media (max-width: 900px) {
+    .atlas-mq-body { grid-template-columns: 1fr; gap: 16px; }
+    .atlas-mq-side { position: static; max-height: none; overflow: visible; }
+    .atlas-mq-side details { border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; }
+    .atlas-mq-side summary { margin: 0; }
+    .atlas-mq-side details[open] summary { margin-bottom: 8px; }
+  }
   .atlas-mq-block { border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; display: flex; flex-direction: column; }
   .atlas-mq-block h2 { margin: 0 0 10px; font-size: 18px; line-height: 1.3; }
   .atlas-mq-block h2 small { font-weight: 400; color: var(--muted); font-size: 14px; margin-left: 4px; }
-  .atlas-mq-block ul { list-style: none; margin: 0; padding: 0; font-size: 14px; line-height: 1.45; columns: 2; column-gap: 18px; flex: 1; }
-  @media (max-width: 1000px) { .atlas-mq-block ul { columns: 1; } }
+  .atlas-mq-block ul { list-style: none; margin: 0; padding: 0; font-size: 14px; line-height: 1.45; columns: 3; column-gap: 18px; flex: 1; }
+  @media (max-width: 1200px) { .atlas-mq-block ul { columns: 2; } }
+  @media (max-width: 600px) { .atlas-mq-block ul { columns: 1; } }
   .atlas-mq-block li { padding: 5px 0; border-top: 1px solid var(--line); break-inside: avoid; }
   .atlas-mq-block li a { font-weight: 600; }
   .atlas-mq-block li span { display: block; color: var(--muted); font-size: 13px; }
