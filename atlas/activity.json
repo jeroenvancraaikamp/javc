@@ -2,6 +2,111 @@
   {
     "date": "2026-11-28",
     "checked": 40,
+    "confirmed": 26,
+    "unverified": 8,
+    "updated": [
+      {
+        "id": "5643c937b4101f9f",
+        "name": "uniFLOW",
+        "change": "uniFLOW is a print, scan and device management platform, so the property and facility category was replaced with document and content management."
+      },
+      {
+        "id": "747d629e15ba7ce5",
+        "name": "Eracent Continuous License Reconciliation (CLR) advanced for SAP",
+        "was": "Eracent Continuous License Reconsiliation (CLR) advanced for SAP",
+        "change": "Corrected the name typo ('Reconsiliation' to 'Reconciliation'); Eracent's SAP page confirms the CLR-based SAP license optimization."
+      },
+      {
+        "id": "7bcfa0baa7c6899d",
+        "name": "Turbo360 (formerly Serverless360)",
+        "change": "Turbo360 now presents itself as an Azure FinOps and cost-management platform that also offers monitoring, business activity monitoring, documentation and M365 license management, so I updated the description and added a finance category."
+      },
+      {
+        "id": "7c2990d32d4ab5a9",
+        "name": "Enlogic Power Management Software",
+        "change": "enlogic.com now resolves to nVent's data-solutions site, where Enlogic power distribution and inline energy meters are listed, so I updated the vendor to nVent."
+      },
+      {
+        "id": "88b2e988f4396b51",
+        "name": "Infosys Data Services Suite (iDSS)",
+        "change": "iDSS is an ETL and data-migration framework, so it belongs under data platforms rather than risk and compliance."
+      },
+      {
+        "id": "8be6b9c5fa100e28",
+        "name": "Dell OpenManage Enterprise",
+        "change": "OpenManage Enterprise is still current (v4.7.0). It is a systems-management and monitoring console, not DCIM, so I reclassified it."
+      }
+    ],
+    "added": [
+      {
+        "id": "1816a172eb2cd8af",
+        "name": "Sievo Spend Analytics",
+        "vendor": "Sievo",
+        "sub": "Vendor & Procurement",
+        "change": "Widely used procurement analytics product that is missing from the catalogue."
+      },
+      {
+        "id": "967bc2f137e963b1",
+        "name": "EcoVadis",
+        "vendor": "EcoVadis",
+        "sub": "Vendor & Procurement",
+        "change": "Widely recognised supplier ratings and assessment platform used in procurement, missing from the catalogue."
+      },
+      {
+        "id": "bfaf605af718f1ea",
+        "name": "SAP Fieldglass",
+        "vendor": "SAP",
+        "sub": "Vendor & Procurement",
+        "change": "Well-known SAP vendor management system for external workforce procurement, not yet in the catalogue."
+      },
+      {
+        "id": "3b2ea4d29312a690",
+        "name": "Venminder",
+        "vendor": "Venminder (Ncontracts)",
+        "sub": "Risk, Audit & Compliance",
+        "change": "Widely recognised third-party risk management platform missing from the catalogue."
+      },
+      {
+        "id": "f97e8b8e29240199",
+        "name": "StarCompliance Enterprise",
+        "vendor": "StarCompliance",
+        "sub": "Risk, Audit & Compliance",
+        "change": "Recognised employee and firm compliance monitoring platform missing from the catalogue."
+      },
+      {
+        "id": "f43b37dedc720176",
+        "name": "Zoho Desk",
+        "vendor": "Zoho",
+        "sub": "Customer Service",
+        "change": "Widely used customer support help desk from Zoho that was missing from the catalogue."
+      },
+      {
+        "id": "8868c1ac6ddc927e",
+        "name": "HubSpot Service Hub (Customer Service Hub)",
+        "vendor": "HubSpot",
+        "sub": "Customer Service",
+        "change": "Well-known customer service suite from HubSpot, not yet listed."
+      },
+      {
+        "id": "5197b6b33e10295e",
+        "name": "Talkdesk CX Cloud",
+        "vendor": "Talkdesk",
+        "sub": "Customer Service",
+        "change": "Recognised contact center and customer care platform that was missing from the catalogue."
+      }
+    ],
+    "discontinued": [],
+    "errors": 0,
+    "searched": [
+      "Risk, Audit & Compliance",
+      "Vendor & Procurement",
+      "Customer Service"
+    ],
+    "summary": "Checked 40 tools: 26 confirmed, 6 updated, 0 discontinued, 8 could not be verified. Searched Risk, Audit & Compliance, Vendor & Procurement, Customer Service for missing products: 8 added."
+  },
+  {
+    "date": "2026-11-28",
+    "checked": 40,
     "confirmed": 20,
     "unverified": 6,
     "updated": [
